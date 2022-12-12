@@ -1,42 +1,33 @@
-[
-  {
-    "id": "tool--cf23bf4a-e003-4116-bbae-1ea6c558d565",
-    "name": "ftp",
-    "aliases": "none",
-    "platforms": "linux|windows|macos",
-    "tool_id": "S0095",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 3,
-        "items": [
-          "command-and-control",
-          "exfiltration",
-          "lateral-movement"
-        ]
-      },
-      "techniques": {
-        "count": 3,
-        "items": [
-          "T1048.003",
-          "T1105",
-          "T1570"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 5,
-        "items": [
-          "apt33",
-          "apt39",
-          "apt41",
-          "naikon",
-          "oilrig"
-        ]
-      }
+{
+  "item": "ftp",
+  "aliases": "none",
+  "gid": "S0095",
+  "profile": {
+    "techniques": {
+      "count": 3,
+      "items": [
+        "T1048.003",
+        "T1105",
+        "T1570"
+      ]
+    },
+    "tactics": {
+      "count": 3,
+      "items": [
+        "command-and-control",
+        "exfiltration",
+        "lateral-movement"
+      ]
+    },
+    "adversaries": {
+      "count": 5,
+      "items": [
+        "apt33",
+        "apt39",
+        "apt41",
+        "naikon",
+        "oilrig"
+      ]
     }
   }
-]
+}

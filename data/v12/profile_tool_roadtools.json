@@ -1,44 +1,35 @@
-[
-  {
-    "id": "tool--6dbdc657-d8e0-4f2f-909b-7251b3e72c6d",
-    "name": "roadtools",
-    "aliases": "none",
-    "platforms": "none",
-    "tool_id": "S0684",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 6,
-        "items": [
-          "collection",
-          "defense-evasion",
-          "discovery",
-          "initial-access",
-          "persistence",
-          "privilege-escalation"
-        ]
-      },
-      "techniques": {
-        "count": 6,
-        "items": [
-          "T1018",
-          "T1069.003",
-          "T1078.004",
-          "T1087.004",
-          "T1119",
-          "T1526"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 1,
-        "items": [
-          "apt29"
-        ]
-      }
+{
+  "item": "roadtools",
+  "aliases": "none",
+  "gid": "S0684",
+  "profile": {
+    "techniques": {
+      "count": 6,
+      "items": [
+        "T1018",
+        "T1069.003",
+        "T1078.004",
+        "T1087.004",
+        "T1119",
+        "T1526"
+      ]
+    },
+    "tactics": {
+      "count": 6,
+      "items": [
+        "collection",
+        "defense-evasion",
+        "discovery",
+        "initial-access",
+        "persistence",
+        "privilege-escalation"
+      ]
+    },
+    "adversaries": {
+      "count": 1,
+      "items": [
+        "apt29"
+      ]
     }
   }
-]
+}

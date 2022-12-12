@@ -1,0 +1,189 @@
+[
+  {
+    "item": "fin4",
+    "id": "G0085",
+    "platforms": "windows|macos|linux|network",
+    "datasources": "driver-load|os-api-execution|windows-registry-key-modification",
+    "tid": "T1056.001",
+    "technique": "Keylogging",
+    "tactic": "collection",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "fin4",
+    "id": "G0085",
+    "platforms": "windows|macos|linux|network",
+    "datasources": "driver-load|os-api-execution|windows-registry-key-modification",
+    "tid": "T1056.001",
+    "technique": "Keylogging",
+    "tactic": "credential-access",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "fin4",
+    "id": "G0085",
+    "platforms": "macos|windows|linux",
+    "datasources": "command-execution|process-creation|script-execution",
+    "tid": "T1056.002",
+    "technique": "GUI Input Capture",
+    "tactic": "collection",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "fin4",
+    "id": "G0085",
+    "platforms": "macos|windows|linux",
+    "datasources": "command-execution|process-creation|script-execution",
+    "tid": "T1056.002",
+    "technique": "GUI Input Capture",
+    "tactic": "credential-access",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "fin4",
+    "id": "G0085",
+    "platforms": "windows|macos|linux",
+    "datasources": "command-execution|module-load|process-creation|script-execution",
+    "tid": "T1059.005",
+    "technique": "Visual Basic",
+    "tactic": "execution",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "fin4",
+    "id": "G0085",
+    "platforms": "linux|macos|windows",
+    "datasources": "network-traffic-content|network-traffic-flow",
+    "tid": "T1071.001",
+    "technique": "Web Protocols",
+    "tactic": "command-and-control",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "fin4",
+    "id": "G0085",
+    "platforms": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "datasources": "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "tid": "T1078",
+    "technique": "Valid Accounts",
+    "tactic": "defense-evasion",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "fin4",
+    "id": "G0085",
+    "platforms": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "datasources": "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "tid": "T1078",
+    "technique": "Valid Accounts",
+    "tactic": "initial-access",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "fin4",
+    "id": "G0085",
+    "platforms": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "datasources": "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "tid": "T1078",
+    "technique": "Valid Accounts",
+    "tactic": "persistence",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "fin4",
+    "id": "G0085",
+    "platforms": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "datasources": "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "tid": "T1078",
+    "technique": "Valid Accounts",
+    "tactic": "privilege-escalation",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "fin4",
+    "id": "G0085",
+    "platforms": "linux|macos|windows|network",
+    "datasources": "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "tid": "T1090.003",
+    "technique": "Multi-hop Proxy",
+    "tactic": "command-and-control",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "fin4",
+    "id": "G0085",
+    "platforms": "office-365|windows|google-workspace",
+    "datasources": "command-execution|logon-session-creation|network-connection-creation",
+    "tid": "T1114.002",
+    "technique": "Remote Email Collection",
+    "tactic": "collection",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "fin4",
+    "id": "G0085",
+    "platforms": "linux|macos|windows",
+    "datasources": "file-creation|network-connection-creation|network-traffic-content",
+    "tid": "T1204.001",
+    "technique": "Malicious Link",
+    "tactic": "execution",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "fin4",
+    "id": "G0085",
+    "platforms": "linux|macos|windows",
+    "datasources": "file-creation|process-creation",
+    "tid": "T1204.002",
+    "technique": "Malicious File",
+    "tactic": "execution",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "fin4",
+    "id": "G0085",
+    "platforms": "windows|office-365|linux|macos|google-workspace",
+    "datasources": "application-log-content|command-execution|file-modification",
+    "tid": "T1564.008",
+    "technique": "Email Hiding Rules",
+    "tactic": "defense-evasion",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "fin4",
+    "id": "G0085",
+    "platforms": "macos|windows|linux",
+    "datasources": "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "tid": "T1566.001",
+    "technique": "Spearphishing Attachment",
+    "tactic": "initial-access",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "fin4",
+    "id": "G0085",
+    "platforms": "linux|macos|windows|office-365|saas|google-workspace",
+    "datasources": "application-log-content|network-traffic-content|network-traffic-flow",
+    "tid": "T1566.002",
+    "technique": "Spearphishing Link",
+    "tactic": "initial-access",
+    "malware": "none",
+    "tool": "none"
+  }
+]

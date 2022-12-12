@@ -1,66 +1,58 @@
-[
-  {
-    "id": "intrusion-set--c5b81590-6814-4d2a-8baa-15c4b6c7f960",
-    "name": "tonto-team",
-    "aliases": "tonto-team|earth-akhlut|bronze-huntley|cactuspete|karma-panda",
-    "group_id": "G0131",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 2,
-        "items": [
-          "bisonal",
-          "shadowpad"
-        ]
-      },
-      "tools": {
-        "count": 4,
-        "items": [
-          "gsecdump",
-          "lazagne",
-          "mimikatz",
-          "nbtscan"
-        ]
-      },
-      "techniques": {
-        "count": 15,
-        "items": [
-          "T1003",
-          "T1056.001",
-          "T1059.001",
-          "T1059.006",
-          "T1068",
-          "T1069.001",
-          "T1090.002",
-          "T1105",
-          "T1135",
-          "T1203",
-          "T1204.002",
-          "T1210",
-          "T1505.003",
-          "T1566.001",
-          "T1574.001"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 10,
-        "items": [
-          "collection",
-          "command-and-control",
-          "credential-access",
-          "defense-evasion",
-          "discovery",
-          "execution",
-          "initial-access",
-          "lateral-movement",
-          "persistence",
-          "privilege-escalation"
-        ]
-      }
+{
+  "item": "tonto-team",
+  "aliases": "tonto-team|earth-akhlut|bronze-huntley|cactuspete|karma-panda",
+  "gid": "G0131",
+  "profile": {
+    "techniques": {
+      "count": 15,
+      "items": [
+        "T1003",
+        "T1056.001",
+        "T1059.001",
+        "T1059.006",
+        "T1068",
+        "T1069.001",
+        "T1090.002",
+        "T1105",
+        "T1135",
+        "T1203",
+        "T1204.002",
+        "T1210",
+        "T1505.003",
+        "T1566.001",
+        "T1574.001"
+      ]
+    },
+    "tactics": {
+      "count": 10,
+      "items": [
+        "collection",
+        "command-and-control",
+        "credential-access",
+        "defense-evasion",
+        "discovery",
+        "execution",
+        "initial-access",
+        "lateral-movement",
+        "persistence",
+        "privilege-escalation"
+      ]
+    },
+    "malware": {
+      "count": 2,
+      "items": [
+        "bisonal",
+        "shadowpad"
+      ]
+    },
+    "tools": {
+      "count": 4,
+      "items": [
+        "gsecdump",
+        "lazagne",
+        "mimikatz",
+        "nbtscan"
+      ]
     }
   }
-]
+}

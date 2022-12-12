@@ -1,35 +1,26 @@
-[
-  {
-    "id": "tool--b52d6583-14a2-4ddc-8527-87fd2142558f",
-    "name": "invoke-psimage",
-    "aliases": "none",
-    "platforms": "none",
-    "tool_id": "S0231",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 1,
-        "items": [
-          "defense-evasion"
-        ]
-      },
-      "techniques": {
-        "count": 2,
-        "items": [
-          "T1027.003",
-          "T1027.009"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 1,
-        "items": [
-          "sandworm-team"
-        ]
-      }
+{
+  "item": "invoke-psimage",
+  "aliases": "none",
+  "gid": "S0231",
+  "profile": {
+    "techniques": {
+      "count": 2,
+      "items": [
+        "T1027.003",
+        "T1027.009"
+      ]
+    },
+    "tactics": {
+      "count": 1,
+      "items": [
+        "defense-evasion"
+      ]
+    },
+    "adversaries": {
+      "count": 1,
+      "items": [
+        "sandworm-team"
+      ]
     }
   }
-]
+}

@@ -1,56 +1,48 @@
-[
-  {
-    "id": "intrusion-set--03506554-5f37-4f8f-9ce4-0e9f01a1b484",
-    "name": "elderwood",
-    "aliases": "elderwood|elderwood-gang|beijing-group|sneaky-panda",
-    "group_id": "G0066",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 9,
-        "items": [
-          "briba",
-          "hydraq",
-          "linfo",
-          "naid",
-          "nerex",
-          "pasam",
-          "poisonivy",
-          "vasport",
-          "wiarp"
-        ]
-      },
-      "tools": {
-        "count": 0,
-        "items": []
-      },
-      "techniques": {
-        "count": 9,
-        "items": [
-          "T1027",
-          "T1027.002",
-          "T1105",
-          "T1189",
-          "T1203",
-          "T1204.001",
-          "T1204.002",
-          "T1566.001",
-          "T1566.002"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 4,
-        "items": [
-          "command-and-control",
-          "defense-evasion",
-          "execution",
-          "initial-access"
-        ]
-      }
+{
+  "item": "elderwood",
+  "aliases": "elderwood|elderwood-gang|beijing-group|sneaky-panda",
+  "gid": "G0066",
+  "profile": {
+    "techniques": {
+      "count": 9,
+      "items": [
+        "T1027",
+        "T1027.002",
+        "T1105",
+        "T1189",
+        "T1203",
+        "T1204.001",
+        "T1204.002",
+        "T1566.001",
+        "T1566.002"
+      ]
+    },
+    "tactics": {
+      "count": 4,
+      "items": [
+        "command-and-control",
+        "defense-evasion",
+        "execution",
+        "initial-access"
+      ]
+    },
+    "malware": {
+      "count": 9,
+      "items": [
+        "briba",
+        "hydraq",
+        "linfo",
+        "naid",
+        "nerex",
+        "pasam",
+        "poisonivy",
+        "vasport",
+        "wiarp"
+      ]
+    },
+    "tools": {
+      "count": 0,
+      "items": []
     }
   }
-]
+}

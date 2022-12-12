@@ -1,108 +1,100 @@
-[
-  {
-    "id": "intrusion-set--7113eaa5-ba79-4fb3-b68a-398ee9cd698e",
-    "name": "leviathan",
-    "aliases": "leviathan|mudcarp|kryptonite-panda|gadolinium|bronze-mohawk|temp.jumper|apt40|temp.periscope",
-    "group_id": "G0065",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 10,
-        "items": [
-          "badflick",
-          "blackcoffee",
-          "china-chopper",
-          "cobalt-strike",
-          "derusbi",
-          "gh0st-rat",
-          "homefry",
-          "murkytop",
-          "nanhaishu",
-          "orz"
-        ]
-      },
-      "tools": {
-        "count": 7,
-        "items": [
-          "at",
-          "bitsadmin",
-          "empire",
-          "net",
-          "powersploit",
-          "tor",
-          "windows-credential-editor"
-        ]
-      },
-      "techniques": {
-        "count": 44,
-        "items": [
-          "T1003",
-          "T1003.001",
-          "T1021.001",
-          "T1021.004",
-          "T1027",
-          "T1027.001",
-          "T1027.003",
-          "T1041",
-          "T1047",
-          "T1055.001",
-          "T1059.001",
-          "T1059.005",
-          "T1074.001",
-          "T1074.002",
-          "T1078",
-          "T1090.003",
-          "T1102.003",
-          "T1105",
-          "T1133",
-          "T1140",
-          "T1189",
-          "T1197",
-          "T1203",
-          "T1204.001",
-          "T1204.002",
-          "T1218.010",
-          "T1505.003",
-          "T1534",
-          "T1546.003",
-          "T1547.001",
-          "T1547.009",
-          "T1553.002",
-          "T1559.002",
-          "T1560",
-          "T1566.001",
-          "T1566.002",
-          "T1567.002",
-          "T1572",
-          "T1583.001",
-          "T1585.001",
-          "T1585.002",
-          "T1586.001",
-          "T1586.002",
-          "T1589.001"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 12,
-        "items": [
-          "collection",
-          "command-and-control",
-          "credential-access",
-          "defense-evasion",
-          "execution",
-          "exfiltration",
-          "initial-access",
-          "lateral-movement",
-          "persistence",
-          "privilege-escalation",
-          "reconnaissance",
-          "resource-development"
-        ]
-      }
+{
+  "item": "leviathan",
+  "aliases": "leviathan|mudcarp|kryptonite-panda|gadolinium|bronze-mohawk|temp.jumper|apt40|temp.periscope",
+  "gid": "G0065",
+  "profile": {
+    "techniques": {
+      "count": 44,
+      "items": [
+        "T1003",
+        "T1003.001",
+        "T1021.001",
+        "T1021.004",
+        "T1027",
+        "T1027.001",
+        "T1027.003",
+        "T1041",
+        "T1047",
+        "T1055.001",
+        "T1059.001",
+        "T1059.005",
+        "T1074.001",
+        "T1074.002",
+        "T1078",
+        "T1090.003",
+        "T1102.003",
+        "T1105",
+        "T1133",
+        "T1140",
+        "T1189",
+        "T1197",
+        "T1203",
+        "T1204.001",
+        "T1204.002",
+        "T1218.010",
+        "T1505.003",
+        "T1534",
+        "T1546.003",
+        "T1547.001",
+        "T1547.009",
+        "T1553.002",
+        "T1559.002",
+        "T1560",
+        "T1566.001",
+        "T1566.002",
+        "T1567.002",
+        "T1572",
+        "T1583.001",
+        "T1585.001",
+        "T1585.002",
+        "T1586.001",
+        "T1586.002",
+        "T1589.001"
+      ]
+    },
+    "tactics": {
+      "count": 12,
+      "items": [
+        "collection",
+        "command-and-control",
+        "credential-access",
+        "defense-evasion",
+        "execution",
+        "exfiltration",
+        "initial-access",
+        "lateral-movement",
+        "persistence",
+        "privilege-escalation",
+        "reconnaissance",
+        "resource-development"
+      ]
+    },
+    "malware": {
+      "count": 10,
+      "items": [
+        "badflick",
+        "blackcoffee",
+        "china-chopper",
+        "cobalt-strike",
+        "derusbi",
+        "gh0st-rat",
+        "homefry",
+        "murkytop",
+        "nanhaishu",
+        "orz"
+      ]
+    },
+    "tools": {
+      "count": 7,
+      "items": [
+        "at",
+        "bitsadmin",
+        "empire",
+        "net",
+        "powersploit",
+        "tor",
+        "windows-credential-editor"
+      ]
     }
   }
-]
+}

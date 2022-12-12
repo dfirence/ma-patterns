@@ -1,45 +1,37 @@
-[
-  {
-    "id": "intrusion-set--5ce5392a-3a6c-4e07-9df3-9b6a9159ac45",
-    "name": "putter-panda",
-    "aliases": "putter-panda|apt2|msupdater",
-    "group_id": "G0024",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 4,
-        "items": [
-          "3para-rat",
-          "4h-rat",
-          "httpclient",
-          "pngdowner"
-        ]
-      },
-      "tools": {
-        "count": 0,
-        "items": []
-      },
-      "techniques": {
-        "count": 4,
-        "items": [
-          "T1027",
-          "T1055.001",
-          "T1547.001",
-          "T1562.001"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 3,
-        "items": [
-          "defense-evasion",
-          "persistence",
-          "privilege-escalation"
-        ]
-      }
+{
+  "item": "putter-panda",
+  "aliases": "putter-panda|apt2|msupdater",
+  "gid": "G0024",
+  "profile": {
+    "techniques": {
+      "count": 4,
+      "items": [
+        "T1027",
+        "T1055.001",
+        "T1547.001",
+        "T1562.001"
+      ]
+    },
+    "tactics": {
+      "count": 3,
+      "items": [
+        "defense-evasion",
+        "persistence",
+        "privilege-escalation"
+      ]
+    },
+    "malware": {
+      "count": 4,
+      "items": [
+        "3para-rat",
+        "4h-rat",
+        "httpclient",
+        "pngdowner"
+      ]
+    },
+    "tools": {
+      "count": 0,
+      "items": []
     }
   }
-]
+}

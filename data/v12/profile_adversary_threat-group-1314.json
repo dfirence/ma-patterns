@@ -1,46 +1,38 @@
-[
-  {
-    "id": "intrusion-set--d519164e-f5fa-4b8c-a1fb-cf0172ad0983",
-    "name": "threat-group-1314",
-    "aliases": "threat-group-1314|tg-1314",
-    "group_id": "G0028",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 0,
-        "items": []
-      },
-      "tools": {
-        "count": 2,
-        "items": [
-          "net",
-          "psexec"
-        ]
-      },
-      "techniques": {
-        "count": 4,
-        "items": [
-          "T1021.002",
-          "T1059.003",
-          "T1072",
-          "T1078.002"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 6,
-        "items": [
-          "defense-evasion",
-          "execution",
-          "initial-access",
-          "lateral-movement",
-          "persistence",
-          "privilege-escalation"
-        ]
-      }
+{
+  "item": "threat-group-1314",
+  "aliases": "threat-group-1314|tg-1314",
+  "gid": "G0028",
+  "profile": {
+    "techniques": {
+      "count": 4,
+      "items": [
+        "T1021.002",
+        "T1059.003",
+        "T1072",
+        "T1078.002"
+      ]
+    },
+    "tactics": {
+      "count": 6,
+      "items": [
+        "defense-evasion",
+        "execution",
+        "initial-access",
+        "lateral-movement",
+        "persistence",
+        "privilege-escalation"
+      ]
+    },
+    "malware": {
+      "count": 0,
+      "items": []
+    },
+    "tools": {
+      "count": 2,
+      "items": [
+        "net",
+        "psexec"
+      ]
     }
   }
-]
+}

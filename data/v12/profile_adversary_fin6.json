@@ -1,99 +1,91 @@
-[
-  {
-    "id": "intrusion-set--2a7914cf-dff3-428d-ab0f-1014d1c28aeb",
-    "name": "fin6",
-    "aliases": "fin6|magecart-group-6|itg08|skeleton-spider",
-    "group_id": "G0037",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 8,
-        "items": [
-          "cobalt-strike",
-          "flawedammyy",
-          "frameworkpos",
-          "grimagent",
-          "lockergoga",
-          "maze",
-          "more_eggs",
-          "ryuk"
-        ]
-      },
-      "tools": {
-        "count": 4,
-        "items": [
-          "adfind",
-          "mimikatz",
-          "psexec",
-          "windows-credential-editor"
-        ]
-      },
-      "techniques": {
-        "count": 40,
-        "items": [
-          "T1003.001",
-          "T1003.003",
-          "T1005",
-          "T1018",
-          "T1021.001",
-          "T1027",
-          "T1036.004",
-          "T1046",
-          "T1047",
-          "T1048.003",
-          "T1053.005",
-          "T1059",
-          "T1059.001",
-          "T1059.003",
-          "T1059.007",
-          "T1068",
-          "T1070.004",
-          "T1074.002",
-          "T1078",
-          "T1087.002",
-          "T1095",
-          "T1102",
-          "T1110.002",
-          "T1119",
-          "T1134",
-          "T1204.002",
-          "T1213",
-          "T1547.001",
-          "T1553.002",
-          "T1555",
-          "T1555.003",
-          "T1560",
-          "T1560.003",
-          "T1562.001",
-          "T1566.001",
-          "T1566.003",
-          "T1569.002",
-          "T1572",
-          "T1573.002",
-          "T1588.002"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 12,
-        "items": [
-          "collection",
-          "command-and-control",
-          "credential-access",
-          "defense-evasion",
-          "discovery",
-          "execution",
-          "exfiltration",
-          "initial-access",
-          "lateral-movement",
-          "persistence",
-          "privilege-escalation",
-          "resource-development"
-        ]
-      }
+{
+  "item": "fin6",
+  "aliases": "fin6|magecart-group-6|itg08|skeleton-spider",
+  "gid": "G0037",
+  "profile": {
+    "techniques": {
+      "count": 40,
+      "items": [
+        "T1003.001",
+        "T1003.003",
+        "T1005",
+        "T1018",
+        "T1021.001",
+        "T1027",
+        "T1036.004",
+        "T1046",
+        "T1047",
+        "T1048.003",
+        "T1053.005",
+        "T1059",
+        "T1059.001",
+        "T1059.003",
+        "T1059.007",
+        "T1068",
+        "T1070.004",
+        "T1074.002",
+        "T1078",
+        "T1087.002",
+        "T1095",
+        "T1102",
+        "T1110.002",
+        "T1119",
+        "T1134",
+        "T1204.002",
+        "T1213",
+        "T1547.001",
+        "T1553.002",
+        "T1555",
+        "T1555.003",
+        "T1560",
+        "T1560.003",
+        "T1562.001",
+        "T1566.001",
+        "T1566.003",
+        "T1569.002",
+        "T1572",
+        "T1573.002",
+        "T1588.002"
+      ]
+    },
+    "tactics": {
+      "count": 12,
+      "items": [
+        "collection",
+        "command-and-control",
+        "credential-access",
+        "defense-evasion",
+        "discovery",
+        "execution",
+        "exfiltration",
+        "initial-access",
+        "lateral-movement",
+        "persistence",
+        "privilege-escalation",
+        "resource-development"
+      ]
+    },
+    "malware": {
+      "count": 8,
+      "items": [
+        "cobalt-strike",
+        "flawedammyy",
+        "frameworkpos",
+        "grimagent",
+        "lockergoga",
+        "maze",
+        "more_eggs",
+        "ryuk"
+      ]
+    },
+    "tools": {
+      "count": 4,
+      "items": [
+        "adfind",
+        "mimikatz",
+        "psexec",
+        "windows-credential-editor"
+      ]
     }
   }
-]
+}

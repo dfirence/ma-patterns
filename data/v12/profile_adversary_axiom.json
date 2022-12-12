@@ -1,68 +1,60 @@
-[
-  {
-    "id": "intrusion-set--a0cb9370-e39b-44d5-9f50-ef78e412b973",
-    "name": "axiom",
-    "aliases": "axiom|group-72",
-    "group_id": "G0001",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 8,
-        "items": [
-          "derusbi",
-          "gh0st-rat",
-          "hikit",
-          "hydraq",
-          "plugx",
-          "poisonivy",
-          "zox",
-          "zxshell"
-        ]
-      },
-      "tools": {
-        "count": 0,
-        "items": []
-      },
-      "techniques": {
-        "count": 16,
-        "items": [
-          "T1001.002",
-          "T1003",
-          "T1005",
-          "T1021.001",
-          "T1078",
-          "T1189",
-          "T1190",
-          "T1203",
-          "T1546.008",
-          "T1553",
-          "T1560",
-          "T1563.002",
-          "T1566",
-          "T1583.002",
-          "T1583.003",
-          "T1584.005"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 10,
-        "items": [
-          "collection",
-          "command-and-control",
-          "credential-access",
-          "defense-evasion",
-          "execution",
-          "initial-access",
-          "lateral-movement",
-          "persistence",
-          "privilege-escalation",
-          "resource-development"
-        ]
-      }
+{
+  "item": "axiom",
+  "aliases": "axiom|group-72",
+  "gid": "G0001",
+  "profile": {
+    "techniques": {
+      "count": 16,
+      "items": [
+        "T1001.002",
+        "T1003",
+        "T1005",
+        "T1021.001",
+        "T1078",
+        "T1189",
+        "T1190",
+        "T1203",
+        "T1546.008",
+        "T1553",
+        "T1560",
+        "T1563.002",
+        "T1566",
+        "T1583.002",
+        "T1583.003",
+        "T1584.005"
+      ]
+    },
+    "tactics": {
+      "count": 10,
+      "items": [
+        "collection",
+        "command-and-control",
+        "credential-access",
+        "defense-evasion",
+        "execution",
+        "initial-access",
+        "lateral-movement",
+        "persistence",
+        "privilege-escalation",
+        "resource-development"
+      ]
+    },
+    "malware": {
+      "count": 8,
+      "items": [
+        "derusbi",
+        "gh0st-rat",
+        "hikit",
+        "hydraq",
+        "plugx",
+        "poisonivy",
+        "zox",
+        "zxshell"
+      ]
+    },
+    "tools": {
+      "count": 0,
+      "items": []
     }
   }
-]
+}

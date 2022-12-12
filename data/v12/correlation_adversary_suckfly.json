@@ -1,0 +1,134 @@
+[
+  {
+    "item": "suckfly",
+    "id": "G0039",
+    "platforms": "windows|linux|macos",
+    "datasources": "active-directory-object-access|command-execution|file-access|network-traffic-content|network-traffic-flow|os-api-execution|process-access|process-creation|windows-registry-key-access",
+    "tid": "T1003",
+    "technique": "OS Credential Dumping",
+    "tactic": "credential-access",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "suckfly",
+    "id": "G0039",
+    "platforms": "windows|linux|macos",
+    "datasources": "command-execution|scheduled-job-metadata|scheduled-job-modification|service-creation|service-metadata",
+    "tid": "T1036.004",
+    "technique": "Masquerade Task or Service",
+    "tactic": "defense-evasion",
+    "malware": "nidiran",
+    "tool": "none"
+  },
+  {
+    "item": "suckfly",
+    "id": "G0039",
+    "platforms": "windows|iaas|linux|macos|containers|network",
+    "datasources": "cloud-service-enumeration|command-execution|network-traffic-flow",
+    "tid": "T1046",
+    "technique": "Network Service Discovery",
+    "tactic": "discovery",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "suckfly",
+    "id": "G0039",
+    "platforms": "windows",
+    "datasources": "command-execution|process-creation",
+    "tid": "T1059.003",
+    "technique": "Windows Command Shell",
+    "tactic": "execution",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "suckfly",
+    "id": "G0039",
+    "platforms": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "datasources": "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "tid": "T1078",
+    "technique": "Valid Accounts",
+    "tactic": "defense-evasion",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "suckfly",
+    "id": "G0039",
+    "platforms": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "datasources": "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "tid": "T1078",
+    "technique": "Valid Accounts",
+    "tactic": "initial-access",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "suckfly",
+    "id": "G0039",
+    "platforms": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "datasources": "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "tid": "T1078",
+    "technique": "Valid Accounts",
+    "tactic": "persistence",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "suckfly",
+    "id": "G0039",
+    "platforms": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "datasources": "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "tid": "T1078",
+    "technique": "Valid Accounts",
+    "tactic": "privilege-escalation",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "suckfly",
+    "id": "G0039",
+    "platforms": "linux|macos|windows",
+    "datasources": "file-creation|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "tid": "T1105",
+    "technique": "Ingress Tool Transfer",
+    "tactic": "command-and-control",
+    "malware": "nidiran",
+    "tool": "none"
+  },
+  {
+    "item": "suckfly",
+    "id": "G0039",
+    "platforms": "windows",
+    "datasources": "command-execution|driver-load|os-api-execution|process-creation|service-creation|service-modification|windows-registry-key-creation|windows-registry-key-modification",
+    "tid": "T1543.003",
+    "technique": "Windows Service",
+    "tactic": "persistence",
+    "malware": "nidiran",
+    "tool": "none"
+  },
+  {
+    "item": "suckfly",
+    "id": "G0039",
+    "platforms": "windows",
+    "datasources": "command-execution|driver-load|os-api-execution|process-creation|service-creation|service-modification|windows-registry-key-creation|windows-registry-key-modification",
+    "tid": "T1543.003",
+    "technique": "Windows Service",
+    "tactic": "privilege-escalation",
+    "malware": "nidiran",
+    "tool": "none"
+  },
+  {
+    "item": "suckfly",
+    "id": "G0039",
+    "platforms": "macos|windows",
+    "datasources": "file-metadata",
+    "tid": "T1553.002",
+    "technique": "Code Signing",
+    "tactic": "defense-evasion",
+    "malware": "none",
+    "tool": "none"
+  }
+]

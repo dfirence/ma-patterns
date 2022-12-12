@@ -1,48 +1,40 @@
-[
-  {
-    "id": "intrusion-set--e5603ea8-4c36-40e7-b7af-a077d24fedc1",
-    "name": "indigozebra",
-    "aliases": "indigozebra",
-    "group_id": "G0136",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 3,
-        "items": [
-          "boxcaon",
-          "poisonivy",
-          "xcaon"
-        ]
-      },
-      "tools": {
-        "count": 0,
-        "items": []
-      },
-      "techniques": {
-        "count": 7,
-        "items": [
-          "T1105",
-          "T1204.002",
-          "T1566.001",
-          "T1583.001",
-          "T1583.006",
-          "T1586.002",
-          "T1588.002"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 4,
-        "items": [
-          "command-and-control",
-          "execution",
-          "initial-access",
-          "resource-development"
-        ]
-      }
+{
+  "item": "indigozebra",
+  "aliases": "indigozebra",
+  "gid": "G0136",
+  "profile": {
+    "techniques": {
+      "count": 7,
+      "items": [
+        "T1105",
+        "T1204.002",
+        "T1566.001",
+        "T1583.001",
+        "T1583.006",
+        "T1586.002",
+        "T1588.002"
+      ]
+    },
+    "tactics": {
+      "count": 4,
+      "items": [
+        "command-and-control",
+        "execution",
+        "initial-access",
+        "resource-development"
+      ]
+    },
+    "malware": {
+      "count": 3,
+      "items": [
+        "boxcaon",
+        "poisonivy",
+        "xcaon"
+      ]
+    },
+    "tools": {
+      "count": 0,
+      "items": []
     }
   }
-]
+}

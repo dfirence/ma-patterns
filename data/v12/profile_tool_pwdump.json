@@ -1,39 +1,30 @@
-[
-  {
-    "id": "tool--9de2308e-7bed-43a3-8e58-f194b3586700",
-    "name": "pwdump",
-    "aliases": "none",
-    "platforms": "windows",
-    "tool_id": "S0006",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 1,
-        "items": [
-          "credential-access"
-        ]
-      },
-      "techniques": {
-        "count": 1,
-        "items": [
-          "T1003.002"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 6,
-        "items": [
-          "apt1",
-          "apt39",
-          "apt41",
-          "fin5",
-          "menupass",
-          "threat-group-3390"
-        ]
-      }
+{
+  "item": "pwdump",
+  "aliases": "none",
+  "gid": "S0006",
+  "profile": {
+    "techniques": {
+      "count": 1,
+      "items": [
+        "T1003.002"
+      ]
+    },
+    "tactics": {
+      "count": 1,
+      "items": [
+        "credential-access"
+      ]
+    },
+    "adversaries": {
+      "count": 6,
+      "items": [
+        "apt1",
+        "apt39",
+        "apt41",
+        "fin5",
+        "menupass",
+        "threat-group-3390"
+      ]
     }
   }
-]
+}

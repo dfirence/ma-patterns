@@ -1,57 +1,49 @@
-[
-  {
-    "id": "intrusion-set--8a831aaa-f3e0-47a3-bed8-a9ced744dd12",
-    "name": "dark-caracal",
-    "aliases": "dark-caracal",
-    "group_id": "G0070",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 3,
-        "items": [
-          "bandook",
-          "crossrat",
-          "finfisher"
-        ]
-      },
-      "tools": {
-        "count": 0,
-        "items": []
-      },
-      "techniques": {
-        "count": 12,
-        "items": [
-          "T1005",
-          "T1027",
-          "T1027.002",
-          "T1059.003",
-          "T1071.001",
-          "T1083",
-          "T1113",
-          "T1189",
-          "T1204.002",
-          "T1218.001",
-          "T1547.001",
-          "T1566.003"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 8,
-        "items": [
-          "collection",
-          "command-and-control",
-          "defense-evasion",
-          "discovery",
-          "execution",
-          "initial-access",
-          "persistence",
-          "privilege-escalation"
-        ]
-      }
+{
+  "item": "dark-caracal",
+  "aliases": "dark-caracal",
+  "gid": "G0070",
+  "profile": {
+    "techniques": {
+      "count": 12,
+      "items": [
+        "T1005",
+        "T1027",
+        "T1027.002",
+        "T1059.003",
+        "T1071.001",
+        "T1083",
+        "T1113",
+        "T1189",
+        "T1204.002",
+        "T1218.001",
+        "T1547.001",
+        "T1566.003"
+      ]
+    },
+    "tactics": {
+      "count": 8,
+      "items": [
+        "collection",
+        "command-and-control",
+        "defense-evasion",
+        "discovery",
+        "execution",
+        "initial-access",
+        "persistence",
+        "privilege-escalation"
+      ]
+    },
+    "malware": {
+      "count": 3,
+      "items": [
+        "bandook",
+        "crossrat",
+        "finfisher"
+      ]
+    },
+    "tools": {
+      "count": 0,
+      "items": []
     }
   }
-]
+}

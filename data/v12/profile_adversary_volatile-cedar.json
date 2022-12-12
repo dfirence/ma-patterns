@@ -1,45 +1,37 @@
-[
-  {
-    "id": "intrusion-set--b2e34388-6938-4c59-a702-80dc219e15e3",
-    "name": "volatile-cedar",
-    "aliases": "volatile-cedar|lebanese-cedar",
-    "group_id": "G0123",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 2,
-        "items": [
-          "caterpillar-webshell",
-          "explosive"
-        ]
-      },
-      "tools": {
-        "count": 0,
-        "items": []
-      },
-      "techniques": {
-        "count": 5,
-        "items": [
-          "T1105",
-          "T1190",
-          "T1505.003",
-          "T1595.002",
-          "T1595.003"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 4,
-        "items": [
-          "command-and-control",
-          "initial-access",
-          "persistence",
-          "reconnaissance"
-        ]
-      }
+{
+  "item": "volatile-cedar",
+  "aliases": "volatile-cedar|lebanese-cedar",
+  "gid": "G0123",
+  "profile": {
+    "techniques": {
+      "count": 5,
+      "items": [
+        "T1105",
+        "T1190",
+        "T1505.003",
+        "T1595.002",
+        "T1595.003"
+      ]
+    },
+    "tactics": {
+      "count": 4,
+      "items": [
+        "command-and-control",
+        "initial-access",
+        "persistence",
+        "reconnaissance"
+      ]
+    },
+    "malware": {
+      "count": 2,
+      "items": [
+        "caterpillar-webshell",
+        "explosive"
+      ]
+    },
+    "tools": {
+      "count": 0,
+      "items": []
     }
   }
-]
+}

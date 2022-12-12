@@ -1,31 +1,23 @@
-[
-  {
-    "id": "intrusion-set--28f04ed3-8e91-4805-b1f6-869020517871",
-    "name": "operation-wocao",
-    "aliases": "operation-wocao",
-    "group_id": "G0116",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 0,
-        "items": []
-      },
-      "tools": {
-        "count": 0,
-        "items": []
-      },
-      "techniques": {
-        "count": 0,
-        "items": []
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 0,
-        "items": []
-      }
+{
+  "item": "operation-wocao",
+  "aliases": "operation-wocao",
+  "gid": "G0116",
+  "profile": {
+    "techniques": {
+      "count": 0,
+      "items": []
+    },
+    "tactics": {
+      "count": 0,
+      "items": []
+    },
+    "malware": {
+      "count": 0,
+      "items": []
+    },
+    "tools": {
+      "count": 0,
+      "items": []
     }
   }
-]
+}

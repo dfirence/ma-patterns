@@ -1,47 +1,39 @@
-[
-  {
-    "id": "intrusion-set--fa19de15-6169-428d-9cd6-3ca3d56075b7",
-    "name": "ajax-security-team",
-    "aliases": "ajax-security-team|operation-woolen-goldfish|ajaxtm|rocket-kitten|flying-kitten|operation-saffron-rose",
-    "group_id": "G0130",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 0,
-        "items": []
-      },
-      "tools": {
-        "count": 2,
-        "items": [
-          "havij",
-          "sqlmap"
-        ]
-      },
-      "techniques": {
-        "count": 6,
-        "items": [
-          "T1056.001",
-          "T1105",
-          "T1204.002",
-          "T1555.003",
-          "T1566.001",
-          "T1566.003"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 5,
-        "items": [
-          "collection",
-          "command-and-control",
-          "credential-access",
-          "execution",
-          "initial-access"
-        ]
-      }
+{
+  "item": "ajax-security-team",
+  "aliases": "ajax-security-team|operation-woolen-goldfish|ajaxtm|rocket-kitten|flying-kitten|operation-saffron-rose",
+  "gid": "G0130",
+  "profile": {
+    "techniques": {
+      "count": 6,
+      "items": [
+        "T1056.001",
+        "T1105",
+        "T1204.002",
+        "T1555.003",
+        "T1566.001",
+        "T1566.003"
+      ]
+    },
+    "tactics": {
+      "count": 5,
+      "items": [
+        "collection",
+        "command-and-control",
+        "credential-access",
+        "execution",
+        "initial-access"
+      ]
+    },
+    "malware": {
+      "count": 0,
+      "items": []
+    },
+    "tools": {
+      "count": 2,
+      "items": [
+        "havij",
+        "sqlmap"
+      ]
     }
   }
-]
+}

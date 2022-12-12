@@ -1,41 +1,32 @@
-[
-  {
-    "id": "tool--7fcbc4e8-1989-441f-9ac5-e7b6ff5806f1",
-    "name": "systeminfo",
-    "aliases": "none",
-    "platforms": "none",
-    "tool_id": "S0096",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 1,
-        "items": [
-          "discovery"
-        ]
-      },
-      "techniques": {
-        "count": 1,
-        "items": [
-          "T1082"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 8,
-        "items": [
-          "admin@338",
-          "apt29",
-          "ke3chang",
-          "naikon",
-          "oilrig",
-          "orangeworm",
-          "threat-group-3390",
-          "turla"
-        ]
-      }
+{
+  "item": "systeminfo",
+  "aliases": "none",
+  "gid": "S0096",
+  "profile": {
+    "techniques": {
+      "count": 1,
+      "items": [
+        "T1082"
+      ]
+    },
+    "tactics": {
+      "count": 1,
+      "items": [
+        "discovery"
+      ]
+    },
+    "adversaries": {
+      "count": 8,
+      "items": [
+        "admin@338",
+        "apt29",
+        "ke3chang",
+        "naikon",
+        "oilrig",
+        "orangeworm",
+        "threat-group-3390",
+        "turla"
+      ]
     }
   }
-]
+}

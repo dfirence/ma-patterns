@@ -1,0 +1,156 @@
+[
+  {
+    "item": "scarlet-mimic",
+    "id": "none",
+    "platforms": "linux|windows|macos",
+    "datasources": "network-traffic-content",
+    "tid": "T1001.003",
+    "technique": "Protocol Impersonation",
+    "tactic": "command-and-control",
+    "malware": "fakem",
+    "tool": "none"
+  },
+  {
+    "item": "scarlet-mimic",
+    "id": "none",
+    "platforms": "linux|macos|windows|network",
+    "datasources": "command-execution|file-access|os-api-execution|process-creation|script-execution",
+    "tid": "T1005",
+    "technique": "Data from Local System",
+    "tactic": "collection",
+    "malware": "mobileorder",
+    "tool": "none"
+  },
+  {
+    "item": "scarlet-mimic",
+    "id": "none",
+    "platforms": "linux|macos|windows",
+    "datasources": "file-metadata",
+    "tid": "T1036.002",
+    "technique": "Right-to-Left Override",
+    "tactic": "defense-evasion",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "scarlet-mimic",
+    "id": "none",
+    "platforms": "linux|macos|windows",
+    "datasources": "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "tid": "T1041",
+    "technique": "Exfiltration Over C2 Channel",
+    "tactic": "exfiltration",
+    "malware": "callme|mobileorder|psylo",
+    "tool": ""
+  },
+  {
+    "item": "scarlet-mimic",
+    "id": "none",
+    "platforms": "windows|macos|linux|network",
+    "datasources": "driver-load|os-api-execution|windows-registry-key-modification",
+    "tid": "T1056.001",
+    "technique": "Keylogging",
+    "tactic": "collection",
+    "malware": "fakem",
+    "tool": "none"
+  },
+  {
+    "item": "scarlet-mimic",
+    "id": "none",
+    "platforms": "windows|macos|linux|network",
+    "datasources": "driver-load|os-api-execution|windows-registry-key-modification",
+    "tid": "T1056.001",
+    "technique": "Keylogging",
+    "tactic": "credential-access",
+    "malware": "fakem",
+    "tool": "none"
+  },
+  {
+    "item": "scarlet-mimic",
+    "id": "none",
+    "platforms": "linux|macos|windows",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "tid": "T1057",
+    "technique": "Process Discovery",
+    "tactic": "discovery",
+    "malware": "mobileorder",
+    "tool": "none"
+  },
+  {
+    "item": "scarlet-mimic",
+    "id": "none",
+    "platforms": "macos|linux",
+    "datasources": "command-execution|process-creation",
+    "tid": "T1059.004",
+    "technique": "Unix Shell",
+    "tactic": "execution",
+    "malware": "callme",
+    "tool": "none"
+  },
+  {
+    "item": "scarlet-mimic",
+    "id": "none",
+    "platforms": "linux|macos|windows",
+    "datasources": "file-metadata|file-modification",
+    "tid": "T1070.006",
+    "technique": "Timestomp",
+    "tactic": "defense-evasion",
+    "malware": "psylo",
+    "tool": "none"
+  },
+  {
+    "item": "scarlet-mimic",
+    "id": "none",
+    "platforms": "linux|macos|windows",
+    "datasources": "network-traffic-content|network-traffic-flow",
+    "tid": "T1071.001",
+    "technique": "Web Protocols",
+    "tactic": "command-and-control",
+    "malware": "psylo",
+    "tool": "none"
+  },
+  {
+    "item": "scarlet-mimic",
+    "id": "none",
+    "platforms": "windows|iaas|linux|macos|network",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "tid": "T1082",
+    "technique": "System Information Discovery",
+    "tactic": "discovery",
+    "malware": "mobileorder",
+    "tool": "none"
+  },
+  {
+    "item": "scarlet-mimic",
+    "id": "none",
+    "platforms": "windows|linux|macos|network",
+    "datasources": "network-traffic-content|network-traffic-flow",
+    "tid": "T1095",
+    "technique": "Non-Application Layer Protocol",
+    "tactic": "command-and-control",
+    "malware": "fakem",
+    "tool": "none"
+  },
+  {
+    "item": "scarlet-mimic",
+    "id": "none",
+    "platforms": "linux|macos|windows",
+    "datasources": "file-creation|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "tid": "T1105",
+    "technique": "Ingress Tool Transfer",
+    "tactic": "command-and-control",
+    "malware": "callme|mobileorder|psylo",
+    "tool": ""
+  },
+  {
+    "item": "scarlet-mimic",
+    "id": "none",
+    "platforms": "linux|windows|macos",
+    "datasources": "command-execution|file-access|process-creation",
+    "tid": "T1217",
+    "technique": "Browser Bookmark Discovery",
+    "tactic": "discovery",
+    "malware": "mobileorder",
+    "tool": "none"
+  }
+]

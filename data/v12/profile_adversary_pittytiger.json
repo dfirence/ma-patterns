@@ -1,47 +1,39 @@
-[
-  {
-    "id": "intrusion-set--fe98767f-9df8-42b9-83c9-004b1dec8647",
-    "name": "pittytiger",
-    "aliases": "pittytiger",
-    "group_id": "G0011",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 3,
-        "items": [
-          "gh0st-rat",
-          "lurid",
-          "poisonivy"
-        ]
-      },
-      "tools": {
-        "count": 2,
-        "items": [
-          "gsecdump",
-          "mimikatz"
-        ]
-      },
-      "techniques": {
-        "count": 2,
-        "items": [
-          "T1078",
-          "T1588.002"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 5,
-        "items": [
-          "defense-evasion",
-          "initial-access",
-          "persistence",
-          "privilege-escalation",
-          "resource-development"
-        ]
-      }
+{
+  "item": "pittytiger",
+  "aliases": "pittytiger",
+  "gid": "G0011",
+  "profile": {
+    "techniques": {
+      "count": 2,
+      "items": [
+        "T1078",
+        "T1588.002"
+      ]
+    },
+    "tactics": {
+      "count": 5,
+      "items": [
+        "defense-evasion",
+        "initial-access",
+        "persistence",
+        "privilege-escalation",
+        "resource-development"
+      ]
+    },
+    "malware": {
+      "count": 3,
+      "items": [
+        "gh0st-rat",
+        "lurid",
+        "poisonivy"
+      ]
+    },
+    "tools": {
+      "count": 2,
+      "items": [
+        "gsecdump",
+        "mimikatz"
+      ]
     }
   }
-]
+}

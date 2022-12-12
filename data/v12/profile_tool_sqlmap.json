@@ -1,34 +1,25 @@
-[
-  {
-    "id": "tool--9a2640c2-9f43-46fe-b13f-bde881e55555",
-    "name": "sqlmap",
-    "aliases": "none",
-    "platforms": "none",
-    "tool_id": "S0225",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 1,
-        "items": [
-          "initial-access"
-        ]
-      },
-      "techniques": {
-        "count": 1,
-        "items": [
-          "T1190"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 1,
-        "items": [
-          "ajax-security-team"
-        ]
-      }
+{
+  "item": "sqlmap",
+  "aliases": "none",
+  "gid": "S0225",
+  "profile": {
+    "techniques": {
+      "count": 1,
+      "items": [
+        "T1190"
+      ]
+    },
+    "tactics": {
+      "count": 1,
+      "items": [
+        "initial-access"
+      ]
+    },
+    "adversaries": {
+      "count": 1,
+      "items": [
+        "ajax-security-team"
+      ]
     }
   }
-]
+}

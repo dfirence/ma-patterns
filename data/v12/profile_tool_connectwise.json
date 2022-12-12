@@ -1,38 +1,29 @@
-[
-  {
-    "id": "tool--842976c7-f9c8-41b2-8371-41dc64fbe261",
-    "name": "connectwise",
-    "aliases": "none",
-    "platforms": "windows",
-    "tool_id": "S0591",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 2,
-        "items": [
-          "collection",
-          "execution"
-        ]
-      },
-      "techniques": {
-        "count": 3,
-        "items": [
-          "T1059.001",
-          "T1113",
-          "T1125"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 2,
-        "items": [
-          "gold-southfield",
-          "muddywater"
-        ]
-      }
+{
+  "item": "connectwise",
+  "aliases": "none",
+  "gid": "S0591",
+  "profile": {
+    "techniques": {
+      "count": 3,
+      "items": [
+        "T1059.001",
+        "T1113",
+        "T1125"
+      ]
+    },
+    "tactics": {
+      "count": 2,
+      "items": [
+        "collection",
+        "execution"
+      ]
+    },
+    "adversaries": {
+      "count": 2,
+      "items": [
+        "gold-southfield",
+        "muddywater"
+      ]
     }
   }
-]
+}

@@ -1,0 +1,13 @@
+[
+  {
+    "item": "blackoasis",
+    "id": "G0063",
+    "platforms": "linux|macos|windows",
+    "datasources": "command-execution|file-creation|file-metadata|module-load|os-api-execution|process-creation",
+    "tid": "T1027",
+    "technique": "Obfuscated Files or Information",
+    "tactic": "defense-evasion",
+    "malware": "none",
+    "tool": "none"
+  }
+]

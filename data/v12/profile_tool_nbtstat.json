@@ -1,35 +1,26 @@
-[
-  {
-    "id": "tool--b35068ec-107a-4266-bda8-eb7036267aea",
-    "name": "nbtstat",
-    "aliases": "none",
-    "platforms": "none",
-    "tool_id": "S0102",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 1,
-        "items": [
-          "discovery"
-        ]
-      },
-      "techniques": {
-        "count": 2,
-        "items": [
-          "T1016",
-          "T1049"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 1,
-        "items": [
-          "turla"
-        ]
-      }
+{
+  "item": "nbtstat",
+  "aliases": "none",
+  "gid": "S0102",
+  "profile": {
+    "techniques": {
+      "count": 2,
+      "items": [
+        "T1016",
+        "T1049"
+      ]
+    },
+    "tactics": {
+      "count": 1,
+      "items": [
+        "discovery"
+      ]
+    },
+    "adversaries": {
+      "count": 1,
+      "items": [
+        "turla"
+      ]
     }
   }
-]
+}

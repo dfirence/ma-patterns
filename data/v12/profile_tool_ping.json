@@ -1,42 +1,33 @@
-[
-  {
-    "id": "tool--b77b563c-34bb-4fb8-86a3-3694338f7b47",
-    "name": "ping",
-    "aliases": "none",
-    "platforms": "none",
-    "tool_id": "S0097",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 1,
-        "items": [
-          "discovery"
-        ]
-      },
-      "techniques": {
-        "count": 1,
-        "items": [
-          "T1018"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 9,
-        "items": [
-          "apt41",
-          "deep-panda",
-          "gallium",
-          "gamaredon-group",
-          "hexane",
-          "ke3chang",
-          "menupass",
-          "naikon",
-          "wizard-spider"
-        ]
-      }
+{
+  "item": "ping",
+  "aliases": "none",
+  "gid": "S0097",
+  "profile": {
+    "techniques": {
+      "count": 1,
+      "items": [
+        "T1018"
+      ]
+    },
+    "tactics": {
+      "count": 1,
+      "items": [
+        "discovery"
+      ]
+    },
+    "adversaries": {
+      "count": 9,
+      "items": [
+        "apt41",
+        "deep-panda",
+        "gallium",
+        "gamaredon-group",
+        "hexane",
+        "ke3chang",
+        "menupass",
+        "naikon",
+        "wizard-spider"
+      ]
     }
   }
-]
+}

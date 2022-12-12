@@ -1,61 +1,52 @@
-[
-  {
-    "id": "tool--2c5281dd-b5fd-4531-8aea-c1bf8a0f8756",
-    "name": "aadinternals",
-    "aliases": "none",
-    "platforms": "windows|azure-ad|office-365",
-    "tool_id": "S0677",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 8,
-        "items": [
-          "credential-access",
-          "defense-evasion",
-          "discovery",
-          "execution",
-          "initial-access",
-          "persistence",
-          "privilege-escalation",
-          "reconnaissance"
-        ]
-      },
-      "techniques": {
-        "count": 21,
-        "items": [
-          "T1003.004",
-          "T1059.001",
-          "T1069.003",
-          "T1087.004",
-          "T1098.005",
-          "T1112",
-          "T1136.003",
-          "T1484.002",
-          "T1526",
-          "T1528",
-          "T1552.001",
-          "T1552.004",
-          "T1556.006",
-          "T1556.007",
-          "T1558.002",
-          "T1566.002",
-          "T1589.002",
-          "T1590.001",
-          "T1598.003",
-          "T1606.002",
-          "T1649"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 1,
-        "items": [
-          "apt29"
-        ]
-      }
+{
+  "item": "aadinternals",
+  "aliases": "none",
+  "gid": "S0677",
+  "profile": {
+    "techniques": {
+      "count": 21,
+      "items": [
+        "T1003.004",
+        "T1059.001",
+        "T1069.003",
+        "T1087.004",
+        "T1098.005",
+        "T1112",
+        "T1136.003",
+        "T1484.002",
+        "T1526",
+        "T1528",
+        "T1552.001",
+        "T1552.004",
+        "T1556.006",
+        "T1556.007",
+        "T1558.002",
+        "T1566.002",
+        "T1589.002",
+        "T1590.001",
+        "T1598.003",
+        "T1606.002",
+        "T1649"
+      ]
+    },
+    "tactics": {
+      "count": 8,
+      "items": [
+        "credential-access",
+        "defense-evasion",
+        "discovery",
+        "execution",
+        "initial-access",
+        "persistence",
+        "privilege-escalation",
+        "reconnaissance"
+      ]
+    },
+    "adversaries": {
+      "count": 1,
+      "items": [
+        "apt29"
+      ]
     }
   }
-]
+}

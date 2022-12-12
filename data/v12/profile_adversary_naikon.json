@@ -1,70 +1,62 @@
-[
-  {
-    "id": "intrusion-set--2a158b0a-7ef8-43cb-9985-bf34d1e12050",
-    "name": "naikon",
-    "aliases": "naikon",
-    "group_id": "G0019",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 8,
-        "items": [
-          "aria-body",
-          "hdoor",
-          "nebulae",
-          "rainyday",
-          "rarstone",
-          "sslmm",
-          "sys10",
-          "winmm"
-        ]
-      },
-      "tools": {
-        "count": 7,
-        "items": [
-          "ftp",
-          "net",
-          "netsh",
-          "ping",
-          "psexec",
-          "systeminfo",
-          "tasklist"
-        ]
-      },
-      "techniques": {
-        "count": 14,
-        "items": [
-          "T1016",
-          "T1018",
-          "T1036.004",
-          "T1036.005",
-          "T1046",
-          "T1047",
-          "T1053.005",
-          "T1078.002",
-          "T1137.006",
-          "T1204.002",
-          "T1518.001",
-          "T1547.001",
-          "T1566.001",
-          "T1574.002"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 6,
-        "items": [
-          "defense-evasion",
-          "discovery",
-          "execution",
-          "initial-access",
-          "persistence",
-          "privilege-escalation"
-        ]
-      }
+{
+  "item": "naikon",
+  "aliases": "naikon",
+  "gid": "G0019",
+  "profile": {
+    "techniques": {
+      "count": 14,
+      "items": [
+        "T1016",
+        "T1018",
+        "T1036.004",
+        "T1036.005",
+        "T1046",
+        "T1047",
+        "T1053.005",
+        "T1078.002",
+        "T1137.006",
+        "T1204.002",
+        "T1518.001",
+        "T1547.001",
+        "T1566.001",
+        "T1574.002"
+      ]
+    },
+    "tactics": {
+      "count": 6,
+      "items": [
+        "defense-evasion",
+        "discovery",
+        "execution",
+        "initial-access",
+        "persistence",
+        "privilege-escalation"
+      ]
+    },
+    "malware": {
+      "count": 8,
+      "items": [
+        "aria-body",
+        "hdoor",
+        "nebulae",
+        "rainyday",
+        "rarstone",
+        "sslmm",
+        "sys10",
+        "winmm"
+      ]
+    },
+    "tools": {
+      "count": 7,
+      "items": [
+        "ftp",
+        "net",
+        "netsh",
+        "ping",
+        "psexec",
+        "systeminfo",
+        "tasklist"
+      ]
     }
   }
-]
+}

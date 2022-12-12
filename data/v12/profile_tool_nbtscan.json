@@ -1,46 +1,37 @@
-[
-  {
-    "id": "tool--b63970b7-ddfb-4aee-97b1-80d335e033a8",
-    "name": "nbtscan",
-    "aliases": "none",
-    "platforms": "windows|linux|macos",
-    "tool_id": "S0590",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 2,
-        "items": [
-          "credential-access",
-          "discovery"
-        ]
-      },
-      "techniques": {
-        "count": 5,
-        "items": [
-          "T1016",
-          "T1018",
-          "T1033",
-          "T1040",
-          "T1046"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 8,
-        "items": [
-          "apt39",
-          "backdoordiplomacy",
-          "earth-lusca",
-          "gallium",
-          "mustang-panda",
-          "threat-group-3390",
-          "tonto-team",
-          "turla"
-        ]
-      }
+{
+  "item": "nbtscan",
+  "aliases": "none",
+  "gid": "S0590",
+  "profile": {
+    "techniques": {
+      "count": 5,
+      "items": [
+        "T1016",
+        "T1018",
+        "T1033",
+        "T1040",
+        "T1046"
+      ]
+    },
+    "tactics": {
+      "count": 2,
+      "items": [
+        "credential-access",
+        "discovery"
+      ]
+    },
+    "adversaries": {
+      "count": 8,
+      "items": [
+        "apt39",
+        "backdoordiplomacy",
+        "earth-lusca",
+        "gallium",
+        "mustang-panda",
+        "threat-group-3390",
+        "tonto-team",
+        "turla"
+      ]
     }
   }
-]
+}

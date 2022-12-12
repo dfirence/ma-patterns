@@ -1,39 +1,30 @@
-[
-  {
-    "id": "tool--b07c2c47-fefb-4d7c-a69e-6a3296171f54",
-    "name": "gsecdump",
-    "aliases": "none",
-    "platforms": "windows",
-    "tool_id": "S0008",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 1,
-        "items": [
-          "credential-access"
-        ]
-      },
-      "techniques": {
-        "count": 2,
-        "items": [
-          "T1003.002",
-          "T1003.004"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 5,
-        "items": [
-          "apt1",
-          "bronze-butler",
-          "pittytiger",
-          "threat-group-3390",
-          "tonto-team"
-        ]
-      }
+{
+  "item": "gsecdump",
+  "aliases": "none",
+  "gid": "S0008",
+  "profile": {
+    "techniques": {
+      "count": 2,
+      "items": [
+        "T1003.002",
+        "T1003.004"
+      ]
+    },
+    "tactics": {
+      "count": 1,
+      "items": [
+        "credential-access"
+      ]
+    },
+    "adversaries": {
+      "count": 5,
+      "items": [
+        "apt1",
+        "bronze-butler",
+        "pittytiger",
+        "threat-group-3390",
+        "tonto-team"
+      ]
     }
   }
-]
+}

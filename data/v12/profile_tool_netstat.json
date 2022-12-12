@@ -1,41 +1,32 @@
-[
-  {
-    "id": "tool--4664b683-f578-434f-919b-1c1aad2a1111",
-    "name": "netstat",
-    "aliases": "none",
-    "platforms": "none",
-    "tool_id": "S0104",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 1,
-        "items": [
-          "discovery"
-        ]
-      },
-      "techniques": {
-        "count": 1,
-        "items": [
-          "T1049"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 8,
-        "items": [
-          "admin@338",
-          "apt41",
-          "hexane",
-          "ke3chang",
-          "oilrig",
-          "orangeworm",
-          "threat-group-3390",
-          "turla"
-        ]
-      }
+{
+  "item": "netstat",
+  "aliases": "none",
+  "gid": "S0104",
+  "profile": {
+    "techniques": {
+      "count": 1,
+      "items": [
+        "T1049"
+      ]
+    },
+    "tactics": {
+      "count": 1,
+      "items": [
+        "discovery"
+      ]
+    },
+    "adversaries": {
+      "count": 8,
+      "items": [
+        "admin@338",
+        "apt41",
+        "hexane",
+        "ke3chang",
+        "oilrig",
+        "orangeworm",
+        "threat-group-3390",
+        "turla"
+      ]
     }
   }
-]
+}

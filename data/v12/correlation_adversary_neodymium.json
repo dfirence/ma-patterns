@@ -1,0 +1,156 @@
+[
+  {
+    "item": "neodymium",
+    "id": "none",
+    "platforms": "linux|macos|windows",
+    "datasources": "file-metadata|file-modification|module-load|os-api-execution|process-access|process-metadata|process-modification",
+    "tid": "T1055",
+    "technique": "Process Injection",
+    "tactic": "defense-evasion",
+    "malware": "wingbird",
+    "tool": "none"
+  },
+  {
+    "item": "neodymium",
+    "id": "none",
+    "platforms": "linux|macos|windows",
+    "datasources": "file-metadata|file-modification|module-load|os-api-execution|process-access|process-metadata|process-modification",
+    "tid": "T1055",
+    "technique": "Process Injection",
+    "tactic": "privilege-escalation",
+    "malware": "wingbird",
+    "tool": "none"
+  },
+  {
+    "item": "neodymium",
+    "id": "none",
+    "platforms": "linux|macos|windows|containers",
+    "datasources": "driver-load|process-creation",
+    "tid": "T1068",
+    "technique": "Exploitation for Privilege Escalation",
+    "tactic": "privilege-escalation",
+    "malware": "wingbird",
+    "tool": "none"
+  },
+  {
+    "item": "neodymium",
+    "id": "none",
+    "platforms": "linux|macos|windows",
+    "datasources": "command-execution|file-deletion",
+    "tid": "T1070.004",
+    "technique": "File Deletion",
+    "tactic": "defense-evasion",
+    "malware": "wingbird",
+    "tool": "none"
+  },
+  {
+    "item": "neodymium",
+    "id": "none",
+    "platforms": "windows|iaas|linux|macos|network",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "tid": "T1082",
+    "technique": "System Information Discovery",
+    "tactic": "discovery",
+    "malware": "wingbird",
+    "tool": "none"
+  },
+  {
+    "item": "neodymium",
+    "id": "none",
+    "platforms": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace",
+    "datasources": "command-execution|firewall-enumeration|firewall-metadata|os-api-execution|process-creation",
+    "tid": "T1518.001",
+    "technique": "Security Software Discovery",
+    "tactic": "discovery",
+    "malware": "wingbird",
+    "tool": "none"
+  },
+  {
+    "item": "neodymium",
+    "id": "none",
+    "platforms": "windows",
+    "datasources": "command-execution|driver-load|os-api-execution|process-creation|service-creation|service-modification|windows-registry-key-creation|windows-registry-key-modification",
+    "tid": "T1543.003",
+    "technique": "Windows Service",
+    "tactic": "persistence",
+    "malware": "wingbird",
+    "tool": "none"
+  },
+  {
+    "item": "neodymium",
+    "id": "none",
+    "platforms": "windows",
+    "datasources": "command-execution|driver-load|os-api-execution|process-creation|service-creation|service-modification|windows-registry-key-creation|windows-registry-key-modification",
+    "tid": "T1543.003",
+    "technique": "Windows Service",
+    "tactic": "privilege-escalation",
+    "malware": "wingbird",
+    "tool": "none"
+  },
+  {
+    "item": "neodymium",
+    "id": "none",
+    "platforms": "windows",
+    "datasources": "driver-load|file-creation|file-modification|module-load",
+    "tid": "T1547.008",
+    "technique": "LSASS Driver",
+    "tactic": "persistence",
+    "malware": "wingbird",
+    "tool": "none"
+  },
+  {
+    "item": "neodymium",
+    "id": "none",
+    "platforms": "windows",
+    "datasources": "driver-load|file-creation|file-modification|module-load",
+    "tid": "T1547.008",
+    "technique": "LSASS Driver",
+    "tactic": "privilege-escalation",
+    "malware": "wingbird",
+    "tool": "none"
+  },
+  {
+    "item": "neodymium",
+    "id": "none",
+    "platforms": "windows",
+    "datasources": "command-execution|process-creation|service-creation|windows-registry-key-modification",
+    "tid": "T1569.002",
+    "technique": "Service Execution",
+    "tactic": "execution",
+    "malware": "wingbird",
+    "tool": "none"
+  },
+  {
+    "item": "neodymium",
+    "id": "none",
+    "platforms": "windows",
+    "datasources": "file-creation|file-modification|module-load|process-creation",
+    "tid": "T1574.002",
+    "technique": "DLL Side-Loading",
+    "tactic": "defense-evasion",
+    "malware": "wingbird",
+    "tool": "none"
+  },
+  {
+    "item": "neodymium",
+    "id": "none",
+    "platforms": "windows",
+    "datasources": "file-creation|file-modification|module-load|process-creation",
+    "tid": "T1574.002",
+    "technique": "DLL Side-Loading",
+    "tactic": "persistence",
+    "malware": "wingbird",
+    "tool": "none"
+  },
+  {
+    "item": "neodymium",
+    "id": "none",
+    "platforms": "windows",
+    "datasources": "file-creation|file-modification|module-load|process-creation",
+    "tid": "T1574.002",
+    "technique": "DLL Side-Loading",
+    "tactic": "privilege-escalation",
+    "malware": "wingbird",
+    "tool": "none"
+  }
+]

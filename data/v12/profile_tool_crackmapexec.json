@@ -1,62 +1,53 @@
-[
-  {
-    "id": "tool--c4810609-7da6-48ec-8057-1b70a7814db0",
-    "name": "crackmapexec",
-    "aliases": "none",
-    "platforms": "windows",
-    "tool_id": "S0488",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 7,
-        "items": [
-          "credential-access",
-          "defense-evasion",
-          "discovery",
-          "execution",
-          "lateral-movement",
-          "persistence",
-          "privilege-escalation"
-        ]
-      },
-      "techniques": {
-        "count": 20,
-        "items": [
-          "T1003.002",
-          "T1003.003",
-          "T1003.004",
-          "T1016",
-          "T1018",
-          "T1047",
-          "T1049",
-          "T1053.002",
-          "T1059.001",
-          "T1069.002",
-          "T1082",
-          "T1083",
-          "T1087.002",
-          "T1110",
-          "T1110.001",
-          "T1110.003",
-          "T1112",
-          "T1135",
-          "T1201",
-          "T1550.002"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 4,
-        "items": [
-          "apt39",
-          "dragonfly",
-          "fin7",
-          "muddywater"
-        ]
-      }
+{
+  "item": "crackmapexec",
+  "aliases": "none",
+  "gid": "S0488",
+  "profile": {
+    "techniques": {
+      "count": 20,
+      "items": [
+        "T1003.002",
+        "T1003.003",
+        "T1003.004",
+        "T1016",
+        "T1018",
+        "T1047",
+        "T1049",
+        "T1053.002",
+        "T1059.001",
+        "T1069.002",
+        "T1082",
+        "T1083",
+        "T1087.002",
+        "T1110",
+        "T1110.001",
+        "T1110.003",
+        "T1112",
+        "T1135",
+        "T1201",
+        "T1550.002"
+      ]
+    },
+    "tactics": {
+      "count": 7,
+      "items": [
+        "credential-access",
+        "defense-evasion",
+        "discovery",
+        "execution",
+        "lateral-movement",
+        "persistence",
+        "privilege-escalation"
+      ]
+    },
+    "adversaries": {
+      "count": 4,
+      "items": [
+        "apt39",
+        "dragonfly",
+        "fin7",
+        "muddywater"
+      ]
     }
   }
-]
+}

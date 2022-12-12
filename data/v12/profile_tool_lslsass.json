@@ -1,34 +1,25 @@
-[
-  {
-    "id": "tool--2fab555f-7664-4623-b4e0-1675ae38190b",
-    "name": "lslsass",
-    "aliases": "none",
-    "platforms": "windows",
-    "tool_id": "S0121",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 1,
-        "items": [
-          "credential-access"
-        ]
-      },
-      "techniques": {
-        "count": 1,
-        "items": [
-          "T1003.001"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 1,
-        "items": [
-          "apt1"
-        ]
-      }
+{
+  "item": "lslsass",
+  "aliases": "none",
+  "gid": "S0121",
+  "profile": {
+    "techniques": {
+      "count": 1,
+      "items": [
+        "T1003.001"
+      ]
+    },
+    "tactics": {
+      "count": 1,
+      "items": [
+        "credential-access"
+      ]
+    },
+    "adversaries": {
+      "count": 1,
+      "items": [
+        "apt1"
+      ]
     }
   }
-]
+}

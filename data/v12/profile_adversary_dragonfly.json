@@ -1,113 +1,105 @@
-[
-  {
-    "id": "intrusion-set--1c63d4ec-0a75-4daa-b1df-0d11af3d3cc1",
-    "name": "dragonfly",
-    "aliases": "dragonfly|temp.isotope|dymalloy|berserk-bear|tg-4192|crouching-yeti|iron-liberty|energetic-bear",
-    "group_id": "G0035",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 2,
-        "items": [
-          "backdoor.oldrea",
-          "trojan.karagany"
-        ]
-      },
-      "tools": {
-        "count": 8,
-        "items": [
-          "crackmapexec",
-          "impacket",
-          "mcmd",
-          "mimikatz",
-          "net",
-          "netsh",
-          "psexec",
-          "reg"
-        ]
-      },
-      "techniques": {
-        "count": 56,
-        "items": [
-          "T1003.002",
-          "T1003.003",
-          "T1003.004",
-          "T1005",
-          "T1012",
-          "T1016",
-          "T1018",
-          "T1021.001",
-          "T1033",
-          "T1036",
-          "T1053.005",
-          "T1059",
-          "T1059.001",
-          "T1059.003",
-          "T1059.006",
-          "T1069.002",
-          "T1070.001",
-          "T1070.004",
-          "T1071",
-          "T1074.001",
-          "T1078",
-          "T1083",
-          "T1087.002",
-          "T1098",
-          "T1105",
-          "T1110",
-          "T1110.002",
-          "T1112",
-          "T1113",
-          "T1114.002",
-          "T1133",
-          "T1135",
-          "T1136.001",
-          "T1187",
-          "T1189",
-          "T1190",
-          "T1195.002",
-          "T1203",
-          "T1204.002",
-          "T1210",
-          "T1221",
-          "T1505.003",
-          "T1547.001",
-          "T1560",
-          "T1562.004",
-          "T1564.002",
-          "T1566.001",
-          "T1583.001",
-          "T1583.003",
-          "T1584.004",
-          "T1588.002",
-          "T1591.002",
-          "T1595.002",
-          "T1598.002",
-          "T1598.003",
-          "T1608.004"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 12,
-        "items": [
-          "collection",
-          "command-and-control",
-          "credential-access",
-          "defense-evasion",
-          "discovery",
-          "execution",
-          "initial-access",
-          "lateral-movement",
-          "persistence",
-          "privilege-escalation",
-          "reconnaissance",
-          "resource-development"
-        ]
-      }
+{
+  "item": "dragonfly",
+  "aliases": "dragonfly|temp.isotope|dymalloy|berserk-bear|tg-4192|crouching-yeti|iron-liberty|energetic-bear",
+  "gid": "G0035",
+  "profile": {
+    "techniques": {
+      "count": 56,
+      "items": [
+        "T1003.002",
+        "T1003.003",
+        "T1003.004",
+        "T1005",
+        "T1012",
+        "T1016",
+        "T1018",
+        "T1021.001",
+        "T1033",
+        "T1036",
+        "T1053.005",
+        "T1059",
+        "T1059.001",
+        "T1059.003",
+        "T1059.006",
+        "T1069.002",
+        "T1070.001",
+        "T1070.004",
+        "T1071",
+        "T1074.001",
+        "T1078",
+        "T1083",
+        "T1087.002",
+        "T1098",
+        "T1105",
+        "T1110",
+        "T1110.002",
+        "T1112",
+        "T1113",
+        "T1114.002",
+        "T1133",
+        "T1135",
+        "T1136.001",
+        "T1187",
+        "T1189",
+        "T1190",
+        "T1195.002",
+        "T1203",
+        "T1204.002",
+        "T1210",
+        "T1221",
+        "T1505.003",
+        "T1547.001",
+        "T1560",
+        "T1562.004",
+        "T1564.002",
+        "T1566.001",
+        "T1583.001",
+        "T1583.003",
+        "T1584.004",
+        "T1588.002",
+        "T1591.002",
+        "T1595.002",
+        "T1598.002",
+        "T1598.003",
+        "T1608.004"
+      ]
+    },
+    "tactics": {
+      "count": 12,
+      "items": [
+        "collection",
+        "command-and-control",
+        "credential-access",
+        "defense-evasion",
+        "discovery",
+        "execution",
+        "initial-access",
+        "lateral-movement",
+        "persistence",
+        "privilege-escalation",
+        "reconnaissance",
+        "resource-development"
+      ]
+    },
+    "malware": {
+      "count": 2,
+      "items": [
+        "backdoor.oldrea",
+        "trojan.karagany"
+      ]
+    },
+    "tools": {
+      "count": 8,
+      "items": [
+        "crackmapexec",
+        "impacket",
+        "mcmd",
+        "mimikatz",
+        "net",
+        "netsh",
+        "psexec",
+        "reg"
+      ]
     }
   }
-]
+}

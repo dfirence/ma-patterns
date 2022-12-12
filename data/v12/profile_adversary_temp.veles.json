@@ -1,65 +1,57 @@
-[
-  {
-    "id": "intrusion-set--9538b1a4-4120-4e2d-bf59-3b11fcab05a4",
-    "name": "temp.veles",
-    "aliases": "temp.veles|xenotime",
-    "group_id": "G0088",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 1,
-        "items": [
-          "triton"
-        ]
-      },
-      "tools": {
-        "count": 2,
-        "items": [
-          "mimikatz",
-          "psexec"
-        ]
-      },
-      "techniques": {
-        "count": 17,
-        "items": [
-          "T1003.001",
-          "T1021.001",
-          "T1021.004",
-          "T1027.005",
-          "T1036.005",
-          "T1053.005",
-          "T1059.001",
-          "T1070.004",
-          "T1070.006",
-          "T1074.001",
-          "T1078",
-          "T1133",
-          "T1505.003",
-          "T1546.012",
-          "T1571",
-          "T1583.003",
-          "T1588.002"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 10,
-        "items": [
-          "collection",
-          "command-and-control",
-          "credential-access",
-          "defense-evasion",
-          "execution",
-          "initial-access",
-          "lateral-movement",
-          "persistence",
-          "privilege-escalation",
-          "resource-development"
-        ]
-      }
+{
+  "item": "temp.veles",
+  "aliases": "temp.veles|xenotime",
+  "gid": "G0088",
+  "profile": {
+    "techniques": {
+      "count": 17,
+      "items": [
+        "T1003.001",
+        "T1021.001",
+        "T1021.004",
+        "T1027.005",
+        "T1036.005",
+        "T1053.005",
+        "T1059.001",
+        "T1070.004",
+        "T1070.006",
+        "T1074.001",
+        "T1078",
+        "T1133",
+        "T1505.003",
+        "T1546.012",
+        "T1571",
+        "T1583.003",
+        "T1588.002"
+      ]
+    },
+    "tactics": {
+      "count": 10,
+      "items": [
+        "collection",
+        "command-and-control",
+        "credential-access",
+        "defense-evasion",
+        "execution",
+        "initial-access",
+        "lateral-movement",
+        "persistence",
+        "privilege-escalation",
+        "resource-development"
+      ]
+    },
+    "malware": {
+      "count": 1,
+      "items": [
+        "triton"
+      ]
+    },
+    "tools": {
+      "count": 2,
+      "items": [
+        "mimikatz",
+        "psexec"
+      ]
     }
   }
-]
+}

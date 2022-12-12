@@ -1,38 +1,30 @@
-[
-  {
-    "id": "intrusion-set--090242d7-73fc-4738-af68-20162f7a5aae",
-    "name": "apt17",
-    "aliases": "apt17|deputy-dog",
-    "group_id": "G0025",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 1,
-        "items": [
-          "blackcoffee"
-        ]
-      },
-      "tools": {
-        "count": 0,
-        "items": []
-      },
-      "techniques": {
-        "count": 2,
-        "items": [
-          "T1583.006",
-          "T1585"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 1,
-        "items": [
-          "resource-development"
-        ]
-      }
+{
+  "item": "apt17",
+  "aliases": "apt17|deputy-dog",
+  "gid": "G0025",
+  "profile": {
+    "techniques": {
+      "count": 2,
+      "items": [
+        "T1583.006",
+        "T1585"
+      ]
+    },
+    "tactics": {
+      "count": 1,
+      "items": [
+        "resource-development"
+      ]
+    },
+    "malware": {
+      "count": 1,
+      "items": [
+        "blackcoffee"
+      ]
+    },
+    "tools": {
+      "count": 0,
+      "items": []
     }
   }
-]
+}

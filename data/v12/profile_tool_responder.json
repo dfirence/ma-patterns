@@ -1,38 +1,29 @@
-[
-  {
-    "id": "tool--a1dd2dbd-1550-44bf-abcc-1a4c52e97719",
-    "name": "responder",
-    "aliases": "none",
-    "platforms": "none",
-    "tool_id": "S0174",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 3,
-        "items": [
-          "collection",
-          "credential-access",
-          "discovery"
-        ]
-      },
-      "techniques": {
-        "count": 2,
-        "items": [
-          "T1040",
-          "T1557.001"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 2,
-        "items": [
-          "apt28",
-          "lazarus-group"
-        ]
-      }
+{
+  "item": "responder",
+  "aliases": "none",
+  "gid": "S0174",
+  "profile": {
+    "techniques": {
+      "count": 2,
+      "items": [
+        "T1040",
+        "T1557.001"
+      ]
+    },
+    "tactics": {
+      "count": 3,
+      "items": [
+        "collection",
+        "credential-access",
+        "discovery"
+      ]
+    },
+    "adversaries": {
+      "count": 2,
+      "items": [
+        "apt28",
+        "lazarus-group"
+      ]
     }
   }
-]
+}

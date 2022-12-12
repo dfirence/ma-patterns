@@ -1,52 +1,44 @@
-[
-  {
-    "id": "intrusion-set--c77c5576-ca19-42ed-a36f-4b4486a84133",
-    "name": "gold-southfield",
-    "aliases": "gold-southfield",
-    "group_id": "G0115",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 1,
-        "items": [
-          "revil"
-        ]
-      },
-      "tools": {
-        "count": 1,
-        "items": [
-          "connectwise"
-        ]
-      },
-      "techniques": {
-        "count": 9,
-        "items": [
-          "T1027",
-          "T1059.001",
-          "T1113",
-          "T1133",
-          "T1190",
-          "T1195.002",
-          "T1199",
-          "T1219",
-          "T1566"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 6,
-        "items": [
-          "collection",
-          "command-and-control",
-          "defense-evasion",
-          "execution",
-          "initial-access",
-          "persistence"
-        ]
-      }
+{
+  "item": "gold-southfield",
+  "aliases": "gold-southfield",
+  "gid": "G0115",
+  "profile": {
+    "techniques": {
+      "count": 9,
+      "items": [
+        "T1027",
+        "T1059.001",
+        "T1113",
+        "T1133",
+        "T1190",
+        "T1195.002",
+        "T1199",
+        "T1219",
+        "T1566"
+      ]
+    },
+    "tactics": {
+      "count": 6,
+      "items": [
+        "collection",
+        "command-and-control",
+        "defense-evasion",
+        "execution",
+        "initial-access",
+        "persistence"
+      ]
+    },
+    "malware": {
+      "count": 1,
+      "items": [
+        "revil"
+      ]
+    },
+    "tools": {
+      "count": 1,
+      "items": [
+        "connectwise"
+      ]
     }
   }
-]
+}

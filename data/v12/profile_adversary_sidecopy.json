@@ -1,61 +1,53 @@
-[
-  {
-    "id": "intrusion-set--03be849d-b5a2-4766-9dda-48976bae5710",
-    "name": "sidecopy",
-    "aliases": "sidecopy",
-    "group_id": "G1008",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 2,
-        "items": [
-          "action-rat",
-          "auto-stealer"
-        ]
-      },
-      "tools": {
-        "count": 0,
-        "items": []
-      },
-      "techniques": {
-        "count": 16,
-        "items": [
-          "T1016",
-          "T1036.005",
-          "T1059.005",
-          "T1082",
-          "T1105",
-          "T1106",
-          "T1204.002",
-          "T1218.005",
-          "T1518",
-          "T1518.001",
-          "T1566.001",
-          "T1574.002",
-          "T1584.001",
-          "T1598.002",
-          "T1608.001",
-          "T1614"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 9,
-        "items": [
-          "command-and-control",
-          "defense-evasion",
-          "discovery",
-          "execution",
-          "initial-access",
-          "persistence",
-          "privilege-escalation",
-          "reconnaissance",
-          "resource-development"
-        ]
-      }
+{
+  "item": "sidecopy",
+  "aliases": "sidecopy",
+  "gid": "G1008",
+  "profile": {
+    "techniques": {
+      "count": 16,
+      "items": [
+        "T1016",
+        "T1036.005",
+        "T1059.005",
+        "T1082",
+        "T1105",
+        "T1106",
+        "T1204.002",
+        "T1218.005",
+        "T1518",
+        "T1518.001",
+        "T1566.001",
+        "T1574.002",
+        "T1584.001",
+        "T1598.002",
+        "T1608.001",
+        "T1614"
+      ]
+    },
+    "tactics": {
+      "count": 9,
+      "items": [
+        "command-and-control",
+        "defense-evasion",
+        "discovery",
+        "execution",
+        "initial-access",
+        "persistence",
+        "privilege-escalation",
+        "reconnaissance",
+        "resource-development"
+      ]
+    },
+    "malware": {
+      "count": 2,
+      "items": [
+        "action-rat",
+        "auto-stealer"
+      ]
+    },
+    "tools": {
+      "count": 0,
+      "items": []
     }
   }
-]
+}

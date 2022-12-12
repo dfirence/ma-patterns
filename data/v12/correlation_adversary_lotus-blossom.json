@@ -1,0 +1,134 @@
+[
+  {
+    "item": "lotus-blossom",
+    "id": "none",
+    "platforms": "linux|macos|windows",
+    "datasources": "file-metadata",
+    "tid": "T1027.001",
+    "technique": "Binary Padding",
+    "tactic": "defense-evasion",
+    "malware": "emissary",
+    "tool": "none"
+  },
+  {
+    "item": "lotus-blossom",
+    "id": "none",
+    "platforms": "linux|macos|windows|containers",
+    "datasources": "file-metadata|image-metadata|process-metadata",
+    "tid": "T1036.005",
+    "technique": "Match Legitimate Name or Location",
+    "tactic": "defense-evasion",
+    "malware": "elise",
+    "tool": "none"
+  },
+  {
+    "item": "lotus-blossom",
+    "id": "none",
+    "platforms": "linux|macos|windows",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "tid": "T1057",
+    "technique": "Process Discovery",
+    "tactic": "discovery",
+    "malware": "elise",
+    "tool": "none"
+  },
+  {
+    "item": "lotus-blossom",
+    "id": "none",
+    "platforms": "windows",
+    "datasources": "command-execution|process-creation",
+    "tid": "T1059.003",
+    "technique": "Windows Command Shell",
+    "tactic": "execution",
+    "malware": "emissary",
+    "tool": "none"
+  },
+  {
+    "item": "lotus-blossom",
+    "id": "none",
+    "platforms": "linux|macos|windows",
+    "datasources": "command-execution|group-enumeration|os-api-execution|process-creation",
+    "tid": "T1069.001",
+    "technique": "Local Groups",
+    "tactic": "discovery",
+    "malware": "emissary",
+    "tool": "none"
+  },
+  {
+    "item": "lotus-blossom",
+    "id": "none",
+    "platforms": "linux|macos|windows",
+    "datasources": "command-execution|file-deletion",
+    "tid": "T1070.004",
+    "technique": "File Deletion",
+    "tactic": "defense-evasion",
+    "malware": "elise",
+    "tool": "none"
+  },
+  {
+    "item": "lotus-blossom",
+    "id": "none",
+    "platforms": "linux|macos|windows",
+    "datasources": "file-metadata|file-modification",
+    "tid": "T1070.006",
+    "technique": "Timestomp",
+    "tactic": "defense-evasion",
+    "malware": "elise",
+    "tool": "none"
+  },
+  {
+    "item": "lotus-blossom",
+    "id": "none",
+    "platforms": "linux|macos|windows",
+    "datasources": "command-execution|file-access|file-creation|windows-registry-key-modification",
+    "tid": "T1074.001",
+    "technique": "Local Data Staging",
+    "tactic": "collection",
+    "malware": "elise",
+    "tool": "none"
+  },
+  {
+    "item": "lotus-blossom",
+    "id": "none",
+    "platforms": "linux|macos|windows|network",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "tid": "T1083",
+    "technique": "File and Directory Discovery",
+    "tactic": "discovery",
+    "malware": "elise",
+    "tool": "none"
+  },
+  {
+    "item": "lotus-blossom",
+    "id": "none",
+    "platforms": "linux|macos|windows",
+    "datasources": "command-execution|file-access|group-enumeration|os-api-execution|process-creation",
+    "tid": "T1087.001",
+    "technique": "Local Account",
+    "tactic": "discovery",
+    "malware": "elise",
+    "tool": "none"
+  },
+  {
+    "item": "lotus-blossom",
+    "id": "none",
+    "platforms": "linux|macos|windows",
+    "datasources": "network-traffic-content",
+    "tid": "T1132.001",
+    "technique": "Standard Encoding",
+    "tactic": "command-and-control",
+    "malware": "elise",
+    "tool": "none"
+  },
+  {
+    "item": "lotus-blossom",
+    "id": "none",
+    "platforms": "windows",
+    "datasources": "active-directory-object-access|command-execution|network-traffic-content|process-creation|script-execution",
+    "tid": "T1615",
+    "technique": "Group Policy Discovery",
+    "tactic": "discovery",
+    "malware": "emissary",
+    "tool": "none"
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "item": "gcman",
+    "id": "none",
+    "platforms": "linux|macos",
+    "datasources": "logon-session-creation|network-connection-creation|process-creation",
+    "tid": "T1021.004",
+    "technique": "SSH",
+    "tactic": "lateral-movement",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "gcman",
+    "id": "none",
+    "platforms": "linux|macos|windows",
+    "datasources": "logon-session-creation|network-connection-creation|process-creation",
+    "tid": "T1021.005",
+    "technique": "VNC",
+    "tactic": "lateral-movement",
+    "malware": "none",
+    "tool": "none"
+  }
+]

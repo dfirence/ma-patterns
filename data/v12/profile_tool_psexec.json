@@ -1,70 +1,61 @@
-[
-  {
-    "id": "tool--ff6caf67-ea1f-4895-b80e-4bb0fc31c6db",
-    "name": "psexec",
-    "aliases": "none",
-    "platforms": "windows",
-    "tool_id": "S0029",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 4,
-        "items": [
-          "execution",
-          "lateral-movement",
-          "persistence",
-          "privilege-escalation"
-        ]
-      },
-      "techniques": {
-        "count": 5,
-        "items": [
-          "T1021.002",
-          "T1136.002",
-          "T1543.003",
-          "T1569.002",
-          "T1570"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 30,
-        "items": [
-          "apt1",
-          "apt29",
-          "apt39",
-          "blacktech",
-          "carbanak",
-          "chimera",
-          "cleaver",
-          "cobalt-group",
-          "darkvishnya",
-          "dragonfly",
-          "fin5",
-          "fin6",
-          "fox-kitten",
-          "gallium",
-          "hafnium",
-          "indrik-spider",
-          "kimsuky",
-          "leafminer",
-          "magic-hound",
-          "menupass",
-          "moses-staff",
-          "naikon",
-          "oilrig",
-          "sandworm-team",
-          "stolen-pencil",
-          "temp.veles",
-          "threat-group-1314",
-          "thrip",
-          "turla",
-          "wizard-spider"
-        ]
-      }
+{
+  "item": "psexec",
+  "aliases": "none",
+  "gid": "S0029",
+  "profile": {
+    "techniques": {
+      "count": 5,
+      "items": [
+        "T1021.002",
+        "T1136.002",
+        "T1543.003",
+        "T1569.002",
+        "T1570"
+      ]
+    },
+    "tactics": {
+      "count": 4,
+      "items": [
+        "execution",
+        "lateral-movement",
+        "persistence",
+        "privilege-escalation"
+      ]
+    },
+    "adversaries": {
+      "count": 30,
+      "items": [
+        "apt1",
+        "apt29",
+        "apt39",
+        "blacktech",
+        "carbanak",
+        "chimera",
+        "cleaver",
+        "cobalt-group",
+        "darkvishnya",
+        "dragonfly",
+        "fin5",
+        "fin6",
+        "fox-kitten",
+        "gallium",
+        "hafnium",
+        "indrik-spider",
+        "kimsuky",
+        "leafminer",
+        "magic-hound",
+        "menupass",
+        "moses-staff",
+        "naikon",
+        "oilrig",
+        "sandworm-team",
+        "stolen-pencil",
+        "temp.veles",
+        "threat-group-1314",
+        "thrip",
+        "turla",
+        "wizard-spider"
+      ]
     }
   }
-]
+}

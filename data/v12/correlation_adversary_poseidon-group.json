@@ -1,0 +1,90 @@
+[
+  {
+    "item": "poseidon-group",
+    "id": "G0033",
+    "platforms": "windows|linux|macos",
+    "datasources": "active-directory-object-access|command-execution|file-access|network-traffic-content|network-traffic-flow|os-api-execution|process-access|process-creation|windows-registry-key-access",
+    "tid": "T1003",
+    "technique": "OS Credential Dumping",
+    "tactic": "credential-access",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "poseidon-group",
+    "id": "G0033",
+    "platforms": "windows|macos|linux",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "tid": "T1007",
+    "technique": "System Service Discovery",
+    "tactic": "discovery",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "poseidon-group",
+    "id": "G0033",
+    "platforms": "linux|macos|windows|containers",
+    "datasources": "file-metadata|image-metadata|process-metadata",
+    "tid": "T1036.005",
+    "technique": "Match Legitimate Name or Location",
+    "tactic": "defense-evasion",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "poseidon-group",
+    "id": "G0033",
+    "platforms": "windows|iaas|linux|macos|network",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "tid": "T1049",
+    "technique": "System Network Connections Discovery",
+    "tactic": "discovery",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "poseidon-group",
+    "id": "G0033",
+    "platforms": "linux|macos|windows",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "tid": "T1057",
+    "technique": "Process Discovery",
+    "tactic": "discovery",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "poseidon-group",
+    "id": "G0033",
+    "platforms": "windows",
+    "datasources": "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "tid": "T1059.001",
+    "technique": "PowerShell",
+    "tactic": "execution",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "poseidon-group",
+    "id": "G0033",
+    "platforms": "linux|macos|windows",
+    "datasources": "command-execution|file-access|group-enumeration|os-api-execution|process-creation",
+    "tid": "T1087.001",
+    "technique": "Local Account",
+    "tactic": "discovery",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "poseidon-group",
+    "id": "G0033",
+    "platforms": "linux|macos|windows",
+    "datasources": "command-execution|group-enumeration|network-traffic-content|os-api-execution|process-creation",
+    "tid": "T1087.002",
+    "technique": "Domain Account",
+    "tactic": "discovery",
+    "malware": "none",
+    "tool": "none"
+  }
+]

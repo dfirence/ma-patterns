@@ -1,0 +1,24 @@
+[
+  {
+    "item": "none",
+    "id": "none",
+    "platforms": "windows|macos|linux|network",
+    "datasources": "application-log-content|network-traffic-content|network-traffic-flow|service-creation|windows-registry-key-modification",
+    "tid": "T1557",
+    "technique": "Adversary-in-the-Middle",
+    "tactic": "credential-access",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "none",
+    "id": "none",
+    "platforms": "windows|macos|linux|network",
+    "datasources": "application-log-content|network-traffic-content|network-traffic-flow|service-creation|windows-registry-key-modification",
+    "tid": "T1557",
+    "technique": "Adversary-in-the-Middle",
+    "tactic": "collection",
+    "malware": "none",
+    "tool": "none"
+  }
+]

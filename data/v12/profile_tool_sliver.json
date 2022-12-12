@@ -1,53 +1,44 @@
-[
-  {
-    "id": "tool--11f8d7eb-1927-4806-9267-3a11d4d4d6be",
-    "name": "sliver",
-    "aliases": "none",
-    "platforms": "windows|linux|macos",
-    "tool_id": "S0633",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 6,
-        "items": [
-          "collection",
-          "command-and-control",
-          "defense-evasion",
-          "discovery",
-          "exfiltration",
-          "privilege-escalation"
-        ]
-      },
-      "techniques": {
-        "count": 15,
-        "items": [
-          "T1001.002",
-          "T1016",
-          "T1027",
-          "T1041",
-          "T1049",
-          "T1055",
-          "T1071.001",
-          "T1071.004",
-          "T1083",
-          "T1105",
-          "T1113",
-          "T1132.001",
-          "T1134",
-          "T1573.001",
-          "T1573.002"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 1,
-        "items": [
-          "apt29"
-        ]
-      }
+{
+  "item": "sliver",
+  "aliases": "none",
+  "gid": "S0633",
+  "profile": {
+    "techniques": {
+      "count": 15,
+      "items": [
+        "T1001.002",
+        "T1016",
+        "T1027",
+        "T1041",
+        "T1049",
+        "T1055",
+        "T1071.001",
+        "T1071.004",
+        "T1083",
+        "T1105",
+        "T1113",
+        "T1132.001",
+        "T1134",
+        "T1573.001",
+        "T1573.002"
+      ]
+    },
+    "tactics": {
+      "count": 6,
+      "items": [
+        "collection",
+        "command-and-control",
+        "defense-evasion",
+        "discovery",
+        "exfiltration",
+        "privilege-escalation"
+      ]
+    },
+    "adversaries": {
+      "count": 1,
+      "items": [
+        "apt29"
+      ]
     }
   }
-]
+}

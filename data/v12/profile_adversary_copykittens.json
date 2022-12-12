@@ -1,52 +1,44 @@
-[
-  {
-    "id": "intrusion-set--dcd81c6e-ebf7-4a16-93e0-9a97fa49c88a",
-    "name": "copykittens",
-    "aliases": "copykittens",
-    "group_id": "G0052",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 3,
-        "items": [
-          "cobalt-strike",
-          "matryoshka",
-          "tdtess"
-        ]
-      },
-      "tools": {
-        "count": 1,
-        "items": [
-          "empire"
-        ]
-      },
-      "techniques": {
-        "count": 8,
-        "items": [
-          "T1059.001",
-          "T1090",
-          "T1218.011",
-          "T1553.002",
-          "T1560.001",
-          "T1560.003",
-          "T1564.003",
-          "T1588.002"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 5,
-        "items": [
-          "collection",
-          "command-and-control",
-          "defense-evasion",
-          "execution",
-          "resource-development"
-        ]
-      }
+{
+  "item": "copykittens",
+  "aliases": "copykittens",
+  "gid": "G0052",
+  "profile": {
+    "techniques": {
+      "count": 8,
+      "items": [
+        "T1059.001",
+        "T1090",
+        "T1218.011",
+        "T1553.002",
+        "T1560.001",
+        "T1560.003",
+        "T1564.003",
+        "T1588.002"
+      ]
+    },
+    "tactics": {
+      "count": 5,
+      "items": [
+        "collection",
+        "command-and-control",
+        "defense-evasion",
+        "execution",
+        "resource-development"
+      ]
+    },
+    "malware": {
+      "count": 3,
+      "items": [
+        "cobalt-strike",
+        "matryoshka",
+        "tdtess"
+      ]
+    },
+    "tools": {
+      "count": 1,
+      "items": [
+        "empire"
+      ]
     }
   }
-]
+}

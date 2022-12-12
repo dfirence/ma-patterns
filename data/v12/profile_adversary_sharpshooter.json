@@ -1,31 +1,23 @@
-[
-  {
-    "id": "intrusion-set--5e78ae92-3ffd-4b16-bf62-e798529d73f1",
-    "name": "sharpshooter",
-    "aliases": "sharpshooter",
-    "group_id": "G0104",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 0,
-        "items": []
-      },
-      "tools": {
-        "count": 0,
-        "items": []
-      },
-      "techniques": {
-        "count": 0,
-        "items": []
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 0,
-        "items": []
-      }
+{
+  "item": "sharpshooter",
+  "aliases": "sharpshooter",
+  "gid": "G0104",
+  "profile": {
+    "techniques": {
+      "count": 0,
+      "items": []
+    },
+    "tactics": {
+      "count": 0,
+      "items": []
+    },
+    "malware": {
+      "count": 0,
+      "items": []
+    },
+    "tools": {
+      "count": 0,
+      "items": []
     }
   }
-]
+}

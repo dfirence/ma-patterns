@@ -1,51 +1,43 @@
-[
-  {
-    "id": "intrusion-set--c4d50cdf-87ce-407d-86d8-862883485842",
-    "name": "apt-c-36",
-    "aliases": "apt-c-36|blind-eagle",
-    "group_id": "G0099",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 0,
-        "items": []
-      },
-      "tools": {
-        "count": 1,
-        "items": [
-          "imminent-monitor"
-        ]
-      },
-      "techniques": {
-        "count": 9,
-        "items": [
-          "T1027",
-          "T1036.004",
-          "T1053.005",
-          "T1059.005",
-          "T1105",
-          "T1204.002",
-          "T1566.001",
-          "T1571",
-          "T1588.002"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 7,
-        "items": [
-          "command-and-control",
-          "defense-evasion",
-          "execution",
-          "initial-access",
-          "persistence",
-          "privilege-escalation",
-          "resource-development"
-        ]
-      }
+{
+  "item": "apt-c-36",
+  "aliases": "apt-c-36|blind-eagle",
+  "gid": "G0099",
+  "profile": {
+    "techniques": {
+      "count": 9,
+      "items": [
+        "T1027",
+        "T1036.004",
+        "T1053.005",
+        "T1059.005",
+        "T1105",
+        "T1204.002",
+        "T1566.001",
+        "T1571",
+        "T1588.002"
+      ]
+    },
+    "tactics": {
+      "count": 7,
+      "items": [
+        "command-and-control",
+        "defense-evasion",
+        "execution",
+        "initial-access",
+        "persistence",
+        "privilege-escalation",
+        "resource-development"
+      ]
+    },
+    "malware": {
+      "count": 0,
+      "items": []
+    },
+    "tools": {
+      "count": 1,
+      "items": [
+        "imminent-monitor"
+      ]
     }
   }
-]
+}

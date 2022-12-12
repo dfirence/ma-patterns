@@ -1,0 +1,178 @@
+[
+  {
+    "item": "silent-librarian",
+    "id": "G0122",
+    "platforms": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "datasources": "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "tid": "T1078",
+    "technique": "Valid Accounts",
+    "tactic": "defense-evasion",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "silent-librarian",
+    "id": "G0122",
+    "platforms": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "datasources": "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "tid": "T1078",
+    "technique": "Valid Accounts",
+    "tactic": "initial-access",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "silent-librarian",
+    "id": "G0122",
+    "platforms": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "datasources": "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "tid": "T1078",
+    "technique": "Valid Accounts",
+    "tactic": "persistence",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "silent-librarian",
+    "id": "G0122",
+    "platforms": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "datasources": "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "tid": "T1078",
+    "technique": "Valid Accounts",
+    "tactic": "privilege-escalation",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "silent-librarian",
+    "id": "G0122",
+    "platforms": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers",
+    "datasources": "application-log-content|user-account-authentication",
+    "tid": "T1110.003",
+    "technique": "Password Spraying",
+    "tactic": "credential-access",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "silent-librarian",
+    "id": "G0122",
+    "platforms": "windows|office-365|google-workspace|macos|linux",
+    "datasources": "application-log-content|command-execution|file-access|logon-session-creation|network-connection-creation",
+    "tid": "T1114",
+    "technique": "Email Collection",
+    "tactic": "collection",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "silent-librarian",
+    "id": "G0122",
+    "platforms": "office-365|windows|google-workspace|macos|linux",
+    "datasources": "application-log-content",
+    "tid": "T1114.003",
+    "technique": "Email Forwarding Rule",
+    "tactic": "collection",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "silent-librarian",
+    "id": "G0122",
+    "platforms": "pre",
+    "datasources": "active-dns|domain-registration|passive-dns",
+    "tid": "T1583.001",
+    "technique": "Domains",
+    "tactic": "resource-development",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "silent-librarian",
+    "id": "G0122",
+    "platforms": "pre",
+    "datasources": "none",
+    "tid": "T1585.002",
+    "technique": "Email Accounts",
+    "tactic": "resource-development",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "silent-librarian",
+    "id": "G0122",
+    "platforms": "pre",
+    "datasources": "malware-metadata",
+    "tid": "T1588.002",
+    "technique": "Tool",
+    "tactic": "resource-development",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "silent-librarian",
+    "id": "G0122",
+    "platforms": "pre",
+    "datasources": "certificate-registration|response-content",
+    "tid": "T1588.004",
+    "technique": "Digital Certificates",
+    "tactic": "resource-development",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "silent-librarian",
+    "id": "G0122",
+    "platforms": "pre",
+    "datasources": "network-traffic-content",
+    "tid": "T1589.002",
+    "technique": "Email Addresses",
+    "tactic": "reconnaissance",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "silent-librarian",
+    "id": "G0122",
+    "platforms": "pre",
+    "datasources": "none",
+    "tid": "T1589.003",
+    "technique": "Employee Names",
+    "tactic": "reconnaissance",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "silent-librarian",
+    "id": "G0122",
+    "platforms": "pre",
+    "datasources": "application-log-content",
+    "tid": "T1594",
+    "technique": "Search Victim-Owned Websites",
+    "tactic": "reconnaissance",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "silent-librarian",
+    "id": "G0122",
+    "platforms": "pre",
+    "datasources": "application-log-content|network-traffic-content|network-traffic-flow",
+    "tid": "T1598.003",
+    "technique": "Spearphishing Link",
+    "tactic": "reconnaissance",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "silent-librarian",
+    "id": "G0122",
+    "platforms": "pre",
+    "datasources": "response-content",
+    "tid": "T1608.005",
+    "technique": "Link Target",
+    "tactic": "resource-development",
+    "malware": "none",
+    "tool": "none"
+  }
+]

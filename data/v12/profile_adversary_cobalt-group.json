@@ -1,84 +1,76 @@
-[
-  {
-    "id": "intrusion-set--dc6fe6ee-04c2-49be-ba3d-f38d2463c02a",
-    "name": "cobalt-group",
-    "aliases": "cobalt-group|gold-kingswood|cobalt-gang|cobalt-spider",
-    "group_id": "G0080",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 3,
-        "items": [
-          "cobalt-strike",
-          "more_eggs",
-          "spicyomelette"
-        ]
-      },
-      "tools": {
-        "count": 3,
-        "items": [
-          "mimikatz",
-          "psexec",
-          "sdelete"
-        ]
-      },
-      "techniques": {
-        "count": 34,
-        "items": [
-          "T1021.001",
-          "T1027",
-          "T1037.001",
-          "T1046",
-          "T1053.005",
-          "T1055",
-          "T1059.001",
-          "T1059.003",
-          "T1059.005",
-          "T1059.007",
-          "T1068",
-          "T1070.004",
-          "T1071.001",
-          "T1071.004",
-          "T1105",
-          "T1195.002",
-          "T1203",
-          "T1204.001",
-          "T1204.002",
-          "T1218.003",
-          "T1218.008",
-          "T1218.010",
-          "T1219",
-          "T1220",
-          "T1518.001",
-          "T1543.003",
-          "T1547.001",
-          "T1548.002",
-          "T1559.002",
-          "T1566.001",
-          "T1566.002",
-          "T1572",
-          "T1573.002",
-          "T1588.002"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 9,
-        "items": [
-          "command-and-control",
-          "defense-evasion",
-          "discovery",
-          "execution",
-          "initial-access",
-          "lateral-movement",
-          "persistence",
-          "privilege-escalation",
-          "resource-development"
-        ]
-      }
+{
+  "item": "cobalt-group",
+  "aliases": "cobalt-group|gold-kingswood|cobalt-gang|cobalt-spider",
+  "gid": "G0080",
+  "profile": {
+    "techniques": {
+      "count": 34,
+      "items": [
+        "T1021.001",
+        "T1027",
+        "T1037.001",
+        "T1046",
+        "T1053.005",
+        "T1055",
+        "T1059.001",
+        "T1059.003",
+        "T1059.005",
+        "T1059.007",
+        "T1068",
+        "T1070.004",
+        "T1071.001",
+        "T1071.004",
+        "T1105",
+        "T1195.002",
+        "T1203",
+        "T1204.001",
+        "T1204.002",
+        "T1218.003",
+        "T1218.008",
+        "T1218.010",
+        "T1219",
+        "T1220",
+        "T1518.001",
+        "T1543.003",
+        "T1547.001",
+        "T1548.002",
+        "T1559.002",
+        "T1566.001",
+        "T1566.002",
+        "T1572",
+        "T1573.002",
+        "T1588.002"
+      ]
+    },
+    "tactics": {
+      "count": 9,
+      "items": [
+        "command-and-control",
+        "defense-evasion",
+        "discovery",
+        "execution",
+        "initial-access",
+        "lateral-movement",
+        "persistence",
+        "privilege-escalation",
+        "resource-development"
+      ]
+    },
+    "malware": {
+      "count": 3,
+      "items": [
+        "cobalt-strike",
+        "more_eggs",
+        "spicyomelette"
+      ]
+    },
+    "tools": {
+      "count": 3,
+      "items": [
+        "mimikatz",
+        "psexec",
+        "sdelete"
+      ]
     }
   }
-]
+}

@@ -1,47 +1,39 @@
-[
-  {
-    "id": "intrusion-set--4e868dad-682d-4897-b8df-2dc98f46c68a",
-    "name": "windigo",
-    "aliases": "windigo",
-    "group_id": "G0124",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 1,
-        "items": [
-          "ebury"
-        ]
-      },
-      "tools": {
-        "count": 0,
-        "items": []
-      },
-      "techniques": {
-        "count": 7,
-        "items": [
-          "T1005",
-          "T1059",
-          "T1082",
-          "T1083",
-          "T1090",
-          "T1189",
-          "T1518"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 5,
-        "items": [
-          "collection",
-          "command-and-control",
-          "discovery",
-          "execution",
-          "initial-access"
-        ]
-      }
+{
+  "item": "windigo",
+  "aliases": "windigo",
+  "gid": "G0124",
+  "profile": {
+    "techniques": {
+      "count": 7,
+      "items": [
+        "T1005",
+        "T1059",
+        "T1082",
+        "T1083",
+        "T1090",
+        "T1189",
+        "T1518"
+      ]
+    },
+    "tactics": {
+      "count": 5,
+      "items": [
+        "collection",
+        "command-and-control",
+        "discovery",
+        "execution",
+        "initial-access"
+      ]
+    },
+    "malware": {
+      "count": 1,
+      "items": [
+        "ebury"
+      ]
+    },
+    "tools": {
+      "count": 0,
+      "items": []
     }
   }
-]
+}

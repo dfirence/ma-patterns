@@ -1,52 +1,43 @@
-[
-  {
-    "id": "tool--a7b5df47-73bb-4d47-b701-869f185633a6",
-    "name": "donut",
-    "aliases": "none",
-    "platforms": "windows",
-    "tool_id": "S0695",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 5,
-        "items": [
-          "command-and-control",
-          "defense-evasion",
-          "discovery",
-          "execution",
-          "privilege-escalation"
-        ]
-      },
-      "techniques": {
-        "count": 15,
-        "items": [
-          "T1027",
-          "T1027.002",
-          "T1055",
-          "T1057",
-          "T1059",
-          "T1059.001",
-          "T1059.005",
-          "T1059.006",
-          "T1059.007",
-          "T1070",
-          "T1071.001",
-          "T1105",
-          "T1106",
-          "T1562.001",
-          "T1620"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 1,
-        "items": [
-          "indrik-spider"
-        ]
-      }
+{
+  "item": "donut",
+  "aliases": "none",
+  "gid": "S0695",
+  "profile": {
+    "techniques": {
+      "count": 15,
+      "items": [
+        "T1027",
+        "T1027.002",
+        "T1055",
+        "T1057",
+        "T1059",
+        "T1059.001",
+        "T1059.005",
+        "T1059.006",
+        "T1059.007",
+        "T1070",
+        "T1071.001",
+        "T1105",
+        "T1106",
+        "T1562.001",
+        "T1620"
+      ]
+    },
+    "tactics": {
+      "count": 5,
+      "items": [
+        "command-and-control",
+        "defense-evasion",
+        "discovery",
+        "execution",
+        "privilege-escalation"
+      ]
+    },
+    "adversaries": {
+      "count": 1,
+      "items": [
+        "indrik-spider"
+      ]
     }
   }
-]
+}

@@ -1,50 +1,42 @@
-[
-  {
-    "id": "intrusion-set--6b9ebeb5-20bf-48b0-afb7-988d769a2f01",
-    "name": "darkhydrus",
-    "aliases": "darkhydrus",
-    "group_id": "G0079",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 2,
-        "items": [
-          "cobalt-strike",
-          "roguerobin"
-        ]
-      },
-      "tools": {
-        "count": 1,
-        "items": [
-          "mimikatz"
-        ]
-      },
-      "techniques": {
-        "count": 7,
-        "items": [
-          "T1059.001",
-          "T1187",
-          "T1204.002",
-          "T1221",
-          "T1564.003",
-          "T1566.001",
-          "T1588.002"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 5,
-        "items": [
-          "credential-access",
-          "defense-evasion",
-          "execution",
-          "initial-access",
-          "resource-development"
-        ]
-      }
+{
+  "item": "darkhydrus",
+  "aliases": "darkhydrus",
+  "gid": "G0079",
+  "profile": {
+    "techniques": {
+      "count": 7,
+      "items": [
+        "T1059.001",
+        "T1187",
+        "T1204.002",
+        "T1221",
+        "T1564.003",
+        "T1566.001",
+        "T1588.002"
+      ]
+    },
+    "tactics": {
+      "count": 5,
+      "items": [
+        "credential-access",
+        "defense-evasion",
+        "execution",
+        "initial-access",
+        "resource-development"
+      ]
+    },
+    "malware": {
+      "count": 2,
+      "items": [
+        "cobalt-strike",
+        "roguerobin"
+      ]
+    },
+    "tools": {
+      "count": 1,
+      "items": [
+        "mimikatz"
+      ]
     }
   }
-]
+}

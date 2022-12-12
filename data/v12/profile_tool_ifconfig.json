@@ -1,32 +1,23 @@
-[
-  {
-    "id": "tool--362dc67f-4e85-4562-9dac-1b6b7f3ec4b5",
-    "name": "ifconfig",
-    "aliases": "none",
-    "platforms": "none",
-    "tool_id": "S0101",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 1,
-        "items": [
-          "discovery"
-        ]
-      },
-      "techniques": {
-        "count": 1,
-        "items": [
-          "T1016"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 0,
-        "items": []
-      }
+{
+  "item": "ifconfig",
+  "aliases": "none",
+  "gid": "S0101",
+  "profile": {
+    "techniques": {
+      "count": 1,
+      "items": [
+        "T1016"
+      ]
+    },
+    "tactics": {
+      "count": 1,
+      "items": [
+        "discovery"
+      ]
+    },
+    "adversaries": {
+      "count": 0,
+      "items": []
     }
   }
-]
+}

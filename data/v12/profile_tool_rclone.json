@@ -1,39 +1,30 @@
-[
-  {
-    "id": "tool--59096109-a1dd-463b-87e7-a8d110fe3a79",
-    "name": "rclone",
-    "aliases": "none",
-    "platforms": "linux|windows|macos",
-    "tool_id": "S1040",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 3,
-        "items": [
-          "collection",
-          "discovery",
-          "exfiltration"
-        ]
-      },
-      "techniques": {
-        "count": 6,
-        "items": [
-          "T1030",
-          "T1048.002",
-          "T1048.003",
-          "T1083",
-          "T1560.001",
-          "T1567.002"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 0,
-        "items": []
-      }
+{
+  "item": "rclone",
+  "aliases": "none",
+  "gid": "S1040",
+  "profile": {
+    "techniques": {
+      "count": 6,
+      "items": [
+        "T1030",
+        "T1048.002",
+        "T1048.003",
+        "T1083",
+        "T1560.001",
+        "T1567.002"
+      ]
+    },
+    "tactics": {
+      "count": 3,
+      "items": [
+        "collection",
+        "discovery",
+        "exfiltration"
+      ]
+    },
+    "adversaries": {
+      "count": 0,
+      "items": []
     }
   }
-]
+}

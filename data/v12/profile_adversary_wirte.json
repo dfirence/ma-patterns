@@ -1,54 +1,46 @@
-[
-  {
-    "id": "intrusion-set--f8cb7b36-62ef-4488-8a6d-a7033e3271c1",
-    "name": "wirte",
-    "aliases": "wirte",
-    "group_id": "G0090",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 2,
-        "items": [
-          "ferocious",
-          "litepower"
-        ]
-      },
-      "tools": {
-        "count": 1,
-        "items": [
-          "empire"
-        ]
-      },
-      "techniques": {
-        "count": 11,
-        "items": [
-          "T1036.005",
-          "T1059.001",
-          "T1059.005",
-          "T1071.001",
-          "T1105",
-          "T1140",
-          "T1204.002",
-          "T1218.010",
-          "T1566.001",
-          "T1571",
-          "T1588.002"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 5,
-        "items": [
-          "command-and-control",
-          "defense-evasion",
-          "execution",
-          "initial-access",
-          "resource-development"
-        ]
-      }
+{
+  "item": "wirte",
+  "aliases": "wirte",
+  "gid": "G0090",
+  "profile": {
+    "techniques": {
+      "count": 11,
+      "items": [
+        "T1036.005",
+        "T1059.001",
+        "T1059.005",
+        "T1071.001",
+        "T1105",
+        "T1140",
+        "T1204.002",
+        "T1218.010",
+        "T1566.001",
+        "T1571",
+        "T1588.002"
+      ]
+    },
+    "tactics": {
+      "count": 5,
+      "items": [
+        "command-and-control",
+        "defense-evasion",
+        "execution",
+        "initial-access",
+        "resource-development"
+      ]
+    },
+    "malware": {
+      "count": 2,
+      "items": [
+        "ferocious",
+        "litepower"
+      ]
+    },
+    "tools": {
+      "count": 1,
+      "items": [
+        "empire"
+      ]
     }
   }
-]
+}

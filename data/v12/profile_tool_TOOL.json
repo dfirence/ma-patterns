@@ -1,340 +1,90 @@
-[
-  {
-    "id": "attack-pattern--b0533c6e-8fea-4788-874f-b799cacc4b92",
-    "platform": "linux|macos|windows",
-    "tid": "T1027.005",
-    "technique": "Indicator Removal from Tools",
-    "tactic": "defense-evasion",
-    "datasources": "application-log-content",
-    "has_subtechniques": false,
-    "is_deprecated": false,
-    "is_revoked": false,
-    "subtechniques": [],
-    "count_subtechniques": 0,
-    "correlation_adversary": "none",
-    "correlation_malware": "none",
-    "correlation_tool": "none",
-    "correlation_gid": "none",
-    "technique_description": "Adversaries may remove indicators from tools if they believe their malicious tool was detected, quarantined, or otherwise curtailed. They can modify the tool by removing the indicator and using the updated version that is no longer detected by the target's defensive systems or subsequent targets that may use similar systems.\n\nA good example of this is when malware is detected with a file signature and quarantined by anti-virus software. An adversary who can determine that the malware was quarantined because of its file signature may modify the file to explicitly avoid that signature, and then re-use the malware.",
-    "technique_references": [],
-    "technique_required_permissions": "none",
-    "technique_effective_permissions": "none",
-    "search_token": "none"
-  },
-  {
-    "id": "attack-pattern--92a78814-b191-47ca-909c-1ccfe3777414",
-    "platform": "linux|macos|windows",
-    "tid": "T1072",
-    "technique": "Software Deployment Tools",
-    "tactic": "execution",
-    "datasources": "application-log-content|process-creation",
-    "has_subtechniques": false,
-    "is_deprecated": false,
-    "is_revoked": false,
-    "subtechniques": [],
-    "count_subtechniques": 0,
-    "correlation_adversary": "none",
-    "correlation_malware": "none",
-    "correlation_tool": "none",
-    "correlation_gid": "none",
-    "technique_description": "Adversaries may gain access to and use third-party software suites installed within an enterprise network, such as administration, monitoring, and deployment systems, to move laterally through the network. Third-party applications and software deployment systems may be in use in the network environment for administration purposes (e.g., SCCM, HBSS, Altiris, etc.).\n\nAccess to a third-party network-wide or enterprise-wide software system may enable an adversary to have remote code execution on all systems that are connected to such a system. The access may be used to laterally move to other systems, gather information, or cause a specific effect, such as wiping the hard drives on all endpoints.\n\nThe permissions required for this action vary by system configuration; local credentials may be sufficient with direct access to the third-party system, or specific domain credentials may be required. However, the system may require an administrative account to log in or to perform it's intended purpose.",
-    "technique_references": [
-      {
-        "source_name": "capec",
-        "url": "https://capec.mitre.org/data/definitions/187.html",
-        "description": "none",
-        "external_id": "CAPEC-187"
-      }
-    ],
-    "technique_required_permissions": "user|administrator|system",
-    "technique_effective_permissions": "none",
-    "search_token": "none"
-  },
-  {
-    "id": "attack-pattern--92a78814-b191-47ca-909c-1ccfe3777414",
-    "platform": "linux|macos|windows",
-    "tid": "T1072",
-    "technique": "Software Deployment Tools",
-    "tactic": "lateral-movement",
-    "datasources": "application-log-content|process-creation",
-    "has_subtechniques": false,
-    "is_deprecated": false,
-    "is_revoked": false,
-    "subtechniques": [],
-    "count_subtechniques": 0,
-    "correlation_adversary": "none",
-    "correlation_malware": "none",
-    "correlation_tool": "none",
-    "correlation_gid": "none",
-    "technique_description": "Adversaries may gain access to and use third-party software suites installed within an enterprise network, such as administration, monitoring, and deployment systems, to move laterally through the network. Third-party applications and software deployment systems may be in use in the network environment for administration purposes (e.g., SCCM, HBSS, Altiris, etc.).\n\nAccess to a third-party network-wide or enterprise-wide software system may enable an adversary to have remote code execution on all systems that are connected to such a system. The access may be used to laterally move to other systems, gather information, or cause a specific effect, such as wiping the hard drives on all endpoints.\n\nThe permissions required for this action vary by system configuration; local credentials may be sufficient with direct access to the third-party system, or specific domain credentials may be required. However, the system may require an administrative account to log in or to perform it's intended purpose.",
-    "technique_references": [
-      {
-        "source_name": "capec",
-        "url": "https://capec.mitre.org/data/definitions/187.html",
-        "description": "none",
-        "external_id": "CAPEC-187"
-      }
-    ],
-    "technique_required_permissions": "user|administrator|system",
-    "technique_effective_permissions": "none",
-    "search_token": "none"
-  },
-  {
-    "id": "attack-pattern--e6919abc-99f9-4c6c-95a5-14761e7b2add",
-    "platform": "linux|macos|windows",
-    "tid": "T1105",
-    "technique": "Ingress Tool Transfer",
-    "tactic": "command-and-control",
-    "datasources": "file-creation|network-connection-creation|network-traffic-content|network-traffic-flow",
-    "has_subtechniques": false,
-    "is_deprecated": false,
-    "is_revoked": false,
-    "subtechniques": [],
-    "count_subtechniques": 0,
-    "correlation_adversary": "none",
-    "correlation_malware": "none",
-    "correlation_tool": "none",
-    "correlation_gid": "none",
-    "technique_description": "Adversaries may transfer tools or other files from an external system into a compromised environment. Tools or files may be copied from an external adversary-controlled system to the victim network through the command and control channel or through alternate protocols such as [ftp](https://attack.mitre.org/software/S0095). Once present, adversaries may also transfer/spread tools between victim devices within a compromised environment (i.e. [Lateral Tool Transfer](https://attack.mitre.org/techniques/T1570)). \n\nFiles can also be transferred using various [Web Service](https://attack.mitre.org/techniques/T1102)s as well as native or otherwise present tools on the victim system.(Citation: PTSecurity Cobalt Dec 2016)\n\nOn Windows, adversaries may use various utilities to download tools, such as `copy`, `finger`, and [PowerShell](https://attack.mitre.org/techniques/T1059/001) commands such as <code>IEX(New-Object Net.WebClient).downloadString()</code> and <code>Invoke-WebRequest</code>. On Linux and macOS systems, a variety of utilities also exist, such as `curl`, `scp`, `sftp`, `tftp`, `rsync`, `finger`, and `wget`.(Citation: t1105_lolbas)",
-    "technique_references": [
-      {
-        "source_name": "University of Birmingham C2",
-        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
-        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
-        "external_id": "none"
-      },
-      {
-        "source_name": "t1105_lolbas",
-        "url": "https://lolbas-project.github.io/#t1105",
-        "description": "LOLBAS. (n.d.). LOLBAS Mapped to T1105. Retrieved March 11, 2022.",
-        "external_id": "none"
-      },
-      {
-        "source_name": "PTSecurity Cobalt Dec 2016",
-        "url": "https://www.ptsecurity.com/upload/corporate/ww-en/analytics/Cobalt-Snatch-eng.pdf",
-        "description": "Positive Technologies. (2016, December 16). Cobalt Snatch. Retrieved October 9, 2018.",
-        "external_id": "none"
-      }
-    ],
-    "technique_required_permissions": "none",
-    "technique_effective_permissions": "none",
-    "search_token": "none"
-  },
-  {
-    "id": "attack-pattern--191cc6af-1bb2-4344-ab5f-28e496638720",
-    "platform": "linux|macos|windows",
-    "tid": "T1195.001",
-    "technique": "Compromise Software Dependencies and Development Tools",
-    "tactic": "initial-access",
-    "datasources": "file-metadata",
-    "has_subtechniques": false,
-    "is_deprecated": false,
-    "is_revoked": false,
-    "subtechniques": [],
-    "count_subtechniques": 0,
-    "correlation_adversary": "none",
-    "correlation_malware": "none",
-    "correlation_tool": "none",
-    "correlation_gid": "none",
-    "technique_description": "Adversaries may manipulate software dependencies and development tools prior to receipt by a final consumer for the purpose of data or system compromise. Applications often depend on external software to function properly. Popular open source projects that are used as dependencies in many applications may be targeted as a means to add malicious code to users of the dependency.(Citation: Trendmicro NPM Compromise)  \n\nTargeting may be specific to a desired victim set or may be distributed to a broad set of consumers but only move on to additional tactics on specific victims. ",
-    "technique_references": [
-      {
-        "source_name": "Trendmicro NPM Compromise",
-        "url": "https://www.trendmicro.com/vinfo/dk/security/news/cybercrime-and-digital-threats/hacker-infects-node-js-package-to-steal-from-bitcoin-wallets",
-        "description": "Trendmicro. (2018, November 29). Hacker Infects Node.js Package to Steal from Bitcoin Wallets. Retrieved April 10, 2019.",
-        "external_id": "none"
-      }
-    ],
-    "technique_required_permissions": "none",
-    "technique_effective_permissions": "none",
-    "search_token": "none"
-  },
-  {
-    "id": "attack-pattern--ac08589e-ee59-4935-8667-d845e38fe579",
-    "platform": "windows|macos|linux|containers|iaas",
-    "tid": "T1562.001",
-    "technique": "Disable or Modify Tools",
-    "tactic": "defense-evasion",
-    "datasources": "command-execution|driver-load|host-status|process-termination|service-metadata|windows-registry-key-deletion|windows-registry-key-modification",
-    "has_subtechniques": false,
-    "is_deprecated": false,
-    "is_revoked": false,
-    "subtechniques": [],
-    "count_subtechniques": 0,
-    "correlation_adversary": "none",
-    "correlation_malware": "none",
-    "correlation_tool": "none",
-    "correlation_gid": "none",
-    "technique_description": "Adversaries may modify and/or disable security tools to avoid possible detection of their malware/tools and activities. This may take many forms, such as killing security software processes or services, modifying / deleting Registry keys or configuration files so that tools do not operate properly, or other methods to interfere with security tools scanning or reporting information. Adversaries may also disable updates to prevent the latest security patches from reaching tools on victim systems.(Citation: SCADAfence_ransomware)\n\nAdversaries may also tamper with artifacts deployed and utilized by security tools. Security tools may make dynamic changes to system components in order to maintain visibility into specific events. For example, security products may load their own modules and/or modify those loaded by processes to facilitate data collection. Similar to [Indicator Blocking](https://attack.mitre.org/techniques/T1562/006), adversaries may unhook or otherwise modify these features added by tools (especially those that exist in userland or are otherwise potentially accessible to adversaries) to avoid detection.(Citation: OutFlank System Calls)(Citation: MDSec System Calls)\n\nIn cloud environments, tools disabled by adversaries may include cloud monitoring agents that report back to services such as AWS CloudWatch or Google Cloud Monitor.\n\nFurthermore, although defensive tools may have anti-tampering mechanisms, adversaries may abuse tools such as legitimate rootkit removal kits to impair and/or disable these tools.(Citation: chasing_avaddon_ransomware)(Citation: dharma_ransomware)(Citation: demystifying_ryuk)(Citation: doppelpaymer_crowdstrike) For example, adversaries have used tools such as GMER to find and shut down hidden processes and antivirus software on infected systems.(Citation: demystifying_ryuk)\n\nAdditionally, adversaries may exploit legitimate drivers from anti-virus software to gain access to kernel space (i.e. [Exploitation for Privilege Escalation](https://attack.mitre.org/techniques/T1068)), which may lead to bypassing anti-tampering features.(Citation: avoslocker_ransomware)",
-    "technique_references": [
-      {
-        "source_name": "OutFlank System Calls",
-        "url": "https://outflank.nl/blog/2019/06/19/red-team-tactics-combining-direct-system-calls-and-srdi-to-bypass-av-edr/",
-        "description": "de Plaa, C. (2019, June 19). Red Team Tactics: Combining Direct System Calls and sRDI to bypass AV/EDR. Retrieved September 29, 2021.",
-        "external_id": "none"
-      },
-      {
-        "source_name": "chasing_avaddon_ransomware",
-        "url": "https://www.mandiant.com/resources/chasing-avaddon-ransomware",
-        "description": "Hernandez, A. S. Tarter, P. Ocamp, E. J. (2022, January 19). One Source to Rule Them All: Chasing AVADDON Ransomware. Retrieved January 26, 2022.",
-        "external_id": "none"
-      },
-      {
-        "source_name": "doppelpaymer_crowdstrike",
-        "url": "https://www.crowdstrike.com/blog/how-doppelpaymer-hunts-and-kills-windows-processes/",
-        "description": "Hurley, S. (2021, December 7). Critical Hit: How DoppelPaymer Hunts and Kills Windows Processes. Retrieved January 26, 2022.",
-        "external_id": "none"
-      },
-      {
-        "source_name": "avoslocker_ransomware",
-        "url": "https://thehackernews.com/2022/05/avoslocker-ransomware-variant-using-new.html",
-        "description": "Lakshmanan, R. (2022, May 2). AvosLocker Ransomware Variant Using New Trick to Disable Antivirus Protection. Retrieved May 17, 2022.",
-        "external_id": "none"
-      },
-      {
-        "source_name": "dharma_ransomware",
-        "url": "https://www.crowdstrike.com/blog/targeted-dharma-ransomware-intrusions-exhibit-consistent-techniques/",
-        "description": "Loui, E. Scheuerman, K. et al. (2020, April 16). Targeted Dharma Ransomware Intrusions Exhibit Consistent Techniques. Retrieved January 26, 2022.",
-        "external_id": "none"
-      },
-      {
-        "source_name": "MDSec System Calls",
-        "url": "https://www.mdsec.co.uk/2020/12/bypassing-user-mode-hooks-and-direct-invocation-of-system-calls-for-red-teams/",
-        "description": "MDSec Research. (2020, December). Bypassing User-Mode Hooks and Direct Invocation of System Calls for Red Teams. Retrieved September 29, 2021.",
-        "external_id": "none"
-      },
-      {
-        "source_name": "SCADAfence_ransomware",
-        "url": "https://cdn.logic-control.com/docs/scadafence/Anatomy-Of-A-Targeted-Ransomware-Attack-WP.pdf",
-        "description": "Shaked, O. (2020, January 20). Anatomy of a Targeted Ransomware Attack. Retrieved June 18, 2022.",
-        "external_id": "none"
-      },
-      {
-        "source_name": "demystifying_ryuk",
-        "url": "https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/demystifying-ransomware-attacks-against-microsoft-defender/ba-p/1928947",
-        "description": "Tran, T. (2020, November 24). Demystifying Ransomware Attacks Against Microsoft Defender Solution. Retrieved January 26, 2022.",
-        "external_id": "none"
-      },
-      {
-        "source_name": "capec",
-        "url": "https://capec.mitre.org/data/definitions/578.html",
-        "description": "none",
-        "external_id": "CAPEC-578"
-      }
-    ],
-    "technique_required_permissions": "none",
-    "technique_effective_permissions": "none",
-    "search_token": "none"
-  },
-  {
-    "id": "attack-pattern--bf90d72c-c00b-45e3-b3aa-68560560d4c5",
-    "platform": "linux|macos|windows",
-    "tid": "T1570",
-    "technique": "Lateral Tool Transfer",
-    "tactic": "lateral-movement",
-    "datasources": "command-execution|file-creation|file-metadata|named-pipe-metadata|network-share-access|network-traffic-content|network-traffic-flow|process-creation",
-    "has_subtechniques": false,
-    "is_deprecated": false,
-    "is_revoked": false,
-    "subtechniques": [],
-    "count_subtechniques": 0,
-    "correlation_adversary": "none",
-    "correlation_malware": "none",
-    "correlation_tool": "none",
-    "correlation_gid": "none",
-    "technique_description": "Adversaries may transfer tools or other files between systems in a compromised environment. Once brought into the victim environment (i.e. [Ingress Tool Transfer](https://attack.mitre.org/techniques/T1105)) files may then be copied from one system to another to stage adversary tools or other files over the course of an operation. Adversaries may copy files between internal victim systems to support lateral movement using inherent file sharing protocols such as file sharing over [SMB/Windows Admin Shares](https://attack.mitre.org/techniques/T1021/002) to connected network shares or with authenticated connections via [Remote Desktop Protocol](https://attack.mitre.org/techniques/T1021/001).(Citation: Unit42 LockerGoga 2019)\n\nFiles can also be transferred using native or otherwise present tools on the victim system, such as scp, rsync, curl, sftp, and [ftp](https://attack.mitre.org/software/S0095).",
-    "technique_references": [
-      {
-        "source_name": "Unit42 LockerGoga 2019",
-        "url": "https://unit42.paloaltonetworks.com/born-this-way-origins-of-lockergoga/",
-        "description": "Harbison, M. (2019, March 26). Born This Way? Origins of LockerGoga. Retrieved April 16, 2019.",
-        "external_id": "none"
-      }
-    ],
-    "technique_required_permissions": "none",
-    "technique_effective_permissions": "none",
-    "search_token": "none"
-  },
-  {
-    "id": "attack-pattern--a2fdce72-04b2-409a-ac10-cc1695f4fce0",
-    "platform": "pre",
-    "tid": "T1588.002",
-    "technique": "Tool",
-    "tactic": "resource-development",
-    "datasources": "malware-metadata",
-    "has_subtechniques": false,
-    "is_deprecated": false,
-    "is_revoked": false,
-    "subtechniques": [],
-    "count_subtechniques": 0,
-    "correlation_adversary": "none",
-    "correlation_malware": "none",
-    "correlation_tool": "none",
-    "correlation_gid": "none",
-    "technique_description": "Adversaries may buy, steal, or download software tools that can be used during targeting. Tools can be open or closed source, free or commercial. A tool can be used for malicious purposes by an adversary, but (unlike malware) were not intended to be used for those purposes (ex: [PsExec](https://attack.mitre.org/software/S0029)). Tool acquisition can involve the procurement of commercial software licenses, including for red teaming tools such as [Cobalt Strike](https://attack.mitre.org/software/S0154). Commercial software may be obtained through purchase, stealing licenses (or licensed copies of the software), or cracking trial versions.(Citation: Recorded Future Beacon 2019)\n\nAdversaries may obtain tools to support their operations, including to support execution of post-compromise behaviors. In addition to freely downloading or purchasing software, adversaries may steal software and/or software licenses from third-party entities (including other adversaries).",
-    "technique_references": [
-      {
-        "source_name": "Recorded Future Beacon 2019",
-        "url": "https://www.recordedfuture.com/identifying-cobalt-strike-servers/",
-        "description": "Recorded Future. (2019, June 20). Out of the Blue: How Recorded Future Identified Rogue Cobalt Strike Servers. Retrieved October 16, 2020.",
-        "external_id": "none"
-      },
-      {
-        "source_name": "Analyzing CS Dec 2020",
-        "url": "https://www.randhome.io/blog/2020/12/20/analyzing-cobalt-strike-for-fun-and-profit/",
-        "description": "Maynier, E. (2020, December 20). Analyzing Cobalt Strike for Fun and Profit. Retrieved October 12, 2021.",
-        "external_id": "none"
-      }
-    ],
-    "technique_required_permissions": "none",
-    "technique_effective_permissions": "none",
-    "search_token": "none"
-  },
-  {
-    "id": "attack-pattern--506f6f49-7045-4156-9007-7474cb44ad6d",
-    "platform": "pre",
-    "tid": "T1608.002",
-    "technique": "Upload Tool",
-    "tactic": "resource-development",
-    "datasources": "response-content",
-    "has_subtechniques": false,
-    "is_deprecated": false,
-    "is_revoked": false,
-    "subtechniques": [],
-    "count_subtechniques": 0,
-    "correlation_adversary": "none",
-    "correlation_malware": "none",
-    "correlation_tool": "none",
-    "correlation_gid": "none",
-    "technique_description": "Adversaries may upload tools to third-party or adversary controlled infrastructure to make it accessible during targeting. Tools can be open or closed source, free or commercial. Tools can be used for malicious purposes by an adversary, but (unlike malware) were not intended to be used for those purposes (ex: [PsExec](https://attack.mitre.org/software/S0029)). Adversaries may upload tools to support their operations, such as making a tool available to a victim network to enable [Ingress Tool Transfer](https://attack.mitre.org/techniques/T1105) by placing it on an Internet accessible web server.\n\nTools may be placed on infrastructure that was previously purchased/rented by the adversary ([Acquire Infrastructure](https://attack.mitre.org/techniques/T1583)) or was otherwise compromised by them ([Compromise Infrastructure](https://attack.mitre.org/techniques/T1584)).(Citation: Dell TG-3390) Tools can also be staged on web services, such as an adversary controlled GitHub repo, or on Platform-as-a-Service offerings that enable users to easily provision applications.(Citation: Dragos Heroku Watering Hole)(Citation: Malwarebytes Heroku Skimmers)(Citation: Intezer App Service Phishing)\n\nAdversaries can avoid the need to upload a tool by having compromised victim machines download the tool directly from a third-party hosting location (ex: a non-adversary controlled GitHub repo), including the original hosting site of the tool.",
-    "technique_references": [
-      {
-        "source_name": "Dell TG-3390",
-        "url": "https://www.secureworks.com/research/threat-group-3390-targets-organizations-for-cyberespionage",
-        "description": "Dell SecureWorks Counter Threat Unit Threat Intelligence. (2015, August 5). Threat Group-3390 Targets Organizations for Cyberespionage. Retrieved August 18, 2018.",
-        "external_id": "none"
-      },
-      {
-        "source_name": "Malwarebytes Heroku Skimmers",
-        "url": "https://www.malwarebytes.com/blog/news/2019/12/theres-an-app-for-that-web-skimmers-found-on-paas-heroku",
-        "description": "Jérôme Segura. (2019, December 4). There's an app for that: web skimmers found on PaaS Heroku. Retrieved August 18, 2022.",
-        "external_id": "none"
-      },
-      {
-        "source_name": "Dragos Heroku Watering Hole",
-        "url": "https://www.dragos.com/blog/industry-news/a-new-water-watering-hole/",
-        "description": "Kent Backman. (2021, May 18). When Intrusions Don’t Align: A New Water Watering Hole and Oldsmar. Retrieved August 18, 2022.",
-        "external_id": "none"
-      },
-      {
-        "source_name": "Intezer App Service Phishing",
-        "url": "https://www.intezer.com/blog/malware-analysis/kud-i-enter-your-server-new-vulnerabilities-in-microsoft-azure/",
-        "description": "Paul Litvak. (2020, October 8). Kud I Enter Your Server? New Vulnerabilities in Microsoft Azure. Retrieved August 18, 2022.",
-        "external_id": "none"
-      }
-    ],
-    "technique_required_permissions": "none",
-    "technique_effective_permissions": "none",
-    "search_token": "none"
+{
+  "item": null,
+  "aliases": null,
+  "gid": null,
+  "profile": {
+    "techniques": null,
+    "tactics": null,
+    "adversaries": null
   }
-]
+}
+{
+  "item": null,
+  "aliases": null,
+  "gid": null,
+  "profile": {
+    "techniques": null,
+    "tactics": null,
+    "adversaries": null
+  }
+}
+{
+  "item": null,
+  "aliases": null,
+  "gid": null,
+  "profile": {
+    "techniques": null,
+    "tactics": null,
+    "adversaries": null
+  }
+}
+{
+  "item": null,
+  "aliases": null,
+  "gid": null,
+  "profile": {
+    "techniques": null,
+    "tactics": null,
+    "adversaries": null
+  }
+}
+{
+  "item": null,
+  "aliases": null,
+  "gid": null,
+  "profile": {
+    "techniques": null,
+    "tactics": null,
+    "adversaries": null
+  }
+}
+{
+  "item": null,
+  "aliases": null,
+  "gid": null,
+  "profile": {
+    "techniques": null,
+    "tactics": null,
+    "adversaries": null
+  }
+}
+{
+  "item": null,
+  "aliases": null,
+  "gid": null,
+  "profile": {
+    "techniques": null,
+    "tactics": null,
+    "adversaries": null
+  }
+}
+{
+  "item": null,
+  "aliases": null,
+  "gid": null,
+  "profile": {
+    "techniques": null,
+    "tactics": null,
+    "adversaries": null
+  }
+}
+{
+  "item": null,
+  "aliases": null,
+  "gid": null,
+  "profile": {
+    "techniques": null,
+    "tactics": null,
+    "adversaries": null
+  }
+}

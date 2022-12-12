@@ -1,37 +1,28 @@
-[
-  {
-    "id": "tool--f91162cc-1686-4ff8-8115-bf3f61a4cc7a",
-    "name": "wevtutil",
-    "aliases": "none",
-    "platforms": "windows",
-    "tool_id": "S0645",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 2,
-        "items": [
-          "collection",
-          "defense-evasion"
-        ]
-      },
-      "techniques": {
-        "count": 3,
-        "items": [
-          "T1005",
-          "T1070.001",
-          "T1562.002"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 1,
-        "items": [
-          "apt28"
-        ]
-      }
+{
+  "item": "wevtutil",
+  "aliases": "none",
+  "gid": "S0645",
+  "profile": {
+    "techniques": {
+      "count": 3,
+      "items": [
+        "T1005",
+        "T1070.001",
+        "T1562.002"
+      ]
+    },
+    "tactics": {
+      "count": 2,
+      "items": [
+        "collection",
+        "defense-evasion"
+      ]
+    },
+    "adversaries": {
+      "count": 1,
+      "items": [
+        "apt28"
+      ]
     }
   }
-]
+}

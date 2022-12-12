@@ -1,36 +1,27 @@
-[
-  {
-    "id": "tool--3ffbdc1f-d2bf-41ab-91a2-c7b857e98079",
-    "name": "rawdisk",
-    "aliases": "none",
-    "platforms": "windows",
-    "tool_id": "S0364",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 1,
-        "items": [
-          "impact"
-        ]
-      },
-      "techniques": {
-        "count": 3,
-        "items": [
-          "T1485",
-          "T1561.001",
-          "T1561.002"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 1,
-        "items": [
-          "lazarus-group"
-        ]
-      }
+{
+  "item": "rawdisk",
+  "aliases": "none",
+  "gid": "S0364",
+  "profile": {
+    "techniques": {
+      "count": 3,
+      "items": [
+        "T1485",
+        "T1561.001",
+        "T1561.002"
+      ]
+    },
+    "tactics": {
+      "count": 1,
+      "items": [
+        "impact"
+      ]
+    },
+    "adversaries": {
+      "count": 1,
+      "items": [
+        "lazarus-group"
+      ]
     }
   }
-]
+}

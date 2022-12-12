@@ -1,51 +1,43 @@
-[
-  {
-    "id": "intrusion-set--38863958-a201-4ce1-9dbe-539b0b6804e0",
-    "name": "machete",
-    "aliases": "machete|apt-c-43|el-machete",
-    "group_id": "G0095",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 1,
-        "items": [
-          "machete"
-        ]
-      },
-      "tools": {
-        "count": 0,
-        "items": []
-      },
-      "techniques": {
-        "count": 11,
-        "items": [
-          "T1036.005",
-          "T1053.005",
-          "T1059.003",
-          "T1059.005",
-          "T1059.006",
-          "T1189",
-          "T1204.001",
-          "T1204.002",
-          "T1218.007",
-          "T1566.001",
-          "T1566.002"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 5,
-        "items": [
-          "defense-evasion",
-          "execution",
-          "initial-access",
-          "persistence",
-          "privilege-escalation"
-        ]
-      }
+{
+  "item": "machete",
+  "aliases": "machete|apt-c-43|el-machete",
+  "gid": "G0095",
+  "profile": {
+    "techniques": {
+      "count": 11,
+      "items": [
+        "T1036.005",
+        "T1053.005",
+        "T1059.003",
+        "T1059.005",
+        "T1059.006",
+        "T1189",
+        "T1204.001",
+        "T1204.002",
+        "T1218.007",
+        "T1566.001",
+        "T1566.002"
+      ]
+    },
+    "tactics": {
+      "count": 5,
+      "items": [
+        "defense-evasion",
+        "execution",
+        "initial-access",
+        "persistence",
+        "privilege-escalation"
+      ]
+    },
+    "malware": {
+      "count": 1,
+      "items": [
+        "machete"
+      ]
+    },
+    "tools": {
+      "count": 0,
+      "items": []
     }
   }
-]
+}

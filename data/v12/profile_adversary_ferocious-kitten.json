@@ -1,47 +1,39 @@
-[
-  {
-    "id": "intrusion-set--6566aac9-dad8-4332-ae73-20c23bad7f02",
-    "name": "ferocious-kitten",
-    "aliases": "ferocious-kitten",
-    "group_id": "G0137",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 1,
-        "items": [
-          "markirat"
-        ]
-      },
-      "tools": {
-        "count": 1,
-        "items": [
-          "bitsadmin"
-        ]
-      },
-      "techniques": {
-        "count": 6,
-        "items": [
-          "T1036.002",
-          "T1036.005",
-          "T1204.002",
-          "T1566.001",
-          "T1583.001",
-          "T1588.002"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 4,
-        "items": [
-          "defense-evasion",
-          "execution",
-          "initial-access",
-          "resource-development"
-        ]
-      }
+{
+  "item": "ferocious-kitten",
+  "aliases": "ferocious-kitten",
+  "gid": "G0137",
+  "profile": {
+    "techniques": {
+      "count": 6,
+      "items": [
+        "T1036.002",
+        "T1036.005",
+        "T1204.002",
+        "T1566.001",
+        "T1583.001",
+        "T1588.002"
+      ]
+    },
+    "tactics": {
+      "count": 4,
+      "items": [
+        "defense-evasion",
+        "execution",
+        "initial-access",
+        "resource-development"
+      ]
+    },
+    "malware": {
+      "count": 1,
+      "items": [
+        "markirat"
+      ]
+    },
+    "tools": {
+      "count": 1,
+      "items": [
+        "bitsadmin"
+      ]
     }
   }
-]
+}

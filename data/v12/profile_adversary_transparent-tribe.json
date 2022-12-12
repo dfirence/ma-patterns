@@ -1,58 +1,50 @@
-[
-  {
-    "id": "intrusion-set--e44e0985-bc65-4a8f-b578-211c858128e3",
-    "name": "transparent-tribe",
-    "aliases": "transparent-tribe|copper-fieldstone|apt36|mythic-leopard|projectm",
-    "group_id": "G0134",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 5,
-        "items": [
-          "crimson",
-          "darkcomet",
-          "njrat",
-          "obliquerat",
-          "peppy"
-        ]
-      },
-      "tools": {
-        "count": 0,
-        "items": []
-      },
-      "techniques": {
-        "count": 14,
-        "items": [
-          "T1027",
-          "T1036.005",
-          "T1059.005",
-          "T1189",
-          "T1203",
-          "T1204.001",
-          "T1204.002",
-          "T1564.001",
-          "T1566.001",
-          "T1566.002",
-          "T1568",
-          "T1583.001",
-          "T1584.001",
-          "T1608.004"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 5,
-        "items": [
-          "command-and-control",
-          "defense-evasion",
-          "execution",
-          "initial-access",
-          "resource-development"
-        ]
-      }
+{
+  "item": "transparent-tribe",
+  "aliases": "transparent-tribe|copper-fieldstone|apt36|mythic-leopard|projectm",
+  "gid": "G0134",
+  "profile": {
+    "techniques": {
+      "count": 14,
+      "items": [
+        "T1027",
+        "T1036.005",
+        "T1059.005",
+        "T1189",
+        "T1203",
+        "T1204.001",
+        "T1204.002",
+        "T1564.001",
+        "T1566.001",
+        "T1566.002",
+        "T1568",
+        "T1583.001",
+        "T1584.001",
+        "T1608.004"
+      ]
+    },
+    "tactics": {
+      "count": 5,
+      "items": [
+        "command-and-control",
+        "defense-evasion",
+        "execution",
+        "initial-access",
+        "resource-development"
+      ]
+    },
+    "malware": {
+      "count": 5,
+      "items": [
+        "crimson",
+        "darkcomet",
+        "njrat",
+        "obliquerat",
+        "peppy"
+      ]
+    },
+    "tools": {
+      "count": 0,
+      "items": []
     }
   }
-]
+}

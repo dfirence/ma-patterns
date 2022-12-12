@@ -1,35 +1,26 @@
-[
-  {
-    "id": "tool--a52edc76-328d-4596-85e7-d56ef5a9eb69",
-    "name": "pass-the-hash-toolkit",
-    "aliases": "none",
-    "platforms": "none",
-    "tool_id": "S0122",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 2,
-        "items": [
-          "defense-evasion",
-          "lateral-movement"
-        ]
-      },
-      "techniques": {
-        "count": 1,
-        "items": [
-          "T1550.002"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 1,
-        "items": [
-          "apt1"
-        ]
-      }
+{
+  "item": "pass-the-hash-toolkit",
+  "aliases": "none",
+  "gid": "S0122",
+  "profile": {
+    "techniques": {
+      "count": 1,
+      "items": [
+        "T1550.002"
+      ]
+    },
+    "tactics": {
+      "count": 2,
+      "items": [
+        "defense-evasion",
+        "lateral-movement"
+      ]
+    },
+    "adversaries": {
+      "count": 1,
+      "items": [
+        "apt1"
+      ]
     }
   }
-]
+}

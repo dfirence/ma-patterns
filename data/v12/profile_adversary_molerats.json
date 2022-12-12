@@ -1,64 +1,56 @@
-[
-  {
-    "id": "intrusion-set--df71bb3b-813c-45eb-a8bc-f2a419837411",
-    "name": "molerats",
-    "aliases": "molerats|operation-molerats|gaza-cybergang",
-    "group_id": "G0021",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 6,
-        "items": [
-          "dropbook",
-          "dustysky",
-          "molenet",
-          "poisonivy",
-          "sharpstage",
-          "spark"
-        ]
-      },
-      "tools": {
-        "count": 0,
-        "items": []
-      },
-      "techniques": {
-        "count": 16,
-        "items": [
-          "T1027",
-          "T1053.005",
-          "T1057",
-          "T1059.001",
-          "T1059.005",
-          "T1059.007",
-          "T1105",
-          "T1140",
-          "T1204.001",
-          "T1204.002",
-          "T1218.007",
-          "T1547.001",
-          "T1553.002",
-          "T1555.003",
-          "T1566.001",
-          "T1566.002"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 8,
-        "items": [
-          "command-and-control",
-          "credential-access",
-          "defense-evasion",
-          "discovery",
-          "execution",
-          "initial-access",
-          "persistence",
-          "privilege-escalation"
-        ]
-      }
+{
+  "item": "molerats",
+  "aliases": "molerats|operation-molerats|gaza-cybergang",
+  "gid": "G0021",
+  "profile": {
+    "techniques": {
+      "count": 16,
+      "items": [
+        "T1027",
+        "T1053.005",
+        "T1057",
+        "T1059.001",
+        "T1059.005",
+        "T1059.007",
+        "T1105",
+        "T1140",
+        "T1204.001",
+        "T1204.002",
+        "T1218.007",
+        "T1547.001",
+        "T1553.002",
+        "T1555.003",
+        "T1566.001",
+        "T1566.002"
+      ]
+    },
+    "tactics": {
+      "count": 8,
+      "items": [
+        "command-and-control",
+        "credential-access",
+        "defense-evasion",
+        "discovery",
+        "execution",
+        "initial-access",
+        "persistence",
+        "privilege-escalation"
+      ]
+    },
+    "malware": {
+      "count": 6,
+      "items": [
+        "dropbook",
+        "dustysky",
+        "molenet",
+        "poisonivy",
+        "sharpstage",
+        "spark"
+      ]
+    },
+    "tools": {
+      "count": 0,
+      "items": []
     }
   }
-]
+}

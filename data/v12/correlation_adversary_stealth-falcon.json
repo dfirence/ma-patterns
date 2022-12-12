@@ -1,0 +1,200 @@
+[
+  {
+    "item": "stealth-falcon",
+    "id": "G0038",
+    "platforms": "linux|macos|windows|network",
+    "datasources": "command-execution|file-access|os-api-execution|process-creation|script-execution",
+    "tid": "T1005",
+    "technique": "Data from Local System",
+    "tactic": "collection",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "stealth-falcon",
+    "id": "G0038",
+    "platforms": "windows",
+    "datasources": "command-execution|os-api-execution|process-creation|windows-registry-key-access",
+    "tid": "T1012",
+    "technique": "Query Registry",
+    "tactic": "discovery",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "stealth-falcon",
+    "id": "G0038",
+    "platforms": "linux|macos|windows|network",
+    "datasources": "command-execution|os-api-execution|process-creation|script-execution",
+    "tid": "T1016",
+    "technique": "System Network Configuration Discovery",
+    "tactic": "discovery",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "stealth-falcon",
+    "id": "G0038",
+    "platforms": "linux|macos|windows",
+    "datasources": "active-directory-object-access|command-execution|file-access|network-traffic-content|network-traffic-flow|os-api-execution|process-access|process-creation|windows-registry-key-access",
+    "tid": "T1033",
+    "technique": "System Owner/User Discovery",
+    "tactic": "discovery",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "stealth-falcon",
+    "id": "G0038",
+    "platforms": "linux|macos|windows",
+    "datasources": "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "tid": "T1041",
+    "technique": "Exfiltration Over C2 Channel",
+    "tactic": "exfiltration",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "stealth-falcon",
+    "id": "G0038",
+    "platforms": "windows",
+    "datasources": "command-execution|network-connection-creation|process-creation",
+    "tid": "T1047",
+    "technique": "Windows Management Instrumentation",
+    "tactic": "execution",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "stealth-falcon",
+    "id": "G0038",
+    "platforms": "windows",
+    "datasources": "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "tid": "T1053.005",
+    "technique": "Scheduled Task",
+    "tactic": "execution",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "stealth-falcon",
+    "id": "G0038",
+    "platforms": "windows",
+    "datasources": "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "tid": "T1053.005",
+    "technique": "Scheduled Task",
+    "tactic": "persistence",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "stealth-falcon",
+    "id": "G0038",
+    "platforms": "windows",
+    "datasources": "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "tid": "T1053.005",
+    "technique": "Scheduled Task",
+    "tactic": "privilege-escalation",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "stealth-falcon",
+    "id": "G0038",
+    "platforms": "linux|macos|windows",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "tid": "T1057",
+    "technique": "Process Discovery",
+    "tactic": "discovery",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "stealth-falcon",
+    "id": "G0038",
+    "platforms": "linux|macos|windows|network",
+    "datasources": "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "tid": "T1059",
+    "technique": "Command and Scripting Interpreter",
+    "tactic": "execution",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "stealth-falcon",
+    "id": "G0038",
+    "platforms": "windows",
+    "datasources": "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "tid": "T1059.001",
+    "technique": "PowerShell",
+    "tactic": "execution",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "stealth-falcon",
+    "id": "G0038",
+    "platforms": "linux|macos|windows",
+    "datasources": "network-traffic-content|network-traffic-flow",
+    "tid": "T1071.001",
+    "technique": "Web Protocols",
+    "tactic": "command-and-control",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "stealth-falcon",
+    "id": "G0038",
+    "platforms": "windows|iaas|linux|macos|network",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "tid": "T1082",
+    "technique": "System Information Discovery",
+    "tactic": "discovery",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "stealth-falcon",
+    "id": "G0038",
+    "platforms": "linux|macos|windows",
+    "datasources": "command-execution|file-access|os-api-execution|process-access|process-creation",
+    "tid": "T1555",
+    "technique": "Credentials from Password Stores",
+    "tactic": "credential-access",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "stealth-falcon",
+    "id": "G0038",
+    "platforms": "linux|macos|windows",
+    "datasources": "command-execution|file-access|os-api-execution|process-access",
+    "tid": "T1555.003",
+    "technique": "Credentials from Web Browsers",
+    "tactic": "credential-access",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "stealth-falcon",
+    "id": "G0038",
+    "platforms": "windows",
+    "datasources": "command-execution|file-access|os-api-execution|process-creation",
+    "tid": "T1555.004",
+    "technique": "Windows Credential Manager",
+    "tactic": "credential-access",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "stealth-falcon",
+    "id": "G0038",
+    "platforms": "linux|windows|macos",
+    "datasources": "network-traffic-content",
+    "tid": "T1573.001",
+    "technique": "Symmetric Cryptography",
+    "tactic": "command-and-control",
+    "malware": "none",
+    "tool": "none"
+  }
+]

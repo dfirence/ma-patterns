@@ -1,0 +1,145 @@
+[
+  {
+    "item": "putter-panda",
+    "id": "G0024",
+    "platforms": "linux|macos|windows",
+    "datasources": "command-execution|file-creation|file-metadata|module-load|os-api-execution|process-creation",
+    "tid": "T1027",
+    "technique": "Obfuscated Files or Information",
+    "tactic": "defense-evasion",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "putter-panda",
+    "id": "G0024",
+    "platforms": "windows",
+    "datasources": "module-load|os-api-execution|process-access|process-metadata|process-modification",
+    "tid": "T1055.001",
+    "technique": "Dynamic-link Library Injection",
+    "tactic": "defense-evasion",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "putter-panda",
+    "id": "G0024",
+    "platforms": "windows",
+    "datasources": "module-load|os-api-execution|process-access|process-metadata|process-modification",
+    "tid": "T1055.001",
+    "technique": "Dynamic-link Library Injection",
+    "tactic": "privilege-escalation",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "putter-panda",
+    "id": "G0024",
+    "platforms": "linux|macos|windows",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "tid": "T1057",
+    "technique": "Process Discovery",
+    "tactic": "discovery",
+    "malware": "4h-rat",
+    "tool": "none"
+  },
+  {
+    "item": "putter-panda",
+    "id": "G0024",
+    "platforms": "linux|macos|windows",
+    "datasources": "command-execution|file-deletion",
+    "tid": "T1070.004",
+    "technique": "File Deletion",
+    "tactic": "defense-evasion",
+    "malware": "pngdowner",
+    "tool": "none"
+  },
+  {
+    "item": "putter-panda",
+    "id": "G0024",
+    "platforms": "linux|macos|windows",
+    "datasources": "file-metadata|file-modification",
+    "tid": "T1070.006",
+    "technique": "Timestomp",
+    "tactic": "defense-evasion",
+    "malware": "3para-rat",
+    "tool": "none"
+  },
+  {
+    "item": "putter-panda",
+    "id": "G0024",
+    "platforms": "linux|macos|windows",
+    "datasources": "network-traffic-content|network-traffic-flow",
+    "tid": "T1071.001",
+    "technique": "Web Protocols",
+    "tactic": "command-and-control",
+    "malware": "3para-rat|4h-rat|httpclient|pngdowner",
+    "tool": ""
+  },
+  {
+    "item": "putter-panda",
+    "id": "G0024",
+    "platforms": "windows|iaas|linux|macos|network",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "tid": "T1082",
+    "technique": "System Information Discovery",
+    "tactic": "discovery",
+    "malware": "4h-rat",
+    "tool": "none"
+  },
+  {
+    "item": "putter-panda",
+    "id": "G0024",
+    "platforms": "windows",
+    "datasources": "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "tid": "T1547.001",
+    "technique": "Registry Run Keys / Startup Folder",
+    "tactic": "persistence",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "putter-panda",
+    "id": "G0024",
+    "platforms": "windows",
+    "datasources": "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "tid": "T1547.001",
+    "technique": "Registry Run Keys / Startup Folder",
+    "tactic": "privilege-escalation",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "putter-panda",
+    "id": "G0024",
+    "platforms": "windows|iaas|linux|macos|containers",
+    "datasources": "command-execution|file-access",
+    "tid": "T1552.001",
+    "technique": "Credentials In Files",
+    "tactic": "credential-access",
+    "malware": "pngdowner",
+    "tool": "none"
+  },
+  {
+    "item": "putter-panda",
+    "id": "G0024",
+    "platforms": "windows|macos|linux|containers|iaas",
+    "datasources": "command-execution|driver-load|host-status|process-termination|service-metadata|windows-registry-key-deletion|windows-registry-key-modification",
+    "tid": "T1562.001",
+    "technique": "Disable or Modify Tools",
+    "tactic": "defense-evasion",
+    "malware": "none",
+    "tool": "none"
+  },
+  {
+    "item": "putter-panda",
+    "id": "G0024",
+    "platforms": "linux|windows|macos",
+    "datasources": "network-traffic-content",
+    "tid": "T1573.001",
+    "technique": "Symmetric Cryptography",
+    "tactic": "command-and-control",
+    "malware": "3para-rat|4h-rat|httpclient",
+    "tool": ""
+  }
+]

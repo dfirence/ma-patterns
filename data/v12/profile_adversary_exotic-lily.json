@@ -1,56 +1,48 @@
-[
-  {
-    "id": "intrusion-set--129f2f77-1ab2-4c35-bd5e-21260cee92af",
-    "name": "exotic-lily",
-    "aliases": "exotic-lily",
-    "group_id": "G1011",
-    "is_revoked": false,
-    "profile": {
-      "malware": {
-        "count": 2,
-        "items": [
-          "bazar",
-          "bumblebee"
-        ]
-      },
-      "tools": {
-        "count": 0,
-        "items": []
-      },
-      "techniques": {
-        "count": 15,
-        "items": [
-          "T1102",
-          "T1203",
-          "T1204.001",
-          "T1204.002",
-          "T1566.001",
-          "T1566.002",
-          "T1566.003",
-          "T1583.001",
-          "T1585.001",
-          "T1585.002",
-          "T1589.002",
-          "T1593.001",
-          "T1594",
-          "T1597",
-          "T1608.001"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "tactics": {
-        "count": 5,
-        "items": [
-          "command-and-control",
-          "execution",
-          "initial-access",
-          "reconnaissance",
-          "resource-development"
-        ]
-      }
+{
+  "item": "exotic-lily",
+  "aliases": "exotic-lily",
+  "gid": "G1011",
+  "profile": {
+    "techniques": {
+      "count": 15,
+      "items": [
+        "T1102",
+        "T1203",
+        "T1204.001",
+        "T1204.002",
+        "T1566.001",
+        "T1566.002",
+        "T1566.003",
+        "T1583.001",
+        "T1585.001",
+        "T1585.002",
+        "T1589.002",
+        "T1593.001",
+        "T1594",
+        "T1597",
+        "T1608.001"
+      ]
+    },
+    "tactics": {
+      "count": 5,
+      "items": [
+        "command-and-control",
+        "execution",
+        "initial-access",
+        "reconnaissance",
+        "resource-development"
+      ]
+    },
+    "malware": {
+      "count": 2,
+      "items": [
+        "bazar",
+        "bumblebee"
+      ]
+    },
+    "tools": {
+      "count": 0,
+      "items": []
     }
   }
-]
+}

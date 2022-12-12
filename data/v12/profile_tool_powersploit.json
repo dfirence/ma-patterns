@@ -1,75 +1,66 @@
-[
-  {
-    "id": "tool--13cd9151-83b7-410d-9f98-25d0f0d1d80d",
-    "name": "powersploit",
-    "aliases": "none",
-    "platforms": "windows",
-    "tool_id": "S0194",
-    "is_revoked": false,
-    "profile": {
-      "tactics": {
-        "count": 7,
-        "items": [
-          "collection",
-          "credential-access",
-          "defense-evasion",
-          "discovery",
-          "execution",
-          "persistence",
-          "privilege-escalation"
-        ]
-      },
-      "techniques": {
-        "count": 28,
-        "items": [
-          "T1003.001",
-          "T1005",
-          "T1012",
-          "T1027",
-          "T1027.005",
-          "T1047",
-          "T1053.005",
-          "T1055.001",
-          "T1056.001",
-          "T1057",
-          "T1059.001",
-          "T1087.001",
-          "T1113",
-          "T1123",
-          "T1134",
-          "T1482",
-          "T1543.003",
-          "T1547.001",
-          "T1547.005",
-          "T1552.002",
-          "T1552.006",
-          "T1555.004",
-          "T1558.003",
-          "T1574.001",
-          "T1574.007",
-          "T1574.008",
-          "T1574.009",
-          "T1620"
-        ]
-      },
-      "subtechniques": {
-        "count": 0,
-        "items": []
-      },
-      "adversaries": {
-        "count": 9,
-        "items": [
-          "apt33",
-          "apt41",
-          "earth-lusca",
-          "fin7",
-          "leviathan",
-          "menupass",
-          "muddywater",
-          "patchwork",
-          "ta505"
-        ]
-      }
+{
+  "item": "powersploit",
+  "aliases": "none",
+  "gid": "S0194",
+  "profile": {
+    "techniques": {
+      "count": 28,
+      "items": [
+        "T1003.001",
+        "T1005",
+        "T1012",
+        "T1027",
+        "T1027.005",
+        "T1047",
+        "T1053.005",
+        "T1055.001",
+        "T1056.001",
+        "T1057",
+        "T1059.001",
+        "T1087.001",
+        "T1113",
+        "T1123",
+        "T1134",
+        "T1482",
+        "T1543.003",
+        "T1547.001",
+        "T1547.005",
+        "T1552.002",
+        "T1552.006",
+        "T1555.004",
+        "T1558.003",
+        "T1574.001",
+        "T1574.007",
+        "T1574.008",
+        "T1574.009",
+        "T1620"
+      ]
+    },
+    "tactics": {
+      "count": 7,
+      "items": [
+        "collection",
+        "credential-access",
+        "defense-evasion",
+        "discovery",
+        "execution",
+        "persistence",
+        "privilege-escalation"
+      ]
+    },
+    "adversaries": {
+      "count": 9,
+      "items": [
+        "apt33",
+        "apt41",
+        "earth-lusca",
+        "fin7",
+        "leviathan",
+        "menupass",
+        "muddywater",
+        "patchwork",
+        "ta505"
+      ]
     }
   }
-]
+}
