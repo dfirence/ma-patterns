@@ -1,0 +1,33 @@
+[
+  {
+    "id": "intrusion-set--025bdaa9-897d-4bad-afa6-013ba5734653",
+    "name": "neodymium",
+    "aliases": "neodymium",
+    "group_id": "G0055",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 1,
+        "items": [
+          "wingbird"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 0,
+        "items": []
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 0,
+        "items": []
+      }
+    }
+  }
+]

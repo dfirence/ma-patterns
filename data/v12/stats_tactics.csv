@@ -1,0 +1,15 @@
+INDEX,TACTICS,TECHNIQUES,SUBTECHNIQUES,% TECHNIQUES,% SUBTECHNIQUES
+1,discovery,36,7,9%,2%
+2,exfiltration,12,5,3%,2%
+3,collection,23,14,6%,4%
+4,execution,21,14,5%,4%
+5,resource-development,18,25,5%,8%
+6,defense-evasion,93,87,22%,25%
+7,initial-access,15,4,4%,2%
+8,lateral-movement,10,11,3%,4%
+9,credential-access,28,33,7%,10%
+10,reconnaissance,16,27,4%,8%
+11,privilege-escalation,52,47,13%,14%
+12,command-and-control,18,21,5%,6%
+13,impact,20,6,5%,2%
+14,persistence,63,53,15%,15%

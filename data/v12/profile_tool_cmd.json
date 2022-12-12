@@ -1,0 +1,47 @@
+[
+  {
+    "id": "tool--bba595da-b73a-4354-aa6c-224d4de7cb4e",
+    "name": "cmd",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0106",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 5,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "lateral-movement"
+        ]
+      },
+      "techniques": {
+        "count": 6,
+        "items": [
+          "T1059.003",
+          "T1070.004",
+          "T1082",
+          "T1083",
+          "T1105",
+          "T1570"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 5,
+        "items": [
+          "apt18",
+          "bronze-butler",
+          "gallium",
+          "menupass",
+          "orangeworm"
+        ]
+      }
+    }
+  }
+]

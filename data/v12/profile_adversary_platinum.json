@@ -1,0 +1,55 @@
+[
+  {
+    "id": "intrusion-set--f9c06633-dcff-48a1-8588-759e7cec5694",
+    "name": "platinum",
+    "aliases": "platinum",
+    "group_id": "G0068",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 3,
+        "items": [
+          "adbupd",
+          "dipsind",
+          "jpin"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 11,
+        "items": [
+          "T1003.001",
+          "T1036",
+          "T1055",
+          "T1056.001",
+          "T1056.004",
+          "T1068",
+          "T1095",
+          "T1105",
+          "T1189",
+          "T1204.002",
+          "T1566.001"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 7,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "execution",
+          "initial-access",
+          "privilege-escalation"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "tool--8f8cd191-902c-4e83-bf20-b57c8c4640e9",
+    "name": "imminent-monitor",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0434",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 8,
+        "items": [
+          "collection",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "exfiltration",
+          "impact",
+          "lateral-movement"
+        ]
+      },
+      "techniques": {
+        "count": 16,
+        "items": [
+          "T1021.001",
+          "T1027",
+          "T1041",
+          "T1056.001",
+          "T1057",
+          "T1059",
+          "T1070.004",
+          "T1083",
+          "T1106",
+          "T1123",
+          "T1125",
+          "T1140",
+          "T1496",
+          "T1555.003",
+          "T1562.001",
+          "T1564.001"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "apt-c-36"
+        ]
+      }
+    }
+  }
+]

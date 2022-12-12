@@ -1,0 +1,43 @@
+[
+  {
+    "id": "intrusion-set--f047ee18-7985-4946-8bfb-4ed754d3a0dd",
+    "name": "apt30",
+    "aliases": "apt30",
+    "group_id": "G0013",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 5,
+        "items": [
+          "backspace",
+          "flashflood",
+          "neteagle",
+          "shipshape",
+          "spaceship"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 2,
+        "items": [
+          "T1204.002",
+          "T1566.001"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 2,
+        "items": [
+          "execution",
+          "initial-access"
+        ]
+      }
+    }
+  }
+]

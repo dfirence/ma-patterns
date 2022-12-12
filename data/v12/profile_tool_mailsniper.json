@@ -1,0 +1,38 @@
+[
+  {
+    "id": "tool--999c4e6e-b8dc-4b4f-8d6e-1b829f29997e",
+    "name": "mailsniper",
+    "aliases": "none",
+    "platforms": "office-365|windows|azure-ad",
+    "tool_id": "S0413",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 3,
+        "items": [
+          "collection",
+          "credential-access",
+          "discovery"
+        ]
+      },
+      "techniques": {
+        "count": 3,
+        "items": [
+          "T1087.003",
+          "T1110.003",
+          "T1114.002"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "leafminer"
+        ]
+      }
+    }
+  }
+]

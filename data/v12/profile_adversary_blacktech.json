@@ -1,0 +1,63 @@
+[
+  {
+    "id": "intrusion-set--6fe8a2a1-a1b0-4af8-953d-4babd329f8f8",
+    "name": "blacktech",
+    "aliases": "blacktech|palmerworm",
+    "group_id": "G0098",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 5,
+        "items": [
+          "flagpro",
+          "kivars",
+          "plead",
+          "tscookie",
+          "waterbear"
+        ]
+      },
+      "tools": {
+        "count": 1,
+        "items": [
+          "psexec"
+        ]
+      },
+      "techniques": {
+        "count": 14,
+        "items": [
+          "T1021.004",
+          "T1036.002",
+          "T1046",
+          "T1106",
+          "T1190",
+          "T1203",
+          "T1204.001",
+          "T1204.002",
+          "T1566.001",
+          "T1566.002",
+          "T1574.002",
+          "T1588.002",
+          "T1588.003",
+          "T1588.004"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 8,
+        "items": [
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      }
+    }
+  }
+]

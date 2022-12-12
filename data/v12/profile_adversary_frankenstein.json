@@ -1,0 +1,31 @@
+[
+  {
+    "id": "intrusion-set--6b1b551c-d770-4f95-8cfc-3cd253c4c04e",
+    "name": "frankenstein",
+    "aliases": "frankenstein",
+    "group_id": "G0101",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 0,
+        "items": []
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 0,
+        "items": []
+      }
+    }
+  }
+]

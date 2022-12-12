@@ -1,0 +1,34 @@
+[
+  {
+    "id": "intrusion-set--f3bdec95-3d62-42d9-a840-29630f6cdc1a",
+    "name": "dragonok",
+    "aliases": "dragonok",
+    "group_id": "G0017",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 2,
+        "items": [
+          "plugx",
+          "poisonivy"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 0,
+        "items": []
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 0,
+        "items": []
+      }
+    }
+  }
+]

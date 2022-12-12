@@ -1,0 +1,62 @@
+[
+  {
+    "id": "intrusion-set--85403903-15e0-4f9f-9be4-a259ecad4022",
+    "name": "fin5",
+    "aliases": "fin5",
+    "group_id": "G0053",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 2,
+        "items": [
+          "flipside",
+          "rawpos"
+        ]
+      },
+      "tools": {
+        "count": 4,
+        "items": [
+          "psexec",
+          "pwdump",
+          "sdelete",
+          "windows-credential-editor"
+        ]
+      },
+      "techniques": {
+        "count": 11,
+        "items": [
+          "T1018",
+          "T1059",
+          "T1070.001",
+          "T1070.004",
+          "T1074.001",
+          "T1078",
+          "T1090.002",
+          "T1110",
+          "T1119",
+          "T1133",
+          "T1588.002"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 10,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      }
+    }
+  }
+]

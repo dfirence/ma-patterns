@@ -1,0 +1,50 @@
+[
+  {
+    "id": "intrusion-set--5f3d0238-d058-44a9-8812-3dd1b6741a8c",
+    "name": "polonium",
+    "aliases": "polonium",
+    "group_id": "G1005",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 2,
+        "items": [
+          "creepydrive",
+          "creepysnail"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 7,
+        "items": [
+          "T1078",
+          "T1090",
+          "T1102.002",
+          "T1199",
+          "T1567.002",
+          "T1583.006",
+          "T1588.002"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 7,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "exfiltration",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      }
+    }
+  }
+]

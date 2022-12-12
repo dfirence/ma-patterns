@@ -1,0 +1,36 @@
+[
+  {
+    "id": "tool--38952eac-cb1b-4a71-bad2-ee8223a1c8fe",
+    "name": "dsquery",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0105",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "discovery"
+        ]
+      },
+      "techniques": {
+        "count": 3,
+        "items": [
+          "T1069.002",
+          "T1087.002",
+          "T1482"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "fin8"
+        ]
+      }
+    }
+  }
+]

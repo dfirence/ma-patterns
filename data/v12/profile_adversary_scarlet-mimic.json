@@ -1,0 +1,40 @@
+[
+  {
+    "id": "intrusion-set--c5574ca0-d5a4-490a-b207-e4658e5fd1d7",
+    "name": "scarlet-mimic",
+    "aliases": "scarlet-mimic",
+    "group_id": "G0029",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 4,
+        "items": [
+          "callme",
+          "fakem",
+          "mobileorder",
+          "psylo"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 1,
+        "items": [
+          "T1036.002"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 1,
+        "items": [
+          "defense-evasion"
+        ]
+      }
+    }
+  }
+]

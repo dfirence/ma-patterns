@@ -1,0 +1,31 @@
+[
+  {
+    "id": "intrusion-set--76d59913-1d24-4992-a8ac-05a3eb093f71",
+    "name": "dragonfly-2.0",
+    "aliases": "",
+    "group_id": "G0074",
+    "is_revoked": true,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 0,
+        "items": []
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 0,
+        "items": []
+      }
+    }
+  }
+]

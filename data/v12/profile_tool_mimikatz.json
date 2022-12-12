@@ -1,0 +1,96 @@
+[
+  {
+    "id": "tool--afc079f3-c0ea-4096-b75d-3f05338b7f60",
+    "name": "mimikatz",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0002",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 5,
+        "items": [
+          "credential-access",
+          "defense-evasion",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "techniques": {
+        "count": 17,
+        "items": [
+          "T1003.001",
+          "T1003.002",
+          "T1003.004",
+          "T1003.006",
+          "T1098",
+          "T1134.005",
+          "T1207",
+          "T1547.005",
+          "T1550.002",
+          "T1550.003",
+          "T1552.004",
+          "T1555",
+          "T1555.003",
+          "T1555.004",
+          "T1558.001",
+          "T1558.002",
+          "T1649"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 43,
+        "items": [
+          "apt1",
+          "apt28",
+          "apt29",
+          "apt32",
+          "apt33",
+          "apt38",
+          "apt39",
+          "apt41",
+          "backdoordiplomacy",
+          "blue-mockingbird",
+          "bronze-butler",
+          "carbanak",
+          "chimera",
+          "cleaver",
+          "cobalt-group",
+          "darkhydrus",
+          "dragonfly",
+          "earth-lusca",
+          "fin6",
+          "fin7",
+          "gallium",
+          "hexane",
+          "indrik-spider",
+          "ke3chang",
+          "kimsuky",
+          "lapsus$",
+          "leafminer",
+          "magic-hound",
+          "menupass",
+          "muddywater",
+          "oilrig",
+          "pittytiger",
+          "sandworm-team",
+          "stolen-pencil",
+          "ta505",
+          "temp.veles",
+          "threat-group-3390",
+          "thrip",
+          "tonto-team",
+          "turla",
+          "unc2452",
+          "whitefly",
+          "wizard-spider"
+        ]
+      }
+    }
+  }
+]

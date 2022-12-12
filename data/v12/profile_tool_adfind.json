@@ -1,0 +1,44 @@
+[
+  {
+    "id": "tool--f59508a6-3615-47c3-b493-6676e1a39a87",
+    "name": "adfind",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0552",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "discovery"
+        ]
+      },
+      "techniques": {
+        "count": 5,
+        "items": [
+          "T1016",
+          "T1018",
+          "T1069.002",
+          "T1087.002",
+          "T1482"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 7,
+        "items": [
+          "apt29",
+          "fin6",
+          "fin7",
+          "menupass",
+          "ta505",
+          "unc2452",
+          "wizard-spider"
+        ]
+      }
+    }
+  }
+]

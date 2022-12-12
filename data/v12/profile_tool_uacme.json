@@ -1,0 +1,33 @@
+[
+  {
+    "id": "tool--102c3898-85e0-43ee-ae28-62a0a3ed9507",
+    "name": "uacme",
+    "aliases": "none",
+    "platforms": "none",
+    "tool_id": "S0116",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 2,
+        "items": [
+          "defense-evasion",
+          "privilege-escalation"
+        ]
+      },
+      "techniques": {
+        "count": 1,
+        "items": [
+          "T1548.002"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 0,
+        "items": []
+      }
+    }
+  }
+]

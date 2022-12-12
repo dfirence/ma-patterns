@@ -1,0 +1,34 @@
+[
+  {
+    "id": "tool--4fa49fc0-9162-4bdb-a37e-7aa3dcb6d38b",
+    "name": "xcmd",
+    "aliases": "none",
+    "platforms": "none",
+    "tool_id": "S0123",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "execution"
+        ]
+      },
+      "techniques": {
+        "count": 1,
+        "items": [
+          "T1569.002"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "apt1"
+        ]
+      }
+    }
+  }
+]

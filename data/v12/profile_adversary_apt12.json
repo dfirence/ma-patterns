@@ -1,0 +1,46 @@
+[
+  {
+    "id": "intrusion-set--c47f937f-1022-4f42-8525-e7a4779a14cb",
+    "name": "apt12",
+    "aliases": "apt12|ixeshe|dyncalc|numbered-panda|dnscalc",
+    "group_id": "G0005",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 2,
+        "items": [
+          "ixeshe",
+          "riptide"
+        ]
+      },
+      "tools": {
+        "count": 1,
+        "items": [
+          "htran"
+        ]
+      },
+      "techniques": {
+        "count": 5,
+        "items": [
+          "T1102.002",
+          "T1203",
+          "T1204.002",
+          "T1566.001",
+          "T1568.003"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 3,
+        "items": [
+          "command-and-control",
+          "execution",
+          "initial-access"
+        ]
+      }
+    }
+  }
+]

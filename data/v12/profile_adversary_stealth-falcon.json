@@ -1,0 +1,57 @@
+[
+  {
+    "id": "intrusion-set--894aab42-3371-47b1-8859-a4a074c804c8",
+    "name": "stealth-falcon",
+    "aliases": "stealth-falcon",
+    "group_id": "G0038",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 16,
+        "items": [
+          "T1005",
+          "T1012",
+          "T1016",
+          "T1033",
+          "T1041",
+          "T1047",
+          "T1053.005",
+          "T1057",
+          "T1059",
+          "T1059.001",
+          "T1071.001",
+          "T1082",
+          "T1555",
+          "T1555.003",
+          "T1555.004",
+          "T1573.001"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 8,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "discovery",
+          "execution",
+          "exfiltration",
+          "persistence",
+          "privilege-escalation"
+        ]
+      }
+    }
+  }
+]

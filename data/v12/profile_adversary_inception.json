@@ -1,0 +1,70 @@
+[
+  {
+    "id": "intrusion-set--ead23196-d7b6-4ce6-a124-4ab4b67d81bd",
+    "name": "inception",
+    "aliases": "inception|inception-framework|cloud-atlas",
+    "group_id": "G0100",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 2,
+        "items": [
+          "powershower",
+          "vbshower"
+        ]
+      },
+      "tools": {
+        "count": 1,
+        "items": [
+          "lazagne"
+        ]
+      },
+      "techniques": {
+        "count": 22,
+        "items": [
+          "T1005",
+          "T1027",
+          "T1057",
+          "T1059.001",
+          "T1059.005",
+          "T1069.002",
+          "T1071.001",
+          "T1082",
+          "T1083",
+          "T1090.003",
+          "T1102",
+          "T1203",
+          "T1204.002",
+          "T1218.005",
+          "T1218.010",
+          "T1221",
+          "T1518",
+          "T1547.001",
+          "T1555.003",
+          "T1566.001",
+          "T1573.001",
+          "T1588.002"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 10,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      }
+    }
+  }
+]

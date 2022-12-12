@@ -1,0 +1,39 @@
+[
+  {
+    "id": "tool--d5e96a35-7b0b-4c6a-9533-d63ecbda563e",
+    "name": "htran",
+    "aliases": "none",
+    "platforms": "linux|windows",
+    "tool_id": "S0040",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 3,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "privilege-escalation"
+        ]
+      },
+      "techniques": {
+        "count": 3,
+        "items": [
+          "T1014",
+          "T1055",
+          "T1090"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 2,
+        "items": [
+          "apt12",
+          "gallium"
+        ]
+      }
+    }
+  }
+]

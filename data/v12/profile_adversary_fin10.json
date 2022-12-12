@@ -1,0 +1,54 @@
+[
+  {
+    "id": "intrusion-set--fbe9387f-34e6-4828-ac28-3080020c597b",
+    "name": "fin10",
+    "aliases": "fin10",
+    "group_id": "G0051",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 1,
+        "items": [
+          "empire"
+        ]
+      },
+      "techniques": {
+        "count": 11,
+        "items": [
+          "T1021.001",
+          "T1033",
+          "T1053.005",
+          "T1059.001",
+          "T1059.003",
+          "T1070.004",
+          "T1078",
+          "T1078.003",
+          "T1547.001",
+          "T1570",
+          "T1588.002"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 8,
+        "items": [
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      }
+    }
+  }
+]

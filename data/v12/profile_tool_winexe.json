@@ -1,0 +1,36 @@
+[
+  {
+    "id": "tool--96fd6cc4-a693-4118-83ec-619e5352d07d",
+    "name": "winexe",
+    "aliases": "none",
+    "platforms": "none",
+    "tool_id": "S0191",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "execution"
+        ]
+      },
+      "techniques": {
+        "count": 1,
+        "items": [
+          "T1569.002"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 3,
+        "items": [
+          "apt28",
+          "darkvishnya",
+          "silence"
+        ]
+      }
+    }
+  }
+]

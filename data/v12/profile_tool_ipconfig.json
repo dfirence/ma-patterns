@@ -1,0 +1,45 @@
+[
+  {
+    "id": "tool--294e2560-bd48-44b2-9da2-833b5588ad11",
+    "name": "ipconfig",
+    "aliases": "none",
+    "platforms": "none",
+    "tool_id": "S0100",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "discovery"
+        ]
+      },
+      "techniques": {
+        "count": 1,
+        "items": [
+          "T1016"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 12,
+        "items": [
+          "admin@338",
+          "apt1",
+          "apt29",
+          "apt32",
+          "apt41",
+          "gallium",
+          "hexane",
+          "ke3chang",
+          "magic-hound",
+          "oilrig",
+          "orangeworm",
+          "threat-group-3390"
+        ]
+      }
+    }
+  }
+]

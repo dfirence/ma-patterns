@@ -1,0 +1,38 @@
+[
+  {
+    "id": "tool--90ec2b22-7061-4469-b539-0989ec4f96c2",
+    "name": "forfiles",
+    "aliases": "none",
+    "platforms": "none",
+    "tool_id": "S0193",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 3,
+        "items": [
+          "collection",
+          "defense-evasion",
+          "discovery"
+        ]
+      },
+      "techniques": {
+        "count": 3,
+        "items": [
+          "T1005",
+          "T1083",
+          "T1202"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "apt28"
+        ]
+      }
+    }
+  }
+]

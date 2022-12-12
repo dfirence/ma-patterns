@@ -1,0 +1,37 @@
+[
+  {
+    "id": "intrusion-set--2e5d3a83-fe00-41a5-9b60-237efc84832f",
+    "name": "moafee",
+    "aliases": "moafee",
+    "group_id": "G0002",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 1,
+        "items": [
+          "poisonivy"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 1,
+        "items": [
+          "T1027.001"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 1,
+        "items": [
+          "defense-evasion"
+        ]
+      }
+    }
+  }
+]

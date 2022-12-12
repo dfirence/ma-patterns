@@ -1,0 +1,34 @@
+[
+  {
+    "id": "tool--5a33468d-844d-4b1f-98c9-0e786c556b27",
+    "name": "mimipenguin",
+    "aliases": "none",
+    "platforms": "linux",
+    "tool_id": "S0179",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "credential-access"
+        ]
+      },
+      "techniques": {
+        "count": 1,
+        "items": [
+          "T1003.007"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "teamtnt"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,43 @@
+[
+  {
+    "id": "intrusion-set--76565741-3452-4069-ab08-80c0ea95bbeb",
+    "name": "silverterrier",
+    "aliases": "silverterrier",
+    "group_id": "G0083",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 5,
+        "items": [
+          "agent-tesla",
+          "darkcomet",
+          "lokibot",
+          "nanocore",
+          "netwire"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 3,
+        "items": [
+          "T1071.001",
+          "T1071.002",
+          "T1071.003"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 1,
+        "items": [
+          "command-and-control"
+        ]
+      }
+    }
+  }
+]

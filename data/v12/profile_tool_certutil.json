@@ -1,0 +1,45 @@
+[
+  {
+    "id": "tool--0a68f1f1-da74-4d28-8d9a-696c082706cc",
+    "name": "certutil",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0160",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 2,
+        "items": [
+          "command-and-control",
+          "defense-evasion"
+        ]
+      },
+      "techniques": {
+        "count": 3,
+        "items": [
+          "T1105",
+          "T1140",
+          "T1553.004"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 9,
+        "items": [
+          "apt28",
+          "apt41",
+          "earth-lusca",
+          "higaisa",
+          "menupass",
+          "oilrig",
+          "rancor",
+          "threat-group-3390",
+          "turla"
+        ]
+      }
+    }
+  }
+]

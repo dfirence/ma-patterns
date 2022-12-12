@@ -1,0 +1,65 @@
+[
+  {
+    "id": "intrusion-set--fe8796a4-2a02-41a0-9d27-7aa1e995feb6",
+    "name": "apt19",
+    "aliases": "apt19|codoso|c0d0so0|codoso-team|sunshop-group",
+    "group_id": "G0073",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 1,
+        "items": [
+          "cobalt-strike"
+        ]
+      },
+      "tools": {
+        "count": 1,
+        "items": [
+          "empire"
+        ]
+      },
+      "techniques": {
+        "count": 20,
+        "items": [
+          "T1016",
+          "T1027",
+          "T1033",
+          "T1059",
+          "T1059.001",
+          "T1071.001",
+          "T1082",
+          "T1112",
+          "T1132.001",
+          "T1140",
+          "T1189",
+          "T1204.002",
+          "T1218.010",
+          "T1218.011",
+          "T1543.003",
+          "T1547.001",
+          "T1564.003",
+          "T1566.001",
+          "T1574.002",
+          "T1588.002"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 8,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      }
+    }
+  }
+]

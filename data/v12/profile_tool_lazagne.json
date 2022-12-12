@@ -1,0 +1,51 @@
+[
+  {
+    "id": "tool--b76b2d94-60e4-4107-a903-4a3a7622fb3b",
+    "name": "lazagne",
+    "aliases": "none",
+    "platforms": "linux|macos|windows",
+    "tool_id": "S0349",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "credential-access"
+        ]
+      },
+      "techniques": {
+        "count": 10,
+        "items": [
+          "T1003.001",
+          "T1003.004",
+          "T1003.005",
+          "T1003.007",
+          "T1003.008",
+          "T1552.001",
+          "T1555",
+          "T1555.001",
+          "T1555.003",
+          "T1555.004"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 9,
+        "items": [
+          "apt3",
+          "apt33",
+          "evilnum",
+          "inception",
+          "leafminer",
+          "muddywater",
+          "oilrig",
+          "teamtnt",
+          "tonto-team"
+        ]
+      }
+    }
+  }
+]

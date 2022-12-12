@@ -1,0 +1,40 @@
+[
+  {
+    "id": "intrusion-set--96e239be-ad99-49eb-b127-3007b8c1bec9",
+    "name": "equation",
+    "aliases": "equation",
+    "group_id": "G0020",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 4,
+        "items": [
+          "T1120",
+          "T1480.001",
+          "T1542.002",
+          "T1564.005"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 3,
+        "items": [
+          "defense-evasion",
+          "discovery",
+          "persistence"
+        ]
+      }
+    }
+  }
+]

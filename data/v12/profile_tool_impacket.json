@@ -1,0 +1,49 @@
+[
+  {
+    "id": "tool--26c87906-d750-42c5-946c-d4162c73fc7b",
+    "name": "impacket",
+    "aliases": "none",
+    "platforms": "linux|macos|windows",
+    "tool_id": "S0357",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 4,
+        "items": [
+          "collection",
+          "credential-access",
+          "discovery",
+          "execution"
+        ]
+      },
+      "techniques": {
+        "count": 9,
+        "items": [
+          "T1003.001",
+          "T1003.002",
+          "T1003.003",
+          "T1003.004",
+          "T1040",
+          "T1047",
+          "T1557.001",
+          "T1558.003",
+          "T1569.002"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 5,
+        "items": [
+          "dragonfly",
+          "fin8",
+          "hafnium",
+          "menupass",
+          "threat-group-3390"
+        ]
+      }
+    }
+  }
+]

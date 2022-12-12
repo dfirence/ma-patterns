@@ -1,0 +1,32 @@
+[
+  {
+    "id": "tool--4f45dfeb-fe51-4df0-8db3-edf7dd0513fe",
+    "name": "fgdump",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0120",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "credential-access"
+        ]
+      },
+      "techniques": {
+        "count": 1,
+        "items": [
+          "T1003.002"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 0,
+        "items": []
+      }
+    }
+  }
+]

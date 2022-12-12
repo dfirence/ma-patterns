@@ -1,0 +1,41 @@
+[
+  {
+    "id": "tool--80c815bb-b24a-4b9c-9d73-ff4c075a278d",
+    "name": "out1",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0594",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 4,
+        "items": [
+          "collection",
+          "command-and-control",
+          "defense-evasion",
+          "execution"
+        ]
+      },
+      "techniques": {
+        "count": 5,
+        "items": [
+          "T1005",
+          "T1027",
+          "T1059.003",
+          "T1071.001",
+          "T1114.001"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "muddywater"
+        ]
+      }
+    }
+  }
+]

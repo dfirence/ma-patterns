@@ -1,0 +1,110 @@
+[
+  {
+    "id": "intrusion-set--dd2d9ca6-505b-4860-a604-233685b802c7",
+    "name": "wizard-spider",
+    "aliases": "wizard-spider|unc1878|temp.mixmaster|grim-spider",
+    "group_id": "G0102",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 8,
+        "items": [
+          "bazar",
+          "cobalt-strike",
+          "conti",
+          "dyre",
+          "emotet",
+          "grimagent",
+          "ryuk",
+          "trickbot"
+        ]
+      },
+      "tools": {
+        "count": 8,
+        "items": [
+          "adfind",
+          "bloodhound",
+          "empire",
+          "mimikatz",
+          "net",
+          "nltest",
+          "ping",
+          "psexec"
+        ]
+      },
+      "techniques": {
+        "count": 46,
+        "items": [
+          "T1003.002",
+          "T1003.003",
+          "T1016",
+          "T1018",
+          "T1021.001",
+          "T1021.002",
+          "T1021.006",
+          "T1027",
+          "T1033",
+          "T1036.004",
+          "T1041",
+          "T1047",
+          "T1048.003",
+          "T1053.005",
+          "T1055.001",
+          "T1059.001",
+          "T1059.003",
+          "T1070.004",
+          "T1071.001",
+          "T1074",
+          "T1078",
+          "T1078.002",
+          "T1082",
+          "T1087.002",
+          "T1112",
+          "T1133",
+          "T1135",
+          "T1204.001",
+          "T1204.002",
+          "T1210",
+          "T1222.001",
+          "T1489",
+          "T1518.001",
+          "T1543.003",
+          "T1547.001",
+          "T1547.004",
+          "T1553.002",
+          "T1557.001",
+          "T1558.003",
+          "T1562.001",
+          "T1566.001",
+          "T1566.002",
+          "T1569.002",
+          "T1570",
+          "T1588.002",
+          "T1588.003"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 13,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "exfiltration",
+          "impact",
+          "initial-access",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      }
+    }
+  }
+]

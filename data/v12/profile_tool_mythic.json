@@ -1,0 +1,46 @@
+[
+  {
+    "id": "tool--d505fc8b-2e64-46eb-96d6-9ef7ffca5b66",
+    "name": "mythic",
+    "aliases": "none",
+    "platforms": "windows|linux|macos",
+    "tool_id": "S0699",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 3,
+        "items": [
+          "collection",
+          "command-and-control",
+          "exfiltration"
+        ]
+      },
+      "techniques": {
+        "count": 13,
+        "items": [
+          "T1008",
+          "T1030",
+          "T1071.001",
+          "T1071.002",
+          "T1071.004",
+          "T1090.001",
+          "T1090.002",
+          "T1090.004",
+          "T1095",
+          "T1119",
+          "T1132",
+          "T1572",
+          "T1573.002"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 0,
+        "items": []
+      }
+    }
+  }
+]

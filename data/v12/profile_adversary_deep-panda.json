@@ -1,0 +1,58 @@
+[
+  {
+    "id": "intrusion-set--a653431d-6a5e-4600-8ad3-609b5af57064",
+    "name": "deep-panda",
+    "aliases": "deep-panda|shell-crew|webmasters|kungfu-kittens|pinkpanther|black-vine",
+    "group_id": "G0009",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 4,
+        "items": [
+          "derusbi",
+          "mivast",
+          "sakula",
+          "streamex"
+        ]
+      },
+      "tools": {
+        "count": 3,
+        "items": [
+          "net",
+          "ping",
+          "tasklist"
+        ]
+      },
+      "techniques": {
+        "count": 10,
+        "items": [
+          "T1018",
+          "T1021.002",
+          "T1027.005",
+          "T1047",
+          "T1057",
+          "T1059.001",
+          "T1218.010",
+          "T1505.003",
+          "T1546.008",
+          "T1564.003"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 6,
+        "items": [
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation"
+        ]
+      }
+    }
+  }
+]

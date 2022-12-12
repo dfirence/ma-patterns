@@ -1,0 +1,42 @@
+[
+  {
+    "id": "tool--cde2d700-9ed1-46cf-9bce-07364fe8b24f",
+    "name": "reg",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0075",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 3,
+        "items": [
+          "credential-access",
+          "defense-evasion",
+          "discovery"
+        ]
+      },
+      "techniques": {
+        "count": 3,
+        "items": [
+          "T1012",
+          "T1112",
+          "T1552.002"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 5,
+        "items": [
+          "dragonfly",
+          "gallium",
+          "oilrig",
+          "rancor",
+          "turla"
+        ]
+      }
+    }
+  }
+]

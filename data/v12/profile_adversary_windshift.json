@@ -1,0 +1,61 @@
+[
+  {
+    "id": "intrusion-set--afec6dc3-a18e-4b62-b1a4-5510e1a498d1",
+    "name": "windshift",
+    "aliases": "windshift|bahamut",
+    "group_id": "G0112",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 1,
+        "items": [
+          "windtail"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 19,
+        "items": [
+          "T1027",
+          "T1033",
+          "T1036",
+          "T1036.001",
+          "T1047",
+          "T1057",
+          "T1059.005",
+          "T1071.001",
+          "T1082",
+          "T1105",
+          "T1189",
+          "T1204.001",
+          "T1204.002",
+          "T1518",
+          "T1518.001",
+          "T1547.001",
+          "T1566.001",
+          "T1566.002",
+          "T1566.003"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 7,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "persistence",
+          "privilege-escalation"
+        ]
+      }
+    }
+  }
+]

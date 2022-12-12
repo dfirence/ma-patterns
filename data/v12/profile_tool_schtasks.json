@@ -1,0 +1,38 @@
+[
+  {
+    "id": "tool--c9703cd3-141c-43a0-a926-380082be5d04",
+    "name": "schtasks",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0111",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 3,
+        "items": [
+          "execution",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "techniques": {
+        "count": 1,
+        "items": [
+          "T1053.005"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 3,
+        "items": [
+          "apt3",
+          "bronze-butler",
+          "kimsuky"
+        ]
+      }
+    }
+  }
+]

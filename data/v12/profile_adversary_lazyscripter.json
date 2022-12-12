@@ -1,0 +1,69 @@
+[
+  {
+    "id": "intrusion-set--abc5a1d4-f0dc-49d1-88a1-4a80e478bb03",
+    "name": "lazyscripter",
+    "aliases": "lazyscripter",
+    "group_id": "G0140",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 3,
+        "items": [
+          "koctopus",
+          "ngrok",
+          "njrat"
+        ]
+      },
+      "tools": {
+        "count": 4,
+        "items": [
+          "empire",
+          "koadic",
+          "quasarrat",
+          "remcos"
+        ]
+      },
+      "techniques": {
+        "count": 20,
+        "items": [
+          "T1027",
+          "T1036",
+          "T1059.001",
+          "T1059.003",
+          "T1059.005",
+          "T1059.007",
+          "T1071.004",
+          "T1102",
+          "T1105",
+          "T1204.001",
+          "T1204.002",
+          "T1218.005",
+          "T1218.011",
+          "T1547.001",
+          "T1566.001",
+          "T1566.002",
+          "T1583.001",
+          "T1583.006",
+          "T1588.001",
+          "T1608.001"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 7,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "execution",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      }
+    }
+  }
+]

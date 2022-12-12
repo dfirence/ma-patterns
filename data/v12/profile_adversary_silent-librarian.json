@@ -1,0 +1,54 @@
+[
+  {
+    "id": "intrusion-set--90784c1e-4aba-40eb-9adf-7556235e6384",
+    "name": "silent-librarian",
+    "aliases": "silent-librarian|ta407|cobalt-dickens",
+    "group_id": "G0122",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 13,
+        "items": [
+          "T1078",
+          "T1110.003",
+          "T1114",
+          "T1114.003",
+          "T1583.001",
+          "T1585.002",
+          "T1588.002",
+          "T1588.004",
+          "T1589.002",
+          "T1589.003",
+          "T1594",
+          "T1598.003",
+          "T1608.005"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 8,
+        "items": [
+          "collection",
+          "credential-access",
+          "defense-evasion",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "reconnaissance",
+          "resource-development"
+        ]
+      }
+    }
+  }
+]

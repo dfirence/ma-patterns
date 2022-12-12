@@ -1,0 +1,38 @@
+[
+  {
+    "id": "tool--90ac9266-68ce-46f2-b24f-5eb3b2a8ea38",
+    "name": "ruler",
+    "aliases": "none",
+    "platforms": "windows|office-365",
+    "tool_id": "S0358",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 2,
+        "items": [
+          "discovery",
+          "persistence"
+        ]
+      },
+      "techniques": {
+        "count": 4,
+        "items": [
+          "T1087.003",
+          "T1137.003",
+          "T1137.004",
+          "T1137.005"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "apt33"
+        ]
+      }
+    }
+  }
+]

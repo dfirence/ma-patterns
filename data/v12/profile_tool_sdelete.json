@@ -1,0 +1,39 @@
+[
+  {
+    "id": "tool--d8d19e33-94fd-4aa3-b94a-08ee801a2153",
+    "name": "sdelete",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0195",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 2,
+        "items": [
+          "defense-evasion",
+          "impact"
+        ]
+      },
+      "techniques": {
+        "count": 2,
+        "items": [
+          "T1070.004",
+          "T1485"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 4,
+        "items": [
+          "apt29",
+          "cobalt-group",
+          "fin5",
+          "silence"
+        ]
+      }
+    }
+  }
+]

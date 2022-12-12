@@ -1,0 +1,38 @@
+[
+  {
+    "id": "tool--981acc4c-2ede-4b56-be6e-fa1a75f37acf",
+    "name": "nltest",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0359",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "discovery"
+        ]
+      },
+      "techniques": {
+        "count": 3,
+        "items": [
+          "T1016",
+          "T1018",
+          "T1482"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 3,
+        "items": [
+          "earth-lusca",
+          "fin8",
+          "wizard-spider"
+        ]
+      }
+    }
+  }
+]

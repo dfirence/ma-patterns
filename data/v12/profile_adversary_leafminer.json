@@ -1,0 +1,64 @@
+[
+  {
+    "id": "intrusion-set--32bca8ff-d900-4877-aa65-d70baa041b74",
+    "name": "leafminer",
+    "aliases": "leafminer|raspite",
+    "group_id": "G0077",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 4,
+        "items": [
+          "lazagne",
+          "mailsniper",
+          "mimikatz",
+          "psexec"
+        ]
+      },
+      "techniques": {
+        "count": 17,
+        "items": [
+          "T1003.001",
+          "T1003.004",
+          "T1003.005",
+          "T1018",
+          "T1027",
+          "T1046",
+          "T1055.013",
+          "T1059.007",
+          "T1083",
+          "T1110.003",
+          "T1114.002",
+          "T1136.001",
+          "T1189",
+          "T1552.001",
+          "T1555",
+          "T1555.003",
+          "T1588.002"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 9,
+        "items": [
+          "collection",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "intrusion-set--8f5e8dc7-739d-4f5e-a8a1-a66e004d7063",
+    "name": "cleaver",
+    "aliases": "cleaver|threat-group-2889|tg-2889",
+    "group_id": "G0003",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 2,
+        "items": [
+          "net-crawler",
+          "tinyzbot"
+        ]
+      },
+      "tools": {
+        "count": 2,
+        "items": [
+          "mimikatz",
+          "psexec"
+        ]
+      },
+      "techniques": {
+        "count": 5,
+        "items": [
+          "T1003.001",
+          "T1557.002",
+          "T1585.001",
+          "T1587.001",
+          "T1588.002"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 3,
+        "items": [
+          "collection",
+          "credential-access",
+          "resource-development"
+        ]
+      }
+    }
+  }
+]

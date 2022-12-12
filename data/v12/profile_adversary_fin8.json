@@ -1,0 +1,82 @@
+[
+  {
+    "id": "intrusion-set--fd19bd82-1b14-49a1-a176-6cdc46b8a826",
+    "name": "fin8",
+    "aliases": "fin8",
+    "group_id": "G0061",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 2,
+        "items": [
+          "punchbuggy",
+          "punchtrack"
+        ]
+      },
+      "tools": {
+        "count": 4,
+        "items": [
+          "dsquery",
+          "impacket",
+          "net",
+          "nltest"
+        ]
+      },
+      "techniques": {
+        "count": 30,
+        "items": [
+          "T1003.001",
+          "T1018",
+          "T1021.001",
+          "T1021.002",
+          "T1027",
+          "T1047",
+          "T1048.003",
+          "T1053.005",
+          "T1055.004",
+          "T1059.001",
+          "T1059.003",
+          "T1068",
+          "T1070.001",
+          "T1070.004",
+          "T1071.001",
+          "T1074.002",
+          "T1078",
+          "T1102",
+          "T1105",
+          "T1112",
+          "T1134.001",
+          "T1204.001",
+          "T1204.002",
+          "T1482",
+          "T1518.001",
+          "T1546.003",
+          "T1560.001",
+          "T1566.001",
+          "T1566.002",
+          "T1573.002"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 11,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "exfiltration",
+          "initial-access",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation"
+        ]
+      }
+    }
+  }
+]

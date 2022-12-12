@@ -1,0 +1,53 @@
+[
+  {
+    "id": "tool--79dd477a-8226-4b3d-ad15-28623675f221",
+    "name": "peirates",
+    "aliases": "none",
+    "platforms": "containers",
+    "tool_id": "S0683",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 9,
+        "items": [
+          "collection",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "techniques": {
+        "count": 12,
+        "items": [
+          "T1046",
+          "T1078.004",
+          "T1528",
+          "T1530",
+          "T1550.001",
+          "T1552.005",
+          "T1552.007",
+          "T1609",
+          "T1610",
+          "T1611",
+          "T1613",
+          "T1619"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "teamtnt"
+        ]
+      }
+    }
+  }
+]

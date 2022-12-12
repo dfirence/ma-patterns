@@ -1,0 +1,61 @@
+[
+  {
+    "id": "intrusion-set--a7f57cc1-4540-4429-823f-f4e56b8473c9",
+    "name": "ember-bear",
+    "aliases": "ember-bear|saint-bear|unc2589|uac-0056|lorec53|lorec-bear|bleeding-bear",
+    "group_id": "G1003",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 3,
+        "items": [
+          "outsteel",
+          "saint-bot",
+          "whispergate"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 19,
+        "items": [
+          "T1027",
+          "T1027.001",
+          "T1027.002",
+          "T1059.001",
+          "T1059.003",
+          "T1059.007",
+          "T1102",
+          "T1105",
+          "T1112",
+          "T1203",
+          "T1204.001",
+          "T1204.002",
+          "T1218.002",
+          "T1553.002",
+          "T1562.001",
+          "T1566.001",
+          "T1566.002",
+          "T1588.002",
+          "T1588.003"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 5,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "execution",
+          "initial-access",
+          "resource-development"
+        ]
+      }
+    }
+  }
+]

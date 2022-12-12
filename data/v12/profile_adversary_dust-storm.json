@@ -1,0 +1,31 @@
+[
+  {
+    "id": "intrusion-set--ae41895a-243f-4a65-b99b-d85022326c31",
+    "name": "dust-storm",
+    "aliases": "dust-storm",
+    "group_id": "G0031",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 0,
+        "items": []
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 0,
+        "items": []
+      }
+    }
+  }
+]

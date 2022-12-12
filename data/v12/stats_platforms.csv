@@ -1,0 +1,12 @@
+INDEX,PLATFORMS,TECHNIQUES,SUBTECHNIQUES,% TECHNIQUES,% SUBTECHNIQUES
+1,macos,256,123,61%,35%
+2,azure-ad,48,11,12%,4%
+3,containers,37,16,9%,5%
+4,google-workspace,52,16,13%,5%
+5,windows,319,229,76%,65%
+6,iaas,72,25,17%,8%
+7,linux,231,134,55%,38%
+8,saas,57,15,14%,5%
+9,pre,34,52,8%,15%
+10,office-365,62,23,15%,7%
+11,network,49,20,12%,6%

@@ -1,0 +1,83 @@
+[
+  {
+    "id": "intrusion-set--6a2e693f-24e5-451a-9f88-b36a108e5662",
+    "name": "apt1",
+    "aliases": "apt1|comment-crew|comment-group|comment-panda",
+    "group_id": "G0006",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 6,
+        "items": [
+          "biscuit",
+          "calendar",
+          "glooxmail",
+          "poisonivy",
+          "seasalt",
+          "webc2"
+        ]
+      },
+      "tools": {
+        "count": 11,
+        "items": [
+          "cachedump",
+          "gsecdump",
+          "ipconfig",
+          "lslsass",
+          "mimikatz",
+          "net",
+          "pass-the-hash-toolkit",
+          "psexec",
+          "pwdump",
+          "tasklist",
+          "xcmd"
+        ]
+      },
+      "techniques": {
+        "count": 23,
+        "items": [
+          "T1003.001",
+          "T1005",
+          "T1007",
+          "T1016",
+          "T1021.001",
+          "T1036.005",
+          "T1049",
+          "T1057",
+          "T1059.003",
+          "T1087.001",
+          "T1114.001",
+          "T1114.002",
+          "T1119",
+          "T1135",
+          "T1550.002",
+          "T1560.001",
+          "T1566.001",
+          "T1566.002",
+          "T1583.001",
+          "T1584.001",
+          "T1585.002",
+          "T1588.001",
+          "T1588.002"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 8,
+        "items": [
+          "collection",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "lateral-movement",
+          "resource-development"
+        ]
+      }
+    }
+  }
+]

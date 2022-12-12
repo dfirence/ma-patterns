@@ -1,0 +1,43 @@
+[
+  {
+    "id": "tool--c256da91-6dd5-40b2-beeb-ee3b22ab3d27",
+    "name": "esentutl",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0404",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 5,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "lateral-movement"
+        ]
+      },
+      "techniques": {
+        "count": 5,
+        "items": [
+          "T1003.003",
+          "T1005",
+          "T1105",
+          "T1564.004",
+          "T1570"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 2,
+        "items": [
+          "chimera",
+          "menupass"
+        ]
+      }
+    }
+  }
+]

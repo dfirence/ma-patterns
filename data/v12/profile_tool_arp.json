@@ -1,0 +1,37 @@
+[
+  {
+    "id": "tool--30489451-5886-4c46-90c9-0dff9adc5252",
+    "name": "arp",
+    "aliases": "none",
+    "platforms": "linux|windows|macos",
+    "tool_id": "S0099",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "discovery"
+        ]
+      },
+      "techniques": {
+        "count": 2,
+        "items": [
+          "T1016",
+          "T1018"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 3,
+        "items": [
+          "apt32",
+          "orangeworm",
+          "turla"
+        ]
+      }
+    }
+  }
+]

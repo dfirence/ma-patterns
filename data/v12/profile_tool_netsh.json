@@ -1,0 +1,46 @@
+[
+  {
+    "id": "tool--5a63f900-5e7e-4928-a746-dd4558e1df71",
+    "name": "netsh",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0108",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 5,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "discovery",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "techniques": {
+        "count": 4,
+        "items": [
+          "T1090",
+          "T1518.001",
+          "T1546.007",
+          "T1562.004"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 6,
+        "items": [
+          "apt32",
+          "carbanak",
+          "dragonfly",
+          "lazarus-group",
+          "magic-hound",
+          "naikon"
+        ]
+      }
+    }
+  }
+]

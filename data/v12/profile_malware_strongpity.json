@@ -1,0 +1,54 @@
+[
+  {
+    "id": "intrusion-set--efed95ba-d7e8-47ff-8c53-99c42426ee7c",
+    "name": "promethium",
+    "aliases": "promethium|strongpity",
+    "group_id": "G0056",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 2,
+        "items": [
+          "strongpity",
+          "truvasys"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 11,
+        "items": [
+          "T1036.004",
+          "T1036.005",
+          "T1078.003",
+          "T1189",
+          "T1204.002",
+          "T1205.001",
+          "T1543.003",
+          "T1547.001",
+          "T1553.002",
+          "T1587.002",
+          "T1587.003"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 7,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "execution",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      }
+    }
+  }
+]

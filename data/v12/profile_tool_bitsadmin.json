@@ -1,0 +1,45 @@
+[
+  {
+    "id": "tool--64764dc6-a032-495f-8250-1e4c06bdc163",
+    "name": "bitsadmin",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0190",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 5,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "exfiltration",
+          "lateral-movement",
+          "persistence"
+        ]
+      },
+      "techniques": {
+        "count": 4,
+        "items": [
+          "T1048.003",
+          "T1105",
+          "T1197",
+          "T1570"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 5,
+        "items": [
+          "apt41",
+          "ferocious-kitten",
+          "hexane",
+          "leviathan",
+          "tropic-trooper"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "tool--ed7d0cb1-87a6-43b4-9f46-ef1bc56d6c68",
+    "name": "tor",
+    "aliases": "none",
+    "platforms": "linux|windows|macos",
+    "tool_id": "S0183",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "command-and-control"
+        ]
+      },
+      "techniques": {
+        "count": 2,
+        "items": [
+          "T1090.003",
+          "T1573.002"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 3,
+        "items": [
+          "apt28",
+          "apt29",
+          "leviathan"
+        ]
+      }
+    }
+  }
+]

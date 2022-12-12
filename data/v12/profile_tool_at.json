@@ -1,0 +1,38 @@
+[
+  {
+    "id": "tool--0c8465c0-d0b4-4670-992e-4eee8d7ff952",
+    "name": "at",
+    "aliases": "none",
+    "platforms": "linux|windows|macos",
+    "tool_id": "S0110",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 3,
+        "items": [
+          "execution",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "techniques": {
+        "count": 1,
+        "items": [
+          "T1053.002"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 3,
+        "items": [
+          "bronze-butler",
+          "gallium",
+          "leviathan"
+        ]
+      }
+    }
+  }
+]

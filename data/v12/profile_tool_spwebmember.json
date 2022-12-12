@@ -1,0 +1,34 @@
+[
+  {
+    "id": "tool--33b9e38f-103c-412d-bdcf-904a91fff1e4",
+    "name": "spwebmember",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0227",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "collection"
+        ]
+      },
+      "techniques": {
+        "count": 1,
+        "items": [
+          "T1213.002"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "ke3chang"
+        ]
+      }
+    }
+  }
+]

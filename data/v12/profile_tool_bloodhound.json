@@ -1,0 +1,50 @@
+[
+  {
+    "id": "tool--066b057c-944e-4cfc-b654-e3dfba04b926",
+    "name": "bloodhound",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0521",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 3,
+        "items": [
+          "collection",
+          "discovery",
+          "execution"
+        ]
+      },
+      "techniques": {
+        "count": 12,
+        "items": [
+          "T1018",
+          "T1033",
+          "T1059.001",
+          "T1069.001",
+          "T1069.002",
+          "T1087.001",
+          "T1087.002",
+          "T1106",
+          "T1201",
+          "T1482",
+          "T1560",
+          "T1615"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "adversaries": {
+        "count": 4,
+        "items": [
+          "apt29",
+          "chimera",
+          "ta505",
+          "wizard-spider"
+        ]
+      }
+    }
+  }
+]

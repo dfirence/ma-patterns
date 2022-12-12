@@ -1,0 +1,74 @@
+[
+  {
+    "id": "intrusion-set--3fc023b2-c5cc-481d-9c3e-70141ae1a87e",
+    "name": "sidewinder",
+    "aliases": "sidewinder|t-apt-04|rattlesnake",
+    "group_id": "G0121",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 1,
+        "items": [
+          "koadic"
+        ]
+      },
+      "techniques": {
+        "count": 29,
+        "items": [
+          "T1016",
+          "T1020",
+          "T1027",
+          "T1033",
+          "T1036.005",
+          "T1057",
+          "T1059.001",
+          "T1059.005",
+          "T1059.007",
+          "T1071.001",
+          "T1074.001",
+          "T1082",
+          "T1083",
+          "T1105",
+          "T1119",
+          "T1124",
+          "T1203",
+          "T1204.001",
+          "T1204.002",
+          "T1218.005",
+          "T1518",
+          "T1518.001",
+          "T1547.001",
+          "T1559.002",
+          "T1566.001",
+          "T1566.002",
+          "T1574.002",
+          "T1598.002",
+          "T1598.003"
+        ]
+      },
+      "subtechniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 10,
+        "items": [
+          "collection",
+          "command-and-control",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "exfiltration",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "reconnaissance"
+        ]
+      }
+    }
+  }
+]
