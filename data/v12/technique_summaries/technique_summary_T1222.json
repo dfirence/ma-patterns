@@ -1,0 +1,11 @@
+{
+  "malware": [],
+  "T1222:File and Directory Permissions Modification": [
+    "active-directory-object-modification",
+    "command-execution",
+    "file-metadata",
+    "process-creation"
+  ],
+  "tools": [],
+  "adversaries": []
+}

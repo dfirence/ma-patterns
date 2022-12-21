@@ -1,0 +1,9 @@
+{
+  "adversaries": [],
+  "T1006:Direct Volume Access": [
+    "command-execution",
+    "drive-access"
+  ],
+  "malware": [],
+  "tools": []
+}

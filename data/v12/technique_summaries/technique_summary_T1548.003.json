@@ -1,0 +1,15 @@
+{
+  "T1548.003:Sudo and Sudo Caching": [
+    "command-execution",
+    "file-modification",
+    "process-creation",
+    "process-metadata"
+  ],
+  "malware": [
+    "cobalt-strike",
+    "dok",
+    "proton"
+  ],
+  "tools": [],
+  "adversaries": []
+}

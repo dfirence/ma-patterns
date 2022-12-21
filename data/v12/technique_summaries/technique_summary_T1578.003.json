@@ -1,0 +1,11 @@
+{
+  "tools": [],
+  "malware": [],
+  "T1578.003:Delete Cloud Instance": [
+    "instance-deletion",
+    "instance-metadata"
+  ],
+  "adversaries": [
+    "lapsus$"
+  ]
+}

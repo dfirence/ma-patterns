@@ -1,0 +1,12 @@
+{
+  "tools": [],
+  "malware": [
+    "stuxnet"
+  ],
+  "T1505.001:SQL Stored Procedures": [
+    "application-log-content"
+  ],
+  "adversaries": [
+    "sandworm-team"
+  ]
+}

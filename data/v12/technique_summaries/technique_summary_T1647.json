@@ -1,0 +1,12 @@
+{
+  "tools": [],
+  "adversaries": [],
+  "T1647:Plist File Modification": [
+    "command-execution",
+    "file-modification",
+    "process-creation"
+  ],
+  "malware": [
+    "xcsset"
+  ]
+}

@@ -1,0 +1,163 @@
+[
+  {
+    "id": "attack-pattern--a01bf75f-00b2-4568-a58f-565ff9bf202b",
+    "platform": "linux|macos|windows",
+    "tid": "T1069.001",
+    "technique": "Local Groups",
+    "tactic": "discovery",
+    "datasources": "group-enumeration",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to find local system groups and permission settings. The knowledge of local system permission groups can help adversaries determine which groups exist and which users belong to a particular group. Adversaries may use this information to determine which users have elevated permissions, such as the users found within the local administrators group.\n\nCommands such as <code>net localgroup</code> of the [Net](https://attack.mitre.org/software/S0039) utility, <code>dscl . -list /Groups</code> on macOS, and <code>groups</code> on Linux can list local groups.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--2aed01ad-3df3-4410-a8cb-11ea4ded587c",
+    "platform": "linux|macos|windows",
+    "tid": "T1069.002",
+    "technique": "Domain Groups",
+    "tactic": "discovery",
+    "datasources": "group-enumeration",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to find domain-level groups and permission settings. The knowledge of domain-level permission groups can help adversaries determine which groups exist and which users belong to a particular group. Adversaries may use this information to determine which users have elevated permissions, such as domain administrators.\n\nCommands such as <code>net group /domain</code> of the [Net](https://attack.mitre.org/software/S0039) utility,  <code>dscacheutil -q group</code> on macOS, and <code>ldapsearch</code> on Linux can list domain-level groups.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--16e94db9-b5b1-4cd0-b851-f38fbd0a70f2",
+    "platform": "azure-ad|office-365|saas|iaas|google-workspace",
+    "tid": "T1069.003",
+    "technique": "Cloud Groups",
+    "tactic": "discovery",
+    "datasources": "group-enumeration",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to find cloud groups and permission settings. The knowledge of cloud permission groups can help adversaries determine the particular roles of users and groups within an environment, as well as which users are associated with a particular group.\n\nWith authenticated access there are several tools that can be used to find permissions groups. The <code>Get-MsolRole</code> PowerShell cmdlet can be used to obtain roles and permissions groups for Exchange and Office 365 accounts (Citation: Microsoft Msolrole)(Citation: GitHub Raindance).\n\nAzure CLI (AZ CLI) and the Google Cloud Identity Provider API also provide interfaces to obtain permissions groups. The command <code>az ad user get-member-groups</code> will list groups associated to a user account for Azure while the API endpoint <code>GET https://cloudidentity.googleapis.com/v1/groups</code> lists group resources available to a user for Google.(Citation: Microsoft AZ CLI)(Citation: Black Hills Red Teaming MS AD Azure, 2018)(Citation: Google Cloud Identity API Documentation)\n\nAdversaries may attempt to list ACLs for objects to determine the owner and other accounts with access to the object, for example, via the AWS <code>GetBucketAcl</code> API (Citation: AWS Get Bucket ACL). Using this information an adversary can target accounts with permissions to a given object or leverage accounts they have already compromised to access the object.",
+    "technique_references": [
+      {
+        "source_name": "AWS Get Bucket ACL",
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html",
+        "description": "Amazon Web Services. (n.d.). Retrieved May 28, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Black Hills Red Teaming MS AD Azure, 2018",
+        "url": "https://www.blackhillsinfosec.com/red-teaming-microsoft-part-1-active-directory-leaks-via-azure/",
+        "description": "Felch, M.. (2018, August 31). Red Teaming Microsoft Part 1 Active Directory Leaks via Azure. Retrieved October 6, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Google Cloud Identity API Documentation",
+        "url": "https://cloud.google.com/identity/docs/reference/rest",
+        "description": "Google. (n.d.). Retrieved March 16, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft AZ CLI",
+        "url": "https://docs.microsoft.com/en-us/cli/azure/ad/user?view=azure-cli-latest",
+        "description": "Microsoft. (n.d.). az ad user. Retrieved October 6, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Msolrole",
+        "url": "https://docs.microsoft.com/en-us/powershell/module/msonline/get-msolrole?view=azureadps-1.0",
+        "description": "Microsoft. (n.d.). Get-MsolRole. Retrieved October 6, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub Raindance",
+        "url": "https://github.com/True-Demon/raindance",
+        "description": "Stringer, M.. (2018, November 21). RainDance. Retrieved October 6, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--25659dd6-ea12-45c4-97e6-381e3e4b593e",
+    "platform": "linux|macos|windows",
+    "tid": "T1087.001",
+    "technique": "Local Account",
+    "tactic": "discovery",
+    "datasources": "group-enumeration",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to get a listing of local system accounts. This information can help adversaries determine which local accounts exist on a system to aid in follow-on behavior.\n\nCommands such as <code>net user</code> and <code>net localgroup</code> of the [Net](https://attack.mitre.org/software/S0039) utility and <code>id</code> and <code>groups</code>on macOS and Linux can list local users and groups. On Linux, local users can also be enumerated through the use of the <code>/etc/passwd</code> file. On macOS the <code>dscl . list /Users</code> command can be used to enumerate local accounts.",
+    "technique_references": [
+      {
+        "source_name": "Elastic - Koadiac Detection with EQL",
+        "url": "https://www.elastic.co/blog/embracing-offensive-tooling-building-detections-against-koadic-using-eql",
+        "description": "Stepanic, D.. (2020, January 13). Embracing offensive tooling: Building detections against Koadic using EQL. Retrieved November 30, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--21875073-b0ee-49e3-9077-1e2a885359af",
+    "platform": "linux|macos|windows",
+    "tid": "T1087.002",
+    "technique": "Domain Account",
+    "tactic": "discovery",
+    "datasources": "group-enumeration",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to get a listing of domain accounts. This information can help adversaries determine which domain accounts exist to aid in follow-on behavior.\n\nCommands such as <code>net user /domain</code> and <code>net group /domain</code> of the [Net](https://attack.mitre.org/software/S0039) utility, <code>dscacheutil -q group</code>on macOS, and <code>ldapsearch</code> on Linux can list domain users and groups.",
+    "technique_references": [
+      {
+        "source_name": "capec",
+        "url": "https://capec.mitre.org/data/definitions/575.html",
+        "description": "none",
+        "external_id": "CAPEC-575"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "tools": [],
+  "T1546.009:AppCert DLLs": [
+    "command-execution",
+    "module-load",
+    "os-api-execution",
+    "process-creation",
+    "windows-registry-key-modification"
+  ],
+  "malware": [
+    "punchbuggy"
+  ],
+  "adversaries": []
+}

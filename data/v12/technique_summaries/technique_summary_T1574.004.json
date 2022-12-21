@@ -1,0 +1,12 @@
+{
+  "tools": [
+    "empire"
+  ],
+  "adversaries": [],
+  "T1574.004:Dylib Hijacking": [
+    "file-creation",
+    "file-modification",
+    "module-load"
+  ],
+  "malware": []
+}

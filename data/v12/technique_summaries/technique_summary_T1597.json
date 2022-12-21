@@ -1,0 +1,10 @@
+{
+  "T1597:Search Closed Sources": [
+    "none"
+  ],
+  "tools": [],
+  "adversaries": [
+    "exotic-lily"
+  ],
+  "malware": []
+}

@@ -1,0 +1,9 @@
+{
+  "T1599.001:Network Address Translation Traversal": [
+    "network-traffic-content",
+    "network-traffic-flow"
+  ],
+  "malware": [],
+  "tools": [],
+  "adversaries": []
+}

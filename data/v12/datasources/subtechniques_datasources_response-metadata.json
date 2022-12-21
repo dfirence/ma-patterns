@@ -1,0 +1,184 @@
+[
+  {
+    "id": "attack-pattern--79da0971-3147-4af6-a4f5-e8cd447cd795",
+    "platform": "pre",
+    "tid": "T1583.003",
+    "technique": "Virtual Private Server",
+    "tactic": "resource-development",
+    "datasources": "response-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may rent Virtual Private Servers (VPSs) that can be used during targeting. There exist a variety of cloud service providers that will sell virtual machines/containers as a service. By utilizing a VPS, adversaries can make it difficult to physically tie back operations to them. The use of cloud infrastructure can also make it easier for adversaries to rapidly provision, modify, and shut down their infrastructure.\n\nAcquiring a VPS for use in later stages of the adversary lifecycle, such as Command and Control, can allow adversaries to benefit from the ubiquity and trust associated with higher reputation cloud service providers. Adversaries may also acquire infrastructure from VPS service providers that are known for renting VPSs with minimal registration information, allowing for more anonymous acquisitions of infrastructure.(Citation: TrendmicroHideoutsLease)",
+    "technique_references": [
+      {
+        "source_name": "TrendmicroHideoutsLease",
+        "url": "https://documents.trendmicro.com/assets/wp/wp-criminal-hideouts-for-lease.pdf",
+        "description": "Max Goncharov. (2015, July 15). Criminal Hideouts for Lease: Bulletproof Hosting Services. Retrieved March 6, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ThreatConnect Infrastructure Dec 2020",
+        "url": "https://threatconnect.com/blog/infrastructure-research-hunting/",
+        "description": "ThreatConnect. (2020, December 15). Infrastructure Research and Hunting: Boiling the Domain Ocean. Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant SCANdalous Jul 2020",
+        "url": "https://www.mandiant.com/resources/scandalous-external-detection-using-network-scan-data-and-automation",
+        "description": "Stephens, A. (2020, July 13). SCANdalous! (External Detection Using Network Scan Data and Automation). Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Koczwara Beacon Hunting Sep 2021",
+        "url": "https://michaelkoczwara.medium.com/cobalt-strike-c2-hunting-with-shodan-c448d501a6e2",
+        "description": "Koczwara, M. (2021, September 7). Hunting Cobalt Strike C2 with Shodan. Retrieved October 12, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--60c4b628-4807-4b0b-bbf5-fdac8643c337",
+    "platform": "pre",
+    "tid": "T1583.004",
+    "technique": "Server",
+    "tactic": "resource-development",
+    "datasources": "response-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may buy, lease, or rent physical servers that can be used during targeting. Use of servers allows an adversary to stage, launch, and execute an operation. During post-compromise activity, adversaries may utilize servers for various tasks, including for Command and Control. Instead of compromising a third-party [Server](https://attack.mitre.org/techniques/T1584/004) or renting a [Virtual Private Server](https://attack.mitre.org/techniques/T1583/003), adversaries may opt to configure and run their own servers in support of operations.\n\nAdversaries may only need a lightweight setup if most of their activities will take place using online infrastructure. Or, they may need to build extensive infrastructure if they want to test, communicate, and control other aspects of their activities on their own systems.(Citation: NYTStuxnet)",
+    "technique_references": [
+      {
+        "source_name": "NYTStuxnet",
+        "url": "https://www.nytimes.com/2011/01/16/world/middleeast/16stuxnet.html",
+        "description": "William J. Broad, John Markoff, and David E. Sanger. (2011, January 15). Israeli Test on Worm Called Crucial in Iran Nuclear Delay. Retrieved March 1, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ThreatConnect Infrastructure Dec 2020",
+        "url": "https://threatconnect.com/blog/infrastructure-research-hunting/",
+        "description": "ThreatConnect. (2020, December 15). Infrastructure Research and Hunting: Boiling the Domain Ocean. Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant SCANdalous Jul 2020",
+        "url": "https://www.mandiant.com/resources/scandalous-external-detection-using-network-scan-data-and-automation",
+        "description": "Stephens, A. (2020, July 13). SCANdalous! (External Detection Using Network Scan Data and Automation). Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Koczwara Beacon Hunting Sep 2021",
+        "url": "https://michaelkoczwara.medium.com/cobalt-strike-c2-hunting-with-shodan-c448d501a6e2",
+        "description": "Koczwara, M. (2021, September 7). Hunting Cobalt Strike C2 with Shodan. Retrieved October 12, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--39cc9f64-cf74-4a48-a4d8-fe98c54a02e0",
+    "platform": "pre",
+    "tid": "T1584.003",
+    "technique": "Virtual Private Server",
+    "tactic": "resource-development",
+    "datasources": "response-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may compromise third-party Virtual Private Servers (VPSs) that can be used during targeting. There exist a variety of cloud service providers that will sell virtual machines/containers as a service. Adversaries may compromise VPSs purchased by third-party entities. By compromising a VPS to use as infrastructure, adversaries can make it difficult to physically tie back operations to themselves.(Citation: NSA NCSC Turla OilRig)\n\nCompromising a VPS for use in later stages of the adversary lifecycle, such as Command and Control, can allow adversaries to benefit from the ubiquity and trust associated with higher reputation cloud service providers as well as that added by the compromised third-party.",
+    "technique_references": [
+      {
+        "source_name": "NSA NCSC Turla OilRig",
+        "url": "https://media.defense.gov/2019/Oct/18/2002197242/-1/-1/0/NSA_CSA_Turla_20191021%20ver%204%20-%20nsa.gov.pdf",
+        "description": "NSA/NCSC. (2019, October 21). Cybersecurity Advisory: Turla Group Exploits Iranian APT To Expand Coverage Of Victims. Retrieved October 16, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ThreatConnect Infrastructure Dec 2020",
+        "url": "https://threatconnect.com/blog/infrastructure-research-hunting/",
+        "description": "ThreatConnect. (2020, December 15). Infrastructure Research and Hunting: Boiling the Domain Ocean. Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant SCANdalous Jul 2020",
+        "url": "https://www.mandiant.com/resources/scandalous-external-detection-using-network-scan-data-and-automation",
+        "description": "Stephens, A. (2020, July 13). SCANdalous! (External Detection Using Network Scan Data and Automation). Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Koczwara Beacon Hunting Sep 2021",
+        "url": "https://michaelkoczwara.medium.com/cobalt-strike-c2-hunting-with-shodan-c448d501a6e2",
+        "description": "Koczwara, M. (2021, September 7). Hunting Cobalt Strike C2 with Shodan. Retrieved October 12, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--e196b5c5-8118-4a1c-ab8a-936586ce3db5",
+    "platform": "pre",
+    "tid": "T1584.004",
+    "technique": "Server",
+    "tactic": "resource-development",
+    "datasources": "response-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may compromise third-party servers that can be used during targeting. Use of servers allows an adversary to stage, launch, and execute an operation. During post-compromise activity, adversaries may utilize servers for various tasks, including for Command and Control. Instead of purchasing a [Server](https://attack.mitre.org/techniques/T1583/004) or [Virtual Private Server](https://attack.mitre.org/techniques/T1583/003), adversaries may compromise third-party servers in support of operations.\n\nAdversaries may also compromise web servers to support watering hole operations, as in [Drive-by Compromise](https://attack.mitre.org/techniques/T1189).",
+    "technique_references": [
+      {
+        "source_name": "ThreatConnect Infrastructure Dec 2020",
+        "url": "https://threatconnect.com/blog/infrastructure-research-hunting/",
+        "description": "ThreatConnect. (2020, December 15). Infrastructure Research and Hunting: Boiling the Domain Ocean. Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant SCANdalous Jul 2020",
+        "url": "https://www.mandiant.com/resources/scandalous-external-detection-using-network-scan-data-and-automation",
+        "description": "Stephens, A. (2020, July 13). SCANdalous! (External Detection Using Network Scan Data and Automation). Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Koczwara Beacon Hunting Sep 2021",
+        "url": "https://michaelkoczwara.medium.com/cobalt-strike-c2-hunting-with-shodan-c448d501a6e2",
+        "description": "Koczwara, M. (2021, September 7). Hunting Cobalt Strike C2 with Shodan. Retrieved October 12, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

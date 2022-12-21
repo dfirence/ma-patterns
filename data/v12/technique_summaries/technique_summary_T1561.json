@@ -1,0 +1,12 @@
+{
+  "adversaries": [],
+  "T1561:Disk Wipe": [
+    "command-execution",
+    "drive-access",
+    "drive-modification",
+    "driver-load",
+    "process-creation"
+  ],
+  "malware": [],
+  "tools": []
+}

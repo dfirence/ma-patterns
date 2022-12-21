@@ -1,0 +1,25 @@
+{
+  "adversaries": [],
+  "malware": [
+    "bundlore",
+    "osxshlayer",
+    "tarrask",
+    "warzonerat"
+  ],
+  "tools": [],
+  "T1564:Hide Artifacts": [
+    "application-log-content",
+    "command-execution",
+    "file-creation",
+    "file-metadata",
+    "file-modification",
+    "firmware-modification",
+    "os-api-execution",
+    "process-creation",
+    "script-execution",
+    "service-creation",
+    "user-account-creation",
+    "user-account-metadata",
+    "windows-registry-key-modification"
+  ]
+}

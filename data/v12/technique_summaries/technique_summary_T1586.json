@@ -1,0 +1,9 @@
+{
+  "tools": [],
+  "T1586:Compromise Accounts": [
+    "network-traffic-content",
+    "social-media"
+  ],
+  "adversaries": [],
+  "malware": []
+}

@@ -1,0 +1,22 @@
+{
+  "T1021.005:VNC": [
+    "logon-session-creation",
+    "network-connection-creation",
+    "process-creation"
+  ],
+  "adversaries": [
+    "fin7",
+    "fox-kitten",
+    "gamaredon-group",
+    "gcman"
+  ],
+  "tools": [],
+  "malware": [
+    "carberp",
+    "danbot",
+    "proton",
+    "trickbot",
+    "warzonerat",
+    "zxshell"
+  ]
+}

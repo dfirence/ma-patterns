@@ -1,0 +1,13 @@
+{
+  "T1562.009:Safe Mode Boot": [
+    "command-execution",
+    "process-creation",
+    "windows-registry-key-creation",
+    "windows-registry-key-modification"
+  ],
+  "malware": [
+    "revil"
+  ],
+  "tools": [],
+  "adversaries": []
+}

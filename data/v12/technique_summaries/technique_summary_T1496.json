@@ -1,0 +1,28 @@
+{
+  "T1496:Resource Hijacking": [
+    "command-execution",
+    "file-creation",
+    "host-status",
+    "network-connection-creation",
+    "network-traffic-flow",
+    "process-creation"
+  ],
+  "adversaries": [
+    "apt41",
+    "blue-mockingbird",
+    "rocke",
+    "teamtnt"
+  ],
+  "malware": [
+    "bonadan",
+    "cookieminer",
+    "hildegard",
+    "kinsing",
+    "loudminer",
+    "lucifer",
+    "skidmap"
+  ],
+  "tools": [
+    "imminent-monitor"
+  ]
+}

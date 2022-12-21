@@ -1,0 +1,42 @@
+{
+  "malware": [
+    "avaddon",
+    "babuk",
+    "bitpaymer",
+    "clop",
+    "conficker",
+    "conti",
+    "darkwatchman",
+    "deathransom",
+    "diavol",
+    "ekans",
+    "fivehands",
+    "h1n1",
+    "hellokitty",
+    "hermeticwiper",
+    "invisimole",
+    "jcry",
+    "maze",
+    "megacortex",
+    "meteor",
+    "netwalker",
+    "olympic-destroyer",
+    "prolock",
+    "pysa",
+    "ragnar-locker",
+    "revil",
+    "robbinhood",
+    "ryuk",
+    "wannacry",
+    "wastedlocker"
+  ],
+  "tools": [],
+  "T1490:Inhibit System Recovery": [
+    "command-execution",
+    "file-deletion",
+    "process-creation",
+    "service-metadata",
+    "windows-registry-key-modification"
+  ],
+  "adversaries": []
+}

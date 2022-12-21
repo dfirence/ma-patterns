@@ -1,0 +1,8 @@
+{
+  "adversaries": [],
+  "T1055.009:Proc Memory": [
+    "file-modification"
+  ],
+  "tools": [],
+  "malware": []
+}

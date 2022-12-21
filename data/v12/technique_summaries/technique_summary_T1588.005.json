@@ -1,0 +1,10 @@
+{
+  "adversaries": [
+    "kimsuky"
+  ],
+  "tools": [],
+  "T1588.005:Exploits": [
+    "none"
+  ],
+  "malware": []
+}

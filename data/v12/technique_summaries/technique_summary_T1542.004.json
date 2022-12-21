@@ -1,0 +1,8 @@
+{
+  "malware": [],
+  "tools": [],
+  "T1542.004:ROMMONkit": [
+    "firmware-modification"
+  ],
+  "adversaries": []
+}

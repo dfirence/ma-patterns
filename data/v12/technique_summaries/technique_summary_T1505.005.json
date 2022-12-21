@@ -1,0 +1,12 @@
+{
+  "T1505.005:Terminal Services DLL": [
+    "command-execution",
+    "file-modification",
+    "module-load",
+    "process-creation",
+    "windows-registry-key-modification"
+  ],
+  "adversaries": [],
+  "malware": [],
+  "tools": []
+}

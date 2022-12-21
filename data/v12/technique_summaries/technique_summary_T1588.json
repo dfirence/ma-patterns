@@ -1,0 +1,11 @@
+{
+  "malware": [],
+  "adversaries": [],
+  "T1588:Obtain Capabilities": [
+    "certificate-registration",
+    "malware-content",
+    "malware-metadata",
+    "response-content"
+  ],
+  "tools": []
+}

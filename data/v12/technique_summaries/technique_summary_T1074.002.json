@@ -1,0 +1,22 @@
+{
+  "tools": [],
+  "adversaries": [
+    "apt28",
+    "apt29",
+    "chimera",
+    "fin6",
+    "fin8",
+    "leviathan",
+    "menupass",
+    "threat-group-3390",
+    "unc2452"
+  ],
+  "malware": [
+    "ccf32"
+  ],
+  "T1074.002:Remote Data Staging": [
+    "command-execution",
+    "file-access",
+    "file-creation"
+  ]
+}

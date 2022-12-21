@@ -1,0 +1,13 @@
+{
+  "tools": [],
+  "adversaries": [],
+  "T1547.014:Active Setup": [
+    "command-execution",
+    "process-creation",
+    "windows-registry-key-creation",
+    "windows-registry-key-modification"
+  ],
+  "malware": [
+    "poisonivy"
+  ]
+}

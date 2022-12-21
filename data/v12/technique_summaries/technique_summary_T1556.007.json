@@ -1,0 +1,15 @@
+{
+  "adversaries": [
+    "apt29"
+  ],
+  "T1556.007:Hybrid Identity": [
+    "application-log-content",
+    "file-modification",
+    "logon-session-creation",
+    "module-load"
+  ],
+  "tools": [
+    "aadinternals"
+  ],
+  "malware": []
+}

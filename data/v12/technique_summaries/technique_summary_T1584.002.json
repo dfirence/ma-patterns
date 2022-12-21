@@ -1,0 +1,9 @@
+{
+  "T1584.002:DNS Server": [
+    "active-dns",
+    "passive-dns"
+  ],
+  "malware": [],
+  "tools": [],
+  "adversaries": []
+}

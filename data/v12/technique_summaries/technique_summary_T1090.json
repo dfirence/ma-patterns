@@ -1,0 +1,55 @@
+{
+  "tools": [
+    "htran",
+    "netsh",
+    "poshc2",
+    "quasarrat",
+    "remcos"
+  ],
+  "malware": [
+    "aria-body",
+    "auditcred",
+    "badcall",
+    "bisonal",
+    "cardinal-rat",
+    "dridex",
+    "funnydream",
+    "green-lambert",
+    "hardrain",
+    "hoplight",
+    "jrat",
+    "kessel",
+    "koctopus",
+    "netwire",
+    "ngrok",
+    "plead",
+    "rainyday",
+    "sdbbot",
+    "socksbot",
+    "sombrat",
+    "tscookie",
+    "typeframe",
+    "ursnif",
+    "vasport",
+    "warzonerat",
+    "xtunnel",
+    "zxshell"
+  ],
+  "T1090:Proxy": [
+    "network-connection-creation",
+    "network-traffic-content",
+    "network-traffic-flow"
+  ],
+  "adversaries": [
+    "apt41",
+    "blue-mockingbird",
+    "copykittens",
+    "earth-lusca",
+    "fox-kitten",
+    "lapsus$",
+    "polonium",
+    "sandworm-team",
+    "turla",
+    "windigo"
+  ]
+}

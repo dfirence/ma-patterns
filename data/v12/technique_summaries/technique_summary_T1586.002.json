@@ -1,0 +1,16 @@
+{
+  "tools": [],
+  "malware": [],
+  "adversaries": [
+    "apt28",
+    "apt29",
+    "hexane",
+    "indigozebra",
+    "kimsuky",
+    "leviathan",
+    "magic-hound"
+  ],
+  "T1586.002:Email Accounts": [
+    "none"
+  ]
+}

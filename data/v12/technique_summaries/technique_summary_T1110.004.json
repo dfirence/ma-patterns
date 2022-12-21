@@ -1,0 +1,13 @@
+{
+  "adversaries": [
+    "chimera"
+  ],
+  "tools": [],
+  "malware": [
+    "trickbot"
+  ],
+  "T1110.004:Credential Stuffing": [
+    "application-log-content",
+    "user-account-authentication"
+  ]
+}

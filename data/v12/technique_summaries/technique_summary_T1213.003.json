@@ -1,0 +1,12 @@
+{
+  "tools": [],
+  "T1213.003:Code Repositories": [
+    "application-log-content",
+    "logon-session-creation"
+  ],
+  "adversaries": [
+    "apt29",
+    "lapsus$"
+  ],
+  "malware": []
+}

@@ -1,0 +1,11 @@
+{
+  "malware": [],
+  "T1053.006:Systemd Timers": [
+    "command-execution",
+    "file-modification",
+    "process-creation",
+    "scheduled-job-creation"
+  ],
+  "tools": [],
+  "adversaries": []
+}

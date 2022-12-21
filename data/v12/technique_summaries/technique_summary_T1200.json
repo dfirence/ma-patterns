@@ -1,0 +1,12 @@
+{
+  "T1200:Hardware Additions": [
+    "application-log-content",
+    "drive-creation",
+    "network-traffic-flow"
+  ],
+  "tools": [],
+  "adversaries": [
+    "darkvishnya"
+  ],
+  "malware": []
+}

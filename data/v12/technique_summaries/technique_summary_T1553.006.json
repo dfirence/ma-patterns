@@ -1,0 +1,17 @@
+{
+  "tools": [],
+  "adversaries": [
+    "apt39",
+    "turla"
+  ],
+  "malware": [
+    "blackenergy",
+    "hikit",
+    "pandora"
+  ],
+  "T1553.006:Code Signing Policy Modification": [
+    "command-execution",
+    "process-creation",
+    "windows-registry-key-modification"
+  ]
+}

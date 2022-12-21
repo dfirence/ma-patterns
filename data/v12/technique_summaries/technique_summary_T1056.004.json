@@ -1,0 +1,23 @@
+{
+  "tools": [
+    "empire"
+  ],
+  "malware": [
+    "carberp",
+    "finfisher",
+    "nokki",
+    "rdfsniffer",
+    "trickbot",
+    "ursnif",
+    "zebrocy",
+    "zeus-panda",
+    "zxshell"
+  ],
+  "adversaries": [
+    "platinum"
+  ],
+  "T1056.004:Credential API Hooking": [
+    "os-api-execution",
+    "process-metadata"
+  ]
+}

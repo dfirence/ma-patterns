@@ -1,0 +1,46 @@
+{
+  "T1070:Indicator Removal": [
+    "command-execution",
+    "file-deletion",
+    "file-metadata",
+    "file-modification",
+    "firewall-rule-modification",
+    "network-traffic-content",
+    "os-api-execution",
+    "process-creation",
+    "scheduled-job-modification",
+    "user-account-authentication",
+    "windows-registry-key-deletion",
+    "windows-registry-key-modification"
+  ],
+  "tools": [
+    "cspy-downloader",
+    "donut",
+    "silenttrinity"
+  ],
+  "adversaries": [
+    "apt29",
+    "lazarus-group",
+    "unc2452"
+  ],
+  "malware": [
+    "bankshot",
+    "blackenergy",
+    "darkwatchman",
+    "evilnum",
+    "flagpro",
+    "funnydream",
+    "hermeticwiper",
+    "maze",
+    "metamorfo",
+    "neoichor",
+    "orz",
+    "rising-sun",
+    "s-type",
+    "sdbbot",
+    "shadowpad",
+    "sibot",
+    "stuxnet",
+    "sunburst"
+  ]
+}

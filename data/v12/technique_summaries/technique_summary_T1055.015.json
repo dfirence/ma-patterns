@@ -1,0 +1,11 @@
+{
+  "T1055.015:ListPlanting": [
+    "os-api-execution",
+    "process-modification"
+  ],
+  "adversaries": [],
+  "tools": [],
+  "malware": [
+    "invisimole"
+  ]
+}

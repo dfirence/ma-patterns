@@ -1,0 +1,16 @@
+{
+  "T1218:System Binary Proxy Execution": [
+    "command-execution",
+    "file-creation",
+    "module-load",
+    "network-connection-creation",
+    "os-api-execution",
+    "process-creation",
+    "windows-registry-key-modification"
+  ],
+  "adversaries": [
+    "lazarus-group"
+  ],
+  "malware": [],
+  "tools": []
+}

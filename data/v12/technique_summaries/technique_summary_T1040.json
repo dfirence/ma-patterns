@@ -1,0 +1,28 @@
+{
+  "T1040:Network Sniffing": [
+    "command-execution",
+    "process-creation"
+  ],
+  "adversaries": [
+    "apt28",
+    "apt33",
+    "darkvishnya",
+    "kimsuky",
+    "sandworm-team",
+    "stolen-pencil"
+  ],
+  "malware": [
+    "emotet",
+    "foggyweb",
+    "messagetap",
+    "penquin",
+    "regin"
+  ],
+  "tools": [
+    "empire",
+    "impacket",
+    "nbtscan",
+    "poshc2",
+    "responder"
+  ]
+}

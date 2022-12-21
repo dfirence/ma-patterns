@@ -1,0 +1,14 @@
+{
+  "malware": [
+    "amadey"
+  ],
+  "T1553.005:Mark-of-the-Web Bypass": [
+    "file-creation",
+    "file-metadata"
+  ],
+  "tools": [],
+  "adversaries": [
+    "apt29",
+    "ta505"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "T1562:Impair Defenses": [
+    "cloud-service-disable",
+    "cloud-service-modification",
+    "command-execution",
+    "driver-load",
+    "firewall-disable",
+    "firewall-rule-modification",
+    "host-status",
+    "process-creation",
+    "process-termination",
+    "script-execution",
+    "service-metadata",
+    "windows-registry-key-deletion",
+    "windows-registry-key-modification"
+  ],
+  "adversaries": [
+    "magic-hound"
+  ],
+  "malware": [
+    "stuxnet"
+  ],
+  "tools": []
+}

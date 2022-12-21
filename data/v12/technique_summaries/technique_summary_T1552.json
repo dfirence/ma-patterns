@@ -1,0 +1,14 @@
+{
+  "tools": [],
+  "malware": [
+    "astaroth"
+  ],
+  "T1552:Unsecured Credentials": [
+    "command-execution",
+    "file-access",
+    "process-creation",
+    "user-account-authentication",
+    "windows-registry-key-access"
+  ],
+  "adversaries": []
+}

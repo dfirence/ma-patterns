@@ -1,0 +1,21 @@
+{
+  "adversaries": [
+    "wizard-spider"
+  ],
+  "T1222.001:Windows File and Directory Permissions Modification": [
+    "active-directory-object-modification",
+    "command-execution",
+    "file-metadata",
+    "process-creation"
+  ],
+  "tools": [],
+  "malware": [
+    "bitpaymer",
+    "caddywiper",
+    "grandoreiro",
+    "jpin",
+    "ryuk",
+    "wannacry",
+    "wastedlocker"
+  ]
+}

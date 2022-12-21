@@ -1,0 +1,12 @@
+{
+  "tools": [],
+  "malware": [],
+  "T1011:Exfiltration Over Other Network Medium": [
+    "command-execution",
+    "file-access",
+    "network-connection-creation",
+    "network-traffic-content",
+    "network-traffic-flow"
+  ],
+  "adversaries": []
+}

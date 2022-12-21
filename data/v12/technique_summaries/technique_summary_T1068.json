@@ -1,0 +1,43 @@
+{
+  "T1068:Exploitation for Privilege Escalation": [
+    "driver-load",
+    "process-creation"
+  ],
+  "tools": [
+    "empire",
+    "poshc2"
+  ],
+  "adversaries": [
+    "apt28",
+    "apt29",
+    "apt32",
+    "apt33",
+    "bitter",
+    "cobalt-group",
+    "fin6",
+    "fin8",
+    "lapsus$",
+    "platinum",
+    "threat-group-3390",
+    "tonto-team",
+    "turla",
+    "whitefly",
+    "zirconium"
+  ],
+  "malware": [
+    "carberp",
+    "cobalt-strike",
+    "cosmicduke",
+    "hildegard",
+    "invisimole",
+    "jhuhugit",
+    "pandora",
+    "prolock",
+    "remsec",
+    "siloscape",
+    "stuxnet",
+    "wingbird",
+    "xcsset",
+    "zox"
+  ]
+}

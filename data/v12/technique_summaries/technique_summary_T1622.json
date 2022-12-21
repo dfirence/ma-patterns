@@ -1,0 +1,17 @@
+{
+  "adversaries": [],
+  "tools": [],
+  "malware": [
+    "bumblebee",
+    "dratzarus",
+    "rokrat",
+    "saint-bot",
+    "thiefquest"
+  ],
+  "T1622:Debugger Evasion": [
+    "application-log-content",
+    "command-execution",
+    "os-api-execution",
+    "process-creation"
+  ]
+}

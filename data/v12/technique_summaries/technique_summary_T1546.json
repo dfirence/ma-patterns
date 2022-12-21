@@ -1,0 +1,16 @@
+{
+  "malware": [],
+  "T1546:Event Triggered Execution": [
+    "cloud-service-modification",
+    "command-execution",
+    "file-creation",
+    "file-metadata",
+    "file-modification",
+    "module-load",
+    "process-creation",
+    "windows-registry-key-modification",
+    "wmi-creation"
+  ],
+  "adversaries": [],
+  "tools": []
+}

@@ -1,0 +1,14 @@
+{
+  "T1564.009:Resource Forking": [
+    "command-execution",
+    "file-creation",
+    "file-metadata",
+    "process-creation"
+  ],
+  "tools": [],
+  "malware": [
+    "keydnap",
+    "osxshlayer"
+  ],
+  "adversaries": []
+}

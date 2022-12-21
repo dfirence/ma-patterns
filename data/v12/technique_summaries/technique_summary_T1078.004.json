@@ -1,0 +1,19 @@
+{
+  "T1078.004:Cloud Accounts": [
+    "logon-session-creation",
+    "logon-session-metadata",
+    "user-account-authentication"
+  ],
+  "tools": [
+    "peirates",
+    "roadtools"
+  ],
+  "adversaries": [
+    "apt28",
+    "apt29",
+    "apt33",
+    "ke3chang",
+    "lapsus$"
+  ],
+  "malware": []
+}

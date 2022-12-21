@@ -1,0 +1,14 @@
+{
+  "T1565.003:Runtime Data Manipulation": [
+    "file-creation",
+    "file-deletion",
+    "file-metadata",
+    "file-modification",
+    "os-api-execution"
+  ],
+  "tools": [],
+  "malware": [],
+  "adversaries": [
+    "apt38"
+  ]
+}

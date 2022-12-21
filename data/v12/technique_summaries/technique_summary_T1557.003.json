@@ -1,0 +1,10 @@
+{
+  "adversaries": [],
+  "malware": [],
+  "T1557.003:DHCP Spoofing": [
+    "application-log-content",
+    "network-traffic-content",
+    "network-traffic-flow"
+  ],
+  "tools": []
+}

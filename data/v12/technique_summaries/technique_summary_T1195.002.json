@@ -1,0 +1,21 @@
+{
+  "tools": [],
+  "adversaries": [
+    "apt29",
+    "apt41",
+    "cobalt-group",
+    "dragonfly",
+    "gold-southfield",
+    "sandworm-team",
+    "threat-group-3390",
+    "unc2452"
+  ],
+  "T1195.002:Compromise Software Supply Chain": [
+    "file-metadata"
+  ],
+  "malware": [
+    "ccbkdr",
+    "goldenspy",
+    "sunspot"
+  ]
+}

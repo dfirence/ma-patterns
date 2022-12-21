@@ -1,0 +1,14 @@
+{
+  "malware": [
+    "green-lambert",
+    "linux-rabbit"
+  ],
+  "adversaries": [],
+  "T1546.004:Unix Shell Configuration Modification": [
+    "command-execution",
+    "file-creation",
+    "file-modification",
+    "process-creation"
+  ],
+  "tools": []
+}

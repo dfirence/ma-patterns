@@ -1,0 +1,63 @@
+{
+  "adversaries": [
+    "apt1",
+    "apt28",
+    "chimera",
+    "confucius",
+    "fin5",
+    "fin6",
+    "gamaredon-group",
+    "ke3chang",
+    "menupass",
+    "mustang-panda",
+    "oilrig",
+    "patchwork",
+    "sidewinder",
+    "threat-group-3390",
+    "tropic-trooper"
+  ],
+  "tools": [
+    "empire",
+    "mythic",
+    "poshc2",
+    "roadtools",
+    "shimratreporter"
+  ],
+  "malware": [
+    "appleseed",
+    "attor",
+    "badnews",
+    "bankshot",
+    "ccf32",
+    "comnie",
+    "crutch",
+    "funnydream",
+    "goldfinder",
+    "helminth",
+    "invisimole",
+    "lightneuron",
+    "messagetap",
+    "metamorfo",
+    "micropsia",
+    "netwire",
+    "outsteel",
+    "poetrat",
+    "proxysvc",
+    "ramsay",
+    "rover",
+    "rtm",
+    "strongpity",
+    "t9000",
+    "tajmahal",
+    "usbstealer",
+    "valak",
+    "vermin",
+    "windtail",
+    "zebrocy"
+  ],
+  "T1119:Automated Collection": [
+    "command-execution",
+    "file-access",
+    "script-execution"
+  ]
+}

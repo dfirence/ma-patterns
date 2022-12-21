@@ -1,0 +1,15 @@
+{
+  "malware": [
+    "badnews",
+    "h1n1",
+    "linux-rabbit",
+    "ursnif"
+  ],
+  "tools": [
+    "mythic"
+  ],
+  "adversaries": [],
+  "T1132:Data Encoding": [
+    "network-traffic-content"
+  ]
+}

@@ -1,0 +1,408 @@
+[
+  {
+    "id": "attack-pattern--0458aab9-ad42-4eac-9e22-706a95bafee2",
+    "platform": "pre",
+    "tid": "T1583",
+    "technique": "Acquire Infrastructure",
+    "tactic": "resource-development",
+    "datasources": "response-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1583.001",
+      "T1583.002",
+      "T1583.003",
+      "T1583.004",
+      "T1583.005",
+      "T1583.006",
+      "T1583.007"
+    ],
+    "count_subtechniques": 7,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may buy, lease, or rent infrastructure that can be used during targeting. A wide variety of infrastructure exists for hosting and orchestrating adversary operations. Infrastructure solutions include physical or cloud servers, domains, and third-party web services.(Citation: TrendmicroHideoutsLease) Additionally, botnets are available for rent or purchase.\n\nUse of these infrastructure solutions allows an adversary to stage, launch, and execute an operation. Solutions may help adversary operations blend in with traffic that is seen as normal, such as contact to third-party web services. Depending on the implementation, adversaries may use infrastructure that makes it difficult to physically tie back to them as well as utilize infrastructure that can be rapidly provisioned, modified, and shut down.",
+    "technique_references": [
+      {
+        "source_name": "TrendmicroHideoutsLease",
+        "url": "https://documents.trendmicro.com/assets/wp/wp-criminal-hideouts-for-lease.pdf",
+        "description": "Max Goncharov. (2015, July 15). Criminal Hideouts for Lease: Bulletproof Hosting Services. Retrieved March 6, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ThreatConnect Infrastructure Dec 2020",
+        "url": "https://threatconnect.com/blog/infrastructure-research-hunting/",
+        "description": "ThreatConnect. (2020, December 15). Infrastructure Research and Hunting: Boiling the Domain Ocean. Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant SCANdalous Jul 2020",
+        "url": "https://www.mandiant.com/resources/scandalous-external-detection-using-network-scan-data-and-automation",
+        "description": "Stephens, A. (2020, July 13). SCANdalous! (External Detection Using Network Scan Data and Automation). Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Koczwara Beacon Hunting Sep 2021",
+        "url": "https://michaelkoczwara.medium.com/cobalt-strike-c2-hunting-with-shodan-c448d501a6e2",
+        "description": "Koczwara, M. (2021, September 7). Hunting Cobalt Strike C2 with Shodan. Retrieved October 12, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--7e3beebd-8bfe-4e7b-a892-e44ab06a75f9",
+    "platform": "pre",
+    "tid": "T1584",
+    "technique": "Compromise Infrastructure",
+    "tactic": "resource-development",
+    "datasources": "response-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1584.001",
+      "T1584.002",
+      "T1584.003",
+      "T1584.004",
+      "T1584.005",
+      "T1584.006",
+      "T1584.007"
+    ],
+    "count_subtechniques": 7,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may compromise third-party infrastructure that can be used during targeting. Infrastructure solutions include physical or cloud servers, domains, and third-party web and DNS services. Instead of buying, leasing, or renting infrastructure an adversary may compromise infrastructure and use it during other phases of the adversary lifecycle.(Citation: Mandiant APT1)(Citation: ICANNDomainNameHijacking)(Citation: Talos DNSpionage Nov 2018)(Citation: FireEye EPS Awakens Part 2) Additionally, adversaries may compromise numerous machines to form a botnet they can leverage.\n\nUse of compromised infrastructure allows an adversary to stage, launch, and execute an operation. Compromised infrastructure can help adversary operations blend in with traffic that is seen as normal, such as contact with high reputation or trusted sites. For example, adversaries may leverage compromised infrastructure (potentially also in conjunction with [Digital Certificates](https://attack.mitre.org/techniques/T1588/004)) to further blend in and support staged information gathering and/or [Phishing](https://attack.mitre.org/techniques/T1566) campaigns.(Citation: FireEye DNS Hijack 2019) \n\nBy using compromised infrastructure, adversaries may make it difficult to tie their actions back to them. Prior to targeting, adversaries may compromise the infrastructure of other adversaries.(Citation: NSA NCSC Turla OilRig)",
+    "technique_references": [
+      {
+        "source_name": "FireEye DNS Hijack 2019",
+        "url": "https://www.fireeye.com/blog/threat-research/2019/01/global-dns-hijacking-campaign-dns-record-manipulation-at-scale.html",
+        "description": "Hirani, M., Jones, S., Read, B. (2019, January 10). Global DNS Hijacking Campaign: DNS Record Manipulation at Scale. Retrieved October 9, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ICANNDomainNameHijacking",
+        "url": "https://www.icann.org/groups/ssac/documents/sac-007-en",
+        "description": "ICANN Security and Stability Advisory Committee. (2005, July 12). Domain Name Hijacking: Incidents, Threats, Risks and Remediation. Retrieved March 6, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Koczwara Beacon Hunting Sep 2021",
+        "url": "https://michaelkoczwara.medium.com/cobalt-strike-c2-hunting-with-shodan-c448d501a6e2",
+        "description": "Koczwara, M. (2021, September 7). Hunting Cobalt Strike C2 with Shodan. Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant APT1",
+        "url": "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/mandiant-apt1-report.pdf",
+        "description": "Mandiant. (n.d.). APT1 Exposing One of China’s Cyber Espionage Units. Retrieved July 18, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Talos DNSpionage Nov 2018",
+        "url": "https://blog.talosintelligence.com/2018/11/dnspionage-campaign-targets-middle-east.html",
+        "description": "Mercer, W., Rascagneres, P. (2018, November 27). DNSpionage Campaign Targets Middle East. Retrieved October 9, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NSA NCSC Turla OilRig",
+        "url": "https://media.defense.gov/2019/Oct/18/2002197242/-1/-1/0/NSA_CSA_Turla_20191021%20ver%204%20-%20nsa.gov.pdf",
+        "description": "NSA/NCSC. (2019, October 21). Cybersecurity Advisory: Turla Group Exploits Iranian APT To Expand Coverage Of Victims. Retrieved October 16, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant SCANdalous Jul 2020",
+        "url": "https://www.mandiant.com/resources/scandalous-external-detection-using-network-scan-data-and-automation",
+        "description": "Stephens, A. (2020, July 13). SCANdalous! (External Detection Using Network Scan Data and Automation). Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ThreatConnect Infrastructure Dec 2020",
+        "url": "https://threatconnect.com/blog/infrastructure-research-hunting/",
+        "description": "ThreatConnect. (2020, December 15). Infrastructure Research and Hunting: Boiling the Domain Ocean. Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye EPS Awakens Part 2",
+        "url": "https://web.archive.org/web/20151226205946/https://www.fireeye.com/blog/threat-research/2015/12/the-eps-awakens-part-two.html",
+        "description": "Winters, R. (2015, December 20). The EPS Awakens - Part 2. Retrieved January 22, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--edadea33-549c-4ed1-9783-8f5a5853cbdf",
+    "platform": "pre",
+    "tid": "T1587",
+    "technique": "Develop Capabilities",
+    "tactic": "resource-development",
+    "datasources": "response-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1587.001",
+      "T1587.002",
+      "T1587.003",
+      "T1587.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may build capabilities that can be used during targeting. Rather than purchasing, freely downloading, or stealing capabilities, adversaries may develop their own capabilities in-house. This is the process of identifying development requirements and building solutions such as malware, exploits, and self-signed certificates. Adversaries may develop capabilities to support their operations throughout numerous phases of the adversary lifecycle.(Citation: Mandiant APT1)(Citation: Kaspersky Sofacy)(Citation: Bitdefender StrongPity June 2020)(Citation: Talos Promethium June 2020)\n\nAs with legitimate development efforts, different skill sets may be required for developing capabilities. The skills needed may be located in-house, or may need to be contracted out. Use of a contractor may be considered an extension of that adversary's development capabilities, provided the adversary plays a role in shaping requirements and maintains a degree of exclusivity to the capability.",
+    "technique_references": [
+      {
+        "source_name": "Mandiant APT1",
+        "url": "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/mandiant-apt1-report.pdf",
+        "description": "Mandiant. (n.d.). APT1 Exposing One of China’s Cyber Espionage Units. Retrieved July 18, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kaspersky Sofacy",
+        "url": "https://securelist.com/sofacy-apt-hits-high-profile-targets-with-updated-toolset/72924/",
+        "description": "Kaspersky Lab's Global Research and Analysis Team. (2015, December 4). Sofacy APT hits high profile targets with updated toolset. Retrieved December 10, 2015.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Bitdefender StrongPity June 2020",
+        "url": "https://www.bitdefender.com/files/News/CaseStudies/study/353/Bitdefender-Whitepaper-StrongPity-APT.pdf",
+        "description": "Tudorica, R. et al. (2020, June 30). StrongPity APT - Revealing Trojanized Tools, Working Hours and Infrastructure. Retrieved July 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Talos Promethium June 2020",
+        "url": "https://blog.talosintelligence.com/2020/06/promethium-extends-with-strongpity3.html",
+        "description": "Mercer, W. et al. (2020, June 29). PROMETHIUM extends global reach with StrongPity3 APT. Retrieved July 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Splunk Kovar Certificates 2017",
+        "url": "https://www.splunk.com/en_us/blog/security/tall-tales-of-hunting-with-tls-ssl-certificates.html",
+        "description": "Kovar, R. (2017, December 11). Tall Tales of Hunting with TLS/SSL Certificates. Retrieved October 16, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--ce0687a0-e692-4b77-964a-0784a8e54ff1",
+    "platform": "pre",
+    "tid": "T1588",
+    "technique": "Obtain Capabilities",
+    "tactic": "resource-development",
+    "datasources": "response-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1588.001",
+      "T1588.002",
+      "T1588.003",
+      "T1588.004",
+      "T1588.005",
+      "T1588.006"
+    ],
+    "count_subtechniques": 6,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may buy and/or steal capabilities that can be used during targeting. Rather than developing their own capabilities in-house, adversaries may purchase, freely download, or steal them. Activities may include the acquisition of malware, software (including licenses), exploits, certificates, and information relating to vulnerabilities. Adversaries may obtain capabilities to support their operations throughout numerous phases of the adversary lifecycle.\n\nIn addition to downloading free malware, software, and exploits from the internet, adversaries may purchase these capabilities from third-party entities. Third-party entities can include technology companies that specialize in malware and exploits, criminal marketplaces, or from individuals.(Citation: NationsBuying)(Citation: PegasusCitizenLab)\n\nIn addition to purchasing capabilities, adversaries may steal capabilities from third-party entities (including other adversaries). This can include stealing software licenses, malware, SSL/TLS and code-signing certificates, or raiding closed databases of vulnerabilities or exploits.(Citation: DiginotarCompromise)",
+    "technique_references": [
+      {
+        "source_name": "NationsBuying",
+        "url": "https://www.nytimes.com/2013/07/14/world/europe/nations-buying-as-hackers-sell-computer-flaws.html",
+        "description": "Nicole Perlroth and David E. Sanger. (2013, July 12). Nations Buying as Hackers Sell Flaws in Computer Code. Retrieved March 9, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "PegasusCitizenLab",
+        "url": "https://citizenlab.ca/2016/08/million-dollar-dissident-iphone-zero-day-nso-group-uae/",
+        "description": "Bill Marczak and John Scott-Railton. (2016, August 24). The Million Dollar Dissident: NSO Group’s iPhone Zero-Days used against a UAE Human Rights Defender. Retrieved December 12, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "DiginotarCompromise",
+        "url": "https://threatpost.com/final-report-diginotar-hack-shows-total-compromise-ca-servers-103112/77170/",
+        "description": "Fisher, D. (2012, October 31). Final Report on DigiNotar Hack Shows Total Compromise of CA Servers. Retrieved March 6, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEyeSupplyChain",
+        "url": "https://www.mandiant.com/resources/supply-chain-analysis-from-quartermaster-to-sunshop",
+        "description": "FireEye. (2014). SUPPLY CHAIN ANALYSIS: From Quartermaster to SunshopFireEye. Retrieved March 6, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Analyzing CS Dec 2020",
+        "url": "https://www.randhome.io/blog/2020/12/20/analyzing-cobalt-strike-for-fun-and-profit/",
+        "description": "Maynier, E. (2020, December 20). Analyzing Cobalt Strike for Fun and Profit. Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Splunk Kovar Certificates 2017",
+        "url": "https://www.splunk.com/en_us/blog/security/tall-tales-of-hunting-with-tls-ssl-certificates.html",
+        "description": "Kovar, R. (2017, December 11). Tall Tales of Hunting with TLS/SSL Certificates. Retrieved October 16, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Recorded Future Beacon Certificates",
+        "url": "https://www.recordedfuture.com/cobalt-strike-servers/",
+        "description": "Insikt Group. (2019, June 18). A Multi-Method Approach to Identifying Rogue Cobalt Strike Servers. Retrieved October 16, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--09312b1a-c3c6-4b45-9844-3ccc78e5d82f",
+    "platform": "pre",
+    "tid": "T1592",
+    "technique": "Gather Victim Host Information",
+    "tactic": "reconnaissance",
+    "datasources": "response-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1592.001",
+      "T1592.002",
+      "T1592.003",
+      "T1592.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may gather information about the victim's hosts that can be used during targeting. Information about hosts may include a variety of details, including administrative data (ex: name, assigned IP, functionality, etc.) as well as specifics regarding its configuration (ex: operating system, language, etc.).\n\nAdversaries may gather this information in various ways, such as direct collection actions via [Active Scanning](https://attack.mitre.org/techniques/T1595) or [Phishing for Information](https://attack.mitre.org/techniques/T1598). Adversaries may also compromise sites then include malicious content designed to collect host information from visitors.(Citation: ATT ScanBox) Information about hosts may also be exposed to adversaries via online or other accessible data sets (ex: [Social Media](https://attack.mitre.org/techniques/T1593/001) or [Search Victim-Owned Websites](https://attack.mitre.org/techniques/T1594)). Gathering this information may reveal opportunities for other forms of reconnaissance (ex: [Search Open Websites/Domains](https://attack.mitre.org/techniques/T1593) or [Search Open Technical Databases](https://attack.mitre.org/techniques/T1596)), establishing operational resources (ex: [Develop Capabilities](https://attack.mitre.org/techniques/T1587) or [Obtain Capabilities](https://attack.mitre.org/techniques/T1588)), and/or initial access (ex: [Supply Chain Compromise](https://attack.mitre.org/techniques/T1195) or [External Remote Services](https://attack.mitre.org/techniques/T1133)).",
+    "technique_references": [
+      {
+        "source_name": "ATT ScanBox",
+        "url": "https://cybersecurity.att.com/blogs/labs-research/scanbox-a-reconnaissance-framework-used-on-watering-hole-attacks",
+        "description": "Blasco, J. (2014, August 28). Scanbox: A Reconnaissance Framework Used with Watering Hole Attacks. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ThreatConnect Infrastructure Dec 2020",
+        "url": "https://threatconnect.com/blog/infrastructure-research-hunting/",
+        "description": "ThreatConnect. (2020, December 15). Infrastructure Research and Hunting: Boiling the Domain Ocean. Retrieved October 12, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--84771bc3-f6a0-403e-b144-01af70e5fda0",
+    "platform": "pre",
+    "tid": "T1608",
+    "technique": "Stage Capabilities",
+    "tactic": "resource-development",
+    "datasources": "response-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1608.001",
+      "T1608.002",
+      "T1608.003",
+      "T1608.004",
+      "T1608.005",
+      "T1608.006"
+    ],
+    "count_subtechniques": 6,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may upload, install, or otherwise set up capabilities that can be used during targeting. To support their operations, an adversary may need to take capabilities they developed ([Develop Capabilities](https://attack.mitre.org/techniques/T1587)) or obtained ([Obtain Capabilities](https://attack.mitre.org/techniques/T1588)) and stage them on infrastructure under their control. These capabilities may be staged on infrastructure that was previously purchased/rented by the adversary ([Acquire Infrastructure](https://attack.mitre.org/techniques/T1583)) or was otherwise compromised by them ([Compromise Infrastructure](https://attack.mitre.org/techniques/T1584)). Capabilities may also be staged on web services, such as GitHub or Pastebin, or on Platform-as-a-Service (PaaS) offerings that enable users to easily provision applications.(Citation: Volexity Ocean Lotus November 2020)(Citation: Dragos Heroku Watering Hole)(Citation: Malwarebytes Heroku Skimmers)(Citation: Netskope GCP Redirection)(Citation: Netskope Cloud Phishing)\n\nStaging of capabilities can aid the adversary in a number of initial access and post-compromise behaviors, including (but not limited to):\n\n* Staging web resources necessary to conduct [Drive-by Compromise](https://attack.mitre.org/techniques/T1189) when a user browses to a site.(Citation: FireEye CFR Watering Hole 2012)(Citation: Gallagher 2015)(Citation: ATT ScanBox)\n* Staging web resources for a link target to be used with spearphishing.(Citation: Malwarebytes Silent Librarian October 2020)(Citation: Proofpoint TA407 September 2019)\n* Uploading malware or tools to a location accessible to a victim network to enable [Ingress Tool Transfer](https://attack.mitre.org/techniques/T1105).(Citation: Volexity Ocean Lotus November 2020)\n* Installing a previously acquired SSL/TLS certificate to use to encrypt command and control traffic (ex: [Asymmetric Cryptography](https://attack.mitre.org/techniques/T1573/002) with [Web Protocols](https://attack.mitre.org/techniques/T1071/001)).(Citation: DigiCert Install SSL Cert)",
+    "technique_references": [
+      {
+        "source_name": "Volexity Ocean Lotus November 2020",
+        "url": "https://www.volexity.com/blog/2020/11/06/oceanlotus-extending-cyber-espionage-operations-through-fake-websites/",
+        "description": "Adair, S. and Lancaster, T. (2020, November 6). OceanLotus: Extending Cyber Espionage Operations Through Fake Websites. Retrieved November 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Netskope GCP Redirection",
+        "url": "https://www.netskope.com/blog/targeted-attacks-abusing-google-cloud-platform-open-redirection",
+        "description": "Ashwin Vamshi. (2019, January 24). Targeted Attacks Abusing Google Cloud Platform Open Redirection. Retrieved August 18, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Netskope Cloud Phishing",
+        "url": "https://www.netskope.com/blog/a-big-catch-cloud-phishing-from-google-app-engine-and-azure-app-service",
+        "description": "Ashwin Vamshi. (2020, August 12). A Big Catch: Cloud Phishing from Google App Engine and Azure App Service. Retrieved August 18, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ATT ScanBox",
+        "url": "https://cybersecurity.att.com/blogs/labs-research/scanbox-a-reconnaissance-framework-used-on-watering-hole-attacks",
+        "description": "Blasco, J. (2014, August 28). Scanbox: A Reconnaissance Framework Used with Watering Hole Attacks. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "DigiCert Install SSL Cert",
+        "url": "https://www.digicert.com/kb/ssl-certificate-installation.htm",
+        "description": "DigiCert. (n.d.). How to Install an SSL Certificate. Retrieved April 19, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Gallagher 2015",
+        "url": "http://arstechnica.com/security/2015/08/newly-discovered-chinese-hacking-group-hacked-100-websites-to-use-as-watering-holes/",
+        "description": "Gallagher, S.. (2015, August 5). Newly discovered Chinese hacking group hacked 100+ websites to use as “watering holes”. Retrieved January 25, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Malwarebytes Heroku Skimmers",
+        "url": "https://www.malwarebytes.com/blog/news/2019/12/theres-an-app-for-that-web-skimmers-found-on-paas-heroku",
+        "description": "Jérôme Segura. (2019, December 4). There's an app for that: web skimmers found on PaaS Heroku. Retrieved August 18, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Dragos Heroku Watering Hole",
+        "url": "https://www.dragos.com/blog/industry-news/a-new-water-watering-hole/",
+        "description": "Kent Backman. (2021, May 18). When Intrusions Don’t Align: A New Water Watering Hole and Oldsmar. Retrieved August 18, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye CFR Watering Hole 2012",
+        "url": "https://www.fireeye.com/blog/threat-research/2012/12/council-foreign-relations-water-hole-attack-details.html",
+        "description": "Kindlund, D. (2012, December 30). CFR Watering Hole Attack Details. Retrieved December 18, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Malwarebytes Silent Librarian October 2020",
+        "url": "https://blog.malwarebytes.com/malwarebytes-news/2020/10/silent-librarian-apt-phishing-attack/",
+        "description": "Malwarebytes Threat Intelligence Team. (2020, October 14). Silent Librarian APT right on schedule for 20/21 academic year. Retrieved February 3, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Proofpoint TA407 September 2019",
+        "url": "https://www.proofpoint.com/us/threat-insight/post/threat-actor-profile-ta407-silent-librarian",
+        "description": "Proofpoint Threat Insight Team. (2019, September 5). Threat Actor Profile: TA407, the Silent Librarian. Retrieved February 3, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

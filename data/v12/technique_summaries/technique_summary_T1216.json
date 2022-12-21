@@ -1,0 +1,10 @@
+{
+  "tools": [],
+  "T1216:System Script Proxy Execution": [
+    "command-execution",
+    "process-creation",
+    "script-execution"
+  ],
+  "malware": [],
+  "adversaries": []
+}

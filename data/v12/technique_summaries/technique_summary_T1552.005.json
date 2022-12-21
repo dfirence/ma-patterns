@@ -1,0 +1,14 @@
+{
+  "malware": [
+    "hildegard"
+  ],
+  "T1552.005:Cloud Instance Metadata API": [
+    "user-account-authentication"
+  ],
+  "adversaries": [
+    "teamtnt"
+  ],
+  "tools": [
+    "peirates"
+  ]
+}

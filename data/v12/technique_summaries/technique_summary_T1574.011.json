@@ -1,0 +1,11 @@
+{
+  "T1574.011:Services Registry Permissions Weakness": [
+    "command-execution",
+    "process-creation",
+    "service-modification",
+    "windows-registry-key-modification"
+  ],
+  "tools": [],
+  "adversaries": [],
+  "malware": []
+}

@@ -1,0 +1,10 @@
+{
+  "malware": [],
+  "T1608.005:Link Target": [
+    "response-content"
+  ],
+  "tools": [],
+  "adversaries": [
+    "silent-librarian"
+  ]
+}

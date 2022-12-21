@@ -1,0 +1,19 @@
+{
+  "tools": [
+    "bloodhound",
+    "empire"
+  ],
+  "T1615:Group Policy Discovery": [
+    "active-directory-object-access",
+    "command-execution",
+    "network-traffic-content",
+    "process-creation",
+    "script-execution"
+  ],
+  "adversaries": [
+    "turla"
+  ],
+  "malware": [
+    "emissary"
+  ]
+}

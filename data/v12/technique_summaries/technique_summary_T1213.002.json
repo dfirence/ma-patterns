@@ -1,0 +1,16 @@
+{
+  "tools": [
+    "spwebmember"
+  ],
+  "adversaries": [
+    "apt28",
+    "chimera",
+    "ke3chang",
+    "lapsus$"
+  ],
+  "malware": [],
+  "T1213.002:Sharepoint": [
+    "application-log-content",
+    "logon-session-creation"
+  ]
+}

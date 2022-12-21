@@ -1,0 +1,13 @@
+{
+  "adversaries": [
+    "apt38"
+  ],
+  "T1562.003:Impair Command History Logging": [
+    "command-execution",
+    "host-status"
+  ],
+  "tools": [
+    "silenttrinity"
+  ],
+  "malware": []
+}

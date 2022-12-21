@@ -1,0 +1,20 @@
+{
+  "tools": [],
+  "T1027.004:Compile After Delivery": [
+    "command-execution",
+    "file-creation",
+    "file-metadata",
+    "process-creation"
+  ],
+  "malware": [
+    "cardinal-rat",
+    "darkwatchman",
+    "foggyweb",
+    "njrat"
+  ],
+  "adversaries": [
+    "gamaredon-group",
+    "muddywater",
+    "rocke"
+  ]
+}

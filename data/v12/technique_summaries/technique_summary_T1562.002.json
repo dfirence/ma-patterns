@@ -1,0 +1,20 @@
+{
+  "adversaries": [
+    "apt29",
+    "sandworm-team",
+    "threat-group-3390",
+    "unc2452"
+  ],
+  "T1562.002:Disable Windows Event Logging": [
+    "application-log-content",
+    "command-execution",
+    "host-status",
+    "process-creation",
+    "script-execution",
+    "windows-registry-key-creation"
+  ],
+  "tools": [
+    "wevtutil"
+  ],
+  "malware": []
+}

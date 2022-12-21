@@ -1,0 +1,12 @@
+{
+  "tools": [
+    "aadinternals"
+  ],
+  "T1590.001:Domain Properties": [
+    "none"
+  ],
+  "malware": [],
+  "adversaries": [
+    "sandworm-team"
+  ]
+}

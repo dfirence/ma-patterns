@@ -1,0 +1,13 @@
+{
+  "tools": [
+    "empire"
+  ],
+  "adversaries": [],
+  "T1127.001:MSBuild": [
+    "command-execution",
+    "process-creation"
+  ],
+  "malware": [
+    "plugx"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "T1583.006:Web Services": [
+    "response-content"
+  ],
+  "adversaries": [
+    "apt17",
+    "apt28",
+    "apt29",
+    "apt32",
+    "confucius",
+    "earth-lusca",
+    "hafnium",
+    "indigozebra",
+    "kimsuky",
+    "lazarus-group",
+    "lazyscripter",
+    "magic-hound",
+    "muddywater",
+    "polonium",
+    "turla",
+    "zirconium"
+  ],
+  "malware": [],
+  "tools": []
+}

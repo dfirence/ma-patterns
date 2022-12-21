@@ -1,0 +1,10 @@
+{
+  "T1499.001:OS Exhaustion Flood": [
+    "host-status",
+    "network-traffic-content",
+    "network-traffic-flow"
+  ],
+  "tools": [],
+  "adversaries": [],
+  "malware": []
+}

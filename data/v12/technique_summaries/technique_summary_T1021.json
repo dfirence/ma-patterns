@@ -1,0 +1,18 @@
+{
+  "tools": [],
+  "T1021:Remote Services": [
+    "command-execution",
+    "logon-session-creation",
+    "module-load",
+    "network-connection-creation",
+    "network-share-access",
+    "network-traffic-flow",
+    "process-creation"
+  ],
+  "adversaries": [],
+  "malware": [
+    "kivars",
+    "macma",
+    "stuxnet"
+  ]
+}

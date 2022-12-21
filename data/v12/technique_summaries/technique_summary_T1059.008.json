@@ -1,0 +1,8 @@
+{
+  "adversaries": [],
+  "T1059.008:Network Device CLI": [
+    "command-execution"
+  ],
+  "malware": [],
+  "tools": []
+}

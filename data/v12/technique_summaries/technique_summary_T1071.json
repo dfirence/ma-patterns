@@ -1,0 +1,23 @@
+{
+  "tools": [],
+  "adversaries": [
+    "dragonfly",
+    "magic-hound",
+    "rocke",
+    "teamtnt"
+  ],
+  "malware": [
+    "clambling",
+    "cobalt-strike",
+    "duqu",
+    "hildegard",
+    "lucifer",
+    "neteagle",
+    "regin",
+    "siloscape"
+  ],
+  "T1071:Application Layer Protocol": [
+    "network-traffic-content",
+    "network-traffic-flow"
+  ]
+}

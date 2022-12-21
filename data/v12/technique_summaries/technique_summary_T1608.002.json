@@ -1,0 +1,11 @@
+{
+  "T1608.002:Upload Tool": [
+    "response-content"
+  ],
+  "malware": [],
+  "tools": [],
+  "adversaries": [
+    "lazarus-group",
+    "threat-group-3390"
+  ]
+}

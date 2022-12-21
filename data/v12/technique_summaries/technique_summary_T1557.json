@@ -1,0 +1,16 @@
+{
+  "adversaries": [
+    "kimsuky"
+  ],
+  "T1557:Adversary-in-the-Middle": [
+    "application-log-content",
+    "network-traffic-content",
+    "network-traffic-flow",
+    "service-creation",
+    "windows-registry-key-modification"
+  ],
+  "malware": [
+    "dok"
+  ],
+  "tools": []
+}

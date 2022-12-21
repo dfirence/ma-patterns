@@ -1,0 +1,10 @@
+{
+  "T1195.001:Compromise Software Dependencies and Development Tools": [
+    "file-metadata"
+  ],
+  "tools": [],
+  "malware": [
+    "xcsset"
+  ],
+  "adversaries": []
+}

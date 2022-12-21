@@ -1,0 +1,23 @@
+{
+  "tools": [],
+  "adversaries": [
+    "apt29",
+    "gamaredon-group",
+    "hexane",
+    "turla",
+    "unc2452"
+  ],
+  "malware": [
+    "goldfinder",
+    "more_eggs",
+    "neoichor",
+    "qakbot",
+    "quietsieve",
+    "rising-sun",
+    "sugarush"
+  ],
+  "T1016.001:Internet Connection Discovery": [
+    "command-execution",
+    "process-creation"
+  ]
+}

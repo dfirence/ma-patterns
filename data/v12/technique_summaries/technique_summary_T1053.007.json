@@ -1,0 +1,10 @@
+{
+  "T1053.007:Container Orchestration Job": [
+    "container-creation",
+    "file-creation",
+    "scheduled-job-creation"
+  ],
+  "malware": [],
+  "adversaries": [],
+  "tools": []
+}

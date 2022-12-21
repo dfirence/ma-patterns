@@ -1,0 +1,10 @@
+{
+  "adversaries": [
+    "hafnium"
+  ],
+  "tools": [],
+  "malware": [],
+  "T1590:Gather Victim Network Information": [
+    "none"
+  ]
+}

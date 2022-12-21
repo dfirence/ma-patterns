@@ -1,0 +1,8 @@
+{
+  "adversaries": [],
+  "T1195.003:Compromise Hardware Supply Chain": [
+    "host-status"
+  ],
+  "malware": [],
+  "tools": []
+}

@@ -1,0 +1,38 @@
+{
+  "adversaries": [
+    "apt28",
+    "apt41",
+    "rocke",
+    "teamtnt",
+    "winnti-group"
+  ],
+  "T1014:Rootkit": [
+    "drive-modification",
+    "file-modification",
+    "firmware-modification"
+  ],
+  "malware": [
+    "carberp",
+    "caterpillar-webshell",
+    "drovorub",
+    "ebury",
+    "hacking-team-uefi-rootkit",
+    "hiddenwasp",
+    "hidedrv",
+    "hikit",
+    "hildegard",
+    "lojax",
+    "poisonivy",
+    "ramsay",
+    "skidmap",
+    "stuxnet",
+    "umbreon",
+    "uroburos",
+    "warzonerat",
+    "winnti-for-linux",
+    "zeroaccess"
+  ],
+  "tools": [
+    "htran"
+  ]
+}

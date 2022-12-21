@@ -1,0 +1,24 @@
+{
+  "tools": [
+    "mimikatz"
+  ],
+  "malware": [
+    "calisto",
+    "smokedham"
+  ],
+  "T1098:Account Manipulation": [
+    "active-directory-object-modification",
+    "command-execution",
+    "file-modification",
+    "group-modification",
+    "process-creation",
+    "user-account-modification"
+  ],
+  "adversaries": [
+    "apt3",
+    "dragonfly",
+    "kimsuky",
+    "lazarus-group",
+    "sandworm-team"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "tools": [],
+  "T1547.003:Time Providers": [
+    "command-execution",
+    "module-load",
+    "process-creation",
+    "windows-registry-key-modification"
+  ],
+  "malware": [],
+  "adversaries": []
+}

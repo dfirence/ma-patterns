@@ -1,0 +1,83 @@
+[
+  {
+    "id": "attack-pattern--d4bdbdea-eaec-4071-b4f9-5105e12ea4b6",
+    "platform": "iaas",
+    "tid": "T1537",
+    "technique": "Transfer Data to Cloud Account",
+    "tactic": "exfiltration",
+    "datasources": "snapshot-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may exfiltrate data by transferring the data, including backups of cloud environments, to another cloud account they control on the same service to avoid typical file transfers/downloads and network-based exfiltration detection.\n\nA defender who is monitoring for large transfers to outside the cloud environment through normal file transfers or over command and control channels may not be watching for data transfers to another account within the same cloud provider. Such transfers may utilize existing cloud provider APIs and the internal address space of the cloud provider to blend into normal traffic or avoid data transfers over external network interfaces.\n\nIncidents have been observed where adversaries have created backups of cloud instances and transferred them to separate accounts.(Citation: DOJ GRU Indictment Jul 2018) ",
+    "technique_references": [
+      {
+        "source_name": "AWS EBS Snapshot Sharing",
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html",
+        "description": "Amazon Web Services. (n.d.). Share an Amazon EBS snapshot. Retrieved March 2, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Azure Shared Access Signature",
+        "url": "https://docs.microsoft.com/en-us/rest/api/storageservices/delegate-access-with-shared-access-signature",
+        "description": "Delegate access with a shared access signature. (2019, December 18). Delegate access with a shared access signature. Retrieved March 2, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Azure Blob Snapshots",
+        "url": "https://docs.microsoft.com/en-us/azure/storage/blobs/snapshots-overview",
+        "description": "Microsoft Azure. (2021, December 29). Blob snapshots. Retrieved March 2, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "DOJ GRU Indictment Jul 2018",
+        "url": "https://www.justice.gov/file/1080281/download",
+        "description": "Mueller, R. (2018, July 13). Indictment - United States of America vs. VIKTOR BORISOVICH NETYKSHO, et al. Retrieved September 13, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--144e007b-e638-431d-a894-45d90c54ab90",
+    "platform": "iaas",
+    "tid": "T1578",
+    "technique": "Modify Cloud Compute Infrastructure",
+    "tactic": "defense-evasion",
+    "datasources": "snapshot-metadata",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1578.001",
+      "T1578.002",
+      "T1578.003",
+      "T1578.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "An adversary may attempt to modify a cloud account's compute service infrastructure to evade defenses. A modification to the compute service infrastructure can include the creation, deletion, or modification of one or more components such as compute instances, virtual machines, and snapshots.\n\nPermissions gained from the modification of infrastructure components may bypass restrictions that prevent access to existing infrastructure. Modifying infrastructure components may also allow an adversary to evade detection and remove evidence of their presence.(Citation: Mandiant M-Trends 2020)",
+    "technique_references": [
+      {
+        "source_name": "Mandiant M-Trends 2020",
+        "url": "https://content.fireeye.com/m-trends/rpt-m-trends-2020",
+        "description": "Mandiant. (2020, February). M-Trends 2020. Retrieved April 24, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

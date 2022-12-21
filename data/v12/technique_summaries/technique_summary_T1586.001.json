@@ -1,0 +1,11 @@
+{
+  "tools": [],
+  "malware": [],
+  "adversaries": [
+    "leviathan"
+  ],
+  "T1586.001:Social Media Accounts": [
+    "network-traffic-content",
+    "social-media"
+  ]
+}

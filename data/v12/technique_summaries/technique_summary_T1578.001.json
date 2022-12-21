@@ -1,0 +1,9 @@
+{
+  "T1578.001:Create Snapshot": [
+    "snapshot-creation",
+    "snapshot-metadata"
+  ],
+  "malware": [],
+  "adversaries": [],
+  "tools": []
+}

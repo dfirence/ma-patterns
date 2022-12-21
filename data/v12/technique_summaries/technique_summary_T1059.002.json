@@ -1,0 +1,15 @@
+{
+  "tools": [],
+  "T1059.002:AppleScript": [
+    "command-execution",
+    "os-api-execution",
+    "process-creation"
+  ],
+  "malware": [
+    "bundlore",
+    "dok",
+    "macos.osaminer",
+    "thiefquest"
+  ],
+  "adversaries": []
+}

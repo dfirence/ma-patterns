@@ -1,0 +1,49 @@
+{
+  "adversaries": [
+    "apt19",
+    "apt28",
+    "apt3",
+    "apt32",
+    "copykittens",
+    "darkhydrus",
+    "deep-panda",
+    "gamaredon-group",
+    "gorgon-group",
+    "higaisa",
+    "kimsuky",
+    "magic-hound",
+    "nomadic-octopus"
+  ],
+  "malware": [
+    "agent-tesla",
+    "astaroth",
+    "bondupdater",
+    "cuba",
+    "hammertoss",
+    "hotcroissant",
+    "invisimole",
+    "kevin",
+    "keyboy",
+    "kivars",
+    "koctopus",
+    "metamorfo",
+    "meteor",
+    "powershower",
+    "quietsieve",
+    "strongpity",
+    "ursnif",
+    "windtail"
+  ],
+  "tools": [
+    "koadic",
+    "mcmd",
+    "quasarrat",
+    "silenttrinity"
+  ],
+  "T1564.003:Hidden Window": [
+    "command-execution",
+    "file-modification",
+    "process-creation",
+    "script-execution"
+  ]
+}

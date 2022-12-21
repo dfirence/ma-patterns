@@ -1,0 +1,13 @@
+{
+  "tools": [],
+  "T1588.004:Digital Certificates": [
+    "certificate-registration",
+    "response-content"
+  ],
+  "malware": [],
+  "adversaries": [
+    "blacktech",
+    "lazarus-group",
+    "silent-librarian"
+  ]
+}

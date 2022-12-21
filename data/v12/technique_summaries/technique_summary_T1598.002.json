@@ -1,0 +1,16 @@
+{
+  "malware": [
+    "astaroth"
+  ],
+  "adversaries": [
+    "dragonfly",
+    "sidecopy",
+    "sidewinder"
+  ],
+  "T1598.002:Spearphishing Attachment": [
+    "application-log-content",
+    "network-traffic-content",
+    "network-traffic-flow"
+  ],
+  "tools": []
+}

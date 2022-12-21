@@ -1,0 +1,24 @@
+{
+  "adversaries": [
+    "lazarus-group",
+    "threat-group-3390"
+  ],
+  "T1560.002:Archive via Library": [
+    "file-creation",
+    "script-execution"
+  ],
+  "malware": [
+    "badflick",
+    "bbsrat",
+    "cardinal-rat",
+    "denis",
+    "epic",
+    "foggyweb",
+    "funnydream",
+    "invisimole",
+    "seaduke",
+    "tajmahal",
+    "zlib"
+  ],
+  "tools": []
+}

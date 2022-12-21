@@ -1,0 +1,11 @@
+{
+  "T1587.002:Code Signing Certificates": [
+    "malware-metadata"
+  ],
+  "malware": [],
+  "tools": [],
+  "adversaries": [
+    "patchwork",
+    "promethium"
+  ]
+}

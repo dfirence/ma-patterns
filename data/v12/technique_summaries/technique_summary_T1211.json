@@ -1,0 +1,11 @@
+{
+  "adversaries": [
+    "apt28"
+  ],
+  "T1211:Exploitation for Defense Evasion": [
+    "application-log-content",
+    "process-creation"
+  ],
+  "malware": [],
+  "tools": []
+}

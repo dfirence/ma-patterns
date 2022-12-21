@@ -1,0 +1,10 @@
+{
+  "adversaries": [],
+  "tools": [],
+  "T1055.008:Ptrace System Calls": [
+    "os-api-execution",
+    "process-access",
+    "process-modification"
+  ],
+  "malware": []
+}

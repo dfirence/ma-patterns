@@ -1,0 +1,12 @@
+{
+  "tools": [
+    "aadinternals",
+    "empire",
+    "mimikatz"
+  ],
+  "malware": [],
+  "adversaries": [],
+  "T1558.002:Silver Ticket": [
+    "logon-session-metadata"
+  ]
+}

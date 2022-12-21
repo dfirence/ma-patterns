@@ -1,0 +1,13 @@
+{
+  "malware": [],
+  "T1528:Steal Application Access Token": [
+    "user-account-modification"
+  ],
+  "adversaries": [
+    "apt28"
+  ],
+  "tools": [
+    "aadinternals",
+    "peirates"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "tools": [
+    "ruler"
+  ],
+  "T1137.003:Outlook Forms": [
+    "application-log-content",
+    "command-execution",
+    "process-creation"
+  ],
+  "malware": [],
+  "adversaries": []
+}

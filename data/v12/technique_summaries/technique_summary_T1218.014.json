@@ -1,0 +1,10 @@
+{
+  "T1218.014:MMC": [
+    "command-execution",
+    "file-creation",
+    "process-creation"
+  ],
+  "tools": [],
+  "adversaries": [],
+  "malware": []
+}

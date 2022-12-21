@@ -1,0 +1,12 @@
+{
+  "adversaries": [
+    "hexane",
+    "lapsus$",
+    "lazarus-group"
+  ],
+  "tools": [],
+  "malware": [],
+  "T1591.004:Identify Roles": [
+    "none"
+  ]
+}

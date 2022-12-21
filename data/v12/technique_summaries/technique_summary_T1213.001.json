@@ -1,0 +1,11 @@
+{
+  "malware": [],
+  "tools": [],
+  "T1213.001:Confluence": [
+    "application-log-content",
+    "logon-session-creation"
+  ],
+  "adversaries": [
+    "lapsus$"
+  ]
+}

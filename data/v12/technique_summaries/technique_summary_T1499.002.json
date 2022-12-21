@@ -1,0 +1,11 @@
+{
+  "tools": [],
+  "adversaries": [],
+  "T1499.002:Service Exhaustion Flood": [
+    "application-log-content",
+    "host-status",
+    "network-traffic-content",
+    "network-traffic-flow"
+  ],
+  "malware": []
+}

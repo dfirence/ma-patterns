@@ -1,0 +1,13 @@
+{
+  "tools": [
+    "aadinternals"
+  ],
+  "adversaries": [
+    "apt29",
+    "lapsus$"
+  ],
+  "malware": [],
+  "T1136.003:Cloud Account": [
+    "user-account-creation"
+  ]
+}

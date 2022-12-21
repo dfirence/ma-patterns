@@ -1,0 +1,11 @@
+{
+  "adversaries": [
+    "andariel",
+    "sandworm-team"
+  ],
+  "T1592.002:Software": [
+    "response-content"
+  ],
+  "tools": [],
+  "malware": []
+}

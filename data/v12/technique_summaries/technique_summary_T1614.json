@@ -1,0 +1,22 @@
+{
+  "T1614:System Location Discovery": [
+    "command-execution",
+    "os-api-execution",
+    "process-creation"
+  ],
+  "malware": [
+    "amadey",
+    "crimson",
+    "darkwatchman",
+    "grimagent",
+    "ragnar-locker",
+    "saint-bot",
+    "sdbbot"
+  ],
+  "tools": [
+    "quasarrat"
+  ],
+  "adversaries": [
+    "sidecopy"
+  ]
+}

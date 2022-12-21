@@ -1,0 +1,11 @@
+{
+  "malware": [],
+  "tools": [
+    "peirates"
+  ],
+  "adversaries": [],
+  "T1552.007:Container API": [
+    "command-execution",
+    "user-account-authentication"
+  ]
+}

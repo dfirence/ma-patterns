@@ -1,0 +1,19 @@
+{
+  "malware": [],
+  "tools": [],
+  "adversaries": [
+    "apt1",
+    "apt29",
+    "kimsuky",
+    "lazarus-group",
+    "magic-hound",
+    "sidecopy",
+    "transparent-tribe",
+    "unc2452"
+  ],
+  "T1584.001:Domains": [
+    "active-dns",
+    "domain-registration",
+    "passive-dns"
+  ]
+}

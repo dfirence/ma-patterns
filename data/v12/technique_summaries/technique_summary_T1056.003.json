@@ -1,0 +1,10 @@
+{
+  "T1056.003:Web Portal Capture": [
+    "file-modification"
+  ],
+  "malware": [
+    "iceapple"
+  ],
+  "tools": [],
+  "adversaries": []
+}

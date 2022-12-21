@@ -1,0 +1,15 @@
+{
+  "adversaries": [
+    "axiom",
+    "dragonfly",
+    "hafnium",
+    "lapsus$",
+    "temp.veles"
+  ],
+  "T1583.003:Virtual Private Server": [
+    "response-content",
+    "response-metadata"
+  ],
+  "tools": [],
+  "malware": []
+}

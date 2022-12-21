@@ -1,0 +1,11 @@
+{
+  "adversaries": [],
+  "T1505.002:Transport Agent": [
+    "application-log-content",
+    "file-creation"
+  ],
+  "tools": [],
+  "malware": [
+    "lightneuron"
+  ]
+}

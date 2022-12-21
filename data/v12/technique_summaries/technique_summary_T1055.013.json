@@ -1,0 +1,14 @@
+{
+  "malware": [
+    "bazar",
+    "synack"
+  ],
+  "tools": [],
+  "adversaries": [
+    "leafminer"
+  ],
+  "T1055.013:Process Doppelgänging": [
+    "file-metadata",
+    "os-api-execution"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "tools": [],
+  "T1560.003:Archive via Custom Method": [
+    "file-creation",
+    "script-execution"
+  ],
+  "adversaries": [
+    "copykittens",
+    "fin6",
+    "kimsuky",
+    "lazarus-group",
+    "mustang-panda"
+  ],
+  "malware": [
+    "advstoreshell",
+    "agent.btz",
+    "attor",
+    "bluelight",
+    "duqu",
+    "flashflood",
+    "foggyweb",
+    "frameworkpos",
+    "funnydream",
+    "hawkball",
+    "invisimole",
+    "machete",
+    "messagetap",
+    "netwire",
+    "okrum",
+    "oopsie",
+    "osx_oceanlotus.d",
+    "owaauth",
+    "ramsay",
+    "rawpos",
+    "reaver",
+    "rgdoor",
+    "rising-sun",
+    "sombrat",
+    "spaceship",
+    "squirrelwaffle",
+    "strongpity",
+    "stuxnet",
+    "sugardump",
+    "t9000"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "tools": [],
+  "malware": [
+    "astaroth"
+  ],
+  "adversaries": [
+    "cobalt-group",
+    "higaisa",
+    "lazarus-group"
+  ],
+  "T1220:XSL Script Processing": [
+    "module-load",
+    "process-creation"
+  ]
+}

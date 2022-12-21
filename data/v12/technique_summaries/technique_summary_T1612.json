@@ -1,0 +1,11 @@
+{
+  "malware": [],
+  "tools": [],
+  "adversaries": [],
+  "T1612:Build Image on Host": [
+    "image-creation",
+    "network-connection-creation",
+    "network-traffic-content",
+    "network-traffic-flow"
+  ]
+}

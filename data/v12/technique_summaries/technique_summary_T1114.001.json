@@ -1,0 +1,25 @@
+{
+  "malware": [
+    "carbanak",
+    "cosmicduke",
+    "crimson",
+    "emotet",
+    "kgh_spy",
+    "qakbot",
+    "smoke-loader"
+  ],
+  "T1114.001:Local Email Collection": [
+    "command-execution",
+    "file-access"
+  ],
+  "tools": [
+    "empire",
+    "out1",
+    "pupy"
+  ],
+  "adversaries": [
+    "apt1",
+    "chimera",
+    "magic-hound"
+  ]
+}

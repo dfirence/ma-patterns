@@ -1,0 +1,11 @@
+{
+  "adversaries": [],
+  "malware": [],
+  "tools": [
+    "aadinternals",
+    "roadtools"
+  ],
+  "T1526:Cloud Service Discovery": [
+    "cloud-service-enumeration"
+  ]
+}

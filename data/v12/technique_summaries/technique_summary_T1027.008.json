@@ -1,0 +1,10 @@
+{
+  "malware": [
+    "macos.osaminer"
+  ],
+  "T1027.008:Stripped Payloads": [
+    "file-metadata"
+  ],
+  "adversaries": [],
+  "tools": []
+}

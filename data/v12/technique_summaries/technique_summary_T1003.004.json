@@ -1,0 +1,29 @@
+{
+  "adversaries": [
+    "apt33",
+    "dragonfly",
+    "ke3chang",
+    "leafminer",
+    "menupass",
+    "muddywater",
+    "oilrig",
+    "threat-group-3390"
+  ],
+  "tools": [
+    "aadinternals",
+    "crackmapexec",
+    "gsecdump",
+    "impacket",
+    "lazagne",
+    "mimikatz",
+    "pupy"
+  ],
+  "malware": [
+    "cosmicduke",
+    "iceapple"
+  ],
+  "T1003.004:LSA Secrets": [
+    "command-execution",
+    "windows-registry-key-access"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "adversaries": [
+    "apt29",
+    "unc2452"
+  ],
+  "T1606.002:SAML Tokens": [
+    "logon-session-creation",
+    "logon-session-metadata",
+    "user-account-authentication",
+    "web-credential-creation",
+    "web-credential-usage"
+  ],
+  "tools": [
+    "aadinternals"
+  ],
+  "malware": []
+}

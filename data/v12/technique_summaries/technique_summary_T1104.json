@@ -1,0 +1,20 @@
+{
+  "tools": [],
+  "adversaries": [
+    "apt3",
+    "apt41",
+    "lazarus-group",
+    "muddywater"
+  ],
+  "malware": [
+    "backspace",
+    "bazar",
+    "blackcoffee",
+    "chaos",
+    "valak"
+  ],
+  "T1104:Multi-Stage Channels": [
+    "network-connection-creation",
+    "network-traffic-flow"
+  ]
+}

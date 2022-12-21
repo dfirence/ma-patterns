@@ -1,0 +1,11 @@
+{
+  "tools": [],
+  "T1584.005:Botnet": [
+    "none"
+  ],
+  "adversaries": [
+    "axiom",
+    "sandworm-team"
+  ],
+  "malware": []
+}

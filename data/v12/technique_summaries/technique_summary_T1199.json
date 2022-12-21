@@ -1,0 +1,20 @@
+{
+  "adversaries": [
+    "apt28",
+    "apt29",
+    "gold-southfield",
+    "lapsus$",
+    "menupass",
+    "polonium",
+    "sandworm-team",
+    "threat-group-3390"
+  ],
+  "T1199:Trusted Relationship": [
+    "application-log-content",
+    "logon-session-creation",
+    "logon-session-metadata",
+    "network-traffic-content"
+  ],
+  "malware": [],
+  "tools": []
+}

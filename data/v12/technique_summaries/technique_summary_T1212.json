@@ -1,0 +1,10 @@
+{
+  "adversaries": [],
+  "T1212:Exploitation for Credential Access": [
+    "application-log-content",
+    "process-creation",
+    "user-account-authentication"
+  ],
+  "tools": [],
+  "malware": []
+}

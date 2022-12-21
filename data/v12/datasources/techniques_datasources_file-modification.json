@@ -1,0 +1,2173 @@
+[
+  {
+    "id": "attack-pattern--0f20e3cb-245b-4a61-8a91-2d93f7cb0e9b",
+    "platform": "linux|macos|windows",
+    "tid": "T1014",
+    "technique": "Rootkit",
+    "tactic": "defense-evasion",
+    "datasources": "file-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use rootkits to hide the presence of programs, files, network connections, services, drivers, and other system components. Rootkits are programs that hide the existence of malware by intercepting/hooking and modifying operating system API calls that supply system information. (Citation: Symantec Windows Rootkits) \n\nRootkits or rootkit enabling functionality may reside at the user or kernel level in the operating system or lower, to include a hypervisor, Master Boot Record, or [System Firmware](https://attack.mitre.org/techniques/T1542/001). (Citation: Wikipedia Rootkit) Rootkits have been seen for Windows, Linux, and Mac OS X systems. (Citation: CrowdStrike Linux Rootkit) (Citation: BlackHat Mac OSX Rootkit)",
+    "technique_references": [
+      {
+        "source_name": "CrowdStrike Linux Rootkit",
+        "url": "https://www.crowdstrike.com/blog/http-iframe-injecting-linux-rootkit/",
+        "description": "Kurtz, G. (2012, November 19). HTTP iframe Injecting Linux Rootkit. Retrieved December 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "BlackHat Mac OSX Rootkit",
+        "url": "http://www.blackhat.com/docs/asia-14/materials/Tsai/WP-Asia-14-Tsai-You-Cant-See-Me-A-Mac-OS-X-Rootkit-Uses-The-Tricks-You-Havent-Known-Yet.pdf",
+        "description": "Pan, M., Tsai, S. (2014). You can’t see me: A Mac OS X Rootkit uses the tricks you haven't known yet. Retrieved December 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Symantec Windows Rootkits",
+        "url": "https://www.symantec.com/avcenter/reference/windows.rootkit.overview.pdf",
+        "description": "Symantec. (n.d.). Windows Rootkit Overview. Retrieved December 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia Rootkit",
+        "url": "https://en.wikipedia.org/wiki/Rootkit",
+        "description": "Wikipedia. (2016, June 1). Rootkit. Retrieved June 2, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "capec",
+        "url": "https://capec.mitre.org/data/definitions/552.html",
+        "description": "none",
+        "external_id": "CAPEC-552"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--42e8de7b-37b2-4258-905a-6897815e58e0",
+    "platform": "linux|macos|windows|containers",
+    "tid": "T1036",
+    "technique": "Masquerading",
+    "tactic": "defense-evasion",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1036.001",
+      "T1036.002",
+      "T1036.003",
+      "T1036.004",
+      "T1036.005",
+      "T1036.006",
+      "T1036.007"
+    ],
+    "count_subtechniques": 7,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to manipulate features of their artifacts to make them appear legitimate or benign to users and/or security tools. Masquerading occurs when the name or location of an object, legitimate or malicious, is manipulated or abused for the sake of evading defenses and observation. This may include manipulating file metadata, tricking users into misidentifying the file type, and giving legitimate task or service names.\n\nRenaming abusable system utilities to evade security monitoring is also a form of [Masquerading](https://attack.mitre.org/techniques/T1036).(Citation: LOLBAS Main Site)",
+    "technique_references": [
+      {
+        "source_name": "Twitter ItsReallyNick Masquerading Update",
+        "url": "https://twitter.com/ItsReallyNick/status/1055321652777619457",
+        "description": "Carr, N.. (2018, October 25). Nick Carr Status Update Masquerading. Retrieved April 22, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Elastic Masquerade Ball",
+        "url": "http://pages.endgame.com/rs/627-YBU-612/images/EndgameJournal_The%20Masquerade%20Ball_Pages_R2.pdf",
+        "description": "Ewing, P. (2016, October 31). How to Hunt: The Masquerade Ball. Retrieved October 31, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "LOLBAS Main Site",
+        "url": "https://lolbas-project.github.io/",
+        "description": "LOLBAS. (n.d.). Living Off The Land Binaries and Scripts (and also Libraries). Retrieved February 10, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "capec",
+        "url": "https://capec.mitre.org/data/definitions/177.html",
+        "description": "none",
+        "external_id": "CAPEC-177"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--03259939-0b57-482f-8eb5-87c0e0d54334",
+    "platform": "macos|windows|linux",
+    "tid": "T1037",
+    "technique": "Boot or Logon Initialization Scripts",
+    "tactic": "persistence",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1037.001",
+      "T1037.002",
+      "T1037.003",
+      "T1037.004",
+      "T1037.005"
+    ],
+    "count_subtechniques": 5,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use scripts automatically executed at boot or logon initialization to establish persistence. Initialization scripts can be used to perform administrative functions, which may often execute other programs or send information to an internal logging server. These scripts can vary based on operating system and whether applied locally or remotely.  \n\nAdversaries may use these scripts to maintain persistence on a single system. Depending on the access configuration of the logon scripts, either local credentials or an administrator account may be necessary. \n\nAn adversary may also be able to escalate their privileges since some boot or logon initialization scripts run with higher privileges.",
+    "technique_references": [
+      {
+        "source_name": "capec",
+        "url": "https://capec.mitre.org/data/definitions/564.html",
+        "description": "none",
+        "external_id": "CAPEC-564"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--03259939-0b57-482f-8eb5-87c0e0d54334",
+    "platform": "macos|windows|linux",
+    "tid": "T1037",
+    "technique": "Boot or Logon Initialization Scripts",
+    "tactic": "privilege-escalation",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1037.001",
+      "T1037.002",
+      "T1037.003",
+      "T1037.004",
+      "T1037.005"
+    ],
+    "count_subtechniques": 5,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use scripts automatically executed at boot or logon initialization to establish persistence. Initialization scripts can be used to perform administrative functions, which may often execute other programs or send information to an internal logging server. These scripts can vary based on operating system and whether applied locally or remotely.  \n\nAdversaries may use these scripts to maintain persistence on a single system. Depending on the access configuration of the logon scripts, either local credentials or an administrator account may be necessary. \n\nAn adversary may also be able to escalate their privileges since some boot or logon initialization scripts run with higher privileges.",
+    "technique_references": [
+      {
+        "source_name": "capec",
+        "url": "https://capec.mitre.org/data/definitions/564.html",
+        "description": "none",
+        "external_id": "CAPEC-564"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--35dd844a-b219-4e2b-a6bb-efa9a75995a9",
+    "platform": "windows|linux|macos|containers",
+    "tid": "T1053",
+    "technique": "Scheduled Task/Job",
+    "tactic": "execution",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1053.001",
+      "T1053.002",
+      "T1053.003",
+      "T1053.005",
+      "T1053.006",
+      "T1053.007"
+    ],
+    "count_subtechniques": 6,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse task scheduling functionality to facilitate initial or recurring execution of malicious code. Utilities exist within all major operating systems to schedule programs or scripts to be executed at a specified date and time. A task can also be scheduled on a remote system, provided the proper authentication is met (ex: RPC and file and printer sharing in Windows environments). Scheduling a task on a remote system typically may require being a member of an admin or otherwise privileged group on the remote system.(Citation: TechNet Task Scheduler Security)\n\nAdversaries may use task scheduling to execute programs at system startup or on a scheduled basis for persistence. These mechanisms can also be abused to run a process under the context of a specified account (such as one with elevated permissions/privileges). Similar to [System Binary Proxy Execution](https://attack.mitre.org/techniques/T1218), adversaries have also abused task scheduling to potentially mask one-time execution under a trusted system process.(Citation: ProofPoint Serpent)",
+    "technique_references": [
+      {
+        "source_name": "ProofPoint Serpent",
+        "url": "https://www.proofpoint.com/us/blog/threat-insight/serpent-no-swiping-new-backdoor-targets-french-entities-unique-attack-chain",
+        "description": "Campbell, B. et al. (2022, March 21). Serpent, No Swiping! New Backdoor Targets French Entities with Unique Attack Chain. Retrieved April 11, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Task Scheduler Security",
+        "url": "https://technet.microsoft.com/en-us/library/cc785125.aspx",
+        "description": "Microsoft. (2005, January 21). Task Scheduler and security. Retrieved June 8, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "capec",
+        "url": "https://capec.mitre.org/data/definitions/557.html",
+        "description": "none",
+        "external_id": "CAPEC-557"
+      }
+    ],
+    "technique_required_permissions": "administrator|system|user",
+    "technique_effective_permissions": "system|administrator|user",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--35dd844a-b219-4e2b-a6bb-efa9a75995a9",
+    "platform": "windows|linux|macos|containers",
+    "tid": "T1053",
+    "technique": "Scheduled Task/Job",
+    "tactic": "persistence",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1053.001",
+      "T1053.002",
+      "T1053.003",
+      "T1053.005",
+      "T1053.006",
+      "T1053.007"
+    ],
+    "count_subtechniques": 6,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse task scheduling functionality to facilitate initial or recurring execution of malicious code. Utilities exist within all major operating systems to schedule programs or scripts to be executed at a specified date and time. A task can also be scheduled on a remote system, provided the proper authentication is met (ex: RPC and file and printer sharing in Windows environments). Scheduling a task on a remote system typically may require being a member of an admin or otherwise privileged group on the remote system.(Citation: TechNet Task Scheduler Security)\n\nAdversaries may use task scheduling to execute programs at system startup or on a scheduled basis for persistence. These mechanisms can also be abused to run a process under the context of a specified account (such as one with elevated permissions/privileges). Similar to [System Binary Proxy Execution](https://attack.mitre.org/techniques/T1218), adversaries have also abused task scheduling to potentially mask one-time execution under a trusted system process.(Citation: ProofPoint Serpent)",
+    "technique_references": [
+      {
+        "source_name": "ProofPoint Serpent",
+        "url": "https://www.proofpoint.com/us/blog/threat-insight/serpent-no-swiping-new-backdoor-targets-french-entities-unique-attack-chain",
+        "description": "Campbell, B. et al. (2022, March 21). Serpent, No Swiping! New Backdoor Targets French Entities with Unique Attack Chain. Retrieved April 11, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Task Scheduler Security",
+        "url": "https://technet.microsoft.com/en-us/library/cc785125.aspx",
+        "description": "Microsoft. (2005, January 21). Task Scheduler and security. Retrieved June 8, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "capec",
+        "url": "https://capec.mitre.org/data/definitions/557.html",
+        "description": "none",
+        "external_id": "CAPEC-557"
+      }
+    ],
+    "technique_required_permissions": "administrator|system|user",
+    "technique_effective_permissions": "system|administrator|user",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--35dd844a-b219-4e2b-a6bb-efa9a75995a9",
+    "platform": "windows|linux|macos|containers",
+    "tid": "T1053",
+    "technique": "Scheduled Task/Job",
+    "tactic": "privilege-escalation",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1053.001",
+      "T1053.002",
+      "T1053.003",
+      "T1053.005",
+      "T1053.006",
+      "T1053.007"
+    ],
+    "count_subtechniques": 6,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse task scheduling functionality to facilitate initial or recurring execution of malicious code. Utilities exist within all major operating systems to schedule programs or scripts to be executed at a specified date and time. A task can also be scheduled on a remote system, provided the proper authentication is met (ex: RPC and file and printer sharing in Windows environments). Scheduling a task on a remote system typically may require being a member of an admin or otherwise privileged group on the remote system.(Citation: TechNet Task Scheduler Security)\n\nAdversaries may use task scheduling to execute programs at system startup or on a scheduled basis for persistence. These mechanisms can also be abused to run a process under the context of a specified account (such as one with elevated permissions/privileges). Similar to [System Binary Proxy Execution](https://attack.mitre.org/techniques/T1218), adversaries have also abused task scheduling to potentially mask one-time execution under a trusted system process.(Citation: ProofPoint Serpent)",
+    "technique_references": [
+      {
+        "source_name": "ProofPoint Serpent",
+        "url": "https://www.proofpoint.com/us/blog/threat-insight/serpent-no-swiping-new-backdoor-targets-french-entities-unique-attack-chain",
+        "description": "Campbell, B. et al. (2022, March 21). Serpent, No Swiping! New Backdoor Targets French Entities with Unique Attack Chain. Retrieved April 11, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Task Scheduler Security",
+        "url": "https://technet.microsoft.com/en-us/library/cc785125.aspx",
+        "description": "Microsoft. (2005, January 21). Task Scheduler and security. Retrieved June 8, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "capec",
+        "url": "https://capec.mitre.org/data/definitions/557.html",
+        "description": "none",
+        "external_id": "CAPEC-557"
+      }
+    ],
+    "technique_required_permissions": "administrator|system|user",
+    "technique_effective_permissions": "system|administrator|user",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--43e7dc91-05b2-474c-b9ac-2ed4fe101f4d",
+    "platform": "linux|macos|windows",
+    "tid": "T1055",
+    "technique": "Process Injection",
+    "tactic": "defense-evasion",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1055.001",
+      "T1055.002",
+      "T1055.003",
+      "T1055.004",
+      "T1055.005",
+      "T1055.008",
+      "T1055.009",
+      "T1055.011",
+      "T1055.012",
+      "T1055.013",
+      "T1055.014",
+      "T1055.015"
+    ],
+    "count_subtechniques": 12,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may inject code into processes in order to evade process-based defenses as well as possibly elevate privileges. Process injection is a method of executing arbitrary code in the address space of a separate live process. Running code in the context of another process may allow access to the process's memory, system/network resources, and possibly elevated privileges. Execution via process injection may also evade detection from security products since the execution is masked under a legitimate process. \n\nThere are many different ways to inject code into a process, many of which abuse legitimate functionalities. These implementations exist for every major OS but are typically platform specific. \n\nMore sophisticated samples may perform multiple process injections to segment modules and further evade detection, utilizing named pipes or other inter-process communication (IPC) mechanisms as a communication channel. ",
+    "technique_references": [
+      {
+        "source_name": "GNU Acct",
+        "url": "https://www.gnu.org/software/acct/",
+        "description": "GNU. (2010, February 5). The GNU Accounting Utilities. Retrieved December 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Elastic Process Injection July 2017",
+        "url": "https://www.endgame.com/blog/technical-blog/ten-process-injection-techniques-technical-survey-common-and-trending-process",
+        "description": "Hosseini, A. (2017, July 18). Ten Process Injection Techniques: A Technical Survey Of Common And Trending Process Injection Techniques. Retrieved December 7, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "RHEL auditd",
+        "url": "https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/security_guide/chap-system_auditing",
+        "description": "Jahoda, M. et al.. (2017, March 14). redhat Security Guide - Chapter 7 - System Auditing. Retrieved December 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ArtOfMemoryForensics",
+        "url": "none",
+        "description": "Ligh, M.H. et al.. (2014, July). The Art of Memory Forensics: Detecting Malware and Threats in Windows, Linux, and Mac Memory. Retrieved December 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Sysmon v6 May 2017",
+        "url": "https://docs.microsoft.com/sysinternals/downloads/sysmon",
+        "description": "Russinovich, M. & Garnier, T. (2017, May 22). Sysmon v6.20. Retrieved December 13, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Chokepoint preload rootkits",
+        "url": "http://www.chokepoint.net/2014/02/detecting-userland-preload-rootkits.html",
+        "description": "stderr. (2014, February 14). Detecting Userland Preload Rootkits. Retrieved December 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "capec",
+        "url": "https://capec.mitre.org/data/definitions/640.html",
+        "description": "none",
+        "external_id": "CAPEC-640"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--43e7dc91-05b2-474c-b9ac-2ed4fe101f4d",
+    "platform": "linux|macos|windows",
+    "tid": "T1055",
+    "technique": "Process Injection",
+    "tactic": "privilege-escalation",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1055.001",
+      "T1055.002",
+      "T1055.003",
+      "T1055.004",
+      "T1055.005",
+      "T1055.008",
+      "T1055.009",
+      "T1055.011",
+      "T1055.012",
+      "T1055.013",
+      "T1055.014",
+      "T1055.015"
+    ],
+    "count_subtechniques": 12,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may inject code into processes in order to evade process-based defenses as well as possibly elevate privileges. Process injection is a method of executing arbitrary code in the address space of a separate live process. Running code in the context of another process may allow access to the process's memory, system/network resources, and possibly elevated privileges. Execution via process injection may also evade detection from security products since the execution is masked under a legitimate process. \n\nThere are many different ways to inject code into a process, many of which abuse legitimate functionalities. These implementations exist for every major OS but are typically platform specific. \n\nMore sophisticated samples may perform multiple process injections to segment modules and further evade detection, utilizing named pipes or other inter-process communication (IPC) mechanisms as a communication channel. ",
+    "technique_references": [
+      {
+        "source_name": "GNU Acct",
+        "url": "https://www.gnu.org/software/acct/",
+        "description": "GNU. (2010, February 5). The GNU Accounting Utilities. Retrieved December 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Elastic Process Injection July 2017",
+        "url": "https://www.endgame.com/blog/technical-blog/ten-process-injection-techniques-technical-survey-common-and-trending-process",
+        "description": "Hosseini, A. (2017, July 18). Ten Process Injection Techniques: A Technical Survey Of Common And Trending Process Injection Techniques. Retrieved December 7, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "RHEL auditd",
+        "url": "https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/security_guide/chap-system_auditing",
+        "description": "Jahoda, M. et al.. (2017, March 14). redhat Security Guide - Chapter 7 - System Auditing. Retrieved December 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ArtOfMemoryForensics",
+        "url": "none",
+        "description": "Ligh, M.H. et al.. (2014, July). The Art of Memory Forensics: Detecting Malware and Threats in Windows, Linux, and Mac Memory. Retrieved December 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Sysmon v6 May 2017",
+        "url": "https://docs.microsoft.com/sysinternals/downloads/sysmon",
+        "description": "Russinovich, M. & Garnier, T. (2017, May 22). Sysmon v6.20. Retrieved December 13, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Chokepoint preload rootkits",
+        "url": "http://www.chokepoint.net/2014/02/detecting-userland-preload-rootkits.html",
+        "description": "stderr. (2014, February 14). Detecting Userland Preload Rootkits. Retrieved December 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "capec",
+        "url": "https://capec.mitre.org/data/definitions/640.html",
+        "description": "none",
+        "external_id": "CAPEC-640"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--bb5a00de-e086-4859-a231-fa793f6797e2",
+    "platform": "linux|macos|windows|network",
+    "tid": "T1056",
+    "technique": "Input Capture",
+    "tactic": "collection",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1056.001",
+      "T1056.002",
+      "T1056.003",
+      "T1056.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use methods of capturing user input to obtain credentials or collect information. During normal system usage, users often provide credentials to various different locations, such as login pages/portals or system dialog boxes. Input capture mechanisms may be transparent to the user (e.g. [Credential API Hooking](https://attack.mitre.org/techniques/T1056/004)) or rely on deceiving the user into providing input into what they believe to be a genuine service (e.g. [Web Portal Capture](https://attack.mitre.org/techniques/T1056/003)).",
+    "technique_references": [
+      {
+        "source_name": "capec",
+        "url": "https://capec.mitre.org/data/definitions/569.html",
+        "description": "none",
+        "external_id": "CAPEC-569"
+      },
+      {
+        "source_name": "Adventures of a Keystroke",
+        "url": "http://opensecuritytraining.info/Keylogging_files/The%20Adventures%20of%20a%20Keystroke.pdf",
+        "description": "Tinaztepe,  E. (n.d.). The Adventures of a Keystroke:  An in-depth look into keyloggers on Windows. Retrieved April 27, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|system|root|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--bb5a00de-e086-4859-a231-fa793f6797e2",
+    "platform": "linux|macos|windows|network",
+    "tid": "T1056",
+    "technique": "Input Capture",
+    "tactic": "credential-access",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1056.001",
+      "T1056.002",
+      "T1056.003",
+      "T1056.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use methods of capturing user input to obtain credentials or collect information. During normal system usage, users often provide credentials to various different locations, such as login pages/portals or system dialog boxes. Input capture mechanisms may be transparent to the user (e.g. [Credential API Hooking](https://attack.mitre.org/techniques/T1056/004)) or rely on deceiving the user into providing input into what they believe to be a genuine service (e.g. [Web Portal Capture](https://attack.mitre.org/techniques/T1056/003)).",
+    "technique_references": [
+      {
+        "source_name": "capec",
+        "url": "https://capec.mitre.org/data/definitions/569.html",
+        "description": "none",
+        "external_id": "CAPEC-569"
+      },
+      {
+        "source_name": "Adventures of a Keystroke",
+        "url": "http://opensecuritytraining.info/Keylogging_files/The%20Adventures%20of%20a%20Keystroke.pdf",
+        "description": "Tinaztepe,  E. (n.d.). The Adventures of a Keystroke:  An in-depth look into keyloggers on Windows. Retrieved April 27, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|system|root|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--799ace7f-e227-4411-baa0-8868704f2a69",
+    "platform": "linux|macos|windows|containers|network|office-365|google-workspace",
+    "tid": "T1070",
+    "technique": "Indicator Removal",
+    "tactic": "defense-evasion",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1070.001",
+      "T1070.002",
+      "T1070.003",
+      "T1070.004",
+      "T1070.005",
+      "T1070.006",
+      "T1070.007",
+      "T1070.008",
+      "T1070.009"
+    ],
+    "count_subtechniques": 9,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may delete or modify artifacts generated within systems to remove evidence of their presence or hinder defenses. Various artifacts may be created by an adversary or something that can be attributed to an adversary’s actions. Typically these artifacts are used as defensive indicators related to monitored events, such as strings from downloaded files, logs that are generated from user actions, and other data analyzed by defenders. Location, format, and type of artifact (such as command or login history) are often specific to each platform.\n\nRemoval of these indicators may interfere with event collection, reporting, or other processes used to detect intrusion activity. This may compromise the integrity of security solutions by causing notable events to go unreported. This activity may also impede forensic analysis and incident response, due to lack of sufficient data to determine what occurred.",
+    "technique_references": [
+      {
+        "source_name": "capec",
+        "url": "https://capec.mitre.org/data/definitions/93.html",
+        "description": "none",
+        "external_id": "CAPEC-93"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--246fd3c7-f5e3-466d-8787-4c13d9e3b61c",
+    "platform": "windows|office-365|saas|linux|macos",
+    "tid": "T1080",
+    "technique": "Taint Shared Content",
+    "tactic": "lateral-movement",
+    "datasources": "file-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "\nAdversaries may deliver payloads to remote systems by adding content to shared storage locations, such as network drives or internal code repositories. Content stored on network drives or in other shared locations may be tainted by adding malicious programs, scripts, or exploit code to otherwise valid files. Once a user opens the shared tainted content, the malicious portion can be executed to run the adversary's code on a remote system. Adversaries may use tainted shared content to move laterally.\n\nA directory share pivot is a variation on this technique that uses several other techniques to propagate malware when users access a shared network directory. It uses [Shortcut Modification](https://attack.mitre.org/techniques/T1547/009) of directory .LNK files that use [Masquerading](https://attack.mitre.org/techniques/T1036) to look like the real directories, which are hidden through [Hidden Files and Directories](https://attack.mitre.org/techniques/T1564/001). The malicious .LNK-based directories have an embedded command that executes the hidden malware file in the directory and then opens the real intended directory so that the user's expected action still occurs. When used with frequently used network directories, the technique may result in frequent reinfections and broad access to systems and potentially to new and higher privileged accounts. (Citation: Retwin Directory Share Pivot)\n\nAdversaries may also compromise shared network directories through binary infections by appending or prepending its code to the healthy binary on the shared network directory. The malware may modify the original entry point (OEP) of the healthy binary to ensure that it is executed before the legitimate code. The infection could continue to spread via the newly infected file when it is executed by a remote system. These infections may target both binary and non-binary formats that end with extensions including, but not limited to, .EXE, .DLL, .SCR, .BAT, and/or .VBS.",
+    "technique_references": [
+      {
+        "source_name": "capec",
+        "url": "https://capec.mitre.org/data/definitions/562.html",
+        "description": "none",
+        "external_id": "CAPEC-562"
+      },
+      {
+        "source_name": "Retwin Directory Share Pivot",
+        "url": "https://rewtin.blogspot.ch/2017/11/abusing-user-shares-for-efficient.html",
+        "description": "Routin, D. (2017, November 13). Abusing network shares for efficient lateral movements and privesc (DirSharePivot). Retrieved April 12, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--a10641f4-87b4-45a3-a906-92a149cb2c27",
+    "platform": "windows|azure-ad|office-365|iaas|linux|macos|google-workspace|saas",
+    "tid": "T1098",
+    "technique": "Account Manipulation",
+    "tactic": "persistence",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1098.001",
+      "T1098.002",
+      "T1098.003",
+      "T1098.004",
+      "T1098.005"
+    ],
+    "count_subtechniques": 5,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may manipulate accounts to maintain access to victim systems. Account manipulation may consist of any action that preserves adversary access to a compromised account, such as modifying credentials or permission groups. These actions could also include account activity designed to subvert security policies, such as performing iterative password updates to bypass password duration policies and preserve the life of compromised credentials. \n\nIn order to create or manipulate accounts, the adversary must already have sufficient permissions on systems or the domain. However, account manipulation may also lead to privilege escalation where modifications grant access to additional roles, permissions, or higher-privileged [Valid Accounts](https://attack.mitre.org/techniques/T1078).",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Security Event 4670",
+        "url": "https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4670",
+        "description": "Franklin Smith, R. (n.d.). Windows Security Log Event ID 4670. Retrieved November 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft User Modified Event",
+        "url": "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4738",
+        "description": "Lich, B., Miroshnikov, A. (2017, April 5). 4738(S): A user account was changed. Retrieved June 30, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "InsiderThreat ChangeNTLM July 2017",
+        "url": "https://blog.stealthbits.com/manipulating-user-passwords-with-mimikatz-SetNTLM-ChangeNTLM",
+        "description": "Warren, J. (2017, July 11). Manipulating User Passwords with Mimikatz. Retrieved December 4, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub Mimikatz Issue 92 June 2017",
+        "url": "https://github.com/gentilkiwi/mimikatz/issues/92",
+        "description": "Warren, J. (2017, June 22). lsadump::changentlm and lsadump::setntlm work, but generate Windows events #92. Retrieved December 4, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--2c4d4e92-0ccf-4a97-b54c-86d662988a53",
+    "platform": "windows|office-365",
+    "tid": "T1137",
+    "technique": "Office Application Startup",
+    "tactic": "persistence",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1137.001",
+      "T1137.002",
+      "T1137.003",
+      "T1137.004",
+      "T1137.005",
+      "T1137.006"
+    ],
+    "count_subtechniques": 6,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may leverage Microsoft Office-based applications for persistence between startups. Microsoft Office is a fairly common application suite on Windows-based operating systems within an enterprise network. There are multiple mechanisms that can be used with Office for persistence when an Office-based application is started; this can include the use of Office Template Macros and add-ins.\n\nA variety of features have been discovered in Outlook that can be abused to obtain persistence, such as Outlook rules, forms, and Home Page.(Citation: SensePost Ruler GitHub) These persistence mechanisms can work within Outlook or be used through Office 365.(Citation: TechNet O365 Outlook Rules)",
+    "technique_references": [
+      {
+        "source_name": "SensePost Ruler GitHub",
+        "url": "https://github.com/sensepost/ruler",
+        "description": "SensePost. (2016, August 18). Ruler: A tool to abuse Exchange services. Retrieved February 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet O365 Outlook Rules",
+        "url": "https://blogs.technet.microsoft.com/office365security/defending-against-rules-and-forms-injection/",
+        "description": "Koeller, B.. (2018, February 21). Defending Against Rules and Forms Injection. Retrieved November 5, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CrowdStrike Outlook Forms",
+        "url": "https://malware.news/t/using-outlook-forms-for-lateral-movement-and-persistence/13746",
+        "description": "Parisi, T., et al. (2017, July). Using Outlook Forms for Lateral Movement and Persistence. Retrieved February 5, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Outlook Today Home Page",
+        "url": "https://medium.com/@bwtech789/outlook-today-homepage-persistence-33ea9b505943",
+        "description": "Soutcast. (2018, September 14). Outlook Today Homepage Persistence. Retrieved February 5, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Detect Outlook Forms",
+        "url": "https://docs.microsoft.com/en-us/office365/securitycompliance/detect-and-remediate-outlook-rules-forms-attack",
+        "description": "Fox, C., Vangel, D. (2018, April 22). Detect and Remediate Outlook Rules and Custom Forms Injections Attacks in Office 365. Retrieved February 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SensePost NotRuler",
+        "url": "https://github.com/sensepost/notruler",
+        "description": "SensePost. (2017, September 21). NotRuler - The opposite of Ruler, provides blue teams with the ability to detect Ruler usage against Exchange. Retrieved February 4, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--3ccef7ae-cb5e-48f6-8302-897105fbf55c",
+    "platform": "windows|linux|macos",
+    "tid": "T1140",
+    "technique": "Deobfuscate/Decode Files or Information",
+    "tactic": "defense-evasion",
+    "datasources": "file-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use [Obfuscated Files or Information](https://attack.mitre.org/techniques/T1027) to hide artifacts of an intrusion from analysis. They may require separate mechanisms to decode or deobfuscate that information depending on how they intend to use it. Methods for doing that include built-in functionality of malware or by using utilities present on the system.\n\nOne such example is use of [certutil](https://attack.mitre.org/software/S0160) to decode a remote access tool portable executable file that has been hidden inside a certificate file. (Citation: Malwarebytes Targeted Attack against Saudi Arabia) Another example is using the Windows <code>copy /b</code> command to reassemble binary fragments into a malicious payload. (Citation: Carbon Black Obfuscation Sept 2016)\n\nSometimes a user's action may be required to open it for deobfuscation or decryption as part of [User Execution](https://attack.mitre.org/techniques/T1204). The user may also be required to input a password to open a password protected compressed/encrypted file that was provided by the adversary. (Citation: Volexity PowerDuke November 2016)",
+    "technique_references": [
+      {
+        "source_name": "Volexity PowerDuke November 2016",
+        "url": "https://www.volexity.com/blog/2016/11/09/powerduke-post-election-spear-phishing-campaigns-targeting-think-tanks-and-ngos/",
+        "description": "Adair, S.. (2016, November 9). PowerDuke: Widespread Post-Election Spear Phishing Campaigns Targeting Think Tanks and NGOs. Retrieved January 11, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Malwarebytes Targeted Attack against Saudi Arabia",
+        "url": "https://blog.malwarebytes.com/cybercrime/social-engineering-cybercrime/2017/03/new-targeted-attack-saudi-arabia-government/",
+        "description": "Malwarebytes Labs. (2017, March 27). New targeted attack against Saudi Arabia Government. Retrieved July 3, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Carbon Black Obfuscation Sept 2016",
+        "url": "https://www.carbonblack.com/2016/09/23/security-advisory-variants-well-known-adware-families-discovered-include-sophisticated-obfuscation-techniques-previously-associated-nation-state-attacks/",
+        "description": "Tedesco, B. (2016, September 23). Security Alert Summary. Retrieved February 12, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b77cf5f3-6060-475d-bd60-40ccbf28fdc2",
+    "platform": "windows",
+    "tid": "T1187",
+    "technique": "Forced Authentication",
+    "tactic": "credential-access",
+    "datasources": "file-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may gather credential material by invoking or forcing a user to automatically provide authentication information through a mechanism in which they can intercept.\n\nThe Server Message Block (SMB) protocol is commonly used in Windows networks for authentication and communication between systems for access to resources and file sharing. When a Windows system attempts to connect to an SMB resource it will automatically attempt to authenticate and send credential information for the current user to the remote system. (Citation: Wikipedia Server Message Block) This behavior is typical in enterprise environments so that users do not need to enter credentials to access network resources.\n\nWeb Distributed Authoring and Versioning (WebDAV) is also typically used by Windows systems as a backup protocol when SMB is blocked or fails. WebDAV is an extension of HTTP and will typically operate over TCP ports 80 and 443. (Citation: Didier Stevens WebDAV Traffic) (Citation: Microsoft Managing WebDAV Security)\n\nAdversaries may take advantage of this behavior to gain access to user account hashes through forced SMB/WebDAV authentication. An adversary can send an attachment to a user through spearphishing that contains a resource link to an external server controlled by the adversary (i.e. [Template Injection](https://attack.mitre.org/techniques/T1221)), or place a specially crafted file on navigation path for privileged accounts (e.g. .SCF file placed on desktop) or on a publicly accessible share to be accessed by victim(s). When the user's system accesses the untrusted resource it will attempt authentication and send information, including the user's hashed credentials, over SMB to the adversary controlled server. (Citation: GitHub Hashjacking) With access to the credential hash, an adversary can perform off-line [Brute Force](https://attack.mitre.org/techniques/T1110) cracking to gain access to plaintext credentials. (Citation: Cylance Redirect to SMB)\n\nThere are several different ways this can occur. (Citation: Osanda Stealing NetNTLM Hashes) Some specifics from in-the-wild use include:\n\n* A spearphishing attachment containing a document with a resource that is automatically loaded when the document is opened (i.e. [Template Injection](https://attack.mitre.org/techniques/T1221)). The document can include, for example, a request similar to <code>file[:]//[remote address]/Normal.dotm</code> to trigger the SMB request. (Citation: US-CERT APT Energy Oct 2017)\n* A modified .LNK or .SCF file with the icon filename pointing to an external reference such as <code>\\\\[remote address]\\pic.png</code> that will force the system to load the resource when the icon is rendered to repeatedly gather credentials. (Citation: US-CERT APT Energy Oct 2017)",
+    "technique_references": [
+      {
+        "source_name": "Wikipedia Server Message Block",
+        "url": "https://en.wikipedia.org/wiki/Server_Message_Block",
+        "description": "Wikipedia. (2017, December 16). Server Message Block. Retrieved December 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Didier Stevens WebDAV Traffic",
+        "url": "https://blog.didierstevens.com/2017/11/13/webdav-traffic-to-malicious-sites/",
+        "description": "Stevens, D. (2017, November 13). WebDAV Traffic To Malicious Sites. Retrieved December 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Managing WebDAV Security",
+        "url": "https://www.microsoft.com/technet/prodtechnol/WindowsServer2003/Library/IIS/4beddb35-0cba-424c-8b9b-a5832ad8e208.mspx",
+        "description": "Microsoft. (n.d.). Managing WebDAV Security (IIS 6.0). Retrieved December 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub Hashjacking",
+        "url": "https://github.com/hob0/hashjacking",
+        "description": "Dunning, J. (2016, August 1). Hashjacking. Retrieved December 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cylance Redirect to SMB",
+        "url": "https://www.cylance.com/content/dam/cylance/pdfs/white_papers/RedirectToSMB.pdf",
+        "description": "Cylance. (2015, April 13). Redirect to SMB. Retrieved December 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Osanda Stealing NetNTLM Hashes",
+        "url": "https://osandamalith.com/2017/03/24/places-of-interest-in-stealing-netntlm-hashes/",
+        "description": "Osanda Malith Jayathissa. (2017, March 24). Places of Interest in Stealing NetNTLM Hashes. Retrieved January 26, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT APT Energy Oct 2017",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA17-293A",
+        "description": "US-CERT. (2017, October 20). Alert (TA17-293A): Advanced Persistent Threat Activity Targeting Energy and Other Critical Infrastructure Sectors. Retrieved November 2, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d45a3d09-b3cf-48f4-9f0f-f521ee5cb05c",
+    "platform": "windows|iaas|linux|macos",
+    "tid": "T1485",
+    "technique": "Data Destruction",
+    "tactic": "impact",
+    "datasources": "file-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may destroy data and files on specific systems or in large numbers on a network to interrupt availability to systems, services, and network resources. Data destruction is likely to render stored data irrecoverable by forensic techniques through overwriting files or data on local and remote drives.(Citation: Symantec Shamoon 2012)(Citation: FireEye Shamoon Nov 2016)(Citation: Palo Alto Shamoon Nov 2016)(Citation: Kaspersky StoneDrill 2017)(Citation: Unit 42 Shamoon3 2018)(Citation: Talos Olympic Destroyer 2018) Common operating system file deletion commands such as <code>del</code> and <code>rm</code> often only remove pointers to files without wiping the contents of the files themselves, making the files recoverable by proper forensic methodology. This behavior is distinct from [Disk Content Wipe](https://attack.mitre.org/techniques/T1561/001) and [Disk Structure Wipe](https://attack.mitre.org/techniques/T1561/002) because individual files are destroyed rather than sections of a storage disk or the disk's logical structure.\n\nAdversaries may attempt to overwrite files and directories with randomly generated data to make it irrecoverable.(Citation: Kaspersky StoneDrill 2017)(Citation: Unit 42 Shamoon3 2018) In some cases politically oriented image files have been used to overwrite data.(Citation: FireEye Shamoon Nov 2016)(Citation: Palo Alto Shamoon Nov 2016)(Citation: Kaspersky StoneDrill 2017)\n\nTo maximize impact on the target organization in operations where network-wide availability interruption is the goal, malware designed for destroying data may have worm-like features to propagate across a network by leveraging additional techniques like [Valid Accounts](https://attack.mitre.org/techniques/T1078), [OS Credential Dumping](https://attack.mitre.org/techniques/T1003), and [SMB/Windows Admin Shares](https://attack.mitre.org/techniques/T1021/002).(Citation: Symantec Shamoon 2012)(Citation: FireEye Shamoon Nov 2016)(Citation: Palo Alto Shamoon Nov 2016)(Citation: Kaspersky StoneDrill 2017)(Citation: Talos Olympic Destroyer 2018).\n\nIn cloud environments, adversaries may leverage access to delete cloud storage, cloud storage accounts, machine images, and other infrastructure crucial to operations to damage an organization or their customers.(Citation: Data Destruction - Threat Post)(Citation: DOJ  - Cisco Insider)",
+    "technique_references": [
+      {
+        "source_name": "Symantec Shamoon 2012",
+        "url": "https://www.symantec.com/connect/blogs/shamoon-attacks",
+        "description": "Symantec. (2012, August 16). The Shamoon Attacks. Retrieved March 14, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye Shamoon Nov 2016",
+        "url": "https://www.fireeye.com/blog/threat-research/2016/11/fireeye_respondsto.html",
+        "description": "FireEye. (2016, November 30). FireEye Responds to Wave of Destructive Cyber Attacks in Gulf Region. Retrieved January 11, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Palo Alto Shamoon Nov 2016",
+        "url": "http://researchcenter.paloaltonetworks.com/2016/11/unit42-shamoon-2-return-disttrack-wiper/",
+        "description": "Falcone, R.. (2016, November 30). Shamoon 2: Return of the Disttrack Wiper. Retrieved January 11, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kaspersky StoneDrill 2017",
+        "url": "https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/07180722/Report_Shamoon_StoneDrill_final.pdf",
+        "description": "Kaspersky Lab. (2017, March 7). From Shamoon to StoneDrill: Wipers attacking Saudi organizations and beyond. Retrieved March 14, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Unit 42 Shamoon3 2018",
+        "url": "https://unit42.paloaltonetworks.com/shamoon-3-targets-oil-gas-organization/",
+        "description": "Falcone, R. (2018, December 13). Shamoon 3 Targets Oil and Gas Organization. Retrieved March 14, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Talos Olympic Destroyer 2018",
+        "url": "https://blog.talosintelligence.com/2018/02/olympic-destroyer.html",
+        "description": "Mercer, W. and Rascagneres, P. (2018, February 12). Olympic Destroyer Takes Aim At Winter Olympics. Retrieved March 14, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Data Destruction - Threat Post",
+        "url": "https://threatpost.com/hacker-puts-hosting-service-code-spaces-out-of-business/106761/",
+        "description": "Mimoso, M.. (2014, June 18). Hacker Puts Hosting Service Code Spaces Out of Business. Retrieved December 15, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "DOJ  - Cisco Insider",
+        "url": "https://www.justice.gov/usao-ndca/pr/san-jose-man-pleads-guilty-damaging-cisco-s-network",
+        "description": "DOJ. (2020, August 26). San Jose Man Pleads Guilty To Damaging Cisco’s Network. Retrieved December 15, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator|root|system",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b80d107d-fa0d-4b60-9684-b0433e8bdba0",
+    "platform": "linux|macos|windows|iaas",
+    "tid": "T1486",
+    "technique": "Data Encrypted for Impact",
+    "tactic": "impact",
+    "datasources": "file-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may encrypt data on target systems or on large numbers of systems in a network to interrupt availability to system and network resources. They can attempt to render stored data inaccessible by encrypting files or data on local and remote drives and withholding access to a decryption key. This may be done in order to extract monetary compensation from a victim in exchange for decryption or a decryption key (ransomware) or to render data permanently inaccessible in cases where the key is not saved or transmitted.(Citation: US-CERT Ransomware 2016)(Citation: FireEye WannaCry 2017)(Citation: US-CERT NotPetya 2017)(Citation: US-CERT SamSam 2018)\n\nIn the case of ransomware, it is typical that common user files like Office documents, PDFs, images, videos, audio, text, and source code files will be encrypted (and often renamed and/or tagged with specific file markers). Adversaries may need to first employ other behaviors, such as [File and Directory Permissions Modification](https://attack.mitre.org/techniques/T1222) or [System Shutdown/Reboot](https://attack.mitre.org/techniques/T1529), in order to unlock and/or gain access to manipulate these files.(Citation: CarbonBlack Conti July 2020) In some cases, adversaries may encrypt critical system files, disk partitions, and the MBR.(Citation: US-CERT NotPetya 2017) \n\nTo maximize impact on the target organization, malware designed for encrypting data may have worm-like features to propagate across a network by leveraging other attack techniques like [Valid Accounts](https://attack.mitre.org/techniques/T1078), [OS Credential Dumping](https://attack.mitre.org/techniques/T1003), and [SMB/Windows Admin Shares](https://attack.mitre.org/techniques/T1021/002).(Citation: FireEye WannaCry 2017)(Citation: US-CERT NotPetya 2017) Encryption malware may also leverage [Internal Defacement](https://attack.mitre.org/techniques/T1491/001), such as changing victim wallpapers, or otherwise intimidate victims by sending ransom notes or other messages to connected printers (known as \"print bombing\").(Citation: NHS Digital Egregor Nov 2020)\n\nIn cloud environments, storage objects within compromised accounts may also be encrypted.(Citation: Rhino S3 Ransomware Part 1)",
+    "technique_references": [
+      {
+        "source_name": "CarbonBlack Conti July 2020",
+        "url": "https://www.carbonblack.com/blog/tau-threat-discovery-conti-ransomware/",
+        "description": "Baskin, B. (2020, July 8). TAU Threat Discovery: Conti Ransomware. Retrieved February 17, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye WannaCry 2017",
+        "url": "https://www.fireeye.com/blog/threat-research/2017/05/wannacry-malware-profile.html",
+        "description": "Berry, A., Homan, J., and Eitzman, R. (2017, May 23). WannaCry Malware Profile. Retrieved March 15, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Rhino S3 Ransomware Part 1",
+        "url": "https://rhinosecuritylabs.com/aws/s3-ransomware-part-1-attack-vector/",
+        "description": "Gietzen, S. (n.d.). S3 Ransomware Part 1: Attack Vector. Retrieved April 14, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NHS Digital Egregor Nov 2020",
+        "url": "https://digital.nhs.uk/cyber-alerts/2020/cc-3681#summary",
+        "description": "NHS Digital. (2020, November 26). Egregor Ransomware The RaaS successor to Maze. Retrieved December 29, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT Ransomware 2016",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA16-091A",
+        "description": "US-CERT. (2016, March 31). Alert (TA16-091A): Ransomware and Recent Variants. Retrieved March 15, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT NotPetya 2017",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA17-181A",
+        "description": "US-CERT. (2017, July 1). Alert (TA17-181A): Petya Ransomware. Retrieved March 15, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT SamSam 2018",
+        "url": "https://www.us-cert.gov/ncas/alerts/AA18-337A",
+        "description": "US-CERT. (2018, December 3). Alert (AA18-337A): SamSam Ransomware. Retrieved March 15, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--20fb2507-d71c-455d-9b6d-6104461cf26b",
+    "platform": "windows|linux|macos",
+    "tid": "T1489",
+    "technique": "Service Stop",
+    "tactic": "impact",
+    "datasources": "file-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may stop or disable services on a system to render those services unavailable to legitimate users. Stopping critical services or processes can inhibit or stop response to an incident or aid in the adversary's overall objectives to cause damage to the environment.(Citation: Talos Olympic Destroyer 2018)(Citation: Novetta Blockbuster) \n\nAdversaries may accomplish this by disabling individual services of high importance to an organization, such as <code>MSExchangeIS</code>, which will make Exchange content inaccessible (Citation: Novetta Blockbuster). In some cases, adversaries may stop or disable many or all services to render systems unusable.(Citation: Talos Olympic Destroyer 2018) Services or processes may not allow for modification of their data stores while running. Adversaries may stop services or processes in order to conduct [Data Destruction](https://attack.mitre.org/techniques/T1485) or [Data Encrypted for Impact](https://attack.mitre.org/techniques/T1486) on the data stores of services like Exchange and SQL Server.(Citation: SecureWorks WannaCry Analysis)",
+    "technique_references": [
+      {
+        "source_name": "SecureWorks WannaCry Analysis",
+        "url": "https://www.secureworks.com/research/wcry-ransomware-analysis",
+        "description": "Counter Threat Unit Research Team. (2017, May 18). WCry Ransomware Analysis. Retrieved March 26, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Talos Olympic Destroyer 2018",
+        "url": "https://blog.talosintelligence.com/2018/02/olympic-destroyer.html",
+        "description": "Mercer, W. and Rascagneres, P. (2018, February 12). Olympic Destroyer Takes Aim At Winter Olympics. Retrieved March 14, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Novetta Blockbuster",
+        "url": "https://web.archive.org/web/20160226161828/https://www.operationblockbuster.com/wp-content/uploads/2016/02/Operation-Blockbuster-Report.pdf",
+        "description": "Novetta Threat Research Group. (2016, February 24). Operation Blockbuster: Unraveling the Long Thread of the Sony Attack. Retrieved February 25, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--5909f20f-3c39-4795-be06-ef1ea40d350b",
+    "platform": "windows|iaas|linux|macos",
+    "tid": "T1491",
+    "technique": "Defacement",
+    "tactic": "impact",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1491.001",
+      "T1491.002"
+    ],
+    "count_subtechniques": 2,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify visual content available internally or externally to an enterprise network, thus affecting the integrity of the original content. Reasons for [Defacement](https://attack.mitre.org/techniques/T1491) include delivering messaging, intimidation, or claiming (possibly false) credit for an intrusion. Disturbing or offensive images may be used as a part of [Defacement](https://attack.mitre.org/techniques/T1491) in order to cause user discomfort, or to pressure compliance with accompanying messages. \n",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d456de47-a16f-4e46-8980-e67478a12dcb",
+    "platform": "windows|linux|macos|network",
+    "tid": "T1505",
+    "technique": "Server Software Component",
+    "tactic": "persistence",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1505.001",
+      "T1505.002",
+      "T1505.003",
+      "T1505.004",
+      "T1505.005"
+    ],
+    "count_subtechniques": 5,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse legitimate extensible development features of servers to establish persistent access to systems. Enterprise server applications may include features that allow developers to write and install software or scripts to extend the functionality of the main application. Adversaries may install malicious components to extend and abuse server applications.(Citation: volexity_0day_sophos_FW)",
+    "technique_references": [
+      {
+        "source_name": "volexity_0day_sophos_FW",
+        "url": "https://www.volexity.com/blog/2022/06/15/driftingcloud-zero-day-sophos-firewall-exploitation-and-an-insidious-breach/",
+        "description": "Adair, S., Lancaster, T., Volexity Threat Research. (2022, June 15). DriftingCloud: Zero-Day Sophos Firewall Exploitation and an Insidious Breach. Retrieved July 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT Alert TA15-314A Web Shells",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA15-314A",
+        "description": "US-CERT. (2015, November 13). Compromised Web Servers and Web Shells - Threat Awareness and Guidance. Retrieved June 8, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--106c0cf6-bf73-4601-9aa8-0945c2715ec5",
+    "platform": "windows|macos|linux",
+    "tid": "T1543",
+    "technique": "Create or Modify System Process",
+    "tactic": "persistence",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1543.001",
+      "T1543.002",
+      "T1543.003",
+      "T1543.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may create or modify system-level processes to repeatedly execute malicious payloads as part of persistence. When operating systems boot up, they can start processes that perform background system functions. On Windows and Linux, these system processes are referred to as services.(Citation: TechNet Services) On macOS, launchd processes known as [Launch Daemon](https://attack.mitre.org/techniques/T1543/004) and [Launch Agent](https://attack.mitre.org/techniques/T1543/001) are run to finish system initialization and load user specific parameters.(Citation: AppleDocs Launch Agent Daemons) \n\nAdversaries may install new services, daemons, or agents that can be configured to execute at startup or a repeatable interval in order to establish persistence. Similarly, adversaries may modify existing services, daemons, or agents to achieve the same effect.  \n\nServices, daemons, or agents may be created with administrator privileges but executed under root/SYSTEM privileges. Adversaries may leverage this functionality to create or modify system processes in order to escalate privileges.(Citation: OSX Malware Detection)  ",
+    "technique_references": [
+      {
+        "source_name": "AppleDocs Launch Agent Daemons",
+        "url": "https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html",
+        "description": "Apple. (n.d.). Creating Launch Daemons and Agents. Retrieved July 10, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Services",
+        "url": "https://technet.microsoft.com/en-us/library/cc772408.aspx",
+        "description": "Microsoft. (n.d.). Services. Retrieved June 7, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "OSX Malware Detection",
+        "url": "https://www.synack.com/wp-content/uploads/2016/03/RSA_OSX_Malware.pdf",
+        "description": "Patrick Wardle. (2016, February 29). Let's Play Doctor: Practical OS X Malware Detection & Analysis. Retrieved July 10, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--106c0cf6-bf73-4601-9aa8-0945c2715ec5",
+    "platform": "windows|macos|linux",
+    "tid": "T1543",
+    "technique": "Create or Modify System Process",
+    "tactic": "privilege-escalation",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1543.001",
+      "T1543.002",
+      "T1543.003",
+      "T1543.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may create or modify system-level processes to repeatedly execute malicious payloads as part of persistence. When operating systems boot up, they can start processes that perform background system functions. On Windows and Linux, these system processes are referred to as services.(Citation: TechNet Services) On macOS, launchd processes known as [Launch Daemon](https://attack.mitre.org/techniques/T1543/004) and [Launch Agent](https://attack.mitre.org/techniques/T1543/001) are run to finish system initialization and load user specific parameters.(Citation: AppleDocs Launch Agent Daemons) \n\nAdversaries may install new services, daemons, or agents that can be configured to execute at startup or a repeatable interval in order to establish persistence. Similarly, adversaries may modify existing services, daemons, or agents to achieve the same effect.  \n\nServices, daemons, or agents may be created with administrator privileges but executed under root/SYSTEM privileges. Adversaries may leverage this functionality to create or modify system processes in order to escalate privileges.(Citation: OSX Malware Detection)  ",
+    "technique_references": [
+      {
+        "source_name": "AppleDocs Launch Agent Daemons",
+        "url": "https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html",
+        "description": "Apple. (n.d.). Creating Launch Daemons and Agents. Retrieved July 10, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Services",
+        "url": "https://technet.microsoft.com/en-us/library/cc772408.aspx",
+        "description": "Microsoft. (n.d.). Services. Retrieved June 7, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "OSX Malware Detection",
+        "url": "https://www.synack.com/wp-content/uploads/2016/03/RSA_OSX_Malware.pdf",
+        "description": "Patrick Wardle. (2016, February 29). Let's Play Doctor: Practical OS X Malware Detection & Analysis. Retrieved July 10, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b6301b64-ef57-4cce-bb0b-77026f14a8db",
+    "platform": "linux|macos|windows|saas|iaas|office-365",
+    "tid": "T1546",
+    "technique": "Event Triggered Execution",
+    "tactic": "privilege-escalation",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1546.001",
+      "T1546.002",
+      "T1546.003",
+      "T1546.004",
+      "T1546.005",
+      "T1546.006",
+      "T1546.007",
+      "T1546.008",
+      "T1546.009",
+      "T1546.010",
+      "T1546.011",
+      "T1546.012",
+      "T1546.013",
+      "T1546.014",
+      "T1546.015",
+      "T1546.016"
+    ],
+    "count_subtechniques": 16,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may establish persistence and/or elevate privileges using system mechanisms that trigger execution based on specific events. Various operating systems have means to monitor and subscribe to events such as logons or other user activity such as running specific applications/binaries. Cloud environments may also support various functions and services that monitor and can be invoked in response to specific cloud events.(Citation: Backdooring an AWS account)(Citation: Varonis Power Automate Data Exfiltration)(Citation: Microsoft DART Case Report 001)\n\nAdversaries may abuse these mechanisms as a means of maintaining persistent access to a victim via repeatedly executing malicious code. After gaining access to a victim system, adversaries may create/modify event triggers to point to malicious content that will be executed whenever the event trigger is invoked.(Citation: FireEye WMI 2015)(Citation: Malware Persistence on OS X)(Citation: amnesia malware)\n\nSince the execution can be proxied by an account with higher permissions, such as SYSTEM or service accounts, an adversary may be able to abuse these triggered execution mechanisms to escalate their privileges. ",
+    "technique_references": [
+      {
+        "source_name": "FireEye WMI 2015",
+        "url": "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/wp-windows-management-instrumentation.pdf",
+        "description": "Ballenthin, W., et al. (2015). Windows Management Instrumentation (WMI) Offense, Defense, and Forensics. Retrieved March 30, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft DART Case Report 001",
+        "url": "https://www.microsoft.com/security/blog/2020/03/09/real-life-cybercrime-stories-dart-microsoft-detection-and-response-team",
+        "description": "Berk Veral. (2020, March 9). Real-life cybercrime stories from DART, the Microsoft Detection and Response Team. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "amnesia malware",
+        "url": "https://researchcenter.paloaltonetworks.com/2017/04/unit42-new-iotlinux-malware-targets-dvrs-forms-botnet/",
+        "description": "Claud Xiao, Cong Zheng, Yanhui Jia. (2017, April 6). New IoT/Linux Malware Targets DVRs, Forms Botnet. Retrieved February 19, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Backdooring an AWS account",
+        "url": "https://medium.com/daniel-grzelak/backdooring-an-aws-account-da007d36f8f9",
+        "description": "Daniel Grzelak. (2016, July 9). Backdooring an AWS account. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Varonis Power Automate Data Exfiltration",
+        "url": "https://www.varonis.com/blog/power-automate-data-exfiltration",
+        "description": "Eric Saraga. (2022, February 2). Using Power Automate for Covert Data Exfiltration in Microsoft 365. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Malware Persistence on OS X",
+        "url": "https://www.virusbulletin.com/uploads/pdf/conference/vb2014/VB2014-Wardle.pdf",
+        "description": "Patrick Wardle. (2015). Malware Persistence on OS X Yosemite. Retrieved July 10, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b6301b64-ef57-4cce-bb0b-77026f14a8db",
+    "platform": "linux|macos|windows|saas|iaas|office-365",
+    "tid": "T1546",
+    "technique": "Event Triggered Execution",
+    "tactic": "persistence",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1546.001",
+      "T1546.002",
+      "T1546.003",
+      "T1546.004",
+      "T1546.005",
+      "T1546.006",
+      "T1546.007",
+      "T1546.008",
+      "T1546.009",
+      "T1546.010",
+      "T1546.011",
+      "T1546.012",
+      "T1546.013",
+      "T1546.014",
+      "T1546.015",
+      "T1546.016"
+    ],
+    "count_subtechniques": 16,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may establish persistence and/or elevate privileges using system mechanisms that trigger execution based on specific events. Various operating systems have means to monitor and subscribe to events such as logons or other user activity such as running specific applications/binaries. Cloud environments may also support various functions and services that monitor and can be invoked in response to specific cloud events.(Citation: Backdooring an AWS account)(Citation: Varonis Power Automate Data Exfiltration)(Citation: Microsoft DART Case Report 001)\n\nAdversaries may abuse these mechanisms as a means of maintaining persistent access to a victim via repeatedly executing malicious code. After gaining access to a victim system, adversaries may create/modify event triggers to point to malicious content that will be executed whenever the event trigger is invoked.(Citation: FireEye WMI 2015)(Citation: Malware Persistence on OS X)(Citation: amnesia malware)\n\nSince the execution can be proxied by an account with higher permissions, such as SYSTEM or service accounts, an adversary may be able to abuse these triggered execution mechanisms to escalate their privileges. ",
+    "technique_references": [
+      {
+        "source_name": "FireEye WMI 2015",
+        "url": "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/wp-windows-management-instrumentation.pdf",
+        "description": "Ballenthin, W., et al. (2015). Windows Management Instrumentation (WMI) Offense, Defense, and Forensics. Retrieved March 30, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft DART Case Report 001",
+        "url": "https://www.microsoft.com/security/blog/2020/03/09/real-life-cybercrime-stories-dart-microsoft-detection-and-response-team",
+        "description": "Berk Veral. (2020, March 9). Real-life cybercrime stories from DART, the Microsoft Detection and Response Team. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "amnesia malware",
+        "url": "https://researchcenter.paloaltonetworks.com/2017/04/unit42-new-iotlinux-malware-targets-dvrs-forms-botnet/",
+        "description": "Claud Xiao, Cong Zheng, Yanhui Jia. (2017, April 6). New IoT/Linux Malware Targets DVRs, Forms Botnet. Retrieved February 19, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Backdooring an AWS account",
+        "url": "https://medium.com/daniel-grzelak/backdooring-an-aws-account-da007d36f8f9",
+        "description": "Daniel Grzelak. (2016, July 9). Backdooring an AWS account. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Varonis Power Automate Data Exfiltration",
+        "url": "https://www.varonis.com/blog/power-automate-data-exfiltration",
+        "description": "Eric Saraga. (2022, February 2). Using Power Automate for Covert Data Exfiltration in Microsoft 365. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Malware Persistence on OS X",
+        "url": "https://www.virusbulletin.com/uploads/pdf/conference/vb2014/VB2014-Wardle.pdf",
+        "description": "Patrick Wardle. (2015). Malware Persistence on OS X Yosemite. Retrieved July 10, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--1ecb2399-e8ba-4f6b-8ba7-5c27d49405cf",
+    "platform": "linux|macos|windows",
+    "tid": "T1547",
+    "technique": "Boot or Logon Autostart Execution",
+    "tactic": "persistence",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1547.001",
+      "T1547.002",
+      "T1547.003",
+      "T1547.004",
+      "T1547.005",
+      "T1547.006",
+      "T1547.007",
+      "T1547.008",
+      "T1547.009",
+      "T1547.010",
+      "T1547.011",
+      "T1547.012",
+      "T1547.013",
+      "T1547.014",
+      "T1547.015"
+    ],
+    "count_subtechniques": 15,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. Operating systems may have mechanisms for automatically running a program on system boot or account logon.(Citation: Microsoft Run Key)(Citation: MSDN Authentication Packages)(Citation: Microsoft TimeProvider)(Citation: Cylance Reg Persistence Sept 2013)(Citation: Linux Kernel Programming) These mechanisms may include automatically executing programs that are placed in specially designated directories or are referenced by repositories that store configuration information, such as the Windows Registry. An adversary may achieve the same goal by modifying or extending features of the kernel.\n\nSince some boot or logon autostart programs run with higher privileges, an adversary may leverage these to elevate privileges.",
+    "technique_references": [
+      {
+        "source_name": "Cylance Reg Persistence Sept 2013",
+        "url": "https://blog.cylance.com/windows-registry-persistence-part-2-the-run-keys-and-search-order",
+        "description": "Langendorf, S. (2013, September 24). Windows Registry Persistence, Part 2: The Run Keys and Search-Order. Retrieved April 11, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MSDN Authentication Packages",
+        "url": "https://msdn.microsoft.com/library/windows/desktop/aa374733.aspx",
+        "description": "Microsoft. (n.d.). Authentication Packages. Retrieved March 1, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Run Key",
+        "url": "http://msdn.microsoft.com/en-us/library/aa376977",
+        "description": "Microsoft. (n.d.). Run and RunOnce Registry Keys. Retrieved November 12, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft TimeProvider",
+        "url": "https://msdn.microsoft.com/library/windows/desktop/ms725475.aspx",
+        "description": "Microsoft. (n.d.). Time Provider. Retrieved March 26, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Linux Kernel Programming",
+        "url": "https://www.tldp.org/LDP/lkmpg/2.4/lkmpg.pdf",
+        "description": "Pomerantz, O., Salzman, P.. (2003, April 4). The Linux Kernel Module Programming Guide. Retrieved April 6, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Autoruns",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb963902",
+        "description": "Russinovich, M. (2016, January 4). Autoruns for Windows v13.51. Retrieved June 6, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "capec",
+        "url": "https://capec.mitre.org/data/definitions/564.html",
+        "description": "none",
+        "external_id": "CAPEC-564"
+      }
+    ],
+    "technique_required_permissions": "user|administrator|root",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--1ecb2399-e8ba-4f6b-8ba7-5c27d49405cf",
+    "platform": "linux|macos|windows",
+    "tid": "T1547",
+    "technique": "Boot or Logon Autostart Execution",
+    "tactic": "privilege-escalation",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1547.001",
+      "T1547.002",
+      "T1547.003",
+      "T1547.004",
+      "T1547.005",
+      "T1547.006",
+      "T1547.007",
+      "T1547.008",
+      "T1547.009",
+      "T1547.010",
+      "T1547.011",
+      "T1547.012",
+      "T1547.013",
+      "T1547.014",
+      "T1547.015"
+    ],
+    "count_subtechniques": 15,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. Operating systems may have mechanisms for automatically running a program on system boot or account logon.(Citation: Microsoft Run Key)(Citation: MSDN Authentication Packages)(Citation: Microsoft TimeProvider)(Citation: Cylance Reg Persistence Sept 2013)(Citation: Linux Kernel Programming) These mechanisms may include automatically executing programs that are placed in specially designated directories or are referenced by repositories that store configuration information, such as the Windows Registry. An adversary may achieve the same goal by modifying or extending features of the kernel.\n\nSince some boot or logon autostart programs run with higher privileges, an adversary may leverage these to elevate privileges.",
+    "technique_references": [
+      {
+        "source_name": "Cylance Reg Persistence Sept 2013",
+        "url": "https://blog.cylance.com/windows-registry-persistence-part-2-the-run-keys-and-search-order",
+        "description": "Langendorf, S. (2013, September 24). Windows Registry Persistence, Part 2: The Run Keys and Search-Order. Retrieved April 11, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MSDN Authentication Packages",
+        "url": "https://msdn.microsoft.com/library/windows/desktop/aa374733.aspx",
+        "description": "Microsoft. (n.d.). Authentication Packages. Retrieved March 1, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Run Key",
+        "url": "http://msdn.microsoft.com/en-us/library/aa376977",
+        "description": "Microsoft. (n.d.). Run and RunOnce Registry Keys. Retrieved November 12, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft TimeProvider",
+        "url": "https://msdn.microsoft.com/library/windows/desktop/ms725475.aspx",
+        "description": "Microsoft. (n.d.). Time Provider. Retrieved March 26, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Linux Kernel Programming",
+        "url": "https://www.tldp.org/LDP/lkmpg/2.4/lkmpg.pdf",
+        "description": "Pomerantz, O., Salzman, P.. (2003, April 4). The Linux Kernel Module Programming Guide. Retrieved April 6, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Autoruns",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb963902",
+        "description": "Russinovich, M. (2016, January 4). Autoruns for Windows v13.51. Retrieved June 6, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "capec",
+        "url": "https://capec.mitre.org/data/definitions/564.html",
+        "description": "none",
+        "external_id": "CAPEC-564"
+      }
+    ],
+    "technique_required_permissions": "user|administrator|root",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--67720091-eee3-4d2d-ae16-8264567f6f5b",
+    "platform": "linux|macos|windows",
+    "tid": "T1548",
+    "technique": "Abuse Elevation Control Mechanism",
+    "tactic": "privilege-escalation",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1548.001",
+      "T1548.002",
+      "T1548.003",
+      "T1548.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may circumvent mechanisms designed to control elevate privileges to gain higher-level permissions. Most modern systems contain native elevation control mechanisms that are intended to limit privileges that a user can perform on a machine. Authorization has to be granted to specific users in order to perform tasks that can be considered of higher risk. An adversary can perform several methods to take advantage of built-in control mechanisms in order to escalate privileges on a system.",
+    "technique_references": [],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--67720091-eee3-4d2d-ae16-8264567f6f5b",
+    "platform": "linux|macos|windows",
+    "tid": "T1548",
+    "technique": "Abuse Elevation Control Mechanism",
+    "tactic": "defense-evasion",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1548.001",
+      "T1548.002",
+      "T1548.003",
+      "T1548.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may circumvent mechanisms designed to control elevate privileges to gain higher-level permissions. Most modern systems contain native elevation control mechanisms that are intended to limit privileges that a user can perform on a machine. Authorization has to be granted to specific users in order to perform tasks that can be considered of higher risk. An adversary can perform several methods to take advantage of built-in control mechanisms in order to escalate privileges on a system.",
+    "technique_references": [],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b83e166d-13d7-4b52-8677-dff90c548fd7",
+    "platform": "windows|macos|linux",
+    "tid": "T1553",
+    "technique": "Subvert Trust Controls",
+    "tactic": "defense-evasion",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1553.001",
+      "T1553.002",
+      "T1553.003",
+      "T1553.004",
+      "T1553.005",
+      "T1553.006"
+    ],
+    "count_subtechniques": 6,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may undermine security controls that will either warn users of untrusted activity or prevent execution of untrusted programs. Operating systems and security products may contain mechanisms to identify programs or websites as possessing some level of trust. Examples of such features would include a program being allowed to run because it is signed by a valid code signing certificate, a program prompting the user with a warning because it has an attribute set from being downloaded from the Internet, or getting an indication that you are about to connect to an untrusted site.\n\nAdversaries may attempt to subvert these trust mechanisms. The method adversaries use will depend on the specific mechanism they seek to subvert. Adversaries may conduct [File and Directory Permissions Modification](https://attack.mitre.org/techniques/T1222) or [Modify Registry](https://attack.mitre.org/techniques/T1112) in support of subverting these controls.(Citation: SpectorOps Subverting Trust Sept 2017) Adversaries may also create or steal code signing certificates to acquire trust on target systems.(Citation: Securelist Digital Certificates)(Citation: Symantec Digital Certificates) ",
+    "technique_references": [
+      {
+        "source_name": "SpectorOps Code Signing Dec 2017",
+        "url": "https://posts.specterops.io/code-signing-certificate-cloning-attacks-and-defenses-6f98657fc6ec",
+        "description": "Graeber, M. (2017, December 22). Code Signing Certificate Cloning Attacks and Defenses. Retrieved April 3, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SpectorOps Subverting Trust Sept 2017",
+        "url": "https://specterops.io/assets/resources/SpecterOps_Subverting_Trust_in_Windows.pdf",
+        "description": "Graeber, M. (2017, September). Subverting Trust in Windows. Retrieved January 31, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Securelist Digital Certificates",
+        "url": "https://securelist.com/why-you-shouldnt-completely-trust-files-signed-with-digital-certificates/68593/",
+        "description": "Ladikov, A. (2015, January 29). Why You Shouldn’t Completely Trust Files Signed with Digital Certificates. Retrieved March 31, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Symantec Digital Certificates",
+        "url": "http://www.symantec.com/connect/blogs/how-attackers-steal-private-keys-digital-certificates",
+        "description": "Shinotsuka, H. (2013, February 22). How Attackers Steal Private Keys from Digital Certificates. Retrieved March 31, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--960c3c86-1480-4d72-b4e0-8c242e84a5c5",
+    "platform": "linux|macos|windows",
+    "tid": "T1554",
+    "technique": "Compromise Client Software Binary",
+    "tactic": "persistence",
+    "datasources": "file-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify client software binaries to establish persistent access to systems. Client software enables users to access services provided by a server. Common client software types are SSH clients, FTP clients, email clients, and web browsers.\n\nAdversaries may make modifications to client software binaries to carry out malicious tasks when those applications are in use. For example, an adversary may copy source code for the client software, add a backdoor, compile for the target, and replace the legitimate application binary (or support files) with the backdoored one. Since these applications may be routinely executed by the user, the adversary can leverage this for persistent access to the host.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f4c1826f-a322-41cd-9557-562100848c84",
+    "platform": "windows|linux|macos|network|azure-ad|google-workspace|iaas|office-365|saas",
+    "tid": "T1556",
+    "technique": "Modify Authentication Process",
+    "tactic": "credential-access",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1556.001",
+      "T1556.002",
+      "T1556.003",
+      "T1556.004",
+      "T1556.005",
+      "T1556.006",
+      "T1556.007"
+    ],
+    "count_subtechniques": 7,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify authentication mechanisms and processes to access user credentials or enable otherwise unwarranted access to accounts. The authentication process is handled by mechanisms, such as the Local Security Authentication Server (LSASS) process and the Security Accounts Manager (SAM) on Windows, pluggable authentication modules (PAM) on Unix-based systems, and authorization plugins on MacOS systems, responsible for gathering, storing, and validating credentials. By modifying an authentication process, an adversary may be able to authenticate to a service or system without using [Valid Accounts](https://attack.mitre.org/techniques/T1078).\n\nAdversaries may maliciously modify a part of this process to either reveal credentials or bypass authentication mechanisms. Compromised credentials or access may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access and remote desktop.",
+    "technique_references": [
+      {
+        "source_name": "Clymb3r Function Hook Passwords Sept 2013",
+        "url": "https://clymb3r.wordpress.com/2013/09/15/intercepting-password-changes-with-function-hooking/",
+        "description": "Bialek, J. (2013, September 15). Intercepting Password Changes With Function Hooking. Retrieved November 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Xorrior Authorization Plugins",
+        "url": "https://xorrior.com/persistent-credential-theft/",
+        "description": "Chris Ross. (2018, October 17). Persistent Credential Theft with Authorization Plugins. Retrieved April 22, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Dell Skeleton",
+        "url": "https://www.secureworks.com/research/skeleton-key-malware-analysis",
+        "description": "Dell SecureWorks. (2015, January 12). Skeleton Key Malware Analysis. Retrieved April 8, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "dump_pwd_dcsync",
+        "url": "https://adsecurity.org/?p=2053",
+        "description": "Metcalf, S. (2015, November 22). Dump Clear-Text Passwords for All Admins in the Domain Using Mimikatz DCSync. Retrieved November 15, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f4c1826f-a322-41cd-9557-562100848c84",
+    "platform": "windows|linux|macos|network|azure-ad|google-workspace|iaas|office-365|saas",
+    "tid": "T1556",
+    "technique": "Modify Authentication Process",
+    "tactic": "defense-evasion",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1556.001",
+      "T1556.002",
+      "T1556.003",
+      "T1556.004",
+      "T1556.005",
+      "T1556.006",
+      "T1556.007"
+    ],
+    "count_subtechniques": 7,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify authentication mechanisms and processes to access user credentials or enable otherwise unwarranted access to accounts. The authentication process is handled by mechanisms, such as the Local Security Authentication Server (LSASS) process and the Security Accounts Manager (SAM) on Windows, pluggable authentication modules (PAM) on Unix-based systems, and authorization plugins on MacOS systems, responsible for gathering, storing, and validating credentials. By modifying an authentication process, an adversary may be able to authenticate to a service or system without using [Valid Accounts](https://attack.mitre.org/techniques/T1078).\n\nAdversaries may maliciously modify a part of this process to either reveal credentials or bypass authentication mechanisms. Compromised credentials or access may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access and remote desktop.",
+    "technique_references": [
+      {
+        "source_name": "Clymb3r Function Hook Passwords Sept 2013",
+        "url": "https://clymb3r.wordpress.com/2013/09/15/intercepting-password-changes-with-function-hooking/",
+        "description": "Bialek, J. (2013, September 15). Intercepting Password Changes With Function Hooking. Retrieved November 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Xorrior Authorization Plugins",
+        "url": "https://xorrior.com/persistent-credential-theft/",
+        "description": "Chris Ross. (2018, October 17). Persistent Credential Theft with Authorization Plugins. Retrieved April 22, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Dell Skeleton",
+        "url": "https://www.secureworks.com/research/skeleton-key-malware-analysis",
+        "description": "Dell SecureWorks. (2015, January 12). Skeleton Key Malware Analysis. Retrieved April 8, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "dump_pwd_dcsync",
+        "url": "https://adsecurity.org/?p=2053",
+        "description": "Metcalf, S. (2015, November 22). Dump Clear-Text Passwords for All Admins in the Domain Using Mimikatz DCSync. Retrieved November 15, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f4c1826f-a322-41cd-9557-562100848c84",
+    "platform": "windows|linux|macos|network|azure-ad|google-workspace|iaas|office-365|saas",
+    "tid": "T1556",
+    "technique": "Modify Authentication Process",
+    "tactic": "persistence",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1556.001",
+      "T1556.002",
+      "T1556.003",
+      "T1556.004",
+      "T1556.005",
+      "T1556.006",
+      "T1556.007"
+    ],
+    "count_subtechniques": 7,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify authentication mechanisms and processes to access user credentials or enable otherwise unwarranted access to accounts. The authentication process is handled by mechanisms, such as the Local Security Authentication Server (LSASS) process and the Security Accounts Manager (SAM) on Windows, pluggable authentication modules (PAM) on Unix-based systems, and authorization plugins on MacOS systems, responsible for gathering, storing, and validating credentials. By modifying an authentication process, an adversary may be able to authenticate to a service or system without using [Valid Accounts](https://attack.mitre.org/techniques/T1078).\n\nAdversaries may maliciously modify a part of this process to either reveal credentials or bypass authentication mechanisms. Compromised credentials or access may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access and remote desktop.",
+    "technique_references": [
+      {
+        "source_name": "Clymb3r Function Hook Passwords Sept 2013",
+        "url": "https://clymb3r.wordpress.com/2013/09/15/intercepting-password-changes-with-function-hooking/",
+        "description": "Bialek, J. (2013, September 15). Intercepting Password Changes With Function Hooking. Retrieved November 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Xorrior Authorization Plugins",
+        "url": "https://xorrior.com/persistent-credential-theft/",
+        "description": "Chris Ross. (2018, October 17). Persistent Credential Theft with Authorization Plugins. Retrieved April 22, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Dell Skeleton",
+        "url": "https://www.secureworks.com/research/skeleton-key-malware-analysis",
+        "description": "Dell SecureWorks. (2015, January 12). Skeleton Key Malware Analysis. Retrieved April 8, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "dump_pwd_dcsync",
+        "url": "https://adsecurity.org/?p=2053",
+        "description": "Metcalf, S. (2015, November 22). Dump Clear-Text Passwords for All Admins in the Domain Using Mimikatz DCSync. Retrieved November 15, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--22905430-4901-4c2a-84f6-98243cb173f8",
+    "platform": "linux|macos|windows|office-365",
+    "tid": "T1564",
+    "technique": "Hide Artifacts",
+    "tactic": "defense-evasion",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1564.001",
+      "T1564.002",
+      "T1564.003",
+      "T1564.004",
+      "T1564.005",
+      "T1564.006",
+      "T1564.007",
+      "T1564.008",
+      "T1564.009",
+      "T1564.010"
+    ],
+    "count_subtechniques": 10,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to hide artifacts associated with their behaviors to evade detection. Operating systems may have features to hide various artifacts, such as important system files and administrative task execution, to avoid disrupting user work environments and prevent users from changing files or features on the system. Adversaries may abuse these features to hide artifacts such as files, directories, user accounts, or other system activity to evade detection.(Citation: Sofacy Komplex Trojan)(Citation: Cybereason OSX Pirrit)(Citation: MalwareBytes ADS July 2015)\n\nAdversaries may also attempt to hide artifacts associated with malicious behavior by creating computing regions that are isolated from common security instrumentation, such as through the use of virtualization technology.(Citation: Sophos Ragnar May 2020)",
+    "technique_references": [
+      {
+        "source_name": "Sofacy Komplex Trojan",
+        "url": "https://researchcenter.paloaltonetworks.com/2016/09/unit42-sofacys-komplex-os-x-trojan/",
+        "description": "Dani Creus, Tyler Halfpop, Robert Falcone. (2016, September 26). Sofacy's 'Komplex' OS X Trojan. Retrieved July 8, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cybereason OSX Pirrit",
+        "url": "https://cdn2.hubspot.net/hubfs/3354902/Content%20PDFs/Cybereason-Lab-Analysis-OSX-Pirrit-4-6-16.pdf",
+        "description": "Amit Serper. (2016). Cybereason Lab Analysis OSX.Pirrit. Retrieved December 10, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MalwareBytes ADS July 2015",
+        "url": "https://blog.malwarebytes.com/101/2015/07/introduction-to-alternate-data-streams/",
+        "description": "Arntz, P. (2015, July 22). Introduction to Alternate Data Streams. Retrieved March 21, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sophos Ragnar May 2020",
+        "url": "https://news.sophos.com/en-us/2020/05/21/ragnar-locker-ransomware-deploys-virtual-machine-to-dodge-security/",
+        "description": "SophosLabs. (2020, May 21). Ragnar Locker ransomware deploys virtual machine to dodge security. Retrieved June 29, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--ac9e6b22-11bf-45d7-9181-c1cb08360931",
+    "platform": "linux|macos|windows",
+    "tid": "T1565",
+    "technique": "Data Manipulation",
+    "tactic": "impact",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1565.001",
+      "T1565.002",
+      "T1565.003"
+    ],
+    "count_subtechniques": 3,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may insert, delete, or manipulate data in order to influence external outcomes or hide activity, thus threatening the integrity of the data. By manipulating data, adversaries may attempt to affect a business process, organizational understanding, or decision making.\n\nThe type of modification and the impact it will have depends on the target application and process as well as the goals and objectives of the adversary. For complex systems, an adversary would likely need special expertise and possibly access to specialized software related to the system that would typically be gained through a prolonged information gathering campaign in order to have the desired impact.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d157f9d2-d09a-4efa-bb2a-64963f94e253",
+    "platform": "windows|macos|linux",
+    "tid": "T1569",
+    "technique": "System Services",
+    "tactic": "execution",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1569.001",
+      "T1569.002"
+    ],
+    "count_subtechniques": 2,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse system services or daemons to execute commands or programs. Adversaries can execute malicious content by interacting with or creating services either locally or remotely. Many services are set to run at boot, which can aid in achieving persistence ([Create or Modify System Process](https://attack.mitre.org/techniques/T1543)), but adversaries can also abuse services for one-time or temporary execution.",
+    "technique_references": [],
+    "technique_required_permissions": "user|administrator|system|root",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--aedfca76-3b30-4866-b2aa-0f1d7fd1e4b6",
+    "platform": "linux|macos|windows",
+    "tid": "T1574",
+    "technique": "Hijack Execution Flow",
+    "tactic": "persistence",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1574.001",
+      "T1574.002",
+      "T1574.004",
+      "T1574.005",
+      "T1574.006",
+      "T1574.007",
+      "T1574.008",
+      "T1574.009",
+      "T1574.010",
+      "T1574.011",
+      "T1574.012",
+      "T1574.013"
+    ],
+    "count_subtechniques": 12,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may execute their own malicious payloads by hijacking the way operating systems run programs. Hijacking execution flow can be for the purposes of persistence, since this hijacked execution may reoccur over time. Adversaries may also use these mechanisms to elevate privileges or evade defenses, such as application control or other restrictions on execution.\n\nThere are many ways an adversary may hijack the flow of execution, including by manipulating how the operating system locates programs to be executed. How the operating system locates libraries to be used by a program can also be intercepted. Locations where the operating system looks for programs/resources, such as file directories and in the case of Windows the Registry, could also be poisoned to include malicious payloads.",
+    "technique_references": [
+      {
+        "source_name": "Autoruns for Windows",
+        "url": "https://docs.microsoft.com/en-us/sysinternals/downloads/autoruns",
+        "description": "Mark Russinovich. (2019, June 28). Autoruns for Windows v13.96. Retrieved March 13, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--aedfca76-3b30-4866-b2aa-0f1d7fd1e4b6",
+    "platform": "linux|macos|windows",
+    "tid": "T1574",
+    "technique": "Hijack Execution Flow",
+    "tactic": "privilege-escalation",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1574.001",
+      "T1574.002",
+      "T1574.004",
+      "T1574.005",
+      "T1574.006",
+      "T1574.007",
+      "T1574.008",
+      "T1574.009",
+      "T1574.010",
+      "T1574.011",
+      "T1574.012",
+      "T1574.013"
+    ],
+    "count_subtechniques": 12,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may execute their own malicious payloads by hijacking the way operating systems run programs. Hijacking execution flow can be for the purposes of persistence, since this hijacked execution may reoccur over time. Adversaries may also use these mechanisms to elevate privileges or evade defenses, such as application control or other restrictions on execution.\n\nThere are many ways an adversary may hijack the flow of execution, including by manipulating how the operating system locates programs to be executed. How the operating system locates libraries to be used by a program can also be intercepted. Locations where the operating system looks for programs/resources, such as file directories and in the case of Windows the Registry, could also be poisoned to include malicious payloads.",
+    "technique_references": [
+      {
+        "source_name": "Autoruns for Windows",
+        "url": "https://docs.microsoft.com/en-us/sysinternals/downloads/autoruns",
+        "description": "Mark Russinovich. (2019, June 28). Autoruns for Windows v13.96. Retrieved March 13, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--aedfca76-3b30-4866-b2aa-0f1d7fd1e4b6",
+    "platform": "linux|macos|windows",
+    "tid": "T1574",
+    "technique": "Hijack Execution Flow",
+    "tactic": "defense-evasion",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1574.001",
+      "T1574.002",
+      "T1574.004",
+      "T1574.005",
+      "T1574.006",
+      "T1574.007",
+      "T1574.008",
+      "T1574.009",
+      "T1574.010",
+      "T1574.011",
+      "T1574.012",
+      "T1574.013"
+    ],
+    "count_subtechniques": 12,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may execute their own malicious payloads by hijacking the way operating systems run programs. Hijacking execution flow can be for the purposes of persistence, since this hijacked execution may reoccur over time. Adversaries may also use these mechanisms to elevate privileges or evade defenses, such as application control or other restrictions on execution.\n\nThere are many ways an adversary may hijack the flow of execution, including by manipulating how the operating system locates programs to be executed. How the operating system locates libraries to be used by a program can also be intercepted. Locations where the operating system looks for programs/resources, such as file directories and in the case of Windows the Registry, could also be poisoned to include malicious payloads.",
+    "technique_references": [
+      {
+        "source_name": "Autoruns for Windows",
+        "url": "https://docs.microsoft.com/en-us/sysinternals/downloads/autoruns",
+        "description": "Mark Russinovich. (2019, June 28). Autoruns for Windows v13.96. Retrieved March 13, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--1f9012ef-1e10-4e48-915e-e03563435fe8",
+    "platform": "network",
+    "tid": "T1600",
+    "technique": "Weaken Encryption",
+    "tactic": "defense-evasion",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1600.001",
+      "T1600.002"
+    ],
+    "count_subtechniques": 2,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may compromise a network device’s encryption capability in order to bypass encryption that would otherwise protect data communications. (Citation: Cisco Synful Knock Evolution)\n\nEncryption can be used to protect transmitted network traffic to maintain its confidentiality (protect against unauthorized disclosure) and integrity (protect against unauthorized changes). Encryption ciphers are used to convert a plaintext message to ciphertext and can be computationally intensive to decipher without the associated decryption key. Typically, longer keys increase the cost of cryptanalysis, or decryption without the key.\n\nAdversaries can compromise and manipulate devices that perform encryption of network traffic. For example, through behaviors such as [Modify System Image](https://attack.mitre.org/techniques/T1601), [Reduce Key Space](https://attack.mitre.org/techniques/T1600/001), and [Disable Crypto Hardware](https://attack.mitre.org/techniques/T1600/002), an adversary can negatively effect and/or eliminate a device’s ability to securely encrypt network traffic. This poses a greater risk of unauthorized disclosure and may help facilitate data manipulation, Credential Access, or Collection efforts. (Citation: Cisco Blog Legacy Device Attacks)",
+    "technique_references": [
+      {
+        "source_name": "Cisco Synful Knock Evolution",
+        "url": "https://blogs.cisco.com/security/evolution-of-attacks-on-cisco-ios-devices",
+        "description": "Graham Holmes. (2015, October 8). Evolution of attacks on Cisco IOS devices. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco Blog Legacy Device Attacks",
+        "url": "https://community.cisco.com/t5/security-blogs/attackers-continue-to-target-legacy-devices/ba-p/4169954",
+        "description": "Omar Santos. (2020, October 19). Attackers Continue to Target Legacy Devices. Retrieved October 20, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--ae7f3575-0a5e-427e-991b-fe03ad44c754",
+    "platform": "network",
+    "tid": "T1601",
+    "technique": "Modify System Image",
+    "tactic": "defense-evasion",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1601.001",
+      "T1601.002"
+    ],
+    "count_subtechniques": 2,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may make changes to the operating system of embedded network devices to weaken defenses and provide new capabilities for themselves.  On such devices, the operating systems are typically monolithic and most of the device functionality and capabilities are contained within a single file.\n\nTo change the operating system, the adversary typically only needs to affect this one file, replacing or modifying it.  This can either be done live in memory during system runtime for immediate effect, or in storage to implement the change on the next boot of the network device.",
+    "technique_references": [
+      {
+        "source_name": "Cisco IOS Software Integrity Assurance - Image File Verification",
+        "url": "https://tools.cisco.com/security/center/resources/integrity_assurance.html#7",
+        "description": "Cisco. (n.d.). Cisco IOS Software Integrity Assurance - Cisco IOS Image File Verification. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco IOS Software Integrity Assurance - Run-Time Memory Verification",
+        "url": "https://tools.cisco.com/security/center/resources/integrity_assurance.html#13",
+        "description": "Cisco. (n.d.). Cisco IOS Software Integrity Assurance - Cisco IOS Run-Time Memory Integrity Verification. Retrieved October 19, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--7d20fff9-8751-404e-badd-ccd71bda0236",
+    "platform": "macos",
+    "tid": "T1647",
+    "technique": "Plist File Modification",
+    "tactic": "defense-evasion",
+    "datasources": "file-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify property list files (plist files) to enable other malicious activity, while also potentially evading and bypassing system defenses. macOS applications use plist files, such as the <code>info.plist</code> file, to store properties and configuration settings that inform the operating system how to handle the application at runtime. Plist files are structured metadata in key-value pairs formatted in XML based on Apple's Core Foundation DTD. Plist files can be saved in text or binary format.(Citation: fileinfo plist file description) \n\nAdversaries can modify key-value pairs in plist files to influence system behaviors, such as hiding the execution of an application (i.e. [Hidden Window](https://attack.mitre.org/techniques/T1564/003)) or running additional commands for persistence (ex: [Launch Agent](https://attack.mitre.org/techniques/T1543/001)/[Launch Daemon](https://attack.mitre.org/techniques/T1543/004) or [Re-opened Applications](https://attack.mitre.org/techniques/T1547/007)).\n\nFor example, adversaries can add a malicious application path to the `~/Library/Preferences/com.apple.dock.plist` file, which controls apps that appear in the Dock. Adversaries can also modify the <code>LSUIElement</code> key in an application’s <code>info.plist</code> file  to run the app in the background. Adversaries can also insert key-value pairs to insert environment variables, such as <code>LSEnvironment</code>, to enable persistence via [Dynamic Linker Hijacking](https://attack.mitre.org/techniques/T1574/006).(Citation: wardle chp2 persistence)(Citation: eset_osx_flashback)",
+    "technique_references": [
+      {
+        "source_name": "eset_osx_flashback",
+        "url": "https://www.welivesecurity.com/wp-content/uploads/200x/white-papers/osx_flashback.pdf",
+        "description": "ESET. (2012, January 1). OSX/Flashback. Retrieved April 19, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "fileinfo plist file description",
+        "url": "https://fileinfo.com/extension/plist",
+        "description": "FileInfo.com team. (2019, November 26). .PLIST File Extension. Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "wardle chp2 persistence",
+        "url": "https://taomm.org/PDFs/vol1/CH%200x02%20Persistence.pdf",
+        "description": "Patrick Wardle. (2022, January 1). The Art of Mac Malware Volume 0x1:Analysis. Retrieved April 19, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

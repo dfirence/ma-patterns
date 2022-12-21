@@ -1,0 +1,11 @@
+{
+  "malware": [
+    "hancitor"
+  ],
+  "adversaries": [],
+  "tools": [],
+  "T1218.012:Verclsid": [
+    "command-execution",
+    "process-creation"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "tools": [
+    "silenttrinity"
+  ],
+  "malware": [
+    "bundlore",
+    "calisto",
+    "dok",
+    "ikitten",
+    "keydnap",
+    "metamorfo",
+    "proton",
+    "xcsset"
+  ],
+  "T1056.002:GUI Input Capture": [
+    "command-execution",
+    "process-creation",
+    "script-execution"
+  ],
+  "adversaries": [
+    "fin4"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "T1569.001:Launchctl": [
+    "command-execution",
+    "file-modification",
+    "process-creation",
+    "service-creation"
+  ],
+  "adversaries": [],
+  "malware": [
+    "applejeus",
+    "calisto",
+    "loudminer",
+    "macos.osaminer",
+    "xcsset"
+  ],
+  "tools": []
+}

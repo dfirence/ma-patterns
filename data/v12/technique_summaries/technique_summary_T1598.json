@@ -1,0 +1,13 @@
+{
+  "tools": [],
+  "T1598:Phishing for Information": [
+    "application-log-content",
+    "network-traffic-content",
+    "network-traffic-flow"
+  ],
+  "malware": [],
+  "adversaries": [
+    "apt28",
+    "zirconium"
+  ]
+}

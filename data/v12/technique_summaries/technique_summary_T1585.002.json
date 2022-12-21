@@ -1,0 +1,19 @@
+{
+  "tools": [],
+  "malware": [],
+  "T1585.002:Email Accounts": [
+    "none"
+  ],
+  "adversaries": [
+    "apt1",
+    "exotic-lily",
+    "hexane",
+    "kimsuky",
+    "lazarus-group",
+    "leviathan",
+    "magic-hound",
+    "mustang-panda",
+    "sandworm-team",
+    "silent-librarian"
+  ]
+}

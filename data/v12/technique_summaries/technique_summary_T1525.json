@@ -1,0 +1,10 @@
+{
+  "tools": [],
+  "T1525:Implant Internal Image": [
+    "image-creation",
+    "image-metadata",
+    "image-modification"
+  ],
+  "malware": [],
+  "adversaries": []
+}

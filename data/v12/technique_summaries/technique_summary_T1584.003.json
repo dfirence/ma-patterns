@@ -1,0 +1,11 @@
+{
+  "tools": [],
+  "T1584.003:Virtual Private Server": [
+    "response-content",
+    "response-metadata"
+  ],
+  "adversaries": [
+    "turla"
+  ],
+  "malware": []
+}

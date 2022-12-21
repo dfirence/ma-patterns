@@ -1,0 +1,8 @@
+{
+  "malware": [],
+  "adversaries": [],
+  "T1558.004:AS-REP Roasting": [
+    "active-directory-credential-request"
+  ],
+  "tools": []
+}

@@ -1,0 +1,13 @@
+{
+  "malware": [],
+  "T1574.009:Path Interception by Unquoted Path": [
+    "file-creation",
+    "file-modification",
+    "process-creation"
+  ],
+  "tools": [
+    "empire",
+    "powersploit"
+  ],
+  "adversaries": []
+}

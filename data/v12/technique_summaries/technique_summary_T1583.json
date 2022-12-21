@@ -1,0 +1,12 @@
+{
+  "adversaries": [],
+  "tools": [],
+  "T1583:Acquire Infrastructure": [
+    "active-dns",
+    "domain-registration",
+    "passive-dns",
+    "response-content",
+    "response-metadata"
+  ],
+  "malware": []
+}

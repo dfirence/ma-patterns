@@ -1,0 +1,13 @@
+{
+  "tools": [],
+  "adversaries": [
+    "exotic-lily",
+    "kimsuky",
+    "sandworm-team",
+    "silent-librarian"
+  ],
+  "malware": [],
+  "T1594:Search Victim-Owned Websites": [
+    "application-log-content"
+  ]
+}

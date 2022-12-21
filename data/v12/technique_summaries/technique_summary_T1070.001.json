@@ -1,0 +1,38 @@
+{
+  "T1070.001:Clear Windows Event Logs": [
+    "command-execution",
+    "file-deletion",
+    "os-api-execution"
+  ],
+  "adversaries": [
+    "apt28",
+    "apt32",
+    "apt38",
+    "apt41",
+    "chimera",
+    "dragonfly",
+    "fin5",
+    "fin8",
+    "indrik-spider"
+  ],
+  "malware": [
+    "blackenergy",
+    "finfisher",
+    "gh0st-rat",
+    "hermeticwiper",
+    "hermeticwizard",
+    "hydraq",
+    "killdisk",
+    "lucifer",
+    "meteor",
+    "notpetya",
+    "olympic-destroyer",
+    "runningrat",
+    "synack",
+    "zxshell"
+  ],
+  "tools": [
+    "pupy",
+    "wevtutil"
+  ]
+}

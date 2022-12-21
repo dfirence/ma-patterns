@@ -1,0 +1,13 @@
+{
+  "adversaries": [],
+  "T1542:Pre-OS Boot": [
+    "command-execution",
+    "drive-modification",
+    "driver-metadata",
+    "firmware-modification",
+    "network-connection-creation",
+    "os-api-execution"
+  ],
+  "malware": [],
+  "tools": []
+}

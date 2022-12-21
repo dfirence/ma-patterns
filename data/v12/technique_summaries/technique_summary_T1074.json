@@ -1,0 +1,17 @@
+{
+  "T1074:Data Staged": [
+    "command-execution",
+    "file-access",
+    "file-creation",
+    "windows-registry-key-modification"
+  ],
+  "adversaries": [
+    "wizard-spider"
+  ],
+  "tools": [],
+  "malware": [
+    "kevin",
+    "kobalos",
+    "shark"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "T1584.004:Server": [
+    "response-content",
+    "response-metadata"
+  ],
+  "adversaries": [
+    "apt16",
+    "dragonfly",
+    "earth-lusca",
+    "indrik-spider",
+    "lazarus-group",
+    "turla"
+  ],
+  "malware": [],
+  "tools": []
+}

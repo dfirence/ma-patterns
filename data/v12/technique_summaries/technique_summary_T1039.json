@@ -1,0 +1,25 @@
+{
+  "T1039:Data from Network Shared Drive": [
+    "command-execution",
+    "file-access",
+    "network-connection-creation",
+    "network-share-access",
+    "network-traffic-content"
+  ],
+  "adversaries": [
+    "apt28",
+    "bronze-butler",
+    "chimera",
+    "fox-kitten",
+    "gamaredon-group",
+    "menupass",
+    "sowbug"
+  ],
+  "tools": [],
+  "malware": [
+    "badnews",
+    "cosmicduke",
+    "egregor",
+    "ramsay"
+  ]
+}

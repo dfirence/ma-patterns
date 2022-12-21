@@ -1,0 +1,11 @@
+{
+  "tools": [],
+  "adversaries": [
+    "kimsuky",
+    "lazarus-group"
+  ],
+  "malware": [],
+  "T1591:Gather Victim Org Information": [
+    "none"
+  ]
+}

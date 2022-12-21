@@ -1,0 +1,10 @@
+{
+  "tools": [],
+  "malware": [],
+  "adversaries": [],
+  "T1562.010:Downgrade Attack": [
+    "command-execution",
+    "process-creation",
+    "process-metadata"
+  ]
+}

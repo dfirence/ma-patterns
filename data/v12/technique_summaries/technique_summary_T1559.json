@@ -1,0 +1,14 @@
+{
+  "T1559:Inter-Process Communication": [
+    "module-load",
+    "process-access",
+    "process-creation",
+    "script-execution"
+  ],
+  "adversaries": [],
+  "malware": [
+    "cyclops-blink",
+    "hyperstack"
+  ],
+  "tools": []
+}

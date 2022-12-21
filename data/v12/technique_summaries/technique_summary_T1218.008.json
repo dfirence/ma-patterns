@@ -1,0 +1,14 @@
+{
+  "malware": [
+    "bumblebee"
+  ],
+  "T1218.008:Odbcconf": [
+    "command-execution",
+    "module-load",
+    "process-creation"
+  ],
+  "adversaries": [
+    "cobalt-group"
+  ],
+  "tools": []
+}

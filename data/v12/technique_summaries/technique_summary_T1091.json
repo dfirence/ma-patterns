@@ -1,0 +1,35 @@
+{
+  "tools": [],
+  "T1091:Replication Through Removable Media": [
+    "drive-creation",
+    "file-access",
+    "file-creation",
+    "process-creation"
+  ],
+  "malware": [
+    "agent.btz",
+    "chopstick",
+    "conficker",
+    "crimson",
+    "dustysky",
+    "flame",
+    "h1n1",
+    "njrat",
+    "qakbot",
+    "ramsay",
+    "shipshape",
+    "stuxnet",
+    "unknown-logger",
+    "ursnif",
+    "usbferry",
+    "usbstealer"
+  ],
+  "adversaries": [
+    "aoqin-dragon",
+    "apt28",
+    "darkhotel",
+    "fin7",
+    "mustang-panda",
+    "tropic-trooper"
+  ]
+}

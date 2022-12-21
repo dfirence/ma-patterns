@@ -1,0 +1,19 @@
+{
+  "adversaries": [
+    "kimsuky",
+    "stolen-pencil"
+  ],
+  "malware": [
+    "bundlore",
+    "grandoreiro",
+    "osxshlayer"
+  ],
+  "T1176:Browser Extensions": [
+    "command-execution",
+    "file-creation",
+    "network-connection-creation",
+    "process-creation",
+    "windows-registry-key-creation"
+  ],
+  "tools": []
+}

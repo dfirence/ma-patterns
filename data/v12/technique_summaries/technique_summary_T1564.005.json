@@ -1,0 +1,17 @@
+{
+  "tools": [],
+  "adversaries": [
+    "equation",
+    "strider"
+  ],
+  "T1564.005:Hidden File System": [
+    "file-modification",
+    "firmware-modification",
+    "windows-registry-key-modification"
+  ],
+  "malware": [
+    "bootrash",
+    "comrat",
+    "regin"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "adversaries": [
+    "apt18",
+    "apt28",
+    "apt29",
+    "apt33",
+    "apt39",
+    "apt41",
+    "axiom",
+    "carbanak",
+    "chimera",
+    "dragonfly",
+    "fin10",
+    "fin4",
+    "fin5",
+    "fin6",
+    "fin7",
+    "fin8",
+    "fox-kitten",
+    "gallium",
+    "ke3chang",
+    "lapsus$",
+    "lazarus-group",
+    "leviathan",
+    "menupass",
+    "oilrig",
+    "pittytiger",
+    "polonium",
+    "sandworm-team",
+    "silence",
+    "silent-librarian",
+    "suckfly",
+    "temp.veles",
+    "threat-group-3390",
+    "unc2452",
+    "wizard-spider"
+  ],
+  "tools": [],
+  "T1078:Valid Accounts": [
+    "logon-session-creation",
+    "logon-session-metadata",
+    "user-account-authentication"
+  ],
+  "malware": [
+    "dtrack",
+    "duqu",
+    "industroyer",
+    "kinsing",
+    "linux-rabbit",
+    "seaduke"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "adversaries": [
+    "apt18",
+    "apt39",
+    "apt41",
+    "chimera",
+    "cobalt-group",
+    "fin7",
+    "ke3chang",
+    "lazyscripter",
+    "oilrig",
+    "tropic-trooper"
+  ],
+  "T1071.004:DNS": [
+    "network-traffic-content",
+    "network-traffic-flow"
+  ],
+  "tools": [
+    "mythic",
+    "sliver"
+  ],
+  "malware": [
+    "anchor",
+    "bondupdater",
+    "cobalt-strike",
+    "cobian-rat",
+    "danbot",
+    "denis",
+    "dnssystem",
+    "ebury",
+    "gelsemium",
+    "goopy",
+    "green-lambert",
+    "helminth",
+    "heyoka-backdoor",
+    "httpbrowser",
+    "invisimole",
+    "kevin",
+    "matryoshka",
+    "milan",
+    "mori",
+    "nanhaishu",
+    "pisloader",
+    "plugx",
+    "powersource",
+    "powruner",
+    "quadagent",
+    "rdat",
+    "remsec",
+    "shadowpad",
+    "shark",
+    "sombrat",
+    "soundbite",
+    "sunburst",
+    "textmate",
+    "wellmess"
+  ]
+}

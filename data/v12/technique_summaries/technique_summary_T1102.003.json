@@ -1,0 +1,17 @@
+{
+  "malware": [
+    "evilnum",
+    "hammertoss",
+    "metamorfo",
+    "onionduke"
+  ],
+  "adversaries": [
+    "leviathan"
+  ],
+  "tools": [],
+  "T1102.003:One-Way Communication": [
+    "network-connection-creation",
+    "network-traffic-content",
+    "network-traffic-flow"
+  ]
+}

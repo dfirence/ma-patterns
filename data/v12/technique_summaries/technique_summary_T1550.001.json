@@ -1,0 +1,15 @@
+{
+  "tools": [
+    "peirates"
+  ],
+  "T1550.001:Application Access Token": [
+    "web-credential-usage"
+  ],
+  "malware": [
+    "creepydrive"
+  ],
+  "adversaries": [
+    "apt28",
+    "apt29"
+  ]
+}

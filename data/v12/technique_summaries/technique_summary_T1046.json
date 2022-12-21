@@ -1,0 +1,61 @@
+{
+  "malware": [
+    "backdoor.oldrea",
+    "blackenergy",
+    "caterpillar-webshell",
+    "china-chopper",
+    "cobalt-strike",
+    "conficker",
+    "hdoor",
+    "hermeticwizard",
+    "hildegard",
+    "industroyer",
+    "invisimole",
+    "lucifer",
+    "murkytop",
+    "p.a.s.-webshell",
+    "pysa",
+    "ramsay",
+    "remsec",
+    "speakup",
+    "xbash",
+    "xtunnel",
+    "zxshell"
+  ],
+  "T1046:Network Service Discovery": [
+    "cloud-service-enumeration",
+    "command-execution",
+    "network-traffic-flow"
+  ],
+  "tools": [
+    "empire",
+    "koadic",
+    "nbtscan",
+    "peirates",
+    "poshc2",
+    "pupy",
+    "silenttrinity"
+  ],
+  "adversaries": [
+    "apt32",
+    "apt39",
+    "apt41",
+    "backdoordiplomacy",
+    "blacktech",
+    "chimera",
+    "cobalt-group",
+    "darkvishnya",
+    "fin6",
+    "fox-kitten",
+    "lazarus-group",
+    "leafminer",
+    "menupass",
+    "naikon",
+    "oilrig",
+    "rocke",
+    "suckfly",
+    "teamtnt",
+    "threat-group-3390",
+    "tropic-trooper"
+  ]
+}

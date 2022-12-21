@@ -1,0 +1,11 @@
+{
+  "tools": [],
+  "T1134.003:Make and Impersonate Token": [
+    "command-execution",
+    "os-api-execution"
+  ],
+  "malware": [
+    "cobalt-strike"
+  ],
+  "adversaries": []
+}

@@ -1,0 +1,16 @@
+{
+  "tools": [],
+  "T1568.001:Fast Flux DNS": [
+    "network-connection-creation",
+    "network-traffic-flow"
+  ],
+  "adversaries": [
+    "menupass",
+    "ta505"
+  ],
+  "malware": [
+    "amadey",
+    "gh0st-rat",
+    "njrat"
+  ]
+}

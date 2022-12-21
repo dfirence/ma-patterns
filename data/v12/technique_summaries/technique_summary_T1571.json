@@ -1,0 +1,49 @@
+{
+  "adversaries": [
+    "apt-c-36",
+    "apt32",
+    "apt33",
+    "darkvishnya",
+    "fin7",
+    "lazarus-group",
+    "magic-hound",
+    "rocke",
+    "sandworm-team",
+    "silence",
+    "temp.veles",
+    "wirte"
+  ],
+  "malware": [
+    "badcall",
+    "bankshot",
+    "bendybear",
+    "cyclops-blink",
+    "derusbi",
+    "emotet",
+    "goldenspy",
+    "gravityrat",
+    "hardrain",
+    "hoplight",
+    "macma",
+    "metamorfo",
+    "moonwind",
+    "njrat",
+    "pingpull",
+    "poetrat",
+    "redleaves",
+    "rtm",
+    "strongpity",
+    "sugarush",
+    "trickbot",
+    "typeframe",
+    "wellmail",
+    "zxshell"
+  ],
+  "T1571:Non-Standard Port": [
+    "network-traffic-content",
+    "network-traffic-flow"
+  ],
+  "tools": [
+    "quasarrat"
+  ]
+}

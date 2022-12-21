@@ -1,0 +1,18 @@
+{
+  "T1574:Hijack Execution Flow": [
+    "command-execution",
+    "file-creation",
+    "file-modification",
+    "module-load",
+    "process-creation",
+    "service-metadata",
+    "windows-registry-key-modification"
+  ],
+  "adversaries": [],
+  "tools": [],
+  "malware": [
+    "denis",
+    "dtrack",
+    "shimrat"
+  ]
+}

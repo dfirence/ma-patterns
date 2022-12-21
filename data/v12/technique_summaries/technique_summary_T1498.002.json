@@ -1,0 +1,9 @@
+{
+  "adversaries": [],
+  "tools": [],
+  "T1498.002:Reflection Amplification": [
+    "host-status",
+    "network-traffic-flow"
+  ],
+  "malware": []
+}

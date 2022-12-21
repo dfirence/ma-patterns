@@ -1,0 +1,15 @@
+{
+  "T1588.003:Code Signing Certificates": [
+    "malware-metadata"
+  ],
+  "tools": [],
+  "adversaries": [
+    "blacktech",
+    "ember-bear",
+    "lazarus-group",
+    "wizard-spider"
+  ],
+  "malware": [
+    "megacortex"
+  ]
+}

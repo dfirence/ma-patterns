@@ -1,0 +1,18 @@
+{
+  "malware": [
+    "cherry-picker",
+    "ramsay",
+    "t9000"
+  ],
+  "T1546.010:AppInit DLLs": [
+    "command-execution",
+    "module-load",
+    "os-api-execution",
+    "process-creation",
+    "windows-registry-key-modification"
+  ],
+  "adversaries": [
+    "apt39"
+  ],
+  "tools": []
+}

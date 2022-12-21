@@ -1,0 +1,11 @@
+{
+  "T1218.009:Regsvcs/Regasm": [
+    "command-execution",
+    "process-creation"
+  ],
+  "tools": [],
+  "malware": [
+    "agent-tesla"
+  ],
+  "adversaries": []
+}

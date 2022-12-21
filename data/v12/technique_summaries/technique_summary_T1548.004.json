@@ -1,0 +1,11 @@
+{
+  "tools": [],
+  "malware": [
+    "osxshlayer"
+  ],
+  "T1548.004:Elevated Execution with Prompt": [
+    "os-api-execution",
+    "process-creation"
+  ],
+  "adversaries": []
+}

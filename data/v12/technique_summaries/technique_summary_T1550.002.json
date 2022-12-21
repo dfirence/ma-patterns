@@ -1,0 +1,26 @@
+{
+  "T1550.002:Pass the Hash": [
+    "active-directory-credential-request",
+    "logon-session-creation",
+    "user-account-authentication"
+  ],
+  "tools": [
+    "crackmapexec",
+    "empire",
+    "mimikatz",
+    "pass-the-hash-toolkit",
+    "poshc2"
+  ],
+  "adversaries": [
+    "apt1",
+    "apt28",
+    "apt32",
+    "chimera",
+    "gallium",
+    "kimsuky"
+  ],
+  "malware": [
+    "cobalt-strike",
+    "hoplight"
+  ]
+}

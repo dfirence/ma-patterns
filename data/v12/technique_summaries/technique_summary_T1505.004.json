@@ -1,0 +1,14 @@
+{
+  "T1505.004:IIS Components": [
+    "command-execution",
+    "file-creation",
+    "file-modification"
+  ],
+  "malware": [
+    "iceapple",
+    "owaauth",
+    "rgdoor"
+  ],
+  "adversaries": [],
+  "tools": []
+}

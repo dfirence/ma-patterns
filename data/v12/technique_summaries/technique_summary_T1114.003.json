@@ -1,0 +1,12 @@
+{
+  "T1114.003:Email Forwarding Rule": [
+    "application-log-content"
+  ],
+  "malware": [],
+  "adversaries": [
+    "kimsuky",
+    "lapsus$",
+    "silent-librarian"
+  ],
+  "tools": []
+}

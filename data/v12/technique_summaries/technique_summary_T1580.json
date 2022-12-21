@@ -1,0 +1,11 @@
+{
+  "adversaries": [],
+  "malware": [],
+  "T1580:Cloud Infrastructure Discovery": [
+    "cloud-storage-enumeration",
+    "instance-enumeration",
+    "snapshot-enumeration",
+    "volume-enumeration"
+  ],
+  "tools": []
+}

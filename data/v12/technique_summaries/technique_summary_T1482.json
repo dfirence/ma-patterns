@@ -1,0 +1,30 @@
+{
+  "adversaries": [
+    "apt29",
+    "chimera",
+    "earth-lusca",
+    "fin8",
+    "unc2452"
+  ],
+  "malware": [
+    "bazar",
+    "qakbot",
+    "trickbot"
+  ],
+  "T1482:Domain Trust Discovery": [
+    "command-execution",
+    "network-traffic-content",
+    "os-api-execution",
+    "process-creation",
+    "script-execution"
+  ],
+  "tools": [
+    "adfind",
+    "bloodhound",
+    "dsquery",
+    "empire",
+    "nltest",
+    "poshc2",
+    "powersploit"
+  ]
+}

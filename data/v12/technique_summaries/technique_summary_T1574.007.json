@@ -1,0 +1,13 @@
+{
+  "adversaries": [],
+  "tools": [
+    "empire",
+    "powersploit"
+  ],
+  "T1574.007:Path Interception by PATH Environment Variable": [
+    "file-creation",
+    "process-creation",
+    "windows-registry-key-modification"
+  ],
+  "malware": []
+}

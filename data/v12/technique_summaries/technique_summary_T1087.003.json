@@ -1,0 +1,23 @@
+{
+  "tools": [
+    "mailsniper",
+    "ruler"
+  ],
+  "adversaries": [
+    "magic-hound",
+    "sandworm-team",
+    "ta505"
+  ],
+  "malware": [
+    "backdoor.oldrea",
+    "boombox",
+    "emotet",
+    "grandoreiro",
+    "lizar",
+    "trickbot"
+  ],
+  "T1087.003:Email Account": [
+    "command-execution",
+    "process-creation"
+  ]
+}

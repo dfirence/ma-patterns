@@ -1,0 +1,12 @@
+{
+  "T1591.002:Business Relationships": [
+    "none"
+  ],
+  "tools": [],
+  "malware": [],
+  "adversaries": [
+    "dragonfly",
+    "lapsus$",
+    "sandworm-team"
+  ]
+}

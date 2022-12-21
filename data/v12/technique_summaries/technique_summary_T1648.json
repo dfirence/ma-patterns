@@ -1,0 +1,9 @@
+{
+  "tools": [],
+  "malware": [],
+  "T1648:Serverless Execution": [
+    "application-log-content",
+    "cloud-service-modification"
+  ],
+  "adversaries": []
+}

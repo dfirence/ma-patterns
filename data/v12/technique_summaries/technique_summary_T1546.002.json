@@ -1,0 +1,14 @@
+{
+  "T1546.002:Screensaver": [
+    "command-execution",
+    "file-creation",
+    "file-modification",
+    "process-creation",
+    "windows-registry-key-modification"
+  ],
+  "adversaries": [],
+  "malware": [
+    "gazer"
+  ],
+  "tools": []
+}

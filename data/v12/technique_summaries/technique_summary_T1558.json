@@ -1,0 +1,11 @@
+{
+  "tools": [],
+  "T1558:Steal or Forge Kerberos Tickets": [
+    "active-directory-credential-request",
+    "command-execution",
+    "file-access",
+    "logon-session-metadata"
+  ],
+  "malware": [],
+  "adversaries": []
+}

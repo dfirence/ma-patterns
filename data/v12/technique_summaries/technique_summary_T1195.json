@@ -1,0 +1,9 @@
+{
+  "malware": [],
+  "tools": [],
+  "T1195:Supply Chain Compromise": [
+    "file-metadata",
+    "host-status"
+  ],
+  "adversaries": []
+}

@@ -1,0 +1,12 @@
+{
+  "T1574.005:Executable Installer File Permissions Weakness": [
+    "file-creation",
+    "file-modification",
+    "module-load",
+    "process-creation",
+    "service-metadata"
+  ],
+  "adversaries": [],
+  "tools": [],
+  "malware": []
+}

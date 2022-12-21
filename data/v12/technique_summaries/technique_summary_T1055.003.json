@@ -1,0 +1,14 @@
+{
+  "malware": [
+    "gazer",
+    "trojan.karagany",
+    "waterbear"
+  ],
+  "tools": [],
+  "T1055.003:Thread Execution Hijacking": [
+    "os-api-execution",
+    "process-access",
+    "process-modification"
+  ],
+  "adversaries": []
+}

@@ -1,0 +1,35 @@
+{
+  "T1614.001:System Language Discovery": [
+    "command-execution",
+    "os-api-execution",
+    "process-creation",
+    "windows-registry-key-access"
+  ],
+  "malware": [
+    "avaddon",
+    "bazar",
+    "clop",
+    "cuba",
+    "deathransom",
+    "dropbook",
+    "flagpro",
+    "grimagent",
+    "markirat",
+    "maze",
+    "misdat",
+    "neoichor",
+    "revil",
+    "ryuk",
+    "s-type",
+    "sharpstage",
+    "spark",
+    "synack",
+    "xcsset",
+    "zeus-panda"
+  ],
+  "tools": [],
+  "adversaries": [
+    "ke3chang",
+    "lazarus-group"
+  ]
+}

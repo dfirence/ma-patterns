@@ -1,0 +1,12 @@
+{
+  "malware": [],
+  "tools": [],
+  "T1584:Compromise Infrastructure": [
+    "active-dns",
+    "domain-registration",
+    "passive-dns",
+    "response-content",
+    "response-metadata"
+  ],
+  "adversaries": []
+}

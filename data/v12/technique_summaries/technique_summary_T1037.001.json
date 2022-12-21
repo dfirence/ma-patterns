@@ -1,0 +1,18 @@
+{
+  "T1037.001:Logon Script (Windows)": [
+    "command-execution",
+    "process-creation",
+    "windows-registry-key-creation"
+  ],
+  "adversaries": [
+    "apt28",
+    "cobalt-group"
+  ],
+  "tools": [],
+  "malware": [
+    "attor",
+    "jhuhugit",
+    "kgh_spy",
+    "zebrocy"
+  ]
+}

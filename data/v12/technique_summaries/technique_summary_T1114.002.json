@@ -1,0 +1,29 @@
+{
+  "adversaries": [
+    "apt1",
+    "apt28",
+    "apt29",
+    "chimera",
+    "dragonfly",
+    "fin4",
+    "hafnium",
+    "ke3chang",
+    "kimsuky",
+    "leafminer",
+    "magic-hound",
+    "unc2452"
+  ],
+  "T1114.002:Remote Email Collection": [
+    "command-execution",
+    "logon-session-creation",
+    "network-connection-creation"
+  ],
+  "tools": [
+    "mailsniper"
+  ],
+  "malware": [
+    "lightneuron",
+    "seaduke",
+    "valak"
+  ]
+}

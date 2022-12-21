@@ -1,0 +1,8 @@
+{
+  "adversaries": [],
+  "T1596.001:DNS/Passive DNS": [
+    "none"
+  ],
+  "tools": [],
+  "malware": []
+}

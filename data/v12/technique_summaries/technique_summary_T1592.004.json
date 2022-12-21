@@ -1,0 +1,10 @@
+{
+  "adversaries": [
+    "hafnium"
+  ],
+  "malware": [],
+  "tools": [],
+  "T1592.004:Client Configurations": [
+    "response-content"
+  ]
+}

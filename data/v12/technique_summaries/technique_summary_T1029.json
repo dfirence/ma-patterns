@@ -1,0 +1,28 @@
+{
+  "T1029:Scheduled Transfer": [
+    "network-connection-creation",
+    "network-traffic-flow"
+  ],
+  "tools": [],
+  "adversaries": [
+    "higaisa"
+  ],
+  "malware": [
+    "advstoreshell",
+    "chrommme",
+    "cobalt-strike",
+    "comrat",
+    "dipsind",
+    "flagpro",
+    "jrat",
+    "kazuar",
+    "lightneuron",
+    "linfo",
+    "machete",
+    "powerstats",
+    "shadowpad",
+    "shark",
+    "shimrat",
+    "tinyturla"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "malware": [
+    "bundlore",
+    "dok",
+    "kinsing",
+    "osx_oceanlotus.d",
+    "osxshlayer",
+    "p.a.s.-webshell",
+    "penquin",
+    "xcsset"
+  ],
+  "T1222.002:Linux and Mac File and Directory Permissions Modification": [
+    "command-execution",
+    "file-metadata",
+    "process-creation"
+  ],
+  "tools": [],
+  "adversaries": [
+    "apt32",
+    "rocke",
+    "teamtnt"
+  ]
+}

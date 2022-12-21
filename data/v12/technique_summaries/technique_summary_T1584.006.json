@@ -1,0 +1,11 @@
+{
+  "adversaries": [
+    "earth-lusca",
+    "turla"
+  ],
+  "tools": [],
+  "malware": [],
+  "T1584.006:Web Services": [
+    "response-content"
+  ]
+}

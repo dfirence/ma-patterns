@@ -1,0 +1,12 @@
+{
+  "T1027.006:HTML Smuggling": [
+    "file-creation"
+  ],
+  "tools": [],
+  "adversaries": [
+    "apt29"
+  ],
+  "malware": [
+    "envyscout"
+  ]
+}

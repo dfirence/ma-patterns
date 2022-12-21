@@ -1,0 +1,19 @@
+{
+  "adversaries": [],
+  "tools": [],
+  "T1554:Compromise Client Software Binary": [
+    "file-creation",
+    "file-deletion",
+    "file-metadata",
+    "file-modification"
+  ],
+  "malware": [
+    "bonadan",
+    "ebury",
+    "industroyer",
+    "kessel",
+    "kobalos",
+    "thiefquest",
+    "xcsset"
+  ]
+}

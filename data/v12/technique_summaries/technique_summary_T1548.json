@@ -1,0 +1,14 @@
+{
+  "adversaries": [],
+  "T1548:Abuse Elevation Control Mechanism": [
+    "command-execution",
+    "file-metadata",
+    "file-modification",
+    "os-api-execution",
+    "process-creation",
+    "process-metadata",
+    "windows-registry-key-modification"
+  ],
+  "tools": [],
+  "malware": []
+}

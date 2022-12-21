@@ -1,0 +1,10 @@
+{
+  "adversaries": [
+    "kimsuky"
+  ],
+  "tools": [],
+  "malware": [],
+  "T1593.002:Search Engines": [
+    "none"
+  ]
+}

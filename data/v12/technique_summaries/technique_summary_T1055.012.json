@@ -1,0 +1,40 @@
+{
+  "T1055.012:Process Hollowing": [
+    "os-api-execution",
+    "process-access",
+    "process-modification"
+  ],
+  "malware": [
+    "agent-tesla",
+    "astaroth",
+    "azorult",
+    "badnews",
+    "bandook",
+    "bazar",
+    "bbsrat",
+    "clambling",
+    "cobalt-strike",
+    "denis",
+    "dtrack",
+    "duqu",
+    "isminjector",
+    "lokibot",
+    "netwire",
+    "orz",
+    "qakbot",
+    "rcsession",
+    "saint-bot",
+    "smoke-loader",
+    "trickbot",
+    "ursnif",
+    "whispergate"
+  ],
+  "tools": [],
+  "adversaries": [
+    "gorgon-group",
+    "kimsuky",
+    "menupass",
+    "patchwork",
+    "threat-group-3390"
+  ]
+}

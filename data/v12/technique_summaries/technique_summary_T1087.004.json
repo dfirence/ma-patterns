@@ -1,0 +1,13 @@
+{
+  "tools": [
+    "aadinternals",
+    "roadtools"
+  ],
+  "adversaries": [
+    "apt29"
+  ],
+  "malware": [],
+  "T1087.004:Cloud Account": [
+    "command-execution"
+  ]
+}

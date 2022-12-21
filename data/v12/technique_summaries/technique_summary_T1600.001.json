@@ -1,0 +1,8 @@
+{
+  "adversaries": [],
+  "malware": [],
+  "T1600.001:Reduce Key Space": [
+    "file-modification"
+  ],
+  "tools": []
+}

@@ -1,0 +1,11 @@
+{
+  "adversaries": [],
+  "T1556.005:Reversible Encryption": [
+    "active-directory-object-modification",
+    "command-execution",
+    "script-execution",
+    "user-account-metadata"
+  ],
+  "tools": [],
+  "malware": []
+}

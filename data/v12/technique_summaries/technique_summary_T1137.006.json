@@ -1,0 +1,17 @@
+{
+  "tools": [],
+  "adversaries": [
+    "naikon"
+  ],
+  "T1137.006:Add-ins": [
+    "command-execution",
+    "file-creation",
+    "file-modification",
+    "process-creation",
+    "windows-registry-key-creation",
+    "windows-registry-key-modification"
+  ],
+  "malware": [
+    "bisonal"
+  ]
+}

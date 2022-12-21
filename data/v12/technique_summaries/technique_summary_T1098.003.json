@@ -1,0 +1,11 @@
+{
+  "tools": [],
+  "adversaries": [
+    "apt29",
+    "lapsus$"
+  ],
+  "malware": [],
+  "T1098.003:Additional Cloud Roles": [
+    "user-account-modification"
+  ]
+}

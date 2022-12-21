@@ -1,0 +1,13 @@
+{
+  "malware": [],
+  "T1546.013:PowerShell Profile": [
+    "command-execution",
+    "file-creation",
+    "file-modification",
+    "process-creation"
+  ],
+  "adversaries": [
+    "turla"
+  ],
+  "tools": []
+}

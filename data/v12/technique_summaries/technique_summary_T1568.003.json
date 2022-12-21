@@ -1,0 +1,10 @@
+{
+  "malware": [],
+  "tools": [],
+  "adversaries": [
+    "apt12"
+  ],
+  "T1568.003:DNS Calculation": [
+    "network-traffic-content"
+  ]
+}

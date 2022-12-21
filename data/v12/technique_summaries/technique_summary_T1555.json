@@ -1,0 +1,43 @@
+{
+  "tools": [
+    "lazagne",
+    "mimikatz",
+    "poshc2",
+    "pupy",
+    "quasarrat"
+  ],
+  "T1555:Credentials from Password Stores": [
+    "command-execution",
+    "file-access",
+    "os-api-execution",
+    "process-access",
+    "process-creation"
+  ],
+  "malware": [
+    "agent-tesla",
+    "astaroth",
+    "carberp",
+    "cosmicduke",
+    "kgh_spy",
+    "lokibot",
+    "matryoshka",
+    "netwire",
+    "oldbait",
+    "pinchduke",
+    "plead",
+    "prikormka"
+  ],
+  "adversaries": [
+    "apt29",
+    "apt33",
+    "apt39",
+    "evilnum",
+    "fin6",
+    "hexane",
+    "leafminer",
+    "muddywater",
+    "oilrig",
+    "stealth-falcon",
+    "unc2452"
+  ]
+}

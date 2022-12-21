@@ -1,0 +1,11 @@
+{
+  "malware": [],
+  "adversaries": [],
+  "T1052:Exfiltration Over Physical Medium": [
+    "command-execution",
+    "drive-creation",
+    "file-access",
+    "process-creation"
+  ],
+  "tools": []
+}

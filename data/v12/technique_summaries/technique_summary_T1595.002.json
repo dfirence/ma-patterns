@@ -1,0 +1,19 @@
+{
+  "tools": [],
+  "adversaries": [
+    "apt28",
+    "apt29",
+    "aquatic-panda",
+    "dragonfly",
+    "earth-lusca",
+    "magic-hound",
+    "sandworm-team",
+    "teamtnt",
+    "volatile-cedar"
+  ],
+  "T1595.002:Vulnerability Scanning": [
+    "network-traffic-content",
+    "network-traffic-flow"
+  ],
+  "malware": []
+}

@@ -1,0 +1,13 @@
+{
+  "tools": [
+    "empire",
+    "mimikatz"
+  ],
+  "adversaries": [],
+  "malware": [],
+  "T1134.005:SID-History Injection": [
+    "active-directory-object-modification",
+    "os-api-execution",
+    "user-account-metadata"
+  ]
+}

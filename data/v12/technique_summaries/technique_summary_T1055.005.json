@@ -1,0 +1,12 @@
+{
+  "malware": [
+    "ursnif"
+  ],
+  "T1055.005:Thread Local Storage": [
+    "os-api-execution",
+    "process-access",
+    "process-modification"
+  ],
+  "adversaries": [],
+  "tools": []
+}

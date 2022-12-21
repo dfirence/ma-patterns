@@ -1,0 +1,14 @@
+{
+  "tools": [],
+  "T1569:System Services": [
+    "command-execution",
+    "file-modification",
+    "process-creation",
+    "service-creation",
+    "windows-registry-key-modification"
+  ],
+  "adversaries": [
+    "teamtnt"
+  ],
+  "malware": []
+}

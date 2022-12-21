@@ -1,0 +1,20 @@
+{
+  "malware": [
+    "anchor",
+    "bitpaymer",
+    "boombox",
+    "envyscout",
+    "nativezone",
+    "small-sieve",
+    "stuxnet",
+    "sunspot",
+    "torisma",
+    "vaporrage"
+  ],
+  "T1480:Execution Guardrails": [
+    "command-execution",
+    "process-creation"
+  ],
+  "adversaries": [],
+  "tools": []
+}

@@ -1,0 +1,25 @@
+{
+  "T1053.003:Cron": [
+    "command-execution",
+    "file-modification",
+    "process-creation",
+    "scheduled-job-creation"
+  ],
+  "tools": [],
+  "malware": [
+    "anchor",
+    "exaramel-for-linux",
+    "goldmax",
+    "janicab",
+    "kinsing",
+    "netwire",
+    "penquin",
+    "skidmap",
+    "speakup",
+    "xbash"
+  ],
+  "adversaries": [
+    "apt38",
+    "rocke"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "malware": [
+    "kgh_spy",
+    "lizar",
+    "rainyday",
+    "rokrat",
+    "valak"
+  ],
+  "T1555.004:Windows Credential Manager": [
+    "command-execution",
+    "file-access",
+    "os-api-execution",
+    "process-creation"
+  ],
+  "adversaries": [
+    "oilrig",
+    "stealth-falcon",
+    "turla"
+  ],
+  "tools": [
+    "lazagne",
+    "mimikatz",
+    "powersploit",
+    "silenttrinity"
+  ]
+}

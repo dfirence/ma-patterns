@@ -1,0 +1,12 @@
+{
+  "tools": [],
+  "adversaries": [],
+  "T1037.003:Network Logon Script": [
+    "active-directory-object-modification",
+    "command-execution",
+    "file-creation",
+    "file-modification",
+    "process-creation"
+  ],
+  "malware": []
+}

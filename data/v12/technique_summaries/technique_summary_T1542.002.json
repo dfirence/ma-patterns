@@ -1,0 +1,14 @@
+{
+  "tools": [],
+  "malware": [
+    "cyclops-blink"
+  ],
+  "T1542.002:Component Firmware": [
+    "driver-metadata",
+    "firmware-modification",
+    "os-api-execution"
+  ],
+  "adversaries": [
+    "equation"
+  ]
+}

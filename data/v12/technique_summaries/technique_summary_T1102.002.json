@@ -1,0 +1,59 @@
+{
+  "malware": [
+    "badnews",
+    "blackcoffee",
+    "bluelight",
+    "boxcaon",
+    "calendar",
+    "clambling",
+    "cloudduke",
+    "comnie",
+    "comrat",
+    "cozycar",
+    "creepydrive",
+    "crutch",
+    "dogcall",
+    "glooxmail",
+    "grandoreiro",
+    "karae",
+    "kazuar",
+    "lowball",
+    "orz",
+    "pooraim",
+    "powerstallion",
+    "regduke",
+    "revenge-rat",
+    "roguerobin",
+    "rokrat",
+    "slowdrift",
+    "small-sieve",
+    "uboatrat",
+    "yty"
+  ],
+  "adversaries": [
+    "apt12",
+    "apt28",
+    "apt29",
+    "apt37",
+    "apt39",
+    "carbanak",
+    "fin7",
+    "hexane",
+    "kimsuky",
+    "lazarus-group",
+    "magic-hound",
+    "muddywater",
+    "polonium",
+    "sandworm-team",
+    "turla",
+    "zirconium"
+  ],
+  "tools": [
+    "empire"
+  ],
+  "T1102.002:Bidirectional Communication": [
+    "network-connection-creation",
+    "network-traffic-content",
+    "network-traffic-flow"
+  ]
+}

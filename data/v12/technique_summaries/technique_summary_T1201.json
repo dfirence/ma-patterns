@@ -1,0 +1,21 @@
+{
+  "tools": [
+    "bloodhound",
+    "crackmapexec",
+    "net",
+    "poshc2"
+  ],
+  "malware": [
+    "kwampirs"
+  ],
+  "T1201:Password Policy Discovery": [
+    "command-execution",
+    "process-creation",
+    "user-account-metadata"
+  ],
+  "adversaries": [
+    "chimera",
+    "oilrig",
+    "turla"
+  ]
+}

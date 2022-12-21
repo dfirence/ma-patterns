@@ -1,0 +1,12 @@
+{
+  "adversaries": [],
+  "tools": [
+    "lazagne",
+    "mimipenguin"
+  ],
+  "T1003.007:Proc Filesystem": [
+    "command-execution",
+    "file-access"
+  ],
+  "malware": []
+}

@@ -1,0 +1,21 @@
+{
+  "adversaries": [
+    "fin8"
+  ],
+  "malware": [
+    "attor",
+    "bumblebee",
+    "carberp",
+    "icedid",
+    "invisimole",
+    "pillowmint",
+    "saint-bot",
+    "turnedup"
+  ],
+  "tools": [],
+  "T1055.004:Asynchronous Procedure Call": [
+    "os-api-execution",
+    "process-access",
+    "process-modification"
+  ]
+}

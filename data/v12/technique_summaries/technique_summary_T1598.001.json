@@ -1,0 +1,10 @@
+{
+  "T1598.001:Spearphishing Service": [
+    "application-log-content",
+    "network-traffic-content",
+    "network-traffic-flow"
+  ],
+  "tools": [],
+  "adversaries": [],
+  "malware": []
+}

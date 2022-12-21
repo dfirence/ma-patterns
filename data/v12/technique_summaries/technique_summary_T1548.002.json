@@ -1,0 +1,63 @@
+{
+  "tools": [
+    "cspy-downloader",
+    "empire",
+    "koadic",
+    "poshc2",
+    "pupy",
+    "quasarrat",
+    "remcos",
+    "silenttrinity",
+    "uacme"
+  ],
+  "T1548.002:Bypass User Account Control": [
+    "command-execution",
+    "process-creation",
+    "process-metadata",
+    "windows-registry-key-modification"
+  ],
+  "malware": [
+    "applejeus",
+    "autoit-backdoor",
+    "avaddon",
+    "bad-rabbit",
+    "bitpaymer",
+    "blackenergy",
+    "bumblebee",
+    "clambling",
+    "cobalt-strike",
+    "downdelph",
+    "finfisher",
+    "gelsemium",
+    "grandoreiro",
+    "h1n1",
+    "invisimole",
+    "koctopus",
+    "konni",
+    "lokibot",
+    "pipemon",
+    "plaintee",
+    "ramsay",
+    "rcsession",
+    "rtm",
+    "saint-bot",
+    "sakula",
+    "shamoon",
+    "shimrat",
+    "warzonerat",
+    "wastedlocker",
+    "winnti-for-windows",
+    "zerot"
+  ],
+  "adversaries": [
+    "apt29",
+    "apt37",
+    "bronze-butler",
+    "cobalt-group",
+    "earth-lusca",
+    "evilnum",
+    "muddywater",
+    "patchwork",
+    "threat-group-3390"
+  ]
+}

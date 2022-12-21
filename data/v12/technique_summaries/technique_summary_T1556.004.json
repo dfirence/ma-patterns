@@ -1,0 +1,10 @@
+{
+  "tools": [],
+  "malware": [
+    "synful-knock"
+  ],
+  "adversaries": [],
+  "T1556.004:Network Device Authentication": [
+    "file-modification"
+  ]
+}

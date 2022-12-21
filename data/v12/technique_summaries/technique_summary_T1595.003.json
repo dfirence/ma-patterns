@@ -1,0 +1,10 @@
+{
+  "T1595.003:Wordlist Scanning": [
+    "network-traffic-content"
+  ],
+  "malware": [],
+  "tools": [],
+  "adversaries": [
+    "volatile-cedar"
+  ]
+}

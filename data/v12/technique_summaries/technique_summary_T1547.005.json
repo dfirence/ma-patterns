@@ -1,0 +1,14 @@
+{
+  "malware": [],
+  "adversaries": [],
+  "T1547.005:Security Support Provider": [
+    "command-execution",
+    "module-load",
+    "windows-registry-key-modification"
+  ],
+  "tools": [
+    "empire",
+    "mimikatz",
+    "powersploit"
+  ]
+}

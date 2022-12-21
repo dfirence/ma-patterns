@@ -1,0 +1,8 @@
+{
+  "adversaries": [],
+  "malware": [],
+  "T1583.007:Serverless": [
+    "response-content"
+  ],
+  "tools": []
+}

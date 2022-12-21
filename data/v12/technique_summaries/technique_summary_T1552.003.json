@@ -1,0 +1,11 @@
+{
+  "adversaries": [],
+  "T1552.003:Bash History": [
+    "command-execution",
+    "file-access"
+  ],
+  "malware": [
+    "kinsing"
+  ],
+  "tools": []
+}

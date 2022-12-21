@@ -1,0 +1,22 @@
+{
+  "tools": [],
+  "adversaries": [
+    "apt28",
+    "confucius",
+    "darkhydrus",
+    "dragonfly",
+    "gamaredon-group",
+    "inception",
+    "lazarus-group",
+    "tropic-trooper"
+  ],
+  "malware": [
+    "chaes",
+    "warzonerat"
+  ],
+  "T1221:Template Injection": [
+    "network-connection-creation",
+    "network-traffic-content",
+    "process-creation"
+  ]
+}

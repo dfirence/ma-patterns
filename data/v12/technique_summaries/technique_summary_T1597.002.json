@@ -1,0 +1,10 @@
+{
+  "tools": [],
+  "adversaries": [
+    "lapsus$"
+  ],
+  "malware": [],
+  "T1597.002:Purchase Technical Data": [
+    "none"
+  ]
+}

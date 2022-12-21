@@ -1,0 +1,11 @@
+{
+  "malware": [],
+  "adversaries": [
+    "andariel",
+    "hafnium"
+  ],
+  "tools": [],
+  "T1590.005:IP Addresses": [
+    "none"
+  ]
+}

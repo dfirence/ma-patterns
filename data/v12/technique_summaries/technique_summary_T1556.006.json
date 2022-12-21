@@ -1,0 +1,13 @@
+{
+  "tools": [
+    "aadinternals"
+  ],
+  "T1556.006:Multi-Factor Authentication": [
+    "active-directory-object-modification",
+    "logon-session-creation",
+    "user-account-authentication",
+    "user-account-modification"
+  ],
+  "adversaries": [],
+  "malware": []
+}

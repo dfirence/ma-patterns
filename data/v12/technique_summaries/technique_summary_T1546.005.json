@@ -1,0 +1,11 @@
+{
+  "tools": [],
+  "T1546.005:Trap": [
+    "command-execution",
+    "file-creation",
+    "file-modification",
+    "process-creation"
+  ],
+  "adversaries": [],
+  "malware": []
+}

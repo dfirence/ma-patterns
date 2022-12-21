@@ -1,0 +1,15 @@
+{
+  "T1070.008:Clear Mailbox Data": [
+    "command-execution",
+    "file-deletion",
+    "file-modification",
+    "process-creation"
+  ],
+  "adversaries": [
+    "apt29"
+  ],
+  "malware": [
+    "goopy"
+  ],
+  "tools": []
+}

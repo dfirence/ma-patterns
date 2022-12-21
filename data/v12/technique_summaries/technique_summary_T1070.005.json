@@ -1,0 +1,18 @@
+{
+  "malware": [
+    "invisimole",
+    "robbinhood"
+  ],
+  "T1070.005:Network Share Connection Removal": [
+    "command-execution",
+    "network-traffic-content",
+    "process-creation",
+    "user-account-authentication"
+  ],
+  "adversaries": [
+    "threat-group-3390"
+  ],
+  "tools": [
+    "net"
+  ]
+}

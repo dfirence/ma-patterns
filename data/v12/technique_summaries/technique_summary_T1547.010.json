@@ -1,0 +1,11 @@
+{
+  "tools": [],
+  "T1547.010:Port Monitors": [
+    "file-creation",
+    "module-load",
+    "os-api-execution",
+    "windows-registry-key-modification"
+  ],
+  "malware": [],
+  "adversaries": []
+}

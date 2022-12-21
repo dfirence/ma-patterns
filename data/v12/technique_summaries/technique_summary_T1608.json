@@ -1,0 +1,10 @@
+{
+  "tools": [],
+  "T1608:Stage Capabilities": [
+    "response-content"
+  ],
+  "adversaries": [
+    "mustang-panda"
+  ],
+  "malware": []
+}

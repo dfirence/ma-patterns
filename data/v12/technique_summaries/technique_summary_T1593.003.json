@@ -1,0 +1,10 @@
+{
+  "malware": [],
+  "T1593.003:Code Repositories": [
+    "none"
+  ],
+  "tools": [],
+  "adversaries": [
+    "lapsus$"
+  ]
+}

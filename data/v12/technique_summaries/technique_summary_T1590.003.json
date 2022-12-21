@@ -1,0 +1,8 @@
+{
+  "malware": [],
+  "T1590.003:Network Trust Dependencies": [
+    "none"
+  ],
+  "tools": [],
+  "adversaries": []
+}

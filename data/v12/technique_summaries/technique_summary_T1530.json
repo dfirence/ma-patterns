@@ -1,0 +1,12 @@
+{
+  "adversaries": [
+    "fox-kitten"
+  ],
+  "tools": [
+    "peirates"
+  ],
+  "T1530:Data from Cloud Storage": [
+    "cloud-storage-access"
+  ],
+  "malware": []
+}

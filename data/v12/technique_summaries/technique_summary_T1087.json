@@ -1,0 +1,17 @@
+{
+  "T1087:Account Discovery": [
+    "command-execution",
+    "file-access",
+    "process-creation"
+  ],
+  "tools": [
+    "shimratreporter"
+  ],
+  "malware": [
+    "xcsset"
+  ],
+  "adversaries": [
+    "apt29",
+    "unc2452"
+  ]
+}

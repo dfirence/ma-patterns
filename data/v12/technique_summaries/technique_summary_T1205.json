@@ -1,0 +1,20 @@
+{
+  "adversaries": [],
+  "tools": [],
+  "malware": [
+    "chaos",
+    "kobalos",
+    "pandora",
+    "penquin",
+    "ryuk",
+    "synful-knock",
+    "umbreon",
+    "winnti-for-linux"
+  ],
+  "T1205:Traffic Signaling": [
+    "network-connection-creation",
+    "network-traffic-content",
+    "network-traffic-flow",
+    "process-creation"
+  ]
+}

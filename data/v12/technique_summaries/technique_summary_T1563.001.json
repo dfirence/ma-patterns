@@ -1,0 +1,12 @@
+{
+  "tools": [],
+  "adversaries": [],
+  "T1563.001:SSH Hijacking": [
+    "command-execution",
+    "logon-session-creation",
+    "network-traffic-content",
+    "network-traffic-flow",
+    "process-creation"
+  ],
+  "malware": []
+}

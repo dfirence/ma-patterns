@@ -1,0 +1,31 @@
+{
+  "T1071.003:Mail Protocols": [
+    "network-traffic-content",
+    "network-traffic-flow"
+  ],
+  "adversaries": [
+    "apt28",
+    "apt32",
+    "kimsuky",
+    "silverterrier",
+    "turla"
+  ],
+  "malware": [
+    "agent-tesla",
+    "badpatch",
+    "cannon",
+    "chopstick",
+    "comrat",
+    "coreshell",
+    "goopy",
+    "jpin",
+    "lightneuron",
+    "navrat",
+    "oldbait",
+    "rdat",
+    "remsec",
+    "sugardump",
+    "zebrocy"
+  ],
+  "tools": []
+}

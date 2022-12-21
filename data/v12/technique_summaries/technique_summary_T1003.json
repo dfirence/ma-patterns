@@ -1,0 +1,33 @@
+{
+  "malware": [
+    "carbanak",
+    "homefry",
+    "onionduke",
+    "pinchduke",
+    "revenge-rat",
+    "trojan.karagany"
+  ],
+  "tools": [],
+  "T1003:OS Credential Dumping": [
+    "active-directory-object-access",
+    "command-execution",
+    "file-access",
+    "network-traffic-content",
+    "network-traffic-flow",
+    "os-api-execution",
+    "process-access",
+    "process-creation",
+    "windows-registry-key-access"
+  ],
+  "adversaries": [
+    "apt28",
+    "apt32",
+    "apt39",
+    "axiom",
+    "leviathan",
+    "poseidon-group",
+    "sowbug",
+    "suckfly",
+    "tonto-team"
+  ]
+}

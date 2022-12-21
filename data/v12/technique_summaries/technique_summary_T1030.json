@@ -1,0 +1,26 @@
+{
+  "adversaries": [
+    "apt28",
+    "threat-group-3390"
+  ],
+  "T1030:Data Transfer Size Limits": [
+    "network-connection-creation",
+    "network-traffic-flow"
+  ],
+  "malware": [
+    "appleseed",
+    "carbanak",
+    "cobalt-strike",
+    "helminth",
+    "kessel",
+    "kevin",
+    "obliquerat",
+    "oopsie",
+    "poshspy",
+    "rdat"
+  ],
+  "tools": [
+    "mythic",
+    "rclone"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "tools": [
+    "peirates"
+  ],
+  "T1613:Container and Resource Discovery": [
+    "container-enumeration",
+    "pod-enumeration"
+  ],
+  "malware": [
+    "hildegard"
+  ],
+  "adversaries": [
+    "teamtnt"
+  ]
+}

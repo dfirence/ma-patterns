@@ -1,0 +1,15 @@
+{
+  "tools": [],
+  "malware": [
+    "flawedammyy",
+    "funnydream",
+    "rdat",
+    "sidetwist",
+    "slothfulmedia",
+    "trailblazer"
+  ],
+  "T1001:Data Obfuscation": [
+    "network-traffic-content"
+  ],
+  "adversaries": []
+}

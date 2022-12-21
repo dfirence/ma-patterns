@@ -1,0 +1,16 @@
+{
+  "malware": [
+    "lockergoga",
+    "megacortex",
+    "meteor"
+  ],
+  "tools": [],
+  "adversaries": [
+    "lapsus$"
+  ],
+  "T1531:Account Access Removal": [
+    "active-directory-object-modification",
+    "user-account-deletion",
+    "user-account-modification"
+  ]
+}

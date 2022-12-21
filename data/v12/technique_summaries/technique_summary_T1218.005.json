@@ -1,0 +1,38 @@
+{
+  "tools": [
+    "koadic"
+  ],
+  "T1218.005:Mshta": [
+    "command-execution",
+    "file-creation",
+    "network-connection-creation",
+    "process-creation"
+  ],
+  "malware": [
+    "babyshark",
+    "metamorfo",
+    "nanhaishu",
+    "powerstats",
+    "pteranodon",
+    "revenge-rat",
+    "sibot",
+    "xbash"
+  ],
+  "adversaries": [
+    "apt29",
+    "apt32",
+    "confucius",
+    "earth-lusca",
+    "fin7",
+    "gamaredon-group",
+    "inception",
+    "kimsuky",
+    "lazarus-group",
+    "lazyscripter",
+    "muddywater",
+    "mustang-panda",
+    "sidecopy",
+    "sidewinder",
+    "ta551"
+  ]
+}

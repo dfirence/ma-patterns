@@ -1,0 +1,19 @@
+{
+  "adversaries": [
+    "teamtnt"
+  ],
+  "T1610:Deploy Container": [
+    "application-log-content",
+    "container-creation",
+    "container-start",
+    "pod-creation",
+    "pod-modification"
+  ],
+  "malware": [
+    "doki",
+    "kinsing"
+  ],
+  "tools": [
+    "peirates"
+  ]
+}

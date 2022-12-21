@@ -1,0 +1,16 @@
+{
+  "malware": [
+    "wannacry"
+  ],
+  "adversaries": [
+    "axiom"
+  ],
+  "T1563.002:RDP Hijacking": [
+    "command-execution",
+    "logon-session-creation",
+    "network-traffic-content",
+    "network-traffic-flow",
+    "process-creation"
+  ],
+  "tools": []
+}

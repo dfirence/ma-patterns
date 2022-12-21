@@ -1,0 +1,13 @@
+{
+  "tools": [
+    "netsh"
+  ],
+  "adversaries": [],
+  "malware": [],
+  "T1546.007:Netsh Helper DLL": [
+    "command-execution",
+    "module-load",
+    "process-creation",
+    "windows-registry-key-modification"
+  ]
+}

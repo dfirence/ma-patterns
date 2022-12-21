@@ -1,0 +1,19 @@
+{
+  "T1484.001:Group Policy Modification": [
+    "active-directory-object-creation",
+    "active-directory-object-deletion",
+    "active-directory-object-modification",
+    "command-execution"
+  ],
+  "malware": [
+    "egregor",
+    "hermeticwiper",
+    "meteor"
+  ],
+  "tools": [
+    "empire"
+  ],
+  "adversaries": [
+    "indrik-spider"
+  ]
+}

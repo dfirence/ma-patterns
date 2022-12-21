@@ -1,0 +1,10 @@
+{
+  "adversaries": [
+    "sandworm-team"
+  ],
+  "tools": [],
+  "malware": [],
+  "T1588.006:Vulnerabilities": [
+    "none"
+  ]
+}

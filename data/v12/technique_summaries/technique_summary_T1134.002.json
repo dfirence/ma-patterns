@@ -1,0 +1,24 @@
+{
+  "adversaries": [
+    "lazarus-group",
+    "turla"
+  ],
+  "T1134.002:Create Process with Token": [
+    "command-execution",
+    "os-api-execution"
+  ],
+  "malware": [
+    "aria-body",
+    "azorult",
+    "bankshot",
+    "konni",
+    "pipemon",
+    "revil",
+    "whispergate",
+    "zxshell"
+  ],
+  "tools": [
+    "empire",
+    "poshc2"
+  ]
+}

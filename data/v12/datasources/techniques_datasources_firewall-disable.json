@@ -1,0 +1,34 @@
+[
+  {
+    "id": "attack-pattern--3d333250-30e4-4a82-9edc-756c68afc529",
+    "platform": "windows|office-365|iaas|linux|macos|containers|network",
+    "tid": "T1562",
+    "technique": "Impair Defenses",
+    "tactic": "defense-evasion",
+    "datasources": "firewall-disable",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1562.001",
+      "T1562.002",
+      "T1562.003",
+      "T1562.004",
+      "T1562.006",
+      "T1562.007",
+      "T1562.008",
+      "T1562.009",
+      "T1562.010"
+    ],
+    "count_subtechniques": 9,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may maliciously modify components of a victim environment in order to hinder or disable defensive mechanisms. This not only involves impairing preventative defenses, such as firewalls and anti-virus, but also detection capabilities that defenders can use to audit activity and identify malicious behavior. This may also span both native defenses as well as supplemental capabilities installed by users and administrators.\n\nAdversaries could also target event aggregation and analysis mechanisms, or otherwise disrupt these procedures by altering other system components.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

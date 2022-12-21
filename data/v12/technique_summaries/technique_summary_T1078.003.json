@@ -1,0 +1,25 @@
+{
+  "T1078.003:Local Accounts": [
+    "logon-session-creation",
+    "logon-session-metadata",
+    "user-account-authentication"
+  ],
+  "tools": [],
+  "malware": [
+    "cobalt-strike",
+    "emotet",
+    "notpetya",
+    "umbreon"
+  ],
+  "adversaries": [
+    "apt29",
+    "apt32",
+    "fin10",
+    "hafnium",
+    "kimsuky",
+    "promethium",
+    "stolen-pencil",
+    "tropic-trooper",
+    "turla"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "adversaries": [
+    "apt29",
+    "rocke",
+    "teamtnt",
+    "unc2452"
+  ],
+  "T1552.004:Private Keys": [
+    "command-execution",
+    "file-access"
+  ],
+  "malware": [
+    "ebury",
+    "foggyweb",
+    "hildegard",
+    "jrat",
+    "kinsing",
+    "machete"
+  ],
+  "tools": [
+    "aadinternals",
+    "empire",
+    "mimikatz"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "adversaries": [
+    "cleaver"
+  ],
+  "T1557.002:ARP Cache Poisoning": [
+    "network-traffic-content",
+    "network-traffic-flow"
+  ],
+  "tools": [],
+  "malware": []
+}

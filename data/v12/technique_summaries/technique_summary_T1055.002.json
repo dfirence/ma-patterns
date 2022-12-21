@@ -1,0 +1,19 @@
+{
+  "T1055.002:Portable Executable Injection": [
+    "os-api-execution",
+    "process-access",
+    "process-modification"
+  ],
+  "adversaries": [
+    "gorgon-group",
+    "rocke"
+  ],
+  "tools": [],
+  "malware": [
+    "carbanak",
+    "greyenergy",
+    "invisimole",
+    "lizar",
+    "zeus-panda"
+  ]
+}

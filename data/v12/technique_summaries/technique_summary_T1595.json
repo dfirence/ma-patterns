@@ -1,0 +1,9 @@
+{
+  "tools": [],
+  "adversaries": [],
+  "T1595:Active Scanning": [
+    "network-traffic-content",
+    "network-traffic-flow"
+  ],
+  "malware": []
+}

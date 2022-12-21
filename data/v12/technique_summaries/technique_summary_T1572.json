@@ -1,0 +1,31 @@
+{
+  "tools": [
+    "mythic"
+  ],
+  "T1572:Protocol Tunneling": [
+    "network-connection-creation",
+    "network-traffic-content",
+    "network-traffic-flow"
+  ],
+  "adversaries": [
+    "chimera",
+    "cobalt-group",
+    "fin6",
+    "fox-kitten",
+    "leviathan",
+    "oilrig"
+  ],
+  "malware": [
+    "cobalt-strike",
+    "cyclops-blink",
+    "duqu",
+    "flipside",
+    "funnydream",
+    "heyoka-backdoor",
+    "industroyer",
+    "kevin",
+    "milan",
+    "ngrok",
+    "qakbot"
+  ]
+}

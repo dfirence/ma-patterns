@@ -1,0 +1,10 @@
+{
+  "adversaries": [],
+  "malware": [],
+  "T1606:Forge Web Credentials": [
+    "logon-session-creation",
+    "web-credential-creation",
+    "web-credential-usage"
+  ],
+  "tools": []
+}

@@ -1,0 +1,28 @@
+{
+  "T1021.004:SSH": [
+    "logon-session-creation",
+    "network-connection-creation",
+    "process-creation"
+  ],
+  "malware": [
+    "cobalt-strike",
+    "kinsing"
+  ],
+  "adversaries": [
+    "apt39",
+    "blacktech",
+    "fin7",
+    "fox-kitten",
+    "gcman",
+    "lazarus-group",
+    "leviathan",
+    "menupass",
+    "oilrig",
+    "rocke",
+    "teamtnt",
+    "temp.veles"
+  ],
+  "tools": [
+    "empire"
+  ]
+}

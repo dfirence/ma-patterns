@@ -1,0 +1,15 @@
+{
+  "adversaries": [
+    "apt28",
+    "apt29",
+    "chimera",
+    "lapsus$",
+    "leviathan",
+    "magic-hound"
+  ],
+  "T1589.001:Credentials": [
+    "none"
+  ],
+  "tools": [],
+  "malware": []
+}

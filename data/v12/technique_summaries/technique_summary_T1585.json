@@ -1,0 +1,12 @@
+{
+  "T1585:Establish Accounts": [
+    "network-traffic-content",
+    "social-media"
+  ],
+  "tools": [],
+  "malware": [],
+  "adversaries": [
+    "apt17",
+    "fox-kitten"
+  ]
+}

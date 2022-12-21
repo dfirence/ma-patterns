@@ -1,0 +1,12 @@
+{
+  "malware": [],
+  "T1550.004:Web Session Cookie": [
+    "application-log-content",
+    "web-credential-usage"
+  ],
+  "adversaries": [
+    "apt29",
+    "unc2452"
+  ],
+  "tools": []
+}

@@ -1,0 +1,14 @@
+{
+  "tools": [],
+  "malware": [],
+  "T1537:Transfer Data to Cloud Account": [
+    "cloud-storage-creation",
+    "cloud-storage-metadata",
+    "cloud-storage-modification",
+    "network-traffic-content",
+    "snapshot-creation",
+    "snapshot-metadata",
+    "snapshot-modification"
+  ],
+  "adversaries": []
+}

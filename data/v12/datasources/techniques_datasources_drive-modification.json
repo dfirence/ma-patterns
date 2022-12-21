@@ -1,0 +1,175 @@
+[
+  {
+    "id": "attack-pattern--0f20e3cb-245b-4a61-8a91-2d93f7cb0e9b",
+    "platform": "linux|macos|windows",
+    "tid": "T1014",
+    "technique": "Rootkit",
+    "tactic": "defense-evasion",
+    "datasources": "drive-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use rootkits to hide the presence of programs, files, network connections, services, drivers, and other system components. Rootkits are programs that hide the existence of malware by intercepting/hooking and modifying operating system API calls that supply system information. (Citation: Symantec Windows Rootkits) \n\nRootkits or rootkit enabling functionality may reside at the user or kernel level in the operating system or lower, to include a hypervisor, Master Boot Record, or [System Firmware](https://attack.mitre.org/techniques/T1542/001). (Citation: Wikipedia Rootkit) Rootkits have been seen for Windows, Linux, and Mac OS X systems. (Citation: CrowdStrike Linux Rootkit) (Citation: BlackHat Mac OSX Rootkit)",
+    "technique_references": [
+      {
+        "source_name": "CrowdStrike Linux Rootkit",
+        "url": "https://www.crowdstrike.com/blog/http-iframe-injecting-linux-rootkit/",
+        "description": "Kurtz, G. (2012, November 19). HTTP iframe Injecting Linux Rootkit. Retrieved December 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "BlackHat Mac OSX Rootkit",
+        "url": "http://www.blackhat.com/docs/asia-14/materials/Tsai/WP-Asia-14-Tsai-You-Cant-See-Me-A-Mac-OS-X-Rootkit-Uses-The-Tricks-You-Havent-Known-Yet.pdf",
+        "description": "Pan, M., Tsai, S. (2014). You can’t see me: A Mac OS X Rootkit uses the tricks you haven't known yet. Retrieved December 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Symantec Windows Rootkits",
+        "url": "https://www.symantec.com/avcenter/reference/windows.rootkit.overview.pdf",
+        "description": "Symantec. (n.d.). Windows Rootkit Overview. Retrieved December 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia Rootkit",
+        "url": "https://en.wikipedia.org/wiki/Rootkit",
+        "description": "Wikipedia. (2016, June 1). Rootkit. Retrieved June 2, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "capec",
+        "url": "https://capec.mitre.org/data/definitions/552.html",
+        "description": "none",
+        "external_id": "CAPEC-552"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--7f0ca133-88c4-40c6-a62f-b3083a7fbc2e",
+    "platform": "linux|windows|network|macos",
+    "tid": "T1542",
+    "technique": "Pre-OS Boot",
+    "tactic": "defense-evasion",
+    "datasources": "drive-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1542.001",
+      "T1542.002",
+      "T1542.003",
+      "T1542.004",
+      "T1542.005"
+    ],
+    "count_subtechniques": 5,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse Pre-OS Boot mechanisms as a way to establish persistence on a system. During the booting process of a computer, firmware and various startup services are loaded before the operating system. These programs control flow of execution before the operating system takes control.(Citation: Wikipedia Booting)\n\nAdversaries may overwrite data in boot drivers or firmware such as BIOS (Basic Input/Output System) and The Unified Extensible Firmware Interface (UEFI) to persist on systems at a layer below the operating system. This can be particularly difficult to detect as malware at this level will not be detected by host software-based defenses.",
+    "technique_references": [
+      {
+        "source_name": "ITWorld Hard Disk Health Dec 2014",
+        "url": "https://www.itworld.com/article/2853992/3-tools-to-check-your-hard-drives-health-and-make-sure-its-not-already-dying-on-you.html",
+        "description": "Pinola, M. (2014, December 14). 3 tools to check your hard drive's health and make sure it's not already dying on you. Retrieved October 2, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia Booting",
+        "url": "https://en.wikipedia.org/wiki/Booting",
+        "description": "Wikipedia. (n.d.). Booting. Retrieved November 13, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--7f0ca133-88c4-40c6-a62f-b3083a7fbc2e",
+    "platform": "linux|windows|network|macos",
+    "tid": "T1542",
+    "technique": "Pre-OS Boot",
+    "tactic": "persistence",
+    "datasources": "drive-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1542.001",
+      "T1542.002",
+      "T1542.003",
+      "T1542.004",
+      "T1542.005"
+    ],
+    "count_subtechniques": 5,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse Pre-OS Boot mechanisms as a way to establish persistence on a system. During the booting process of a computer, firmware and various startup services are loaded before the operating system. These programs control flow of execution before the operating system takes control.(Citation: Wikipedia Booting)\n\nAdversaries may overwrite data in boot drivers or firmware such as BIOS (Basic Input/Output System) and The Unified Extensible Firmware Interface (UEFI) to persist on systems at a layer below the operating system. This can be particularly difficult to detect as malware at this level will not be detected by host software-based defenses.",
+    "technique_references": [
+      {
+        "source_name": "ITWorld Hard Disk Health Dec 2014",
+        "url": "https://www.itworld.com/article/2853992/3-tools-to-check-your-hard-drives-health-and-make-sure-its-not-already-dying-on-you.html",
+        "description": "Pinola, M. (2014, December 14). 3 tools to check your hard drive's health and make sure it's not already dying on you. Retrieved October 2, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia Booting",
+        "url": "https://en.wikipedia.org/wiki/Booting",
+        "description": "Wikipedia. (n.d.). Booting. Retrieved November 13, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--1988cc35-ced8-4dad-b2d1-7628488fa967",
+    "platform": "linux|macos|windows",
+    "tid": "T1561",
+    "technique": "Disk Wipe",
+    "tactic": "impact",
+    "datasources": "drive-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1561.001",
+      "T1561.002"
+    ],
+    "count_subtechniques": 2,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may wipe or corrupt raw disk data on specific systems or in large numbers in a network to interrupt availability to system and network resources. With direct write access to a disk, adversaries may attempt to overwrite portions of disk data. Adversaries may opt to wipe arbitrary portions of disk data and/or wipe disk structures like the master boot record (MBR). A complete wipe of all disk sectors may be attempted.\n\nTo maximize impact on the target organization in operations where network-wide availability interruption is the goal, malware used for wiping disks may have worm-like features to propagate across a network by leveraging additional techniques like [Valid Accounts](https://attack.mitre.org/techniques/T1078), [OS Credential Dumping](https://attack.mitre.org/techniques/T1003), and [SMB/Windows Admin Shares](https://attack.mitre.org/techniques/T1021/002).(Citation: Novetta Blockbuster Destructive Malware)",
+    "technique_references": [
+      {
+        "source_name": "Novetta Blockbuster Destructive Malware",
+        "url": "https://web.archive.org/web/20160303200515/https://operationblockbuster.com/wp-content/uploads/2016/02/Operation-Blockbuster-Destructive-Malware-Report.pdf",
+        "description": "Novetta Threat Research Group. (2016, February 24). Operation Blockbuster: Destructive Malware Report. Retrieved March 2, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Sysmon v6 May 2017",
+        "url": "https://docs.microsoft.com/sysinternals/downloads/sysmon",
+        "description": "Russinovich, M. & Garnier, T. (2017, May 22). Sysmon v6.20. Retrieved December 13, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

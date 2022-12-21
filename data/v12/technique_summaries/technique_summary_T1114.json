@@ -1,0 +1,15 @@
+{
+  "T1114:Email Collection": [
+    "application-log-content",
+    "command-execution",
+    "file-access",
+    "logon-session-creation",
+    "network-connection-creation"
+  ],
+  "malware": [],
+  "adversaries": [
+    "magic-hound",
+    "silent-librarian"
+  ],
+  "tools": []
+}

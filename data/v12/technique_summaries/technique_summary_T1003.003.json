@@ -1,0 +1,26 @@
+{
+  "adversaries": [
+    "apt28",
+    "chimera",
+    "dragonfly",
+    "fin6",
+    "fox-kitten",
+    "hafnium",
+    "ke3chang",
+    "lapsus$",
+    "menupass",
+    "mustang-panda",
+    "wizard-spider"
+  ],
+  "T1003.003:NTDS": [
+    "command-execution",
+    "file-access"
+  ],
+  "malware": [],
+  "tools": [
+    "crackmapexec",
+    "esentutl",
+    "impacket",
+    "koadic"
+  ]
+}

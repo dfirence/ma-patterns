@@ -1,0 +1,11 @@
+{
+  "adversaries": [],
+  "tools": [],
+  "T1484:Domain Policy Modification": [
+    "active-directory-object-creation",
+    "active-directory-object-deletion",
+    "active-directory-object-modification",
+    "command-execution"
+  ],
+  "malware": []
+}

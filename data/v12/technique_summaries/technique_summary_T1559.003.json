@@ -1,0 +1,8 @@
+{
+  "malware": [],
+  "tools": [],
+  "T1559.003:XPC Services": [
+    "process-access"
+  ],
+  "adversaries": []
+}

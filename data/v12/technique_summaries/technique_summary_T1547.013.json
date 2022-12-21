@@ -1,0 +1,14 @@
+{
+  "malware": [
+    "fysbis",
+    "netwire"
+  ],
+  "tools": [],
+  "adversaries": [],
+  "T1547.013:XDG Autostart Entries": [
+    "command-execution",
+    "file-creation",
+    "file-modification",
+    "process-creation"
+  ]
+}

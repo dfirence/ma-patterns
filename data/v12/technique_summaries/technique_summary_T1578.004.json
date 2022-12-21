@@ -1,0 +1,11 @@
+{
+  "tools": [],
+  "adversaries": [],
+  "T1578.004:Revert Cloud Instance": [
+    "instance-metadata",
+    "instance-modification",
+    "instance-start",
+    "instance-stop"
+  ],
+  "malware": []
+}

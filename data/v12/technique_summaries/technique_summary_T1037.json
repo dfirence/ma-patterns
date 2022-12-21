@@ -1,0 +1,15 @@
+{
+  "malware": [],
+  "adversaries": [
+    "rocke"
+  ],
+  "T1037:Boot or Logon Initialization Scripts": [
+    "active-directory-object-modification",
+    "command-execution",
+    "file-creation",
+    "file-modification",
+    "process-creation",
+    "windows-registry-key-creation"
+  ],
+  "tools": []
+}

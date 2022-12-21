@@ -1,0 +1,43 @@
+{
+  "malware": [
+    "appleseed",
+    "astaroth",
+    "derusbi",
+    "egregor",
+    "evilnum",
+    "hermeticwizard",
+    "hi-zor",
+    "more_eggs",
+    "mori",
+    "orz",
+    "qakbot",
+    "ragnar-locker",
+    "roguerobin",
+    "saint-bot",
+    "squirrelwaffle",
+    "valak",
+    "xbash"
+  ],
+  "tools": [
+    "koadic"
+  ],
+  "adversaries": [
+    "apt19",
+    "apt32",
+    "blue-mockingbird",
+    "cobalt-group",
+    "deep-panda",
+    "inception",
+    "kimsuky",
+    "lazarus-group",
+    "leviathan",
+    "ta551",
+    "wirte"
+  ],
+  "T1218.010:Regsvr32": [
+    "command-execution",
+    "module-load",
+    "network-connection-creation",
+    "process-creation"
+  ]
+}

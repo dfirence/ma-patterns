@@ -1,0 +1,12 @@
+{
+  "malware": [
+    "flame"
+  ],
+  "T1547.002:Authentication Package": [
+    "command-execution",
+    "module-load",
+    "windows-registry-key-modification"
+  ],
+  "adversaries": [],
+  "tools": []
+}

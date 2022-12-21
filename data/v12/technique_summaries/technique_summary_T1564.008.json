@@ -1,0 +1,12 @@
+{
+  "adversaries": [
+    "fin4"
+  ],
+  "T1564.008:Email Hiding Rules": [
+    "application-log-content",
+    "command-execution",
+    "file-modification"
+  ],
+  "tools": [],
+  "malware": []
+}

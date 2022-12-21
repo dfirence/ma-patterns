@@ -1,0 +1,22 @@
+{
+  "tools": [],
+  "malware": [],
+  "adversaries": [
+    "aoqin-dragon",
+    "apt29",
+    "cleaver",
+    "fin7",
+    "ke3chang",
+    "kimsuky",
+    "lazarus-group",
+    "moses-staff",
+    "sandworm-team",
+    "teamtnt",
+    "turla",
+    "unc2452"
+  ],
+  "T1587.001:Malware": [
+    "malware-content",
+    "malware-metadata"
+  ]
+}

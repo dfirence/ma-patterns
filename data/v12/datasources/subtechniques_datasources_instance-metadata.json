@@ -1,0 +1,131 @@
+[
+  {
+    "id": "attack-pattern--cf1c2504-433f-4c4e-a1f8-91de45a0318c",
+    "platform": "iaas",
+    "tid": "T1578.002",
+    "technique": "Create Cloud Instance",
+    "tactic": "defense-evasion",
+    "datasources": "instance-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "An adversary may create a new instance or virtual machine (VM) within the compute service of a cloud account to evade defenses. Creating a new instance may allow an adversary to bypass firewall rules and permissions that exist on instances currently residing within an account. An adversary may [Create Snapshot](https://attack.mitre.org/techniques/T1578/001) of one or more volumes in an account, create a new instance, mount the snapshots, and then apply a less restrictive security policy to collect [Data from Local System](https://attack.mitre.org/techniques/T1005) or for [Remote Data Staging](https://attack.mitre.org/techniques/T1074/002).(Citation: Mandiant M-Trends 2020)\n\nCreating a new instance may also allow an adversary to carry out malicious activity within an environment without affecting the execution of current running instances.",
+    "technique_references": [
+      {
+        "source_name": "Mandiant M-Trends 2020",
+        "url": "https://content.fireeye.com/m-trends/rpt-m-trends-2020",
+        "description": "Mandiant. (2020, February). M-Trends 2020. Retrieved April 24, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AWS CloudTrail Search",
+        "url": "https://aws.amazon.com/premiumsupport/knowledge-center/cloudtrail-search-api-calls/",
+        "description": "Amazon. (n.d.). Search CloudTrail logs for API calls to EC2 Instances. Retrieved June 17, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Azure Activity Logs",
+        "url": "https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/view-activity-logs",
+        "description": "Microsoft. (n.d.). View Azure activity logs. Retrieved June 17, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cloud Audit Logs",
+        "url": "https://cloud.google.com/logging/docs/audit#admin-activity",
+        "description": "Google. (n.d.). Audit Logs. Retrieved June 1, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--70857657-bd0b-4695-ad3e-b13f92cac1b4",
+    "platform": "iaas",
+    "tid": "T1578.003",
+    "technique": "Delete Cloud Instance",
+    "tactic": "defense-evasion",
+    "datasources": "instance-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "An adversary may delete a cloud instance after they have performed malicious activities in an attempt to evade detection and remove evidence of their presence.  Deleting an instance or virtual machine can remove valuable forensic artifacts and other evidence of suspicious behavior if the instance is not recoverable.\n\nAn adversary may also [Create Cloud Instance](https://attack.mitre.org/techniques/T1578/002) and later terminate the instance after achieving their objectives.(Citation: Mandiant M-Trends 2020)",
+    "technique_references": [
+      {
+        "source_name": "Mandiant M-Trends 2020",
+        "url": "https://content.fireeye.com/m-trends/rpt-m-trends-2020",
+        "description": "Mandiant. (2020, February). M-Trends 2020. Retrieved April 24, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AWS CloudTrail Search",
+        "url": "https://aws.amazon.com/premiumsupport/knowledge-center/cloudtrail-search-api-calls/",
+        "description": "Amazon. (n.d.). Search CloudTrail logs for API calls to EC2 Instances. Retrieved June 17, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Azure Activity Logs",
+        "url": "https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/view-activity-logs",
+        "description": "Microsoft. (n.d.). View Azure activity logs. Retrieved June 17, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cloud Audit Logs",
+        "url": "https://cloud.google.com/logging/docs/audit#admin-activity",
+        "description": "Google. (n.d.). Audit Logs. Retrieved June 1, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--0708ae90-d0eb-4938-9a76-d0fc94f6eec1",
+    "platform": "iaas",
+    "tid": "T1578.004",
+    "technique": "Revert Cloud Instance",
+    "tactic": "defense-evasion",
+    "datasources": "instance-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "An adversary may revert changes made to a cloud instance after they have performed malicious activities in attempt to evade detection and remove evidence of their presence. In highly virtualized environments, such as cloud-based infrastructure, this may be accomplished by restoring virtual machine (VM) or data storage snapshots through the cloud management dashboard or cloud APIs.\n\nAnother variation of this technique is to utilize temporary storage attached to the compute instance. Most cloud providers provide various types of storage including persistent, local, and/or ephemeral, with the ephemeral types often reset upon stop/restart of the VM.(Citation: Tech Republic - Restore AWS Snapshots)(Citation: Google - Restore Cloud Snapshot)",
+    "technique_references": [
+      {
+        "source_name": "Tech Republic - Restore AWS Snapshots",
+        "url": "https://www.techrepublic.com/blog/the-enterprise-cloud/backing-up-and-restoring-snapshots-on-amazon-ec2-machines/",
+        "description": "Hardiman, N.. (2012, March 20). Backing up and restoring snapshots on Amazon EC2 machines. Retrieved October 8, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Google - Restore Cloud Snapshot",
+        "url": "https://cloud.google.com/compute/docs/disks/restore-and-delete-snapshots",
+        "description": "Google. (2019, October 7). Restoring and deleting persistent disk snapshots. Retrieved October 8, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

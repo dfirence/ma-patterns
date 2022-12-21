@@ -1,0 +1,13 @@
+{
+  "adversaries": [
+    "apt32",
+    "hexane",
+    "lapsus$",
+    "magic-hound"
+  ],
+  "T1589:Gather Victim Identity Information": [
+    "network-traffic-content"
+  ],
+  "tools": [],
+  "malware": []
+}

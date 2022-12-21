@@ -1,0 +1,36 @@
+{
+  "T1136.001:Local Account": [
+    "command-execution",
+    "process-creation",
+    "user-account-creation"
+  ],
+  "malware": [
+    "calisto",
+    "carbanak",
+    "flame",
+    "goldenspy",
+    "hiddenwasp",
+    "hildegard",
+    "mis-type",
+    "s-type",
+    "servhelper",
+    "smokedham",
+    "zxshell"
+  ],
+  "tools": [
+    "empire",
+    "net",
+    "pupy"
+  ],
+  "adversaries": [
+    "apt3",
+    "apt39",
+    "apt41",
+    "dragonfly",
+    "fox-kitten",
+    "kimsuky",
+    "leafminer",
+    "magic-hound",
+    "teamtnt"
+  ]
+}

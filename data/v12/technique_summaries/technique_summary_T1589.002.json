@@ -1,0 +1,23 @@
+{
+  "adversaries": [
+    "apt32",
+    "exotic-lily",
+    "hafnium",
+    "hexane",
+    "kimsuky",
+    "lapsus$",
+    "lazarus-group",
+    "magic-hound",
+    "muddywater",
+    "sandworm-team",
+    "silent-librarian",
+    "ta551"
+  ],
+  "tools": [
+    "aadinternals"
+  ],
+  "T1589.002:Email Addresses": [
+    "network-traffic-content"
+  ],
+  "malware": []
+}

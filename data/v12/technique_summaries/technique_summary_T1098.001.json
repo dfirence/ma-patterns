@@ -1,0 +1,12 @@
+{
+  "malware": [],
+  "tools": [],
+  "adversaries": [
+    "apt29",
+    "unc2452"
+  ],
+  "T1098.001:Additional Cloud Credentials": [
+    "active-directory-object-modification",
+    "user-account-modification"
+  ]
+}

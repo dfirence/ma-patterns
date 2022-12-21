@@ -1,0 +1,14 @@
+{
+  "T1558.001:Golden Ticket": [
+    "active-directory-credential-request",
+    "logon-session-metadata"
+  ],
+  "adversaries": [
+    "ke3chang"
+  ],
+  "malware": [],
+  "tools": [
+    "empire",
+    "mimikatz"
+  ]
+}

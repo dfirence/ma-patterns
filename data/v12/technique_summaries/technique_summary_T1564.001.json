@@ -1,0 +1,58 @@
+{
+  "malware": [
+    "agent-tesla",
+    "applejeus",
+    "attor",
+    "backconfig",
+    "calisto",
+    "carberp",
+    "ccf32",
+    "clambling",
+    "cointicker",
+    "dacls",
+    "envyscout",
+    "explosive",
+    "fruitfly",
+    "ikitten",
+    "invisimole",
+    "ixeshe",
+    "komplex",
+    "lokibot",
+    "loudminer",
+    "machete",
+    "macspy",
+    "micropsia",
+    "netwire",
+    "okrum",
+    "osx_oceanlotus.d",
+    "osxshlayer",
+    "plugx",
+    "poetrat",
+    "rising-sun",
+    "slothfulmedia",
+    "sysupdate",
+    "thiefquest",
+    "wannacry",
+    "wastedlocker",
+    "xcsset"
+  ],
+  "T1564.001:Hidden Files and Directories": [
+    "command-execution",
+    "file-creation",
+    "file-metadata",
+    "process-creation"
+  ],
+  "tools": [
+    "imminent-monitor",
+    "quasarrat"
+  ],
+  "adversaries": [
+    "apt28",
+    "apt32",
+    "lazarus-group",
+    "mustang-panda",
+    "rocke",
+    "transparent-tribe",
+    "tropic-trooper"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "adversaries": [
+    "apt32",
+    "cobalt-group",
+    "earth-lusca",
+    "ember-bear",
+    "evilnum",
+    "fin6",
+    "fin7",
+    "higaisa",
+    "indrik-spider",
+    "kimsuky",
+    "lazyscripter",
+    "leafminer",
+    "molerats",
+    "muddywater",
+    "sidewinder",
+    "silence",
+    "ta505",
+    "turla"
+  ],
+  "tools": [
+    "donut"
+  ],
+  "malware": [
+    "appleseed",
+    "astaroth",
+    "avaddon",
+    "bundlore",
+    "chaes",
+    "cobalt-strike",
+    "darkwatchman",
+    "envyscout",
+    "griffon",
+    "invisimole",
+    "jrat",
+    "jss-loader",
+    "konni",
+    "metamorfo",
+    "nanhaishu",
+    "powerstats",
+    "qakbot",
+    "spicyomelette",
+    "valak",
+    "xbash"
+  ],
+  "T1059.007:JavaScript": [
+    "command-execution",
+    "module-load",
+    "process-creation",
+    "script-execution"
+  ]
+}

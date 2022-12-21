@@ -1,0 +1,13 @@
+{
+  "T1548.001:Setuid and Setgid": [
+    "command-execution",
+    "file-metadata",
+    "file-modification"
+  ],
+  "adversaries": [],
+  "malware": [
+    "exaramel-for-linux",
+    "keydnap"
+  ],
+  "tools": []
+}

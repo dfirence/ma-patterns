@@ -1,0 +1,11 @@
+{
+  "malware": [],
+  "adversaries": [],
+  "tools": [],
+  "T1491:Defacement": [
+    "application-log-content",
+    "file-creation",
+    "file-modification",
+    "network-traffic-content"
+  ]
+}

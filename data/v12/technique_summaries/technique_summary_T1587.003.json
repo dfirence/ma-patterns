@@ -1,0 +1,11 @@
+{
+  "tools": [],
+  "T1587.003:Digital Certificates": [
+    "response-content"
+  ],
+  "malware": [],
+  "adversaries": [
+    "apt29",
+    "promethium"
+  ]
+}

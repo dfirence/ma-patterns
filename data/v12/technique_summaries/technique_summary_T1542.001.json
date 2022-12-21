@@ -1,0 +1,12 @@
+{
+  "tools": [],
+  "T1542.001:System Firmware": [
+    "firmware-modification"
+  ],
+  "malware": [
+    "hacking-team-uefi-rootkit",
+    "lojax",
+    "trojan.mebromi"
+  ],
+  "adversaries": []
+}

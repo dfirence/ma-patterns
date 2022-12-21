@@ -1,0 +1,300 @@
+[
+  {
+    "id": "attack-pattern--6495ae23-3ab4-43c5-a94f-5638a2c31fd2",
+    "platform": "windows",
+    "tid": "T1070.001",
+    "technique": "Clear Windows Event Logs",
+    "tactic": "defense-evasion",
+    "datasources": "file-deletion",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may clear Windows Event Logs to hide the activity of an intrusion. Windows Event Logs are a record of a computer's alerts and notifications. There are three system-defined sources of events: System, Application, and Security, with five event types: Error, Warning, Information, Success Audit, and Failure Audit.\n\nThe event logs can be cleared with the following utility commands:\n\n* <code>wevtutil cl system</code>\n* <code>wevtutil cl application</code>\n* <code>wevtutil cl security</code>\n\nThese logs may also be cleared through other mechanisms, such as the event viewer GUI or [PowerShell](https://attack.mitre.org/techniques/T1059/001).",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Clear-EventLog",
+        "url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-eventlog",
+        "description": "Microsoft. (n.d.). Clear-EventLog. Retrieved July 2, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft EventLog.Clear",
+        "url": "https://msdn.microsoft.com/library/system.diagnostics.eventlog.clear.aspx",
+        "description": "Microsoft. (n.d.). EventLog.Clear Method (). Retrieved July 2, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft wevtutil Oct 2017",
+        "url": "https://docs.microsoft.com/windows-server/administration/windows-commands/wevtutil",
+        "description": "Plett, C. et al.. (2017, October 16). wevtutil. Retrieved July 2, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--2bce5b30-7014-4a5d-ade7-12913fe6ac36",
+    "platform": "linux|macos",
+    "tid": "T1070.002",
+    "technique": "Clear Linux or Mac System Logs",
+    "tactic": "defense-evasion",
+    "datasources": "file-deletion",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may clear system logs to hide evidence of an intrusion. macOS and Linux both keep track of system or user-initiated actions via system logs. The majority of native system logging is stored under the <code>/var/log/</code> directory. Subfolders in this directory categorize logs by their related functions, such as:(Citation: Linux Logs)\n\n* <code>/var/log/messages:</code>: General and system-related messages\n* <code>/var/log/secure</code> or <code>/var/log/auth.log</code>: Authentication logs\n* <code>/var/log/utmp</code> or <code>/var/log/wtmp</code>: Login records\n* <code>/var/log/kern.log</code>: Kernel logs\n* <code>/var/log/cron.log</code>: Crond logs\n* <code>/var/log/maillog</code>: Mail server logs\n* <code>/var/log/httpd/</code>: Web server access and error logs\n",
+    "technique_references": [
+      {
+        "source_name": "Linux Logs",
+        "url": "https://www.eurovps.com/blog/important-linux-log-files-you-must-be-monitoring/",
+        "description": "Marcel. (2018, April 19). 12 Critical Linux Log Files You Must be Monitoring. Retrieved March 29, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--3aef9463-9a7a-43ba-8957-a867e07c1e6a",
+    "platform": "linux|macos|windows|network",
+    "tid": "T1070.003",
+    "technique": "Clear Command History",
+    "tactic": "defense-evasion",
+    "datasources": "file-deletion",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "In addition to clearing system logs, an adversary may clear the command history of a compromised account to conceal the actions undertaken during an intrusion. Various command interpreters keep track of the commands users type in their terminal so that users can retrace what they've done.\n\nOn Linux and macOS, these command histories can be accessed in a few different ways. While logged in, this command history is tracked in a file pointed to by the environment variable <code>HISTFILE</code>. When a user logs off a system, this information is flushed to a file in the user's home directory called <code>~/.bash_history</code>. The benefit of this is that it allows users to go back to commands they've used before in different sessions.\n\nAdversaries may delete their commands from these logs by manually clearing the history (<code>history -c</code>) or deleting the bash history file <code>rm ~/.bash_history</code>.  \n\nAdversaries may also leverage a [Network Device CLI](https://attack.mitre.org/techniques/T1059/008) on network devices to clear command history data (<code>clear logging</code> and/or <code>clear history</code>).(Citation: US-CERT-TA18-106A)\n\nOn Windows hosts, PowerShell has two different command history providers: the built-in history and the command history managed by the <code>PSReadLine</code> module. The built-in history only tracks the commands used in the current session. This command history is not available to other sessions and is deleted when the session ends.\n\nThe <code>PSReadLine</code> command history tracks the commands used in all PowerShell sessions and writes them to a file (<code>$env:APPDATA\\Microsoft\\Windows\\PowerShell\\PSReadLine\\ConsoleHost_history.txt</code> by default). This history file is available to all sessions and contains all past history since the file is not deleted when the session ends.(Citation: Microsoft PowerShell Command History)\n\nAdversaries may run the PowerShell command <code>Clear-History</code> to flush the entire command history from a current PowerShell session. This, however, will not delete/flush the <code>ConsoleHost_history.txt</code> file. Adversaries may also delete the <code>ConsoleHost_history.txt</code> file or edit its contents to hide PowerShell commands they have run.(Citation: Sophos PowerShell command audit)(Citation: Sophos PowerShell Command History Forensics)",
+    "technique_references": [
+      {
+        "source_name": "Sophos PowerShell command audit",
+        "url": "https://community.sophos.com/products/intercept/early-access-program/f/live-discover-response-queries/121529/live-discover---powershell-command-audit",
+        "description": "jak. (2020, June 27). Live Discover - PowerShell command audit. Retrieved August 21, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft PowerShell Command History",
+        "url": "https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_history?view=powershell-7",
+        "description": "Microsoft. (2020, May 13). About History. Retrieved September 4, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT-TA18-106A",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA18-106A",
+        "description": "US-CERT. (2018, April 20). Alert (TA18-106A) Russian State-Sponsored Cyber Actors Targeting Network Infrastructure Devices. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sophos PowerShell Command History Forensics",
+        "url": "https://community.sophos.com/products/malware/b/blog/posts/powershell-command-history-forensics",
+        "description": "Vikas, S. (2020, August 26). PowerShell Command History Forensics. Retrieved September 4, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d63a3fb8-9452-4e9d-a60a-54be68d5998c",
+    "platform": "linux|macos|windows",
+    "tid": "T1070.004",
+    "technique": "File Deletion",
+    "tactic": "defense-evasion",
+    "datasources": "file-deletion",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may delete files left behind by the actions of their intrusion activity. Malware, tools, or other non-native files dropped or created on a system by an adversary (ex: [Ingress Tool Transfer](https://attack.mitre.org/techniques/T1105)) may leave traces to indicate to what was done within a network and how. Removal of these files can occur during an intrusion, or as part of a post-intrusion process to minimize the adversary's footprint.\n\nThere are tools available from the host operating system to perform cleanup, but adversaries may use other tools as well.(Citation: Microsoft SDelete July 2016) Examples of built-in [Command and Scripting Interpreter](https://attack.mitre.org/techniques/T1059) functions include <code>del</code> on Windows and <code>rm</code> or <code>unlink</code> on Linux and macOS.",
+    "technique_references": [
+      {
+        "source_name": "Microsoft SDelete July 2016",
+        "url": "https://docs.microsoft.com/en-us/sysinternals/downloads/sdelete",
+        "description": "Russinovich, M. (2016, July 4). SDelete v2.0. Retrieved February 8, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--438c967d-3996-4870-bfc2-3954752a1927",
+    "platform": "linux|macos|windows|office-365|google-workspace",
+    "tid": "T1070.008",
+    "technique": "Clear Mailbox Data",
+    "tactic": "defense-evasion",
+    "datasources": "file-deletion",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify mail application data to remove evidence of their activity. Email applications allow users and other programs to export and delete mailbox data via command line tools or use of APIs. Mail application data can be emails or logs generated by the application or operating system, such as export requests. \n\nAdversaries may manipulate email mailbox data to remove logs and artifacts, such as evidence of [Phishing](https://attack.mitre.org/techniques/T1566)/[Internal Spearphishing](https://attack.mitre.org/techniques/T1534), [Email Collection](https://attack.mitre.org/techniques/T1114), [Mail Protocols](https://attack.mitre.org/techniques/T1071/003) for command and control, or email-based exfiltration such as [Exfiltration Over Alternative Protocol](https://attack.mitre.org/techniques/T1048). For example, to remove evidence on Exchange servers adversaries have used the <code>ExchangePowerShell</code> [PowerShell](https://attack.mitre.org/techniques/T1059/001) module, including <code>Remove-MailboxExportRequest</code> to remove evidence of mailbox exports.(Citation: Volexity SolarWinds)(Citation: ExchangePowerShell Module) On Linux and macOS, adversaries may also delete emails through a command line utility called <code>mail</code>  or use [AppleScript](https://attack.mitre.org/techniques/T1059/002) to interact with APIs on macOS.(Citation: Cybereason Cobalt Kitty 2017)(Citation: mailx man page)",
+    "technique_references": [
+      {
+        "source_name": "Volexity SolarWinds",
+        "url": "https://www.volexity.com/blog/2020/12/14/dark-halo-leverages-solarwinds-compromise-to-breach-organizations/",
+        "description": "Cash, D. et al. (2020, December 14). Dark Halo Leverages SolarWinds Compromise to Breach Organizations. Retrieved December 29, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cybereason Cobalt Kitty 2017",
+        "url": "https://cdn2.hubspot.net/hubfs/3354902/Cybereason%20Labs%20Analysis%20Operation%20Cobalt%20Kitty.pdf",
+        "description": "Dahan, A. (2017). Operation Cobalt Kitty. Retrieved December 27, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "mailx man page",
+        "url": "https://man7.org/linux/man-pages/man1/mailx.1p.html",
+        "description": "Michael Kerrisk. (2021, August 27). mailx(1p) — Linux manual page. Retrieved June 10, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ExchangePowerShell Module",
+        "url": "https://docs.microsoft.com/en-us/powershell/module/exchange/?view=exchange-ps#mailboxes",
+        "description": "Microsoft. (2017, September 25). ExchangePowerShell. Retrieved June 10, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d2c4e5ea-dbdf-4113-805a-b1e2a337fb33",
+    "platform": "linux|macos|windows",
+    "tid": "T1070.009",
+    "technique": "Clear Persistence",
+    "tactic": "defense-evasion",
+    "datasources": "file-deletion",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may clear artifacts associated with previously established persistence on a host system to remove evidence of their activity. This may involve various actions, such as removing services, deleting executables, [Modify Registry](https://attack.mitre.org/techniques/T1112), [Plist File Modification](https://attack.mitre.org/techniques/T1647), or other methods of cleanup to prevent defenders from collecting evidence of their persistent presence.(Citation: Cylance Dust Storm)\n\nIn some instances, artifacts of persistence may also be removed once an adversary’s persistence is executed in order to prevent errors with the new instance of the malware.(Citation: NCC Group Team9 June 2020)",
+    "technique_references": [
+      {
+        "source_name": "Cylance Dust Storm",
+        "url": "https://s7d2.scene7.com/is/content/cylance/prod/cylance-web/en-us/resources/knowledge-center/resource-library/reports/Op_Dust_Storm_Report.pdf",
+        "description": "Gross, J. (2016, February 23). Operation Dust Storm. Retrieved December 22, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NCC Group Team9 June 2020",
+        "url": "https://research.nccgroup.com/2020/06/02/in-depth-analysis-of-the-new-team9-malware-family/",
+        "description": "Pantazopoulos, N. (2020, June 2). In-depth analysis of the new Team9 malware family. Retrieved December 1, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--1cfcb312-b8d7-47a4-b560-4b16cc677292",
+    "platform": "linux|macos|windows",
+    "tid": "T1565.001",
+    "technique": "Stored Data Manipulation",
+    "tactic": "impact",
+    "datasources": "file-deletion",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may insert, delete, or manipulate data at rest in order to influence external outcomes or hide activity, thus threatening the integrity of the data.(Citation: FireEye APT38 Oct 2018)(Citation: DOJ Lazarus Sony 2018) By manipulating stored data, adversaries may attempt to affect a business process, organizational understanding, and decision making.\n\nStored data could include a variety of file formats, such as Office files, databases, stored emails, and custom file formats. The type of modification and the impact it will have depends on the type of data as well as the goals and objectives of the adversary. For complex systems, an adversary would likely need special expertise and possibly access to specialized software related to the system that would typically be gained through a prolonged information gathering campaign in order to have the desired impact.",
+    "technique_references": [
+      {
+        "source_name": "DOJ Lazarus Sony 2018",
+        "url": "https://www.justice.gov/opa/press-release/file/1092091/download",
+        "description": "Department of Justice. (2018, September 6). Criminal Complaint - United States of America v. PARK JIN HYOK. Retrieved March 29, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye APT38 Oct 2018",
+        "url": "https://content.fireeye.com/apt/rpt-apt38",
+        "description": "FireEye. (2018, October 03). APT38: Un-usual Suspects. Retrieved November 6, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--32ad5c86-2bcf-47d8-8fdc-d7f3d79a7490",
+    "platform": "linux|macos|windows",
+    "tid": "T1565.003",
+    "technique": "Runtime Data Manipulation",
+    "tactic": "impact",
+    "datasources": "file-deletion",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify systems in order to manipulate the data as it is accessed and displayed to an end user, thus threatening the integrity of the data.(Citation: FireEye APT38 Oct 2018)(Citation: DOJ Lazarus Sony 2018) By manipulating runtime data, adversaries may attempt to affect a business process, organizational understanding, and decision making.\n\nAdversaries may alter application binaries used to display data in order to cause runtime manipulations. Adversaries may also conduct [Change Default File Association](https://attack.mitre.org/techniques/T1546/001) and [Masquerading](https://attack.mitre.org/techniques/T1036) to cause a similar effect. The type of modification and the impact it will have depends on the target application and process as well as the goals and objectives of the adversary. For complex systems, an adversary would likely need special expertise and possibly access to specialized software related to the system that would typically be gained through a prolonged information gathering campaign in order to have the desired impact.",
+    "technique_references": [
+      {
+        "source_name": "FireEye APT38 Oct 2018",
+        "url": "https://content.fireeye.com/apt/rpt-apt38",
+        "description": "FireEye. (2018, October 03). APT38: Un-usual Suspects. Retrieved November 6, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "DOJ Lazarus Sony 2018",
+        "url": "https://www.justice.gov/opa/press-release/file/1092091/download",
+        "description": "Department of Justice. (2018, September 6). Criminal Complaint - United States of America v. PARK JIN HYOK. Retrieved March 29, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator|root|system",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

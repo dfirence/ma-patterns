@@ -1,0 +1,28 @@
+{
+  "adversaries": [
+    "apt32"
+  ],
+  "tools": [
+    "esentutl",
+    "expand"
+  ],
+  "malware": [
+    "anchor",
+    "astaroth",
+    "bitpaymer",
+    "gazer",
+    "lojax",
+    "powerduke",
+    "powersource",
+    "regin",
+    "valak",
+    "wastedlocker",
+    "zeroaccess"
+  ],
+  "T1564.004:NTFS File Attributes": [
+    "command-execution",
+    "file-metadata",
+    "file-modification",
+    "os-api-execution"
+  ]
+}

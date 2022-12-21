@@ -1,0 +1,51 @@
+{
+  "T1087.002:Domain Account": [
+    "command-execution",
+    "group-enumeration",
+    "network-traffic-content",
+    "os-api-execution",
+    "process-creation"
+  ],
+  "malware": [
+    "bankshot",
+    "bazar",
+    "boombox",
+    "cobalt-strike",
+    "iceapple",
+    "icedid",
+    "osinfo",
+    "powruner",
+    "sorefang",
+    "stuxnet",
+    "sykipot",
+    "valak"
+  ],
+  "tools": [
+    "adfind",
+    "bloodhound",
+    "crackmapexec",
+    "dsquery",
+    "empire",
+    "net",
+    "poshc2",
+    "silenttrinity"
+  ],
+  "adversaries": [
+    "apt29",
+    "bronze-butler",
+    "chimera",
+    "dragonfly",
+    "fin6",
+    "fox-kitten",
+    "ke3chang",
+    "lapsus$",
+    "lazarus-group",
+    "menupass",
+    "muddywater",
+    "oilrig",
+    "poseidon-group",
+    "sandworm-team",
+    "turla",
+    "wizard-spider"
+  ]
+}

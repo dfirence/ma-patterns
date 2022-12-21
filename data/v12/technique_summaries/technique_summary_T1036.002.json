@@ -1,0 +1,14 @@
+{
+  "malware": [],
+  "tools": [],
+  "adversaries": [
+    "blacktech",
+    "bronze-butler",
+    "ferocious-kitten",
+    "ke3chang",
+    "scarlet-mimic"
+  ],
+  "T1036.002:Right-to-Left Override": [
+    "file-metadata"
+  ]
+}

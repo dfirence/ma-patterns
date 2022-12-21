@@ -1,0 +1,13 @@
+{
+  "T1136:Create Account": [
+    "command-execution",
+    "process-creation",
+    "user-account-creation"
+  ],
+  "malware": [],
+  "adversaries": [
+    "indrik-spider",
+    "sandworm-team"
+  ],
+  "tools": []
+}

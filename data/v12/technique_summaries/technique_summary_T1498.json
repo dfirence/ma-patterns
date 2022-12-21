@@ -1,0 +1,13 @@
+{
+  "T1498:Network Denial of Service": [
+    "host-status",
+    "network-traffic-flow"
+  ],
+  "malware": [
+    "lucifer"
+  ],
+  "tools": [],
+  "adversaries": [
+    "apt28"
+  ]
+}

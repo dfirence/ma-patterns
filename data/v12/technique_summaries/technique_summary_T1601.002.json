@@ -1,0 +1,8 @@
+{
+  "T1601.002:Downgrade System Image": [
+    "file-modification"
+  ],
+  "tools": [],
+  "adversaries": [],
+  "malware": []
+}

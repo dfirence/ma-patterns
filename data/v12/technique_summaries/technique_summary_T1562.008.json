@@ -1,0 +1,9 @@
+{
+  "tools": [],
+  "T1562.008:Disable Cloud Logs": [
+    "cloud-service-disable",
+    "cloud-service-modification"
+  ],
+  "malware": [],
+  "adversaries": []
+}

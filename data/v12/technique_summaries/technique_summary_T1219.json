@@ -1,0 +1,31 @@
+{
+  "tools": [],
+  "adversaries": [
+    "carbanak",
+    "cobalt-group",
+    "darkvishnya",
+    "evilnum",
+    "gold-southfield",
+    "kimsuky",
+    "muddywater",
+    "mustang-panda",
+    "rtm",
+    "sandworm-team",
+    "teamtnt",
+    "thrip"
+  ],
+  "malware": [
+    "carbanak",
+    "dridex",
+    "egregor",
+    "hildegard",
+    "rtm",
+    "trickbot"
+  ],
+  "T1219:Remote Access Software": [
+    "network-connection-creation",
+    "network-traffic-content",
+    "network-traffic-flow",
+    "process-creation"
+  ]
+}

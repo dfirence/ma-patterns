@@ -1,0 +1,19 @@
+{
+  "tools": [
+    "pcshare"
+  ],
+  "malware": [
+    "badnews",
+    "gelsemium",
+    "netwire",
+    "regin",
+    "windtail"
+  ],
+  "adversaries": [
+    "apt37",
+    "windshift"
+  ],
+  "T1036.001:Invalid Code Signature": [
+    "file-metadata"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "adversaries": [
+    "promethium"
+  ],
+  "tools": [],
+  "malware": [],
+  "T1205.001:Port Knocking": [
+    "network-connection-creation",
+    "network-traffic-flow"
+  ]
+}

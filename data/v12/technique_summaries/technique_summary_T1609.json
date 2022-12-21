@@ -1,0 +1,17 @@
+{
+  "tools": [
+    "peirates"
+  ],
+  "malware": [
+    "hildegard",
+    "kinsing",
+    "siloscape"
+  ],
+  "T1609:Container Administration Command": [
+    "command-execution",
+    "process-creation"
+  ],
+  "adversaries": [
+    "teamtnt"
+  ]
+}

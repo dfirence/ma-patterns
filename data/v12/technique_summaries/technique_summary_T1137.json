@@ -1,0 +1,18 @@
+{
+  "tools": [],
+  "malware": [],
+  "T1137:Office Application Startup": [
+    "application-log-content",
+    "command-execution",
+    "file-creation",
+    "file-modification",
+    "module-load",
+    "process-creation",
+    "windows-registry-key-creation",
+    "windows-registry-key-modification"
+  ],
+  "adversaries": [
+    "apt32",
+    "gamaredon-group"
+  ]
+}

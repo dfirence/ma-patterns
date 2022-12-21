@@ -1,0 +1,14 @@
+{
+  "malware": [],
+  "tools": [
+    "aadinternals"
+  ],
+  "adversaries": [
+    "apt29"
+  ],
+  "T1098.005:Device Registration": [
+    "active-directory-object-creation",
+    "application-log-content",
+    "user-account-modification"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "tools": [],
+  "T1593:Search Open Websites/Domains": [
+    "none"
+  ],
+  "adversaries": [
+    "sandworm-team"
+  ],
+  "malware": []
+}

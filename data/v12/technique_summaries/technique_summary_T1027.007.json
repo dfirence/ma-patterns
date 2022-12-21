@@ -1,0 +1,15 @@
+{
+  "T1027.007:Dynamic API Resolution": [
+    "file-metadata",
+    "module-load",
+    "os-api-execution"
+  ],
+  "adversaries": [
+    "lazarus-group"
+  ],
+  "malware": [
+    "bazar",
+    "pteranodon"
+  ],
+  "tools": []
+}

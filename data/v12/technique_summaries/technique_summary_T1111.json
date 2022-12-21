@@ -1,0 +1,16 @@
+{
+  "adversaries": [
+    "chimera",
+    "kimsuky",
+    "lapsus$"
+  ],
+  "T1111:Multi-Factor Authentication Interception": [
+    "driver-load",
+    "os-api-execution",
+    "windows-registry-key-modification"
+  ],
+  "tools": [],
+  "malware": [
+    "sykipot"
+  ]
+}

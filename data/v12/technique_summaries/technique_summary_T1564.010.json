@@ -1,0 +1,11 @@
+{
+  "tools": [],
+  "adversaries": [],
+  "T1564.010:Process Argument Spoofing": [
+    "process-creation"
+  ],
+  "malware": [
+    "cobalt-strike",
+    "sombrat"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "malware": [
+    "agent-tesla",
+    "iceapple",
+    "trickbot",
+    "valak"
+  ],
+  "adversaries": [
+    "apt32"
+  ],
+  "tools": [
+    "powersploit",
+    "reg"
+  ],
+  "T1552.002:Credentials in Registry": [
+    "command-execution",
+    "process-creation",
+    "windows-registry-key-access"
+  ]
+}

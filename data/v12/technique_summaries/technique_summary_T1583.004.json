@@ -1,0 +1,15 @@
+{
+  "tools": [],
+  "T1583.004:Server": [
+    "response-content",
+    "response-metadata"
+  ],
+  "malware": [],
+  "adversaries": [
+    "earth-lusca",
+    "gallium",
+    "kimsuky",
+    "lazarus-group",
+    "sandworm-team"
+  ]
+}

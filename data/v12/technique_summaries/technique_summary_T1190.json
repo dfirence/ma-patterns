@@ -1,0 +1,41 @@
+{
+  "adversaries": [
+    "apt28",
+    "apt29",
+    "apt39",
+    "apt41",
+    "axiom",
+    "backdoordiplomacy",
+    "blacktech",
+    "blue-mockingbird",
+    "dragonfly",
+    "earth-lusca",
+    "fox-kitten",
+    "gallium",
+    "gold-southfield",
+    "hafnium",
+    "ke3chang",
+    "kimsuky",
+    "magic-hound",
+    "menupass",
+    "moses-staff",
+    "muddywater",
+    "rocke",
+    "threat-group-3390",
+    "unc2452",
+    "volatile-cedar"
+  ],
+  "T1190:Exploit Public-Facing Application": [
+    "application-log-content",
+    "network-traffic-content"
+  ],
+  "malware": [
+    "siloscape",
+    "sorefang",
+    "zxshell"
+  ],
+  "tools": [
+    "havij",
+    "sqlmap"
+  ]
+}

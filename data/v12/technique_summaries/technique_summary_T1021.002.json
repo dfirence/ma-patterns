@@ -1,0 +1,56 @@
+{
+  "malware": [
+    "anchor",
+    "blackenergy",
+    "cobalt-strike",
+    "conficker",
+    "conti",
+    "diavol",
+    "duqu",
+    "emotet",
+    "hermeticwizard",
+    "kwampirs",
+    "lucifer",
+    "net-crawler",
+    "notpetya",
+    "olympic-destroyer",
+    "regin",
+    "ryuk",
+    "shamoon",
+    "stuxnet",
+    "zox",
+    "zwshell"
+  ],
+  "adversaries": [
+    "apt28",
+    "apt29",
+    "apt3",
+    "apt32",
+    "apt39",
+    "apt41",
+    "blue-mockingbird",
+    "chimera",
+    "deep-panda",
+    "fin8",
+    "fox-kitten",
+    "ke3chang",
+    "lazarus-group",
+    "moses-staff",
+    "orangeworm",
+    "sandworm-team",
+    "threat-group-1314",
+    "turla",
+    "wizard-spider"
+  ],
+  "tools": [
+    "net",
+    "psexec"
+  ],
+  "T1021.002:SMB/Windows Admin Shares": [
+    "command-execution",
+    "logon-session-creation",
+    "network-connection-creation",
+    "network-share-access",
+    "network-traffic-flow"
+  ]
+}

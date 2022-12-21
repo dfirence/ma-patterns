@@ -1,0 +1,17 @@
+{
+  "malware": [
+    "gelsemium",
+    "pipemon"
+  ],
+  "tools": [],
+  "adversaries": [
+    "earth-lusca"
+  ],
+  "T1547.012:Print Processors": [
+    "driver-load",
+    "file-creation",
+    "module-load",
+    "os-api-execution",
+    "windows-registry-key-modification"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "malware": [
+    "calisto",
+    "darkwatchman",
+    "dtrack",
+    "lizar",
+    "machete",
+    "mobileorder",
+    "powerless",
+    "sugardump"
+  ],
+  "adversaries": [
+    "apt38",
+    "chimera",
+    "fox-kitten"
+  ],
+  "T1217:Browser Bookmark Discovery": [
+    "command-execution",
+    "file-access",
+    "process-creation"
+  ],
+  "tools": [
+    "empire"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "T1069.003:Cloud Groups": [
+    "application-log-content",
+    "command-execution",
+    "group-enumeration",
+    "group-metadata",
+    "process-creation"
+  ],
+  "malware": [],
+  "tools": [
+    "aadinternals",
+    "roadtools"
+  ],
+  "adversaries": []
+}

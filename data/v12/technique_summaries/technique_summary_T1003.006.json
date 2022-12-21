@@ -1,0 +1,17 @@
+{
+  "malware": [],
+  "T1003.006:DCSync": [
+    "active-directory-object-access",
+    "network-traffic-content",
+    "network-traffic-flow"
+  ],
+  "tools": [
+    "mimikatz"
+  ],
+  "adversaries": [
+    "apt29",
+    "earth-lusca",
+    "lapsus$",
+    "unc2452"
+  ]
+}

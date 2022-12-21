@@ -1,0 +1,9 @@
+{
+  "tools": [],
+  "malware": [],
+  "T1498.001:Direct Network Flood": [
+    "host-status",
+    "network-traffic-flow"
+  ],
+  "adversaries": []
+}

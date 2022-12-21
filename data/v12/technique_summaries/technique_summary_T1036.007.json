@@ -1,0 +1,14 @@
+{
+  "malware": [
+    "bazar",
+    "milan"
+  ],
+  "tools": [],
+  "adversaries": [
+    "mustang-panda"
+  ],
+  "T1036.007:Double File Extension": [
+    "file-creation",
+    "file-metadata"
+  ]
+}

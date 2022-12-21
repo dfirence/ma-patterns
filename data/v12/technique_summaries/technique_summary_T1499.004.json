@@ -1,0 +1,13 @@
+{
+  "tools": [],
+  "malware": [
+    "industroyer"
+  ],
+  "T1499.004:Application or System Exploitation": [
+    "application-log-content",
+    "host-status",
+    "network-traffic-content",
+    "network-traffic-flow"
+  ],
+  "adversaries": []
+}

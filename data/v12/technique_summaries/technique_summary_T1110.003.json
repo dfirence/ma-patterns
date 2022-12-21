@@ -1,0 +1,25 @@
+{
+  "adversaries": [
+    "apt28",
+    "apt29",
+    "apt33",
+    "chimera",
+    "hexane",
+    "lazarus-group",
+    "leafminer",
+    "sandworm-team",
+    "silent-librarian"
+  ],
+  "malware": [
+    "bad-rabbit",
+    "linux-rabbit"
+  ],
+  "T1110.003:Password Spraying": [
+    "application-log-content",
+    "user-account-authentication"
+  ],
+  "tools": [
+    "crackmapexec",
+    "mailsniper"
+  ]
+}

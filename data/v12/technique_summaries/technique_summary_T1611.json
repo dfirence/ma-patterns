@@ -1,0 +1,20 @@
+{
+  "T1611:Escape to Host": [
+    "container-creation",
+    "kernel-module-load",
+    "os-api-execution",
+    "process-creation",
+    "volume-modification"
+  ],
+  "malware": [
+    "doki",
+    "hildegard",
+    "siloscape"
+  ],
+  "adversaries": [
+    "teamtnt"
+  ],
+  "tools": [
+    "peirates"
+  ]
+}

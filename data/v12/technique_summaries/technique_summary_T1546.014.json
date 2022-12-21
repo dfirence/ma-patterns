@@ -1,0 +1,11 @@
+{
+  "tools": [],
+  "adversaries": [],
+  "malware": [],
+  "T1546.014:Emond": [
+    "command-execution",
+    "file-creation",
+    "file-modification",
+    "process-creation"
+  ]
+}

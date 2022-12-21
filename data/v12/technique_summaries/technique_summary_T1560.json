@@ -1,0 +1,61 @@
+{
+  "malware": [
+    "advstoreshell",
+    "agent-tesla",
+    "appleseed",
+    "aria-body",
+    "backdoor.oldrea",
+    "bluelight",
+    "bumblebee",
+    "cadelspy",
+    "chrommme",
+    "daserf",
+    "dtrack",
+    "emotet",
+    "epic",
+    "exaramel-for-windows",
+    "felixroot",
+    "gold-dragon",
+    "kessel",
+    "konni",
+    "lightneuron",
+    "lizar",
+    "lurid",
+    "machete",
+    "netwire",
+    "pillowmint",
+    "powerless",
+    "prikormka",
+    "proton",
+    "remexi",
+    "runningrat",
+    "taintedscribe",
+    "vermin",
+    "wellmail",
+    "xcsset",
+    "zebrocy"
+  ],
+  "T1560:Archive Collected Data": [
+    "command-execution",
+    "file-creation",
+    "process-creation",
+    "script-execution"
+  ],
+  "tools": [
+    "bloodhound",
+    "empire",
+    "shimratreporter"
+  ],
+  "adversaries": [
+    "apt28",
+    "apt32",
+    "axiom",
+    "dragonfly",
+    "fin6",
+    "ke3chang",
+    "lazarus-group",
+    "leviathan",
+    "menupass",
+    "patchwork"
+  ]
+}

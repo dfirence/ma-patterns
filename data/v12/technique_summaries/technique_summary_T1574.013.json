@@ -1,0 +1,12 @@
+{
+  "tools": [],
+  "malware": [
+    "finfisher"
+  ],
+  "adversaries": [
+    "lazarus-group"
+  ],
+  "T1574.013:KernelCallbackTable": [
+    "os-api-execution"
+  ]
+}

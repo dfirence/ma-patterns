@@ -1,0 +1,18 @@
+{
+  "T1218.001:Compiled HTML File": [
+    "command-execution",
+    "file-creation",
+    "process-creation"
+  ],
+  "tools": [],
+  "malware": [
+    "astaroth"
+  ],
+  "adversaries": [
+    "apt38",
+    "apt41",
+    "dark-caracal",
+    "oilrig",
+    "silence"
+  ]
+}

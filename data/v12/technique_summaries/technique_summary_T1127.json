@@ -1,0 +1,9 @@
+{
+  "malware": [],
+  "tools": [],
+  "adversaries": [],
+  "T1127:Trusted Developer Utilities Proxy Execution": [
+    "command-execution",
+    "process-creation"
+  ]
+}

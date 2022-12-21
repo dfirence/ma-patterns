@@ -1,0 +1,41 @@
+{
+  "tools": [
+    "bitsadmin",
+    "ftp",
+    "rclone"
+  ],
+  "adversaries": [
+    "apt32",
+    "apt33",
+    "fin6",
+    "fin8",
+    "lazarus-group",
+    "oilrig",
+    "thrip",
+    "wizard-spider"
+  ],
+  "malware": [
+    "agent-tesla",
+    "brave-prince",
+    "carbon",
+    "ccf32",
+    "charmpower",
+    "cherry-picker",
+    "cookieminer",
+    "coraldeck",
+    "cosmicduke",
+    "dok",
+    "kessel",
+    "konni",
+    "poetrat",
+    "remsec",
+    "windtail"
+  ],
+  "T1048.003:Exfiltration Over Unencrypted Non-C2 Protocol": [
+    "command-execution",
+    "file-access",
+    "network-connection-creation",
+    "network-traffic-content",
+    "network-traffic-flow"
+  ]
+}

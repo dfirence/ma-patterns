@@ -1,0 +1,41 @@
+{
+  "malware": [
+    "dustysky",
+    "hermeticwizard",
+    "lockergoga",
+    "lucifer",
+    "netwalker",
+    "olympic-destroyer",
+    "shamoon",
+    "stuxnet",
+    "wannacry"
+  ],
+  "adversaries": [
+    "aoqin-dragon",
+    "apt32",
+    "chimera",
+    "fin10",
+    "gallium",
+    "sandworm-team",
+    "turla",
+    "wizard-spider"
+  ],
+  "tools": [
+    "bitsadmin",
+    "cmd",
+    "esentutl",
+    "expand",
+    "ftp",
+    "psexec"
+  ],
+  "T1570:Lateral Tool Transfer": [
+    "command-execution",
+    "file-creation",
+    "file-metadata",
+    "named-pipe-metadata",
+    "network-share-access",
+    "network-traffic-content",
+    "network-traffic-flow",
+    "process-creation"
+  ]
+}

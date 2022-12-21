@@ -1,0 +1,12 @@
+{
+  "tools": [],
+  "T1587:Develop Capabilities": [
+    "malware-content",
+    "malware-metadata",
+    "response-content"
+  ],
+  "adversaries": [
+    "kimsuky"
+  ],
+  "malware": []
+}

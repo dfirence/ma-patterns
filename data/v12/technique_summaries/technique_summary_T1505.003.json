@@ -1,0 +1,43 @@
+{
+  "adversaries": [
+    "apt28",
+    "apt29",
+    "apt32",
+    "apt38",
+    "apt39",
+    "backdoordiplomacy",
+    "deep-panda",
+    "dragonfly",
+    "fox-kitten",
+    "gallium",
+    "hafnium",
+    "kimsuky",
+    "leviathan",
+    "magic-hound",
+    "moses-staff",
+    "oilrig",
+    "sandworm-team",
+    "temp.veles",
+    "threat-group-3390",
+    "tonto-team",
+    "tropic-trooper",
+    "volatile-cedar"
+  ],
+  "tools": [],
+  "T1505.003:Web Shell": [
+    "application-log-content",
+    "file-creation",
+    "file-modification",
+    "network-traffic-content",
+    "network-traffic-flow",
+    "process-creation"
+  ],
+  "malware": [
+    "aspxspy",
+    "china-chopper",
+    "owaauth",
+    "p.a.s.-webshell",
+    "seasharpee",
+    "supernova"
+  ]
+}

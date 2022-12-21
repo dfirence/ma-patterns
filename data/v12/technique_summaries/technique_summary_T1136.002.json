@@ -1,0 +1,19 @@
+{
+  "tools": [
+    "empire",
+    "net",
+    "psexec",
+    "pupy"
+  ],
+  "malware": [],
+  "T1136.002:Domain Account": [
+    "command-execution",
+    "process-creation",
+    "user-account-creation"
+  ],
+  "adversaries": [
+    "gallium",
+    "hafnium",
+    "sandworm-team"
+  ]
+}

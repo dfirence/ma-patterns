@@ -1,0 +1,14 @@
+{
+  "T1547.015:Login Items": [
+    "file-creation",
+    "file-modification",
+    "process-creation"
+  ],
+  "adversaries": [],
+  "tools": [],
+  "malware": [
+    "dok",
+    "green-lambert",
+    "netwire"
+  ]
+}

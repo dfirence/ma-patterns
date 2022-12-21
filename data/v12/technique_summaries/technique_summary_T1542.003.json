@@ -1,0 +1,19 @@
+{
+  "adversaries": [
+    "apt28",
+    "apt41",
+    "lazarus-group"
+  ],
+  "tools": [],
+  "T1542.003:Bootkit": [
+    "drive-modification"
+  ],
+  "malware": [
+    "bootrash",
+    "carberp",
+    "finfisher",
+    "rockboot",
+    "trickbot",
+    "whispergate"
+  ]
+}

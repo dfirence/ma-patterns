@@ -1,0 +1,13 @@
+{
+  "tools": [],
+  "malware": [],
+  "adversaries": [
+    "blue-mockingbird"
+  ],
+  "T1574.012:COR_PROFILER": [
+    "command-execution",
+    "module-load",
+    "process-creation",
+    "windows-registry-key-modification"
+  ]
+}

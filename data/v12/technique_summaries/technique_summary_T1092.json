@@ -1,0 +1,14 @@
+{
+  "malware": [
+    "chopstick",
+    "usbstealer"
+  ],
+  "adversaries": [
+    "apt28"
+  ],
+  "T1092:Communication Through Removable Media": [
+    "drive-access",
+    "drive-creation"
+  ],
+  "tools": []
+}

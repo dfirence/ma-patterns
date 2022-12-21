@@ -1,0 +1,11 @@
+{
+  "adversaries": [
+    "axiom",
+    "hexane"
+  ],
+  "malware": [],
+  "tools": [],
+  "T1583.002:DNS Server": [
+    "none"
+  ]
+}
