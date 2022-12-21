@@ -1,0 +1,170 @@
+[
+  [
+    "fin6",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[FIN6] has used [Windows Credential Editor] for credential dumping."
+  ],
+  [
+    "fin6",
+    "T1003.003",
+    "NTDS",
+    "command-execution|file-access",
+    "T1003.003::[FIN6] has used Metasploit’s [PsExec] NTDSGRAB module to obtain a copy of the victim's Active Directory database."
+  ],
+  [
+    "fin6",
+    "T1021.001",
+    "Remote Desktop Protocol",
+    "logon-session-creation|network-connection-creation|network-traffic-flow|process-creation",
+    "T1021.001::[FIN6] used RDP to move laterally in victim networks."
+  ],
+  [
+    "fin6",
+    "T1036.004",
+    "Masquerade Task or Service",
+    "command-execution|scheduled-job-metadata|scheduled-job-modification|service-creation|service-metadata",
+    "T1036.004::[FIN6] has renamed the \"psexec\" service name to \"mstdc\" to masquerade as a legitimate Windows service."
+  ],
+  [
+    "fin6",
+    "T1048.003",
+    "Exfiltration Over Unencrypted Non-C2 Protocol",
+    "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1048.003::[FIN6] has sent stolen payment card data to remote servers via HTTP POSTs."
+  ],
+  [
+    "fin6",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[FIN6] has used scheduled tasks to establish persistence for various malware it uses, including downloaders known as HARDTACK and SHIPBREAD and [FrameworkPOS]."
+  ],
+  [
+    "fin6",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[FIN6] has used PowerShell to gain access to merchant's networks, and a Metasploit PowerShell module to download and execute shellcode and to set up a local listener."
+  ],
+  [
+    "fin6",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[FIN6] has used kill.bat script to disable security tools."
+  ],
+  [
+    "fin6",
+    "T1059.007",
+    "JavaScript",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.007::[FIN6] has used malicious JavaScript to steal payment card data from e-commerce sites."
+  ],
+  [
+    "fin6",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[FIN6] has removed files from victim machines."
+  ],
+  [
+    "fin6",
+    "T1074.002",
+    "Remote Data Staging",
+    "command-execution|file-access|file-creation",
+    "T1074.002::[FIN6] actors have compressed data from remote systems and moved it to another staging system before exfiltration."
+  ],
+  [
+    "fin6",
+    "T1087.002",
+    "Domain Account",
+    "command-execution|group-enumeration|network-traffic-content|os-api-execution|process-creation",
+    "T1087.002::[FIN6] has used Metasploit’s [PsExec] NTDSGRAB module to obtain a copy of the victim's Active Directory database."
+  ],
+  [
+    "fin6",
+    "T1110.002",
+    "Password Cracking",
+    "application-log-content|user-account-authentication",
+    "T1110.002::[FIN6] has extracted password hashes from ntds.dit to crack offline."
+  ],
+  [
+    "fin6",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[FIN6] has used malicious documents to lure victims into allowing execution of PowerShell scripts."
+  ],
+  [
+    "fin6",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[FIN6] has used Registry Run keys to establish persistence for its downloader tools known as HARDTACK and SHIPBREAD."
+  ],
+  [
+    "fin6",
+    "T1553.002",
+    "Code Signing",
+    "file-metadata",
+    "T1553.002::[FIN6] has used Comodo code-signing certificates."
+  ],
+  [
+    "fin6",
+    "T1555.003",
+    "Credentials from Web Browsers",
+    "command-execution|file-access|os-api-execution|process-access",
+    "T1555.003::[FIN6] has used the Stealer One credential stealer to target web browsers."
+  ],
+  [
+    "fin6",
+    "T1560.003",
+    "Archive via Custom Method",
+    "file-creation|script-execution",
+    "T1560.003::[FIN6] has encoded data gathered from the victim with a simple substitution cipher and single-byte XOR using the 0xAA key, and Base64 with character permutation."
+  ],
+  [
+    "fin6",
+    "T1562.001",
+    "Disable or Modify Tools",
+    "command-execution|driver-load|host-status|process-termination|service-metadata|windows-registry-key-deletion|windows-registry-key-modification",
+    "T1562.001::[FIN6] has deployed a utility script named kill.bat to disable anti-virus."
+  ],
+  [
+    "fin6",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[FIN6] has targeted victims with e-mails containing malicious attachments."
+  ],
+  [
+    "fin6",
+    "T1566.003",
+    "Spearphishing via Service",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.003::[FIN6] has used fake job advertisements sent via LinkedIn to spearphish targets."
+  ],
+  [
+    "fin6",
+    "T1569.002",
+    "Service Execution",
+    "command-execution|process-creation|service-creation|windows-registry-key-modification",
+    "T1569.002::[FIN6] has created Windows services to execute encoded PowerShell commands."
+  ],
+  [
+    "fin6",
+    "T1573.002",
+    "Asymmetric Cryptography",
+    "network-traffic-content",
+    "T1573.002::[FIN6] used the Plink command-line utility to create SSH tunnels to C2 servers."
+  ],
+  [
+    "fin6",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[FIN6] has obtained and used tools such as [Mimikatz], [Cobalt Strike], and [AdFind]."
+  ]
+]

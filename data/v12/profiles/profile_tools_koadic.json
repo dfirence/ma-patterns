@@ -1,0 +1,97 @@
+[
+  {
+    "id": "tool--c8655260-9f4b-44e3-85e1-6538a5f6e4f4",
+    "name": "koadic",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0250",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 9,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "techniques": {
+        "count": 27,
+        "items": [
+          "T1003.002",
+          "T1003.003",
+          "T1005",
+          "T1016",
+          "T1021.001",
+          "T1033",
+          "T1046",
+          "T1047",
+          "T1053.005",
+          "T1055.001",
+          "T1059.001",
+          "T1059.003",
+          "T1059.005",
+          "T1071.001",
+          "T1082",
+          "T1083",
+          "T1105",
+          "T1115",
+          "T1135",
+          "T1218.005",
+          "T1218.010",
+          "T1218.011",
+          "T1547.001",
+          "T1548.002",
+          "T1564.003",
+          "T1569.002",
+          "T1573.002"
+        ]
+      },
+      "adversaries": {
+        "count": 4,
+        "items": [
+          "apt28",
+          "lazyscripter",
+          "muddywater",
+          "sidewinder"
+        ]
+      },
+      "procedures": [
+        "T1003.002::[Koadic] can gather hashed passwords by dumping SAM/SECURITY hive.",
+        "T1003.003::[Koadic] can gather hashed passwords by gathering domain controller hashes from NTDS.",
+        "T1005::[Koadic] can download files off the target system to send back to the server.",
+        "T1016::[Koadic] can retrieve the contents of the IP routing table as well as information about the Windows domain.",
+        "T1021.001::[Koadic] can enable remote desktop on the victim's machine.",
+        "T1033::[Koadic] can identify logged in users across the domain and views user sessions.",
+        "T1046::[Koadic] can scan for open TCP ports on the target network.",
+        "T1047::[Koadic] can use WMI to execute commands.",
+        "T1053.005::[Koadic] has used scheduled tasks to add persistence.",
+        "T1055.001::[Koadic] can perform process injection by using a reflective DLL.",
+        "T1059.001::[Koadic] has used PowerShell to establish persistence.",
+        "T1059.003::[Koadic] can open an interactive command-shell to perform command line functions on victim machines. [Koadic] performs most of its operations using Windows Script Host (Jscript) and to run arbitrary shellcode.",
+        "T1059.005::[Koadic] performs most of its operations using Windows Script Host (VBScript) and runs arbitrary shellcode .",
+        "T1071.001::[Koadic] has used HTTP for C2 communications.",
+        "T1082::[Koadic] can obtain the OS version and build, computer name, and processor architecture from a compromised host.",
+        "T1083::[Koadic] can obtain a list of directories.",
+        "T1105::[Koadic] can download additional files and tools.",
+        "T1115::[Koadic] can retrieve the current content of the user clipboard.",
+        "T1135::[Koadic] can scan local network for open SMB.",
+        "T1218.005::[Koadic] can use mshta to serve additional payloads and to help schedule tasks for persistence.",
+        "T1218.010::[Koadic] can use Regsvr32 to execute additional payloads.",
+        "T1218.011::[Koadic] can use Rundll32 to execute additional payloads.",
+        "T1547.001::[Koadic] has added persistence to the `HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run` Registry key.",
+        "T1548.002::[Koadic] has 2 methods for elevating integrity. It can bypass UAC through `eventvwr.exe` and `sdclt.exe`.",
+        "T1564.003::[Koadic] has used the command Powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden to hide its window.",
+        "T1569.002::[Koadic] can run a command on another machine using [PsExec].",
+        "T1573.002::[Koadic] can use SSL and TLS for communications."
+      ]
+    },
+    "description": "[Koadic](https://attack.mitre.org/software/S0250) is a Windows post-exploitation framework and penetration testing tool that is publicly available on GitHub. [Koadic](https://attack.mitre.org/software/S0250) has several options for staging payloads and creating implants, and performs most of its operations using Windows Script Host.(Citation: Github Koadic)(Citation: Palo Alto Sofacy 06-2018)(Citation: MalwareBytes LazyScripter Feb 2021)"
+  }
+]

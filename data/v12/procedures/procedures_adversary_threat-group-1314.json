@@ -1,0 +1,23 @@
+[
+  [
+    "threat-group-1314",
+    "T1021.002",
+    "SMB/Windows Admin Shares",
+    "command-execution|logon-session-creation|network-connection-creation|network-share-access|network-traffic-flow",
+    "T1021.002::[Threat Group-1314] actors mapped network drives using net use."
+  ],
+  [
+    "threat-group-1314",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[Threat Group-1314] actors spawned shells on remote systems on a victim network to execute commands."
+  ],
+  [
+    "threat-group-1314",
+    "T1078.002",
+    "Domain Accounts",
+    "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "T1078.002::[Threat Group-1314] actors used compromised domain credentials for the victim's endpoint management platform, Altiris, to move laterally."
+  ]
+]

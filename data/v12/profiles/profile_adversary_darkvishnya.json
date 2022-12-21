@@ -1,0 +1,63 @@
+[
+  {
+    "id": "intrusion-set--813636db-3939-4a45-bea9-6113e970c029",
+    "name": "darkvishnya",
+    "aliases": "darkvishnya",
+    "group_id": "G0105",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 2,
+        "items": [
+          "psexec",
+          "winexe"
+        ]
+      },
+      "techniques": {
+        "count": 10,
+        "items": [
+          "T1040",
+          "T1046",
+          "T1059.001",
+          "T1110",
+          "T1135",
+          "T1200",
+          "T1219",
+          "T1543.003",
+          "T1571",
+          "T1588.002"
+        ]
+      },
+      "tactics": {
+        "count": 8,
+        "items": [
+          "command-and-control",
+          "credential-access",
+          "discovery",
+          "execution",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1040::[DarkVishnya] used network sniffing to obtain login data.",
+        "T1046::[DarkVishnya] performed port scanning to obtain the list of active services.",
+        "T1059.001::[DarkVishnya] used PowerShell to create shellcode loaders.",
+        "T1110::[DarkVishnya] used brute-force attack to obtain login data.",
+        "T1135::[DarkVishnya] scanned the network for public shared folders.",
+        "T1200::[DarkVishnya] used Bash Bunny, Raspberry Pi, netbooks or inexpensive laptops to connect to the company’s local network.",
+        "T1219::[DarkVishnya] used DameWare Mini Remote Control for lateral movement.",
+        "T1543.003::[DarkVishnya] created new services for shellcode loaders distribution.",
+        "T1571::[DarkVishnya] used ports 5190 and 7900 for shellcode listeners, and 4444, 4445, 31337 for shellcode C2.",
+        "T1588.002::[DarkVishnya] has obtained and used tools such as [Impacket], [Winexe], and [PsExec]."
+      ]
+    },
+    "description": "[DarkVishnya](https://attack.mitre.org/groups/G0105) is a financially motivated threat actor targeting financial institutions in Eastern Europe. In 2017-2018 the group attacked at least 8 banks in this region.(Citation: Securelist DarkVishnya Dec 2018)"
+  }
+]

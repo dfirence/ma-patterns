@@ -1,0 +1,66 @@
+[
+  {
+    "id": "intrusion-set--90784c1e-4aba-40eb-9adf-7556235e6384",
+    "name": "silent-librarian",
+    "aliases": "silent-librarian|ta407|cobalt-dickens",
+    "group_id": "G0122",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 13,
+        "items": [
+          "T1078",
+          "T1110.003",
+          "T1114",
+          "T1114.003",
+          "T1583.001",
+          "T1585.002",
+          "T1588.002",
+          "T1588.004",
+          "T1589.002",
+          "T1589.003",
+          "T1594",
+          "T1598.003",
+          "T1608.005"
+        ]
+      },
+      "tactics": {
+        "count": 8,
+        "items": [
+          "collection",
+          "credential-access",
+          "defense-evasion",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "reconnaissance",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1078::[Silent Librarian] has used compromised credentials to obtain unauthorized access to online accounts.",
+        "T1110.003::[Silent Librarian] has used collected lists of names and e-mail accounts to use in password spraying attacks against private sector targets.",
+        "T1114.003::[Silent Librarian] has set up auto forwarding rules on compromised e-mail accounts.",
+        "T1114::[Silent Librarian] has exfiltrated entire mailboxes from compromised accounts.",
+        "T1583.001::[Silent Librarian] has acquired domains to establish credential harvesting pages, often spoofing the target organization and using free top level domains .TK, .ML, .GA, .CF, and .GQ.",
+        "T1585.002::[Silent Librarian] has established e-mail accounts to receive e-mails forwarded from compromised accounts.",
+        "T1588.002::[Silent Librarian] has obtained free and publicly available tools including SingleFile and HTTrack to copy login pages of targeted organizations.",
+        "T1588.004::[Silent Librarian] has obtained free Let's Encrypt SSL certificates for use on their phishing pages.",
+        "T1589.002::[Silent Librarian] has collected e-mail addresses from targeted organizations from open Internet searches.",
+        "T1589.003::[Silent Librarian] has collected lists of names for individuals from targeted organizations.",
+        "T1594::[Silent Librarian] has searched victim's websites to identify the interests and academic areas of targeted individuals and to scrape source code, branding, and organizational contact information for phishing pages.",
+        "T1598.003::[Silent Librarian] has used links in e-mails to direct victims to credential harvesting websites designed to appear like the targeted organization's login page.",
+        "T1608.005::[Silent Librarian] has cloned victim organization login pages and staged them for later use in credential harvesting campaigns. [Silent Librarian] has also made use of a variety of URL shorteners for these staged websites."
+      ]
+    },
+    "description": "[Silent Librarian](https://attack.mitre.org/groups/G0122) is a group that has targeted research and proprietary data at universities, government agencies, and private sector companies worldwide since at least 2013. Members of  [Silent Librarian](https://attack.mitre.org/groups/G0122) are known to have been affiliated with the Iran-based Mabna Institute which has conducted cyber intrusions at the behest of the government of Iran, specifically the Islamic Revolutionary Guard Corps (IRGC).(Citation: DOJ Iran Indictments March 2018)(Citation: Phish Labs Silent Librarian)(Citation: Malwarebytes Silent Librarian October 2020)"
+  }
+]

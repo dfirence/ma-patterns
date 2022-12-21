@@ -1,0 +1,71 @@
+[
+  {
+    "id": "tool--8f8cd191-902c-4e83-bf20-b57c8c4640e9",
+    "name": "imminent-monitor",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0434",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 8,
+        "items": [
+          "collection",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "exfiltration",
+          "impact",
+          "lateral-movement"
+        ]
+      },
+      "techniques": {
+        "count": 16,
+        "items": [
+          "T1021.001",
+          "T1027",
+          "T1041",
+          "T1056.001",
+          "T1057",
+          "T1059",
+          "T1070.004",
+          "T1083",
+          "T1106",
+          "T1123",
+          "T1125",
+          "T1140",
+          "T1496",
+          "T1555.003",
+          "T1562.001",
+          "T1564.001"
+        ]
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "apt-c-36"
+        ]
+      },
+      "procedures": [
+        "T1021.001::[Imminent Monitor] has a module for performing remote desktop access.",
+        "T1027::[Imminent Monitor] has encrypted the spearphish attachments to avoid detection from email gateways; the debugger also encrypts information before sending to the C2.",
+        "T1041::[Imminent Monitor] has uploaded a file containing debugger logs, network information and system information to the C2.",
+        "T1056.001::[Imminent Monitor] has a keylogging module.",
+        "T1057::[Imminent Monitor] has a \"Process Watcher\" feature to monitor processes in case the client ever crashes or gets closed.",
+        "T1059::[Imminent Monitor] has a CommandPromptPacket and ScriptPacket module(s) for creating a remote shell and executing scripts.",
+        "T1070.004::[Imminent Monitor] has deleted files related to its dynamic debugger feature.",
+        "T1083::[Imminent Monitor] has a dynamic debugging feature to check whether it is located in the %TEMP% directory, otherwise it copies itself there.",
+        "T1106::[Imminent Monitor] has leveraged CreateProcessW() call to execute the debugger.",
+        "T1123::[Imminent Monitor] has a remote microphone monitoring capability.",
+        "T1125::[Imminent Monitor] has a remote webcam monitoring capability.",
+        "T1140::[Imminent Monitor] has decoded malware components that are then dropped to the system.",
+        "T1496::[Imminent Monitor] has the capability to run a cryptocurrency miner on the victim machine.",
+        "T1555.003::[Imminent Monitor] has a PasswordRecoveryPacket module for recovering browser passwords.",
+        "T1562.001::[Imminent Monitor] has a feature to disable Windows Task Manager.",
+        "T1564.001::[Imminent Monitor] has a dynamic debugging feature to set the file attribute to hidden."
+      ]
+    },
+    "description": "[Imminent Monitor](https://attack.mitre.org/software/S0434) was a commodity remote access tool (RAT) offered for sale from 2012 until 2019, when an operation was conducted to take down the Imminent Monitor infrastructure. Various cracked versions and variations of this RAT are still in circulation.(Citation: Imminent Unit42 Dec2019)"
+  }
+]

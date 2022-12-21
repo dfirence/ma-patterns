@@ -1,0 +1,97 @@
+[
+  {
+    "id": "intrusion-set--54dfec3e-6464-4f74-9d69-b7c817b7e5a3",
+    "name": "higaisa",
+    "aliases": "higaisa",
+    "group_id": "G0126",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 2,
+        "items": [
+          "gh0st-rat",
+          "plugx"
+        ]
+      },
+      "tools": {
+        "count": 1,
+        "items": [
+          "certutil"
+        ]
+      },
+      "techniques": {
+        "count": 26,
+        "items": [
+          "T1001.003",
+          "T1016",
+          "T1027",
+          "T1027.001",
+          "T1029",
+          "T1036.004",
+          "T1041",
+          "T1053.005",
+          "T1057",
+          "T1059.003",
+          "T1059.005",
+          "T1059.007",
+          "T1071.001",
+          "T1082",
+          "T1090.001",
+          "T1106",
+          "T1124",
+          "T1140",
+          "T1203",
+          "T1204.002",
+          "T1220",
+          "T1547.001",
+          "T1564.003",
+          "T1566.001",
+          "T1573.001",
+          "T1574.002"
+        ]
+      },
+      "tactics": {
+        "count": 8,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "exfiltration",
+          "initial-access",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "procedures": [
+        "T1001.003::[Higaisa] used a FakeTLS session for C2 communications.",
+        "T1016::[Higaisa] used ipconfig to gather network configuration information.",
+        "T1027.001::[Higaisa] performed padding with null bytes before calculating its hash.",
+        "T1027::[Higaisa] used Base64 encoded compressed payloads.",
+        "T1029::[Higaisa] sent the victim computer identifier in a User-Agent string back to the C2 server every 10 minutes.",
+        "T1036.004::[Higaisa] named a shellcode loader binary svchast.exe to spoof the legitimate svchost.exe.",
+        "T1041::[Higaisa] exfiltrated data over its C2 channel.",
+        "T1053.005::[Higaisa] dropped and added officeupdate.exe to scheduled tasks.",
+        "T1057::[Higaisa]’s shellcode attempted to find the process ID of the current process.",
+        "T1059.003::[Higaisa] used cmd.exe for execution.",
+        "T1059.005::[Higaisa] has used VBScript code on the victim's machine.",
+        "T1059.007::[Higaisa] used JavaScript to execute additional files.",
+        "T1071.001::[Higaisa] used HTTP and HTTPS to send data back to its C2 server.",
+        "T1082::[Higaisa] collected the system volume serial number, GUID, and computer name.",
+        "T1090.001::[Higaisa] discovered system proxy settings and used them if available.",
+        "T1106::[Higaisa] has called various native OS APIs.",
+        "T1124::[Higaisa] used a function to gather the current time.",
+        "T1140::[Higaisa] used certutil to decode Base64 binaries at runtime and a 16-byte XOR key to decrypt data.",
+        "T1203::[Higaisa] has exploited CVE-2018-0798 for execution.",
+        "T1204.002::[Higaisa] used malicious e-mail attachments to lure victims into executing LNK files.",
+        "T1220::[Higaisa] used an XSL file to run VBScript code.",
+        "T1547.001::[Higaisa] added a spoofed binary to the start-up folder for persistence.",
+        "T1564.003::[Higaisa] used a payload that creates a hidden window.",
+        "T1566.001::[Higaisa] has sent spearphishing emails containing malicious attachments.",
+        "T1573.001::[Higaisa] used AES-128 to encrypt C2 traffic.",
+        "T1574.002::[Higaisa]’s JavaScript file used a legitimate Microsoft Office 2007 package to side-load the OINFO12.OCX dynamic link library."
+      ]
+    },
+    "description": "[Higaisa](https://attack.mitre.org/groups/G0126) is a threat group suspected to have South Korean origins. [Higaisa](https://attack.mitre.org/groups/G0126) has targeted government, public, and trade organizations in North Korea; however, they have also carried out attacks in China, Japan, Russia, Poland, and other nations. [Higaisa](https://attack.mitre.org/groups/G0126) was first disclosed in early 2019 but is assessed to have operated as early as 2009.(Citation: Malwarebytes Higaisa 2020)(Citation: Zscaler Higaisa 2020)(Citation: PTSecurity Higaisa 2020)"
+  }
+]

@@ -1,0 +1,149 @@
+[
+  [
+    "hexane",
+    "T1016.001",
+    "Internet Connection Discovery",
+    "command-execution|process-creation",
+    "T1016.001::[HEXANE] has used tools including [BITSAdmin] to test internet connectivity from compromised hosts."
+  ],
+  [
+    "hexane",
+    "T1021.001",
+    "Remote Desktop Protocol",
+    "logon-session-creation|network-connection-creation|network-traffic-flow|process-creation",
+    "T1021.001::[HEXANE] has used remote desktop sessions for lateral movement."
+  ],
+  [
+    "hexane",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[HEXANE] has used a scheduled task to establish persistence for a keylogger."
+  ],
+  [
+    "hexane",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[HEXANE] has used a PowerShell-based keylogger named `kl.ps1`."
+  ],
+  [
+    "hexane",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[HEXANE] has used PowerShell-based tools and scripts for discovery and collection on compromised hosts."
+  ],
+  [
+    "hexane",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[HEXANE] has used a VisualBasic script named `MicrosoftUpdator.vbs` for execution of a PowerShell keylogger."
+  ],
+  [
+    "hexane",
+    "T1069.001",
+    "Local Groups",
+    "command-execution|group-enumeration|os-api-execution|process-creation",
+    "T1069.001::[HEXANE] has run `net localgroup` to enumerate local groups."
+  ],
+  [
+    "hexane",
+    "T1102.002",
+    "Bidirectional Communication",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1102.002::[HEXANE] has used cloud services, including OneDrive, for C2."
+  ],
+  [
+    "hexane",
+    "T1110.003",
+    "Password Spraying",
+    "application-log-content|user-account-authentication",
+    "T1110.003::[HEXANE] has used password spraying attacks to obtain valid credentials."
+  ],
+  [
+    "hexane",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[HEXANE] has relied on victim's executing malicious file attachments delivered via email or embedded within actor-controlled websites to deliver malware."
+  ],
+  [
+    "hexane",
+    "T1555.003",
+    "Credentials from Web Browsers",
+    "command-execution|file-access|os-api-execution|process-access",
+    "T1555.003::[HEXANE] has used a [Mimikatz]-based tool and a PowerShell script to steal passwords from Google Chrome."
+  ],
+  [
+    "hexane",
+    "T1567.002",
+    "Exfiltration to Cloud Storage",
+    "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1567.002::[HEXANE] has used cloud services, including OneDrive, for data exfiltration."
+  ],
+  [
+    "hexane",
+    "T1583.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1583.001::[HEXANE] has registered and operated domains for campaigns, often using a security or web technology theme or impersonating the targeted organization."
+  ],
+  [
+    "hexane",
+    "T1583.002",
+    "DNS Server",
+    "none",
+    "T1583.002::[HEXANE] has set up custom DNS servers to send commands to compromised hosts via TXT records."
+  ],
+  [
+    "hexane",
+    "T1585.001",
+    "Social Media Accounts",
+    "network-traffic-content|social-media",
+    "T1585.001::[HEXANE] has established fraudulent LinkedIn accounts impersonating HR department employees to target potential victims with fake job offers."
+  ],
+  [
+    "hexane",
+    "T1585.002",
+    "Email Accounts",
+    "none",
+    "T1585.002::[HEXANE] has established email accounts for use in domain registration including for ProtonMail addresses."
+  ],
+  [
+    "hexane",
+    "T1586.002",
+    "Email Accounts",
+    "none",
+    "T1586.002::[HEXANE] has used compromised accounts to send spearphishing emails."
+  ],
+  [
+    "hexane",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[HEXANE] has acquired, and sometimes customized, open source tools such as [Mimikatz], [Empire], VNC remote access software, and DIG.net."
+  ],
+  [
+    "hexane",
+    "T1589.002",
+    "Email Addresses",
+    "network-traffic-content",
+    "T1589.002::[HEXANE] has targeted executives, human resources staff, and IT personnel for spearphishing."
+  ],
+  [
+    "hexane",
+    "T1591.004",
+    "Identify Roles",
+    "none",
+    "T1591.004::[HEXANE] has identified executives, HR, and IT staff at victim organizations for further targeting."
+  ],
+  [
+    "hexane",
+    "T1608.001",
+    "Upload Malware",
+    "response-content",
+    "T1608.001::[HEXANE] has staged malware on fraudulent websites set up to impersonate targeted organizations."
+  ]
+]

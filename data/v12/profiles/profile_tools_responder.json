@@ -1,0 +1,39 @@
+[
+  {
+    "id": "tool--a1dd2dbd-1550-44bf-abcc-1a4c52e97719",
+    "name": "responder",
+    "aliases": "none",
+    "platforms": "none",
+    "tool_id": "S0174",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 3,
+        "items": [
+          "collection",
+          "credential-access",
+          "discovery"
+        ]
+      },
+      "techniques": {
+        "count": 2,
+        "items": [
+          "T1040",
+          "T1557.001"
+        ]
+      },
+      "adversaries": {
+        "count": 2,
+        "items": [
+          "apt28",
+          "lazarus-group"
+        ]
+      },
+      "procedures": [
+        "T1040::[Responder] captures hashes and credentials that are sent to the system after the name services have been poisoned.",
+        "T1557.001::[Responder] is used to poison name services to gather hashes and credentials from systems within a local network."
+      ]
+    },
+    "description": "Responder is an open source tool used for LLMNR, NBT-NS and MDNS poisoning, with built-in HTTP/SMB/MSSQL/FTP/LDAP rogue authentication server supporting NTLMv1/NTLMv2/LMv2, Extended Security NTLMSSP and Basic HTTP authentication. (Citation: GitHub Responder)"
+  }
+]

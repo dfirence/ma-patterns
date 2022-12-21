@@ -1,0 +1,39 @@
+[
+  {
+    "id": "tool--9de2308e-7bed-43a3-8e58-f194b3586700",
+    "name": "pwdump",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0006",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "credential-access"
+        ]
+      },
+      "techniques": {
+        "count": 1,
+        "items": [
+          "T1003.002"
+        ]
+      },
+      "adversaries": {
+        "count": 6,
+        "items": [
+          "apt1",
+          "apt39",
+          "apt41",
+          "fin5",
+          "menupass",
+          "threat-group-3390"
+        ]
+      },
+      "procedures": [
+        "T1003.002::[pwdump] can be used to dump credentials from the SAM."
+      ]
+    },
+    "description": "[pwdump](https://attack.mitre.org/software/S0006) is a credential dumper. (Citation: Wikipedia pwdump)"
+  }
+]

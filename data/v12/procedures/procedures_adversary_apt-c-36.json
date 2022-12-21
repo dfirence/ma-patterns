@@ -1,0 +1,44 @@
+[
+  [
+    "apt-c-36",
+    "T1036.004",
+    "Masquerade Task or Service",
+    "command-execution|scheduled-job-metadata|scheduled-job-modification|service-creation|service-metadata",
+    "T1036.004::[APT-C-36] has disguised its scheduled tasks as those used by Google."
+  ],
+  [
+    "apt-c-36",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[APT-C-36] has used a macro function to set scheduled tasks, disguised as those used by Google."
+  ],
+  [
+    "apt-c-36",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[APT-C-36] has embedded a VBScript within a malicious Word document which is executed upon the document opening."
+  ],
+  [
+    "apt-c-36",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[APT-C-36] has prompted victims to accept macros in order to execute the subsequent payload."
+  ],
+  [
+    "apt-c-36",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[APT-C-36] has used spearphishing emails with password protected RAR attachment to avoid being detected by the email gateway."
+  ],
+  [
+    "apt-c-36",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[APT-C-36] obtained and used a modified variant of [Imminent Monitor]."
+  ]
+]

@@ -1,0 +1,91 @@
+[
+  {
+    "id": "intrusion-set--01e28736-2ffc-455b-9880-ed4d1407ae07",
+    "name": "indrik-spider",
+    "aliases": "indrik-spider|evil-corp",
+    "group_id": "G0119",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 4,
+        "items": [
+          "bitpaymer",
+          "cobalt-strike",
+          "dridex",
+          "wastedlocker"
+        ]
+      },
+      "tools": {
+        "count": 4,
+        "items": [
+          "donut",
+          "empire",
+          "mimikatz",
+          "psexec"
+        ]
+      },
+      "techniques": {
+        "count": 19,
+        "items": [
+          "T1003.001",
+          "T1007",
+          "T1018",
+          "T1036.005",
+          "T1047",
+          "T1059.001",
+          "T1059.003",
+          "T1059.007",
+          "T1070.001",
+          "T1074.001",
+          "T1078.002",
+          "T1105",
+          "T1136",
+          "T1204.002",
+          "T1484.001",
+          "T1486",
+          "T1489",
+          "T1562.001",
+          "T1584.004"
+        ]
+      },
+      "tactics": {
+        "count": 11,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "impact",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1003.001::[Indrik Spider] used [Cobalt Strike] to carry out credential dumping using ProcDump.",
+        "T1007::[Indrik Spider] has used the win32_service WMI class to retrieve a list of services from the system.",
+        "T1018::[Indrik Spider] has used PowerView to enumerate all Windows Server, Windows Server 2003, and Windows 7 instances in the Active Directory database.",
+        "T1036.005::[Indrik Spider] used fake updates for FlashPlayer plugin and Google Chrome as initial infection vectors.",
+        "T1047::[Indrik Spider] has used WMIC to execute commands on remote computers.",
+        "T1059.001::[Indrik Spider] has used PowerShell [Empire] for execution of malware.",
+        "T1059.003::[Indrik Spider] has used batch scripts on victim's machines.",
+        "T1059.007::[Indrik Spider] has used malicious JavaScript files for several components of their attack.",
+        "T1070.001::[Indrik Spider] has used [Cobalt Strike] to empty log files.",
+        "T1074.001::[Indrik Spider] has stored collected date in a .tmp file.",
+        "T1078.002::[Indrik Spider] has collected credentials from infected systems, including domain accounts.",
+        "T1105::[Indrik Spider] has downloaded additional scripts, malware, and tools onto a compromised host.",
+        "T1136::[Indrik Spider] used wmic.exe to add a new user to the system.",
+        "T1204.002::[Indrik Spider] has attempted to get users to click on a malicious zipped file.",
+        "T1484.001::[Indrik Spider] has used Group Policy Objects to deploy batch scripts.",
+        "T1486::[Indrik Spider] has encrypted domain-controlled systems using [BitPaymer].",
+        "T1489::[Indrik Spider] has used [PsExec] to stop services prior to the execution of ransomware.",
+        "T1562.001::[Indrik Spider] used [PsExec] to leverage Windows Defender to disable scanning of all downloaded files and to restrict real-time monitoring.",
+        "T1584.004::[Indrik Spider] has served fake updates via legitimate websites that have been compromised."
+      ]
+    },
+    "description": "[Indrik Spider](https://attack.mitre.org/groups/G0119) is a Russia-based cybercriminal group that has been active since at least 2014. [Indrik Spider](https://attack.mitre.org/groups/G0119) initially started with the [Dridex](https://attack.mitre.org/software/S0384) banking Trojan, and then by 2017 they began running ransomware operations using [BitPaymer](https://attack.mitre.org/software/S0570), [WastedLocker](https://attack.mitre.org/software/S0612), and Hades ransomware.(Citation: Crowdstrike Indrik November 2018)(Citation: Crowdstrike EvilCorp March 2021)(Citation: Treasury EvilCorp Dec 2019)"
+  }
+]

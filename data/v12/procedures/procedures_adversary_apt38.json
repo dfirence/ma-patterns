@@ -1,0 +1,184 @@
+[
+  [
+    "apt38",
+    "T1027.002",
+    "Software Packing",
+    "file-metadata",
+    "T1027.002::[APT38] has used several code packing methods such as Themida, Enigma, VMProtect, and Obsidium, to pack their implants."
+  ],
+  [
+    "apt38",
+    "T1053.003",
+    "Cron",
+    "command-execution|file-modification|process-creation|scheduled-job-creation",
+    "T1053.003::[APT38] has used cron to create pre-scheduled and periodic background jobs on a Linux system."
+  ],
+  [
+    "apt38",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[APT38] has used Task Scheduler to run programs at system startup or on a scheduled basis for persistence."
+  ],
+  [
+    "apt38",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[APT38] used a Trojan called KEYLIME to capture keystrokes from the victim’s machine."
+  ],
+  [
+    "apt38",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[APT38] has used PowerShell to execute commands and other operational tasks."
+  ],
+  [
+    "apt38",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[APT38] has used a command-line tunneler, NACHOCHEESE, to give them shell access to a victim’s machine."
+  ],
+  [
+    "apt38",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[APT38] has used VBScript to execute commands and other operational tasks."
+  ],
+  [
+    "apt38",
+    "T1070.001",
+    "Clear Windows Event Logs",
+    "command-execution|file-deletion|os-api-execution",
+    "T1070.001::[APT38] clears Window Event logs and Sysmon logs from the system."
+  ],
+  [
+    "apt38",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[APT38] has used a utility called CLOSESHAVE that can securely delete a file from the system. They have also removed malware, tools, or other non-native files used during the intrusion to reduce their footprint or as part of the post-intrusion cleanup process."
+  ],
+  [
+    "apt38",
+    "T1070.006",
+    "Timestomp",
+    "file-metadata|file-modification",
+    "T1070.006::[APT38] has modified data timestamps to mimic files that are in the same folder on a compromised host."
+  ],
+  [
+    "apt38",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[APT38] used a backdoor, QUICKRIDE, to communicate to the C2 server over HTTP and HTTPS."
+  ],
+  [
+    "apt38",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[APT38]  has attempted to lure victims into enabling malicious macros within email attachments."
+  ],
+  [
+    "apt38",
+    "T1218.001",
+    "Compiled HTML File",
+    "command-execution|file-creation|process-creation",
+    "T1218.001::[APT38] has used CHM files to move concealed payloads."
+  ],
+  [
+    "apt38",
+    "T1218.011",
+    "Rundll32",
+    "command-execution|file-metadata|module-load|process-creation",
+    "T1218.011::[APT38] has used rundll32.exe to execute binaries, scripts, and Control Panel Item files and to execute code via proxy to avoid triggering security tools."
+  ],
+  [
+    "apt38",
+    "T1505.003",
+    "Web Shell",
+    "application-log-content|file-creation|file-modification|network-traffic-content|network-traffic-flow|process-creation",
+    "T1505.003::[APT38] has used web shells for persistence or to ensure redundant access."
+  ],
+  [
+    "apt38",
+    "T1518.001",
+    "Security Software Discovery",
+    "command-execution|firewall-enumeration|firewall-metadata|os-api-execution|process-creation",
+    "T1518.001::[APT38] has identified security software, configurations, defensive tools, and sensors installed on a compromised system."
+  ],
+  [
+    "apt38",
+    "T1543.003",
+    "Windows Service",
+    "command-execution|driver-load|os-api-execution|process-creation|service-creation|service-modification|windows-registry-key-creation|windows-registry-key-modification",
+    "T1543.003::[APT38] has installed a new Windows service to establish persistence."
+  ],
+  [
+    "apt38",
+    "T1561.002",
+    "Disk Structure Wipe",
+    "command-execution|drive-access|drive-modification|driver-load|process-creation",
+    "T1561.002::[APT38] has used a custom MBR wiper named BOOTWRECK to render systems inoperable."
+  ],
+  [
+    "apt38",
+    "T1562.003",
+    "Impair Command History Logging",
+    "command-execution|host-status",
+    "T1562.003::[APT38] has prepended a space to all of their terminal commands to operate without leaving traces in the HISTCONTROL environment."
+  ],
+  [
+    "apt38",
+    "T1562.004",
+    "Disable or Modify System Firewall",
+    "command-execution|firewall-disable|firewall-rule-modification|windows-registry-key-modification",
+    "T1562.004::[APT38] have created firewall exemptions on specific ports, including ports 443, 6443, 8443, and 9443."
+  ],
+  [
+    "apt38",
+    "T1565.001",
+    "Stored Data Manipulation",
+    "file-creation|file-deletion|file-modification",
+    "T1565.001::[APT38] has used DYEPACK to create, delete, and alter records in databases used for SWIFT transactions."
+  ],
+  [
+    "apt38",
+    "T1565.002",
+    "Transmitted Data Manipulation",
+    "network-traffic-content|network-traffic-flow|os-api-execution",
+    "T1565.002::[APT38] has used DYEPACK to manipulate SWIFT messages en route to a printer."
+  ],
+  [
+    "apt38",
+    "T1565.003",
+    "Runtime Data Manipulation",
+    "file-creation|file-deletion|file-metadata|file-modification|os-api-execution",
+    "T1565.003::[APT38] has used DYEPACK.FOX to manipulate PDF data as it is accessed to remove traces of fraudulent SWIFT transactions from the data displayed to the end user."
+  ],
+  [
+    "apt38",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[APT38] has conducted spearphishing campaigns using malicious email attachments."
+  ],
+  [
+    "apt38",
+    "T1569.002",
+    "Service Execution",
+    "command-execution|process-creation|service-creation|windows-registry-key-modification",
+    "T1569.002::[APT38] has created new services or modified existing ones to run executables, commands, or scripts."
+  ],
+  [
+    "apt38",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[APT38] has obtained and used open-source tools such as [Mimikatz]."
+  ]
+]

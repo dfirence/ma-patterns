@@ -1,0 +1,56 @@
+[
+  {
+    "id": "intrusion-set--5f3d0238-d058-44a9-8812-3dd1b6741a8c",
+    "name": "polonium",
+    "aliases": "polonium",
+    "group_id": "G1005",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 2,
+        "items": [
+          "creepydrive",
+          "creepysnail"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 7,
+        "items": [
+          "T1078",
+          "T1090",
+          "T1102.002",
+          "T1199",
+          "T1567.002",
+          "T1583.006",
+          "T1588.002"
+        ]
+      },
+      "tactics": {
+        "count": 7,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "exfiltration",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1078::[POLONIUM] has used valid compromised credentials to gain access to victim environments.",
+        "T1090::[POLONIUM] has used the AirVPN service for operational activity.",
+        "T1102.002::[POLONIUM] has used OneDrive and DropBox for C2.",
+        "T1199::[POLONIUM] has used compromised credentials from an IT company to target downstream customers including a law firm and aviation company.",
+        "T1567.002::[POLONIUM] has exfiltrated stolen data to [POLONIUM]-owned OneDrive and Dropbox accounts.",
+        "T1583.006::[POLONIUM] has created and used legitimate Microsoft OneDrive accounts for their operations.",
+        "T1588.002::[POLONIUM] has obtained and used tools such as AirVPN and plink in their operations."
+      ]
+    },
+    "description": "[POLONIUM](https://attack.mitre.org/groups/G1005) is a Lebanon-based group that has primarily targeted Israeli organizations, including critical manufacturing, information technology, and defense industry companies, since at least February 2022. Security researchers assess [POLONIUM](https://attack.mitre.org/groups/G1005) has coordinated their operations with multiple actors affiliated with Iran’s Ministry of Intelligence and Security (MOIS), based on victim overlap as well as common techniques and tooling.(Citation: Microsoft POLONIUM June 2022)"
+  }
+]

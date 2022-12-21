@@ -1,0 +1,51 @@
+[
+  [
+    "evilnum",
+    "T1059.007",
+    "JavaScript",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.007::[Evilnum] has used malicious JavaScript files on the victim's machine."
+  ],
+  [
+    "evilnum",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[Evilnum] has deleted files used during infection."
+  ],
+  [
+    "evilnum",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[Evilnum] has sent spearphishing emails designed to trick the recipient into opening malicious shortcut links which downloads a .LNK file."
+  ],
+  [
+    "evilnum",
+    "T1497.001",
+    "System Checks",
+    "command-execution|os-api-execution|process-creation",
+    "T1497.001::[Evilnum] has used a component called TerraLoader to check certain hardware and file information to detect sandboxed environments."
+  ],
+  [
+    "evilnum",
+    "T1548.002",
+    "Bypass User Account Control",
+    "command-execution|process-creation|process-metadata|windows-registry-key-modification",
+    "T1548.002::[Evilnum] has used PowerShell to bypass UAC."
+  ],
+  [
+    "evilnum",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[Evilnum] has sent spearphishing emails containing a link to a zip file hosted on Google Drive."
+  ],
+  [
+    "evilnum",
+    "T1574.001",
+    "DLL Search Order Hijacking",
+    "file-creation|file-modification|module-load",
+    "T1574.001::[Evilnum] has used the malware variant, TerraTV, to load a malicious DLL placed in the TeamViewer directory, instead of the original Windows DLL located in a system folder."
+  ]
+]

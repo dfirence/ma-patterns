@@ -1,0 +1,53 @@
+[
+  {
+    "id": "intrusion-set--6688d679-ccdb-4f12-abf6-c7545dd767a4",
+    "name": "the-white-company",
+    "aliases": "the-white-company",
+    "group_id": "G0089",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 2,
+        "items": [
+          "netwire",
+          "revenge-rat"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 7,
+        "items": [
+          "T1027.002",
+          "T1070.004",
+          "T1124",
+          "T1203",
+          "T1204.002",
+          "T1518.001",
+          "T1566.001"
+        ]
+      },
+      "tactics": {
+        "count": 4,
+        "items": [
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access"
+        ]
+      },
+      "procedures": [
+        "T1027.002::[The White Company] has obfuscated their payloads through packing.",
+        "T1070.004::[The White Company] has the ability to delete its malware entirely from the target system.",
+        "T1124::[The White Company] has checked the current date on the victim system.",
+        "T1203::[The White Company] has taken advantage of a known vulnerability in Microsoft Word (CVE 2012-0158) to execute code.",
+        "T1204.002::[The White Company] has used phishing lure documents that trick users into opening them and infecting their computers.",
+        "T1518.001::[The White Company] has checked for specific antivirus products on the target’s computer, including Kaspersky, Quick Heal, AVG, BitDefender, Avira, Sophos, Avast!, and ESET.",
+        "T1566.001::[The White Company] has sent phishing emails with malicious Microsoft Word attachments to victims."
+      ]
+    },
+    "description": "[The White Company](https://attack.mitre.org/groups/G0089) is a likely state-sponsored threat actor with advanced capabilities. From 2017 through 2018, the group led an espionage campaign called Operation Shaheen targeting government and military organizations in Pakistan.(Citation: Cylance Shaheen Nov 2018)"
+  }
+]

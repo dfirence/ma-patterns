@@ -1,0 +1,64 @@
+[
+  {
+    "id": "tool--79dd477a-8226-4b3d-ad15-28623675f221",
+    "name": "peirates",
+    "aliases": "none",
+    "platforms": "containers",
+    "tool_id": "S0683",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 9,
+        "items": [
+          "collection",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "techniques": {
+        "count": 12,
+        "items": [
+          "T1046",
+          "T1078.004",
+          "T1528",
+          "T1530",
+          "T1550.001",
+          "T1552.005",
+          "T1552.007",
+          "T1609",
+          "T1610",
+          "T1611",
+          "T1613",
+          "T1619"
+        ]
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "teamtnt"
+        ]
+      },
+      "procedures": [
+        "T1046::[Peirates] can initiate a port scan against a given IP address.",
+        "T1078.004::[Peirates] can use stolen service account tokens to perform its operations.",
+        "T1528::[Peirates] gathers Kubernetes service account tokens using a variety of techniques.",
+        "T1530::[Peirates] can dump the contents of AWS S3 buckets. It can also retrieve service account tokens from kOps buckets in Google Cloud Storage or S3.",
+        "T1550.001::[Peirates] can use stolen service account tokens to perform its operations. It also enables adversaries to switch between valid service accounts.",
+        "T1552.005::[Peirates] can query the query AWS and GCP metadata APIs for secrets.",
+        "T1552.007::[Peirates] can query the Kubernetes API for secrets.",
+        "T1609::[Peirates] can use `kubectl` or the Kubernetes API to run commands.",
+        "T1610::[Peirates] can deploy a pod that mounts its node’s root file system, then execute a command to create a reverse shell on the node.",
+        "T1611::[Peirates] can gain a reverse shell on a host node by mounting the Kubernetes hostPath.",
+        "T1613::[Peirates] can enumerate Kubernetes pods in a given namespace.",
+        "T1619::[Peirates] can list AWS S3 buckets."
+      ]
+    },
+    "description": "[Peirates](https://attack.mitre.org/software/S0683) is a post-exploitation Kubernetes exploitation framework with a focus on gathering service account tokens for lateral movement and privilege escalation. The tool is written in GoLang and publicly available on GitHub.(Citation: Peirates GitHub)"
+  }
+]

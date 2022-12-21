@@ -1,0 +1,114 @@
+[
+  [
+    "apt1",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[APT1] has been known to use credential dumping using [Mimikatz]."
+  ],
+  [
+    "apt1",
+    "T1021.001",
+    "Remote Desktop Protocol",
+    "logon-session-creation|network-connection-creation|network-traffic-flow|process-creation",
+    "T1021.001::The [APT1] group is known to have used RDP during operations."
+  ],
+  [
+    "apt1",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::The file name AcroRD32.exe, a legitimate process name for Adobe's Acrobat Reader, was used by [APT1] as a name for malware."
+  ],
+  [
+    "apt1",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[APT1] has used the Windows command shell to execute commands, and batch scripting to automate execution."
+  ],
+  [
+    "apt1",
+    "T1087.001",
+    "Local Account",
+    "command-execution|file-access|group-enumeration|os-api-execution|process-creation",
+    "T1087.001::[APT1] used the commands net localgroup,net user, and net group to find accounts on the system."
+  ],
+  [
+    "apt1",
+    "T1114.001",
+    "Local Email Collection",
+    "command-execution|file-access",
+    "T1114.001::[APT1] uses two utilities, GETMAIL and MAPIGET, to steal email. GETMAIL extracts emails from archived Outlook .pst files."
+  ],
+  [
+    "apt1",
+    "T1114.002",
+    "Remote Email Collection",
+    "command-execution|logon-session-creation|network-connection-creation",
+    "T1114.002::[APT1] uses two utilities, GETMAIL and MAPIGET, to steal email. MAPIGET steals email still on Exchange servers that has not yet been archived."
+  ],
+  [
+    "apt1",
+    "T1550.002",
+    "Pass the Hash",
+    "active-directory-credential-request|logon-session-creation|user-account-authentication",
+    "T1550.002::The [APT1] group is known to have used pass the hash."
+  ],
+  [
+    "apt1",
+    "T1560.001",
+    "Archive via Utility",
+    "command-execution|file-creation|process-creation",
+    "T1560.001::[APT1] has used RAR to compress files before moving them outside of the victim network."
+  ],
+  [
+    "apt1",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[APT1] has sent spearphishing emails containing malicious attachments."
+  ],
+  [
+    "apt1",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[APT1] has sent spearphishing emails containing hyperlinks to malicious files."
+  ],
+  [
+    "apt1",
+    "T1583.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1583.001::[APT1] has registered hundreds of domains for use in operations."
+  ],
+  [
+    "apt1",
+    "T1584.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1584.001::[APT1] hijacked FQDNs associated with legitimate websites hosted by hop points."
+  ],
+  [
+    "apt1",
+    "T1585.002",
+    "Email Accounts",
+    "none",
+    "T1585.002::[APT1] has created email accounts for later use in social engineering, phishing, and when registering domains."
+  ],
+  [
+    "apt1",
+    "T1588.001",
+    "Malware",
+    "malware-content|malware-metadata",
+    "T1588.001::[APT1] used publicly available malware for privilege escalation."
+  ],
+  [
+    "apt1",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[APT1] has used various open-source tools for privilege escalation purposes."
+  ]
+]

@@ -1,0 +1,86 @@
+[
+  [
+    "indrik-spider",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[Indrik Spider] used [Cobalt Strike] to carry out credential dumping using ProcDump."
+  ],
+  [
+    "indrik-spider",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[Indrik Spider] used fake updates for FlashPlayer plugin and Google Chrome as initial infection vectors."
+  ],
+  [
+    "indrik-spider",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[Indrik Spider] has used PowerShell [Empire] for execution of malware."
+  ],
+  [
+    "indrik-spider",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[Indrik Spider] has used batch scripts on victim's machines."
+  ],
+  [
+    "indrik-spider",
+    "T1059.007",
+    "JavaScript",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.007::[Indrik Spider] has used malicious JavaScript files for several components of their attack."
+  ],
+  [
+    "indrik-spider",
+    "T1070.001",
+    "Clear Windows Event Logs",
+    "command-execution|file-deletion|os-api-execution",
+    "T1070.001::[Indrik Spider] has used [Cobalt Strike] to empty log files."
+  ],
+  [
+    "indrik-spider",
+    "T1074.001",
+    "Local Data Staging",
+    "command-execution|file-access|file-creation|windows-registry-key-modification",
+    "T1074.001::[Indrik Spider] has stored collected date in a .tmp file."
+  ],
+  [
+    "indrik-spider",
+    "T1078.002",
+    "Domain Accounts",
+    "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "T1078.002::[Indrik Spider] has collected credentials from infected systems, including domain accounts."
+  ],
+  [
+    "indrik-spider",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Indrik Spider] has attempted to get users to click on a malicious zipped file."
+  ],
+  [
+    "indrik-spider",
+    "T1484.001",
+    "Group Policy Modification",
+    "active-directory-object-creation|active-directory-object-deletion|active-directory-object-modification|command-execution",
+    "T1484.001::[Indrik Spider] has used Group Policy Objects to deploy batch scripts."
+  ],
+  [
+    "indrik-spider",
+    "T1562.001",
+    "Disable or Modify Tools",
+    "command-execution|driver-load|host-status|process-termination|service-metadata|windows-registry-key-deletion|windows-registry-key-modification",
+    "T1562.001::[Indrik Spider] used [PsExec] to leverage Windows Defender to disable scanning of all downloaded files and to restrict real-time monitoring."
+  ],
+  [
+    "indrik-spider",
+    "T1584.004",
+    "Server",
+    "response-content|response-metadata",
+    "T1584.004::[Indrik Spider] has served fake updates via legitimate websites that have been compromised."
+  ]
+]

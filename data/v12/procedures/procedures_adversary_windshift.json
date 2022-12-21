@@ -1,0 +1,72 @@
+[
+  [
+    "windshift",
+    "T1036.001",
+    "Invalid Code Signature",
+    "file-metadata",
+    "T1036.001::[Windshift] has used revoked certificates to sign malware."
+  ],
+  [
+    "windshift",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[Windshift] has used Visual Basic 6 (VB6) payloads."
+  ],
+  [
+    "windshift",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[Windshift] has used tools that communicate with C2 over HTTP."
+  ],
+  [
+    "windshift",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[Windshift] has used links embedded in e-mails to lure victims into executing malicious code."
+  ],
+  [
+    "windshift",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Windshift] has used e-mail attachments to lure victims into executing malicious code."
+  ],
+  [
+    "windshift",
+    "T1518.001",
+    "Security Software Discovery",
+    "command-execution|firewall-enumeration|firewall-metadata|os-api-execution|process-creation",
+    "T1518.001::[Windshift] has used malware to identify installed AV and commonly used forensic and malware analysis tools."
+  ],
+  [
+    "windshift",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[Windshift] has created LNK files in the Startup folder to establish persistence."
+  ],
+  [
+    "windshift",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[Windshift] has sent spearphishing emails with attachment to harvest credentials and deliver malware."
+  ],
+  [
+    "windshift",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[Windshift] has sent spearphishing emails with links to harvest credentials and deliver malware."
+  ],
+  [
+    "windshift",
+    "T1566.003",
+    "Spearphishing via Service",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.003::[Windshift] has used fake personas on social media to engage and target victims."
+  ]
+]

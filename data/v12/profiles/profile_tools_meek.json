@@ -1,0 +1,34 @@
+[
+  {
+    "id": "tool--65370d0b-3bd4-4653-8cf9-daf56f6be830",
+    "name": "meek",
+    "aliases": "none",
+    "platforms": "linux|windows|macos",
+    "tool_id": "S0175",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "command-and-control"
+        ]
+      },
+      "techniques": {
+        "count": 1,
+        "items": [
+          "T1090.004"
+        ]
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "apt29"
+        ]
+      },
+      "procedures": [
+        "T1090.004::[meek] uses Domain Fronting to disguise the destination of network traffic as another server that is hosted in the same Content Delivery Network (CDN) as the intended destination."
+      ]
+    },
+    "description": "[meek](https://attack.mitre.org/software/S0175) is an open-source Tor plugin that tunnels Tor traffic through HTTPS connections."
+  }
+]

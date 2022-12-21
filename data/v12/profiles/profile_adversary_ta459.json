@@ -1,0 +1,49 @@
+[
+  {
+    "id": "intrusion-set--62a64fd3-aaf7-4d09-a375-d6f8bb118481",
+    "name": "ta459",
+    "aliases": "ta459",
+    "group_id": "G0062",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 4,
+        "items": [
+          "gh0st-rat",
+          "nettraveler",
+          "plugx",
+          "zerot"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 5,
+        "items": [
+          "T1059.001",
+          "T1059.005",
+          "T1203",
+          "T1204.002",
+          "T1566.001"
+        ]
+      },
+      "tactics": {
+        "count": 2,
+        "items": [
+          "execution",
+          "initial-access"
+        ]
+      },
+      "procedures": [
+        "T1059.001::[TA459] has used PowerShell for execution of a payload.",
+        "T1059.005::[TA459] has a VBScript for execution.",
+        "T1203::[TA459] has exploited Microsoft Word vulnerability CVE-2017-0199 for execution.",
+        "T1204.002::[TA459] has attempted to get victims to open malicious Microsoft Word attachment sent via spearphishing.",
+        "T1566.001::[TA459] has targeted victims using spearphishing emails with malicious Microsoft Word attachments."
+      ]
+    },
+    "description": "[TA459](https://attack.mitre.org/groups/G0062) is a threat group believed to operate out of China that has targeted countries including Russia, Belarus, Mongolia, and others. (Citation: Proofpoint TA459 April 2017)"
+  }
+]

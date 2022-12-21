@@ -1,0 +1,52 @@
+[
+  {
+    "id": "tool--b1595ddd-a783-482a-90e1-8afc8d48467e",
+    "name": "ironnetinjector",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0581",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 5,
+        "items": [
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "techniques": {
+        "count": 8,
+        "items": [
+          "T1027",
+          "T1036.004",
+          "T1053.005",
+          "T1055",
+          "T1055.001",
+          "T1057",
+          "T1059.006",
+          "T1140"
+        ]
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "turla"
+        ]
+      },
+      "procedures": [
+        "T1027::[IronNetInjector] can obfuscate variable names, encrypt strings, as well as base64 encode and Rijndael encrypt payloads.",
+        "T1036.004::[IronNetInjector] has been disguised as a legitimate service using the name PythonUpdateSrvc.",
+        "T1053.005::[IronNetInjector] has used a task XML file named mssch.xml to run an IronPython script when a user logs in or when specific system events are created.",
+        "T1055.001::[IronNetInjector] has the ability to inject a DLL into running processes, including the [IronNetInjector] DLL into explorer.exe.",
+        "T1055::[IronNetInjector] can use an IronPython scripts to load a .NET injector to inject a payload into its own or a remote process.",
+        "T1057::[IronNetInjector] can identify processes via C# methods such as GetProcessesByName and running [Tasklist] with the Python os.popen function.",
+        "T1059.006::[IronNetInjector] can use IronPython scripts to load payloads with the help of a .NET injector.",
+        "T1140::[IronNetInjector] has the ability to decrypt embedded .NET and PE payloads."
+      ]
+    },
+    "description": "[IronNetInjector](https://attack.mitre.org/software/S0581) is a [Turla](https://attack.mitre.org/groups/G0010) toolchain that utilizes scripts from the open-source IronPython implementation of Python with a .NET injector to drop one or more payloads including [ComRAT](https://attack.mitre.org/software/S0126).(Citation: Unit 42 IronNetInjector February 2021 )"
+  }
+]

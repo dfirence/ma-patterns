@@ -1,0 +1,49 @@
+[
+  {
+    "id": "intrusion-set--b2e34388-6938-4c59-a702-80dc219e15e3",
+    "name": "volatile-cedar",
+    "aliases": "volatile-cedar|lebanese-cedar",
+    "group_id": "G0123",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 2,
+        "items": [
+          "caterpillar-webshell",
+          "explosive"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 5,
+        "items": [
+          "T1105",
+          "T1190",
+          "T1505.003",
+          "T1595.002",
+          "T1595.003"
+        ]
+      },
+      "tactics": {
+        "count": 4,
+        "items": [
+          "command-and-control",
+          "initial-access",
+          "persistence",
+          "reconnaissance"
+        ]
+      },
+      "procedures": [
+        "T1105::[Volatile Cedar] can deploy additional tools.",
+        "T1190::[Volatile Cedar] has targeted publicly facing web servers, with both automatic and manual vulnerability discovery.",
+        "T1505.003::[Volatile Cedar] can inject web shell code into a server.",
+        "T1595.002::[Volatile Cedar] has performed vulnerability scans of the target server.",
+        "T1595.003::[Volatile Cedar] has used DirBuster and GoBuster to brute force web directories and DNS subdomains."
+      ]
+    },
+    "description": "[Volatile Cedar](https://attack.mitre.org/groups/G0123) is a Lebanese threat group that has targeted individuals, companies, and institutions worldwide. [Volatile Cedar](https://attack.mitre.org/groups/G0123) has been operating since 2012 and is motivated by political and ideological interests.(Citation: CheckPoint Volatile Cedar March 2015)(Citation: ClearSky Lebanese Cedar Jan 2021)"
+  }
+]

@@ -1,0 +1,226 @@
+[
+  [
+    "oilrig",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[OilRig] has used credential dumping tools such as [Mimikatz] to steal credentials to accounts logged into the compromised system and to Outlook Web Access."
+  ],
+  [
+    "oilrig",
+    "T1003.004",
+    "LSA Secrets",
+    "command-execution|windows-registry-key-access",
+    "T1003.004::[OilRig] has used credential dumping tools such as [LaZagne] to steal credentials to accounts logged into the compromised system and to Outlook Web Access."
+  ],
+  [
+    "oilrig",
+    "T1003.005",
+    "Cached Domain Credentials",
+    "command-execution",
+    "T1003.005::[OilRig] has used credential dumping tools such as [LaZagne] to steal credentials to accounts logged into the compromised system and to Outlook Web Access."
+  ],
+  [
+    "oilrig",
+    "T1021.001",
+    "Remote Desktop Protocol",
+    "logon-session-creation|network-connection-creation|network-traffic-flow|process-creation",
+    "T1021.001::[OilRig] has used Remote Desktop Protocol for lateral movement. The group has also used tunneling tools to tunnel RDP into the environment."
+  ],
+  [
+    "oilrig",
+    "T1021.004",
+    "SSH",
+    "logon-session-creation|network-connection-creation|process-creation",
+    "T1021.004::[OilRig] has used Putty to access compromised systems."
+  ],
+  [
+    "oilrig",
+    "T1027.005",
+    "Indicator Removal from Tools",
+    "application-log-content",
+    "T1027.005::[OilRig] has tested malware samples to determine AV detection and subsequently modified the samples to ensure AV evasion."
+  ],
+  [
+    "oilrig",
+    "T1048.003",
+    "Exfiltration Over Unencrypted Non-C2 Protocol",
+    "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1048.003::[OilRig] has exfiltrated data over FTP separately from its primary C2 channel over DNS."
+  ],
+  [
+    "oilrig",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[OilRig] has created scheduled tasks that run a VBScript to execute a payload on victim machines."
+  ],
+  [
+    "oilrig",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[OilRig] has used keylogging tools called KEYPUNCH and LONGWATCH."
+  ],
+  [
+    "oilrig",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[OilRig] has used PowerShell scripts for execution, including use of a macro to run a PowerShell command to decode file contents."
+  ],
+  [
+    "oilrig",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[OilRig] has used macros to deliver malware such as [QUADAGENT] and [OopsIE]."
+  ],
+  [
+    "oilrig",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[OilRig] has used VBSscipt macros for execution on compromised hosts."
+  ],
+  [
+    "oilrig",
+    "T1069.001",
+    "Local Groups",
+    "command-execution|group-enumeration|os-api-execution|process-creation",
+    "T1069.001::[OilRig] has used net localgroup administrators to find local administrators on compromised systems."
+  ],
+  [
+    "oilrig",
+    "T1069.002",
+    "Domain Groups",
+    "command-execution|group-enumeration|os-api-execution|process-creation",
+    "T1069.002::[OilRig] has used net group /domain, net group “domain admins” /domain, and net group “Exchange Trusted Subsystem” /domain to find domain group permission settings."
+  ],
+  [
+    "oilrig",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[OilRig] has deleted files associated with their payload after execution."
+  ],
+  [
+    "oilrig",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[OilRig] has used HTTP for C2."
+  ],
+  [
+    "oilrig",
+    "T1071.004",
+    "DNS",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.004::[OilRig] has used DNS for C2 including the publicly available requestbin.net tunneling service."
+  ],
+  [
+    "oilrig",
+    "T1087.001",
+    "Local Account",
+    "command-execution|file-access|group-enumeration|os-api-execution|process-creation",
+    "T1087.001::[OilRig] has run net user, net user /domain, net group “domain admins” /domain, and net group “Exchange Trusted Subsystem” /domain to get account listings on a victim."
+  ],
+  [
+    "oilrig",
+    "T1087.002",
+    "Domain Account",
+    "command-execution|group-enumeration|network-traffic-content|os-api-execution|process-creation",
+    "T1087.002::[OilRig] has run net user, net user /domain, net group “domain admins” /domain, and net group “Exchange Trusted Subsystem” /domain to get account listings on a victim."
+  ],
+  [
+    "oilrig",
+    "T1137.004",
+    "Outlook Home Page",
+    "application-log-content|command-execution|process-creation",
+    "T1137.004::[OilRig] has abused the Outlook Home Page feature for persistence. [OilRig] has also used CVE-2017-11774 to roll back the initial patch designed to protect against Home Page abuse."
+  ],
+  [
+    "oilrig",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[OilRig] has delivered malicious links to achieve execution on the target system."
+  ],
+  [
+    "oilrig",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[OilRig] has delivered macro-enabled documents that required targets to click the \"enable content\" button to execute the payload on the system."
+  ],
+  [
+    "oilrig",
+    "T1218.001",
+    "Compiled HTML File",
+    "command-execution|file-creation|process-creation",
+    "T1218.001::[OilRig] has used a CHM payload to load and execute another malicious file once delivered to a victim."
+  ],
+  [
+    "oilrig",
+    "T1497.001",
+    "System Checks",
+    "command-execution|os-api-execution|process-creation",
+    "T1497.001::[OilRig] has used macros to verify if a mouse is connected to a compromised machine."
+  ],
+  [
+    "oilrig",
+    "T1505.003",
+    "Web Shell",
+    "application-log-content|file-creation|file-modification|network-traffic-content|network-traffic-flow|process-creation",
+    "T1505.003::[OilRig] has used web shells, often to maintain access to a victim network."
+  ],
+  [
+    "oilrig",
+    "T1552.001",
+    "Credentials In Files",
+    "command-execution|file-access",
+    "T1552.001::[OilRig] has used credential dumping tools such as [LaZagne] to steal credentials to accounts logged into the compromised system and to Outlook Web Access."
+  ],
+  [
+    "oilrig",
+    "T1555.003",
+    "Credentials from Web Browsers",
+    "command-execution|file-access|os-api-execution|process-access",
+    "T1555.003::[OilRig] has used credential dumping tools such as [LaZagne] to steal credentials to accounts logged into the compromised system and to Outlook Web Access."
+  ],
+  [
+    "oilrig",
+    "T1555.004",
+    "Windows Credential Manager",
+    "command-execution|file-access|os-api-execution|process-creation",
+    "T1555.004::[OilRig] has used credential dumping tool named VALUEVAULT to steal credentials from the Windows Credential Manager."
+  ],
+  [
+    "oilrig",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[OilRig] has sent spearphising emails with malicious attachments to potential victims using compromised and/or spoofed email accounts."
+  ],
+  [
+    "oilrig",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[OilRig] has sent spearphising emails with malicious links to potential victims."
+  ],
+  [
+    "oilrig",
+    "T1566.003",
+    "Spearphishing via Service",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.003::[OilRig] has used LinkedIn to send spearphishing links."
+  ],
+  [
+    "oilrig",
+    "T1573.002",
+    "Asymmetric Cryptography",
+    "network-traffic-content",
+    "T1573.002::[OilRig] used the Plink utility and other tools to create tunnels to C2 servers."
+  ]
+]

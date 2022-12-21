@@ -1,0 +1,40 @@
+[
+  {
+    "id": "tool--90ec2b22-7061-4469-b539-0989ec4f96c2",
+    "name": "forfiles",
+    "aliases": "none",
+    "platforms": "none",
+    "tool_id": "S0193",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 3,
+        "items": [
+          "collection",
+          "defense-evasion",
+          "discovery"
+        ]
+      },
+      "techniques": {
+        "count": 3,
+        "items": [
+          "T1005",
+          "T1083",
+          "T1202"
+        ]
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "apt28"
+        ]
+      },
+      "procedures": [
+        "T1005::[Forfiles] can be used to act on (ex: copy, move, etc.) files/directories in a system during (ex: copy files into a staging area before).",
+        "T1083::[Forfiles] can be used to locate certain types of files/directories in a system.(ex: locate all files with a specific extension, name, and/or age)",
+        "T1202::[Forfiles] can be used to subvert controls and possibly conceal command execution by not directly invoking [cmd]."
+      ]
+    },
+    "description": "[Forfiles](https://attack.mitre.org/software/S0193) is a Windows utility commonly used in batch jobs to execute commands on one or more selected files or directories (ex: list all directories in a drive, read the first line of all files created yesterday, etc.). Forfiles can be executed from either the command line, Run window, or batch files/scripts. (Citation: Microsoft Forfiles Aug 2016)"
+  }
+]

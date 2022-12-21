@@ -1,0 +1,73 @@
+[
+  {
+    "id": "intrusion-set--7f848c02-4d1e-4808-a4ae-4670681370a9",
+    "name": "bitter",
+    "aliases": "bitter|t-apt-17",
+    "group_id": "G1002",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 1,
+        "items": [
+          "zxxz"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 16,
+        "items": [
+          "T1027",
+          "T1036.004",
+          "T1053.005",
+          "T1068",
+          "T1071.001",
+          "T1095",
+          "T1105",
+          "T1203",
+          "T1204.002",
+          "T1559.002",
+          "T1566.001",
+          "T1568",
+          "T1573",
+          "T1583.001",
+          "T1588.002",
+          "T1608.001"
+        ]
+      },
+      "tactics": {
+        "count": 7,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "execution",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1027::[BITTER] has used a RAR SFX dropper to deliver malware.",
+        "T1036.004::[BITTER] has disguised malware as a Windows Security update service.",
+        "T1053.005::[BITTER] has used scheduled tasks for persistence and execution.",
+        "T1068::[BITTER] has exploited CVE-2021-1732 for privilege escalation.",
+        "T1071.001::[BITTER] has used HTTP POST requests for C2.",
+        "T1095::[BITTER] has used TCP for C2 communications.",
+        "T1105::[BITTER] has downloaded additional malware and tools onto a compromised host.",
+        "T1203::[BITTER] has exploited Microsoft Office vulnerabilities CVE-2012-0158, CVE-2017-11882, CVE-2018-0798, and CVE-2018-0802.",
+        "T1204.002::[BITTER] has attempted to lure victims into opening malicious attachments delivered via spearphishing.",
+        "T1559.002::[BITTER] has executed OLE objects using Microsoft Equation Editor to download and run malicious payloads.",
+        "T1566.001::[BITTER] has sent spearphishing emails with a malicious RTF document or Excel spreadsheet.",
+        "T1568::[BITTER] has used DDNS for C2 communications.",
+        "T1573::[BITTER] has encrypted their C2 communications.",
+        "T1583.001::[BITTER] has registered a variety of domains to host malicious payloads and for C2.",
+        "T1588.002::[BITTER] has obtained tools such as PuTTY for use in their operations.",
+        "T1608.001::[BITTER] has registered domains to stage payloads."
+      ]
+    },
+    "description": "[BITTER](https://attack.mitre.org/groups/G1002) is a suspected South Asian cyber espionage threat group that has been active since at least 2013. [BITTER](https://attack.mitre.org/groups/G1002) has primarily targeted government, energy, and engineering organizations in Pakistan, China, Bangladesh, and Saudi Arabia.(Citation: Cisco Talos Bitter Bangladesh May 2022)(Citation: Forcepoint BITTER Pakistan Oct 2016)"
+  }
+]

@@ -1,0 +1,118 @@
+[
+  {
+    "id": "attack-pattern--4bc31b94-045b-4752-8920-aebaebdb6470",
+    "platform": "windows|office-365|google-workspace",
+    "tid": "T1087.003",
+    "technique": "Email Account",
+    "tactic": "discovery",
+    "datasources": "command-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "mailsniper",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to get a listing of email addresses and accounts. Adversaries may try to dump Exchange address lists such as global address lists (GALs).(Citation: Microsoft Exchange Address Lists)\n\nIn on-premises Exchange and Exchange Online, the<code>Get-GlobalAddressList</code> PowerShell cmdlet can be used to obtain email addresses and accounts from a domain using an authenticated session.(Citation: Microsoft getglobaladdresslist)(Citation: Black Hills Attacking Exchange MailSniper, 2016)\n\nIn Google Workspace, the GAL is shared with Microsoft Outlook users through the Google Workspace Sync for Microsoft Outlook (GWSMO) service. Additionally, the Google Workspace Directory allows for users to get a listing of other users within the organization.(Citation: Google Workspace Global Access List)",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Exchange Address Lists",
+        "url": "https://docs.microsoft.com/en-us/exchange/email-addresses-and-address-books/address-lists/address-lists?view=exchserver-2019",
+        "description": "Microsoft. (2020, February 7). Address lists in Exchange Server. Retrieved March 26, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft getglobaladdresslist",
+        "url": "https://docs.microsoft.com/en-us/powershell/module/exchange/email-addresses-and-address-books/get-globaladdresslist",
+        "description": "Microsoft. (n.d.). Get-GlobalAddressList. Retrieved October 6, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Black Hills Attacking Exchange MailSniper, 2016",
+        "url": "https://www.blackhillsinfosec.com/attacking-exchange-with-mailsniper/",
+        "description": "Bullock, B.. (2016, October 3). Attacking Exchange with MailSniper. Retrieved October 6, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Google Workspace Global Access List",
+        "url": "https://support.google.com/a/answer/166870?hl=en",
+        "description": "Google. (n.d.). Retrieved March 16, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--692074ae-bb62-4a5e-a735-02cb6bde458c",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers",
+    "tid": "T1110.003",
+    "technique": "Password Spraying",
+    "tactic": "credential-access",
+    "datasources": "application-log-content|user-account-authentication",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "mailsniper",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use a single or small list of commonly used passwords against many different accounts to attempt to acquire valid account credentials. Password spraying uses one password (e.g. 'Password01'), or a small list of commonly used passwords, that may match the complexity policy of the domain. Logins are attempted with that password against many different accounts on a network to avoid account lockouts that would normally occur when brute forcing a single account with many passwords. (Citation: BlackHillsInfosec Password Spraying)\n\nTypically, management services over commonly used ports are used when password spraying. Commonly targeted services include the following:\n\n* SSH (22/TCP)\n* Telnet (23/TCP)\n* FTP (21/TCP)\n* NetBIOS / SMB / Samba (139/TCP & 445/TCP)\n* LDAP (389/TCP)\n* Kerberos (88/TCP)\n* RDP / Terminal Services (3389/TCP)\n* HTTP/HTTP Management Services (80/TCP & 443/TCP)\n* MSSQL (1433/TCP)\n* Oracle (1521/TCP)\n* MySQL (3306/TCP)\n* VNC (5900/TCP)\n\nIn addition to management services, adversaries may \"target single sign-on (SSO) and cloud-based applications utilizing federated authentication protocols,\" as well as externally facing email applications, such as Office 365.(Citation: US-CERT TA18-068A 2018)\n\nIn default environments, LDAP and Kerberos connection attempts are less likely to trigger events over SMB, which creates Windows \"logon failure\" event ID 4625.",
+    "technique_references": [
+      {
+        "source_name": "capec",
+        "url": "https://capec.mitre.org/data/definitions/565.html",
+        "description": "none",
+        "external_id": "CAPEC-565"
+      },
+      {
+        "source_name": "BlackHillsInfosec Password Spraying",
+        "url": "http://www.blackhillsinfosec.com/?p=4645",
+        "description": "Thyer, J. (2015, October 30). Password Spraying & Other Fun with RPCCLIENT. Retrieved April 25, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT TA18-068A 2018",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA18-086A",
+        "description": "US-CERT. (2018, March 27). TA18-068A Brute Force Attacks Conducted by Cyber Actors. Retrieved October 2, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Trimarc Detecting Password Spraying",
+        "url": "https://www.trimarcsecurity.com/single-post/2018/05/06/Trimarc-Research-Detecting-Password-Spraying-with-Security-Event-Auditing",
+        "description": "Metcalf, S. (2018, May 6). Trimarc Research: Detecting Password Spraying with Security Event Auditing. Retrieved January 16, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b4694861-542c-48ea-9eb1-10d356e7140a",
+    "platform": "office-365|windows|google-workspace",
+    "tid": "T1114.002",
+    "technique": "Remote Email Collection",
+    "tactic": "collection",
+    "datasources": "command-execution|logon-session-creation|network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "mailsniper",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may target an Exchange server, Office 365, or Google Workspace to collect sensitive information. Adversaries may leverage a user's credentials and interact directly with the Exchange server to acquire information from within a network. Adversaries may also access externally facing Exchange services, Office 365, or Google Workspace to access email using credentials or access tokens. Tools such as [MailSniper](https://attack.mitre.org/software/S0413) can be used to automate searches for specific keywords.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

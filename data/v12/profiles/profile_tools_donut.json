@@ -1,0 +1,66 @@
+[
+  {
+    "id": "tool--a7b5df47-73bb-4d47-b701-869f185633a6",
+    "name": "donut",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0695",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 5,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "privilege-escalation"
+        ]
+      },
+      "techniques": {
+        "count": 15,
+        "items": [
+          "T1027",
+          "T1027.002",
+          "T1055",
+          "T1057",
+          "T1059",
+          "T1059.001",
+          "T1059.005",
+          "T1059.006",
+          "T1059.007",
+          "T1070",
+          "T1071.001",
+          "T1105",
+          "T1106",
+          "T1562.001",
+          "T1620"
+        ]
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "indrik-spider"
+        ]
+      },
+      "procedures": [
+        "T1027.002::[Donut] can generate packed code modules.",
+        "T1027::[Donut] can generate encrypted, compressed/encoded, or otherwise obfuscated code modules.",
+        "T1055::[Donut] includes a subproject DonutTest to inject shellcode into a target process.",
+        "T1057::[Donut] includes subprojects that enumerate and identify information about [Process Injection] candidates.",
+        "T1059.001::[Donut] can generate shellcode outputs that execute via PowerShell.",
+        "T1059.005::[Donut] can generate shellcode outputs that execute via VBScript.",
+        "T1059.006::[Donut] can generate shellcode outputs that execute via Python.",
+        "T1059.007::[Donut] can generate shellcode outputs that execute via JavaScript or JScript.",
+        "T1059::[Donut] can generate shellcode outputs that execute via Ruby.",
+        "T1070::[Donut] can erase file references to payloads in-memory after being reflectively loaded and executed.",
+        "T1071.001::[Donut] can use HTTP to download previously staged shellcode payloads.",
+        "T1105::[Donut] can download and execute previously staged shellcode payloads.",
+        "T1106::[Donut] code modules use various API functions to load and inject code.",
+        "T1562.001::[Donut] can patch Antimalware Scan Interface (AMSI), Windows Lockdown Policy (WLDP), as well as exit-related [Native API] functions to avoid process termination.",
+        "T1620::[Donut] can generate code modules that enable in-memory execution of VBScript, JScript, EXE, DLL, and dotNET payloads."
+      ]
+    },
+    "description": "[Donut](https://attack.mitre.org/software/S0695) is an open source framework used to generate position-independent shellcode.(Citation: Donut Github)(Citation: Introducing Donut) [Donut](https://attack.mitre.org/software/S0695) generated code has been used by multiple threat actors to inject and load malicious payloads into memory.(Citation: NCC Group WastedLocker June 2020)"
+  }
+]

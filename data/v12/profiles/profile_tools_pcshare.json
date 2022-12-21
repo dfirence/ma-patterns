@@ -1,0 +1,78 @@
+[
+  {
+    "id": "tool--3a53b207-aba2-4a2b-9cdb-273d633669e7",
+    "name": "pcshare",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S1050",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 9,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "exfiltration",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "techniques": {
+        "count": 20,
+        "items": [
+          "T1005",
+          "T1012",
+          "T1016",
+          "T1027",
+          "T1036.001",
+          "T1036.005",
+          "T1041",
+          "T1055",
+          "T1056.001",
+          "T1057",
+          "T1059.003",
+          "T1070.004",
+          "T1071.001",
+          "T1106",
+          "T1112",
+          "T1113",
+          "T1125",
+          "T1140",
+          "T1218.011",
+          "T1546.015"
+        ]
+      },
+      "adversaries": {
+        "count": 0,
+        "items": []
+      },
+      "procedures": [
+        "T1005::[PcShare] can collect files and information from a compromised host.",
+        "T1012::[PcShare] can search the registry files of a compromised host.",
+        "T1016::[PcShare] can obtain the proxy settings of a compromised machine using `InternetQueryOptionA` and its IP address by running `nslookup myip.opendns.comresolver1.opendns.com\\r\\n`.",
+        "T1027::[PcShare] has been encrypted with XOR using different 32-long Base16 strings and compressed with LZW algorithm.",
+        "T1036.001::[PcShare] has used an invalid certificate in attempt to appear legitimate.",
+        "T1036.005::[PcShare] has been named `wuauclt.exe` to appear as the legitimate Windows Update AutoUpdate Client.",
+        "T1041::[PcShare] can upload files and information from a compromised host to its C2 servers.",
+        "T1055::The [PcShare] payload has been injected into the `logagent.exe` and `rdpclip.exe` processes.",
+        "T1056.001::[PcShare] has the ability to capture keystrokes.",
+        "T1057::[PcShare] can obtain a list of running processes on a compromised host.",
+        "T1059.003::[PcShare] can execute `cmd` commands on a compromised host.",
+        "T1070.004::[PcShare] has deleted its files and components from a compromised host.",
+        "T1071.001::[PcShare] has used HTTP for C2 communication.",
+        "T1106::[PcShare] has used a variety of Windows API functions.",
+        "T1112::[PcShare] can delete its persistence mechanisms from the registry.",
+        "T1113::[PcShare] can take screen shots of a compromised machine.",
+        "T1125::[PcShare] can capture camera video as part of its collection process.",
+        "T1140::[PcShare] has decrypted its strings by applying a XOR operation and a decompression using a custom implemented LZM algorithm.",
+        "T1218.011::[PcShare] has used `rundll32.exe` for execution.",
+        "T1546.015::[PcShare] has created the `HKCU\\\\Software\\\\Classes\\\\CLSID\\\\{42aedc87-2188-41fd-b9a3-0c966feabec1}\\\\InprocServer32` Registry key for persistence."
+      ]
+    },
+    "description": "[PcShare](https://attack.mitre.org/software/S1050) is an open source remote access tool that has been modified and used by Chinese threat actors, most notably during the FunnyDream campaign since late 2018.(Citation: Bitdefender FunnyDream Campaign November 2020)(Citation: GitHub PcShare 2014)"
+  }
+]

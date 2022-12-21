@@ -1,0 +1,51 @@
+[
+  [
+    "axiom",
+    "T1001.002",
+    "Steganography",
+    "network-traffic-content",
+    "T1001.002::[Axiom] has used steganography to hide its C2 communications."
+  ],
+  [
+    "axiom",
+    "T1021.001",
+    "Remote Desktop Protocol",
+    "logon-session-creation|network-connection-creation|network-traffic-flow|process-creation",
+    "T1021.001::[Axiom] has used RDP during operations."
+  ],
+  [
+    "axiom",
+    "T1546.008",
+    "Accessibility Features",
+    "command-execution|file-creation|file-modification|process-creation|windows-registry-key-modification",
+    "T1546.008::[Axiom] actors have been known to use the Sticky Keys replacement within RDP sessions to obtain persistence."
+  ],
+  [
+    "axiom",
+    "T1563.002",
+    "RDP Hijacking",
+    "command-execution|logon-session-creation|network-traffic-content|network-traffic-flow|process-creation",
+    "T1563.002::[Axiom] has targeted victims with remote administration tools including RDP."
+  ],
+  [
+    "axiom",
+    "T1583.002",
+    "DNS Server",
+    "none",
+    "T1583.002::[Axiom] has acquired dynamic DNS services for use in the targeting of intended victims."
+  ],
+  [
+    "axiom",
+    "T1583.003",
+    "Virtual Private Server",
+    "response-content|response-metadata",
+    "T1583.003::[Axiom] has used VPS hosting providers in targeting of intended victims."
+  ],
+  [
+    "axiom",
+    "T1584.005",
+    "Botnet",
+    "none",
+    "T1584.005::[Axiom] has used large groups of compromised machines for use as proxy nodes."
+  ]
+]

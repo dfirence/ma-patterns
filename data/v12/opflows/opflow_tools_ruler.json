@@ -1,0 +1,178 @@
+[
+  {
+    "id": "attack-pattern--4bc31b94-045b-4752-8920-aebaebdb6470",
+    "platform": "windows|office-365|google-workspace",
+    "tid": "T1087.003",
+    "technique": "Email Account",
+    "tactic": "discovery",
+    "datasources": "command-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "ruler",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to get a listing of email addresses and accounts. Adversaries may try to dump Exchange address lists such as global address lists (GALs).(Citation: Microsoft Exchange Address Lists)\n\nIn on-premises Exchange and Exchange Online, the<code>Get-GlobalAddressList</code> PowerShell cmdlet can be used to obtain email addresses and accounts from a domain using an authenticated session.(Citation: Microsoft getglobaladdresslist)(Citation: Black Hills Attacking Exchange MailSniper, 2016)\n\nIn Google Workspace, the GAL is shared with Microsoft Outlook users through the Google Workspace Sync for Microsoft Outlook (GWSMO) service. Additionally, the Google Workspace Directory allows for users to get a listing of other users within the organization.(Citation: Google Workspace Global Access List)",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Exchange Address Lists",
+        "url": "https://docs.microsoft.com/en-us/exchange/email-addresses-and-address-books/address-lists/address-lists?view=exchserver-2019",
+        "description": "Microsoft. (2020, February 7). Address lists in Exchange Server. Retrieved March 26, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft getglobaladdresslist",
+        "url": "https://docs.microsoft.com/en-us/powershell/module/exchange/email-addresses-and-address-books/get-globaladdresslist",
+        "description": "Microsoft. (n.d.). Get-GlobalAddressList. Retrieved October 6, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Black Hills Attacking Exchange MailSniper, 2016",
+        "url": "https://www.blackhillsinfosec.com/attacking-exchange-with-mailsniper/",
+        "description": "Bullock, B.. (2016, October 3). Attacking Exchange with MailSniper. Retrieved October 6, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Google Workspace Global Access List",
+        "url": "https://support.google.com/a/answer/166870?hl=en",
+        "description": "Google. (n.d.). Retrieved March 16, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--a9e2cea0-c805-4bf8-9e31-f5f0513a3634",
+    "platform": "windows|office-365",
+    "tid": "T1137.003",
+    "technique": "Outlook Forms",
+    "tactic": "persistence",
+    "datasources": "application-log-content|command-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "ruler",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse Microsoft Outlook forms to obtain persistence on a compromised system. Outlook forms are used as templates for presentation and functionality in Outlook messages. Custom Outlook forms can be created that will execute code when a specifically crafted email is sent by an adversary utilizing the same custom Outlook form.(Citation: SensePost Outlook Forms)\n\nOnce malicious forms have been added to the user’s mailbox, they will be loaded when Outlook is started. Malicious forms will execute when an adversary sends a specifically crafted email to the user.(Citation: SensePost Outlook Forms)",
+    "technique_references": [
+      {
+        "source_name": "SensePost Outlook Forms",
+        "url": "https://sensepost.com/blog/2017/outlook-forms-and-shells/",
+        "description": "Stalmans, E. (2017, April 28). Outlook Forms and Shells. Retrieved February 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Detect Outlook Forms",
+        "url": "https://docs.microsoft.com/en-us/office365/securitycompliance/detect-and-remediate-outlook-rules-forms-attack",
+        "description": "Fox, C., Vangel, D. (2018, April 22). Detect and Remediate Outlook Rules and Custom Forms Injections Attacks in Office 365. Retrieved February 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SensePost NotRuler",
+        "url": "https://github.com/sensepost/notruler",
+        "description": "SensePost. (2017, September 21). NotRuler - The opposite of Ruler, provides blue teams with the ability to detect Ruler usage against Exchange. Retrieved February 4, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--bf147104-abf9-4221-95d1-e81585859441",
+    "platform": "windows|office-365",
+    "tid": "T1137.004",
+    "technique": "Outlook Home Page",
+    "tactic": "persistence",
+    "datasources": "application-log-content|command-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "ruler",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse Microsoft Outlook's Home Page feature to obtain persistence on a compromised system. Outlook Home Page is a legacy feature used to customize the presentation of Outlook folders. This feature allows for an internal or external URL to be loaded and presented whenever a folder is opened. A malicious HTML page can be crafted that will execute code when loaded by Outlook Home Page.(Citation: SensePost Outlook Home Page)\n\nOnce malicious home pages have been added to the user’s mailbox, they will be loaded when Outlook is started. Malicious Home Pages will execute when the right Outlook folder is loaded/reloaded.(Citation: SensePost Outlook Home Page)\n",
+    "technique_references": [
+      {
+        "source_name": "SensePost Outlook Home Page",
+        "url": "https://sensepost.com/blog/2017/outlook-home-page-another-ruler-vector/",
+        "description": "Stalmans, E. (2017, October 11). Outlook Home Page – Another Ruler Vector. Retrieved February 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Detect Outlook Forms",
+        "url": "https://docs.microsoft.com/en-us/office365/securitycompliance/detect-and-remediate-outlook-rules-forms-attack",
+        "description": "Fox, C., Vangel, D. (2018, April 22). Detect and Remediate Outlook Rules and Custom Forms Injections Attacks in Office 365. Retrieved February 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SensePost NotRuler",
+        "url": "https://github.com/sensepost/notruler",
+        "description": "SensePost. (2017, September 21). NotRuler - The opposite of Ruler, provides blue teams with the ability to detect Ruler usage against Exchange. Retrieved February 4, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--3d1b9d7e-3921-4d25-845a-7d9f15c0da44",
+    "platform": "windows|office-365",
+    "tid": "T1137.005",
+    "technique": "Outlook Rules",
+    "tactic": "persistence",
+    "datasources": "application-log-content|command-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "ruler",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse Microsoft Outlook rules to obtain persistence on a compromised system. Outlook rules allow a user to define automated behavior to manage email messages. A benign rule might, for example, automatically move an email to a particular folder in Outlook if it contains specific words from a specific sender. Malicious Outlook rules can be created that can trigger code execution when an adversary sends a specifically crafted email to that user.(Citation: SilentBreak Outlook Rules)\n\nOnce malicious rules have been added to the user’s mailbox, they will be loaded when Outlook is started. Malicious rules will execute when an adversary sends a specifically crafted email to the user.(Citation: SilentBreak Outlook Rules)",
+    "technique_references": [
+      {
+        "source_name": "SilentBreak Outlook Rules",
+        "url": "https://silentbreaksecurity.com/malicious-outlook-rules/",
+        "description": "Landers, N. (2015, December 4). Malicious Outlook Rules. Retrieved February 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Detect Outlook Forms",
+        "url": "https://docs.microsoft.com/en-us/office365/securitycompliance/detect-and-remediate-outlook-rules-forms-attack",
+        "description": "Fox, C., Vangel, D. (2018, April 22). Detect and Remediate Outlook Rules and Custom Forms Injections Attacks in Office 365. Retrieved February 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Pfammatter - Hidden Inbox Rules",
+        "url": "https://blog.compass-security.com/2018/09/hidden-inbox-rules-in-microsoft-exchange/",
+        "description": "Damian Pfammatter. (2018, September 17). Hidden Inbox Rules in Microsoft Exchange. Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SensePost NotRuler",
+        "url": "https://github.com/sensepost/notruler",
+        "description": "SensePost. (2017, September 21). NotRuler - The opposite of Ruler, provides blue teams with the ability to detect Ruler usage against Exchange. Retrieved February 4, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

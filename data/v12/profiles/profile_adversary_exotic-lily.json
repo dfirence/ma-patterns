@@ -1,0 +1,70 @@
+[
+  {
+    "id": "intrusion-set--129f2f77-1ab2-4c35-bd5e-21260cee92af",
+    "name": "exotic-lily",
+    "aliases": "exotic-lily",
+    "group_id": "G1011",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 2,
+        "items": [
+          "bazar",
+          "bumblebee"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 15,
+        "items": [
+          "T1102",
+          "T1203",
+          "T1204.001",
+          "T1204.002",
+          "T1566.001",
+          "T1566.002",
+          "T1566.003",
+          "T1583.001",
+          "T1585.001",
+          "T1585.002",
+          "T1589.002",
+          "T1593.001",
+          "T1594",
+          "T1597",
+          "T1608.001"
+        ]
+      },
+      "tactics": {
+        "count": 5,
+        "items": [
+          "command-and-control",
+          "execution",
+          "initial-access",
+          "reconnaissance",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1102::[EXOTIC LILY] has used file-sharing services including WeTransfer, TransferNow, and OneDrive to deliver payloads.",
+        "T1203::[EXOTIC LILY] has used malicious documents containing exploits for CVE-2021-40444 affecting Microsoft MSHTML.",
+        "T1204.001::[EXOTIC LILY] has used malicious links to lure users into executing malicious payloads.",
+        "T1204.002::[EXOTIC LILY] has gained execution through victims clicking on malicious LNK files contained within ISO files, which can execute hidden DLLs within the ISO.",
+        "T1566.001::[EXOTIC LILY] conducted an e-mail thread-hijacking campaign with malicious ISO attachments.",
+        "T1566.002::[EXOTIC LILY] has relied on victims to open malicious links in e-mails for execution.",
+        "T1566.003::[EXOTIC LILY] has used the e-mail notification features of legitimate file sharing services for spearphishing.",
+        "T1583.001::[EXOTIC LILY] has registered domains to spoof targeted organizations by changing the top-level domain (TLD) to “.us”, “.co” or “.biz”.",
+        "T1585.001::[EXOTIC LILY] has established social media profiles to mimic employees of targeted companies.",
+        "T1585.002::[EXOTIC LILY] has created e-mail accounts to spoof targeted organizations.",
+        "T1589.002::[EXOTIC LILY] has gathered targeted individuals' e-mail addresses through open source research and website contact forms.",
+        "T1593.001::[EXOTIC LILY] has copied data from social media sites to impersonate targeted individuals.",
+        "T1594::[EXOTIC LILY] has used contact forms on victim websites to generate phishing e-mails.",
+        "T1597::[EXOTIC LILY] has searched for information on targeted individuals on business databases including RocketReach and CrunchBase.",
+        "T1608.001::[EXOTIC LILY]  has uploaded malicious payloads to file-sharing services including TransferNow, TransferXL, WeTransfer, and OneDrive."
+      ]
+    },
+    "description": "[EXOTIC LILY](https://attack.mitre.org/groups/G1011) is a financially motivated group that has been closely linked with [Wizard Spider](https://attack.mitre.org/groups/G0102) and the deployment of ransomware including [Conti](https://attack.mitre.org/software/S0575) and [Diavol](https://attack.mitre.org/software/S0659). [EXOTIC LILY](https://attack.mitre.org/groups/G1011) may be acting as an initial access broker for other malicious actors, and has targeted a wide range of industries including IT, cybersecurity, and healthcare since at least September 2021.(Citation: Google EXOTIC LILY March 2022)"
+  }
+]

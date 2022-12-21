@@ -1,0 +1,51 @@
+[
+  {
+    "id": "intrusion-set--5cbe0d3b-6fb1-471f-b591-4b192915116d",
+    "name": "suckfly",
+    "aliases": "suckfly",
+    "group_id": "G0039",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 1,
+        "items": [
+          "nidiran"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 5,
+        "items": [
+          "T1003",
+          "T1046",
+          "T1059.003",
+          "T1078",
+          "T1553.002"
+        ]
+      },
+      "tactics": {
+        "count": 7,
+        "items": [
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "procedures": [
+        "T1003::[Suckfly] used a signed credential-dumping tool to obtain victim account credentials.",
+        "T1046::[Suckfly] the victim's internal network for hosts with ports 8080, 5900, and 40 open.",
+        "T1059.003::Several tools used by [Suckfly] have been command-line driven.",
+        "T1078::[Suckfly] used legitimate account credentials that they dumped to navigate the internal victim network as though they were the legitimate account owner.",
+        "T1553.002::[Suckfly] has used stolen certificates to sign its malware."
+      ]
+    },
+    "description": "[Suckfly](https://attack.mitre.org/groups/G0039) is a China-based threat group that has been active since at least 2014. (Citation: Symantec Suckfly March 2016)"
+  }
+]

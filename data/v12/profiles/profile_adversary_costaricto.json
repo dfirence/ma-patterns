@@ -1,0 +1,29 @@
+[
+  {
+    "id": "intrusion-set--bb82e0b0-6e9c-439f-970a-4c917a74c5f2",
+    "name": "costaricto",
+    "aliases": "costaricto",
+    "group_id": "G0132",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 0,
+        "items": []
+      },
+      "procedures": []
+    },
+    "description": "[CostaRicto](https://attack.mitre.org/groups/G0132) is a suspected hacker-for-hire cyber espionage campaign that has targeted multiple industries worldwide since at least 2019. [CostaRicto](https://attack.mitre.org/groups/G0132)'s targets, a large portion of which are financial institutions, are scattered across Europe, the Americas, Asia, Australia, and Africa, with a large concentration in South Asia.(Citation: BlackBerry CostaRicto November 2020)"
+  }
+]

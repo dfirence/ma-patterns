@@ -1,0 +1,44 @@
+[
+  [
+    "admin@338",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[admin@338] actors used the following command to rename one of their tools to a benign file name: ren \"%temp%\\upload\" audiodg.exe"
+  ],
+  [
+    "admin@338",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::Following exploitation with [LOWBALL] malware, [admin@338] actors created a file containing a list of commands to be executed on the compromised computer."
+  ],
+  [
+    "admin@338",
+    "T1069.001",
+    "Local Groups",
+    "command-execution|group-enumeration|os-api-execution|process-creation",
+    "T1069.001::[admin@338] actors used the following command following exploitation of a machine with [LOWBALL] malware to list local groups: net localgroup administrator >> %temp%\\download"
+  ],
+  [
+    "admin@338",
+    "T1087.001",
+    "Local Account",
+    "command-execution|file-access|group-enumeration|os-api-execution|process-creation",
+    "T1087.001::[admin@338] actors used the following commands following exploitation of a machine with [LOWBALL] malware to enumerate user accounts: net user >> %temp%\\download net user /domain >> %temp%\\download"
+  ],
+  [
+    "admin@338",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[admin@338] has attempted to get victims to launch malicious Microsoft Word attachments delivered via spearphishing emails."
+  ],
+  [
+    "admin@338",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[admin@338] has sent emails with malicious Microsoft Office documents attached."
+  ]
+]

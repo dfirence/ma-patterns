@@ -1,0 +1,52 @@
+[
+  {
+    "id": "intrusion-set--c5947e1c-1cbc-434c-94b8-27c7e3be0fff",
+    "name": "winnti-group",
+    "aliases": "winnti-group|blackfly",
+    "group_id": "G0044",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 3,
+        "items": [
+          "pipemon",
+          "plugx",
+          "winnti-for-windows"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 6,
+        "items": [
+          "T1014",
+          "T1057",
+          "T1083",
+          "T1105",
+          "T1553.002",
+          "T1583.001"
+        ]
+      },
+      "tactics": {
+        "count": 4,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "discovery",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1014::[Winnti Group] used a rootkit to modify typical server functionality.",
+        "T1057::[Winnti Group] looked for a specific process running on infected servers.",
+        "T1083::[Winnti Group] has used a program named ff.exe to search for specific documents on compromised hosts.",
+        "T1105::[Winnti Group] has downloaded an auxiliary program named ff.exe to infected machines.",
+        "T1553.002::[Winnti Group] used stolen certificates to sign its malware.",
+        "T1583.001::[Winnti Group] has registered domains for C2 that mimicked sites of their intended targets."
+      ]
+    },
+    "description": "[Winnti Group](https://attack.mitre.org/groups/G0044) is a threat group with Chinese origins that has been active since at least 2010. The group has heavily targeted the gaming industry, but it has also expanded the scope of its targeting.(Citation: Kaspersky Winnti April 2013)(Citation: Kaspersky Winnti June 2015)(Citation: Novetta Winnti April 2015) Some reporting suggests a number of other groups, including [Axiom](https://attack.mitre.org/groups/G0001), [APT17](https://attack.mitre.org/groups/G0025), and [Ke3chang](https://attack.mitre.org/groups/G0004), are closely linked to [Winnti Group](https://attack.mitre.org/groups/G0044).(Citation: 401 TRG Winnti Umbrella May 2018)"
+  }
+]

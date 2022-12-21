@@ -1,0 +1,128 @@
+[
+  [
+    "gallium",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[GALLIUM] used a modified version of [Mimikatz] along with a PowerShell-based [Mimikatz] to dump credentials on the victim machines."
+  ],
+  [
+    "gallium",
+    "T1003.002",
+    "Security Account Manager",
+    "command-execution|file-access|windows-registry-key-access",
+    "T1003.002::[GALLIUM] used reg commands to dump specific hives from the Windows Registry, such as the SAM hive, and obtain password hashes."
+  ],
+  [
+    "gallium",
+    "T1027.002",
+    "Software Packing",
+    "file-metadata",
+    "T1027.002::[GALLIUM] packed some payloads using different types of packers, both known and custom."
+  ],
+  [
+    "gallium",
+    "T1027.005",
+    "Indicator Removal from Tools",
+    "application-log-content",
+    "T1027.005::[GALLIUM] ensured each payload had a unique hash, including by using different types of packers."
+  ],
+  [
+    "gallium",
+    "T1036.003",
+    "Rename System Utilities",
+    "command-execution|file-metadata|file-modification|process-metadata",
+    "T1036.003::[GALLIUM] used a renamed cmd.exe file to evade detection."
+  ],
+  [
+    "gallium",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[GALLIUM] established persistence for [PoisonIvy] by created a scheduled task."
+  ],
+  [
+    "gallium",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[GALLIUM] used PowerShell for execution to assist in lateral movement as well as for dumping credentials stored on compromised machines."
+  ],
+  [
+    "gallium",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[GALLIUM] used the Windows command shell to execute commands."
+  ],
+  [
+    "gallium",
+    "T1074.001",
+    "Local Data Staging",
+    "command-execution|file-access|file-creation|windows-registry-key-modification",
+    "T1074.001::[GALLIUM] compressed and staged files in multi-part archives in the Recycle Bin prior to exfiltration."
+  ],
+  [
+    "gallium",
+    "T1090.002",
+    "External Proxy",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1090.002::[GALLIUM] used a modified version of [HTRAN] to redirect connections between networks."
+  ],
+  [
+    "gallium",
+    "T1136.002",
+    "Domain Account",
+    "command-execution|process-creation|user-account-creation",
+    "T1136.002::[GALLIUM] created high-privileged domain user accounts to maintain access to victim networks."
+  ],
+  [
+    "gallium",
+    "T1505.003",
+    "Web Shell",
+    "application-log-content|file-creation|file-modification|network-traffic-content|network-traffic-flow|process-creation",
+    "T1505.003::[GALLIUM] used Web shells to persist in victim environments and assist in execution and exfiltration."
+  ],
+  [
+    "gallium",
+    "T1550.002",
+    "Pass the Hash",
+    "active-directory-credential-request|logon-session-creation|user-account-authentication",
+    "T1550.002::[GALLIUM] used dumped hashes to authenticate to other machines via pass the hash."
+  ],
+  [
+    "gallium",
+    "T1553.002",
+    "Code Signing",
+    "file-metadata",
+    "T1553.002::[GALLIUM] has used stolen certificates to sign its tools including those from Whizzimo LLC."
+  ],
+  [
+    "gallium",
+    "T1560.001",
+    "Archive via Utility",
+    "command-execution|file-creation|process-creation",
+    "T1560.001::[GALLIUM] used WinRAR to compress and encrypt stolen data prior to exfiltration."
+  ],
+  [
+    "gallium",
+    "T1574.002",
+    "DLL Side-Loading",
+    "file-creation|file-modification|module-load|process-creation",
+    "T1574.002::[GALLIUM] used DLL side-loading to covertly load [PoisonIvy] into memory on the victim machine."
+  ],
+  [
+    "gallium",
+    "T1583.004",
+    "Server",
+    "response-content|response-metadata",
+    "T1583.004::[GALLIUM] has used Taiwan-based servers that appear to be exclusive to [GALLIUM]."
+  ],
+  [
+    "gallium",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[GALLIUM] has used a variety of widely-available tools, which in some cases they modified to add functionality and/or subvert antimalware solutions."
+  ]
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "tool--59096109-a1dd-463b-87e7-a8d110fe3a79",
+    "name": "rclone",
+    "aliases": "none",
+    "platforms": "linux|windows|macos",
+    "tool_id": "S1040",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 3,
+        "items": [
+          "collection",
+          "discovery",
+          "exfiltration"
+        ]
+      },
+      "techniques": {
+        "count": 6,
+        "items": [
+          "T1030",
+          "T1048.002",
+          "T1048.003",
+          "T1083",
+          "T1560.001",
+          "T1567.002"
+        ]
+      },
+      "adversaries": {
+        "count": 0,
+        "items": []
+      },
+      "procedures": [
+        "T1030::The [Rclone] \"chunker\" overlay supports splitting large files in smaller chunks during upload to circumvent size limits.",
+        "T1048.002::[Rclone] can exfiltrate data over SFTP or HTTPS via WebDAV.",
+        "T1048.003::[Rclone] can exfiltrate data over FTP or HTTP, including HTTP via WebDAV.",
+        "T1083::[Rclone] can list files and directories with the `ls`, `lsd`, and `lsl` commands.",
+        "T1560.001::[Rclone] can compress files using `gzip` prior to exfiltration.",
+        "T1567.002::[Rclone] can exfiltrate data to cloud storage services such as Dropbox, Google Drive, Amazon S3, and MEGA."
+      ]
+    },
+    "description": "[Rclone](https://attack.mitre.org/software/S1040) is a command line program for syncing files with cloud storage services such as Dropbox, Google Drive, Amazon S3, and MEGA. [Rclone](https://attack.mitre.org/software/S1040) has been used in a number of ransomware campaigns, including those associated with the [Conti](https://attack.mitre.org/software/S0575) and DarkSide Ransomware-as-a-Service operations.(Citation: Rclone)(Citation: Rclone Wars)(Citation: Detecting Rclone)(Citation: DarkSide Ransomware Gang)(Citation: DFIR Conti Bazar Nov 2021)"
+  }
+]

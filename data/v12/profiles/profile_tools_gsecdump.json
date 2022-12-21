@@ -1,0 +1,40 @@
+[
+  {
+    "id": "tool--b07c2c47-fefb-4d7c-a69e-6a3296171f54",
+    "name": "gsecdump",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0008",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "credential-access"
+        ]
+      },
+      "techniques": {
+        "count": 2,
+        "items": [
+          "T1003.002",
+          "T1003.004"
+        ]
+      },
+      "adversaries": {
+        "count": 5,
+        "items": [
+          "apt1",
+          "bronze-butler",
+          "pittytiger",
+          "threat-group-3390",
+          "tonto-team"
+        ]
+      },
+      "procedures": [
+        "T1003.002::[gsecdump] can dump Windows password hashes from the SAM.",
+        "T1003.004::[gsecdump] can dump LSA secrets."
+      ]
+    },
+    "description": "[gsecdump](https://attack.mitre.org/software/S0008) is a publicly-available credential dumper used to obtain password hashes and LSA secrets from Windows operating systems. (Citation: TrueSec Gsecdump)"
+  }
+]

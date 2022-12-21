@@ -1,0 +1,76 @@
+[
+  {
+    "id": "intrusion-set--6fe8a2a1-a1b0-4af8-953d-4babd329f8f8",
+    "name": "blacktech",
+    "aliases": "blacktech|palmerworm",
+    "group_id": "G0098",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 5,
+        "items": [
+          "flagpro",
+          "kivars",
+          "plead",
+          "tscookie",
+          "waterbear"
+        ]
+      },
+      "tools": {
+        "count": 1,
+        "items": [
+          "psexec"
+        ]
+      },
+      "techniques": {
+        "count": 14,
+        "items": [
+          "T1021.004",
+          "T1036.002",
+          "T1046",
+          "T1106",
+          "T1190",
+          "T1203",
+          "T1204.001",
+          "T1204.002",
+          "T1566.001",
+          "T1566.002",
+          "T1574.002",
+          "T1588.002",
+          "T1588.003",
+          "T1588.004"
+        ]
+      },
+      "tactics": {
+        "count": 8,
+        "items": [
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1021.004::[BlackTech] has used Putty for remote access.",
+        "T1036.002::[BlackTech] has used right-to-left-override to obfuscate the filenames of malicious e-mail attachments.",
+        "T1046::[BlackTech] has used the SNScan tool to find other potential targets on victim networks.",
+        "T1106::[BlackTech] has used built-in API functions.",
+        "T1190::[BlackTech] has exploited a buffer overflow vulnerability in Microsoft Internet Information Services (IIS) 6.0, CVE-2017-7269, in order to establish a new HTTP or command and control (C2) server.",
+        "T1203::[BlackTech] has exploited multiple vulnerabilities for execution, including Microsoft Office vulnerabilities CVE-2012-0158, CVE-2014-6352, CVE-2017-0199, and Adobe Flash CVE-2015-5119.",
+        "T1204.001::[BlackTech] has used e-mails with malicious links to lure victims into installing malware.",
+        "T1204.002::[BlackTech] has used e-mails with malicious documents to lure victims into installing malware.",
+        "T1566.001::[BlackTech] has used spearphishing e-mails with malicious password-protected archived files (ZIP or RAR) to deliver malware.",
+        "T1566.002::[BlackTech] has used spearphishing e-mails with links to cloud services to deliver malware.",
+        "T1574.002::[BlackTech] has used DLL side loading by giving DLLs hardcoded names and placing them in searched directories.",
+        "T1588.002::[BlackTech] has obtained and used tools such as Putty, SNScan, and [PsExec] for its operations.",
+        "T1588.003::[BlackTech] has used stolen code-signing certificates for its malicious payloads.",
+        "T1588.004::[BlackTech] has used valid, stolen digital certificates for some of their malware and tools."
+      ]
+    },
+    "description": "[BlackTech](https://attack.mitre.org/groups/G0098) is a suspected Chinese cyber espionage group that has primarily targeted organizations in East Asia--particularly Taiwan, Japan, and Hong Kong--and the US since at least 2013. [BlackTech](https://attack.mitre.org/groups/G0098) has used a combination of custom malware, dual-use tools, and living off the land tactics to compromise media, construction, engineering, electronics, and financial company networks.(Citation: TrendMicro BlackTech June 2017)(Citation: Symantec Palmerworm Sep 2020)(Citation: Reuters Taiwan BlackTech August 2020)"
+  }
+]

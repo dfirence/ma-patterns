@@ -1,0 +1,105 @@
+[
+  {
+    "id": "tool--4b57c098-f043-4da2-83ef-7588a6d426bc",
+    "name": "poshc2",
+    "aliases": "none",
+    "platforms": "windows|linux|macos",
+    "tool_id": "S0378",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 9,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "techniques": {
+        "count": 32,
+        "items": [
+          "T1003.001",
+          "T1007",
+          "T1016",
+          "T1040",
+          "T1046",
+          "T1047",
+          "T1049",
+          "T1055",
+          "T1056.001",
+          "T1068",
+          "T1069.001",
+          "T1071.001",
+          "T1082",
+          "T1083",
+          "T1087.001",
+          "T1087.002",
+          "T1090",
+          "T1110",
+          "T1119",
+          "T1134",
+          "T1134.002",
+          "T1201",
+          "T1210",
+          "T1482",
+          "T1546.003",
+          "T1548.002",
+          "T1550.002",
+          "T1552.001",
+          "T1555",
+          "T1557.001",
+          "T1560.001",
+          "T1569.002"
+        ]
+      },
+      "adversaries": {
+        "count": 2,
+        "items": [
+          "apt33",
+          "hexane"
+        ]
+      },
+      "procedures": [
+        "T1003.001::[PoshC2] contains an implementation of [Mimikatz] to gather credentials from memory.",
+        "T1007::[PoshC2] can enumerate service and service permission information.",
+        "T1016::[PoshC2] can enumerate network adapter information.",
+        "T1040::[PoshC2] contains a module for taking packet captures on compromised hosts.",
+        "T1046::[PoshC2] can perform port scans from an infected host.",
+        "T1047::[PoshC2] has a number of modules that use WMI to execute tasks.",
+        "T1049::[PoshC2] contains an implementation of [netstat] to enumerate TCP and UDP connections.",
+        "T1055::[PoshC2] contains multiple modules for injecting into processes, such as Invoke-PSInject.",
+        "T1056.001::[PoshC2] has modules for keystroke logging and capturing credentials from spoofed Outlook authentication messages.",
+        "T1068::[PoshC2] contains modules for local privilege escalation exploits such as CVE-2016-9192 and CVE-2016-0099.",
+        "T1069.001::[PoshC2] contains modules, such as Get-LocAdm for enumerating permission groups.",
+        "T1071.001::[PoshC2] can use protocols like HTTP/HTTPS for command and control traffic.",
+        "T1082::[PoshC2] contains modules, such as Get-ComputerInfo, for enumerating common system information.",
+        "T1083::[PoshC2] can enumerate files on the local file system and includes a module for enumerating recently accessed files.",
+        "T1087.001::[PoshC2] can enumerate local and domain user account information.",
+        "T1087.002::[PoshC2] can enumerate local and domain user account information.",
+        "T1090::[PoshC2] contains modules that allow for use of proxies in command and control.",
+        "T1110::[PoshC2] has modules for brute forcing local administrator and AD user accounts.",
+        "T1119::[PoshC2] contains a module for recursively parsing through files and directories to gather valid credit card numbers.",
+        "T1134.002::[PoshC2] can use Invoke-RunAs to make tokens.",
+        "T1134::[PoshC2] can use Invoke-TokenManipulation for manipulating tokens.",
+        "T1201::[PoshC2] can use Get-PassPol to enumerate the domain password policy.",
+        "T1210::[PoshC2] contains a module for exploiting SMB via EternalBlue.",
+        "T1482::[PoshC2] has modules for enumerating domain trusts.",
+        "T1546.003::[PoshC2] has the ability to persist on a system using WMI events.",
+        "T1548.002::[PoshC2] can utilize multiple methods to bypass UAC.",
+        "T1550.002::[PoshC2] has a number of modules that leverage pass the hash for lateral movement.",
+        "T1552.001::[PoshC2] contains modules for searching for passwords in local and remote files.",
+        "T1555::[PoshC2] can decrypt passwords stored in the RDCMan configuration file.",
+        "T1557.001::[PoshC2] can use Inveigh to conduct name service poisoning for credential theft and associated relay attacks.",
+        "T1560.001::[PoshC2] contains a module for compressing data using ZIP.",
+        "T1569.002::[PoshC2] contains an implementation of [PsExec] for remote execution."
+      ]
+    },
+    "description": "[PoshC2](https://attack.mitre.org/software/S0378) is an open source remote administration and post-exploitation framework that is publicly available on GitHub. The server-side components of the tool are primarily written in Python, while the implants are written in [PowerShell](https://attack.mitre.org/techniques/T1059/001). Although [PoshC2](https://attack.mitre.org/software/S0378) is primarily focused on Windows implantation, it does contain a basic Python dropper for Linux/macOS.(Citation: GitHub PoshC2)"
+  }
+]

@@ -1,0 +1,45 @@
+[
+  {
+    "id": "tool--294e2560-bd48-44b2-9da2-833b5588ad11",
+    "name": "ipconfig",
+    "aliases": "none",
+    "platforms": "none",
+    "tool_id": "S0100",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "discovery"
+        ]
+      },
+      "techniques": {
+        "count": 1,
+        "items": [
+          "T1016"
+        ]
+      },
+      "adversaries": {
+        "count": 12,
+        "items": [
+          "admin@338",
+          "apt1",
+          "apt29",
+          "apt32",
+          "apt41",
+          "gallium",
+          "hexane",
+          "ke3chang",
+          "magic-hound",
+          "oilrig",
+          "orangeworm",
+          "threat-group-3390"
+        ]
+      },
+      "procedures": [
+        "T1016::[ipconfig] can be used to display adapter configuration on Windows systems, including information for TCP/IP, DNS, and DHCP."
+      ]
+    },
+    "description": "[ipconfig](https://attack.mitre.org/software/S0100) is a Windows utility that can be used to find information about a system's TCP/IP, DNS, DHCP, and adapter configuration. (Citation: TechNet Ipconfig)"
+  }
+]

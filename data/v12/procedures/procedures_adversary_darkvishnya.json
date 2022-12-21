@@ -1,0 +1,23 @@
+[
+  [
+    "darkvishnya",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[DarkVishnya] used PowerShell to create shellcode loaders."
+  ],
+  [
+    "darkvishnya",
+    "T1543.003",
+    "Windows Service",
+    "command-execution|driver-load|os-api-execution|process-creation|service-creation|service-modification|windows-registry-key-creation|windows-registry-key-modification",
+    "T1543.003::[DarkVishnya] created new services for shellcode loaders distribution."
+  ],
+  [
+    "darkvishnya",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[DarkVishnya] has obtained and used tools such as [Impacket], [Winexe], and [PsExec]."
+  ]
+]

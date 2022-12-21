@@ -1,0 +1,310 @@
+[
+  [
+    "sandworm-team",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[Sandworm Team]'s plainpwd tool is a modified version of [Mimikatz] and dumps Windows credentials from system memory."
+  ],
+  [
+    "sandworm-team",
+    "T1021.002",
+    "SMB/Windows Admin Shares",
+    "command-execution|logon-session-creation|network-connection-creation|network-share-access|network-traffic-flow",
+    "T1021.002::[Sandworm Team] has run net use to connect to network shares."
+  ],
+  [
+    "sandworm-team",
+    "T1027.002",
+    "Software Packing",
+    "file-metadata",
+    "T1027.002::[Sandworm Team] used UPX to pack a copy of [Mimikatz]."
+  ],
+  [
+    "sandworm-team",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[Sandworm Team] has avoided detection by naming a malicious binary explorer.exe."
+  ],
+  [
+    "sandworm-team",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[Sandworm Team] has used a keylogger to capture keystrokes by using the SetWindowsHookEx function."
+  ],
+  [
+    "sandworm-team",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[Sandworm Team] has used PowerShell scripts to run a credential harvesting tool in memory to evade defenses."
+  ],
+  [
+    "sandworm-team",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[Sandworm Team] has run the  xp_cmdshell command in MS-SQL."
+  ],
+  [
+    "sandworm-team",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[Sandworm Team] has created VBScripts to run an SSH server."
+  ],
+  [
+    "sandworm-team",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[Sandworm Team] has used backdoors that can delete files used in an attack from an infected system."
+  ],
+  [
+    "sandworm-team",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[Sandworm Team]'s BCS-server tool connects to the designated C2 server via HTTP."
+  ],
+  [
+    "sandworm-team",
+    "T1078.002",
+    "Domain Accounts",
+    "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "T1078.002::[Sandworm Team] has used stolen credentials to access administrative accounts within the domain."
+  ],
+  [
+    "sandworm-team",
+    "T1087.002",
+    "Domain Account",
+    "command-execution|group-enumeration|network-traffic-content|os-api-execution|process-creation",
+    "T1087.002::[Sandworm Team] has used a tool to query Active Directory using LDAP, discovering information about usernames listed in AD."
+  ],
+  [
+    "sandworm-team",
+    "T1087.003",
+    "Email Account",
+    "command-execution|process-creation",
+    "T1087.003::[Sandworm Team] used malware to enumerate email settings, including usernames and passwords, from the M.E.Doc application."
+  ],
+  [
+    "sandworm-team",
+    "T1102.002",
+    "Bidirectional Communication",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1102.002::[Sandworm Team] has used the Telegram Bot API from Telegram Messenger to send and receive commands to its Python backdoor. [Sandworm Team] also used legitimate M.E.Doc software update check requests for sending and receiving commands and hosted malicious payloads on putdrive.com."
+  ],
+  [
+    "sandworm-team",
+    "T1110.003",
+    "Password Spraying",
+    "application-log-content|user-account-authentication",
+    "T1110.003::[Sandworm Team] has used a script to attempt RPC authentication against a number of hosts."
+  ],
+  [
+    "sandworm-team",
+    "T1132.001",
+    "Standard Encoding",
+    "network-traffic-content",
+    "T1132.001::[Sandworm Team]'s BCS-server tool uses base64 encoding and HTML tags for the communication traffic between the C2 server."
+  ],
+  [
+    "sandworm-team",
+    "T1136.002",
+    "Domain Account",
+    "command-execution|process-creation|user-account-creation",
+    "T1136.002::[Sandworm Team] has created new domain accounts on an ICS access server."
+  ],
+  [
+    "sandworm-team",
+    "T1195.002",
+    "Compromise Software Supply Chain",
+    "file-metadata",
+    "T1195.002::[Sandworm Team] has distributed [NotPetya] by compromising the legitimate Ukrainian accounting software M.E.Doc and replacing a legitimate software update with a malicious one."
+  ],
+  [
+    "sandworm-team",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[Sandworm Team] has tricked unwitting recipients into clicking on malicious hyperlinks within emails crafted to resemble trustworthy senders."
+  ],
+  [
+    "sandworm-team",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Sandworm Team] has tricked unwitting recipients into clicking on spearphishing attachments and enabling malicious macros embedded within files."
+  ],
+  [
+    "sandworm-team",
+    "T1218.011",
+    "Rundll32",
+    "command-execution|file-metadata|module-load|process-creation",
+    "T1218.011::[Sandworm Team] used a backdoor which could execute a supplied DLL using rundll32.exe."
+  ],
+  [
+    "sandworm-team",
+    "T1491.002",
+    "External Defacement",
+    "application-log-content|file-creation|file-modification|network-traffic-content",
+    "T1491.002::[Sandworm Team] defaced approximately 15,000 websites belonging to Georgian government, non-government, and private sector organizations in 2019."
+  ],
+  [
+    "sandworm-team",
+    "T1505.001",
+    "SQL Stored Procedures",
+    "application-log-content",
+    "T1505.001::[Sandworm Team] has used various MS-SQL stored procedures."
+  ],
+  [
+    "sandworm-team",
+    "T1505.003",
+    "Web Shell",
+    "application-log-content|file-creation|file-modification|network-traffic-content|network-traffic-flow|process-creation",
+    "T1505.003::[Sandworm Team] has used webshells including [P.A.S. Webshell] to maintain access to victim networks."
+  ],
+  [
+    "sandworm-team",
+    "T1555.003",
+    "Credentials from Web Browsers",
+    "command-execution|file-access|os-api-execution|process-access",
+    "T1555.003::[Sandworm Team]'s CredRaptor tool can collect saved passwords from various internet browsers."
+  ],
+  [
+    "sandworm-team",
+    "T1561.002",
+    "Disk Structure Wipe",
+    "command-execution|drive-access|drive-modification|driver-load|process-creation",
+    "T1561.002::[Sandworm Team] has used the [BlackEnergy] KillDisk component to corrupt the infected system's master boot record."
+  ],
+  [
+    "sandworm-team",
+    "T1562.002",
+    "Disable Windows Event Logging",
+    "application-log-content|command-execution|host-status|process-creation|script-execution|windows-registry-key-creation",
+    "T1562.002::[Sandworm Team] has disabled event logging on compromised systems."
+  ],
+  [
+    "sandworm-team",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[Sandworm Team] has delivered malicious Microsoft Office attachments via spearphishing emails."
+  ],
+  [
+    "sandworm-team",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[Sandworm Team] has crafted phishing emails containing malicious hyperlinks."
+  ],
+  [
+    "sandworm-team",
+    "T1583.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1583.001::[Sandworm Team] has registered domain names and created URLs that are often designed to mimic or spoof legitimate websites, such as email login pages, online file sharing and storage websites, and password reset pages."
+  ],
+  [
+    "sandworm-team",
+    "T1583.004",
+    "Server",
+    "response-content|response-metadata",
+    "T1583.004::[Sandworm Team] has leased servers from resellers instead of leasing infrastructure directly from hosting companies to enable its operations."
+  ],
+  [
+    "sandworm-team",
+    "T1584.005",
+    "Botnet",
+    "none",
+    "T1584.005::[Sandworm Team] has used a large-scale botnet to target Small Office/Home Office (SOHO) network devices."
+  ],
+  [
+    "sandworm-team",
+    "T1585.001",
+    "Social Media Accounts",
+    "network-traffic-content|social-media",
+    "T1585.001::[Sandworm Team] has established social media accounts to disseminate victim internal-only documents and other sensitive data."
+  ],
+  [
+    "sandworm-team",
+    "T1585.002",
+    "Email Accounts",
+    "none",
+    "T1585.002::[Sandworm Team] has created email accounts that mimic legitimate organizations for its spearphishing operations."
+  ],
+  [
+    "sandworm-team",
+    "T1587.001",
+    "Malware",
+    "malware-content|malware-metadata",
+    "T1587.001::[Sandworm Team] has developed malware for its operations, including malicious mobile applications and destructive malware such as [NotPetya] and [Olympic Destroyer]."
+  ],
+  [
+    "sandworm-team",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[Sandworm Team] has acquired open-source tools for some of it's operations; for example it acquired [Invoke-PSImage] to establish an encrypted channel from a compromised host to [Sandworm Team]'s C2 server as part of its preparation for the 2018 Winter Olympics attack."
+  ],
+  [
+    "sandworm-team",
+    "T1588.006",
+    "Vulnerabilities",
+    "none",
+    "T1588.006::In 2017, [Sandworm Team] conducted technical research related to vulnerabilities associated with websites used by the Korean Sport and Olympic Committee, a Korean power company, and a Korean airport."
+  ],
+  [
+    "sandworm-team",
+    "T1589.002",
+    "Email Addresses",
+    "network-traffic-content",
+    "T1589.002::[Sandworm Team] has obtained valid emails addresses while conducting research against target organizations that were subsequently used in spearphishing campaigns."
+  ],
+  [
+    "sandworm-team",
+    "T1589.003",
+    "Employee Names",
+    "none",
+    "T1589.003::[Sandworm Team]'s research of potential victim organizations included the identification and collection of employee information."
+  ],
+  [
+    "sandworm-team",
+    "T1590.001",
+    "Domain Properties",
+    "none",
+    "T1590.001::[Sandworm Team] conducted technical reconnaissance of the Parliament of Georgia's official internet domain prior to its 2019 attack."
+  ],
+  [
+    "sandworm-team",
+    "T1591.002",
+    "Business Relationships",
+    "none",
+    "T1591.002::In preparation for its attack against the 2018 Winter Olympics, [Sandworm Team] conducted online research of partner organizations listed on an official PyeongChang Olympics partnership site."
+  ],
+  [
+    "sandworm-team",
+    "T1592.002",
+    "Software",
+    "response-content",
+    "T1592.002::[Sandworm Team] has researched software code to enable supply-chain operations, most notably for the 2017 [NotPetya] attack. [Sandworm Team] also collected a list of computers using specific software as part of its targeting efforts."
+  ],
+  [
+    "sandworm-team",
+    "T1595.002",
+    "Vulnerability Scanning",
+    "network-traffic-content|network-traffic-flow",
+    "T1595.002::[Sandworm Team] has scanned network infrastructure for vulnerabilities as part of its operational planning."
+  ],
+  [
+    "sandworm-team",
+    "T1598.003",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1598.003::[Sandworm Team] has crafted spearphishing emails with hyperlinks designed to trick unwitting recipients into revealing their account credentials."
+  ]
+]

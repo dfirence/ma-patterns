@@ -1,0 +1,36 @@
+[
+  {
+    "id": "tool--b52d6583-14a2-4ddc-8527-87fd2142558f",
+    "name": "invoke-psimage",
+    "aliases": "none",
+    "platforms": "none",
+    "tool_id": "S0231",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "defense-evasion"
+        ]
+      },
+      "techniques": {
+        "count": 2,
+        "items": [
+          "T1027.003",
+          "T1027.009"
+        ]
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "sandworm-team"
+        ]
+      },
+      "procedures": [
+        "T1027.003::[Invoke-PSImage] can be used to embed a PowerShell script within the pixels of a PNG file.",
+        "T1027.009::[Invoke-PSImage] can be used to embed payload data within a new image file."
+      ]
+    },
+    "description": "[Invoke-PSImage](https://attack.mitre.org/software/S0231) takes a PowerShell script and embeds the bytes of the script into the pixels of a PNG image. It generates a one liner for executing either from a file of from the web. Example of usage is embedding the PowerShell code from the Invoke-Mimikatz module and embed it into an image file. By calling the image file from a macro for example, the macro will download the picture and execute the PowerShell code, which in this case will dump the passwords. (Citation: GitHub Invoke-PSImage)"
+  }
+]

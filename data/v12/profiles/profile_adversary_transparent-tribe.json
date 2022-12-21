@@ -1,0 +1,71 @@
+[
+  {
+    "id": "intrusion-set--e44e0985-bc65-4a8f-b578-211c858128e3",
+    "name": "transparent-tribe",
+    "aliases": "transparent-tribe|copper-fieldstone|apt36|mythic-leopard|projectm",
+    "group_id": "G0134",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 5,
+        "items": [
+          "crimson",
+          "darkcomet",
+          "njrat",
+          "obliquerat",
+          "peppy"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 14,
+        "items": [
+          "T1027",
+          "T1036.005",
+          "T1059.005",
+          "T1189",
+          "T1203",
+          "T1204.001",
+          "T1204.002",
+          "T1564.001",
+          "T1566.001",
+          "T1566.002",
+          "T1568",
+          "T1583.001",
+          "T1584.001",
+          "T1608.004"
+        ]
+      },
+      "tactics": {
+        "count": 5,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "execution",
+          "initial-access",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1027::[Transparent Tribe] has dropped encoded executables on compromised hosts.",
+        "T1036.005::[Transparent Tribe] can mimic legitimate Windows directories by using the same icons and names.",
+        "T1059.005::[Transparent Tribe] has crafted VBS-based malicious documents.",
+        "T1189::[Transparent Tribe] has used websites with malicious hyperlinks and iframes to infect targeted victims with [Crimson], [njRAT], and other malicious tools.",
+        "T1203::[Transparent Tribe] has crafted malicious files to exploit CVE-2012-0158 and CVE-2010-3333 for execution.",
+        "T1204.001::[Transparent Tribe] has directed users to open URLs hosting malicious content.",
+        "T1204.002::[Transparent Tribe] has used weaponized documents in e-mail to compromise targeted systems.",
+        "T1564.001::[Transparent Tribe] can hide legitimate directories and replace them with malicious copies of the same name.",
+        "T1566.001::[Transparent Tribe] has sent spearphishing e-mails with attachments to deliver malicious payloads.",
+        "T1566.002::[Transparent Tribe] has embedded links to malicious downloads in e-mails.",
+        "T1568::[Transparent Tribe] has used dynamic DNS services to set up C2.",
+        "T1583.001::[Transparent Tribe] has registered domains to mimic file sharing, government, defense, and research websites for use in targeted campaigns.",
+        "T1584.001::[Transparent Tribe] has compromised domains for use in targeted malicious campaigns.",
+        "T1608.004::[Transparent Tribe] has set up websites with malicious hyperlinks and iframes to infect targeted victims with [Crimson], [njRAT], and other malicious tools."
+      ]
+    },
+    "description": "[Transparent Tribe](https://attack.mitre.org/groups/G0134) is a suspected Pakistan-based threat group that has been active since at least 2013, primarily targeting diplomatic, defense, and research organizations in India and Afghanistan.(Citation: Proofpoint Operation Transparent Tribe March 2016)(Citation: Kaspersky Transparent Tribe August 2020)(Citation: Talos Transparent Tribe May 2021)"
+  }
+]

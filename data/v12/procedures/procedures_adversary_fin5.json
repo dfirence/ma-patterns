@@ -1,0 +1,37 @@
+[
+  [
+    "fin5",
+    "T1070.001",
+    "Clear Windows Event Logs",
+    "command-execution|file-deletion|os-api-execution",
+    "T1070.001::[FIN5] has cleared event logs from victims."
+  ],
+  [
+    "fin5",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[FIN5] uses [SDelete] to clean up the environment and attempt to prevent detection."
+  ],
+  [
+    "fin5",
+    "T1074.001",
+    "Local Data Staging",
+    "command-execution|file-access|file-creation|windows-registry-key-modification",
+    "T1074.001::[FIN5] scripts save memory dump data into a specific directory on hosts in the victim environment."
+  ],
+  [
+    "fin5",
+    "T1090.002",
+    "External Proxy",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1090.002::[FIN5] maintains access to victim environments by using [FLIPSIDE] to create a proxy for a backup RDP tunnel."
+  ],
+  [
+    "fin5",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[FIN5] has obtained and used a customized version of [PsExec], as well as use other tools such as [pwdump], [SDelete], and [Windows Credential Editor]."
+  ]
+]

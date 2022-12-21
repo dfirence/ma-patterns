@@ -1,0 +1,65 @@
+[
+  [
+    "bitter",
+    "T1036.004",
+    "Masquerade Task or Service",
+    "command-execution|scheduled-job-metadata|scheduled-job-modification|service-creation|service-metadata",
+    "T1036.004::[BITTER] has disguised malware as a Windows Security update service."
+  ],
+  [
+    "bitter",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[BITTER] has used scheduled tasks for persistence and execution."
+  ],
+  [
+    "bitter",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[BITTER] has used HTTP POST requests for C2."
+  ],
+  [
+    "bitter",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[BITTER] has attempted to lure victims into opening malicious attachments delivered via spearphishing."
+  ],
+  [
+    "bitter",
+    "T1559.002",
+    "Dynamic Data Exchange",
+    "module-load|process-creation|script-execution",
+    "T1559.002::[BITTER] has executed OLE objects using Microsoft Equation Editor to download and run malicious payloads."
+  ],
+  [
+    "bitter",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[BITTER] has sent spearphishing emails with a malicious RTF document or Excel spreadsheet."
+  ],
+  [
+    "bitter",
+    "T1583.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1583.001::[BITTER] has registered a variety of domains to host malicious payloads and for C2."
+  ],
+  [
+    "bitter",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[BITTER] has obtained tools such as PuTTY for use in their operations."
+  ],
+  [
+    "bitter",
+    "T1608.001",
+    "Upload Malware",
+    "response-content",
+    "T1608.001::[BITTER] has registered domains to stage payloads."
+  ]
+]

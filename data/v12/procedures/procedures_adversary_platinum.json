@@ -1,0 +1,37 @@
+[
+  [
+    "platinum",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[PLATINUM] has used keyloggers that are also capable of dumping credentials."
+  ],
+  [
+    "platinum",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[PLATINUM] has used several different keyloggers."
+  ],
+  [
+    "platinum",
+    "T1056.004",
+    "Credential API Hooking",
+    "os-api-execution|process-metadata",
+    "T1056.004::[PLATINUM] is capable of using Windows hook interfaces for information gathering such as credential access."
+  ],
+  [
+    "platinum",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[PLATINUM] has attempted to get users to open malicious files by sending spearphishing emails with attachments to victims."
+  ],
+  [
+    "platinum",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[PLATINUM] has sent spearphishing emails with attachments to victims as its primary initial access vector."
+  ]
+]

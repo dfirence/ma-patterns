@@ -1,0 +1,30 @@
+[
+  [
+    "poseidon-group",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[Poseidon Group] tools attempt to spoof anti-virus processes as a means of self-defense."
+  ],
+  [
+    "poseidon-group",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::The [Poseidon Group]'s Information Gathering Tool (IGT) includes PowerShell components."
+  ],
+  [
+    "poseidon-group",
+    "T1087.001",
+    "Local Account",
+    "command-execution|file-access|group-enumeration|os-api-execution|process-creation",
+    "T1087.001::[Poseidon Group] searches for administrator accounts on both the local victim machine and the network."
+  ],
+  [
+    "poseidon-group",
+    "T1087.002",
+    "Domain Account",
+    "command-execution|group-enumeration|network-traffic-content|os-api-execution|process-creation",
+    "T1087.002::[Poseidon Group] searches for administrator accounts on both the local victim machine and the network."
+  ]
+]

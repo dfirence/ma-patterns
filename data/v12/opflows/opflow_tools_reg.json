@@ -1,0 +1,137 @@
+[
+  {
+    "id": "attack-pattern--c32f7008-9fea-41f7-8366-5eb9b74bd896",
+    "platform": "windows",
+    "tid": "T1012",
+    "technique": "Query Registry",
+    "tactic": "discovery",
+    "datasources": "command-execution|os-api-execution|process-creation|windows-registry-key-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "reg",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may interact with the Windows Registry to gather information about the system, configuration, and installed software.\n\nThe Registry contains a significant amount of information about the operating system, configuration, software, and security.(Citation: Wikipedia Windows Registry) Information can easily be queried using the [Reg](https://attack.mitre.org/software/S0075) utility, though other means to access the Registry exist. Some of the information may help adversaries to further their operation within a network. Adversaries may use the information from [Query Registry](https://attack.mitre.org/techniques/T1012) during automated discovery to shape follow-on behaviors, including whether or not the adversary fully infects the target and/or attempts specific actions.",
+    "technique_references": [
+      {
+        "source_name": "capec",
+        "url": "https://capec.mitre.org/data/definitions/647.html",
+        "description": "none",
+        "external_id": "CAPEC-647"
+      },
+      {
+        "source_name": "Wikipedia Windows Registry",
+        "url": "https://en.wikipedia.org/wiki/Windows_Registry",
+        "description": "Wikipedia. (n.d.). Windows Registry. Retrieved February 2, 2015.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator|system",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--57340c81-c025-4189-8fa0-fc7ede51bae4",
+    "platform": "windows",
+    "tid": "T1112",
+    "technique": "Modify Registry",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|os-api-execution|process-creation|windows-registry-key-creation|windows-registry-key-deletion|windows-registry-key-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "reg",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may interact with the Windows Registry to hide configuration information within Registry keys, remove information as part of cleaning up, or as part of other techniques to aid in persistence and execution.\n\nAccess to specific areas of the Registry depends on account permissions, some requiring administrator-level access. The built-in Windows command-line utility [Reg](https://attack.mitre.org/software/S0075) may be used for local or remote Registry modification. (Citation: Microsoft Reg) Other tools may also be used, such as a remote access tool, which may contain functionality to interact with the Registry through the Windows API.\n\nRegistry modifications may also include actions to hide keys, such as prepending key names with a null character, which will cause an error and/or be ignored when read via [Reg](https://attack.mitre.org/software/S0075) or other utilities using the Win32 API. (Citation: Microsoft Reghide NOV 2006) Adversaries may abuse these pseudo-hidden keys to conceal payloads/commands used to maintain persistence. (Citation: TrendMicro POWELIKS AUG 2014) (Citation: SpectorOps Hiding Reg Jul 2017)\n\nThe Registry of a remote system may be modified to aid in execution of files as part of lateral movement. It requires the remote Registry service to be running on the target system. (Citation: Microsoft Remote) Often [Valid Accounts](https://attack.mitre.org/techniques/T1078) are required, along with access to the remote system's [SMB/Windows Admin Shares](https://attack.mitre.org/techniques/T1021/002) for RPC communication.",
+    "technique_references": [
+      {
+        "source_name": "capec",
+        "url": "https://capec.mitre.org/data/definitions/203.html",
+        "description": "none",
+        "external_id": "CAPEC-203"
+      },
+      {
+        "source_name": "Microsoft Reg",
+        "url": "https://technet.microsoft.com/en-us/library/cc732643.aspx",
+        "description": "Microsoft. (2012, April 17). Reg. Retrieved May 1, 2015.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Reghide NOV 2006",
+        "url": "https://docs.microsoft.com/sysinternals/downloads/reghide",
+        "description": "Russinovich, M. & Sharkey, K. (2006, January 10). Reghide. Retrieved August 9, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TrendMicro POWELIKS AUG 2014",
+        "url": "https://blog.trendmicro.com/trendlabs-security-intelligence/poweliks-malware-hides-in-windows-registry/",
+        "description": "Santos, R. (2014, August 1). POWELIKS: Malware Hides In Windows Registry. Retrieved August 9, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SpectorOps Hiding Reg Jul 2017",
+        "url": "https://posts.specterops.io/hiding-registry-keys-with-psreflect-b18ec5ac8353",
+        "description": "Reitz, B. (2017, July 14). Hiding Registry keys with PSReflect. Retrieved August 9, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Remote",
+        "url": "https://technet.microsoft.com/en-us/library/cc754820.aspx",
+        "description": "Microsoft. (n.d.). Enable the Remote Registry Service. Retrieved May 1, 2015.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft 4657 APR 2017",
+        "url": "https://docs.microsoft.com/windows/security/threat-protection/auditing/event-4657",
+        "description": "Miroshnikov, A. & Hall, J. (2017, April 18). 4657(S): A registry value was modified. Retrieved August 9, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft RegDelNull July 2016",
+        "url": "https://docs.microsoft.com/en-us/sysinternals/downloads/regdelnull",
+        "description": "Russinovich, M. & Sharkey, K. (2016, July 4). RegDelNull v1.11. Retrieved August 10, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator|system",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--341e222a-a6e3-4f6f-b69c-831d792b1580",
+    "platform": "windows",
+    "tid": "T1552.002",
+    "technique": "Credentials in Registry",
+    "tactic": "credential-access",
+    "datasources": "command-execution|process-creation|windows-registry-key-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "reg",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may search the Registry on compromised systems for insecurely stored credentials. The Windows Registry stores configuration information that can be used by the system or other programs. Adversaries may query the Registry looking for credentials and passwords that have been stored for use by other programs or services. Sometimes these credentials are used for automatic logons.\n\nExample commands to find Registry keys related to password information: (Citation: Pentestlab Stored Credentials)\n\n* Local Machine Hive: <code>reg query HKLM /f password /t REG_SZ /s</code>\n* Current User Hive: <code>reg query HKCU /f password /t REG_SZ /s</code>",
+    "technique_references": [
+      {
+        "source_name": "Pentestlab Stored Credentials",
+        "url": "https://pentestlab.blog/2017/04/19/stored-credentials/",
+        "description": "netbiosX. (2017, April 19). Stored Credentials. Retrieved April 6, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

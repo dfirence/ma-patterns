@@ -1,0 +1,57 @@
+[
+  {
+    "id": "tool--975737f1-b10d-476f-8bda-3ec26ea57172",
+    "name": "mcmd",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0500",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 6,
+        "items": [
+          "collection",
+          "command-and-control",
+          "defense-evasion",
+          "execution",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "techniques": {
+        "count": 10,
+        "items": [
+          "T1005",
+          "T1027",
+          "T1036.005",
+          "T1053.005",
+          "T1059.003",
+          "T1070.009",
+          "T1071.001",
+          "T1105",
+          "T1547.001",
+          "T1564.003"
+        ]
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "dragonfly"
+        ]
+      },
+      "procedures": [
+        "T1005::[MCMD] has the ability to upload files from an infected device.",
+        "T1027::[MCMD] can Base64 encode output strings prior to sending to C2.",
+        "T1036.005::[MCMD] has been named Readme.txt to appear legitimate.",
+        "T1053.005::[MCMD] can use scheduled tasks for persistence.",
+        "T1059.003::[MCMD] can launch a console process (cmd.exe) with redirected standard input and output.",
+        "T1070.009::[MCMD] has the ability to remove set Registry Keys, including those used for persistence.",
+        "T1071.001::[MCMD] can use HTTPS in communication with C2 web servers.",
+        "T1105::[MCMD] can upload additional files to a compromised host.",
+        "T1547.001::[MCMD] can use Registry Run Keys for persistence.",
+        "T1564.003::[MCMD] can modify processes to prevent them from being visible on the desktop."
+      ]
+    },
+    "description": "[MCMD](https://attack.mitre.org/software/S0500) is a remote access tool that provides remote command shell capability used by [Dragonfly 2.0](https://attack.mitre.org/groups/G0074).(Citation: Secureworks MCMD July 2019)"
+  }
+]

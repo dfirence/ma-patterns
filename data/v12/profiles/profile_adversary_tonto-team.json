@@ -1,0 +1,80 @@
+[
+  {
+    "id": "intrusion-set--c5b81590-6814-4d2a-8baa-15c4b6c7f960",
+    "name": "tonto-team",
+    "aliases": "tonto-team|earth-akhlut|bronze-huntley|cactuspete|karma-panda",
+    "group_id": "G0131",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 2,
+        "items": [
+          "bisonal",
+          "shadowpad"
+        ]
+      },
+      "tools": {
+        "count": 4,
+        "items": [
+          "gsecdump",
+          "lazagne",
+          "mimikatz",
+          "nbtscan"
+        ]
+      },
+      "techniques": {
+        "count": 15,
+        "items": [
+          "T1003",
+          "T1056.001",
+          "T1059.001",
+          "T1059.006",
+          "T1068",
+          "T1069.001",
+          "T1090.002",
+          "T1105",
+          "T1135",
+          "T1203",
+          "T1204.002",
+          "T1210",
+          "T1505.003",
+          "T1566.001",
+          "T1574.001"
+        ]
+      },
+      "tactics": {
+        "count": 10,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "procedures": [
+        "T1003::[Tonto Team] has used a variety of credential dumping tools.",
+        "T1056.001::[Tonto Team] has used keylogging tools in their operations.",
+        "T1059.001::[Tonto Team] has used PowerShell to download additional payloads.",
+        "T1059.006::[Tonto Team] has used Python-based tools for execution.",
+        "T1068::[Tonto Team] has exploited CVE-2019-0803 and MS16-032 to escalate privileges.",
+        "T1069.001::[Tonto Team] has used the ShowLocalGroupDetails command to identify administrator, user, and guest accounts on a compromised host.",
+        "T1090.002::[Tonto Team] has routed their traffic through an external server in order to obfuscate their location.",
+        "T1105::[Tonto Team] has downloaded malicious DLLs which served as a [ShadowPad] loader.",
+        "T1135::[Tonto Team] has used tools such as [NBTscan] to enumerate network shares.",
+        "T1203::[Tonto Team] has exploited Microsoft vulnerabilities, including CVE-2018-0798, CVE-2018-8174, CVE-2018-0802, CVE-2017-11882, CVE-2019-9489 CVE-2020-8468, and CVE-2018-0798 to enable execution of their delivered malicious payloads.",
+        "T1204.002::[Tonto Team] has relied on user interaction to open their malicious RTF documents.",
+        "T1210::[Tonto Team] has used EternalBlue exploits for lateral movement.",
+        "T1505.003::[Tonto Team] has used a first stage web shell after compromising a vulnerable Exchange server.",
+        "T1566.001::[Tonto Team] has delivered payloads via spearphishing attachments.",
+        "T1574.001::[Tonto Team] abuses a legitimate and signed Microsoft executable to launch a malicious DLL."
+      ]
+    },
+    "description": "[Tonto Team](https://attack.mitre.org/groups/G0131) is a suspected Chinese state-sponsored cyber espionage threat group that has primarily targeted South Korea, Japan, Taiwan, and the United States since at least 2009; by 2020 they expanded operations to include other Asian as well as Eastern European countries. [Tonto Team](https://attack.mitre.org/groups/G0131) has targeted government, military, energy, mining, financial, education, healthcare, and technology organizations, including through the Heartbeat Campaign (2009-2012) and Operation Bitter Biscuit (2017).(Citation: Kaspersky CactusPete Aug 2020)(Citation: ESET Exchange Mar 2021)(Citation: FireEye Chinese Espionage October 2019)(Citation: ARS Technica China Hack SK April 2017)(Citation: Trend Micro HeartBeat Campaign January 2013)(Citation: Talos Bisonal 10 Years March 2020)"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  [
+    "moses-staff",
+    "T1021.002",
+    "SMB/Windows Admin Shares",
+    "command-execution|logon-session-creation|network-connection-creation|network-share-access|network-traffic-flow",
+    "T1021.002::[Moses Staff] has used batch scripts that can enable SMB on a compromised host."
+  ],
+  [
+    "moses-staff",
+    "T1087.001",
+    "Local Account",
+    "command-execution|file-access|group-enumeration|os-api-execution|process-creation",
+    "T1087.001::[Moses Staff] has collected the administrator username from a compromised host."
+  ],
+  [
+    "moses-staff",
+    "T1505.003",
+    "Web Shell",
+    "application-log-content|file-creation|file-modification|network-traffic-content|network-traffic-flow|process-creation",
+    "T1505.003::[Moses Staff] has dropped a web shell onto a compromised system."
+  ],
+  [
+    "moses-staff",
+    "T1553.002",
+    "Code Signing",
+    "file-metadata",
+    "T1553.002::[Moses Staff] has used signed drivers from an open source tool called DiskCryptor to evade detection."
+  ],
+  [
+    "moses-staff",
+    "T1562.004",
+    "Disable or Modify System Firewall",
+    "command-execution|firewall-disable|firewall-rule-modification|windows-registry-key-modification",
+    "T1562.004::[Moses Staff] has used batch scripts that can disable the Windows firewall on specific remote machines."
+  ],
+  [
+    "moses-staff",
+    "T1587.001",
+    "Malware",
+    "malware-content|malware-metadata",
+    "T1587.001::[Moses Staff] has built malware, such as [DCSrv] and [PyDCrypt], for targeting victims' machines."
+  ],
+  [
+    "moses-staff",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[Moses Staff] has used the commercial tool DiskCryptor."
+  ]
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "tool--03342581-f790-4f03-ba41-e82e67392e23",
+    "name": "net",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0039",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 5,
+        "items": [
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "lateral-movement",
+          "persistence"
+        ]
+      },
+      "techniques": {
+        "count": 15,
+        "items": [
+          "T1007",
+          "T1018",
+          "T1021.002",
+          "T1049",
+          "T1069.001",
+          "T1069.002",
+          "T1070.005",
+          "T1087.001",
+          "T1087.002",
+          "T1124",
+          "T1135",
+          "T1136.001",
+          "T1136.002",
+          "T1201",
+          "T1569.002"
+        ]
+      },
+      "adversaries": {
+        "count": 27,
+        "items": [
+          "admin@338",
+          "apt1",
+          "apt28",
+          "apt29",
+          "apt32",
+          "apt33",
+          "apt38",
+          "apt41",
+          "bronze-butler",
+          "chimera",
+          "deep-panda",
+          "dragonfly",
+          "fin8",
+          "gallium",
+          "ke3chang",
+          "leviathan",
+          "magic-hound",
+          "menupass",
+          "naikon",
+          "oilrig",
+          "orangeworm",
+          "sandworm-team",
+          "ta505",
+          "threat-group-1314",
+          "threat-group-3390",
+          "turla",
+          "wizard-spider"
+        ]
+      },
+      "procedures": [
+        "T1007::The net start command can be used in [Net] to find information about Windows services.",
+        "T1018::Commands such as net view can be used in [Net] to gather information about available remote systems.",
+        "T1021.002::Lateral movement can be done with [Net] through net use commands to connect to the on remote systems.",
+        "T1049::Commands such as net use and net session can be used in [Net] to gather information about network connections from a particular host.",
+        "T1069.001::Commands such as net group and net localgroup can be used in [Net] to gather information about and manipulate groups.",
+        "T1069.002::Commands such as net group /domain can be used in [Net] to gather information about and manipulate groups.",
+        "T1070.005::The net use \\\\system\\share /delete command can be used in [Net] to remove an established connection to a network share.",
+        "T1087.001::Commands under net user can be used in [Net] to gather information about and manipulate user accounts.",
+        "T1087.002::[Net] commands used with the /domain flag can be used to gather information about and manipulate user accounts on the current domain.",
+        "T1124::The net time command can be used in [Net] to determine the local or remote system time.",
+        "T1135::The net view \\\\remotesystem and net share commands in [Net] can be used to find shared drives and directories on remote and local systems respectively.",
+        "T1136.001::The net user username \\password commands in [Net] can be used to create a local account.",
+        "T1136.002::The net user username \\password \\domain commands in [Net] can be used to create a domain account.",
+        "T1201::The net accounts and net accounts /domain commands with [Net] can be used to obtain password policy information.",
+        "T1569.002::The net start and net stop commands can be used in [Net] to execute or stop Windows services."
+      ]
+    },
+    "description": "The [Net](https://attack.mitre.org/software/S0039) utility is a component of the Windows operating system. It is used in command-line operations for control of users, groups, services, and network connections. (Citation: Microsoft Net Utility)\n\n[Net](https://attack.mitre.org/software/S0039) has a great deal of functionality, (Citation: Savill 1999) much of which is useful for an adversary, such as gathering system and network information for Discovery, moving laterally through [SMB/Windows Admin Shares](https://attack.mitre.org/techniques/T1021/002) using <code>net use</code> commands, and interacting with services. The net1.exe utility is executed for certain functionality when net.exe is run and can be used directly in commands such as <code>net1 user</code>."
+  }
+]

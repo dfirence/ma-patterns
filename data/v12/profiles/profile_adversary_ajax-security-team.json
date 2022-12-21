@@ -1,0 +1,52 @@
+[
+  {
+    "id": "intrusion-set--fa19de15-6169-428d-9cd6-3ca3d56075b7",
+    "name": "ajax-security-team",
+    "aliases": "ajax-security-team|operation-woolen-goldfish|ajaxtm|rocket-kitten|flying-kitten|operation-saffron-rose",
+    "group_id": "G0130",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 2,
+        "items": [
+          "havij",
+          "sqlmap"
+        ]
+      },
+      "techniques": {
+        "count": 6,
+        "items": [
+          "T1056.001",
+          "T1105",
+          "T1204.002",
+          "T1555.003",
+          "T1566.001",
+          "T1566.003"
+        ]
+      },
+      "tactics": {
+        "count": 5,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "execution",
+          "initial-access"
+        ]
+      },
+      "procedures": [
+        "T1056.001::[Ajax Security Team] has used CWoolger and MPK, custom-developed malware, which recorded all keystrokes on an infected system.",
+        "T1105::[Ajax Security Team] has used Wrapper/Gholee, custom-developed malware, which downloaded additional malware to the infected system.",
+        "T1204.002::[Ajax Security Team] has lured victims into executing malicious files.",
+        "T1555.003::[Ajax Security Team] has used FireMalv custom-developed malware, which collected passwords from the Firefox browser storage.",
+        "T1566.001::[Ajax Security Team] has used personalized spearphishing attachments.",
+        "T1566.003::[Ajax Security Team] has used various social media channels to spearphish victims."
+      ]
+    },
+    "description": "[Ajax Security Team](https://attack.mitre.org/groups/G0130) is a group that has been active since at least 2010 and believed to be operating out of Iran. By 2014 [Ajax Security Team](https://attack.mitre.org/groups/G0130) transitioned from website defacement operations to malware-based cyber espionage campaigns targeting the US defense industrial base and Iranian users of anti-censorship technologies.(Citation: FireEye Operation Saffron Rose 2013)"
+  }
+]

@@ -1,0 +1,226 @@
+[
+  [
+    "chimera",
+    "T1003.003",
+    "NTDS",
+    "command-execution|file-access",
+    "T1003.003::[Chimera] has gathered the SYSTEM registry and ntds.dit files from target systems."
+  ],
+  [
+    "chimera",
+    "T1021.001",
+    "Remote Desktop Protocol",
+    "logon-session-creation|network-connection-creation|network-traffic-flow|process-creation",
+    "T1021.001::[Chimera] has used RDP to access targeted systems."
+  ],
+  [
+    "chimera",
+    "T1021.002",
+    "SMB/Windows Admin Shares",
+    "command-execution|logon-session-creation|network-connection-creation|network-share-access|network-traffic-flow",
+    "T1021.002::[Chimera] has used Windows admin shares to move laterally."
+  ],
+  [
+    "chimera",
+    "T1021.006",
+    "Windows Remote Management",
+    "command-execution|logon-session-creation|network-connection-creation|process-creation|service-metadata",
+    "T1021.006::[Chimera] has used WinRM for lateral movement."
+  ],
+  [
+    "chimera",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[Chimera] has renamed malware to GoogleUpdate.exe and WinRAR to jucheck.exe, RecordedTV.ms, teredo.tmp, update.exe, and msadcs1.exe."
+  ],
+  [
+    "chimera",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[Chimera] has used scheduled tasks to invoke Cobalt Strike including through batch script schtasks /create /ru \"SYSTEM\" /tn \"update\" /tr \"cmd /c c:\\windows\\temp\\update.bat\" /sc once /f /st and to maintain persistence."
+  ],
+  [
+    "chimera",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[Chimera] has used PowerShell scripts to execute malicious payloads and the DSInternals PowerShell module to make use of Active Directory features."
+  ],
+  [
+    "chimera",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[Chimera] has used the Windows Command Shell and batch scripts for execution on compromised hosts."
+  ],
+  [
+    "chimera",
+    "T1069.001",
+    "Local Groups",
+    "command-execution|group-enumeration|os-api-execution|process-creation",
+    "T1069.001::[Chimera] has used net localgroup administrators to identify  accounts with local administrative rights."
+  ],
+  [
+    "chimera",
+    "T1070.001",
+    "Clear Windows Event Logs",
+    "command-execution|file-deletion|os-api-execution",
+    "T1070.001::[Chimera] has cleared event logs on compromised hosts."
+  ],
+  [
+    "chimera",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[Chimera] has performed file deletion to evade detection."
+  ],
+  [
+    "chimera",
+    "T1070.006",
+    "Timestomp",
+    "file-metadata|file-modification",
+    "T1070.006::[Chimera] has used a Windows version of the Linux touch command to modify the date and time stamp on DLLs."
+  ],
+  [
+    "chimera",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[Chimera] has used HTTPS for C2 communications."
+  ],
+  [
+    "chimera",
+    "T1071.004",
+    "DNS",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.004::[Chimera] has used [Cobalt Strike] to encapsulate C2 in DNS traffic."
+  ],
+  [
+    "chimera",
+    "T1074.001",
+    "Local Data Staging",
+    "command-execution|file-access|file-creation|windows-registry-key-modification",
+    "T1074.001::[Chimera] has staged stolen data locally on compromised hosts."
+  ],
+  [
+    "chimera",
+    "T1074.002",
+    "Remote Data Staging",
+    "command-execution|file-access|file-creation",
+    "T1074.002::[Chimera] has staged stolen data on designated servers in the target environment."
+  ],
+  [
+    "chimera",
+    "T1078.002",
+    "Domain Accounts",
+    "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "T1078.002::[Chimera] has used compromised domain accounts to gain access to the target environment."
+  ],
+  [
+    "chimera",
+    "T1087.001",
+    "Local Account",
+    "command-execution|file-access|group-enumeration|os-api-execution|process-creation",
+    "T1087.001::[Chimera] has used net user for account discovery."
+  ],
+  [
+    "chimera",
+    "T1087.002",
+    "Domain Account",
+    "command-execution|group-enumeration|network-traffic-content|os-api-execution|process-creation",
+    "T1087.002::[Chimera] has has used net user /dom and net user Administrator to enumerate domain accounts including administrator accounts."
+  ],
+  [
+    "chimera",
+    "T1110.003",
+    "Password Spraying",
+    "application-log-content|user-account-authentication",
+    "T1110.003::[Chimera] has used multiple password spraying attacks against victim's remote services to obtain valid user and administrator accounts."
+  ],
+  [
+    "chimera",
+    "T1110.004",
+    "Credential Stuffing",
+    "application-log-content|user-account-authentication",
+    "T1110.004::[Chimera] has used credential stuffing against victim's remote services to obtain valid accounts."
+  ],
+  [
+    "chimera",
+    "T1114.001",
+    "Local Email Collection",
+    "command-execution|file-access",
+    "T1114.001::[Chimera] has harvested data from victim's e-mail including through execution of wmic /node:<ip> process call create \"cmd /c copy c:\\Users\\<username>\\<path>\\backup.pst c:\\windows\\temp\\backup.pst\" copy \"i:\\<path>\\<username>\\My Documents\\<filename>.pst\"\ncopy."
+  ],
+  [
+    "chimera",
+    "T1114.002",
+    "Remote Email Collection",
+    "command-execution|logon-session-creation|network-connection-creation",
+    "T1114.002::[Chimera] has harvested data from remote mailboxes including through execution of \\\\<hostname>\\c$\\Users\\<username>\\AppData\\Local\\Microsoft\\Outlook*.ost."
+  ],
+  [
+    "chimera",
+    "T1213.002",
+    "Sharepoint",
+    "application-log-content|logon-session-creation",
+    "T1213.002::[Chimera] has collected documents from the victim's SharePoint."
+  ],
+  [
+    "chimera",
+    "T1550.002",
+    "Pass the Hash",
+    "active-directory-credential-request|logon-session-creation|user-account-authentication",
+    "T1550.002::[Chimera] has dumped password hashes for use in pass the hash authentication attacks."
+  ],
+  [
+    "chimera",
+    "T1556.001",
+    "Domain Controller Authentication",
+    "file-modification|logon-session-creation|os-api-execution|process-access",
+    "T1556.001::[Chimera]'s malware has altered the NTLM authentication program on domain controllers to allow [Chimera] to login without a valid credential."
+  ],
+  [
+    "chimera",
+    "T1560.001",
+    "Archive via Utility",
+    "command-execution|file-creation|process-creation",
+    "T1560.001::[Chimera] has used gzip for Linux OS and a modified RAR software to archive data on Windows hosts."
+  ],
+  [
+    "chimera",
+    "T1567.002",
+    "Exfiltration to Cloud Storage",
+    "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1567.002::[Chimera] has exfiltrated stolen data to OneDrive accounts."
+  ],
+  [
+    "chimera",
+    "T1569.002",
+    "Service Execution",
+    "command-execution|process-creation|service-creation|windows-registry-key-modification",
+    "T1569.002::[Chimera] has used [PsExec] to deploy beacons on compromised systems."
+  ],
+  [
+    "chimera",
+    "T1574.002",
+    "DLL Side-Loading",
+    "file-creation|file-modification|module-load|process-creation",
+    "T1574.002::[Chimera] has used side loading to place malicious DLLs in memory."
+  ],
+  [
+    "chimera",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[Chimera] has obtained and used tools such as [BloodHound], [Cobalt Strike], [Mimikatz], and [PsExec]."
+  ],
+  [
+    "chimera",
+    "T1589.001",
+    "Credentials",
+    "none",
+    "T1589.001::[Chimera] has collected credentials for the target organization from previous breaches for use in brute force attacks."
+  ]
+]

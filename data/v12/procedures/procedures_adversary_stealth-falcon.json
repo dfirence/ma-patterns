@@ -1,0 +1,44 @@
+[
+  [
+    "stealth-falcon",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[Stealth Falcon] malware creates a scheduled task entitled “IE Web Cache” to execute a malicious file hourly."
+  ],
+  [
+    "stealth-falcon",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[Stealth Falcon] malware uses PowerShell commands to perform various functions, including gathering system information via WMI and executing commands from its C2 server."
+  ],
+  [
+    "stealth-falcon",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[Stealth Falcon] malware communicates with its C2 server via HTTPS."
+  ],
+  [
+    "stealth-falcon",
+    "T1555.003",
+    "Credentials from Web Browsers",
+    "command-execution|file-access|os-api-execution|process-access",
+    "T1555.003::[Stealth Falcon] malware gathers passwords from multiple sources, including Internet Explorer, Firefox, and Chrome."
+  ],
+  [
+    "stealth-falcon",
+    "T1555.004",
+    "Windows Credential Manager",
+    "command-execution|file-access|os-api-execution|process-creation",
+    "T1555.004::[Stealth Falcon] malware gathers passwords from the Windows Credential Vault."
+  ],
+  [
+    "stealth-falcon",
+    "T1573.001",
+    "Symmetric Cryptography",
+    "network-traffic-content",
+    "T1573.001::[Stealth Falcon] malware encrypts C2 traffic using RC4 with a hard-coded key."
+  ]
+]

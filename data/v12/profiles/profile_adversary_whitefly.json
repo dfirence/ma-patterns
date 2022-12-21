@@ -1,0 +1,59 @@
+[
+  {
+    "id": "intrusion-set--b74f909f-8e52-4b69-b770-162bf59a1b4e",
+    "name": "whitefly",
+    "aliases": "whitefly",
+    "group_id": "G0107",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 1,
+        "items": [
+          "mimikatz"
+        ]
+      },
+      "techniques": {
+        "count": 9,
+        "items": [
+          "T1003.001",
+          "T1027",
+          "T1036.005",
+          "T1059",
+          "T1068",
+          "T1105",
+          "T1204.002",
+          "T1574.001",
+          "T1588.002"
+        ]
+      },
+      "tactics": {
+        "count": 7,
+        "items": [
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "execution",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1003.001::[Whitefly] has used [Mimikatz] to obtain credentials.",
+        "T1027::[Whitefly] has encrypted the payload used for C2.",
+        "T1036.005::[Whitefly] has named the malicious DLL the same name as DLLs belonging to legitimate software from various security vendors.",
+        "T1059::[Whitefly] has used a simple remote shell tool that will call back to the C2 server and wait for commands.",
+        "T1068::[Whitefly] has used an open-source tool to exploit a known Windows privilege escalation vulnerability (CVE-2016-0051) on unpatched computers.",
+        "T1105::[Whitefly] has the ability to download additional tools from the C2.",
+        "T1204.002::[Whitefly] has used malicious .exe or .dll files disguised as documents or images.",
+        "T1574.001::[Whitefly] has used search order hijacking to run the loader Vcrodat.",
+        "T1588.002::[Whitefly] has obtained and used tools such as [Mimikatz]."
+      ]
+    },
+    "description": "[Whitefly](https://attack.mitre.org/groups/G0107) is a cyber espionage group that has been operating since at least 2017. The group has targeted organizations based mostly in Singapore across a wide variety of sectors, and is primarily interested in stealing large amounts of sensitive information. The group has been linked to an attack against Singapore’s largest public health organization, SingHealth.(Citation: Symantec Whitefly March 2019)"
+  }
+]

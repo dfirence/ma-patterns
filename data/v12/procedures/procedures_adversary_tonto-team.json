@@ -1,0 +1,65 @@
+[
+  [
+    "tonto-team",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[Tonto Team] has used keylogging tools in their operations."
+  ],
+  [
+    "tonto-team",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[Tonto Team] has used PowerShell to download additional payloads."
+  ],
+  [
+    "tonto-team",
+    "T1059.006",
+    "Python",
+    "command-execution|process-creation",
+    "T1059.006::[Tonto Team] has used Python-based tools for execution."
+  ],
+  [
+    "tonto-team",
+    "T1069.001",
+    "Local Groups",
+    "command-execution|group-enumeration|os-api-execution|process-creation",
+    "T1069.001::[Tonto Team] has used the ShowLocalGroupDetails command to identify administrator, user, and guest accounts on a compromised host."
+  ],
+  [
+    "tonto-team",
+    "T1090.002",
+    "External Proxy",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1090.002::[Tonto Team] has routed their traffic through an external server in order to obfuscate their location."
+  ],
+  [
+    "tonto-team",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Tonto Team] has relied on user interaction to open their malicious RTF documents."
+  ],
+  [
+    "tonto-team",
+    "T1505.003",
+    "Web Shell",
+    "application-log-content|file-creation|file-modification|network-traffic-content|network-traffic-flow|process-creation",
+    "T1505.003::[Tonto Team] has used a first stage web shell after compromising a vulnerable Exchange server."
+  ],
+  [
+    "tonto-team",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[Tonto Team] has delivered payloads via spearphishing attachments."
+  ],
+  [
+    "tonto-team",
+    "T1574.001",
+    "DLL Search Order Hijacking",
+    "file-creation|file-modification|module-load",
+    "T1574.001::[Tonto Team] abuses a legitimate and signed Microsoft executable to launch a malicious DLL."
+  ]
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "tool--2fab555f-7664-4623-b4e0-1675ae38190b",
+    "name": "lslsass",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0121",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "credential-access"
+        ]
+      },
+      "techniques": {
+        "count": 1,
+        "items": [
+          "T1003.001"
+        ]
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "apt1"
+        ]
+      },
+      "procedures": [
+        "T1003.001::[Lslsass] can dump active logon session password hashes from the lsass process."
+      ]
+    },
+    "description": "[Lslsass](https://attack.mitre.org/software/S0121) is a publicly-available tool that can dump active logon session password hashes from the lsass process. (Citation: Mandiant APT1)"
+  }
+]

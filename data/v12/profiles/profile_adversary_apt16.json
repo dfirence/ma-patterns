@@ -1,0 +1,37 @@
+[
+  {
+    "id": "intrusion-set--d6e88e18-81e8-4709-82d8-973095da1e70",
+    "name": "apt16",
+    "aliases": "apt16",
+    "group_id": "G0023",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 1,
+        "items": [
+          "elmer"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 1,
+        "items": [
+          "T1584.004"
+        ]
+      },
+      "tactics": {
+        "count": 1,
+        "items": [
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1584.004::[APT16] has compromised otherwise legitimate sites as staging servers for second-stage payloads."
+      ]
+    },
+    "description": "[APT16](https://attack.mitre.org/groups/G0023) is a China-based threat group that has launched spearphishing campaigns targeting Japanese and Taiwanese organizations. (Citation: FireEye EPS Awakens Part 2)"
+  }
+]

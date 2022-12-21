@@ -1,0 +1,16 @@
+[
+  [
+    "gcman",
+    "T1021.004",
+    "SSH",
+    "logon-session-creation|network-connection-creation|process-creation",
+    "T1021.004::[GCMAN] uses Putty for lateral movement."
+  ],
+  [
+    "gcman",
+    "T1021.005",
+    "VNC",
+    "logon-session-creation|network-connection-creation|process-creation",
+    "T1021.005::[GCMAN] uses VNC for lateral movement."
+  ]
+]

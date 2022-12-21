@@ -1,0 +1,40 @@
+[
+  {
+    "id": "tool--981acc4c-2ede-4b56-be6e-fa1a75f37acf",
+    "name": "nltest",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0359",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "discovery"
+        ]
+      },
+      "techniques": {
+        "count": 3,
+        "items": [
+          "T1016",
+          "T1018",
+          "T1482"
+        ]
+      },
+      "adversaries": {
+        "count": 3,
+        "items": [
+          "earth-lusca",
+          "fin8",
+          "wizard-spider"
+        ]
+      },
+      "procedures": [
+        "T1016::[Nltest] may be used to enumerate the parent domain of a local machine using /parentdomain.",
+        "T1018::[Nltest] may be used to enumerate remote domain controllers using options such as /dclist and /dsgetdc.",
+        "T1482::[Nltest] may be used to enumerate trusted domains by using commands such as nltest /domain_trusts."
+      ]
+    },
+    "description": "[Nltest](https://attack.mitre.org/software/S0359) is a Windows command-line utility used to list domain controllers and enumerate domain trusts.(Citation: Nltest Manual)"
+  }
+]

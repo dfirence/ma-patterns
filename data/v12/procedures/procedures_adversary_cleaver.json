@@ -1,0 +1,37 @@
+[
+  [
+    "cleaver",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[Cleaver] has been known to dump credentials using Mimikatz and Windows Credential Editor."
+  ],
+  [
+    "cleaver",
+    "T1557.002",
+    "ARP Cache Poisoning",
+    "network-traffic-content|network-traffic-flow",
+    "T1557.002::[Cleaver] has used custom tools to facilitate ARP cache poisoning."
+  ],
+  [
+    "cleaver",
+    "T1585.001",
+    "Social Media Accounts",
+    "network-traffic-content|social-media",
+    "T1585.001::[Cleaver] has created fake LinkedIn profiles that included profile photos, details, and connections."
+  ],
+  [
+    "cleaver",
+    "T1587.001",
+    "Malware",
+    "malware-content|malware-metadata",
+    "T1587.001::[Cleaver] has created customized tools and payloads for functions including ARP poisoning, encryption, credential dumping, ASP.NET shells, web backdoors, process enumeration, WMI querying, HTTP and SMB communications, network interface sniffing, and keystroke logging."
+  ],
+  [
+    "cleaver",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[Cleaver] has obtained and used open-source tools such as [PsExec], [Windows Credential Editor], and [Mimikatz]."
+  ]
+]

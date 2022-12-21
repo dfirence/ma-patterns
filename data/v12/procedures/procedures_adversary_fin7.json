@@ -1,0 +1,191 @@
+[
+  [
+    "fin7",
+    "T1021.001",
+    "Remote Desktop Protocol",
+    "logon-session-creation|network-connection-creation|network-traffic-flow|process-creation",
+    "T1021.001::[FIN7] has used RDP to move laterally in victim environments."
+  ],
+  [
+    "fin7",
+    "T1021.004",
+    "SSH",
+    "logon-session-creation|network-connection-creation|process-creation",
+    "T1021.004::[FIN7] has used SSH to move laterally through victim environments."
+  ],
+  [
+    "fin7",
+    "T1021.005",
+    "VNC",
+    "logon-session-creation|network-connection-creation|process-creation",
+    "T1021.005::[FIN7] has used TightVNC to control compromised hosts."
+  ],
+  [
+    "fin7",
+    "T1036.004",
+    "Masquerade Task or Service",
+    "command-execution|scheduled-job-metadata|scheduled-job-modification|service-creation|service-metadata",
+    "T1036.004::[FIN7] has created a scheduled task named “AdobeFlashSync” to establish persistence."
+  ],
+  [
+    "fin7",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[FIN7] has attempted to run Darkside ransomware with the filename sleep.exe."
+  ],
+  [
+    "fin7",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[FIN7] malware has created scheduled tasks to establish persistence."
+  ],
+  [
+    "fin7",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[FIN7] used a PowerShell script to launch shellcode that retrieved an additional payload."
+  ],
+  [
+    "fin7",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[FIN7] used the command prompt to launch commands on the victim’s machine."
+  ],
+  [
+    "fin7",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[FIN7] used VBS scripts to help perform tasks on the victim's machine."
+  ],
+  [
+    "fin7",
+    "T1059.007",
+    "JavaScript",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.007::[FIN7] used JavaScript scripts to help perform tasks on the victim's machine."
+  ],
+  [
+    "fin7",
+    "T1071.004",
+    "DNS",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.004::[FIN7] has performed C2 using DNS via A, OPT, and TXT records."
+  ],
+  [
+    "fin7",
+    "T1102.002",
+    "Bidirectional Communication",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1102.002::[FIN7] used legitimate services like Google Docs, Google Scripts, and Pastebin for C2."
+  ],
+  [
+    "fin7",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[FIN7] has used malicious links to lure victims into downloading malware."
+  ],
+  [
+    "fin7",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[FIN7] lured victims to double-click on images in the attachments they sent which would then execute the hidden LNK file."
+  ],
+  [
+    "fin7",
+    "T1218.005",
+    "Mshta",
+    "command-execution|file-creation|network-connection-creation|process-creation",
+    "T1218.005::[FIN7] has used mshta.exe to execute VBScript to execute malicious code on victim systems."
+  ],
+  [
+    "fin7",
+    "T1497.002",
+    "User Activity Based Checks",
+    "command-execution|os-api-execution|process-creation",
+    "T1497.002::[FIN7] used images embedded into document lures that only activate the payload when a user double clicks to avoid sandboxes."
+  ],
+  [
+    "fin7",
+    "T1543.003",
+    "Windows Service",
+    "command-execution|driver-load|os-api-execution|process-creation|service-creation|service-modification|windows-registry-key-creation|windows-registry-key-modification",
+    "T1543.003::[FIN7] created new Windows services and added them to the startup directories for persistence."
+  ],
+  [
+    "fin7",
+    "T1546.011",
+    "Application Shimming",
+    "command-execution|file-modification|module-load|process-creation|windows-registry-key-modification",
+    "T1546.011::[FIN7] has used application shim databases for persistence."
+  ],
+  [
+    "fin7",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[FIN7] malware has created Registry Run and RunOnce keys to establish persistence, and has also added items to the Startup folder."
+  ],
+  [
+    "fin7",
+    "T1553.002",
+    "Code Signing",
+    "file-metadata",
+    "T1553.002::[FIN7] has signed [Carbanak] payloads with legally purchased code signing certificates. [FIN7] has also digitally signed their phishing documents, backdoors and other staging tools to bypass security controls."
+  ],
+  [
+    "fin7",
+    "T1558.003",
+    "Kerberoasting",
+    "active-directory-credential-request",
+    "T1558.003::[FIN7] has used Kerberoasting for credential access and to enable lateral movement."
+  ],
+  [
+    "fin7",
+    "T1559.002",
+    "Dynamic Data Exchange",
+    "module-load|process-creation|script-execution",
+    "T1559.002::[FIN7] spear phishing campaigns have included malicious Word documents with DDE execution."
+  ],
+  [
+    "fin7",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[FIN7] sent spearphishing emails with either malicious Microsoft Documents or RTF files attached."
+  ],
+  [
+    "fin7",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[FIN7] has conducted broad phishing campaigns using malicious links."
+  ],
+  [
+    "fin7",
+    "T1567.002",
+    "Exfiltration to Cloud Storage",
+    "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1567.002::[FIN7] has exfiltrated stolen data to the MEGA file sharing site."
+  ],
+  [
+    "fin7",
+    "T1583.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1583.001::[FIN7] has registered look-alike domains for use in phishing campaigns."
+  ],
+  [
+    "fin7",
+    "T1587.001",
+    "Malware",
+    "malware-content|malware-metadata",
+    "T1587.001::[FIN7] has developed malware for use in operations, including the creation of infected removable media."
+  ]
+]

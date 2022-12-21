@@ -1,0 +1,79 @@
+[
+  [
+    "darkhotel",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[Darkhotel] has used malware that is disguised as a Secure Shell (SSH) tool."
+  ],
+  [
+    "darkhotel",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[Darkhotel] has used a keylogger."
+  ],
+  [
+    "darkhotel",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[Darkhotel] has dropped an mspaint.lnk shortcut to disk which launches a shell script that downloads and executes a file."
+  ],
+  [
+    "darkhotel",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Darkhotel] has sent spearphishing emails in an attempt to lure users into clicking on a malicious attachments."
+  ],
+  [
+    "darkhotel",
+    "T1497.001",
+    "System Checks",
+    "command-execution|os-api-execution|process-creation",
+    "T1497.001::[Darkhotel] malware has used a series of checks to determine if it's being analyzed; checks include the length of executable names, if a filename ends with .Md5.exe, and if the program is executed from the root of the C:\\ drive, as well as checks for sandbox-related libraries."
+  ],
+  [
+    "darkhotel",
+    "T1497.002",
+    "User Activity Based Checks",
+    "command-execution|os-api-execution|process-creation",
+    "T1497.002::[Darkhotel] has used malware that repeatedly checks the mouse cursor position to determine if a real user is on the system."
+  ],
+  [
+    "darkhotel",
+    "T1518.001",
+    "Security Software Discovery",
+    "command-execution|firewall-enumeration|firewall-metadata|os-api-execution|process-creation",
+    "T1518.001::[Darkhotel] has searched for anti-malware strings and anti-virus processes running on the system."
+  ],
+  [
+    "darkhotel",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[Darkhotel] has been known to establish persistence by adding programs to the Run Registry key."
+  ],
+  [
+    "darkhotel",
+    "T1553.002",
+    "Code Signing",
+    "file-metadata",
+    "T1553.002::[Darkhotel] has used code-signing certificates on its malware that are either forged due to weak keys or stolen. [Darkhotel] has also stolen certificates and signed backdoors and downloaders with them."
+  ],
+  [
+    "darkhotel",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[Darkhotel] has sent spearphishing emails with malicious RAR and .LNK attachments."
+  ],
+  [
+    "darkhotel",
+    "T1573.001",
+    "Symmetric Cryptography",
+    "network-traffic-content",
+    "T1573.001::[Darkhotel] has used AES-256 and 3DES for C2 communications."
+  ]
+]

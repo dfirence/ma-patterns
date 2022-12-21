@@ -1,0 +1,177 @@
+[
+  [
+    "ke3chang",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[Ke3chang] has dumped credentials, including by using [Mimikatz]."
+  ],
+  [
+    "ke3chang",
+    "T1003.002",
+    "Security Account Manager",
+    "command-execution|file-access|windows-registry-key-access",
+    "T1003.002::[Ke3chang] has dumped credentials, including by using gsecdump."
+  ],
+  [
+    "ke3chang",
+    "T1003.003",
+    "NTDS",
+    "command-execution|file-access",
+    "T1003.003::[Ke3chang] has used NTDSDump and other password dumping tools to gather credentials."
+  ],
+  [
+    "ke3chang",
+    "T1003.004",
+    "LSA Secrets",
+    "command-execution|windows-registry-key-access",
+    "T1003.004::[Ke3chang] has dumped credentials, including by using gsecdump."
+  ],
+  [
+    "ke3chang",
+    "T1021.002",
+    "SMB/Windows Admin Shares",
+    "command-execution|logon-session-creation|network-connection-creation|network-share-access|network-traffic-flow",
+    "T1021.002::[Ke3chang] actors have been known to copy files to the network shares of other computers to move laterally."
+  ],
+  [
+    "ke3chang",
+    "T1036.002",
+    "Right-to-Left Override",
+    "file-metadata",
+    "T1036.002::[Ke3chang] has used the right-to-left override character in spearphishing attachment names to trick targets into executing .scr and .exe files."
+  ],
+  [
+    "ke3chang",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[Ke3chang] has dropped their malware into legitimate installed software paths including: `C:\\ProgramFiles\\Realtek\\Audio\\HDA\\AERTSr.exe`, `C:\\Program Files (x86)\\Foxit Software\\Foxit Reader\\FoxitRdr64.exe`, `C:\\Program Files (x86)\\Adobe\\Flash Player\\AddIns\\airappinstaller\\airappinstall.exe`, and `C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroRd64.exe`."
+  ],
+  [
+    "ke3chang",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[Ke3chang] has used keyloggers."
+  ],
+  [
+    "ke3chang",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[Ke3chang] has used batch scripts in its malware to install persistence mechanisms."
+  ],
+  [
+    "ke3chang",
+    "T1069.002",
+    "Domain Groups",
+    "command-execution|group-enumeration|os-api-execution|process-creation",
+    "T1069.002::[Ke3chang] performs discovery of permission groups net group /domain."
+  ],
+  [
+    "ke3chang",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[Ke3chang] malware including RoyalCli and BS2005 have communicated over HTTP with the C2 server through Internet Explorer (IE) by using the COM interface IWebBrowser2."
+  ],
+  [
+    "ke3chang",
+    "T1071.004",
+    "DNS",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.004::[Ke3chang] malware RoyalDNS has used DNS for C2."
+  ],
+  [
+    "ke3chang",
+    "T1078.004",
+    "Cloud Accounts",
+    "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "T1078.004::[Ke3chang] has used compromised credentials to sign into victims’ Microsoft 365 accounts."
+  ],
+  [
+    "ke3chang",
+    "T1087.001",
+    "Local Account",
+    "command-execution|file-access|group-enumeration|os-api-execution|process-creation",
+    "T1087.001::[Ke3chang] performs account discovery using commands such as net localgroup administrators and net group \"REDACTED\" /domain on specific permissions groups."
+  ],
+  [
+    "ke3chang",
+    "T1087.002",
+    "Domain Account",
+    "command-execution|group-enumeration|network-traffic-content|os-api-execution|process-creation",
+    "T1087.002::[Ke3chang] performs account discovery using commands such as net localgroup administrators and net group \"REDACTED\" /domain on specific permissions groups."
+  ],
+  [
+    "ke3chang",
+    "T1114.002",
+    "Remote Email Collection",
+    "command-execution|logon-session-creation|network-connection-creation",
+    "T1114.002::[Ke3chang] has used compromised credentials and a .NET tool to dump data from Microsoft Exchange mailboxes."
+  ],
+  [
+    "ke3chang",
+    "T1213.002",
+    "Sharepoint",
+    "application-log-content|logon-session-creation",
+    "T1213.002::[Ke3chang] used a SharePoint enumeration and data dumping tool known as spwebmember."
+  ],
+  [
+    "ke3chang",
+    "T1543.003",
+    "Windows Service",
+    "command-execution|driver-load|os-api-execution|process-creation|service-creation|service-modification|windows-registry-key-creation|windows-registry-key-modification",
+    "T1543.003::[Ke3chang] backdoor RoyalDNS established persistence through adding a service called Nwsapagent."
+  ],
+  [
+    "ke3chang",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::Several [Ke3chang] backdoors achieved persistence by adding a Run key."
+  ],
+  [
+    "ke3chang",
+    "T1558.001",
+    "Golden Ticket",
+    "active-directory-credential-request|logon-session-metadata",
+    "T1558.001::[Ke3chang] has used [Mimikatz] to generate Kerberos golden tickets."
+  ],
+  [
+    "ke3chang",
+    "T1560.001",
+    "Archive via Utility",
+    "command-execution|file-creation|process-creation",
+    "T1560.001::[Ke3chang] is known to use 7Zip and RAR with passwords to encrypt data prior to exfiltration."
+  ],
+  [
+    "ke3chang",
+    "T1569.002",
+    "Service Execution",
+    "command-execution|process-creation|service-creation|windows-registry-key-modification",
+    "T1569.002::[Ke3chang] has used a tool known as RemoteExec (similar to [PsExec]) to remotely execute batch scripts and binaries."
+  ],
+  [
+    "ke3chang",
+    "T1587.001",
+    "Malware",
+    "malware-content|malware-metadata",
+    "T1587.001::[Ke3chang] has developed custom malware that allowed them to maintain persistence on victim networks."
+  ],
+  [
+    "ke3chang",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[Ke3chang] has obtained and used tools such as [Mimikatz]."
+  ],
+  [
+    "ke3chang",
+    "T1614.001",
+    "System Language Discovery",
+    "command-execution|os-api-execution|process-creation|windows-registry-key-access",
+    "T1614.001::[Ke3chang] has used implants to collect the system language ID of a compromised machine."
+  ]
+]

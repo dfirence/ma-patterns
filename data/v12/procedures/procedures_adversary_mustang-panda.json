@@ -1,0 +1,198 @@
+[
+  [
+    "mustang-panda",
+    "T1003.003",
+    "NTDS",
+    "command-execution|file-access",
+    "T1003.003::[Mustang Panda] has used vssadmin to create a volume shadow copy and retrieve the NTDS.dit file. [Mustang Panda] has also used reg save on the SYSTEM file Registry location to help extract the NTDS.dit file."
+  ],
+  [
+    "mustang-panda",
+    "T1027.001",
+    "Binary Padding",
+    "file-metadata",
+    "T1027.001::[Mustang Panda] has used junk code within their DLL files to hinder analysis."
+  ],
+  [
+    "mustang-panda",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[Mustang Panda] has used names like `adobeupdate.dat` and `PotPlayerDB.dat` to disguise [PlugX], and a file named `OneDrive.exe` to load a [Cobalt Strike] payload."
+  ],
+  [
+    "mustang-panda",
+    "T1036.007",
+    "Double File Extension",
+    "file-creation|file-metadata",
+    "T1036.007::[Mustang Panda] has used an additional filename extension to hide the true file type."
+  ],
+  [
+    "mustang-panda",
+    "T1052.001",
+    "Exfiltration over USB",
+    "command-execution|drive-creation|file-access|process-creation",
+    "T1052.001::[Mustang Panda] has used a customized [PlugX] variant which could exfiltrate documents from air-gapped networks."
+  ],
+  [
+    "mustang-panda",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[Mustang Panda] has created a scheduled task to execute additional malicious software, as well as maintain persistence."
+  ],
+  [
+    "mustang-panda",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[Mustang Panda] has used malicious PowerShell scripts to enable execution."
+  ],
+  [
+    "mustang-panda",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[Mustang Panda] has executed HTA files via cmd.exe, and used batch scripts for collection."
+  ],
+  [
+    "mustang-panda",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[Mustang Panda] has embedded VBScript components in LNK files to download additional files and automate collection."
+  ],
+  [
+    "mustang-panda",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[Mustang Panda] will delete their tools and files, and kill processes after their objectives are reached."
+  ],
+  [
+    "mustang-panda",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[Mustang Panda] has communicated with its C2 via HTTP POST requests."
+  ],
+  [
+    "mustang-panda",
+    "T1074.001",
+    "Local Data Staging",
+    "command-execution|file-access|file-creation|windows-registry-key-modification",
+    "T1074.001::[Mustang Panda] has stored collected credential files in c:\\windows\\temp prior to exfiltration. [Mustang Panda] has also stored documents for exfiltration in a hidden folder on USB drives."
+  ],
+  [
+    "mustang-panda",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[Mustang Panda] has sent malicious links including links directing victims to a Google Drive folder."
+  ],
+  [
+    "mustang-panda",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Mustang Panda] has sent malicious files requiring direct victim interaction to execute."
+  ],
+  [
+    "mustang-panda",
+    "T1218.004",
+    "InstallUtil",
+    "command-execution|process-creation",
+    "T1218.004::[Mustang Panda] has used InstallUtil.exe to execute a malicious Beacon stager."
+  ],
+  [
+    "mustang-panda",
+    "T1218.005",
+    "Mshta",
+    "command-execution|file-creation|network-connection-creation|process-creation",
+    "T1218.005::[Mustang Panda] has used mshta.exe to launch collection scripts."
+  ],
+  [
+    "mustang-panda",
+    "T1546.003",
+    "Windows Management Instrumentation Event Subscription",
+    "command-execution|process-creation|wmi-creation",
+    "T1546.003::[Mustang Panda]'s custom ORat tool uses a WMI event consumer to maintain persistence."
+  ],
+  [
+    "mustang-panda",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[Mustang Panda] has created the registry key HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Run\\AdobelmdyU to maintain persistence."
+  ],
+  [
+    "mustang-panda",
+    "T1560.001",
+    "Archive via Utility",
+    "command-execution|file-creation|process-creation",
+    "T1560.001::[Mustang Panda] has used RAR to create password-protected archives of collected documents prior to exfiltration."
+  ],
+  [
+    "mustang-panda",
+    "T1560.003",
+    "Archive via Custom Method",
+    "file-creation|script-execution",
+    "T1560.003::[Mustang Panda] has encrypted documents with RC4 prior to exfiltration."
+  ],
+  [
+    "mustang-panda",
+    "T1564.001",
+    "Hidden Files and Directories",
+    "command-execution|file-creation|file-metadata|process-creation",
+    "T1564.001::[Mustang Panda]'s [PlugX] variant has created a hidden folder on USB drives named RECYCLE.BIN to store malicious executables and collected data."
+  ],
+  [
+    "mustang-panda",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[Mustang Panda] has used spearphishing attachments to deliver initial access payloads."
+  ],
+  [
+    "mustang-panda",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[Mustang Panda] has delivered web bugs and malicious links to their intended targets."
+  ],
+  [
+    "mustang-panda",
+    "T1573.001",
+    "Symmetric Cryptography",
+    "network-traffic-content",
+    "T1573.001::[Mustang Panda] has encrypted C2 communications with RC4."
+  ],
+  [
+    "mustang-panda",
+    "T1574.002",
+    "DLL Side-Loading",
+    "file-creation|file-modification|module-load|process-creation",
+    "T1574.002::[Mustang Panda] has used a legitimately signed executable to execute a malicious payload within a DLL file."
+  ],
+  [
+    "mustang-panda",
+    "T1583.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1583.001::[Mustang Panda] have acquired C2 domains prior to operations."
+  ],
+  [
+    "mustang-panda",
+    "T1585.002",
+    "Email Accounts",
+    "none",
+    "T1585.002::[Mustang Panda] has leveraged the legitimate email marketing service SMTP2Go for phishing campaigns."
+  ],
+  [
+    "mustang-panda",
+    "T1608.001",
+    "Upload Malware",
+    "response-content",
+    "T1608.001::[Mustang Panda] has hosted malicious payloads on DropBox including [PlugX]."
+  ]
+]

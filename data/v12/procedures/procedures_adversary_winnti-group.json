@@ -1,0 +1,16 @@
+[
+  [
+    "winnti-group",
+    "T1553.002",
+    "Code Signing",
+    "file-metadata",
+    "T1553.002::[Winnti Group] used stolen certificates to sign its malware."
+  ],
+  [
+    "winnti-group",
+    "T1583.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1583.001::[Winnti Group] has registered domains for C2 that mimicked sites of their intended targets."
+  ]
+]

@@ -1,0 +1,72 @@
+[
+  [
+    "machete",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[Machete]'s [Machete] MSI installer has masqueraded as a legitimate Adobe Acrobat Reader installer."
+  ],
+  [
+    "machete",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[Machete] has created scheduled tasks to maintain [Machete]'s persistence."
+  ],
+  [
+    "machete",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[Machete] has used batch files to initiate additional downloads of malicious files."
+  ],
+  [
+    "machete",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[Machete] has embedded malicious macros within spearphishing attachments to download additional files."
+  ],
+  [
+    "machete",
+    "T1059.006",
+    "Python",
+    "command-execution|process-creation",
+    "T1059.006::[Machete] used multiple compiled Python scripts on the victim’s system. [Machete]'s main backdoor [Machete] is also written in Python."
+  ],
+  [
+    "machete",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[Machete] has has relied on users opening malicious links delivered through spearphishing to execute malware."
+  ],
+  [
+    "machete",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Machete] has relied on users opening malicious attachments delivered through spearphishing to execute malware."
+  ],
+  [
+    "machete",
+    "T1218.007",
+    "Msiexec",
+    "command-execution|module-load|network-connection-creation|process-creation",
+    "T1218.007::[Machete] has used msiexec to install the [Machete] malware."
+  ],
+  [
+    "machete",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[Machete] has delivered spearphishing emails that contain a zipped file with malicious contents."
+  ],
+  [
+    "machete",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[Machete] has sent phishing emails that contain a link to an external server with ZIP and RAR archives."
+  ]
+]

@@ -1,0 +1,107 @@
+[
+  [
+    "higaisa",
+    "T1001.003",
+    "Protocol Impersonation",
+    "network-traffic-content",
+    "T1001.003::[Higaisa] used a FakeTLS session for C2 communications."
+  ],
+  [
+    "higaisa",
+    "T1027.001",
+    "Binary Padding",
+    "file-metadata",
+    "T1027.001::[Higaisa] performed padding with null bytes before calculating its hash."
+  ],
+  [
+    "higaisa",
+    "T1036.004",
+    "Masquerade Task or Service",
+    "command-execution|scheduled-job-metadata|scheduled-job-modification|service-creation|service-metadata",
+    "T1036.004::[Higaisa] named a shellcode loader binary svchast.exe to spoof the legitimate svchost.exe."
+  ],
+  [
+    "higaisa",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[Higaisa] dropped and added officeupdate.exe to scheduled tasks."
+  ],
+  [
+    "higaisa",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[Higaisa] used cmd.exe for execution."
+  ],
+  [
+    "higaisa",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[Higaisa] has used VBScript code on the victim's machine."
+  ],
+  [
+    "higaisa",
+    "T1059.007",
+    "JavaScript",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.007::[Higaisa] used JavaScript to execute additional files."
+  ],
+  [
+    "higaisa",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[Higaisa] used HTTP and HTTPS to send data back to its C2 server."
+  ],
+  [
+    "higaisa",
+    "T1090.001",
+    "Internal Proxy",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1090.001::[Higaisa] discovered system proxy settings and used them if available."
+  ],
+  [
+    "higaisa",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Higaisa] used malicious e-mail attachments to lure victims into executing LNK files."
+  ],
+  [
+    "higaisa",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[Higaisa] added a spoofed binary to the start-up folder for persistence."
+  ],
+  [
+    "higaisa",
+    "T1564.003",
+    "Hidden Window",
+    "command-execution|file-modification|process-creation|script-execution",
+    "T1564.003::[Higaisa] used a payload that creates a hidden window."
+  ],
+  [
+    "higaisa",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[Higaisa] has sent spearphishing emails containing malicious attachments."
+  ],
+  [
+    "higaisa",
+    "T1573.001",
+    "Symmetric Cryptography",
+    "network-traffic-content",
+    "T1573.001::[Higaisa] used AES-128 to encrypt C2 traffic."
+  ],
+  [
+    "higaisa",
+    "T1574.002",
+    "DLL Side-Loading",
+    "file-creation|file-modification|module-load|process-creation",
+    "T1574.002::[Higaisa]’s JavaScript file used a legitimate Microsoft Office 2007 package to side-load the OINFO12.OCX dynamic link library."
+  ]
+]

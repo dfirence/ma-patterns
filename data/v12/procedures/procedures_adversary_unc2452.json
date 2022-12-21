@@ -1,0 +1,240 @@
+[
+  [
+    "unc2452",
+    "T1003.006",
+    "DCSync",
+    "active-directory-object-access|network-traffic-content|network-traffic-flow",
+    "T1003.006::[UNC2452] leveraged privileged accounts to replicate directory service data with domain controllers."
+  ],
+  [
+    "unc2452",
+    "T1016.001",
+    "Internet Connection Discovery",
+    "command-execution|process-creation",
+    "T1016.001::[UNC2452] has used GoldFinder to perform HTTP GET requests to check internet connectivity and identify HTTP proxy servers and other redirectors that an HTTP request travels through."
+  ],
+  [
+    "unc2452",
+    "T1021.006",
+    "Windows Remote Management",
+    "command-execution|logon-session-creation|network-connection-creation|process-creation|service-metadata",
+    "T1021.006::[UNC2452] has used WinRM via PowerShell to execute command and payloads on remote hosts."
+  ],
+  [
+    "unc2452",
+    "T1036.004",
+    "Masquerade Task or Service",
+    "command-execution|scheduled-job-metadata|scheduled-job-modification|service-creation|service-metadata",
+    "T1036.004::[UNC2452] named tasks \\Microsoft\\Windows\\SoftwareProtectionPlatform\\EventCacheManager in order to appear legitimate."
+  ],
+  [
+    "unc2452",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[UNC2452] renamed a version of [AdFind] to sqlceip.exe or csrss.exe in an attempt to appear as the SQL Server Telemetry Client or Client Service Runtime Process, respectively."
+  ],
+  [
+    "unc2452",
+    "T1048.002",
+    "Exfiltration Over Asymmetric Encrypted Non-C2 Protocol",
+    "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1048.002::[UNC2452] exfiltrated collected data over a simple HTTPS request to a password-protected archive staged on a victim's OWA servers."
+  ],
+  [
+    "unc2452",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[UNC2452] used scheduler and schtasks to create new tasks on remote hosts as part of lateral movement."
+  ],
+  [
+    "unc2452",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[UNC2452] used PowerShell to create new tasks on remote machines, identify configuration settings, exfiltrate data, and to execute other commands."
+  ],
+  [
+    "unc2452",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[UNC2452] used cmd.exe to execute commands on remote machines."
+  ],
+  [
+    "unc2452",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[UNC2452] routinely removed their tools, including custom backdoors, once remote access was achieved."
+  ],
+  [
+    "unc2452",
+    "T1070.006",
+    "Timestomp",
+    "file-metadata|file-modification",
+    "T1070.006::[UNC2452] modified timestamps of backdoors to match legitimate Windows files."
+  ],
+  [
+    "unc2452",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[UNC2452] used HTTP for C2 and data exfiltration."
+  ],
+  [
+    "unc2452",
+    "T1074.002",
+    "Remote Data Staging",
+    "command-execution|file-access|file-creation",
+    "T1074.002::[UNC2452] staged data and files in password-protected archives on a victim's OWA server."
+  ],
+  [
+    "unc2452",
+    "T1090.001",
+    "Internal Proxy",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1090.001::[UNC2452] configured at least one instance of [Cobalt Strike] to use a network pipe over SMB during the 2020 SolarWinds intrusion."
+  ],
+  [
+    "unc2452",
+    "T1098.001",
+    "Additional Cloud Credentials",
+    "active-directory-object-modification|user-account-modification",
+    "T1098.001::[UNC2452] added credentials to OAuth Applications and Service Principals."
+  ],
+  [
+    "unc2452",
+    "T1098.002",
+    "Additional Email Delegate Permissions",
+    "application-log-content|group-modification|user-account-modification",
+    "T1098.002::[UNC2452] added their own devices as allowed IDs for active sync using Set-CASMailbox, allowing it to obtain copies of victim mailboxes. It also added additional permissions (such as Mail.Read and Mail.ReadWrite) to compromised Application or Service Principals."
+  ],
+  [
+    "unc2452",
+    "T1114.002",
+    "Remote Email Collection",
+    "command-execution|logon-session-creation|network-connection-creation",
+    "T1114.002::[UNC2452] collected emails from specific individuals, such as executives and IT staff, using New-MailboxExportRequest followed by Get-MailboxExportRequest."
+  ],
+  [
+    "unc2452",
+    "T1195.002",
+    "Compromise Software Supply Chain",
+    "file-metadata",
+    "T1195.002::[UNC2452] gained initial network access via a trojanized update of SolarWinds Orion software."
+  ],
+  [
+    "unc2452",
+    "T1218.011",
+    "Rundll32",
+    "command-execution|file-metadata|module-load|process-creation",
+    "T1218.011::[UNC2452] used Rundll32 to execute payloads."
+  ],
+  [
+    "unc2452",
+    "T1484.002",
+    "Domain Trust Modification",
+    "active-directory-object-creation|active-directory-object-modification|command-execution",
+    "T1484.002::[UNC2452] changed domain federation trust settings using Azure AD administrative permissions to configure the domain to accept authorization tokens signed by their own SAML signing certificate."
+  ],
+  [
+    "unc2452",
+    "T1546.003",
+    "Windows Management Instrumentation Event Subscription",
+    "command-execution|process-creation|wmi-creation",
+    "T1546.003::[UNC2452] used WMI event subscriptions for persistence."
+  ],
+  [
+    "unc2452",
+    "T1550.004",
+    "Web Session Cookie",
+    "application-log-content|web-credential-usage",
+    "T1550.004::[UNC2452] used a forged duo-sid cookie to bypass MFA set on an email account."
+  ],
+  [
+    "unc2452",
+    "T1552.004",
+    "Private Keys",
+    "command-execution|file-access",
+    "T1552.004::[UNC2452] obtained the private encryption key from an Active Directory Federation Services (AD FS) container to decrypt corresponding SAML signing certificates."
+  ],
+  [
+    "unc2452",
+    "T1553.002",
+    "Code Signing",
+    "file-metadata",
+    "T1553.002::[UNC2452] was able to get [SUNBURST] signed by SolarWinds code signing certificates by injecting the malware into the SolarWinds Orion software lifecycle."
+  ],
+  [
+    "unc2452",
+    "T1558.003",
+    "Kerberoasting",
+    "active-directory-credential-request",
+    "T1558.003::[UNC2452] obtained Ticket Granting Service (TGS) tickets for Active Directory Service Principle Names to crack offline."
+  ],
+  [
+    "unc2452",
+    "T1560.001",
+    "Archive via Utility",
+    "command-execution|file-creation|process-creation",
+    "T1560.001::[UNC2452] used 7-Zip to compress stolen emails into password-protected archives prior to exfiltration."
+  ],
+  [
+    "unc2452",
+    "T1562.001",
+    "Disable or Modify Tools",
+    "command-execution|driver-load|host-status|process-termination|service-metadata|windows-registry-key-deletion|windows-registry-key-modification",
+    "T1562.001::[UNC2452] used the service control manager on a remote system to disable services associated with security monitoring products."
+  ],
+  [
+    "unc2452",
+    "T1562.002",
+    "Disable Windows Event Logging",
+    "application-log-content|command-execution|host-status|process-creation|script-execution|windows-registry-key-creation",
+    "T1562.002::[UNC2452] used AUDITPOL to prevent the collection of audit logs."
+  ],
+  [
+    "unc2452",
+    "T1562.004",
+    "Disable or Modify System Firewall",
+    "command-execution|firewall-disable|firewall-rule-modification|windows-registry-key-modification",
+    "T1562.004::[UNC2452] used netsh to configure firewall rules that limited certain UDP outbound packets."
+  ],
+  [
+    "unc2452",
+    "T1583.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1583.001::[UNC2452] has acquired C2 domains through resellers."
+  ],
+  [
+    "unc2452",
+    "T1584.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1584.001::[UNC2452] has compromised domains to use for C2."
+  ],
+  [
+    "unc2452",
+    "T1587.001",
+    "Malware",
+    "malware-content|malware-metadata",
+    "T1587.001::[UNC2452] developed [SUNSPOT], [SUNBURST], [TEARDROP], and [Raindrop]; [SUNSPOT] and [SUNBURST] were tailored to be incorporated into SolarWind's Orion software library."
+  ],
+  [
+    "unc2452",
+    "T1606.001",
+    "Web Cookies",
+    "logon-session-creation|web-credential-usage",
+    "T1606.001::[UNC2452] bypassed MFA set on OWA accounts by generating a cookie value from a previously stolen secret key."
+  ],
+  [
+    "unc2452",
+    "T1606.002",
+    "SAML Tokens",
+    "logon-session-creation|logon-session-metadata|user-account-authentication|web-credential-creation|web-credential-usage",
+    "T1606.002::[UNC2452] created tokens using compromised SAML signing certificates."
+  ]
+]

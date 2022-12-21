@@ -1,0 +1,44 @@
+[
+  [
+    "andariel",
+    "T1027.003",
+    "Steganography",
+    "file-metadata",
+    "T1027.003::[Andariel] has hidden malicious executables within PNG files."
+  ],
+  [
+    "andariel",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Andariel] has attempted to lure victims into enabling malicious macros within email attachments."
+  ],
+  [
+    "andariel",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[Andariel] has conducted spearphishing campaigns that included malicious Word or Excel attachments."
+  ],
+  [
+    "andariel",
+    "T1588.001",
+    "Malware",
+    "malware-content|malware-metadata",
+    "T1588.001::[Andariel] has used a variety of publicly-available remote access Trojans (RATs) for its operations."
+  ],
+  [
+    "andariel",
+    "T1590.005",
+    "IP Addresses",
+    "none",
+    "T1590.005::[Andariel] has limited its watering hole attacks to specific IP address ranges."
+  ],
+  [
+    "andariel",
+    "T1592.002",
+    "Software",
+    "response-content",
+    "T1592.002::[Andariel] has inserted a malicious script within compromised websites to collect potential victim information such as browser type, system language, Flash Player version, and other data."
+  ]
+]

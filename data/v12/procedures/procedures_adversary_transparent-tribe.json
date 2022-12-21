@@ -1,0 +1,72 @@
+[
+  [
+    "transparent-tribe",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[Transparent Tribe] can mimic legitimate Windows directories by using the same icons and names."
+  ],
+  [
+    "transparent-tribe",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[Transparent Tribe] has crafted VBS-based malicious documents."
+  ],
+  [
+    "transparent-tribe",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[Transparent Tribe] has directed users to open URLs hosting malicious content."
+  ],
+  [
+    "transparent-tribe",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Transparent Tribe] has used weaponized documents in e-mail to compromise targeted systems."
+  ],
+  [
+    "transparent-tribe",
+    "T1564.001",
+    "Hidden Files and Directories",
+    "command-execution|file-creation|file-metadata|process-creation",
+    "T1564.001::[Transparent Tribe] can hide legitimate directories and replace them with malicious copies of the same name."
+  ],
+  [
+    "transparent-tribe",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[Transparent Tribe] has sent spearphishing e-mails with attachments to deliver malicious payloads."
+  ],
+  [
+    "transparent-tribe",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[Transparent Tribe] has embedded links to malicious downloads in e-mails."
+  ],
+  [
+    "transparent-tribe",
+    "T1583.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1583.001::[Transparent Tribe] has registered domains to mimic file sharing, government, defense, and research websites for use in targeted campaigns."
+  ],
+  [
+    "transparent-tribe",
+    "T1584.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1584.001::[Transparent Tribe] has compromised domains for use in targeted malicious campaigns."
+  ],
+  [
+    "transparent-tribe",
+    "T1608.004",
+    "Drive-by Target",
+    "response-content",
+    "T1608.004::[Transparent Tribe] has set up websites with malicious hyperlinks and iframes to infect targeted victims with [Crimson], [njRAT], and other malicious tools."
+  ]
+]

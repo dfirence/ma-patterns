@@ -1,0 +1,37 @@
+[
+  [
+    "whitefly",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[Whitefly] has used [Mimikatz] to obtain credentials."
+  ],
+  [
+    "whitefly",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[Whitefly] has named the malicious DLL the same name as DLLs belonging to legitimate software from various security vendors."
+  ],
+  [
+    "whitefly",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Whitefly] has used malicious .exe or .dll files disguised as documents or images."
+  ],
+  [
+    "whitefly",
+    "T1574.001",
+    "DLL Search Order Hijacking",
+    "file-creation|file-modification|module-load",
+    "T1574.001::[Whitefly] has used search order hijacking to run the loader Vcrodat."
+  ],
+  [
+    "whitefly",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[Whitefly] has obtained and used tools such as [Mimikatz]."
+  ]
+]

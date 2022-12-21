@@ -1,0 +1,51 @@
+[
+  [
+    "deep-panda",
+    "T1021.002",
+    "SMB/Windows Admin Shares",
+    "command-execution|logon-session-creation|network-connection-creation|network-share-access|network-traffic-flow",
+    "T1021.002::[Deep Panda] uses net.exe to connect to network shares using net use commands with compromised credentials."
+  ],
+  [
+    "deep-panda",
+    "T1027.005",
+    "Indicator Removal from Tools",
+    "application-log-content",
+    "T1027.005::[Deep Panda] has updated and modified its malware, resulting in different hash values that evade detection."
+  ],
+  [
+    "deep-panda",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[Deep Panda] has used PowerShell scripts to download and execute programs in memory, without writing to disk."
+  ],
+  [
+    "deep-panda",
+    "T1218.010",
+    "Regsvr32",
+    "command-execution|module-load|network-connection-creation|process-creation",
+    "T1218.010::[Deep Panda] has used regsvr32.exe to execute a server variant of [Derusbi] in victim networks."
+  ],
+  [
+    "deep-panda",
+    "T1505.003",
+    "Web Shell",
+    "application-log-content|file-creation|file-modification|network-traffic-content|network-traffic-flow|process-creation",
+    "T1505.003::[Deep Panda] uses Web shells on publicly accessible Web servers to access victim networks."
+  ],
+  [
+    "deep-panda",
+    "T1546.008",
+    "Accessibility Features",
+    "command-execution|file-creation|file-modification|process-creation|windows-registry-key-modification",
+    "T1546.008::[Deep Panda] has used the sticky-keys technique to bypass the RDP login screen on remote systems during intrusions."
+  ],
+  [
+    "deep-panda",
+    "T1564.003",
+    "Hidden Window",
+    "command-execution|file-modification|process-creation|script-execution",
+    "T1564.003::[Deep Panda] has used -w hidden to conceal [PowerShell] windows by setting the WindowStyle parameter to hidden."
+  ]
+]

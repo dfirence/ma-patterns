@@ -1,0 +1,59 @@
+[
+  {
+    "id": "intrusion-set--64d5f96a-f121-4d19-89f6-6709f5c49faa",
+    "name": "aoqin-dragon",
+    "aliases": "aoqin-dragon",
+    "group_id": "G1007",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 2,
+        "items": [
+          "heyoka-backdoor",
+          "mongall"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 9,
+        "items": [
+          "T1027.002",
+          "T1036.005",
+          "T1083",
+          "T1091",
+          "T1203",
+          "T1204.002",
+          "T1570",
+          "T1587.001",
+          "T1588.002"
+        ]
+      },
+      "tactics": {
+        "count": 6,
+        "items": [
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "lateral-movement",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1027.002::[Aoqin Dragon] has used the Themida packer to obfuscate malicious payloads.",
+        "T1036.005::[Aoqin Dragon] has used fake icons including antivirus and external drives to disguise malicious payloads.",
+        "T1083::[Aoqin Dragon] has run scripts to identify file formats including Microsoft Word.",
+        "T1091::[Aoqin Dragon] has used a dropper that employs a worm infection strategy using a removable device to breach a secure network environment.",
+        "T1203::[Aoqin Dragon] has exploited CVE-2012-0158 and CVE-2010-3333 for execution against targeted systems.",
+        "T1204.002::[Aoqin Dragon] has lured victims into opening weaponized documents, fake external drives, and fake antivirus to execute malicious payloads.",
+        "T1570::[Aoqin Dragon] has spread malware in target networks by copying modules to folders masquerading as removable devices.",
+        "T1587.001::[Aoqin Dragon] has used custom malware, including [Mongall] and [Heyoka Backdoor], in their operations.",
+        "T1588.002::[Aoqin Dragon] obtained the Heyoka open source exfiltration tool and subsequently modified it for their operations."
+      ]
+    },
+    "description": "[Aoqin Dragon](https://attack.mitre.org/groups/G1007) is a suspected Chinese cyber espionage threat group that has been active since at least 2013. [Aoqin Dragon](https://attack.mitre.org/groups/G1007) has primarily targeted government, education, and telecommunication organizations in Australia, Cambodia, Hong Kong, Singapore, and Vietnam. Security researchers noted a potential association between [Aoqin Dragon](https://attack.mitre.org/groups/G1007) and UNC94, based on malware, infrastructure, and targets.(Citation: SentinelOne Aoqin Dragon June 2022)"
+  }
+]

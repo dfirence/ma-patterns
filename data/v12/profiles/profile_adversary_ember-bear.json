@@ -1,0 +1,79 @@
+[
+  {
+    "id": "intrusion-set--a7f57cc1-4540-4429-823f-f4e56b8473c9",
+    "name": "ember-bear",
+    "aliases": "ember-bear|saint-bear|unc2589|uac-0056|lorec53|lorec-bear|bleeding-bear",
+    "group_id": "G1003",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 3,
+        "items": [
+          "outsteel",
+          "saint-bot",
+          "whispergate"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 19,
+        "items": [
+          "T1027",
+          "T1027.001",
+          "T1027.002",
+          "T1059.001",
+          "T1059.003",
+          "T1059.007",
+          "T1102",
+          "T1105",
+          "T1112",
+          "T1203",
+          "T1204.001",
+          "T1204.002",
+          "T1218.002",
+          "T1553.002",
+          "T1562.001",
+          "T1566.001",
+          "T1566.002",
+          "T1588.002",
+          "T1588.003"
+        ]
+      },
+      "tactics": {
+        "count": 5,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "execution",
+          "initial-access",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1027.001::[Ember Bear] has added extra spaces between JavaScript code characters to increase the overall file size.",
+        "T1027.002::[Ember Bear] has packed malware to help avoid detection.",
+        "T1027::[Ember Bear] has obfuscated malware and malicious scripts to help avoid detection.",
+        "T1059.001::[Ember Bear] has used PowerShell to download and execute malicious code.",
+        "T1059.003::[Ember Bear] had used `cmd.exe` and Windows Script Host (wscript) to execute malicious code.",
+        "T1059.007::[Ember Bear] has used JavaScript to execute malicious code on a victim's machine.",
+        "T1102::[Ember Bear] has used Discord's content delivery network (CDN) to deliver malware and malicious scripts to a compromised host.",
+        "T1105::[Ember Bear] has used tools to download malicious code.",
+        "T1112::[Ember Bear] has used an open source batch script to modify Windows Defender registry keys.",
+        "T1203::[Ember Bear] has exploited Microsoft Office vulnerability CVE-2017-11882.",
+        "T1204.001::[Ember Bear] has attempted to lure users to click on a malicious link within a spearphishing email.",
+        "T1204.002::[Ember Bear] has attempted to lure victims into executing malicious files.",
+        "T1218.002::[Ember Bear] has used control panel files (CPL), delivered via e-mail, for execution.",
+        "T1553.002::[Ember Bear] has used stolen certificates from Electrum Technologies GmbH to sign payloads.",
+        "T1562.001::[Ember Bear] has executed a batch script designed to disable Windows Defender on a compromised host.",
+        "T1566.001::[Ember Bear] has sent spearphishing emails containing malicious attachments in the form of PDFs, Word documents, JavaScript files, and Control Panel File (CPL) executables.",
+        "T1566.002::[Ember Bear] has sent spearphishing emails containing malicious links.",
+        "T1588.002::[Ember Bear] has obtained and used open source scripts from GitHub.",
+        "T1588.003::[Ember Bear] has stolen legitimate certificates to sign malicious payloads."
+      ]
+    },
+    "description": "[Ember Bear](https://attack.mitre.org/groups/G1003) is a suspected Russian state-sponsored cyber espionage group that has been active since at least March 2021. [Ember Bear](https://attack.mitre.org/groups/G1003) has primarily focused their operations against Ukraine and Georgia, but has also targeted Western European and North American foreign ministries, pharmaceutical companies, and financial sector organizations. Security researchers assess [Ember Bear](https://attack.mitre.org/groups/G1003) likely conducted the [WhisperGate](https://attack.mitre.org/software/S0689) destructive wiper attacks against Ukraine in early 2022.(Citation: CrowdStrike Ember Bear Profile March 2022)(Citation: Mandiant UNC2589 March 2022)(Citation: Palo Alto Unit 42 OutSteel SaintBot February 2022 ) "
+  }
+]

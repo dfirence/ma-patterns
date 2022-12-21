@@ -1,0 +1,86 @@
+[
+  [
+    "molerats",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[Molerats] has created scheduled tasks to persistently run VBScripts."
+  ],
+  [
+    "molerats",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[Molerats] used PowerShell implants on target machines."
+  ],
+  [
+    "molerats",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[Molerats] used various implants, including those built with VBScript, on target machines."
+  ],
+  [
+    "molerats",
+    "T1059.007",
+    "JavaScript",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.007::[Molerats] used various implants, including those built with JS, on target machines."
+  ],
+  [
+    "molerats",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[Molerats] has sent malicious links via email trick users into opening a RAR archive and running an executable."
+  ],
+  [
+    "molerats",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Molerats] has sent malicious files via email that tricked users into clicking Enable Content to run an embedded macro and to download malicious archives."
+  ],
+  [
+    "molerats",
+    "T1218.007",
+    "Msiexec",
+    "command-execution|module-load|network-connection-creation|process-creation",
+    "T1218.007::[Molerats] has used msiexec.exe to execute an MSI payload."
+  ],
+  [
+    "molerats",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[Molerats] saved malicious files within the AppData and Startup folders to maintain persistence."
+  ],
+  [
+    "molerats",
+    "T1553.002",
+    "Code Signing",
+    "file-metadata",
+    "T1553.002::[Molerats] has used forged Microsoft code-signing certificates on malware."
+  ],
+  [
+    "molerats",
+    "T1555.003",
+    "Credentials from Web Browsers",
+    "command-execution|file-access|os-api-execution|process-access",
+    "T1555.003::[Molerats] used the public tool BrowserPasswordDump10 to dump passwords saved in browsers on victims."
+  ],
+  [
+    "molerats",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[Molerats] has sent phishing emails with malicious Microsoft Word and PDF attachments."
+  ],
+  [
+    "molerats",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[Molerats] has sent phishing emails with malicious links included."
+  ]
+]

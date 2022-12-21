@@ -1,0 +1,44 @@
+[
+  [
+    "ferocious-kitten",
+    "T1036.002",
+    "Right-to-Left Override",
+    "file-metadata",
+    "T1036.002::[Ferocious Kitten] has used right-to-left override to reverse executables’ names to make them appear to have different file extensions, rather than their real ones."
+  ],
+  [
+    "ferocious-kitten",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[Ferocious Kitten] has named malicious files update.exe and loaded them into the compromise host's “Public” folder."
+  ],
+  [
+    "ferocious-kitten",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Ferocious Kitten] has attempted to convince victims to enable malicious content within a spearphishing email by including an odd decoy message."
+  ],
+  [
+    "ferocious-kitten",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[Ferocious Kitten] has conducted spearphishing campaigns containing malicious documents to lure victims to open the attachments."
+  ],
+  [
+    "ferocious-kitten",
+    "T1583.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1583.001::[Ferocious Kitten] has acquired domains imitating legitimate sites."
+  ],
+  [
+    "ferocious-kitten",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[Ferocious Kitten] has obtained open source tools for its operations, including JsonCPP and Psiphon."
+  ]
+]

@@ -1,0 +1,86 @@
+[
+  [
+    "confucius",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[Confucius] has created scheduled tasks to maintain persistence on a compromised host."
+  ],
+  [
+    "confucius",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[Confucius] has used PowerShell to execute malicious files and payloads."
+  ],
+  [
+    "confucius",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[Confucius] has used VBScript to execute malicious code."
+  ],
+  [
+    "confucius",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[Confucius] has used HTTP for C2 communications."
+  ],
+  [
+    "confucius",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[Confucius] has lured victims into clicking on a malicious link sent through spearphishing."
+  ],
+  [
+    "confucius",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Confucius] has lured victims to execute malicious attachments included in crafted spearphishing emails related to current topics."
+  ],
+  [
+    "confucius",
+    "T1218.005",
+    "Mshta",
+    "command-execution|file-creation|network-connection-creation|process-creation",
+    "T1218.005::[Confucius] has used mshta.exe to execute malicious VBScript."
+  ],
+  [
+    "confucius",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[Confucius] has dropped malicious files into the startup folder `%AppData%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup` on a compromised host in order to maintain persistence."
+  ],
+  [
+    "confucius",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[Confucius] has crafted and sent victims malicious attachments to gain initial access."
+  ],
+  [
+    "confucius",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[Confucius] has sent malicious links to victims through email campaigns."
+  ],
+  [
+    "confucius",
+    "T1567.002",
+    "Exfiltration to Cloud Storage",
+    "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1567.002::[Confucius] has exfiltrated victim data to cloud storage service accounts."
+  ],
+  [
+    "confucius",
+    "T1583.006",
+    "Web Services",
+    "response-content",
+    "T1583.006::[Confucius] has obtained cloud storage service accounts to host stolen data."
+  ]
+]

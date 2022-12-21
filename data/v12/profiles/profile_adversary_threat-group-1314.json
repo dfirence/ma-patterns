@@ -1,0 +1,49 @@
+[
+  {
+    "id": "intrusion-set--d519164e-f5fa-4b8c-a1fb-cf0172ad0983",
+    "name": "threat-group-1314",
+    "aliases": "threat-group-1314|tg-1314",
+    "group_id": "G0028",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 2,
+        "items": [
+          "net",
+          "psexec"
+        ]
+      },
+      "techniques": {
+        "count": 4,
+        "items": [
+          "T1021.002",
+          "T1059.003",
+          "T1072",
+          "T1078.002"
+        ]
+      },
+      "tactics": {
+        "count": 6,
+        "items": [
+          "defense-evasion",
+          "execution",
+          "initial-access",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "procedures": [
+        "T1021.002::[Threat Group-1314] actors mapped network drives using net use.",
+        "T1059.003::[Threat Group-1314] actors spawned shells on remote systems on a victim network to execute commands.",
+        "T1072::[Threat Group-1314] actors used a victim's endpoint management platform, Altiris, for lateral movement.",
+        "T1078.002::[Threat Group-1314] actors used compromised domain credentials for the victim's endpoint management platform, Altiris, to move laterally."
+      ]
+    },
+    "description": "[Threat Group-1314](https://attack.mitre.org/groups/G0028) is an unattributed threat group that has used compromised credentials to log into a victim's remote access infrastructure. (Citation: Dell TG-1314)"
+  }
+]

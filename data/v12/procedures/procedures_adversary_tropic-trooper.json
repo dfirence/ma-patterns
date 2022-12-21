@@ -1,0 +1,142 @@
+[
+  [
+    "tropic-trooper",
+    "T1027.003",
+    "Steganography",
+    "file-metadata",
+    "T1027.003::[Tropic Trooper] has used JPG files with encrypted payloads to mask their backdoor routines and evade detection."
+  ],
+  [
+    "tropic-trooper",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[Tropic Trooper] has hidden payloads in Flash directories and fake installer files."
+  ],
+  [
+    "tropic-trooper",
+    "T1052.001",
+    "Exfiltration over USB",
+    "command-execution|drive-creation|file-access|process-creation",
+    "T1052.001::[Tropic Trooper] has exfiltrated data using USB storage devices."
+  ],
+  [
+    "tropic-trooper",
+    "T1055.001",
+    "Dynamic-link Library Injection",
+    "module-load|os-api-execution|process-access|process-metadata|process-modification",
+    "T1055.001::[Tropic Trooper] has injected a DLL backdoor into dllhost.exe and svchost.exe."
+  ],
+  [
+    "tropic-trooper",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[Tropic Trooper] has used Windows command scripts."
+  ],
+  [
+    "tropic-trooper",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[Tropic Trooper] has deleted dropper files on an infected system using command scripts."
+  ],
+  [
+    "tropic-trooper",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[Tropic Trooper] has used HTTP in communication with the C2."
+  ],
+  [
+    "tropic-trooper",
+    "T1071.004",
+    "DNS",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.004::[Tropic Trooper]'s backdoor has communicated to the C2 over the DNS protocol."
+  ],
+  [
+    "tropic-trooper",
+    "T1078.003",
+    "Local Accounts",
+    "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "T1078.003::[Tropic Trooper] has used known administrator account credentials to execute the backdoor directly."
+  ],
+  [
+    "tropic-trooper",
+    "T1132.001",
+    "Standard Encoding",
+    "network-traffic-content",
+    "T1132.001::[Tropic Trooper] has used base64 encoding to hide command strings delivered from the C2."
+  ],
+  [
+    "tropic-trooper",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Tropic Trooper] has lured victims into executing malware via malicious e-mail attachments."
+  ],
+  [
+    "tropic-trooper",
+    "T1505.003",
+    "Web Shell",
+    "application-log-content|file-creation|file-modification|network-traffic-content|network-traffic-flow|process-creation",
+    "T1505.003::[Tropic Trooper] has started a web service in the target host and wait for the adversary to connect, acting as a web shell."
+  ],
+  [
+    "tropic-trooper",
+    "T1518.001",
+    "Security Software Discovery",
+    "command-execution|firewall-enumeration|firewall-metadata|os-api-execution|process-creation",
+    "T1518.001::[Tropic Trooper] can search for anti-virus software running on the system."
+  ],
+  [
+    "tropic-trooper",
+    "T1543.003",
+    "Windows Service",
+    "command-execution|driver-load|os-api-execution|process-creation|service-creation|service-modification|windows-registry-key-creation|windows-registry-key-modification",
+    "T1543.003::[Tropic Trooper] has installed a service pointing to a malicious DLL dropped to disk."
+  ],
+  [
+    "tropic-trooper",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[Tropic Trooper] has created shortcuts in the Startup folder to establish persistence."
+  ],
+  [
+    "tropic-trooper",
+    "T1547.004",
+    "Winlogon Helper DLL",
+    "command-execution|module-load|windows-registry-key-modification",
+    "T1547.004::[Tropic Trooper] has created the Registry key HKCU\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Shell and sets the value to establish persistence."
+  ],
+  [
+    "tropic-trooper",
+    "T1564.001",
+    "Hidden Files and Directories",
+    "command-execution|file-creation|file-metadata|process-creation",
+    "T1564.001::[Tropic Trooper] has created a hidden directory under C:\\ProgramData\\Apple\\Updates\\ and C:\\Users\\Public\\Documents\\Flash\\."
+  ],
+  [
+    "tropic-trooper",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[Tropic Trooper] sent spearphishing emails that contained malicious Microsoft Office and fake installer file attachments."
+  ],
+  [
+    "tropic-trooper",
+    "T1573.002",
+    "Asymmetric Cryptography",
+    "network-traffic-content",
+    "T1573.002::[Tropic Trooper] has used SSL to connect to C2 servers."
+  ],
+  [
+    "tropic-trooper",
+    "T1574.002",
+    "DLL Side-Loading",
+    "file-creation|file-modification|module-load|process-creation",
+    "T1574.002::[Tropic Trooper] has been known to side-load DLLs using a valid version of a Windows Address Book and Windows Defender executable with one of their tools."
+  ]
+]

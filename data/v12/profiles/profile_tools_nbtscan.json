@@ -1,0 +1,50 @@
+[
+  {
+    "id": "tool--b63970b7-ddfb-4aee-97b1-80d335e033a8",
+    "name": "nbtscan",
+    "aliases": "none",
+    "platforms": "windows|linux|macos",
+    "tool_id": "S0590",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 2,
+        "items": [
+          "credential-access",
+          "discovery"
+        ]
+      },
+      "techniques": {
+        "count": 5,
+        "items": [
+          "T1016",
+          "T1018",
+          "T1033",
+          "T1040",
+          "T1046"
+        ]
+      },
+      "adversaries": {
+        "count": 8,
+        "items": [
+          "apt39",
+          "backdoordiplomacy",
+          "earth-lusca",
+          "gallium",
+          "mustang-panda",
+          "threat-group-3390",
+          "tonto-team",
+          "turla"
+        ]
+      },
+      "procedures": [
+        "T1016::[NBTscan] can be used to collect MAC addresses.",
+        "T1018::[NBTscan] can list NetBIOS computer names.",
+        "T1033::[NBTscan] can list active users on the system.",
+        "T1040::[NBTscan] can dump and print whole packet content.",
+        "T1046::[NBTscan] can be used to scan IP networks."
+      ]
+    },
+    "description": "[NBTscan](https://attack.mitre.org/software/S0590) is an open source tool that has been used by state groups to conduct internal reconnaissance within a compromised network.(Citation: Debian nbtscan Nov 2019)(Citation: SecTools nbtscan June 2003)(Citation: Symantec Waterbug Jun 2019)(Citation: FireEye APT39 Jan 2019)"
+  }
+]

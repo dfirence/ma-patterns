@@ -1,0 +1,16 @@
+[
+  [
+    "suckfly",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::Several tools used by [Suckfly] have been command-line driven."
+  ],
+  [
+    "suckfly",
+    "T1553.002",
+    "Code Signing",
+    "file-metadata",
+    "T1553.002::[Suckfly] has used stolen certificates to sign its malware."
+  ]
+]

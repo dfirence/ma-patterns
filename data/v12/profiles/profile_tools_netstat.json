@@ -1,0 +1,41 @@
+[
+  {
+    "id": "tool--4664b683-f578-434f-919b-1c1aad2a1111",
+    "name": "netstat",
+    "aliases": "none",
+    "platforms": "none",
+    "tool_id": "S0104",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "discovery"
+        ]
+      },
+      "techniques": {
+        "count": 1,
+        "items": [
+          "T1049"
+        ]
+      },
+      "adversaries": {
+        "count": 8,
+        "items": [
+          "admin@338",
+          "apt41",
+          "hexane",
+          "ke3chang",
+          "oilrig",
+          "orangeworm",
+          "threat-group-3390",
+          "turla"
+        ]
+      },
+      "procedures": [
+        "T1049::[netstat] can be used to enumerate local network connections, including active TCP connections and other network statistics."
+      ]
+    },
+    "description": "[netstat](https://attack.mitre.org/software/S0104) is an operating system utility that displays active TCP connections, listening ports, and network statistics. (Citation: TechNet Netstat)"
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "intrusion-set--28f04ed3-8e91-4805-b1f6-869020517871",
+    "name": "operation-wocao",
+    "aliases": "operation-wocao",
+    "group_id": "G0116",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 0,
+        "items": []
+      },
+      "tactics": {
+        "count": 0,
+        "items": []
+      },
+      "procedures": []
+    },
+    "description": "[Operation Wocao](https://attack.mitre.org/groups/G0116) described activities carried out by a China-based cyber espionage adversary. [Operation Wocao](https://attack.mitre.org/groups/G0116) targeted entities within the government, managed service providers, energy, health care, and technology sectors across several countries, including China, France, Germany, the United Kingdom, and the United States. [Operation Wocao](https://attack.mitre.org/groups/G0116) used similar TTPs and tools to APT20, suggesting a possible overlap.(Citation: FoxIT Wocao December 2019)"
+  }
+]

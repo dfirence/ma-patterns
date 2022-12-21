@@ -1,0 +1,44 @@
+[
+  {
+    "id": "intrusion-set--f047ee18-7985-4946-8bfb-4ed754d3a0dd",
+    "name": "apt30",
+    "aliases": "apt30",
+    "group_id": "G0013",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 5,
+        "items": [
+          "backspace",
+          "flashflood",
+          "neteagle",
+          "shipshape",
+          "spaceship"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 2,
+        "items": [
+          "T1204.002",
+          "T1566.001"
+        ]
+      },
+      "tactics": {
+        "count": 2,
+        "items": [
+          "execution",
+          "initial-access"
+        ]
+      },
+      "procedures": [
+        "T1204.002::[APT30] has relied on users to execute malicious file attachments delivered via spearphishing emails.",
+        "T1566.001::[APT30] has used spearphishing emails with malicious DOC attachments."
+      ]
+    },
+    "description": "[APT30](https://attack.mitre.org/groups/G0013) is a threat group suspected to be associated with the Chinese government. While [Naikon](https://attack.mitre.org/groups/G0019) shares some characteristics with [APT30](https://attack.mitre.org/groups/G0013), the two groups do not appear to be exact matches.(Citation: FireEye APT30)(Citation: Baumgartner Golovkin Naikon 2015)"
+  }
+]

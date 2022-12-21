@@ -1,0 +1,9 @@
+[
+  [
+    "pittytiger",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[PittyTiger] has obtained and used tools such as [Mimikatz] and [gsecdump]."
+  ]
+]

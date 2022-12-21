@@ -1,0 +1,46 @@
+[
+  {
+    "id": "tool--2e45723a-31da-4a7e-aaa6-e01998a6788f",
+    "name": "tasklist",
+    "aliases": "none",
+    "platforms": "none",
+    "tool_id": "S0057",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "discovery"
+        ]
+      },
+      "techniques": {
+        "count": 3,
+        "items": [
+          "T1007",
+          "T1057",
+          "T1518.001"
+        ]
+      },
+      "adversaries": {
+        "count": 9,
+        "items": [
+          "apt1",
+          "apt29",
+          "deep-panda",
+          "earth-lusca",
+          "ke3chang",
+          "naikon",
+          "oilrig",
+          "threat-group-3390",
+          "turla"
+        ]
+      },
+      "procedures": [
+        "T1007::[Tasklist] can be used to discover services running on a system.",
+        "T1057::[Tasklist] can be used to discover processes running on a system.",
+        "T1518.001::[Tasklist] can be used to enumerate security software currently running on a system by process name of known products."
+      ]
+    },
+    "description": "The [Tasklist](https://attack.mitre.org/software/S0057) utility displays a list of applications and services with their Process IDs (PID) for all tasks running on either a local or a remote computer. It is packaged with Windows operating systems and can be executed from the command-line interface. (Citation: Microsoft Tasklist)"
+  }
+]

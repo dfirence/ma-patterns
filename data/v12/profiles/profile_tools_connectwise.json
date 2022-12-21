@@ -1,0 +1,40 @@
+[
+  {
+    "id": "tool--842976c7-f9c8-41b2-8371-41dc64fbe261",
+    "name": "connectwise",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0591",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 2,
+        "items": [
+          "collection",
+          "execution"
+        ]
+      },
+      "techniques": {
+        "count": 3,
+        "items": [
+          "T1059.001",
+          "T1113",
+          "T1125"
+        ]
+      },
+      "adversaries": {
+        "count": 2,
+        "items": [
+          "gold-southfield",
+          "muddywater"
+        ]
+      },
+      "procedures": [
+        "T1059.001::[ConnectWise] can be used to execute PowerShell commands on target machines.",
+        "T1113::[ConnectWise] can take screenshots on remote hosts.",
+        "T1125::[ConnectWise] can record video on remote hosts."
+      ]
+    },
+    "description": "[ConnectWise](https://attack.mitre.org/software/S0591) is a legitimate remote administration tool that has been used since at least 2016 by threat actors including [MuddyWater](https://attack.mitre.org/groups/G0069) and [GOLD SOUTHFIELD](https://attack.mitre.org/groups/G0115) to connect to and conduct lateral movement in target environments.(Citation: Anomali Static Kitten February 2021)(Citation: Trend Micro Muddy Water March 2021)"
+  }
+]

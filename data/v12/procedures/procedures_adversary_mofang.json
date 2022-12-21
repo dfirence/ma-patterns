@@ -1,0 +1,30 @@
+[
+  [
+    "mofang",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[Mofang]'s spearphishing emails required a user to click the link to connect to a compromised website."
+  ],
+  [
+    "mofang",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Mofang]'s malicious spearphishing attachments required a user to open the file after receiving."
+  ],
+  [
+    "mofang",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[Mofang] delivered spearphishing emails with malicious documents, PDFs, or Excel files attached."
+  ],
+  [
+    "mofang",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[Mofang] delivered spearphishing emails with malicious links included."
+  ]
+]

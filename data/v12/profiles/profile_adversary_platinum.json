@@ -1,0 +1,65 @@
+[
+  {
+    "id": "intrusion-set--f9c06633-dcff-48a1-8588-759e7cec5694",
+    "name": "platinum",
+    "aliases": "platinum",
+    "group_id": "G0068",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 3,
+        "items": [
+          "adbupd",
+          "dipsind",
+          "jpin"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 11,
+        "items": [
+          "T1003.001",
+          "T1036",
+          "T1055",
+          "T1056.001",
+          "T1056.004",
+          "T1068",
+          "T1095",
+          "T1105",
+          "T1189",
+          "T1204.002",
+          "T1566.001"
+        ]
+      },
+      "tactics": {
+        "count": 7,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "execution",
+          "initial-access",
+          "privilege-escalation"
+        ]
+      },
+      "procedures": [
+        "T1003.001::[PLATINUM] has used keyloggers that are also capable of dumping credentials.",
+        "T1036::[PLATINUM] has renamed rar.exe to avoid detection.",
+        "T1055::[PLATINUM] has used various methods of process injection including hot patching.",
+        "T1056.001::[PLATINUM] has used several different keyloggers.",
+        "T1056.004::[PLATINUM] is capable of using Windows hook interfaces for information gathering such as credential access.",
+        "T1068::[PLATINUM] has leveraged a zero-day vulnerability to escalate privileges.",
+        "T1095::[PLATINUM] has used the Intel® Active Management Technology (AMT) Serial-over-LAN (SOL) channel for command and control.",
+        "T1105::[PLATINUM] has transferred files using the Intel® Active Management Technology (AMT) Serial-over-LAN (SOL) channel.",
+        "T1189::[PLATINUM] has sometimes used drive-by attacks against vulnerable browser plugins.",
+        "T1204.002::[PLATINUM] has attempted to get users to open malicious files by sending spearphishing emails with attachments to victims.",
+        "T1566.001::[PLATINUM] has sent spearphishing emails with attachments to victims as its primary initial access vector."
+      ]
+    },
+    "description": "[PLATINUM](https://attack.mitre.org/groups/G0068) is an activity group that has targeted victims since at least 2009. The group has focused on targets associated with governments and related organizations in South and Southeast Asia. (Citation: Microsoft PLATINUM April 2016)"
+  }
+]

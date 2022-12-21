@@ -1,0 +1,51 @@
+[
+  [
+    "carbanak",
+    "T1036.004",
+    "Masquerade Task or Service",
+    "command-execution|scheduled-job-metadata|scheduled-job-modification|service-creation|service-metadata",
+    "T1036.004::[Carbanak] has copied legitimate service names to use for malicious services."
+  ],
+  [
+    "carbanak",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[Carbanak] has named malware \"svchost.exe,\" which is the name of the Windows shared service host program."
+  ],
+  [
+    "carbanak",
+    "T1102.002",
+    "Bidirectional Communication",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1102.002::[Carbanak] has used a VBScript named \"ggldr\" that uses Google Apps Script, Sheets, and Forms services for C2."
+  ],
+  [
+    "carbanak",
+    "T1218.011",
+    "Rundll32",
+    "command-execution|file-metadata|module-load|process-creation",
+    "T1218.011::[Carbanak] installs VNC server software that executes through rundll32."
+  ],
+  [
+    "carbanak",
+    "T1543.003",
+    "Windows Service",
+    "command-execution|driver-load|os-api-execution|process-creation|service-creation|service-modification|windows-registry-key-creation|windows-registry-key-modification",
+    "T1543.003::[Carbanak] malware installs itself as a service to provide persistence and SYSTEM privileges."
+  ],
+  [
+    "carbanak",
+    "T1562.004",
+    "Disable or Modify System Firewall",
+    "command-execution|firewall-disable|firewall-rule-modification|windows-registry-key-modification",
+    "T1562.004::[Carbanak] may use [netsh] to add local firewall rule exceptions."
+  ],
+  [
+    "carbanak",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[Carbanak] has obtained and used open-source tools such as [PsExec] and [Mimikatz]."
+  ]
+]

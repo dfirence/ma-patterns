@@ -1,0 +1,33 @@
+[
+  {
+    "id": "tool--102c3898-85e0-43ee-ae28-62a0a3ed9507",
+    "name": "uacme",
+    "aliases": "none",
+    "platforms": "none",
+    "tool_id": "S0116",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 2,
+        "items": [
+          "defense-evasion",
+          "privilege-escalation"
+        ]
+      },
+      "techniques": {
+        "count": 1,
+        "items": [
+          "T1548.002"
+        ]
+      },
+      "adversaries": {
+        "count": 0,
+        "items": []
+      },
+      "procedures": [
+        "T1548.002::[UACMe] contains many methods for bypassing Windows User Account Control on multiple versions of the operating system."
+      ]
+    },
+    "description": "[UACMe](https://attack.mitre.org/software/S0116) is an open source assessment tool that contains many methods for bypassing Windows User Account Control on multiple versions of the operating system. (Citation: Github UACMe)"
+  }
+]

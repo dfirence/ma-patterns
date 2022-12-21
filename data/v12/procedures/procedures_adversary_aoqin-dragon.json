@@ -1,0 +1,37 @@
+[
+  [
+    "aoqin-dragon",
+    "T1027.002",
+    "Software Packing",
+    "file-metadata",
+    "T1027.002::[Aoqin Dragon] has used the Themida packer to obfuscate malicious payloads."
+  ],
+  [
+    "aoqin-dragon",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[Aoqin Dragon] has used fake icons including antivirus and external drives to disguise malicious payloads."
+  ],
+  [
+    "aoqin-dragon",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Aoqin Dragon] has lured victims into opening weaponized documents, fake external drives, and fake antivirus to execute malicious payloads."
+  ],
+  [
+    "aoqin-dragon",
+    "T1587.001",
+    "Malware",
+    "malware-content|malware-metadata",
+    "T1587.001::[Aoqin Dragon] has used custom malware, including [Mongall] and [Heyoka Backdoor], in their operations."
+  ],
+  [
+    "aoqin-dragon",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[Aoqin Dragon] obtained the Heyoka open source exfiltration tool and subsequently modified it for their operations."
+  ]
+]

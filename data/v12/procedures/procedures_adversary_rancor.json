@@ -1,0 +1,51 @@
+[
+  [
+    "rancor",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[Rancor] launched a scheduled task to gain persistence using the schtasks /create /sc command."
+  ],
+  [
+    "rancor",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[Rancor] has used cmd.exe to execute commmands."
+  ],
+  [
+    "rancor",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[Rancor] has used VBS scripts as well as embedded macros for execution."
+  ],
+  [
+    "rancor",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[Rancor] has used HTTP for C2."
+  ],
+  [
+    "rancor",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Rancor] attempted to get users to click on an embedded macro within a Microsoft Office Excel document to launch their malware."
+  ],
+  [
+    "rancor",
+    "T1218.007",
+    "Msiexec",
+    "command-execution|module-load|network-connection-creation|process-creation",
+    "T1218.007::[Rancor] has used msiexec to download and execute malicious installer files over HTTP."
+  ],
+  [
+    "rancor",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[Rancor] has attached a malicious document to an email to gain initial access."
+  ]
+]

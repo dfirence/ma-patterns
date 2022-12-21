@@ -1,0 +1,69 @@
+[
+  {
+    "id": "intrusion-set--4c4a7846-45d5-4761-8eea-725fa989914c",
+    "name": "moses-staff",
+    "aliases": "moses-staff",
+    "group_id": "G1009",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 3,
+        "items": [
+          "dcsrv",
+          "pydcrypt",
+          "strifewater"
+        ]
+      },
+      "tools": {
+        "count": 1,
+        "items": [
+          "psexec"
+        ]
+      },
+      "techniques": {
+        "count": 12,
+        "items": [
+          "T1016",
+          "T1021.002",
+          "T1027",
+          "T1082",
+          "T1087.001",
+          "T1105",
+          "T1190",
+          "T1505.003",
+          "T1553.002",
+          "T1562.004",
+          "T1587.001",
+          "T1588.002"
+        ]
+      },
+      "tactics": {
+        "count": 7,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "discovery",
+          "initial-access",
+          "lateral-movement",
+          "persistence",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1016::[Moses Staff] has collected the domain name of a compromised network.",
+        "T1021.002::[Moses Staff] has used batch scripts that can enable SMB on a compromised host.",
+        "T1027::[Moses Staff] has used obfuscated web shells in their operations.",
+        "T1082::[Moses Staff] collected information about the infected host, including the machine names and OS architecture.",
+        "T1087.001::[Moses Staff] has collected the administrator username from a compromised host.",
+        "T1105::[Moses Staff] has downloaded and installed web shells to following path C:\\inetpub\\wwwroot\\aspnet_client\\system_web\\IISpool.aspx.",
+        "T1190::[Moses Staff] has exploited known vulnerabilities in public-facing infrastructure such as Microsoft Exchange Servers.",
+        "T1505.003::[Moses Staff] has dropped a web shell onto a compromised system.",
+        "T1553.002::[Moses Staff] has used signed drivers from an open source tool called DiskCryptor to evade detection.",
+        "T1562.004::[Moses Staff] has used batch scripts that can disable the Windows firewall on specific remote machines.",
+        "T1587.001::[Moses Staff] has built malware, such as [DCSrv] and [PyDCrypt], for targeting victims' machines.",
+        "T1588.002::[Moses Staff] has used the commercial tool DiskCryptor."
+      ]
+    },
+    "description": "[Moses Staff](https://attack.mitre.org/groups/G1009) is a suspected Iranian threat group that has primarily targeted Israeli companies since at least September 2021. [Moses Staff](https://attack.mitre.org/groups/G1009) openly stated their motivation in attacking Israeli companies is to cause damage by leaking stolen sensitive data and encrypting the victim's networks without a ransom demand.(Citation: Checkpoint MosesStaff Nov 2021) \n\nSecurity researchers assess [Moses Staff](https://attack.mitre.org/groups/G1009) is politically motivated, and has targeted government, finance, travel, energy, manufacturing, and utility companies outside of Israel as well, including those in Italy, India, Germany, Chile, Turkey, the UAE, and the US.(Citation: Cybereason StrifeWater Feb 2022)"
+  }
+]

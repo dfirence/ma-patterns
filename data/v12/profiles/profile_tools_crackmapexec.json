@@ -1,0 +1,81 @@
+[
+  {
+    "id": "tool--c4810609-7da6-48ec-8057-1b70a7814db0",
+    "name": "crackmapexec",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0488",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 7,
+        "items": [
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "techniques": {
+        "count": 20,
+        "items": [
+          "T1003.002",
+          "T1003.003",
+          "T1003.004",
+          "T1016",
+          "T1018",
+          "T1047",
+          "T1049",
+          "T1053.002",
+          "T1059.001",
+          "T1069.002",
+          "T1082",
+          "T1083",
+          "T1087.002",
+          "T1110",
+          "T1110.001",
+          "T1110.003",
+          "T1112",
+          "T1135",
+          "T1201",
+          "T1550.002"
+        ]
+      },
+      "adversaries": {
+        "count": 4,
+        "items": [
+          "apt39",
+          "dragonfly",
+          "fin7",
+          "muddywater"
+        ]
+      },
+      "procedures": [
+        "T1003.002::[CrackMapExec] can dump usernames and hashed passwords from the SAM.",
+        "T1003.003::[CrackMapExec] can dump hashed passwords associated with Active Directory using Windows' Directory Replication Services API (DRSUAPI), or Volume Shadow Copy.",
+        "T1003.004::[CrackMapExec] can dump hashed passwords from LSA secrets for the targeted system.",
+        "T1016::[CrackMapExec] can collect DNS information from the targeted system.",
+        "T1018::[CrackMapExec] can discover active IP addresses, along with the machine name, within a targeted network.",
+        "T1047::[CrackMapExec] can execute remote commands using Windows Management Instrumentation.",
+        "T1049::[CrackMapExec] can discover active sessions for a targeted system.",
+        "T1053.002::[CrackMapExec] can set a scheduled task on the target system to execute commands remotely using [at].",
+        "T1059.001::[CrackMapExec] can execute PowerShell commands via WMI.",
+        "T1069.002::[CrackMapExec] can gather the user accounts within domain groups.",
+        "T1082::[CrackMapExec] can enumerate the system drives and associated system name.",
+        "T1083::[CrackMapExec] can discover specified filetypes and log files on a targeted system.",
+        "T1087.002::[CrackMapExec] can enumerate the domain user accounts on a targeted system.",
+        "T1110.001::[CrackMapExec] can brute force passwords for a specified user on a single target system or across an entire network.",
+        "T1110.003::[CrackMapExec] can brute force credential authentication by using a supplied list of usernames and a single password.",
+        "T1110::[CrackMapExec] can brute force supplied user credentials across a network range.",
+        "T1112::[CrackMapExec] can create a registry key using wdigest.",
+        "T1135::[CrackMapExec] can enumerate the shared folders and associated permissions for a targeted network.",
+        "T1201::[CrackMapExec] can discover the password policies applied to the target system.",
+        "T1550.002::[CrackMapExec] can pass the hash to authenticate via SMB."
+      ]
+    },
+    "description": "[CrackMapExec](https://attack.mitre.org/software/S0488), or CME, is a post-exploitation tool developed in Python and designed for penetration testing against networks. [CrackMapExec](https://attack.mitre.org/software/S0488) collects Active Directory information to conduct lateral movement through targeted networks.(Citation: CME Github September 2018)"
+  }
+]

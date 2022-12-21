@@ -1,0 +1,79 @@
+[
+  [
+    "fin4",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[FIN4] has captured credentials via fake Outlook Web App (OWA) login pages and has also used a .NET based keylogger."
+  ],
+  [
+    "fin4",
+    "T1056.002",
+    "GUI Input Capture",
+    "command-execution|process-creation|script-execution",
+    "T1056.002::[FIN4] has presented victims with spoofed Windows Authentication prompts to collect their credentials."
+  ],
+  [
+    "fin4",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[FIN4] has used VBA macros to display a dialog box and collect victim credentials."
+  ],
+  [
+    "fin4",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[FIN4] has used HTTP POST requests to transmit data."
+  ],
+  [
+    "fin4",
+    "T1090.003",
+    "Multi-hop Proxy",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1090.003::[FIN4] has used Tor to log in to victims' email accounts."
+  ],
+  [
+    "fin4",
+    "T1114.002",
+    "Remote Email Collection",
+    "command-execution|logon-session-creation|network-connection-creation",
+    "T1114.002::[FIN4] has accessed and hijacked online email communications using stolen credentials."
+  ],
+  [
+    "fin4",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[FIN4] has lured victims to click malicious links delivered via spearphishing emails (often sent from compromised accounts)."
+  ],
+  [
+    "fin4",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[FIN4] has lured victims to launch malicious attachments delivered via spearphishing emails (often sent from compromised accounts)."
+  ],
+  [
+    "fin4",
+    "T1564.008",
+    "Email Hiding Rules",
+    "application-log-content|command-execution|file-modification",
+    "T1564.008::[FIN4] has created rules in victims' Microsoft Outlook accounts to automatically delete emails containing words such as “hacked,\" \"phish,\" and “malware\" in a likely attempt to prevent organizations from communicating about their activities."
+  ],
+  [
+    "fin4",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[FIN4] has used spearphishing emails containing attachments (which are often stolen, legitimate documents sent from compromised accounts) with embedded malicious macros."
+  ],
+  [
+    "fin4",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[FIN4] has used spearphishing emails (often sent from compromised accounts) containing malicious links."
+  ]
+]

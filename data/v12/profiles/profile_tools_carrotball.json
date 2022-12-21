@@ -1,0 +1,40 @@
+[
+  {
+    "id": "tool--5fc81b43-62b5-41b1-9113-c79ae5f030c4",
+    "name": "carrotball",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0465",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 3,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "execution"
+        ]
+      },
+      "techniques": {
+        "count": 4,
+        "items": [
+          "T1027",
+          "T1071.002",
+          "T1105",
+          "T1204.002"
+        ]
+      },
+      "adversaries": {
+        "count": 0,
+        "items": []
+      },
+      "procedures": [
+        "T1027::[CARROTBALL] has used a custom base64 alphabet to decode files.",
+        "T1071.002::[CARROTBALL] has the ability to use FTP in C2 communications.",
+        "T1105::[CARROTBALL] has the ability to download and install a remote payload.",
+        "T1204.002::[CARROTBALL] has been executed through users being lured into opening malicious e-mail attachments."
+      ]
+    },
+    "description": "[CARROTBALL](https://attack.mitre.org/software/S0465) is an FTP downloader utility that has been in use since at least 2019. [CARROTBALL](https://attack.mitre.org/software/S0465) has been used as a downloader to install [SYSCON](https://attack.mitre.org/software/S0464).(Citation: Unit 42 CARROTBAT January 2020)"
+  }
+]

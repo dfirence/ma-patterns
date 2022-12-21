@@ -1,0 +1,64 @@
+[
+  {
+    "id": "intrusion-set--fbe9387f-34e6-4828-ac28-3080020c597b",
+    "name": "fin10",
+    "aliases": "fin10",
+    "group_id": "G0051",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 1,
+        "items": [
+          "empire"
+        ]
+      },
+      "techniques": {
+        "count": 11,
+        "items": [
+          "T1021.001",
+          "T1033",
+          "T1053.005",
+          "T1059.001",
+          "T1059.003",
+          "T1070.004",
+          "T1078",
+          "T1078.003",
+          "T1547.001",
+          "T1570",
+          "T1588.002"
+        ]
+      },
+      "tactics": {
+        "count": 8,
+        "items": [
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1021.001::[FIN10] has used RDP to move laterally to systems in the victim environment.",
+        "T1033::[FIN10] has used Meterpreter to enumerate users on remote systems.",
+        "T1053.005::[FIN10] has established persistence by using S4U tasks as well as the Scheduled Task option in PowerShell Empire.",
+        "T1059.001::[FIN10] uses PowerShell for execution as well as PowerShell Empire to establish persistence.",
+        "T1059.003::[FIN10] has executed malicious .bat files containing PowerShell commands.",
+        "T1070.004::[FIN10] has used batch scripts and scheduled tasks to delete critical system files.",
+        "T1078.003::[FIN10] has moved laterally using the Local Administrator account.",
+        "T1078::[FIN10] has used stolen credentials to connect remotely to victim networks using VPNs protected with only a single factor.",
+        "T1547.001::[FIN10] has established persistence by using the Registry option in PowerShell Empire to add a Run key.",
+        "T1570::[FIN10] has deployed Meterpreter stagers and SplinterRAT instances in the victim network after moving laterally.",
+        "T1588.002::[FIN10] has relied on publicly-available software to gain footholds and establish persistence in victim environments."
+      ]
+    },
+    "description": "[FIN10](https://attack.mitre.org/groups/G0051) is a financially motivated threat group that has targeted organizations in North America since at least 2013 through 2016. The group uses stolen data exfiltrated from victims to extort organizations. (Citation: FireEye FIN10 June 2017)"
+  }
+]

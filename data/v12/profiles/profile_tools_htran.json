@@ -1,0 +1,41 @@
+[
+  {
+    "id": "tool--d5e96a35-7b0b-4c6a-9533-d63ecbda563e",
+    "name": "htran",
+    "aliases": "none",
+    "platforms": "linux|windows",
+    "tool_id": "S0040",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 3,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "privilege-escalation"
+        ]
+      },
+      "techniques": {
+        "count": 3,
+        "items": [
+          "T1014",
+          "T1055",
+          "T1090"
+        ]
+      },
+      "adversaries": {
+        "count": 2,
+        "items": [
+          "apt12",
+          "gallium"
+        ]
+      },
+      "procedures": [
+        "T1014::[HTRAN] can install a rootkit to hide network connections from the host OS.",
+        "T1055::[HTRAN] can inject into into running processes.",
+        "T1090::[HTRAN] can proxy TCP socket connections to obfuscate command and control infrastructure."
+      ]
+    },
+    "description": "[HTRAN](https://attack.mitre.org/software/S0040) is a tool that proxies connections through intermediate hops and aids users in disguising their true geographical location. It can be used by adversaries to hide their location when interacting with the victim networks. (Citation: Operation Quantum Entanglement)(Citation: NCSC Joint Report Public Tools)"
+  }
+]

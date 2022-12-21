@@ -1,0 +1,67 @@
+[
+  {
+    "id": "intrusion-set--39d6890e-7f23-4474-b8ef-e7b0343c5fc8",
+    "name": "andariel",
+    "aliases": "andariel|silent-chollima",
+    "group_id": "G0138",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 2,
+        "items": [
+          "gh0st-rat",
+          "rifdoor"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 12,
+        "items": [
+          "T1005",
+          "T1027.003",
+          "T1049",
+          "T1057",
+          "T1105",
+          "T1189",
+          "T1203",
+          "T1204.002",
+          "T1566.001",
+          "T1588.001",
+          "T1590.005",
+          "T1592.002"
+        ]
+      },
+      "tactics": {
+        "count": 8,
+        "items": [
+          "collection",
+          "command-and-control",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "reconnaissance",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1005::[Andariel] has collected large numbers of files from compromised network systems for later extraction.",
+        "T1027.003::[Andariel] has hidden malicious executables within PNG files.",
+        "T1049::[Andariel] has used the netstat -naop tcp command to display TCP connections on a victim's machine.",
+        "T1057::[Andariel] has used tasklist to enumerate processes and find a specific string.",
+        "T1105::[Andariel] has downloaded additional tools and malware onto compromised hosts.",
+        "T1189::[Andariel] has used watering hole attacks, often with zero-day exploits, to gain initial access to victims within a specific IP range.",
+        "T1203::[Andariel] has exploited numerous ActiveX vulnerabilities, including zero-days.",
+        "T1204.002::[Andariel] has attempted to lure victims into enabling malicious macros within email attachments.",
+        "T1566.001::[Andariel] has conducted spearphishing campaigns that included malicious Word or Excel attachments.",
+        "T1588.001::[Andariel] has used a variety of publicly-available remote access Trojans (RATs) for its operations.",
+        "T1590.005::[Andariel] has limited its watering hole attacks to specific IP address ranges.",
+        "T1592.002::[Andariel] has inserted a malicious script within compromised websites to collect potential victim information such as browser type, system language, Flash Player version, and other data."
+      ]
+    },
+    "description": "[Andariel](https://attack.mitre.org/groups/G0138) is a North Korean state-sponsored threat group that has been active since at least 2009. [Andariel](https://attack.mitre.org/groups/G0138) has primarily focused its operations--which have included destructive attacks--against South Korean government agencies, military organizations, and a variety of domestic companies; they have also conducted cyber financial operations against ATMs, banks, and cryptocurrency exchanges. [Andariel](https://attack.mitre.org/groups/G0138)'s notable activity includes Operation Black Mine, Operation GoldenAxe, and Campaign Rifle.(Citation: FSI Andariel Campaign Rifle July 2017)(Citation: IssueMakersLab Andariel GoldenAxe May 2017)(Citation: AhnLab Andariel Subgroup of Lazarus June 2018)(Citation: TrendMicro New Andariel Tactics July 2018)(Citation: CrowdStrike Silent Chollima Adversary September 2021)\n\n[Andariel](https://attack.mitre.org/groups/G0138) is considered a sub-set of [Lazarus Group](https://attack.mitre.org/groups/G0032), and has been attributed to North Korea's Reconnaissance General Bureau.(Citation: Treasury North Korean Cyber Groups September 2019)\n\nNorth Korean group definitions are known to have significant overlap, and some security researchers report all North Korean state-sponsored cyber activity under the name [Lazarus Group](https://attack.mitre.org/groups/G0032) instead of tracking clusters or subgroups."
+  }
+]

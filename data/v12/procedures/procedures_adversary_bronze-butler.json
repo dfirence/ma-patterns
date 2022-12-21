@@ -1,0 +1,184 @@
+[
+  [
+    "bronze-butler",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[BRONZE BUTLER] has used various tools (such as Mimikatz and WCE) to perform credential dumping."
+  ],
+  [
+    "bronze-butler",
+    "T1027.001",
+    "Binary Padding",
+    "file-metadata",
+    "T1027.001::[BRONZE BUTLER] downloader code has included \"0\" characters at the end of the file to inflate the file size in a likely attempt to evade anti-virus detection."
+  ],
+  [
+    "bronze-butler",
+    "T1027.003",
+    "Steganography",
+    "file-metadata",
+    "T1027.003::[BRONZE BUTLER] has used steganography in multiple operations to conceal malicious payloads."
+  ],
+  [
+    "bronze-butler",
+    "T1036.002",
+    "Right-to-Left Override",
+    "file-metadata",
+    "T1036.002::[BRONZE BUTLER] has used Right-to-Left Override to deceive victims into executing several strains of malware."
+  ],
+  [
+    "bronze-butler",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[BRONZE BUTLER] has given malware the same name as an existing file on the file share server to cause users to unwittingly launch and install the malware on additional systems."
+  ],
+  [
+    "bronze-butler",
+    "T1053.002",
+    "At",
+    "command-execution|file-modification|process-creation|scheduled-job-creation",
+    "T1053.002::[BRONZE BUTLER] has used [at] to register a scheduled task to execute malware during lateral movement."
+  ],
+  [
+    "bronze-butler",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[BRONZE BUTLER] has used [schtasks] to register a scheduled task to execute malware during lateral movement."
+  ],
+  [
+    "bronze-butler",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[BRONZE BUTLER] has used PowerShell for execution."
+  ],
+  [
+    "bronze-butler",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[BRONZE BUTLER] has used batch scripts and the command-line interface for execution."
+  ],
+  [
+    "bronze-butler",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[BRONZE BUTLER] has used VBS and VBE scripts for execution."
+  ],
+  [
+    "bronze-butler",
+    "T1059.006",
+    "Python",
+    "command-execution|process-creation",
+    "T1059.006::[BRONZE BUTLER] has made use of Python-based remote access tools."
+  ],
+  [
+    "bronze-butler",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::The [BRONZE BUTLER] uploader or malware the uploader uses command to delete the RAR archives after they have been exfiltrated."
+  ],
+  [
+    "bronze-butler",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[BRONZE BUTLER] malware has used HTTP for C2."
+  ],
+  [
+    "bronze-butler",
+    "T1087.002",
+    "Domain Account",
+    "command-execution|group-enumeration|network-traffic-content|os-api-execution|process-creation",
+    "T1087.002::[BRONZE BUTLER] has used net user /domain to identify account information."
+  ],
+  [
+    "bronze-butler",
+    "T1102.001",
+    "Dead Drop Resolver",
+    "network-traffic-content|network-traffic-flow",
+    "T1102.001::[BRONZE BUTLER]'s MSGET downloader uses a dead drop resolver to access malicious payloads."
+  ],
+  [
+    "bronze-butler",
+    "T1132.001",
+    "Standard Encoding",
+    "network-traffic-content",
+    "T1132.001::Several [BRONZE BUTLER] tools encode data with base64 when posting it to a C2 server."
+  ],
+  [
+    "bronze-butler",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[BRONZE BUTLER] has attempted to get users to launch malicious Microsoft Word attachments delivered via spearphishing emails."
+  ],
+  [
+    "bronze-butler",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[BRONZE BUTLER] has used a batch script that adds a Registry Run key to establish malware persistence."
+  ],
+  [
+    "bronze-butler",
+    "T1548.002",
+    "Bypass User Account Control",
+    "command-execution|process-creation|process-metadata|windows-registry-key-modification",
+    "T1548.002::[BRONZE BUTLER] has used a Windows 10 specific tool and xxmm to bypass UAC for privilege escalation."
+  ],
+  [
+    "bronze-butler",
+    "T1550.003",
+    "Pass the Ticket",
+    "active-directory-credential-request|logon-session-creation|user-account-authentication",
+    "T1550.003::[BRONZE BUTLER] has created forged Kerberos Ticket Granting Ticket (TGT) and Ticket Granting Service (TGS) tickets to maintain administrative access."
+  ],
+  [
+    "bronze-butler",
+    "T1560.001",
+    "Archive via Utility",
+    "command-execution|file-creation|process-creation",
+    "T1560.001::[BRONZE BUTLER] has compressed data into password-protected RAR archives prior to exfiltration."
+  ],
+  [
+    "bronze-butler",
+    "T1562.001",
+    "Disable or Modify Tools",
+    "command-execution|driver-load|host-status|process-termination|service-metadata|windows-registry-key-deletion|windows-registry-key-modification",
+    "T1562.001::[BRONZE BUTLER] has incorporated code into several tools that attempts to terminate anti-virus processes."
+  ],
+  [
+    "bronze-butler",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[BRONZE BUTLER] used spearphishing emails with malicious Microsoft Word attachments to infect victims."
+  ],
+  [
+    "bronze-butler",
+    "T1573.001",
+    "Symmetric Cryptography",
+    "network-traffic-content",
+    "T1573.001::[BRONZE BUTLER] has used RC4 encryption (for Datper malware) and AES (for xxmm malware) to obfuscate HTTP traffic. [BRONZE BUTLER] has also used a tool called RarStar that encodes data with a custom XOR algorithm when posting it to a C2 server."
+  ],
+  [
+    "bronze-butler",
+    "T1574.002",
+    "DLL Side-Loading",
+    "file-creation|file-modification|module-load|process-creation",
+    "T1574.002::[BRONZE BUTLER] has used legitimate applications to side-load malicious DLLs."
+  ],
+  [
+    "bronze-butler",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[BRONZE BUTLER] has obtained and used open-source tools such as [Mimikatz], [gsecdump], and [Windows Credential Editor]."
+  ]
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "intrusion-set--2688b13e-8e71-405a-9c40-0dee94bddf87",
+    "name": "hafnium",
+    "aliases": "hafnium|operation-exchange-marauder",
+    "group_id": "G0125",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 3,
+        "items": [
+          "aspxspy",
+          "china-chopper",
+          "tarrask"
+        ]
+      },
+      "tools": {
+        "count": 2,
+        "items": [
+          "impacket",
+          "psexec"
+        ]
+      },
+      "techniques": {
+        "count": 21,
+        "items": [
+          "T1003.001",
+          "T1003.003",
+          "T1059.001",
+          "T1071.001",
+          "T1078.003",
+          "T1095",
+          "T1105",
+          "T1114.002",
+          "T1132.001",
+          "T1136.002",
+          "T1190",
+          "T1218.011",
+          "T1505.003",
+          "T1560.001",
+          "T1567.002",
+          "T1583.003",
+          "T1583.006",
+          "T1589.002",
+          "T1590",
+          "T1590.005",
+          "T1592.004"
+        ]
+      },
+      "tactics": {
+        "count": 11,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "execution",
+          "exfiltration",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "reconnaissance",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1003.001::[HAFNIUM] has used procdump to dump the LSASS process memory.",
+        "T1003.003::[HAFNIUM] has stolen copies of the Active Directory database (NTDS.DIT).",
+        "T1059.001::[HAFNIUM] has used the Exchange Power Shell module Set-OabVirtualDirectoryPowerShell to export mailbox data.",
+        "T1071.001::[HAFNIUM] has used open-source C2 frameworks, including Covenant.",
+        "T1078.003::[HAFNIUM] has used the NT AUTHORITY\\SYSTEM account to create files on Exchange servers.",
+        "T1095::[HAFNIUM] has used TCP for C2.",
+        "T1105::[HAFNIUM] has downloaded malware and tools--including Nishang and PowerCat--onto a compromised host.",
+        "T1114.002::[HAFNIUM] has used web shells to export mailbox data.",
+        "T1132.001::[HAFNIUM] has used ASCII encoding for C2 traffic.",
+        "T1136.002::[HAFNIUM] has created and granted privileges to domain accounts.",
+        "T1190::[HAFNIUM] has exploited CVE-2021-26855, CVE-2021-26857, CVE-2021-26858, and CVE-2021-27065  to compromise on-premises versions of Microsoft Exchange Server, enabling access to email accounts and installation of additional malware.",
+        "T1218.011::[HAFNIUM] has used rundll32 to load malicious DLLs.",
+        "T1505.003::[HAFNIUM] has deployed multiple web shells on compromised servers including SIMPLESEESHARP, SPORTSBALL, [China Chopper], and [ASPXSpy].",
+        "T1560.001::[HAFNIUM] has used 7-Zip and WinRAR to compress stolen files for exfiltration.",
+        "T1567.002::[HAFNIUM] has exfiltrated data to file sharing sites, including MEGA.",
+        "T1583.003::[HAFNIUM] has operated from leased virtual private servers (VPS) in the United States.",
+        "T1583.006::[HAFNIUM] has acquired web services for use in C2 and exfiltration.",
+        "T1589.002::[HAFNIUM] has collected e-mail addresses for users they intended to target.",
+        "T1590.005::[HAFNIUM] has obtained IP addresses for publicly-accessible Exchange servers.",
+        "T1590::[HAFNIUM] gathered the fully qualified domain names (FQDNs) for targeted Exchange servers in the victim's environment.",
+        "T1592.004::[HAFNIUM] has interacted with Office 365 tenants to gather details regarding target's environments."
+      ]
+    },
+    "description": "[HAFNIUM](https://attack.mitre.org/groups/G0125) is a likely state-sponsored cyber espionage group operating out of China that has been active since at least January 2021. [HAFNIUM](https://attack.mitre.org/groups/G0125) primarily targets entities in the US across a number of industry sectors, including infectious disease researchers, law firms, higher education institutions, defense contractors, policy think tanks, and NGOs.(Citation: Microsoft HAFNIUM March 2020)(Citation: Volexity Exchange Marauder March 2021)"
+  }
+]

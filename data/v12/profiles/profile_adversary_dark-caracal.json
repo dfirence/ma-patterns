@@ -1,0 +1,68 @@
+[
+  {
+    "id": "intrusion-set--8a831aaa-f3e0-47a3-bed8-a9ced744dd12",
+    "name": "dark-caracal",
+    "aliases": "dark-caracal",
+    "group_id": "G0070",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 3,
+        "items": [
+          "bandook",
+          "crossrat",
+          "finfisher"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 12,
+        "items": [
+          "T1005",
+          "T1027",
+          "T1027.002",
+          "T1059.003",
+          "T1071.001",
+          "T1083",
+          "T1113",
+          "T1189",
+          "T1204.002",
+          "T1218.001",
+          "T1547.001",
+          "T1566.003"
+        ]
+      },
+      "tactics": {
+        "count": 8,
+        "items": [
+          "collection",
+          "command-and-control",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "procedures": [
+        "T1005::[Dark Caracal] collected complete contents of the 'Pictures' folder from compromised Windows systems.",
+        "T1027.002::[Dark Caracal] has used UPX to pack [Bandook].",
+        "T1027::[Dark Caracal] has obfuscated strings in [Bandook] by base64 encoding, and then encrypting them.",
+        "T1059.003::[Dark Caracal] has used macros in Word documents that would download a second stage if executed.",
+        "T1071.001::[Dark Caracal]'s version of [Bandook] communicates with their server over a TCP port using HTTP payloads Base64 encoded and suffixed with the string “&&&”.",
+        "T1083::[Dark Caracal] collected file listings of all default Windows directories.",
+        "T1113::[Dark Caracal] took screenshots using their Windows malware.",
+        "T1189::[Dark Caracal] leveraged a watering hole to serve up malicious code.",
+        "T1204.002::[Dark Caracal] makes their malware look like Flash Player, Office, or PDF documents in order to entice a user to click on it.",
+        "T1218.001::[Dark Caracal] leveraged a compiled HTML file that contained a command to download and run an executable.",
+        "T1547.001::[Dark Caracal]'s version of [Bandook] adds a registry key to HKEY_USERS\\Software\\Microsoft\\Windows\\CurrentVersion\\Run for persistence.",
+        "T1566.003::[Dark Caracal] spearphished victims via Facebook and Whatsapp."
+      ]
+    },
+    "description": "[Dark Caracal](https://attack.mitre.org/groups/G0070) is threat group that has been attributed to the Lebanese General Directorate of General Security (GDGS) and has operated since at least 2012. (Citation: Lookout Dark Caracal Jan 2018)"
+  }
+]

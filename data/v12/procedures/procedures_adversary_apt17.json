@@ -1,0 +1,9 @@
+[
+  [
+    "apt17",
+    "T1583.006",
+    "Web Services",
+    "response-content",
+    "T1583.006::[APT17] has created profile pages in Microsoft TechNet that were used as C2 infrastructure."
+  ]
+]

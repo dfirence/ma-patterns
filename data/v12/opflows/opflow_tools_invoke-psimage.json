@@ -1,0 +1,108 @@
+[
+  {
+    "id": "attack-pattern--c2e147a9-d1a8-4074-811a-d8789202d916",
+    "platform": "linux|macos|windows",
+    "tid": "T1027.003",
+    "technique": "Steganography",
+    "tactic": "defense-evasion",
+    "datasources": "file-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "invoke-psimage",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use steganography techniques in order to prevent the detection of hidden information. Steganographic techniques can be used to hide data in digital media such as images, audio tracks, video clips, or text files.\n\n[Duqu](https://attack.mitre.org/software/S0038) was an early example of malware that used steganography. It encrypted the gathered information from a victim's system and hid it within an image before exfiltrating the image to a C2 server.(Citation: Wikipedia Duqu) \n\nBy the end of 2017, a threat group used <code>Invoke-PSImage</code> to hide [PowerShell](https://attack.mitre.org/techniques/T1059/001) commands in an image file (.png) and execute the code on a victim's system. In this particular case the [PowerShell](https://attack.mitre.org/techniques/T1059/001) code downloaded another obfuscated script to gather intelligence from the victim's machine and communicate it back to the adversary.(Citation: McAfee Malicious Doc Targets Pyeongchang Olympics)  ",
+    "technique_references": [
+      {
+        "source_name": "capec",
+        "url": "https://capec.mitre.org/data/definitions/636.html",
+        "description": "none",
+        "external_id": "CAPEC-636"
+      },
+      {
+        "source_name": "Wikipedia Duqu",
+        "url": "https://en.wikipedia.org/wiki/Duqu",
+        "description": "Wikipedia. (2017, December 29). Duqu. Retrieved April 10, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "McAfee Malicious Doc Targets Pyeongchang Olympics",
+        "url": "https://securingtomorrow.mcafee.com/mcafee-labs/malicious-document-targets-pyeongchang-olympics/",
+        "description": "Saavedra-Morales, J., Sherstobitoff, R. (2018, January 6). Malicious Document Targets Pyeongchang Olympics. Retrieved April 10, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--0533ab23-3f7d-463f-9bd8-634d27e4dee1",
+    "platform": "macos|windows|linux",
+    "tid": "T1027.009",
+    "technique": "Embedded Payloads",
+    "tactic": "defense-evasion",
+    "datasources": "file-creation|file-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "invoke-psimage",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may embed payloads within other files to conceal malicious content from defenses. Otherwise seemingly benign files (such as scripts and executables) may be abused to carry and obfuscate malicious payloads and content. In some cases, embedded payloads may also enable adversaries to [Subvert Trust Controls](https://attack.mitre.org/techniques/T1553) by not impacting execution controls such as digital signatures and notarization tickets.(Citation: Sentinel Labs) \n\nAdversaries may embed payloads in various file formats to hide payloads.(Citation: Microsoft Learn) This is similar to [Steganography](https://attack.mitre.org/techniques/T1027/003), though does not involve weaving malicious content into specific bytes and patterns related to legitimate digital media formats.(Citation: GitHub PSImage) \n\nFor example, adversaries have been observed embedding payloads within or as an overlay of an otherwise benign binary.(Citation: Securelist Dtrack2) Adversaries have also been observed nesting payloads (such as executables and run-only scripts) inside a file of the same format.(Citation: SentinelLabs reversing run-only applescripts 2021) \n\nEmbedded content may also be used as [Process Injection](https://attack.mitre.org/techniques/T1055) payloads used to infect benign system processes.(Citation: Trend Micro) These embedded then injected payloads may be used as part of the modules of malware designed to provide specific features such as encrypting C2 communications in support of an orchestrator module. For example, an embedded module may be injected into default browsers, allowing adversaries to then communicate via the network.(Citation: Malware Analysis Report ComRAT)",
+    "technique_references": [
+      {
+        "source_name": "GitHub PSImage",
+        "url": "https://github.com/peewpw/Invoke-PSImage",
+        "description": "Barrett Adams . (n.d.). Invoke-PSImage . Retrieved September 30, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Malware Analysis Report ComRAT",
+        "url": "https://www.cisa.gov/uscert/ncas/analysis-reports/ar20-303a",
+        "description": "CISA. (2020, October 29). Malware Analysis Report (AR20-303A) MAR-10310246-2.v1 – PowerShell Script: ComRAT. Retrieved September 30, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Trend Micro",
+        "url": "https://www.trendmicro.com/en_us/research/20/e/netwalker-fileless-ransomware-injected-via-reflective-loading.html",
+        "description": "Karen Victor. (2020, May 18). Reflective Loading Runs Netwalker Fileless Ransomware. Retrieved September 30, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Securelist Dtrack2",
+        "url": "https://securelist.com/my-name-is-dtrack/93338/",
+        "description": "KONSTANTIN ZYKOV. (2019, September 23). Hello! My name is Dtrack. Retrieved September 30, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-shllink/c41e062d-f764-4f13-bd4f-ea812ab9a4d1",
+        "description": "Microsoft. (2021, April 6). 2.5 ExtraData. Retrieved September 30, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SentinelLabs reversing run-only applescripts 2021",
+        "url": "https://www.sentinelone.com/labs/fade-dead-adventures-in-reversing-malicious-run-only-applescripts/",
+        "description": "Phil Stokes. (2021, January 11). FADE DEAD | Adventures in Reversing Malicious Run-Only AppleScripts. Retrieved September 29, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sentinel Labs",
+        "url": "https://www.sentinelone.com/labs/fade-dead-adventures-in-reversing-malicious-run-only-applescripts/",
+        "description": "Phil Stokes. (2021, January 11). FADE DEAD | Adventures in Reversing Malicious Run-Only AppleScripts. Retrieved September 30, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

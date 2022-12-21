@@ -1,0 +1,51 @@
+[
+  {
+    "id": "intrusion-set--8f5e8dc7-739d-4f5e-a8a1-a66e004d7063",
+    "name": "cleaver",
+    "aliases": "cleaver|threat-group-2889|tg-2889",
+    "group_id": "G0003",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 2,
+        "items": [
+          "net-crawler",
+          "tinyzbot"
+        ]
+      },
+      "tools": {
+        "count": 2,
+        "items": [
+          "mimikatz",
+          "psexec"
+        ]
+      },
+      "techniques": {
+        "count": 5,
+        "items": [
+          "T1003.001",
+          "T1557.002",
+          "T1585.001",
+          "T1587.001",
+          "T1588.002"
+        ]
+      },
+      "tactics": {
+        "count": 3,
+        "items": [
+          "collection",
+          "credential-access",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1003.001::[Cleaver] has been known to dump credentials using Mimikatz and Windows Credential Editor.",
+        "T1557.002::[Cleaver] has used custom tools to facilitate ARP cache poisoning.",
+        "T1585.001::[Cleaver] has created fake LinkedIn profiles that included profile photos, details, and connections.",
+        "T1587.001::[Cleaver] has created customized tools and payloads for functions including ARP poisoning, encryption, credential dumping, ASP.NET shells, web backdoors, process enumeration, WMI querying, HTTP and SMB communications, network interface sniffing, and keystroke logging.",
+        "T1588.002::[Cleaver] has obtained and used open-source tools such as [PsExec], [Windows Credential Editor], and [Mimikatz]."
+      ]
+    },
+    "description": "[Cleaver](https://attack.mitre.org/groups/G0003) is a threat group that has been attributed to Iranian actors and is responsible for activity tracked as Operation Cleaver. (Citation: Cylance Cleaver) Strong circumstantial evidence suggests Cleaver is linked to Threat Group 2889 (TG-2889). (Citation: Dell Threat Group 2889)"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  [
+    "sowbug",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[Sowbug] named its tools to masquerade as Windows or Adobe Reader software, such as by using the file name adobecms.exe and the directory CSIDL_APPDATA\\microsoft\\security."
+  ],
+  [
+    "sowbug",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[Sowbug] has used keylogging tools."
+  ],
+  [
+    "sowbug",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[Sowbug] has used command line during its intrusions."
+  ],
+  [
+    "sowbug",
+    "T1560.001",
+    "Archive via Utility",
+    "command-execution|file-creation|process-creation",
+    "T1560.001::[Sowbug] extracted documents and bundled them into a RAR archive."
+  ]
+]

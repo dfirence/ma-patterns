@@ -1,0 +1,37 @@
+[
+  {
+    "id": "tool--ca656c25-44f1-471b-9d9f-e2a3bbb84973",
+    "name": "expand",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0361",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 2,
+        "items": [
+          "defense-evasion",
+          "lateral-movement"
+        ]
+      },
+      "techniques": {
+        "count": 3,
+        "items": [
+          "T1140",
+          "T1564.004",
+          "T1570"
+        ]
+      },
+      "adversaries": {
+        "count": 0,
+        "items": []
+      },
+      "procedures": [
+        "T1140::[Expand] can be used to decompress a local or remote CAB file into an executable.",
+        "T1564.004::[Expand] can be used to download or copy a file into an alternate data stream.",
+        "T1570::[Expand] can be used to download or upload a file over a network share."
+      ]
+    },
+    "description": "[Expand](https://attack.mitre.org/software/S0361) is a Windows utility used to expand one or more compressed CAB files.(Citation: Microsoft Expand Utility) It has been used by [BBSRAT](https://attack.mitre.org/software/S0127) to decompress a CAB file into executable content.(Citation: Palo Alto Networks BBSRAT)"
+  }
+]

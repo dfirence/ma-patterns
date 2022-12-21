@@ -1,0 +1,100 @@
+[
+  [
+    "temp.veles",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[TEMP.Veles] has used [Mimikatz] and a custom tool, SecHack, to harvest credentials."
+  ],
+  [
+    "temp.veles",
+    "T1021.001",
+    "Remote Desktop Protocol",
+    "logon-session-creation|network-connection-creation|network-traffic-flow|process-creation",
+    "T1021.001::[TEMP.Veles] utilized RDP throughout an operation."
+  ],
+  [
+    "temp.veles",
+    "T1021.004",
+    "SSH",
+    "logon-session-creation|network-connection-creation|process-creation",
+    "T1021.004::[TEMP.Veles] has relied on encrypted SSH-based tunnels to transfer tools and for remote command/program execution."
+  ],
+  [
+    "temp.veles",
+    "T1027.005",
+    "Indicator Removal from Tools",
+    "application-log-content",
+    "T1027.005::[TEMP.Veles] has modified files based on the open-source project cryptcat in an apparent attempt to decrease AV detection rates."
+  ],
+  [
+    "temp.veles",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[TEMP.Veles] has renamed files to look like legitimate files, such as Windows update files or Schneider Electric application files."
+  ],
+  [
+    "temp.veles",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[TEMP.Veles] has used scheduled task XML triggers."
+  ],
+  [
+    "temp.veles",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[TEMP.Veles] has used a publicly-available PowerShell-based tool, WMImplant."
+  ],
+  [
+    "temp.veles",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[TEMP.Veles] routinely deleted tools, logs, and other files after they were finished with them."
+  ],
+  [
+    "temp.veles",
+    "T1070.006",
+    "Timestomp",
+    "file-metadata|file-modification",
+    "T1070.006::[TEMP.Veles] used timestomping to modify the $STANDARD_INFORMATION attribute on tools."
+  ],
+  [
+    "temp.veles",
+    "T1074.001",
+    "Local Data Staging",
+    "command-execution|file-access|file-creation|windows-registry-key-modification",
+    "T1074.001::[TEMP.Veles] has created staging folders in directories that were infrequently used by legitimate users or processes."
+  ],
+  [
+    "temp.veles",
+    "T1505.003",
+    "Web Shell",
+    "application-log-content|file-creation|file-modification|network-traffic-content|network-traffic-flow|process-creation",
+    "T1505.003::[TEMP.Veles] has planted Web shells on Outlook Exchange servers."
+  ],
+  [
+    "temp.veles",
+    "T1546.012",
+    "Image File Execution Options Injection",
+    "command-execution|process-creation|windows-registry-key-modification",
+    "T1546.012::[TEMP.Veles] has modified and added entries within HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options to maintain persistence."
+  ],
+  [
+    "temp.veles",
+    "T1583.003",
+    "Virtual Private Server",
+    "response-content|response-metadata",
+    "T1583.003::[TEMP.Veles] has used Virtual Private Server (VPS) infrastructure."
+  ],
+  [
+    "temp.veles",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[TEMP.Veles] has obtained and used tools such as [Mimikatz] and [PsExec]."
+  ]
+]

@@ -1,0 +1,212 @@
+[
+  [
+    "leviathan",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[Leviathan] has used publicly available tools to dump password hashes, including ProcDump and WCE."
+  ],
+  [
+    "leviathan",
+    "T1021.001",
+    "Remote Desktop Protocol",
+    "logon-session-creation|network-connection-creation|network-traffic-flow|process-creation",
+    "T1021.001::[Leviathan] has targeted RDP credentials and used it to move through the victim environment."
+  ],
+  [
+    "leviathan",
+    "T1021.004",
+    "SSH",
+    "logon-session-creation|network-connection-creation|process-creation",
+    "T1021.004::[Leviathan] used ssh for internal reconnaissance."
+  ],
+  [
+    "leviathan",
+    "T1027.001",
+    "Binary Padding",
+    "file-metadata",
+    "T1027.001::[Leviathan] has inserted garbage characters into code, presumably to avoid anti-virus detection."
+  ],
+  [
+    "leviathan",
+    "T1027.003",
+    "Steganography",
+    "file-metadata",
+    "T1027.003::[Leviathan] has used steganography to hide stolen data inside other files stored on Github."
+  ],
+  [
+    "leviathan",
+    "T1055.001",
+    "Dynamic-link Library Injection",
+    "module-load|os-api-execution|process-access|process-metadata|process-modification",
+    "T1055.001::[Leviathan] has utilized techniques like reflective DLL loading to write a DLL into memory and load a shell that provides backdoor access to the victim."
+  ],
+  [
+    "leviathan",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[Leviathan] has used PowerShell for execution."
+  ],
+  [
+    "leviathan",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[Leviathan] has used VBScript."
+  ],
+  [
+    "leviathan",
+    "T1074.001",
+    "Local Data Staging",
+    "command-execution|file-access|file-creation|windows-registry-key-modification",
+    "T1074.001::[Leviathan] has used C:\\Windows\\Debug and C:\\Perflogs as staging directories."
+  ],
+  [
+    "leviathan",
+    "T1074.002",
+    "Remote Data Staging",
+    "command-execution|file-access|file-creation",
+    "T1074.002::[Leviathan] has staged data remotely prior to exfiltration."
+  ],
+  [
+    "leviathan",
+    "T1090.003",
+    "Multi-hop Proxy",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1090.003::[Leviathan] has used multi-hop proxies to disguise the source of their malicious traffic."
+  ],
+  [
+    "leviathan",
+    "T1102.003",
+    "One-Way Communication",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1102.003::[Leviathan] has received C2 instructions from user profiles created on legitimate websites such as Github and TechNet."
+  ],
+  [
+    "leviathan",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[Leviathan] has sent spearphishing email links attempting to get a user to click."
+  ],
+  [
+    "leviathan",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Leviathan] has sent spearphishing attachments attempting to get a user to click."
+  ],
+  [
+    "leviathan",
+    "T1218.010",
+    "Regsvr32",
+    "command-execution|module-load|network-connection-creation|process-creation",
+    "T1218.010::[Leviathan] has used regsvr32 for execution."
+  ],
+  [
+    "leviathan",
+    "T1505.003",
+    "Web Shell",
+    "application-log-content|file-creation|file-modification|network-traffic-content|network-traffic-flow|process-creation",
+    "T1505.003::[Leviathan] relies on web shells for an initial foothold as well as persistence into the victim's systems."
+  ],
+  [
+    "leviathan",
+    "T1546.003",
+    "Windows Management Instrumentation Event Subscription",
+    "command-execution|process-creation|wmi-creation",
+    "T1546.003::[Leviathan] has used WMI for persistence."
+  ],
+  [
+    "leviathan",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[Leviathan] has used JavaScript to create a shortcut file in the Startup folder that points to its main backdoor."
+  ],
+  [
+    "leviathan",
+    "T1547.009",
+    "Shortcut Modification",
+    "file-creation|file-modification|process-creation",
+    "T1547.009::[Leviathan] has used JavaScript to create a shortcut file in the Startup folder that points to its main backdoor."
+  ],
+  [
+    "leviathan",
+    "T1553.002",
+    "Code Signing",
+    "file-metadata",
+    "T1553.002::[Leviathan] has used stolen code signing certificates to sign malware."
+  ],
+  [
+    "leviathan",
+    "T1559.002",
+    "Dynamic Data Exchange",
+    "module-load|process-creation|script-execution",
+    "T1559.002::[Leviathan] has utilized OLE as a method to insert malicious content inside various phishing documents."
+  ],
+  [
+    "leviathan",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[Leviathan] has sent spearphishing emails with malicious attachments, including .rtf, .doc, and .xls files."
+  ],
+  [
+    "leviathan",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[Leviathan] has sent spearphishing emails with links, often using a fraudulent lookalike domain and stolen branding."
+  ],
+  [
+    "leviathan",
+    "T1567.002",
+    "Exfiltration to Cloud Storage",
+    "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1567.002::[Leviathan] has used an uploader known as LUNCHMONEY that can exfiltrate files to Dropbox."
+  ],
+  [
+    "leviathan",
+    "T1583.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1583.001::[Leviathan] has established domains that impersonate legitimate entities to use for targeting efforts."
+  ],
+  [
+    "leviathan",
+    "T1585.001",
+    "Social Media Accounts",
+    "network-traffic-content|social-media",
+    "T1585.001::[Leviathan] has created new social media accounts for targeting efforts."
+  ],
+  [
+    "leviathan",
+    "T1585.002",
+    "Email Accounts",
+    "none",
+    "T1585.002::[Leviathan] has created new email accounts for targeting efforts."
+  ],
+  [
+    "leviathan",
+    "T1586.001",
+    "Social Media Accounts",
+    "network-traffic-content|social-media",
+    "T1586.001::[Leviathan] has compromised social media accounts to conduct social engineering attacks."
+  ],
+  [
+    "leviathan",
+    "T1586.002",
+    "Email Accounts",
+    "none",
+    "T1586.002::[Leviathan] has compromised email accounts to conduct social engineering attacks."
+  ],
+  [
+    "leviathan",
+    "T1589.001",
+    "Credentials",
+    "none",
+    "T1589.001::[Leviathan] has collected compromised credentials to use for targeting efforts."
+  ]
+]

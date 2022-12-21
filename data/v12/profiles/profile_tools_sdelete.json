@@ -1,0 +1,40 @@
+[
+  {
+    "id": "tool--d8d19e33-94fd-4aa3-b94a-08ee801a2153",
+    "name": "sdelete",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0195",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 2,
+        "items": [
+          "defense-evasion",
+          "impact"
+        ]
+      },
+      "techniques": {
+        "count": 2,
+        "items": [
+          "T1070.004",
+          "T1485"
+        ]
+      },
+      "adversaries": {
+        "count": 4,
+        "items": [
+          "apt29",
+          "cobalt-group",
+          "fin5",
+          "silence"
+        ]
+      },
+      "procedures": [
+        "T1070.004::[SDelete] deletes data in a way that makes it unrecoverable.",
+        "T1485::[SDelete] deletes data in a way that makes it unrecoverable."
+      ]
+    },
+    "description": "[SDelete](https://attack.mitre.org/software/S0195) is an application that securely deletes data in a way that makes it unrecoverable. It is part of the Microsoft Sysinternals suite of tools. (Citation: Microsoft SDelete July 2016)"
+  }
+]

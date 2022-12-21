@@ -1,0 +1,48 @@
+[
+  {
+    "id": "intrusion-set--2fd2be6a-d3a2-4a65-b499-05ea2693abee",
+    "name": "gallmaker",
+    "aliases": "gallmaker",
+    "group_id": "G0084",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 6,
+        "items": [
+          "T1027",
+          "T1059.001",
+          "T1204.002",
+          "T1559.002",
+          "T1560.001",
+          "T1566.001"
+        ]
+      },
+      "tactics": {
+        "count": 4,
+        "items": [
+          "collection",
+          "defense-evasion",
+          "execution",
+          "initial-access"
+        ]
+      },
+      "procedures": [
+        "T1027::[Gallmaker] obfuscated shellcode used during execution.",
+        "T1059.001::[Gallmaker] used PowerShell to download additional payloads and for execution.",
+        "T1204.002::[Gallmaker] sent victims a lure document with a warning that asked victims to “enable content” for execution.",
+        "T1559.002::[Gallmaker] attempted to exploit Microsoft’s DDE protocol in order to gain access to victim machines and for execution.",
+        "T1560.001::[Gallmaker] has used WinZip, likely to archive data prior to exfiltration.",
+        "T1566.001::[Gallmaker] sent emails with malicious Microsoft Office documents attached."
+      ]
+    },
+    "description": "[Gallmaker](https://attack.mitre.org/groups/G0084) is a cyberespionage group that has targeted victims in the Middle East and has been active since at least December 2017. The group has mainly targeted victims in the defense, military, and government sectors.(Citation: Symantec Gallmaker Oct 2018)"
+  }
+]

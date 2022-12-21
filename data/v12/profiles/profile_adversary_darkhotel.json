@@ -1,0 +1,90 @@
+[
+  {
+    "id": "intrusion-set--9e729a7e-0dd6-4097-95bf-db8d64911383",
+    "name": "darkhotel",
+    "aliases": "darkhotel|dubnium",
+    "group_id": "G0012",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 24,
+        "items": [
+          "T1016",
+          "T1027",
+          "T1036.005",
+          "T1056.001",
+          "T1057",
+          "T1059.003",
+          "T1080",
+          "T1082",
+          "T1083",
+          "T1091",
+          "T1105",
+          "T1124",
+          "T1140",
+          "T1189",
+          "T1203",
+          "T1204.002",
+          "T1497",
+          "T1497.001",
+          "T1497.002",
+          "T1518.001",
+          "T1547.001",
+          "T1553.002",
+          "T1566.001",
+          "T1573.001"
+        ]
+      },
+      "tactics": {
+        "count": 10,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "procedures": [
+        "T1016::[Darkhotel] has collected the IP address and network adapter information from the victim’s machine.",
+        "T1027::[Darkhotel] has obfuscated code using RC4, XOR, and RSA.",
+        "T1036.005::[Darkhotel] has used malware that is disguised as a Secure Shell (SSH) tool.",
+        "T1056.001::[Darkhotel] has used a keylogger.",
+        "T1057::[Darkhotel] malware can collect a list of running processes on a system.",
+        "T1059.003::[Darkhotel] has dropped an mspaint.lnk shortcut to disk which launches a shell script that downloads and executes a file.",
+        "T1080::[Darkhotel] used a virus that propagates by infecting executables stored on shared drives.",
+        "T1082::[Darkhotel] has collected the hostname, OS version, service pack version, and the processor architecture from the victim’s machine.",
+        "T1083::[Darkhotel] has used malware that searched for files with specific patterns.",
+        "T1091::[Darkhotel]'s selective infector modifies executables stored on removable media as a method of spreading across computers.",
+        "T1105::[Darkhotel] has used first-stage payloads that download additional malware from C2 servers.",
+        "T1124::[Darkhotel] malware can obtain system time from a compromised host.",
+        "T1140::[Darkhotel] has decrypted strings and imports using RC4 during execution.",
+        "T1189::[Darkhotel] used embedded iframes on hotel login portals to redirect selected victims to download malware.",
+        "T1203::[Darkhotel] has exploited Adobe Flash vulnerability CVE-2015-8651 for execution.",
+        "T1204.002::[Darkhotel] has sent spearphishing emails in an attempt to lure users into clicking on a malicious attachments.",
+        "T1497.001::[Darkhotel] malware has used a series of checks to determine if it's being analyzed; checks include the length of executable names, if a filename ends with .Md5.exe, and if the program is executed from the root of the C:\\ drive, as well as checks for sandbox-related libraries.",
+        "T1497.002::[Darkhotel] has used malware that repeatedly checks the mouse cursor position to determine if a real user is on the system.",
+        "T1497::[Darkhotel] malware has employed just-in-time decryption of strings to evade sandbox detection.",
+        "T1518.001::[Darkhotel] has searched for anti-malware strings and anti-virus processes running on the system.",
+        "T1547.001::[Darkhotel] has been known to establish persistence by adding programs to the Run Registry key.",
+        "T1553.002::[Darkhotel] has used code-signing certificates on its malware that are either forged due to weak keys or stolen. [Darkhotel] has also stolen certificates and signed backdoors and downloaders with them.",
+        "T1566.001::[Darkhotel] has sent spearphishing emails with malicious RAR and .LNK attachments.",
+        "T1573.001::[Darkhotel] has used AES-256 and 3DES for C2 communications."
+      ]
+    },
+    "description": "[Darkhotel](https://attack.mitre.org/groups/G0012) is a suspected South Korean threat group that has targeted victims primarily in East Asia since at least 2004. The group's name is based on cyber espionage operations conducted via hotel Internet networks against traveling executives and other select guests. [Darkhotel](https://attack.mitre.org/groups/G0012) has also conducted spearphishing campaigns and infected victims through peer-to-peer and file sharing networks.(Citation: Kaspersky Darkhotel)(Citation: Securelist Darkhotel Aug 2015)(Citation: Microsoft Digital Defense FY20 Sept 2020)"
+  }
+]

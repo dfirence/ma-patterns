@@ -1,0 +1,67 @@
+[
+  {
+    "id": "intrusion-set--1f0f9a14-11aa-49aa-9174-bcd0eaa979de",
+    "name": "evilnum",
+    "aliases": "evilnum",
+    "group_id": "G0120",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 2,
+        "items": [
+          "evilnum",
+          "more_eggs"
+        ]
+      },
+      "tools": {
+        "count": 1,
+        "items": [
+          "lazagne"
+        ]
+      },
+      "techniques": {
+        "count": 11,
+        "items": [
+          "T1059.007",
+          "T1070.004",
+          "T1105",
+          "T1204.001",
+          "T1219",
+          "T1497.001",
+          "T1539",
+          "T1548.002",
+          "T1555",
+          "T1566.002",
+          "T1574.001"
+        ]
+      },
+      "tactics": {
+        "count": 8,
+        "items": [
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "procedures": [
+        "T1059.007::[Evilnum] has used malicious JavaScript files on the victim's machine.",
+        "T1070.004::[Evilnum] has deleted files used during infection.",
+        "T1105::[Evilnum] can deploy additional components or tools as needed.",
+        "T1204.001::[Evilnum] has sent spearphishing emails designed to trick the recipient into opening malicious shortcut links which downloads a .LNK file.",
+        "T1219::[EVILNUM] has used the malware variant, TerraTV, to run a legitimate TeamViewer application to connect to compromrised machines.",
+        "T1497.001::[Evilnum] has used a component called TerraLoader to check certain hardware and file information to detect sandboxed environments.",
+        "T1539::[Evilnum] can steal cookies and session information from browsers.",
+        "T1548.002::[Evilnum] has used PowerShell to bypass UAC.",
+        "T1555::[Evilnum] can collect email credentials from victims.",
+        "T1566.002::[Evilnum] has sent spearphishing emails containing a link to a zip file hosted on Google Drive.",
+        "T1574.001::[Evilnum] has used the malware variant, TerraTV, to load a malicious DLL placed in the TeamViewer directory, instead of the original Windows DLL located in a system folder."
+      ]
+    },
+    "description": "[Evilnum](https://attack.mitre.org/groups/G0120) is a financially motivated threat group that has been active since at least 2018.(Citation: ESET EvilNum July 2020)"
+  }
+]

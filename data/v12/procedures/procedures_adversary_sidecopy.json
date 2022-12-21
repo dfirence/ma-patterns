@@ -1,0 +1,72 @@
+[
+  [
+    "sidecopy",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[SideCopy] has used a legitimate DLL file name, `Duser.dll` to disguise a malicious remote access tool."
+  ],
+  [
+    "sidecopy",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[SideCopy] has sent Microsoft Office Publisher documents to victims that have embedded malicious macros that execute an hta file via calling `mshta.exe`."
+  ],
+  [
+    "sidecopy",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[SideCopy] has attempted to lure victims into clicking on malicious embedded archive files sent via spearphishing campaigns."
+  ],
+  [
+    "sidecopy",
+    "T1218.005",
+    "Mshta",
+    "command-execution|file-creation|network-connection-creation|process-creation",
+    "T1218.005::[SideCopy] has utilized `mshta.exe` to execute a malicious hta file."
+  ],
+  [
+    "sidecopy",
+    "T1518.001",
+    "Security Software Discovery",
+    "command-execution|firewall-enumeration|firewall-metadata|os-api-execution|process-creation",
+    "T1518.001::[SideCopy] uses a loader DLL file to collect AV product names from an infected host."
+  ],
+  [
+    "sidecopy",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[SideCopy] has sent spearphishing emails with malicious hta file attachments."
+  ],
+  [
+    "sidecopy",
+    "T1574.002",
+    "DLL Side-Loading",
+    "file-creation|file-modification|module-load|process-creation",
+    "T1574.002::[SideCopy] has used a malicious loader DLL file to execute the `credwiz.exe` process and side-load the malicious payload `Duser.dll`."
+  ],
+  [
+    "sidecopy",
+    "T1584.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1584.001::[SideCopy] has compromised domains for some of their infrastructure, including for C2 and staging malware."
+  ],
+  [
+    "sidecopy",
+    "T1598.002",
+    "Spearphishing Attachment",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1598.002::[SideCopy] has crafted generic lures for spam campaigns to collect emails and credentials for targeting efforts."
+  ],
+  [
+    "sidecopy",
+    "T1608.001",
+    "Upload Malware",
+    "response-content",
+    "T1608.001::[SideCopy] has used compromised domains to host its malicious payloads."
+  ]
+]

@@ -1,0 +1,359 @@
+[
+  [
+    "apt28",
+    "T1001.001",
+    "Junk Data",
+    "network-traffic-content",
+    "T1001.001::[APT28] added \"junk data\" to each encoded string, preventing trivial decoding without knowledge of the junk removal algorithm. Each implant was given a \"junk length\" value when created, tracked by the controller software to allow seamless communication but prevent analysis of the command protocol on the wire."
+  ],
+  [
+    "apt28",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[APT28] regularly deploys both publicly available (ex: [Mimikatz]) and custom password retrieval tools on victims."
+  ],
+  [
+    "apt28",
+    "T1003.003",
+    "NTDS",
+    "command-execution|file-access",
+    "T1003.003::[APT28] has used the ntdsutil.exe utility to export the Active Directory database for credential access."
+  ],
+  [
+    "apt28",
+    "T1021.002",
+    "SMB/Windows Admin Shares",
+    "command-execution|logon-session-creation|network-connection-creation|network-share-access|network-traffic-flow",
+    "T1021.002::[APT28] has mapped network drives using [Net] and administrator credentials."
+  ],
+  [
+    "apt28",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[APT28] has changed extensions on files containing exfiltrated data to make them appear benign, and renamed a web shell instance to appear as a legitimate OWA page."
+  ],
+  [
+    "apt28",
+    "T1037.001",
+    "Logon Script (Windows)",
+    "command-execution|process-creation|windows-registry-key-creation",
+    "T1037.001::An [APT28] loader Trojan adds the Registry key HKCU\\Environment\\UserInitMprLogonScript to establish persistence."
+  ],
+  [
+    "apt28",
+    "T1048.002",
+    "Exfiltration Over Asymmetric Encrypted Non-C2 Protocol",
+    "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1048.002::[APT28] has exfiltrated archives of collected data previously staged on a target's OWA server via HTTPS."
+  ],
+  [
+    "apt28",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[APT28] has used tools to perform keylogging."
+  ],
+  [
+    "apt28",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[APT28] downloads and executes PowerShell scripts and performs PowerShell commands."
+  ],
+  [
+    "apt28",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::An [APT28] loader Trojan uses a cmd.exe and batch script to run its payload."
+  ],
+  [
+    "apt28",
+    "T1070.001",
+    "Clear Windows Event Logs",
+    "command-execution|file-deletion|os-api-execution",
+    "T1070.001::[APT28] has cleared event logs, including by using the commands wevtutil cl System and wevtutil cl Security."
+  ],
+  [
+    "apt28",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[APT28] has intentionally deleted computer files to cover their tracks, including with use of the program CCleaner."
+  ],
+  [
+    "apt28",
+    "T1070.006",
+    "Timestomp",
+    "file-metadata|file-modification",
+    "T1070.006::[APT28] has performed timestomping on victim files."
+  ],
+  [
+    "apt28",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::Later implants used by [APT28], such as [CHOPSTICK], use a blend of HTTP, HTTPS, and other legitimate channels for C2, depending on module configuration."
+  ],
+  [
+    "apt28",
+    "T1071.003",
+    "Mail Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.003::[APT28] has used IMAP, POP3, and SMTP for a communication channel in various implants, including using self-registered Google Mail accounts and later compromised email servers of its victims."
+  ],
+  [
+    "apt28",
+    "T1074.001",
+    "Local Data Staging",
+    "command-execution|file-access|file-creation|windows-registry-key-modification",
+    "T1074.001::[APT28] has stored captured credential information in a file named pi.log."
+  ],
+  [
+    "apt28",
+    "T1074.002",
+    "Remote Data Staging",
+    "command-execution|file-access|file-creation",
+    "T1074.002::[APT28] has staged archives of collected data on a target's Outlook Web Access (OWA) server."
+  ],
+  [
+    "apt28",
+    "T1078.004",
+    "Cloud Accounts",
+    "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "T1078.004::[APT28] has used compromised Office 365 service accounts with Global Administrator privileges to collect email from user inboxes."
+  ],
+  [
+    "apt28",
+    "T1090.002",
+    "External Proxy",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1090.002::[APT28] used other victims as proxies to relay command traffic, for instance using a compromised Georgian military email server as a hop point to NATO victims. The group has also used a tool that acts as a proxy to allow C2 even if the victim is behind a router. [APT28] has also used a machine to relay and obscure communications between [CHOPSTICK] and their server."
+  ],
+  [
+    "apt28",
+    "T1090.003",
+    "Multi-hop Proxy",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1090.003::[APT28] has routed traffic over [Tor] and VPN servers to obfuscate their activities."
+  ],
+  [
+    "apt28",
+    "T1098.002",
+    "Additional Email Delegate Permissions",
+    "application-log-content|group-modification|user-account-modification",
+    "T1098.002::[APT28] has used a Powershell cmdlet to grant the ApplicationImpersonation role to a compromised account."
+  ],
+  [
+    "apt28",
+    "T1102.002",
+    "Bidirectional Communication",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1102.002::[APT28] has used Google Drive for C2."
+  ],
+  [
+    "apt28",
+    "T1110.001",
+    "Password Guessing",
+    "application-log-content|user-account-authentication",
+    "T1110.001::[APT28] has used a brute-force/password-spray tooling that operated in two modes: in brute-force mode it typically sent over 300 authentication attempts per hour per targeted account over the course of several hours or days."
+  ],
+  [
+    "apt28",
+    "T1110.003",
+    "Password Spraying",
+    "application-log-content|user-account-authentication",
+    "T1110.003::[APT28] has used a brute-force/password-spray tooling that operated in two modes: in password-spraying mode it conducted approximately four authentication attempts per hour per targeted account over the course of several days or weeks."
+  ],
+  [
+    "apt28",
+    "T1114.002",
+    "Remote Email Collection",
+    "command-execution|logon-session-creation|network-connection-creation",
+    "T1114.002::[APT28] has collected emails from victim Microsoft Exchange servers."
+  ],
+  [
+    "apt28",
+    "T1134.001",
+    "Token Impersonation/Theft",
+    "command-execution|os-api-execution",
+    "T1134.001::[APT28] has used CVE-2015-1701 to access the SYSTEM token and copy it into the current process as part of privilege escalation."
+  ],
+  [
+    "apt28",
+    "T1137.002",
+    "Office Test",
+    "command-execution|file-creation|file-modification|module-load|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1137.002::[APT28] has used the Office Test persistence mechanism within Microsoft Office by adding the Registry key HKCU\\Software\\Microsoft\\Office test\\Special\\Perf to execute code."
+  ],
+  [
+    "apt28",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[APT28] has tricked unwitting recipients into clicking on malicious hyperlinks within emails crafted to resemble trustworthy senders."
+  ],
+  [
+    "apt28",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[APT28] attempted to get users to click on Microsoft Office attachments containing malicious macro scripts."
+  ],
+  [
+    "apt28",
+    "T1213.002",
+    "Sharepoint",
+    "application-log-content|logon-session-creation",
+    "T1213.002::[APT28] has collected information from Microsoft SharePoint services within target networks."
+  ],
+  [
+    "apt28",
+    "T1218.011",
+    "Rundll32",
+    "command-execution|file-metadata|module-load|process-creation",
+    "T1218.011::[APT28] executed [CHOPSTICK] by using rundll32 commands such as rundll32.exe “C:\\Windows\\twain_64.dll”. [APT28] also executed a .dll for a first stage dropper using rundll32.exe. An [APT28] loader Trojan saved a batch script that uses rundll32 to execute a DLL payload."
+  ],
+  [
+    "apt28",
+    "T1505.003",
+    "Web Shell",
+    "application-log-content|file-creation|file-modification|network-traffic-content|network-traffic-flow|process-creation",
+    "T1505.003::[APT28] has used a modified and obfuscated version of the reGeorg web shell to maintain persistence on a target's Outlook Web Access (OWA) server."
+  ],
+  [
+    "apt28",
+    "T1542.003",
+    "Bootkit",
+    "drive-modification",
+    "T1542.003::[APT28] has deployed a bootkit along with [Downdelph] to ensure its persistence on the victim. The bootkit shares code with some variants of [BlackEnergy]."
+  ],
+  [
+    "apt28",
+    "T1546.015",
+    "Component Object Model Hijacking",
+    "command-execution|module-load|process-creation|windows-registry-key-modification",
+    "T1546.015::[APT28] has used COM hijacking for persistence by replacing the legitimate MMDeviceEnumerator object with a payload."
+  ],
+  [
+    "apt28",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[APT28] has deployed malware that has copied itself to the startup directory for persistence."
+  ],
+  [
+    "apt28",
+    "T1550.001",
+    "Application Access Token",
+    "web-credential-usage",
+    "T1550.001::[APT28] has used several malicious applications that abused OAuth access tokens to gain access to target email accounts, including Gmail and Yahoo Mail."
+  ],
+  [
+    "apt28",
+    "T1550.002",
+    "Pass the Hash",
+    "active-directory-credential-request|logon-session-creation|user-account-authentication",
+    "T1550.002::[APT28] has used pass the hash for lateral movement."
+  ],
+  [
+    "apt28",
+    "T1559.002",
+    "Dynamic Data Exchange",
+    "module-load|process-creation|script-execution",
+    "T1559.002::[APT28] has delivered [JHUHUGIT] and [Koadic] by executing PowerShell commands through DDE in Word documents."
+  ],
+  [
+    "apt28",
+    "T1560.001",
+    "Archive via Utility",
+    "command-execution|file-creation|process-creation",
+    "T1560.001::[APT28] has used a variety of utilities, including WinRAR, to archive collected data with password protection."
+  ],
+  [
+    "apt28",
+    "T1564.001",
+    "Hidden Files and Directories",
+    "command-execution|file-creation|file-metadata|process-creation",
+    "T1564.001::[APT28] has saved files with hidden file attributes."
+  ],
+  [
+    "apt28",
+    "T1564.003",
+    "Hidden Window",
+    "command-execution|file-modification|process-creation|script-execution",
+    "T1564.003::[APT28] has used the WindowStyle parameter to conceal [PowerShell] windows."
+  ],
+  [
+    "apt28",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[APT28] sent spearphishing emails containing malicious Microsoft Office and RAR attachments."
+  ],
+  [
+    "apt28",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[APT28] sent spearphishing emails which used a URL-shortener service to masquerade as a legitimate service and to redirect targets to credential harvesting sites."
+  ],
+  [
+    "apt28",
+    "T1573.001",
+    "Symmetric Cryptography",
+    "network-traffic-content",
+    "T1573.001::[APT28] installed a Delphi backdoor that used a custom algorithm for C2 communications."
+  ],
+  [
+    "apt28",
+    "T1583.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1583.001::[APT28] registered domains imitating NATO, OSCE security websites, Caucasus information resources, and other organizations."
+  ],
+  [
+    "apt28",
+    "T1583.006",
+    "Web Services",
+    "response-content",
+    "T1583.006::[APT28] has used newly-created Blogspot pages for credential harvesting operations."
+  ],
+  [
+    "apt28",
+    "T1586.002",
+    "Email Accounts",
+    "none",
+    "T1586.002::[APT28] has used compromised email accounts to send credential phishing emails."
+  ],
+  [
+    "apt28",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[APT28] has obtained and used open-source tools like [Koadic], [Mimikatz], and [Responder]."
+  ],
+  [
+    "apt28",
+    "T1589.001",
+    "Credentials",
+    "none",
+    "T1589.001::[APT28] has harvested user's login credentials."
+  ],
+  [
+    "apt28",
+    "T1595.002",
+    "Vulnerability Scanning",
+    "network-traffic-content|network-traffic-flow",
+    "T1595.002::[APT28] has performed large-scale scans in an attempt to find vulnerable servers."
+  ],
+  [
+    "apt28",
+    "T1598.003",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1598.003::[APT28] has conducted credential phishing campaigns with embedded links to attacker-controlled domains."
+  ]
+]

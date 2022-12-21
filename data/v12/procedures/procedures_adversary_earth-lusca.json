@@ -1,0 +1,198 @@
+[
+  [
+    "earth-lusca",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[Earth Lusca] has used ProcDump to obtain the hashes of credentials by dumping the memory of the LSASS process."
+  ],
+  [
+    "earth-lusca",
+    "T1003.006",
+    "DCSync",
+    "active-directory-object-access|network-traffic-content|network-traffic-flow",
+    "T1003.006::[Earth Lusca] has used a DCSync command with [Mimikatz] to retrieve credentials from an exploited controller."
+  ],
+  [
+    "earth-lusca",
+    "T1027.003",
+    "Steganography",
+    "file-metadata",
+    "T1027.003::[Earth Lusca] has used steganography to hide shellcode in a BMP image file."
+  ],
+  [
+    "earth-lusca",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[Earth Lusca] used the command `move [file path] c:\\windows\\system32\\spool\\prtprocs\\x64\\spool.dll` to move and register a malicious DLL name as a Windows print processor, which eventually was loaded by the Print Spooler service."
+  ],
+  [
+    "earth-lusca",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[Earth Lusca] has used PowerShell to execute commands."
+  ],
+  [
+    "earth-lusca",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[Earth Lusca] used VBA scripts."
+  ],
+  [
+    "earth-lusca",
+    "T1059.006",
+    "Python",
+    "command-execution|process-creation",
+    "T1059.006::[Earth Lusca] used Python scripts for port scanning or building reverse shells."
+  ],
+  [
+    "earth-lusca",
+    "T1059.007",
+    "JavaScript",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.007::[Earth Lusca] has manipulated legitimate websites to inject malicious JavaScript code as part of their watering hole operations."
+  ],
+  [
+    "earth-lusca",
+    "T1098.004",
+    "SSH Authorized Keys",
+    "command-execution|file-modification|process-creation",
+    "T1098.004::[Earth Lusca] has dropped an SSH-authorized key in the `/root/.ssh` folder in order to access a compromised server with SSH."
+  ],
+  [
+    "earth-lusca",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[Earth Lusca]  has sent spearphishing emails that required the user to click on a malicious link and subsequently open a decoy document with a malicious loader."
+  ],
+  [
+    "earth-lusca",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Earth Lusca] required users to click on a malicious file for the loader to activate."
+  ],
+  [
+    "earth-lusca",
+    "T1218.005",
+    "Mshta",
+    "command-execution|file-creation|network-connection-creation|process-creation",
+    "T1218.005::[Earth Lusca] has used `mshta.exe` to load an HTA script within a malicious .LNK file."
+  ],
+  [
+    "earth-lusca",
+    "T1543.003",
+    "Windows Service",
+    "command-execution|driver-load|os-api-execution|process-creation|service-creation|service-modification|windows-registry-key-creation|windows-registry-key-modification",
+    "T1543.003::[Earth Lusca] created a service using the command sc create “SysUpdate” binpath= “cmd /c start “[file path]””&&sc config “SysUpdate” start= auto&&net\nstart SysUpdate for persistence."
+  ],
+  [
+    "earth-lusca",
+    "T1547.012",
+    "Print Processors",
+    "driver-load|file-creation|module-load|os-api-execution|windows-registry-key-modification",
+    "T1547.012::[Earth Lusca] has added the Registry key `HKLM\\SYSTEM\\ControlSet001\\Control\\Print\\Environments\\Windows x64\\Print Processors\\UDPrint” /v Driver /d “spool.dll /f` to load malware as a Print Processor."
+  ],
+  [
+    "earth-lusca",
+    "T1548.002",
+    "Bypass User Account Control",
+    "command-execution|process-creation|process-metadata|windows-registry-key-modification",
+    "T1548.002::[Earth Lusca] has used the Fodhelper UAC bypass technique to gain elevated privileges."
+  ],
+  [
+    "earth-lusca",
+    "T1560.001",
+    "Archive via Utility",
+    "command-execution|file-creation|process-creation",
+    "T1560.001::[Earth Lusca] has used WinRAR to compress stolen files into an archive prior to exfiltration."
+  ],
+  [
+    "earth-lusca",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[Earth Lusca] has sent spearphishing emails to potential targets that contained a malicious link."
+  ],
+  [
+    "earth-lusca",
+    "T1567.002",
+    "Exfiltration to Cloud Storage",
+    "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1567.002::[Earth Lusca] has used the megacmd tool to upload stolen files from a victim network to MEGA."
+  ],
+  [
+    "earth-lusca",
+    "T1574.002",
+    "DLL Side-Loading",
+    "file-creation|file-modification|module-load|process-creation",
+    "T1574.002::[Earth Lusca] has placed a malicious payload in `%WINDIR%\\SYSTEM32\\oci.dll` so it would be sideloaded by the MSDTC service."
+  ],
+  [
+    "earth-lusca",
+    "T1583.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1583.001::[Earth Lusca] has registered domains, intended to look like legitimate target domains, that have been used in watering hole attacks."
+  ],
+  [
+    "earth-lusca",
+    "T1583.004",
+    "Server",
+    "response-content|response-metadata",
+    "T1583.004::[Earth Lusca] has acquired multiple servers for some of their operations, using each server for a different role."
+  ],
+  [
+    "earth-lusca",
+    "T1583.006",
+    "Web Services",
+    "response-content",
+    "T1583.006::[Earth Lusca] has established GitHub accounts to host their malware."
+  ],
+  [
+    "earth-lusca",
+    "T1584.004",
+    "Server",
+    "response-content|response-metadata",
+    "T1584.004::[Earth Lusca] has used compromised web servers as part of their operational infrastructure."
+  ],
+  [
+    "earth-lusca",
+    "T1584.006",
+    "Web Services",
+    "response-content",
+    "T1584.006::[Earth Lusca] has compromised Google Drive repositories."
+  ],
+  [
+    "earth-lusca",
+    "T1588.001",
+    "Malware",
+    "malware-content|malware-metadata",
+    "T1588.001::[Earth Lusca] has acquired and used a variety of malware, including [Cobalt Strike]."
+  ],
+  [
+    "earth-lusca",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[Earth Lusca] has acquired and used a variety of open source tools."
+  ],
+  [
+    "earth-lusca",
+    "T1595.002",
+    "Vulnerability Scanning",
+    "network-traffic-content|network-traffic-flow",
+    "T1595.002::[Earth Lusca] has scanned for vulnerabilities in the public-facing servers of their targets."
+  ],
+  [
+    "earth-lusca",
+    "T1608.001",
+    "Upload Malware",
+    "response-content",
+    "T1608.001::[Earth Lusca] has staged malware and malicious files on compromised web servers, GitHub, and Google Drive."
+  ]
+]

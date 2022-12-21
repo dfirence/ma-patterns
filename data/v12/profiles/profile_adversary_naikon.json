@@ -1,0 +1,83 @@
+[
+  {
+    "id": "intrusion-set--2a158b0a-7ef8-43cb-9985-bf34d1e12050",
+    "name": "naikon",
+    "aliases": "naikon",
+    "group_id": "G0019",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 8,
+        "items": [
+          "aria-body",
+          "hdoor",
+          "nebulae",
+          "rainyday",
+          "rarstone",
+          "sslmm",
+          "sys10",
+          "winmm"
+        ]
+      },
+      "tools": {
+        "count": 7,
+        "items": [
+          "ftp",
+          "net",
+          "netsh",
+          "ping",
+          "psexec",
+          "systeminfo",
+          "tasklist"
+        ]
+      },
+      "techniques": {
+        "count": 14,
+        "items": [
+          "T1016",
+          "T1018",
+          "T1036.004",
+          "T1036.005",
+          "T1046",
+          "T1047",
+          "T1053.005",
+          "T1078.002",
+          "T1137.006",
+          "T1204.002",
+          "T1518.001",
+          "T1547.001",
+          "T1566.001",
+          "T1574.002"
+        ]
+      },
+      "tactics": {
+        "count": 6,
+        "items": [
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "procedures": [
+        "T1016::[Naikon] uses commands such as netsh interface show to discover network interface settings.",
+        "T1018::[Naikon] has used a netbios scanner for remote machine identification.",
+        "T1036.004::[Naikon] renamed a malicious service taskmgr to appear to be a legitimate version of Task Manager.",
+        "T1036.005::[Naikon] has disguised malicious programs as Google Chrome, Adobe, and VMware executables.",
+        "T1046::[Naikon] has used the LadonGo scanner to scan target networks.",
+        "T1047::[Naikon] has used WMIC.exe for lateral movement.",
+        "T1053.005::[Naikon] has used schtasks.exe for lateral movement in compromised networks.",
+        "T1078.002::[Naikon] has used administrator credentials for lateral movement in compromised networks.",
+        "T1137.006::[Naikon] has used the RoyalRoad exploit builder to drop a second stage loader, intel.wll, into the Word Startup folder on the compromised host.",
+        "T1204.002::[Naikon] has convinced victims to open malicious attachments to execute malware.",
+        "T1518.001::[Naikon] uses commands such as netsh advfirewall firewall to discover local firewall settings.",
+        "T1547.001::[Naikon] has modified a victim's Windows Run registry to establish persistence.",
+        "T1566.001::[Naikon] has used malicious e-mail attachments to deliver malware.",
+        "T1574.002::[Naikon] has used DLL side-loading to load malicious DLL's into legitimate executables."
+      ]
+    },
+    "description": "[Naikon](https://attack.mitre.org/groups/G0019) is assessed to be a state-sponsored cyber espionage group attributed to the Chinese People’s Liberation Army’s (PLA) Chengdu Military Region Second Technical Reconnaissance Bureau (Military Unit Cover Designator 78020).(Citation: CameraShy) Active since at least 2010, [Naikon](https://attack.mitre.org/groups/G0019) has primarily conducted operations against government, military, and civil organizations in Southeast Asia, as well as against international bodies such as the United Nations Development Programme (UNDP) and the Association of Southeast Asian Nations (ASEAN).(Citation: CameraShy)(Citation: Baumgartner Naikon 2015) \n\nWhile [Naikon](https://attack.mitre.org/groups/G0019) shares some characteristics with [APT30](https://attack.mitre.org/groups/G0013), the two groups do not appear to be exact matches.(Citation: Baumgartner Golovkin Naikon 2015)"
+  }
+]

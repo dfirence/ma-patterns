@@ -1,0 +1,34 @@
+[
+  {
+    "id": "tool--9a2640c2-9f43-46fe-b13f-bde881e55555",
+    "name": "sqlmap",
+    "aliases": "none",
+    "platforms": "none",
+    "tool_id": "S0225",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "initial-access"
+        ]
+      },
+      "techniques": {
+        "count": 1,
+        "items": [
+          "T1190"
+        ]
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "ajax-security-team"
+        ]
+      },
+      "procedures": [
+        "T1190::[sqlmap] can be used to automate exploitation of SQL injection vulnerabilities."
+      ]
+    },
+    "description": "[sqlmap](https://attack.mitre.org/software/S0225) is an open source penetration testing tool that can be used to automate the process of detecting and exploiting SQL injection flaws. (Citation: sqlmap Introduction)"
+  }
+]

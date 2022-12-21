@@ -1,0 +1,40 @@
+[
+  {
+    "id": "tool--999c4e6e-b8dc-4b4f-8d6e-1b829f29997e",
+    "name": "mailsniper",
+    "aliases": "none",
+    "platforms": "office-365|windows|azure-ad",
+    "tool_id": "S0413",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 3,
+        "items": [
+          "collection",
+          "credential-access",
+          "discovery"
+        ]
+      },
+      "techniques": {
+        "count": 3,
+        "items": [
+          "T1087.003",
+          "T1110.003",
+          "T1114.002"
+        ]
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "leafminer"
+        ]
+      },
+      "procedures": [
+        "T1087.003::[MailSniper] can be used to obtain account names from Exchange and Office 365 using the Get-GlobalAddressList cmdlet.",
+        "T1110.003::[MailSniper] can be used for password spraying against Exchange and Office 365.",
+        "T1114.002::[MailSniper] can be used for searching through email in Exchange and Office 365 environments."
+      ]
+    },
+    "description": "MailSniper is a penetration testing tool for searching through email in a Microsoft Exchange environment for specific terms (passwords, insider intel, network architecture information, etc.). It can be used by a non-administrative user to search their own email, or by an Exchange administrator to search the mailboxes of every user in a domain.(Citation: GitHub MailSniper)"
+  }
+]

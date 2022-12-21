@@ -1,0 +1,124 @@
+[
+  {
+    "id": "intrusion-set--06a11b7e-2a36-47fe-8d3e-82c265df3258",
+    "name": "gallium",
+    "aliases": "gallium|operation-soft-cell",
+    "group_id": "G0093",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 5,
+        "items": [
+          "blackmould",
+          "china-chopper",
+          "pingpull",
+          "plugx",
+          "poisonivy"
+        ]
+      },
+      "tools": {
+        "count": 11,
+        "items": [
+          "at",
+          "cmd",
+          "htran",
+          "ipconfig",
+          "mimikatz",
+          "nbtscan",
+          "net",
+          "ping",
+          "psexec",
+          "reg",
+          "windows-credential-editor"
+        ]
+      },
+      "techniques": {
+        "count": 31,
+        "items": [
+          "T1003.001",
+          "T1003.002",
+          "T1005",
+          "T1016",
+          "T1018",
+          "T1027",
+          "T1027.002",
+          "T1027.005",
+          "T1033",
+          "T1036.003",
+          "T1041",
+          "T1047",
+          "T1049",
+          "T1053.005",
+          "T1059.001",
+          "T1059.003",
+          "T1074.001",
+          "T1078",
+          "T1090.002",
+          "T1105",
+          "T1133",
+          "T1136.002",
+          "T1190",
+          "T1505.003",
+          "T1550.002",
+          "T1553.002",
+          "T1560.001",
+          "T1570",
+          "T1574.002",
+          "T1583.004",
+          "T1588.002"
+        ]
+      },
+      "tactics": {
+        "count": 12,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "exfiltration",
+          "initial-access",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1003.001::[GALLIUM] used a modified version of [Mimikatz] along with a PowerShell-based [Mimikatz] to dump credentials on the victim machines.",
+        "T1003.002::[GALLIUM] used reg commands to dump specific hives from the Windows Registry, such as the SAM hive, and obtain password hashes.",
+        "T1005::[GALLIUM] collected data from the victim's local system, including password hashes from the SAM hive in the Registry.",
+        "T1016::[GALLIUM] used ipconfig /all to obtain information about the victim network configuration. The group also ran a modified version of [NBTscan] to identify available NetBIOS name servers.",
+        "T1018::[GALLIUM] used a modified version of [NBTscan] to identify available NetBIOS name servers over the network as well as ping to identify remote systems.",
+        "T1027.002::[GALLIUM] packed some payloads using different types of packers, both known and custom.",
+        "T1027.005::[GALLIUM] ensured each payload had a unique hash, including by using different types of packers.",
+        "T1027::[GALLIUM] used a modified version of [HTRAN] in which they obfuscated strings such as debug messages in an apparent attempt to evade detection.",
+        "T1033::[GALLIUM] used whoami and query user to obtain information about the victim user.",
+        "T1036.003::[GALLIUM] used a renamed cmd.exe file to evade detection.",
+        "T1041::[GALLIUM] used Web shells and [HTRAN] for C2 and to exfiltrate data.",
+        "T1047::[GALLIUM] used WMI for execution to assist in lateral movement as well as for installing tools across multiple assets.",
+        "T1049::[GALLIUM] used netstat -oan to obtain information about the victim network connections.",
+        "T1053.005::[GALLIUM] established persistence for [PoisonIvy] by created a scheduled task.",
+        "T1059.001::[GALLIUM] used PowerShell for execution to assist in lateral movement as well as for dumping credentials stored on compromised machines.",
+        "T1059.003::[GALLIUM] used the Windows command shell to execute commands.",
+        "T1074.001::[GALLIUM] compressed and staged files in multi-part archives in the Recycle Bin prior to exfiltration.",
+        "T1078::[GALLIUM] leveraged valid accounts to maintain access to a victim network.",
+        "T1090.002::[GALLIUM] used a modified version of [HTRAN] to redirect connections between networks.",
+        "T1105::[GALLIUM] dropped additional tools to victims during their operation, including portqry.exe, a renamed cmd.exe file, winrar, and [HTRAN].",
+        "T1133::[GALLIUM] has used VPN services, including SoftEther VPN, to access and maintain persistence in victim environments.",
+        "T1136.002::[GALLIUM] created high-privileged domain user accounts to maintain access to victim networks.",
+        "T1190::[GALLIUM] exploited a publicly-facing servers including Wildfly/JBoss servers to gain access to the network.",
+        "T1505.003::[GALLIUM] used Web shells to persist in victim environments and assist in execution and exfiltration.",
+        "T1550.002::[GALLIUM] used dumped hashes to authenticate to other machines via pass the hash.",
+        "T1553.002::[GALLIUM] has used stolen certificates to sign its tools including those from Whizzimo LLC.",
+        "T1560.001::[GALLIUM] used WinRAR to compress and encrypt stolen data prior to exfiltration.",
+        "T1570::[GALLIUM] has used [PsExec] to move laterally between hosts in the target network.",
+        "T1574.002::[GALLIUM] used DLL side-loading to covertly load [PoisonIvy] into memory on the victim machine.",
+        "T1583.004::[GALLIUM] has used Taiwan-based servers that appear to be exclusive to [GALLIUM].",
+        "T1588.002::[GALLIUM] has used a variety of widely-available tools, which in some cases they modified to add functionality and/or subvert antimalware solutions."
+      ]
+    },
+    "description": "[GALLIUM](https://attack.mitre.org/groups/G0093) is a cyberespionage group that has been active since at least 2012, primarily targeting telecommunications companies, financial institutions, and government entities in Afghanistan, Australia, Belgium, Cambodia, Malaysia, Mozambique, the Philippines, Russia, and Vietnam. Security researchers have identified [GALLIUM](https://attack.mitre.org/groups/G0093) as a likely Chinese state-sponsored group, based in part on tools used and TTPs commonly associated with Chinese threat actors.(Citation: Cybereason Soft Cell June 2019)(Citation: Microsoft GALLIUM December 2019)(Citation: Unit 42 PingPull Jun 2022)"
+  }
+]

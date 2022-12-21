@@ -1,0 +1,548 @@
+[
+  [
+    "apt29",
+    "T1001.002",
+    "Steganography",
+    "network-traffic-content",
+    "T1001.002::[APT29] has used steganography to hide C2 communications in images."
+  ],
+  [
+    "apt29",
+    "T1003.006",
+    "DCSync",
+    "active-directory-object-access|network-traffic-content|network-traffic-flow",
+    "T1003.006::[APT29] leveraged privileged accounts to replicate directory service data with domain controllers."
+  ],
+  [
+    "apt29",
+    "T1016.001",
+    "Internet Connection Discovery",
+    "command-execution|process-creation",
+    "T1016.001::[APT29] has used [GoldFinder] to perform HTTP GET requests to check internet connectivity and identify HTTP proxy servers and other redirectors that an HTTP request travels through."
+  ],
+  [
+    "apt29",
+    "T1021.001",
+    "Remote Desktop Protocol",
+    "logon-session-creation|network-connection-creation|network-traffic-flow|process-creation",
+    "T1021.001::[APT29] has used RDP sessions from public-facing systems to internal servers."
+  ],
+  [
+    "apt29",
+    "T1021.002",
+    "SMB/Windows Admin Shares",
+    "command-execution|logon-session-creation|network-connection-creation|network-share-access|network-traffic-flow",
+    "T1021.002::[APT29] has used administrative accounts to connect over SMB to targeted users."
+  ],
+  [
+    "apt29",
+    "T1021.006",
+    "Windows Remote Management",
+    "command-execution|logon-session-creation|network-connection-creation|process-creation|service-metadata",
+    "T1021.006::[APT29] has used WinRM via PowerShell to execute command and payloads on remote hosts."
+  ],
+  [
+    "apt29",
+    "T1027.001",
+    "Binary Padding",
+    "file-metadata",
+    "T1027.001::[APT29] has used large file sizes to avoid detection."
+  ],
+  [
+    "apt29",
+    "T1027.002",
+    "Software Packing",
+    "file-metadata",
+    "T1027.002::[APT29] used UPX to pack files."
+  ],
+  [
+    "apt29",
+    "T1027.006",
+    "HTML Smuggling",
+    "file-creation",
+    "T1027.006::[APT29] has embedded an ISO file within an HTML attachment that contained JavaScript code to initiate malware execution."
+  ],
+  [
+    "apt29",
+    "T1036.004",
+    "Masquerade Task or Service",
+    "command-execution|scheduled-job-metadata|scheduled-job-modification|service-creation|service-metadata",
+    "T1036.004::[APT29] named tasks \\Microsoft\\Windows\\SoftwareProtectionPlatform\\EventCacheManager in order to appear legitimate."
+  ],
+  [
+    "apt29",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[APT29] renamed software and DLL's with legitimate names to appear benign."
+  ],
+  [
+    "apt29",
+    "T1048.002",
+    "Exfiltration Over Asymmetric Encrypted Non-C2 Protocol",
+    "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1048.002::[APT29] has exfiltrated collected data over a simple HTTPS request to a password-protected archive staged on a victim's OWA servers."
+  ],
+  [
+    "apt29",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[APT29] used scheduler and schtasks to create new tasks on remote hosts as part of lateral movement."
+  ],
+  [
+    "apt29",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[APT29] has used encoded PowerShell scripts uploaded to [CozyCar] installations to download and install [SeaDuke]. [APT29] also used PowerShell to create new tasks on remote machines, identify configuration settings, evade defenses, exfiltrate data, and to execute other commands."
+  ],
+  [
+    "apt29",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[APT29] used cmd.exe to execute commands on remote machines."
+  ],
+  [
+    "apt29",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[APT29] has written malware variants in Visual Basic."
+  ],
+  [
+    "apt29",
+    "T1059.006",
+    "Python",
+    "command-execution|process-creation",
+    "T1059.006::[APT29] has developed malware variants written in Python."
+  ],
+  [
+    "apt29",
+    "T1069.002",
+    "Domain Groups",
+    "command-execution|group-enumeration|os-api-execution|process-creation",
+    "T1069.002::[APT29] has used [AdFind] to enumerate domain groups."
+  ],
+  [
+    "apt29",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[APT29] routinely removed their tools, including custom backdoors, once remote access was achieved. [APT29] has also used [SDelete] to remove artifacts from victims."
+  ],
+  [
+    "apt29",
+    "T1070.006",
+    "Timestomp",
+    "file-metadata|file-modification",
+    "T1070.006::[APT29] modified timestamps of backdoors to match legitimate Windows files."
+  ],
+  [
+    "apt29",
+    "T1070.008",
+    "Clear Mailbox Data",
+    "command-execution|file-deletion|file-modification|process-creation",
+    "T1070.008::[APT29] removed evidence of email export requests using Remove-MailboxExportRequest."
+  ],
+  [
+    "apt29",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[APT29] has used HTTP for C2 and data exfiltration."
+  ],
+  [
+    "apt29",
+    "T1074.002",
+    "Remote Data Staging",
+    "command-execution|file-access|file-creation",
+    "T1074.002::[APT29] staged data and files in password-protected archives on a victim's OWA server."
+  ],
+  [
+    "apt29",
+    "T1078.002",
+    "Domain Accounts",
+    "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "T1078.002::[APT29] has used valid accounts, including administrator accounts, to help facilitate lateral movement on compromised networks."
+  ],
+  [
+    "apt29",
+    "T1078.003",
+    "Local Accounts",
+    "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "T1078.003::[APT29] has used compromised local accounts to access victims' networks."
+  ],
+  [
+    "apt29",
+    "T1078.004",
+    "Cloud Accounts",
+    "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "T1078.004::[APT29] has used a compromised O365 administrator account to create a new Service Principal."
+  ],
+  [
+    "apt29",
+    "T1087.002",
+    "Domain Account",
+    "command-execution|group-enumeration|network-traffic-content|os-api-execution|process-creation",
+    "T1087.002::[APT29] has used PowerShell to discover domain accounts by executing Get-ADUser and Get-ADGroupMember."
+  ],
+  [
+    "apt29",
+    "T1087.004",
+    "Cloud Account",
+    "command-execution",
+    "T1087.004::[APT29] has conducted enumeration of Azure AD accounts."
+  ],
+  [
+    "apt29",
+    "T1090.001",
+    "Internal Proxy",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1090.001::[APT29] has used SSH port forwarding capabilities on public-facing systems, and configured at least one instance of [Cobalt Strike] to use a network pipe over SMB during the 2020 SolarWinds intrusion."
+  ],
+  [
+    "apt29",
+    "T1090.003",
+    "Multi-hop Proxy",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1090.003::A backdoor used by [APT29] created a [Tor] hidden service to forward traffic from the [Tor] client to local ports 3389 (RDP), 139 (Netbios), and 445 (SMB) enabling full remote access from outside the network and has also used TOR."
+  ],
+  [
+    "apt29",
+    "T1090.004",
+    "Domain Fronting",
+    "network-traffic-content",
+    "T1090.004::[APT29] has used the meek domain fronting plugin for [Tor] to hide the destination of C2 traffic."
+  ],
+  [
+    "apt29",
+    "T1098.001",
+    "Additional Cloud Credentials",
+    "active-directory-object-modification|user-account-modification",
+    "T1098.001::[APT29] has added credentials to OAuth Applications and Service Principals."
+  ],
+  [
+    "apt29",
+    "T1098.002",
+    "Additional Email Delegate Permissions",
+    "application-log-content|group-modification|user-account-modification",
+    "T1098.002::[APT29] added their own devices as allowed IDs for active sync using Set-CASMailbox, allowing it to obtain copies of victim mailboxes. It also added additional permissions (such as Mail.Read and Mail.ReadWrite) to compromised Application or Service Principals."
+  ],
+  [
+    "apt29",
+    "T1098.003",
+    "Additional Cloud Roles",
+    "user-account-modification",
+    "T1098.003::[APT29] has granted `company administrator` privileges to a newly created service principal."
+  ],
+  [
+    "apt29",
+    "T1098.005",
+    "Device Registration",
+    "active-directory-object-creation|application-log-content|user-account-modification",
+    "T1098.005::[APT29] registered devices in order to enable mailbox syncing via the Set-CASMailbox command."
+  ],
+  [
+    "apt29",
+    "T1102.002",
+    "Bidirectional Communication",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1102.002::[APT29] has used social media platforms to hide communications to C2 servers."
+  ],
+  [
+    "apt29",
+    "T1110.003",
+    "Password Spraying",
+    "application-log-content|user-account-authentication",
+    "T1110.003::[APT29] has conducted brute force password spray attacks."
+  ],
+  [
+    "apt29",
+    "T1114.002",
+    "Remote Email Collection",
+    "command-execution|logon-session-creation|network-connection-creation",
+    "T1114.002::[APT29] collected emails from specific individuals, such as executives and IT staff, using New-MailboxExportRequest followed by Get-MailboxExportRequest."
+  ],
+  [
+    "apt29",
+    "T1136.003",
+    "Cloud Account",
+    "user-account-creation",
+    "T1136.003::[APT29] can create new users through Azure AD."
+  ],
+  [
+    "apt29",
+    "T1195.002",
+    "Compromise Software Supply Chain",
+    "file-metadata",
+    "T1195.002::[APT29] gained initial network access to some victims via a trojanized update of SolarWinds Orion software."
+  ],
+  [
+    "apt29",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[APT29] has used various forms of spearphishing attempting to get a user to click on a malicous link."
+  ],
+  [
+    "apt29",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[APT29] has used various forms of spearphishing attempting to get a user to open attachments, including, but not limited to, malicious Microsoft Word documents, .pdf, and .lnk files."
+  ],
+  [
+    "apt29",
+    "T1213.003",
+    "Code Repositories",
+    "application-log-content|logon-session-creation",
+    "T1213.003::[APT29] has downloaded source code from code repositories."
+  ],
+  [
+    "apt29",
+    "T1218.005",
+    "Mshta",
+    "command-execution|file-creation|network-connection-creation|process-creation",
+    "T1218.005::[APT29] has use `mshta` to execute malicious scripts on a compromised host."
+  ],
+  [
+    "apt29",
+    "T1218.011",
+    "Rundll32",
+    "command-execution|file-metadata|module-load|process-creation",
+    "T1218.011::[APT29] has used Rundll32.exe to execute payloads."
+  ],
+  [
+    "apt29",
+    "T1484.002",
+    "Domain Trust Modification",
+    "active-directory-object-creation|active-directory-object-modification|command-execution",
+    "T1484.002::[APT29] changed domain federation trust settings using Azure AD administrative permissions to configure the domain to accept authorization tokens signed by their own SAML signing certificate."
+  ],
+  [
+    "apt29",
+    "T1505.003",
+    "Web Shell",
+    "application-log-content|file-creation|file-modification|network-traffic-content|network-traffic-flow|process-creation",
+    "T1505.003::[APT29] has installed web shells on exploited Microsoft Exchange servers."
+  ],
+  [
+    "apt29",
+    "T1546.003",
+    "Windows Management Instrumentation Event Subscription",
+    "command-execution|process-creation|wmi-creation",
+    "T1546.003::[APT29] has used WMI event subscriptions for persistence."
+  ],
+  [
+    "apt29",
+    "T1546.008",
+    "Accessibility Features",
+    "command-execution|file-creation|file-modification|process-creation|windows-registry-key-modification",
+    "T1546.008::[APT29] used sticky-keys to obtain unauthenticated, privileged console access."
+  ],
+  [
+    "apt29",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[APT29] added Registry Run keys to establish persistence."
+  ],
+  [
+    "apt29",
+    "T1548.002",
+    "Bypass User Account Control",
+    "command-execution|process-creation|process-metadata|windows-registry-key-modification",
+    "T1548.002::[APT29] has bypassed UAC."
+  ],
+  [
+    "apt29",
+    "T1550.001",
+    "Application Access Token",
+    "web-credential-usage",
+    "T1550.001::[APT29] has used compromised service principals to make changes to the Office 365 environment."
+  ],
+  [
+    "apt29",
+    "T1550.003",
+    "Pass the Ticket",
+    "active-directory-credential-request|logon-session-creation|user-account-authentication",
+    "T1550.003::[APT29] used Kerberos ticket attacks for lateral movement."
+  ],
+  [
+    "apt29",
+    "T1550.004",
+    "Web Session Cookie",
+    "application-log-content|web-credential-usage",
+    "T1550.004::[APT29] used stolen cookies to access cloud resources, and a forged duo-sid cookie to bypass MFA set on an email account."
+  ],
+  [
+    "apt29",
+    "T1552.004",
+    "Private Keys",
+    "command-execution|file-access",
+    "T1552.004::[APT29] obtained PKI keys, certificate files and the private encryption key from an Active Directory Federation Services (AD FS) container to decrypt corresponding SAML signing certificates."
+  ],
+  [
+    "apt29",
+    "T1553.002",
+    "Code Signing",
+    "file-metadata",
+    "T1553.002::[APT29] was able to get [SUNBURST] signed by SolarWinds code signing certificates by injecting the malware into the SolarWinds Orion software lifecycle."
+  ],
+  [
+    "apt29",
+    "T1553.005",
+    "Mark-of-the-Web Bypass",
+    "file-creation|file-metadata",
+    "T1553.005::[APT29] has embedded ISO images and VHDX files in HTML to evade Mark-of-the-Web."
+  ],
+  [
+    "apt29",
+    "T1555.003",
+    "Credentials from Web Browsers",
+    "command-execution|file-access|os-api-execution|process-access",
+    "T1555.003::[APT29] has stolen user's saved passwords from Chrome."
+  ],
+  [
+    "apt29",
+    "T1556.007",
+    "Hybrid Identity",
+    "application-log-content|file-modification|logon-session-creation|module-load",
+    "T1556.007::APT29 has edited the `Microsoft.IdentityServer.Servicehost.exe.config` file to load a malicious DLL into the AD FS process, thereby enabling persistent access to any service federated with AD FS for a user with a specified User Principal Name."
+  ],
+  [
+    "apt29",
+    "T1558.003",
+    "Kerberoasting",
+    "active-directory-credential-request",
+    "T1558.003::[APT29] obtained Ticket Granting Service (TGS) tickets for Active Directory Service Principle Names to crack offline."
+  ],
+  [
+    "apt29",
+    "T1560.001",
+    "Archive via Utility",
+    "command-execution|file-creation|process-creation",
+    "T1560.001::[APT29] used 7-Zip to compress stolen emails into password-protected archives prior to exfiltration; [APT29] has also compressed text files into zipped archives."
+  ],
+  [
+    "apt29",
+    "T1562.001",
+    "Disable or Modify Tools",
+    "command-execution|driver-load|host-status|process-termination|service-metadata|windows-registry-key-deletion|windows-registry-key-modification",
+    "T1562.001::[APT29] used the service control manager on a remote system to disable services associated with security monitoring products."
+  ],
+  [
+    "apt29",
+    "T1562.002",
+    "Disable Windows Event Logging",
+    "application-log-content|command-execution|host-status|process-creation|script-execution|windows-registry-key-creation",
+    "T1562.002::[APT29] used AUDITPOL to prevent the collection of audit logs."
+  ],
+  [
+    "apt29",
+    "T1562.004",
+    "Disable or Modify System Firewall",
+    "command-execution|firewall-disable|firewall-rule-modification|windows-registry-key-modification",
+    "T1562.004::[APT29] used netsh to configure firewall rules that limited certain UDP outbound packets."
+  ],
+  [
+    "apt29",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[APT29] has used spearphishing emails with an attachment to deliver files with exploits to initial victims."
+  ],
+  [
+    "apt29",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[APT29] has used spearphishing with a link to trick victims into clicking on a link to a zip file containing malicious files."
+  ],
+  [
+    "apt29",
+    "T1566.003",
+    "Spearphishing via Service",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.003::[APT29] has used the legitimate mailing service Constant Contact to send phishing e-mails."
+  ],
+  [
+    "apt29",
+    "T1583.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1583.001::[APT29] has acquired C2 domains, sometimes through resellers."
+  ],
+  [
+    "apt29",
+    "T1583.006",
+    "Web Services",
+    "response-content",
+    "T1583.006::[APT29] has registered algorithmically generated Twitter handles that are used for C2 by malware, such as [HAMMERTOSS]. [APT29] has also used legitimate web services such as Dropbox and Constant Contact in their operations."
+  ],
+  [
+    "apt29",
+    "T1584.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1584.001::[APT29] has compromised domains to use for C2."
+  ],
+  [
+    "apt29",
+    "T1586.002",
+    "Email Accounts",
+    "none",
+    "T1586.002::[APT29] has compromised email accounts to further enable phishing campaigns."
+  ],
+  [
+    "apt29",
+    "T1587.001",
+    "Malware",
+    "malware-content|malware-metadata",
+    "T1587.001::[APT29] has leveraged numerous pieces of malware that appear to be unique to [APT29] and were likely developed for or by the group."
+  ],
+  [
+    "apt29",
+    "T1587.003",
+    "Digital Certificates",
+    "response-content",
+    "T1587.003::[APT29] has created self-signed digital certificates to enable mutual TLS authentication for malware."
+  ],
+  [
+    "apt29",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[APT29] has obtained and used a variety of tools including [Mimikatz], [SDelete], [Tor], [meek], and [Cobalt Strike]."
+  ],
+  [
+    "apt29",
+    "T1589.001",
+    "Credentials",
+    "none",
+    "T1589.001::[APT29] has conducted credential theft operations to obtain credentials to be used for access to victim environments."
+  ],
+  [
+    "apt29",
+    "T1595.002",
+    "Vulnerability Scanning",
+    "network-traffic-content|network-traffic-flow",
+    "T1595.002::[APT29] has conducted widespread scanning of target environments to identify vulnerabilities for exploit."
+  ],
+  [
+    "apt29",
+    "T1606.001",
+    "Web Cookies",
+    "logon-session-creation|web-credential-usage",
+    "T1606.001::[APT29] has bypassed MFA set on OWA accounts by generating a cookie value from a previously stolen secret key."
+  ],
+  [
+    "apt29",
+    "T1606.002",
+    "SAML Tokens",
+    "logon-session-creation|logon-session-metadata|user-account-authentication|web-credential-creation|web-credential-usage",
+    "T1606.002::[APT29] created tokens using compromised SAML signing certificates."
+  ]
+]

@@ -1,0 +1,60 @@
+[
+  {
+    "id": "tool--b76b2d94-60e4-4107-a903-4a3a7622fb3b",
+    "name": "lazagne",
+    "aliases": "none",
+    "platforms": "linux|macos|windows",
+    "tool_id": "S0349",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "credential-access"
+        ]
+      },
+      "techniques": {
+        "count": 10,
+        "items": [
+          "T1003.001",
+          "T1003.004",
+          "T1003.005",
+          "T1003.007",
+          "T1003.008",
+          "T1552.001",
+          "T1555",
+          "T1555.001",
+          "T1555.003",
+          "T1555.004"
+        ]
+      },
+      "adversaries": {
+        "count": 9,
+        "items": [
+          "apt3",
+          "apt33",
+          "evilnum",
+          "inception",
+          "leafminer",
+          "muddywater",
+          "oilrig",
+          "teamtnt",
+          "tonto-team"
+        ]
+      },
+      "procedures": [
+        "T1003.001::[LaZagne] can perform credential dumping from memory to obtain account and password information.",
+        "T1003.004::[LaZagne] can perform credential dumping from LSA secrets to obtain account and password information.",
+        "T1003.005::[LaZagne] can perform credential dumping from MSCache to obtain account and password information.",
+        "T1003.007::[LaZagne] can obtain credential information running Linux processes.",
+        "T1003.008::[LaZagne] can obtain credential information from /etc/shadow using the shadow.py module.",
+        "T1552.001::[LaZagne] can obtain credentials from chats, databases, mail, and WiFi.",
+        "T1555.001::[LaZagne] can obtain credentials from macOS Keychains.",
+        "T1555.003::[LaZagne] can obtain credentials from web browsers such as Google Chrome, Internet Explorer, and Firefox.",
+        "T1555.004::[LaZagne] can obtain credentials from Vault files.",
+        "T1555::[LaZagne] can obtain credentials from databases, mail, and WiFi across multiple platforms."
+      ]
+    },
+    "description": "[LaZagne](https://attack.mitre.org/software/S0349) is a post-exploitation, open-source tool used to recover stored passwords on a system. It has modules for Windows, Linux, and OSX, but is mainly focused on Windows systems. [LaZagne](https://attack.mitre.org/software/S0349) is publicly available on GitHub.(Citation: GitHub LaZagne Dec 2018)"
+  }
+]

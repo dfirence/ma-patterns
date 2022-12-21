@@ -1,0 +1,9 @@
+[
+  [
+    "scarlet-mimic",
+    "T1036.002",
+    "Right-to-Left Override",
+    "file-metadata",
+    "T1036.002::[Scarlet Mimic] has used the left-to-right override character in self-extracting RAR archive spearphishing attachment file names."
+  ]
+]

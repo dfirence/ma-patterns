@@ -1,0 +1,23 @@
+[
+  [
+    "volatile-cedar",
+    "T1505.003",
+    "Web Shell",
+    "application-log-content|file-creation|file-modification|network-traffic-content|network-traffic-flow|process-creation",
+    "T1505.003::[Volatile Cedar] can inject web shell code into a server."
+  ],
+  [
+    "volatile-cedar",
+    "T1595.002",
+    "Vulnerability Scanning",
+    "network-traffic-content|network-traffic-flow",
+    "T1595.002::[Volatile Cedar] has performed vulnerability scans of the target server."
+  ],
+  [
+    "volatile-cedar",
+    "T1595.003",
+    "Wordlist Scanning",
+    "network-traffic-content",
+    "T1595.003::[Volatile Cedar] has used DirBuster and GoBuster to brute force web directories and DNS subdomains."
+  ]
+]

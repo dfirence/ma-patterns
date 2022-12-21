@@ -1,0 +1,57 @@
+[
+  {
+    "id": "tool--26c87906-d750-42c5-946c-d4162c73fc7b",
+    "name": "impacket",
+    "aliases": "none",
+    "platforms": "linux|macos|windows",
+    "tool_id": "S0357",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 4,
+        "items": [
+          "collection",
+          "credential-access",
+          "discovery",
+          "execution"
+        ]
+      },
+      "techniques": {
+        "count": 9,
+        "items": [
+          "T1003.001",
+          "T1003.002",
+          "T1003.003",
+          "T1003.004",
+          "T1040",
+          "T1047",
+          "T1557.001",
+          "T1558.003",
+          "T1569.002"
+        ]
+      },
+      "adversaries": {
+        "count": 5,
+        "items": [
+          "dragonfly",
+          "fin8",
+          "hafnium",
+          "menupass",
+          "threat-group-3390"
+        ]
+      },
+      "procedures": [
+        "T1003.001::SecretsDump and [Mimikatz] modules within [Impacket] can perform credential dumping to obtain account and password information.",
+        "T1003.002::SecretsDump and [Mimikatz] modules within [Impacket] can perform credential dumping to obtain account and password information.",
+        "T1003.003::SecretsDump and [Mimikatz] modules within [Impacket] can perform credential dumping to obtain account and password information from NTDS.dit.",
+        "T1003.004::SecretsDump and [Mimikatz] modules within [Impacket] can perform credential dumping to obtain account and password information.",
+        "T1040::[Impacket] can be used to sniff network traffic via an interface or raw socket.",
+        "T1047::[Impacket]'s wmiexec module can be used to execute commands through WMI.",
+        "T1557.001::[Impacket] modules like ntlmrelayx and smbrelayx can be used in conjunction with [Network Sniffing] and [LLMNR/NBT-NS Poisoning and SMB Relay] to gather NetNTLM credentials for [Brute Force] or relay attacks that can gain code execution.",
+        "T1558.003::[Impacket] modules like GetUserSPNs can be used to get Service Principal Names (SPNs) for user accounts. The output is formatted to be compatible with cracking tools like John the Ripper and Hashcat.",
+        "T1569.002::[Impacket] contains various modules emulating other service execution tools such as [PsExec]."
+      ]
+    },
+    "description": "[Impacket](https://attack.mitre.org/software/S0357) is an open source collection of modules written in Python for programmatically constructing and manipulating network protocols. [Impacket](https://attack.mitre.org/software/S0357) contains several tools for remote service execution, Kerberos manipulation, Windows credential dumping, packet sniffing, and relay attacks.(Citation: Impacket Tools)"
+  }
+]

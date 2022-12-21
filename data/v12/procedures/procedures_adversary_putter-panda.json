@@ -1,0 +1,23 @@
+[
+  [
+    "putter-panda",
+    "T1055.001",
+    "Dynamic-link Library Injection",
+    "module-load|os-api-execution|process-access|process-metadata|process-modification",
+    "T1055.001::An executable dropped onto victims by [Putter Panda] aims to inject the specified DLL into a process that would normally be accessing the network, including Outlook Express (msinm.exe), Outlook (outlook.exe), Internet Explorer (iexplore.exe), and Firefox (firefox.exe)."
+  ],
+  [
+    "putter-panda",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::A dropper used by [Putter Panda] installs itself into the ASEP Registry key HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run with a value named McUpdate."
+  ],
+  [
+    "putter-panda",
+    "T1562.001",
+    "Disable or Modify Tools",
+    "command-execution|driver-load|host-status|process-termination|service-metadata|windows-registry-key-deletion|windows-registry-key-modification",
+    "T1562.001::Malware used by [Putter Panda] attempts to terminate processes corresponding to two components of Sophos Anti-Virus (SAVAdminService.exe and SavService.exe)."
+  ]
+]

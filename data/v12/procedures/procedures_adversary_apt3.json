@@ -1,0 +1,191 @@
+[
+  [
+    "apt3",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[APT3] has used a tool to dump credentials by injecting itself into lsass.exe and triggering with the argument \"dig.\""
+  ],
+  [
+    "apt3",
+    "T1021.001",
+    "Remote Desktop Protocol",
+    "logon-session-creation|network-connection-creation|network-traffic-flow|process-creation",
+    "T1021.001::[APT3] enables the Remote Desktop Protocol for persistence."
+  ],
+  [
+    "apt3",
+    "T1021.002",
+    "SMB/Windows Admin Shares",
+    "command-execution|logon-session-creation|network-connection-creation|network-share-access|network-traffic-flow",
+    "T1021.002::[APT3] will copy files over to Windows Admin Shares (like ADMIN$) as part of lateral movement."
+  ],
+  [
+    "apt3",
+    "T1027.002",
+    "Software Packing",
+    "file-metadata",
+    "T1027.002::[APT3] has been known to pack their tools."
+  ],
+  [
+    "apt3",
+    "T1027.005",
+    "Indicator Removal from Tools",
+    "application-log-content",
+    "T1027.005::[APT3] has been known to remove indicators of compromise from tools."
+  ],
+  [
+    "apt3",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::An [APT3] downloader creates persistence by creating the following scheduled task: schtasks /create /tn \"mysc\" /tr C:\\Users\\Public\\test.exe /sc ONLOGON /ru \"System\"."
+  ],
+  [
+    "apt3",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[APT3] has used a keylogging tool that records keystrokes in encrypted files."
+  ],
+  [
+    "apt3",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[APT3] has used PowerShell on victim systems to download and run payloads after exploitation."
+  ],
+  [
+    "apt3",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::An [APT3] downloader uses the Windows command \"cmd.exe\" /C whoami. The group also uses a tool to execute commands on remote computers."
+  ],
+  [
+    "apt3",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[APT3] has a tool that can delete files."
+  ],
+  [
+    "apt3",
+    "T1074.001",
+    "Local Data Staging",
+    "command-execution|file-access|file-creation|windows-registry-key-modification",
+    "T1074.001::[APT3] has been known to stage files for exfiltration in a single location."
+  ],
+  [
+    "apt3",
+    "T1078.002",
+    "Domain Accounts",
+    "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "T1078.002::[APT3] leverages valid accounts after gaining credentials for use within the victim domain."
+  ],
+  [
+    "apt3",
+    "T1087.001",
+    "Local Account",
+    "command-execution|file-access|group-enumeration|os-api-execution|process-creation",
+    "T1087.001::[APT3] has used a tool that can obtain info about local and global group users, power users, and administrators."
+  ],
+  [
+    "apt3",
+    "T1090.002",
+    "External Proxy",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1090.002::An [APT3] downloader establishes SOCKS5 connections for its initial C2."
+  ],
+  [
+    "apt3",
+    "T1110.002",
+    "Password Cracking",
+    "application-log-content|user-account-authentication",
+    "T1110.002::[APT3] has been known to brute force password hashes to be able to leverage plain text credentials."
+  ],
+  [
+    "apt3",
+    "T1136.001",
+    "Local Account",
+    "command-execution|process-creation|user-account-creation",
+    "T1136.001::[APT3] has been known to create or enable accounts, such as support_388945a0."
+  ],
+  [
+    "apt3",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[APT3] has lured victims into clicking malicious links delivered through spearphishing."
+  ],
+  [
+    "apt3",
+    "T1218.011",
+    "Rundll32",
+    "command-execution|file-metadata|module-load|process-creation",
+    "T1218.011::[APT3] has a tool that can run DLLs."
+  ],
+  [
+    "apt3",
+    "T1543.003",
+    "Windows Service",
+    "command-execution|driver-load|os-api-execution|process-creation|service-creation|service-modification|windows-registry-key-creation|windows-registry-key-modification",
+    "T1543.003::[APT3] has a tool that creates a new service for persistence."
+  ],
+  [
+    "apt3",
+    "T1546.008",
+    "Accessibility Features",
+    "command-execution|file-creation|file-modification|process-creation|windows-registry-key-modification",
+    "T1546.008::[APT3] replaces the Sticky Keys binary C:\\Windows\\System32\\sethc.exe for persistence."
+  ],
+  [
+    "apt3",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[APT3] places scripts in the startup folder for persistence."
+  ],
+  [
+    "apt3",
+    "T1552.001",
+    "Credentials In Files",
+    "command-execution|file-access",
+    "T1552.001::[APT3] has a tool that can locate credentials in files on the file system such as those from Firefox or Chrome."
+  ],
+  [
+    "apt3",
+    "T1555.003",
+    "Credentials from Web Browsers",
+    "command-execution|file-access|os-api-execution|process-access",
+    "T1555.003::[APT3] has used tools to dump passwords from browsers."
+  ],
+  [
+    "apt3",
+    "T1560.001",
+    "Archive via Utility",
+    "command-execution|file-creation|process-creation",
+    "T1560.001::[APT3] has used tools to compress data before exfilling it."
+  ],
+  [
+    "apt3",
+    "T1564.003",
+    "Hidden Window",
+    "command-execution|file-modification|process-creation|script-execution",
+    "T1564.003::[APT3] has been known to use -WindowStyle Hidden to conceal [PowerShell] windows."
+  ],
+  [
+    "apt3",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[APT3] has sent spearphishing emails containing malicious links."
+  ],
+  [
+    "apt3",
+    "T1574.002",
+    "DLL Side-Loading",
+    "file-creation|file-modification|module-load|process-creation",
+    "T1574.002::[APT3] has been known to side load DLLs with a valid version of Chrome with one of their tools."
+  ]
+]

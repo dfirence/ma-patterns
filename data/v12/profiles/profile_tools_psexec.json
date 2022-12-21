@@ -1,0 +1,74 @@
+[
+  {
+    "id": "tool--ff6caf67-ea1f-4895-b80e-4bb0fc31c6db",
+    "name": "psexec",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0029",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 4,
+        "items": [
+          "execution",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "techniques": {
+        "count": 5,
+        "items": [
+          "T1021.002",
+          "T1136.002",
+          "T1543.003",
+          "T1569.002",
+          "T1570"
+        ]
+      },
+      "adversaries": {
+        "count": 30,
+        "items": [
+          "apt1",
+          "apt29",
+          "apt39",
+          "blacktech",
+          "carbanak",
+          "chimera",
+          "cleaver",
+          "cobalt-group",
+          "darkvishnya",
+          "dragonfly",
+          "fin5",
+          "fin6",
+          "fox-kitten",
+          "gallium",
+          "hafnium",
+          "indrik-spider",
+          "kimsuky",
+          "leafminer",
+          "magic-hound",
+          "menupass",
+          "moses-staff",
+          "naikon",
+          "oilrig",
+          "sandworm-team",
+          "stolen-pencil",
+          "temp.veles",
+          "threat-group-1314",
+          "thrip",
+          "turla",
+          "wizard-spider"
+        ]
+      },
+      "procedures": [
+        "T1021.002::[PsExec], a tool that has been used by adversaries, writes programs to the ADMIN$ network share to execute commands on remote systems.",
+        "T1136.002::[PsExec] has the ability to remotely create accounts on target systems.",
+        "T1543.003::[PsExec] can leverage Windows services to escalate privileges from administrator to SYSTEM with the -s argument.",
+        "T1569.002::Microsoft Sysinternals [PsExec] is a popular administration tool that can be used to execute binaries on remote systems using a temporary Windows service.",
+        "T1570::[PsExec] can be used to download or upload a file over a network share."
+      ]
+    },
+    "description": "[PsExec](https://attack.mitre.org/software/S0029) is a free Microsoft tool that can be used to execute a program on another computer. It is used by IT administrators and attackers.(Citation: Russinovich Sysinternals)(Citation: SANS PsExec)"
+  }
+]

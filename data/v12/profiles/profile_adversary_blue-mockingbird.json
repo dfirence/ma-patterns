@@ -1,0 +1,89 @@
+[
+  {
+    "id": "intrusion-set--73a80fab-2aa3-48e0-a4d0-3a4828200aee",
+    "name": "blue-mockingbird",
+    "aliases": "blue-mockingbird",
+    "group_id": "G0108",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 1,
+        "items": [
+          "mimikatz"
+        ]
+      },
+      "techniques": {
+        "count": 22,
+        "items": [
+          "T1003.001",
+          "T1021.001",
+          "T1021.002",
+          "T1027",
+          "T1036.005",
+          "T1047",
+          "T1053.005",
+          "T1059.001",
+          "T1059.003",
+          "T1082",
+          "T1090",
+          "T1112",
+          "T1134",
+          "T1190",
+          "T1218.010",
+          "T1218.011",
+          "T1496",
+          "T1543.003",
+          "T1546.003",
+          "T1569.002",
+          "T1574.012",
+          "T1588.002"
+        ]
+      },
+      "tactics": {
+        "count": 11,
+        "items": [
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "impact",
+          "initial-access",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1003.001::[Blue Mockingbird] has used Mimikatz to retrieve credentials from LSASS memory.",
+        "T1021.001::[Blue Mockingbird] has used Remote Desktop to log on to servers interactively and manually copy files to remote hosts.",
+        "T1021.002::[Blue Mockingbird] has used Windows Explorer to manually copy malicious files to remote hosts over SMB.",
+        "T1027::[Blue Mockingbird] has obfuscated the wallet address in the payload binary.",
+        "T1036.005::[Blue Mockingbird] has masqueraded their XMRIG payload name by naming it wercplsupporte.dll after the legitimate wercplsupport.dll file.",
+        "T1047::[Blue Mockingbird] has used wmic.exe to set environment variables.",
+        "T1053.005::[Blue Mockingbird] has used Windows Scheduled Tasks to establish persistence on local and remote hosts.",
+        "T1059.001::[Blue Mockingbird] has used PowerShell reverse TCP shells to issue interactive commands over a network connection.",
+        "T1059.003::[Blue Mockingbird] has used batch script files to automate execution and deployment of payloads.",
+        "T1082::[Blue Mockingbird] has collected hardware details for the victim's system, including CPU and memory information.",
+        "T1090::[Blue Mockingbird] has used frp, ssf, and Venom to establish SOCKS proxy connections.",
+        "T1112::[Blue Mockingbird] has used Windows Registry modifications to specify a DLL payload.",
+        "T1134::[Blue Mockingbird] has used JuicyPotato to abuse the SeImpersonate token privilege to escalate from web application pool accounts to NT Authority\\SYSTEM.",
+        "T1190::[Blue Mockingbird] has gained initial access by exploiting CVE-2019-18935, a vulnerability within Telerik UI for ASP.NET AJAX.",
+        "T1218.010::[Blue Mockingbird] has executed custom-compiled XMRIG miner DLLs using regsvr32.exe.",
+        "T1218.011::[Blue Mockingbird] has executed custom-compiled XMRIG miner DLLs using rundll32.exe.",
+        "T1496::[Blue Mockingbird] has used XMRIG to mine cryptocurrency on victim systems.",
+        "T1543.003::[Blue Mockingbird] has made their XMRIG payloads persistent as a Windows Service.",
+        "T1546.003::[Blue Mockingbird] has used mofcomp.exe to establish WMI Event Subscription persistence mechanisms configured from a *.mof file.",
+        "T1569.002::[Blue Mockingbird] has executed custom-compiled XMRIG miner DLLs by configuring them to execute via the \"wercplsupport\" service.",
+        "T1574.012::[Blue Mockingbird] has used wmic.exe and Windows Registry modifications to set the COR_PROFILER environment variable to execute a malicious DLL whenever a process loads the .NET CLR.",
+        "T1588.002::[Blue Mockingbird] has obtained and used tools such as [Mimikatz]."
+      ]
+    },
+    "description": "[Blue Mockingbird](https://attack.mitre.org/groups/G0108) is a cluster of observed activity involving Monero cryptocurrency-mining payloads in dynamic-link library (DLL) form on Windows systems. The earliest observed Blue Mockingbird tools were created in December 2019.(Citation: RedCanary Mockingbird May 2020)"
+  }
+]

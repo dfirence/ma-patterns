@@ -1,0 +1,37 @@
+[
+  [
+    "ajax-security-team",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[Ajax Security Team] has used CWoolger and MPK, custom-developed malware, which recorded all keystrokes on an infected system."
+  ],
+  [
+    "ajax-security-team",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Ajax Security Team] has lured victims into executing malicious files."
+  ],
+  [
+    "ajax-security-team",
+    "T1555.003",
+    "Credentials from Web Browsers",
+    "command-execution|file-access|os-api-execution|process-access",
+    "T1555.003::[Ajax Security Team] has used FireMalv custom-developed malware, which collected passwords from the Firefox browser storage."
+  ],
+  [
+    "ajax-security-team",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[Ajax Security Team] has used personalized spearphishing attachments."
+  ],
+  [
+    "ajax-security-team",
+    "T1566.003",
+    "Spearphishing via Service",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.003::[Ajax Security Team] has used various social media channels to spearphish victims."
+  ]
+]

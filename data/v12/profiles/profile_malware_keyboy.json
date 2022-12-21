@@ -1,0 +1,128 @@
+[
+  {
+    "id": "intrusion-set--56319646-eb6e-41fc-ae53-aadfa7adb924",
+    "name": "tropic-trooper",
+    "aliases": "tropic-trooper|pirate-panda|keyboy",
+    "group_id": "G0081",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 5,
+        "items": [
+          "keyboy",
+          "poisonivy",
+          "shadowpad",
+          "usbferry",
+          "yahoyah"
+        ]
+      },
+      "tools": {
+        "count": 1,
+        "items": [
+          "bitsadmin"
+        ]
+      },
+      "techniques": {
+        "count": 39,
+        "items": [
+          "T1016",
+          "T1020",
+          "T1027",
+          "T1027.003",
+          "T1033",
+          "T1036.005",
+          "T1046",
+          "T1049",
+          "T1052.001",
+          "T1055.001",
+          "T1057",
+          "T1059.003",
+          "T1070.004",
+          "T1071.001",
+          "T1071.004",
+          "T1078.003",
+          "T1082",
+          "T1083",
+          "T1091",
+          "T1105",
+          "T1106",
+          "T1119",
+          "T1132.001",
+          "T1135",
+          "T1140",
+          "T1203",
+          "T1204.002",
+          "T1221",
+          "T1505.003",
+          "T1518",
+          "T1518.001",
+          "T1543.003",
+          "T1547.001",
+          "T1547.004",
+          "T1564.001",
+          "T1566.001",
+          "T1573",
+          "T1573.002",
+          "T1574.002"
+        ]
+      },
+      "tactics": {
+        "count": 10,
+        "items": [
+          "collection",
+          "command-and-control",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "exfiltration",
+          "initial-access",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "procedures": [
+        "T1016::[Tropic Trooper] has used scripts to collect the host's network topology.",
+        "T1020::[Tropic Trooper] has used a copy function to automatically exfiltrate sensitive data from air-gapped systems using USB storage.",
+        "T1027.003::[Tropic Trooper] has used JPG files with encrypted payloads to mask their backdoor routines and evade detection.",
+        "T1027::[Tropic Trooper] has encrypted configuration files.",
+        "T1033::[Tropic Trooper] used letmein to scan for saved usernames on the target system.",
+        "T1036.005::[Tropic Trooper] has hidden payloads in Flash directories and fake installer files.",
+        "T1046::[Tropic Trooper] used pr and an openly available tool to scan for open ports on target systems.",
+        "T1049::[Tropic Trooper] has tested if the localhost network is available and other connection capability on an infected system using command scripts.",
+        "T1052.001::[Tropic Trooper] has exfiltrated data using USB storage devices.",
+        "T1055.001::[Tropic Trooper] has injected a DLL backdoor into dllhost.exe and svchost.exe.",
+        "T1057::[Tropic Trooper] is capable of enumerating the running processes on the system using pslist.",
+        "T1059.003::[Tropic Trooper] has used Windows command scripts.",
+        "T1070.004::[Tropic Trooper] has deleted dropper files on an infected system using command scripts.",
+        "T1071.001::[Tropic Trooper] has used HTTP in communication with the C2.",
+        "T1071.004::[Tropic Trooper]'s backdoor has communicated to the C2 over the DNS protocol.",
+        "T1078.003::[Tropic Trooper] has used known administrator account credentials to execute the backdoor directly.",
+        "T1082::[Tropic Trooper] has detected a target system’s OS version and system volume information.",
+        "T1083::[Tropic Trooper] has monitored files' modified time.",
+        "T1091::[Tropic Trooper] has attempted to transfer [USBferry] from an infected USB device by copying an Autorun function to the target machine.",
+        "T1105::[Tropic Trooper] has used a delivered trojan to download additional files.",
+        "T1106::[Tropic Trooper] has used multiple Windows APIs including HttpInitialize, HttpCreateHttpHandle, and HttpAddUrl.",
+        "T1119::[Tropic Trooper] has collected information automatically using the adversary's [USBferry] attack.",
+        "T1132.001::[Tropic Trooper] has used base64 encoding to hide command strings delivered from the C2.",
+        "T1135::[Tropic Trooper] used netview to scan target systems for shared resources.",
+        "T1140::[Tropic Trooper] used shellcode with an XOR algorithm to decrypt a payload. [Tropic Trooper] also decrypted image files which contained a payload.",
+        "T1203::[Tropic Trooper] has executed commands through Microsoft security vulnerabilities, including CVE-2017-11882, CVE-2018-0802, and CVE-2012-0158.",
+        "T1204.002::[Tropic Trooper] has lured victims into executing malware via malicious e-mail attachments.",
+        "T1221::[Tropic Trooper] delivered malicious documents with the XLSX extension, typically used by OpenXML documents, but the file itself was actually an OLE (XLS) document.",
+        "T1505.003::[Tropic Trooper] has started a web service in the target host and wait for the adversary to connect, acting as a web shell.",
+        "T1518.001::[Tropic Trooper] can search for anti-virus software running on the system.",
+        "T1518::[Tropic Trooper]'s backdoor could list the infected system's installed software.",
+        "T1543.003::[Tropic Trooper] has installed a service pointing to a malicious DLL dropped to disk.",
+        "T1547.001::[Tropic Trooper] has created shortcuts in the Startup folder to establish persistence.",
+        "T1547.004::[Tropic Trooper] has created the Registry key HKCU\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Shell and sets the value to establish persistence.",
+        "T1564.001::[Tropic Trooper] has created a hidden directory under C:\\ProgramData\\Apple\\Updates\\ and C:\\Users\\Public\\Documents\\Flash\\.",
+        "T1566.001::[Tropic Trooper] sent spearphishing emails that contained malicious Microsoft Office and fake installer file attachments.",
+        "T1573.002::[Tropic Trooper] has used SSL to connect to C2 servers.",
+        "T1573::[Tropic Trooper] has encrypted traffic with the C2 to prevent network detection.",
+        "T1574.002::[Tropic Trooper] has been known to side-load DLLs using a valid version of a Windows Address Book and Windows Defender executable with one of their tools."
+      ]
+    },
+    "description": "[Tropic Trooper](https://attack.mitre.org/groups/G0081) is an unaffiliated threat group that has led targeted campaigns against targets in Taiwan, the Philippines, and Hong Kong. [Tropic Trooper](https://attack.mitre.org/groups/G0081) focuses on targeting government, healthcare, transportation, and high-tech industries and has been active since 2011.(Citation: TrendMicro Tropic Trooper Mar 2018)(Citation: Unit 42 Tropic Trooper Nov 2016)(Citation: TrendMicro Tropic Trooper May 2020)"
+  }
+]

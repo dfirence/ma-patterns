@@ -1,0 +1,79 @@
+[
+  {
+    "id": "intrusion-set--afec6dc3-a18e-4b62-b1a4-5510e1a498d1",
+    "name": "windshift",
+    "aliases": "windshift|bahamut",
+    "group_id": "G0112",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 1,
+        "items": [
+          "windtail"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 19,
+        "items": [
+          "T1027",
+          "T1033",
+          "T1036",
+          "T1036.001",
+          "T1047",
+          "T1057",
+          "T1059.005",
+          "T1071.001",
+          "T1082",
+          "T1105",
+          "T1189",
+          "T1204.001",
+          "T1204.002",
+          "T1518",
+          "T1518.001",
+          "T1547.001",
+          "T1566.001",
+          "T1566.002",
+          "T1566.003"
+        ]
+      },
+      "tactics": {
+        "count": 7,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "procedures": [
+        "T1027::[Windshift] has used string encoding with floating point calculations.",
+        "T1033::[Windshift] has used malware to identify the username on a compromised host.",
+        "T1036.001::[Windshift] has used revoked certificates to sign malware.",
+        "T1036::[Windshift] has used icons mimicking MS Office files to mask malicious executables.",
+        "T1047::[Windshift] has used WMI to collect information about target machines.",
+        "T1057::[Windshift] has used malware to enumerate active processes.",
+        "T1059.005::[Windshift] has used Visual Basic 6 (VB6) payloads.",
+        "T1071.001::[Windshift] has used tools that communicate with C2 over HTTP.",
+        "T1082::[Windshift] has used malware to identify the computer name of a compromised host.",
+        "T1105::[Windshift] has used tools to deploy additional payloads to compromised hosts.",
+        "T1189::[Windshift] has used compromised websites to register custom URL schemes on a remote system.",
+        "T1204.001::[Windshift] has used links embedded in e-mails to lure victims into executing malicious code.",
+        "T1204.002::[Windshift] has used e-mail attachments to lure victims into executing malicious code.",
+        "T1518.001::[Windshift] has used malware to identify installed AV and commonly used forensic and malware analysis tools.",
+        "T1518::[Windshift] has used malware to identify installed software.",
+        "T1547.001::[Windshift] has created LNK files in the Startup folder to establish persistence.",
+        "T1566.001::[Windshift] has sent spearphishing emails with attachment to harvest credentials and deliver malware.",
+        "T1566.002::[Windshift] has sent spearphishing emails with links to harvest credentials and deliver malware.",
+        "T1566.003::[Windshift] has used fake personas on social media to engage and target victims."
+      ]
+    },
+    "description": "[Windshift](https://attack.mitre.org/groups/G0112) is a threat group that has been active since at least 2017, targeting specific individuals for surveillance in government departments and critical infrastructure across the Middle East.(Citation: SANS Windshift August 2018)(Citation: objective-see windtail1 dec 2018)(Citation: objective-see windtail2 jan 2019)"
+  }
+]

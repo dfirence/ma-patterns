@@ -1,0 +1,70 @@
+[
+  {
+    "id": "intrusion-set--38fd6a28-3353-4f2b-bb2b-459fecd5c648",
+    "name": "apt18",
+    "aliases": "apt18|tg-0416|dynamite-panda|threat-group-0416",
+    "group_id": "G0026",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 4,
+        "items": [
+          "gh0st-rat",
+          "hcdloader",
+          "httpbrowser",
+          "pisloader"
+        ]
+      },
+      "tools": {
+        "count": 1,
+        "items": [
+          "cmd"
+        ]
+      },
+      "techniques": {
+        "count": 12,
+        "items": [
+          "T1027",
+          "T1053.002",
+          "T1059.003",
+          "T1070.004",
+          "T1071.001",
+          "T1071.004",
+          "T1078",
+          "T1082",
+          "T1083",
+          "T1105",
+          "T1133",
+          "T1547.001"
+        ]
+      },
+      "tactics": {
+        "count": 7,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "procedures": [
+        "T1027::[APT18] obfuscates strings in the payload.",
+        "T1053.002::[APT18] actors used the native [at] Windows task scheduler tool to use scheduled tasks for execution on a victim network.",
+        "T1059.003::[APT18] uses cmd.exe to execute commands on the victim’s machine.",
+        "T1070.004::[APT18] actors deleted tools and batch files from victim systems.",
+        "T1071.001::[APT18] uses HTTP for C2 communications.",
+        "T1071.004::[APT18] uses DNS for C2 communications.",
+        "T1078::[APT18] actors leverage legitimate credentials to log into external remote services.",
+        "T1082::[APT18] can collect system information from the victim’s machine.",
+        "T1083::[APT18] can list files information for specific directories.",
+        "T1105::[APT18] can upload a file to the victim’s machine.",
+        "T1133::[APT18] actors leverage legitimate credentials to log into external remote services.",
+        "T1547.001::[APT18] establishes persistence via the HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run key."
+      ]
+    },
+    "description": "[APT18](https://attack.mitre.org/groups/G0026) is a threat group that has operated since at least 2009 and has targeted a range of industries, including technology, manufacturing, human rights groups, government, and medical. (Citation: Dell Lateral Movement)"
+  }
+]

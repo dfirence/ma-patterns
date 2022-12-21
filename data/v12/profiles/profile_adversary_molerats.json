@@ -1,0 +1,79 @@
+[
+  {
+    "id": "intrusion-set--df71bb3b-813c-45eb-a8bc-f2a419837411",
+    "name": "molerats",
+    "aliases": "molerats|operation-molerats|gaza-cybergang",
+    "group_id": "G0021",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 6,
+        "items": [
+          "dropbook",
+          "dustysky",
+          "molenet",
+          "poisonivy",
+          "sharpstage",
+          "spark"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 16,
+        "items": [
+          "T1027",
+          "T1053.005",
+          "T1057",
+          "T1059.001",
+          "T1059.005",
+          "T1059.007",
+          "T1105",
+          "T1140",
+          "T1204.001",
+          "T1204.002",
+          "T1218.007",
+          "T1547.001",
+          "T1553.002",
+          "T1555.003",
+          "T1566.001",
+          "T1566.002"
+        ]
+      },
+      "tactics": {
+        "count": 8,
+        "items": [
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "procedures": [
+        "T1027::[Molerats] has delivered compressed executables within ZIP files to victims.",
+        "T1053.005::[Molerats] has created scheduled tasks to persistently run VBScripts.",
+        "T1057::[Molerats] actors obtained a list of active processes on the victim and sent them to C2 servers.",
+        "T1059.001::[Molerats] used PowerShell implants on target machines.",
+        "T1059.005::[Molerats] used various implants, including those built with VBScript, on target machines.",
+        "T1059.007::[Molerats] used various implants, including those built with JS, on target machines.",
+        "T1105::[Molerats] used executables to download malicious files from different sources.",
+        "T1140::[Molerats] decompresses ZIP files once on the victim machine.",
+        "T1204.001::[Molerats] has sent malicious links via email trick users into opening a RAR archive and running an executable.",
+        "T1204.002::[Molerats] has sent malicious files via email that tricked users into clicking Enable Content to run an embedded macro and to download malicious archives.",
+        "T1218.007::[Molerats] has used msiexec.exe to execute an MSI payload.",
+        "T1547.001::[Molerats] saved malicious files within the AppData and Startup folders to maintain persistence.",
+        "T1553.002::[Molerats] has used forged Microsoft code-signing certificates on malware.",
+        "T1555.003::[Molerats] used the public tool BrowserPasswordDump10 to dump passwords saved in browsers on victims.",
+        "T1566.001::[Molerats] has sent phishing emails with malicious Microsoft Word and PDF attachments.",
+        "T1566.002::[Molerats] has sent phishing emails with malicious links included."
+      ]
+    },
+    "description": "[Molerats](https://attack.mitre.org/groups/G0021) is an Arabic-speaking, politically-motivated threat group that has been operating since 2012. The group's victims have primarily been in the Middle East, Europe, and the United States.(Citation: DustySky)(Citation: DustySky2)(Citation: Kaspersky MoleRATs April 2019)(Citation: Cybereason Molerats Dec 2020)"
+  }
+]

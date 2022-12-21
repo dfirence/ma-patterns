@@ -1,0 +1,16 @@
+[
+  [
+    "apt30",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[APT30] has relied on users to execute malicious file attachments delivered via spearphishing emails."
+  ],
+  [
+    "apt30",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[APT30] has used spearphishing emails with malicious DOC attachments."
+  ]
+]

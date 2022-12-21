@@ -1,0 +1,282 @@
+[
+  [
+    "muddywater",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[MuddyWater] has performed credential dumping with [Mimikatz] and procdump64.exe."
+  ],
+  [
+    "muddywater",
+    "T1003.004",
+    "LSA Secrets",
+    "command-execution|windows-registry-key-access",
+    "T1003.004::[MuddyWater] has performed credential dumping with [LaZagne]."
+  ],
+  [
+    "muddywater",
+    "T1003.005",
+    "Cached Domain Credentials",
+    "command-execution",
+    "T1003.005::[MuddyWater] has performed credential dumping with [LaZagne]."
+  ],
+  [
+    "muddywater",
+    "T1027.003",
+    "Steganography",
+    "file-metadata",
+    "T1027.003::[MuddyWater] has stored obfuscated JavaScript code in an image file named temp.jpg."
+  ],
+  [
+    "muddywater",
+    "T1027.004",
+    "Compile After Delivery",
+    "command-execution|file-creation|file-metadata|process-creation",
+    "T1027.004::[MuddyWater] has used the .NET csc.exe tool to compile executables from downloaded C# code."
+  ],
+  [
+    "muddywater",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[MuddyWater] has disguised malicious executables and used filenames and Registry key names associated with Windows Defender."
+  ],
+  [
+    "muddywater",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[MuddyWater] has used scheduled tasks to establish persistence."
+  ],
+  [
+    "muddywater",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[MuddyWater] has used PowerShell for execution."
+  ],
+  [
+    "muddywater",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[MuddyWater] has used a custom tool for creating reverse shells."
+  ],
+  [
+    "muddywater",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[MuddyWater] has used VBScript files to execute its [POWERSTATS] payload, as well as macros."
+  ],
+  [
+    "muddywater",
+    "T1059.006",
+    "Python",
+    "command-execution|process-creation",
+    "T1059.006::[MuddyWater] has used developed tools in Python including [Out1]."
+  ],
+  [
+    "muddywater",
+    "T1059.007",
+    "JavaScript",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.007::[MuddyWater] has used JavaScript files to execute its [POWERSTATS] payload."
+  ],
+  [
+    "muddywater",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[MuddyWater] has used HTTP for C2 communications."
+  ],
+  [
+    "muddywater",
+    "T1074.001",
+    "Local Data Staging",
+    "command-execution|file-access|file-creation|windows-registry-key-modification",
+    "T1074.001::[MuddyWater] has stored a decoy PDF file within a victim's `%temp%` folder."
+  ],
+  [
+    "muddywater",
+    "T1087.002",
+    "Domain Account",
+    "command-execution|group-enumeration|network-traffic-content|os-api-execution|process-creation",
+    "T1087.002::[MuddyWater] has used cmd.exe net user /domain to enumerate domain users."
+  ],
+  [
+    "muddywater",
+    "T1090.002",
+    "External Proxy",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1090.002::[MuddyWater] has controlled [POWERSTATS] from behind a proxy network to obfuscate the C2 location."
+  ],
+  [
+    "muddywater",
+    "T1102.002",
+    "Bidirectional Communication",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1102.002::[MuddyWater] has used web services including OneHub to distribute remote access tools."
+  ],
+  [
+    "muddywater",
+    "T1132.001",
+    "Standard Encoding",
+    "network-traffic-content",
+    "T1132.001::[MuddyWater] has used tools to encode C2 communications including Base64 encoding."
+  ],
+  [
+    "muddywater",
+    "T1137.001",
+    "Office Template Macros",
+    "command-execution|file-creation|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1137.001::[MuddyWater] has used a Word Template, Normal.dotm, for persistence."
+  ],
+  [
+    "muddywater",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[MuddyWater] has distributed URLs in phishing e-mails that link to lure documents."
+  ],
+  [
+    "muddywater",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[MuddyWater] has attempted to get users to enable macros and launch malicious Microsoft Word documents delivered via spearphishing emails."
+  ],
+  [
+    "muddywater",
+    "T1218.003",
+    "CMSTP",
+    "command-execution|network-connection-creation|process-creation",
+    "T1218.003::[MuddyWater] has used CMSTP.exe and a malicious INF to execute its [POWERSTATS] payload."
+  ],
+  [
+    "muddywater",
+    "T1218.005",
+    "Mshta",
+    "command-execution|file-creation|network-connection-creation|process-creation",
+    "T1218.005::[MuddyWater] has used mshta.exe to execute its [POWERSTATS] payload and to pass a PowerShell one-liner for execution."
+  ],
+  [
+    "muddywater",
+    "T1218.011",
+    "Rundll32",
+    "command-execution|file-metadata|module-load|process-creation",
+    "T1218.011::[MuddyWater] has used malware that leveraged rundll32.exe in a Registry Run key to execute a .dll."
+  ],
+  [
+    "muddywater",
+    "T1518.001",
+    "Security Software Discovery",
+    "command-execution|firewall-enumeration|firewall-metadata|os-api-execution|process-creation",
+    "T1518.001::[MuddyWater] has used malware to check running processes against a hard-coded list of security tools often used by malware researchers."
+  ],
+  [
+    "muddywater",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[MuddyWater] has added Registry Run key KCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\SystemTextEncoding to establish persistence."
+  ],
+  [
+    "muddywater",
+    "T1548.002",
+    "Bypass User Account Control",
+    "command-execution|process-creation|process-metadata|windows-registry-key-modification",
+    "T1548.002::[MuddyWater] uses various techniques to bypass UAC."
+  ],
+  [
+    "muddywater",
+    "T1552.001",
+    "Credentials In Files",
+    "command-execution|file-access",
+    "T1552.001::[MuddyWater] has run a tool that steals passwords saved in victim email."
+  ],
+  [
+    "muddywater",
+    "T1555.003",
+    "Credentials from Web Browsers",
+    "command-execution|file-access|os-api-execution|process-access",
+    "T1555.003::[MuddyWater] has run tools including Browser64 to steal passwords saved in victim web browsers."
+  ],
+  [
+    "muddywater",
+    "T1559.001",
+    "Component Object Model",
+    "module-load|process-creation|script-execution",
+    "T1559.001::[MuddyWater] has used malware that has the capability to execute malicious code via COM, DCOM, and Outlook."
+  ],
+  [
+    "muddywater",
+    "T1559.002",
+    "Dynamic Data Exchange",
+    "module-load|process-creation|script-execution",
+    "T1559.002::[MuddyWater] has used malware that can execute PowerShell scripts via DDE."
+  ],
+  [
+    "muddywater",
+    "T1560.001",
+    "Archive via Utility",
+    "command-execution|file-creation|process-creation",
+    "T1560.001::[MuddyWater] has used the native Windows cabinet creation tool, makecab.exe, likely to compress stolen data to be uploaded."
+  ],
+  [
+    "muddywater",
+    "T1562.001",
+    "Disable or Modify Tools",
+    "command-execution|driver-load|host-status|process-termination|service-metadata|windows-registry-key-deletion|windows-registry-key-modification",
+    "T1562.001::[MuddyWater] can disable the system's local proxy settings."
+  ],
+  [
+    "muddywater",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[MuddyWater] has compromised third parties and used compromised accounts to send spearphishing emails with targeted attachments to recipients."
+  ],
+  [
+    "muddywater",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[MuddyWater] has sent targeted spearphishing e-mails with malicious links."
+  ],
+  [
+    "muddywater",
+    "T1573.001",
+    "Symmetric Cryptography",
+    "network-traffic-content",
+    "T1573.001::[MuddyWater] has used AES to encrypt C2 responses."
+  ],
+  [
+    "muddywater",
+    "T1574.002",
+    "DLL Side-Loading",
+    "file-creation|file-modification|module-load|process-creation",
+    "T1574.002::[MuddyWater] maintains persistence on victim networks through side-loading dlls to trick legitimate programs into running malware."
+  ],
+  [
+    "muddywater",
+    "T1583.006",
+    "Web Services",
+    "response-content",
+    "T1583.006::[MuddyWater] has used file sharing services including OneHub to distribute tools."
+  ],
+  [
+    "muddywater",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::MuddyWater has made use of legitimate tools ConnectWise and Remote Utilities to gain access to target environment."
+  ],
+  [
+    "muddywater",
+    "T1589.002",
+    "Email Addresses",
+    "network-traffic-content",
+    "T1589.002::[MuddyWater] has specifically targeted government agency employees with spearphishing e-mails."
+  ]
+]

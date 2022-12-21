@@ -1,0 +1,58 @@
+[
+  {
+    "id": "tool--d505fc8b-2e64-46eb-96d6-9ef7ffca5b66",
+    "name": "mythic",
+    "aliases": "none",
+    "platforms": "windows|linux|macos",
+    "tool_id": "S0699",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 3,
+        "items": [
+          "collection",
+          "command-and-control",
+          "exfiltration"
+        ]
+      },
+      "techniques": {
+        "count": 13,
+        "items": [
+          "T1008",
+          "T1030",
+          "T1071.001",
+          "T1071.002",
+          "T1071.004",
+          "T1090.001",
+          "T1090.002",
+          "T1090.004",
+          "T1095",
+          "T1119",
+          "T1132",
+          "T1572",
+          "T1573.002"
+        ]
+      },
+      "adversaries": {
+        "count": 0,
+        "items": []
+      },
+      "procedures": [
+        "T1008::[Mythic] can use a list of C2 URLs as fallback mechanisms in case one IP or domain gets blocked.",
+        "T1030::[Mythic] supports custom chunk sizes used to upload/download files.",
+        "T1071.001::[Mythic] supports HTTP-based C2 profiles.",
+        "T1071.002::[Mythic] supports SMB-based peer-to-peer C2 profiles.",
+        "T1071.004::[Mythic] supports DNS-based C2 profiles.",
+        "T1090.001::[Mythic] can leverage a peer-to-peer C2 profile between agents.",
+        "T1090.002::[Mythic] can leverage a modified SOCKS5 proxy to tunnel egress C2 traffic.",
+        "T1090.004::[Mythic] supports domain fronting via custom request headers.",
+        "T1095::[Mythic] supports WebSocket and TCP-based C2 profiles.",
+        "T1119::[Mythic] supports scripting of file downloads from agents.",
+        "T1132::[Mythic] provides various transform functions to encode and/or randomize C2 data.",
+        "T1572::[Mythic] can use SOCKS proxies to tunnel traffic through another protocol.",
+        "T1573.002::[Mythic] supports SSL encrypted C2."
+      ]
+    },
+    "description": "[Mythic](https://attack.mitre.org/software/S0699) is an open source, cross-platform post-exploitation/command and control platform. [Mythic](https://attack.mitre.org/software/S0699) is designed to \"plug-n-play\" with various agents and communication channels.(Citation: Mythic Github)(Citation: Mythic SpecterOps)(Citation: Mythc Documentation) Deployed [Mythic](https://attack.mitre.org/software/S0699) C2 servers have been observed as part of potentially malicious infrastructure.(Citation: RecordedFuture 2021 Ad Infra)"
+  }
+]

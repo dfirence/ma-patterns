@@ -1,0 +1,64 @@
+[
+  {
+    "id": "intrusion-set--03506554-5f37-4f8f-9ce4-0e9f01a1b484",
+    "name": "elderwood",
+    "aliases": "elderwood|elderwood-gang|beijing-group|sneaky-panda",
+    "group_id": "G0066",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 9,
+        "items": [
+          "briba",
+          "hydraq",
+          "linfo",
+          "naid",
+          "nerex",
+          "pasam",
+          "poisonivy",
+          "vasport",
+          "wiarp"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 9,
+        "items": [
+          "T1027",
+          "T1027.002",
+          "T1105",
+          "T1189",
+          "T1203",
+          "T1204.001",
+          "T1204.002",
+          "T1566.001",
+          "T1566.002"
+        ]
+      },
+      "tactics": {
+        "count": 4,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "execution",
+          "initial-access"
+        ]
+      },
+      "procedures": [
+        "T1027.002::[Elderwood] has packed malware payloads before delivery to victims.",
+        "T1027::[Elderwood] has encrypted documents and malicious executables.",
+        "T1105::The Ritsol backdoor trojan used by [Elderwood] can download files onto a compromised host from a remote location.",
+        "T1189::[Elderwood] has delivered zero-day exploits and malware to victims by injecting malicious code into specific public Web pages visited by targets within a particular sector.",
+        "T1203::[Elderwood] has used exploitation of endpoint software, including Microsoft Internet Explorer Adobe Flash vulnerabilities, to gain execution. They have also used zero-day exploits.",
+        "T1204.001::[Elderwood] has leveraged multiple types of spearphishing in order to attempt to get a user to open links.",
+        "T1204.002::[Elderwood] has leveraged multiple types of spearphishing in order to attempt to get a user to open attachments.",
+        "T1566.001::[Elderwood] has delivered zero-day exploits and malware to victims via targeted emails containing malicious attachments.",
+        "T1566.002::[Elderwood] has delivered zero-day exploits and malware to victims via targeted emails containing a link to malicious content hosted on an uncommon Web server."
+      ]
+    },
+    "description": "[Elderwood](https://attack.mitre.org/groups/G0066) is a suspected Chinese cyber espionage group that was reportedly responsible for the 2009 Google intrusion known as Operation Aurora. (Citation: Security Affairs Elderwood Sept 2012) The group has targeted defense organizations, supply chain manufacturers, human rights and nongovernmental organizations (NGOs), and IT service providers. (Citation: Symantec Elderwood Sept 2012) (Citation: CSM Elderwood Sept 2012)"
+  }
+]

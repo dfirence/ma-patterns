@@ -1,0 +1,44 @@
+[
+  {
+    "id": "tool--cf23bf4a-e003-4116-bbae-1ea6c558d565",
+    "name": "ftp",
+    "aliases": "none",
+    "platforms": "linux|windows|macos",
+    "tool_id": "S0095",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 3,
+        "items": [
+          "command-and-control",
+          "exfiltration",
+          "lateral-movement"
+        ]
+      },
+      "techniques": {
+        "count": 3,
+        "items": [
+          "T1048.003",
+          "T1105",
+          "T1570"
+        ]
+      },
+      "adversaries": {
+        "count": 5,
+        "items": [
+          "apt33",
+          "apt39",
+          "apt41",
+          "naikon",
+          "oilrig"
+        ]
+      },
+      "procedures": [
+        "T1048.003::[ftp] may be used to exfiltrate data separate from the main command and control protocol.",
+        "T1105::[ftp] may be abused by adversaries to transfer tools or files from an external system into a compromised environment.",
+        "T1570::[ftp] may be abused by adversaries to transfer tools or files between systems within a compromised environment."
+      ]
+    },
+    "description": "[ftp](https://attack.mitre.org/software/S0095) is a utility commonly available with operating systems to transfer information over the File Transfer Protocol (FTP). Adversaries can use it to transfer other tools onto a system or to exfiltrate data.(Citation: Microsoft FTP)(Citation: Linux FTP)"
+  }
+]

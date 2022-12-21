@@ -1,0 +1,79 @@
+[
+  [
+    "exotic-lily",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[EXOTIC LILY] has used malicious links to lure users into executing malicious payloads."
+  ],
+  [
+    "exotic-lily",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[EXOTIC LILY] has gained execution through victims clicking on malicious LNK files contained within ISO files, which can execute hidden DLLs within the ISO."
+  ],
+  [
+    "exotic-lily",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[EXOTIC LILY] conducted an e-mail thread-hijacking campaign with malicious ISO attachments."
+  ],
+  [
+    "exotic-lily",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[EXOTIC LILY] has relied on victims to open malicious links in e-mails for execution."
+  ],
+  [
+    "exotic-lily",
+    "T1566.003",
+    "Spearphishing via Service",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.003::[EXOTIC LILY] has used the e-mail notification features of legitimate file sharing services for spearphishing."
+  ],
+  [
+    "exotic-lily",
+    "T1583.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1583.001::[EXOTIC LILY] has registered domains to spoof targeted organizations by changing the top-level domain (TLD) to “.us”, “.co” or “.biz”."
+  ],
+  [
+    "exotic-lily",
+    "T1585.001",
+    "Social Media Accounts",
+    "network-traffic-content|social-media",
+    "T1585.001::[EXOTIC LILY] has established social media profiles to mimic employees of targeted companies."
+  ],
+  [
+    "exotic-lily",
+    "T1585.002",
+    "Email Accounts",
+    "none",
+    "T1585.002::[EXOTIC LILY] has created e-mail accounts to spoof targeted organizations."
+  ],
+  [
+    "exotic-lily",
+    "T1589.002",
+    "Email Addresses",
+    "network-traffic-content",
+    "T1589.002::[EXOTIC LILY] has gathered targeted individuals' e-mail addresses through open source research and website contact forms."
+  ],
+  [
+    "exotic-lily",
+    "T1593.001",
+    "Social Media",
+    "none",
+    "T1593.001::[EXOTIC LILY] has copied data from social media sites to impersonate targeted individuals."
+  ],
+  [
+    "exotic-lily",
+    "T1608.001",
+    "Upload Malware",
+    "response-content",
+    "T1608.001::[EXOTIC LILY]  has uploaded malicious payloads to file-sharing services including TransferNow, TransferXL, WeTransfer, and OneDrive."
+  ]
+]

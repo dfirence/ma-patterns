@@ -1,0 +1,38 @@
+[
+  {
+    "id": "tool--c9703cd3-141c-43a0-a926-380082be5d04",
+    "name": "schtasks",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0111",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 3,
+        "items": [
+          "execution",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "techniques": {
+        "count": 1,
+        "items": [
+          "T1053.005"
+        ]
+      },
+      "adversaries": {
+        "count": 3,
+        "items": [
+          "apt3",
+          "bronze-butler",
+          "kimsuky"
+        ]
+      },
+      "procedures": [
+        "T1053.005::[schtasks] is used to schedule tasks on a Windows system to run at a specific date and time."
+      ]
+    },
+    "description": "[schtasks](https://attack.mitre.org/software/S0111) is used to schedule execution of programs or scripts on a Windows system to run at a specific date and time. (Citation: TechNet Schtasks)"
+  }
+]

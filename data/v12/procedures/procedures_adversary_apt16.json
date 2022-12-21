@@ -1,0 +1,9 @@
+[
+  [
+    "apt16",
+    "T1584.004",
+    "Server",
+    "response-content|response-metadata",
+    "T1584.004::[APT16] has compromised otherwise legitimate sites as staging servers for second-stage payloads."
+  ]
+]

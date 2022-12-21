@@ -1,0 +1,51 @@
+[
+  [
+    "copykittens",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[CopyKittens] has used PowerShell Empire."
+  ],
+  [
+    "copykittens",
+    "T1218.011",
+    "Rundll32",
+    "command-execution|file-metadata|module-load|process-creation",
+    "T1218.011::[CopyKittens] uses rundll32 to load various tools on victims, including a lateral movement tool named Vminst, Cobalt Strike, and shellcode."
+  ],
+  [
+    "copykittens",
+    "T1553.002",
+    "Code Signing",
+    "file-metadata",
+    "T1553.002::[CopyKittens] digitally signed an executable with a stolen certificate from legitimate company AI Squared."
+  ],
+  [
+    "copykittens",
+    "T1560.001",
+    "Archive via Utility",
+    "command-execution|file-creation|process-creation",
+    "T1560.001::[CopyKittens] uses ZPP, a .NET console program, to compress files with ZIP."
+  ],
+  [
+    "copykittens",
+    "T1560.003",
+    "Archive via Custom Method",
+    "file-creation|script-execution",
+    "T1560.003::[CopyKittens] encrypts data with a substitute cipher prior to exfiltration."
+  ],
+  [
+    "copykittens",
+    "T1564.003",
+    "Hidden Window",
+    "command-execution|file-modification|process-creation|script-execution",
+    "T1564.003::[CopyKittens] has used -w hidden and -windowstyle hidden to conceal [PowerShell] windows."
+  ],
+  [
+    "copykittens",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[CopyKittens] has used Metasploit, [Empire], and AirVPN for post-exploitation activities."
+  ]
+]

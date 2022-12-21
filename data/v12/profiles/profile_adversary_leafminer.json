@@ -1,0 +1,80 @@
+[
+  {
+    "id": "intrusion-set--32bca8ff-d900-4877-aa65-d70baa041b74",
+    "name": "leafminer",
+    "aliases": "leafminer|raspite",
+    "group_id": "G0077",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 4,
+        "items": [
+          "lazagne",
+          "mailsniper",
+          "mimikatz",
+          "psexec"
+        ]
+      },
+      "techniques": {
+        "count": 17,
+        "items": [
+          "T1003.001",
+          "T1003.004",
+          "T1003.005",
+          "T1018",
+          "T1027",
+          "T1046",
+          "T1055.013",
+          "T1059.007",
+          "T1083",
+          "T1110.003",
+          "T1114.002",
+          "T1136.001",
+          "T1189",
+          "T1552.001",
+          "T1555",
+          "T1555.003",
+          "T1588.002"
+        ]
+      },
+      "tactics": {
+        "count": 9,
+        "items": [
+          "collection",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1003.001::[Leafminer] used several tools for retrieving login and password information, including LaZagne and Mimikatz.",
+        "T1003.004::[Leafminer] used several tools for retrieving login and password information, including LaZagne.",
+        "T1003.005::[Leafminer] used several tools for retrieving login and password information, including LaZagne.",
+        "T1018::[Leafminer] used Microsoft’s Sysinternals tools to gather detailed information about remote systems.",
+        "T1027::[Leafminer] obfuscated scripts that were used on victim machines.",
+        "T1046::[Leafminer] scanned network services to search for vulnerabilities in the victim system.",
+        "T1055.013::[Leafminer] has used [Process Doppelgänging] to evade security software while deploying tools on compromised systems.",
+        "T1059.007::[Leafminer] infected victims using JavaScript code.",
+        "T1083::[Leafminer] used a tool called MailSniper to search for files on the desktop and another utility called Sobolsoft to extract attachments from EML files.",
+        "T1110.003::[Leafminer] used a tool called Total SMB BruteForcer to perform internal password spraying.",
+        "T1114.002::[Leafminer] used a tool called MailSniper to search through the Exchange server mailboxes for keywords.",
+        "T1136.001::[Leafminer] used a tool called Imecab to set up a persistent remote access account on the victim machine.",
+        "T1189::[Leafminer] has infected victims using watering holes.",
+        "T1552.001::[Leafminer] used several tools for retrieving login and password information, including LaZagne.",
+        "T1555.003::[Leafminer] used several tools for retrieving login and password information, including LaZagne.",
+        "T1555::[Leafminer] used several tools for retrieving login and password information, including LaZagne.",
+        "T1588.002::[Leafminer] has obtained and used tools such as [LaZagne], [Mimikatz], [PsExec], and [MailSniper]."
+      ]
+    },
+    "description": "[Leafminer](https://attack.mitre.org/groups/G0077) is an Iranian threat group that has targeted government organizations and business entities in the Middle East since at least early 2017. (Citation: Symantec Leafminer July 2018)"
+  }
+]

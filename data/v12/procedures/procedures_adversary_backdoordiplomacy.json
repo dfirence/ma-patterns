@@ -1,0 +1,58 @@
+[
+  [
+    "backdoordiplomacy",
+    "T1036.004",
+    "Masquerade Task or Service",
+    "command-execution|scheduled-job-metadata|scheduled-job-modification|service-creation|service-metadata",
+    "T1036.004::[BackdoorDiplomacy] has disguised their backdoor droppers with naming conventions designed to blend into normal operations."
+  ],
+  [
+    "backdoordiplomacy",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[BackdoorDiplomacy] has dropped implants in folders named for legitimate software."
+  ],
+  [
+    "backdoordiplomacy",
+    "T1055.001",
+    "Dynamic-link Library Injection",
+    "module-load|os-api-execution|process-access|process-metadata|process-modification",
+    "T1055.001::[BackdoorDiplomacy] has dropped legitimate software onto a compromised host and used it to execute malicious DLLs."
+  ],
+  [
+    "backdoordiplomacy",
+    "T1074.001",
+    "Local Data Staging",
+    "command-execution|file-access|file-creation|windows-registry-key-modification",
+    "T1074.001::[BackdoorDiplomacy] has copied files of interest to the main drive's recycle bin."
+  ],
+  [
+    "backdoordiplomacy",
+    "T1505.003",
+    "Web Shell",
+    "application-log-content|file-creation|file-modification|network-traffic-content|network-traffic-flow|process-creation",
+    "T1505.003::[BackdoorDiplomacy] has used web shells to establish an initial foothold and for lateral movement within a victim's system."
+  ],
+  [
+    "backdoordiplomacy",
+    "T1574.001",
+    "DLL Search Order Hijacking",
+    "file-creation|file-modification|module-load",
+    "T1574.001::[BackdoorDiplomacy] has executed DLL search order hijacking."
+  ],
+  [
+    "backdoordiplomacy",
+    "T1588.001",
+    "Malware",
+    "malware-content|malware-metadata",
+    "T1588.001::[BackdoorDiplomacy] has obtained and used leaked malware, including DoublePulsar, EternalBlue, EternalRocks, and EternalSynergy, in its operations."
+  ],
+  [
+    "backdoordiplomacy",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[BackdoorDiplomacy] has obtained a variety of open-source reconnaissance and red team tools for discovery and lateral movement."
+  ]
+]

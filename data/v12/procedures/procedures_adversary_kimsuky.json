@@ -1,0 +1,443 @@
+[
+  [
+    "kimsuky",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[Kimsuky] has gathered credentials using [Mimikatz] and ProcDump."
+  ],
+  [
+    "kimsuky",
+    "T1021.001",
+    "Remote Desktop Protocol",
+    "logon-session-creation|network-connection-creation|network-traffic-flow|process-creation",
+    "T1021.001::[Kimsuky] has used RDP for direct remote point-and-click access."
+  ],
+  [
+    "kimsuky",
+    "T1027.002",
+    "Software Packing",
+    "file-metadata",
+    "T1027.002::[Kimsuky] has packed malware with UPX."
+  ],
+  [
+    "kimsuky",
+    "T1036.004",
+    "Masquerade Task or Service",
+    "command-execution|scheduled-job-metadata|scheduled-job-modification|service-creation|service-metadata",
+    "T1036.004::[Kimsuky] has disguised services to appear as benign software or related to operating system functions."
+  ],
+  [
+    "kimsuky",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[Kimsuky] has renamed malware to legitimate names such as ESTCommon.dll or patch.dll."
+  ],
+  [
+    "kimsuky",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[Kimsuky] has downloaded additional malware with scheduled tasks."
+  ],
+  [
+    "kimsuky",
+    "T1055.012",
+    "Process Hollowing",
+    "os-api-execution|process-access|process-modification",
+    "T1055.012::[Kimsuky] has used a file injector DLL to spawn a benign process on the victim's system and inject the malicious payload into it via process hollowing."
+  ],
+  [
+    "kimsuky",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[Kimsuky] has used a PowerShell-based keylogger as well as a tool called MECHANICAL to log keystrokes."
+  ],
+  [
+    "kimsuky",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[Kimsuky] has executed a variety of PowerShell scripts."
+  ],
+  [
+    "kimsuky",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[Kimsuky] has executed Windows commands by using `cmd` and running batch scripts."
+  ],
+  [
+    "kimsuky",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[Kimsuky] has used Visual Basic to download malicious payloads."
+  ],
+  [
+    "kimsuky",
+    "T1059.006",
+    "Python",
+    "command-execution|process-creation",
+    "T1059.006::[Kimsuky] has used a macOS Python implant to gather data as well as MailFetcher.py code to automatically collect email data."
+  ],
+  [
+    "kimsuky",
+    "T1059.007",
+    "JavaScript",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.007::[Kimsuky] has used JScript for logging and downloading additional tools."
+  ],
+  [
+    "kimsuky",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[Kimsuky] has deleted the exfiltrated data on disk after transmission. [Kimsuky] has also used an instrumentor script to terminate browser processes running on an infected system and then delete the cookie files on disk."
+  ],
+  [
+    "kimsuky",
+    "T1070.006",
+    "Timestomp",
+    "file-metadata|file-modification",
+    "T1070.006::[Kimsuky] has manipulated timestamps for creation or compilation dates to defeat anti-forensics."
+  ],
+  [
+    "kimsuky",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[Kimsuky]  has used HTTP GET and POST requests for C2."
+  ],
+  [
+    "kimsuky",
+    "T1071.002",
+    "File Transfer Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.002::[Kimsuky] has used FTP to download additional malware to the target machine."
+  ],
+  [
+    "kimsuky",
+    "T1071.003",
+    "Mail Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.003::[Kimsuky] has used e-mail to send exfiltrated data to C2 servers."
+  ],
+  [
+    "kimsuky",
+    "T1074.001",
+    "Local Data Staging",
+    "command-execution|file-access|file-creation|windows-registry-key-modification",
+    "T1074.001::[Kimsuky] has staged collected data files under C:\\Program Files\\Common Files\\System\\Ole DB\\."
+  ],
+  [
+    "kimsuky",
+    "T1078.003",
+    "Local Accounts",
+    "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "T1078.003::[Kimsuky] has used a tool called GREASE to add a Windows admin account in order to allow them continued access via RDP."
+  ],
+  [
+    "kimsuky",
+    "T1102.002",
+    "Bidirectional Communication",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1102.002::[Kimsuky] has used Blogspot pages for C2."
+  ],
+  [
+    "kimsuky",
+    "T1114.002",
+    "Remote Email Collection",
+    "command-execution|logon-session-creation|network-connection-creation",
+    "T1114.002::[Kimsuky] has used tools such as the MailFetch mail crawler to collect victim emails (excluding spam) from online services via IMAP."
+  ],
+  [
+    "kimsuky",
+    "T1114.003",
+    "Email Forwarding Rule",
+    "application-log-content",
+    "T1114.003::[Kimsuky] has set auto-forward rules on victim's e-mail accounts."
+  ],
+  [
+    "kimsuky",
+    "T1136.001",
+    "Local Account",
+    "command-execution|process-creation|user-account-creation",
+    "T1136.001::[Kimsuky] has created accounts with net user."
+  ],
+  [
+    "kimsuky",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[Kimsuky] has lured victims into clicking malicious links."
+  ],
+  [
+    "kimsuky",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Kimsuky] has used attempted to lure victims into opening malicious e-mail attachments."
+  ],
+  [
+    "kimsuky",
+    "T1218.005",
+    "Mshta",
+    "command-execution|file-creation|network-connection-creation|process-creation",
+    "T1218.005::[Kimsuky] has used mshta.exe to run malicious scripts on the system."
+  ],
+  [
+    "kimsuky",
+    "T1218.010",
+    "Regsvr32",
+    "command-execution|module-load|network-connection-creation|process-creation",
+    "T1218.010::[Kimsuky] has executed malware with regsvr32s."
+  ],
+  [
+    "kimsuky",
+    "T1218.011",
+    "Rundll32",
+    "command-execution|file-metadata|module-load|process-creation",
+    "T1218.011::[Kimsuky] has used `rundll32.exe` to execute malicious scripts and malware on a victim's network."
+  ],
+  [
+    "kimsuky",
+    "T1505.003",
+    "Web Shell",
+    "application-log-content|file-creation|file-modification|network-traffic-content|network-traffic-flow|process-creation",
+    "T1505.003::[Kimsuky] has used modified versions of open source PHP web shells to maintain access, often adding \"Dinosaur\" references within the code."
+  ],
+  [
+    "kimsuky",
+    "T1518.001",
+    "Security Software Discovery",
+    "command-execution|firewall-enumeration|firewall-metadata|os-api-execution|process-creation",
+    "T1518.001::[Kimsuky] has checked for the presence of antivirus software with powershell Get-CimInstance -Namespace root/securityCenter2 – classname antivirusproduct."
+  ],
+  [
+    "kimsuky",
+    "T1543.003",
+    "Windows Service",
+    "command-execution|driver-load|os-api-execution|process-creation|service-creation|service-modification|windows-registry-key-creation|windows-registry-key-modification",
+    "T1543.003::[Kimsuky] has created new services for persistence."
+  ],
+  [
+    "kimsuky",
+    "T1546.001",
+    "Change Default File Association",
+    "command-execution|process-creation|windows-registry-key-modification",
+    "T1546.001::[Kimsuky] has a HWP document stealer module which changes the default program association in the registry to open HWP documents."
+  ],
+  [
+    "kimsuky",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[Kimsuky] has placed scripts in the startup folder for persistence and modified the `HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce` Registry key."
+  ],
+  [
+    "kimsuky",
+    "T1550.002",
+    "Pass the Hash",
+    "active-directory-credential-request|logon-session-creation|user-account-authentication",
+    "T1550.002::[Kimsuky] has used pass the hash for authentication to remote access software used in C2."
+  ],
+  [
+    "kimsuky",
+    "T1552.001",
+    "Credentials In Files",
+    "command-execution|file-access",
+    "T1552.001::[Kimsuky] has used tools that are capable of obtaining credentials from saved mail."
+  ],
+  [
+    "kimsuky",
+    "T1553.002",
+    "Code Signing",
+    "file-metadata",
+    "T1553.002::[Kimsuky] has signed files with the name EGIS CO,. Ltd.."
+  ],
+  [
+    "kimsuky",
+    "T1555.003",
+    "Credentials from Web Browsers",
+    "command-execution|file-access|os-api-execution|process-access",
+    "T1555.003::[Kimsuky] has used browser extensions including Google Chrome to steal passwords and cookies from browsers. [Kimsuky] has also used Nirsoft's WebBrowserPassView tool to dump the passwords obtained from victims."
+  ],
+  [
+    "kimsuky",
+    "T1560.001",
+    "Archive via Utility",
+    "command-execution|file-creation|process-creation",
+    "T1560.001::[Kimsuky] has used QuickZip to archive stolen files before exfiltration."
+  ],
+  [
+    "kimsuky",
+    "T1560.003",
+    "Archive via Custom Method",
+    "file-creation|script-execution",
+    "T1560.003::[Kimsuky] has used RC4 encryption before exfil."
+  ],
+  [
+    "kimsuky",
+    "T1562.001",
+    "Disable or Modify Tools",
+    "command-execution|driver-load|host-status|process-termination|service-metadata|windows-registry-key-deletion|windows-registry-key-modification",
+    "T1562.001::[Kimsuky] has been observed turning off Windows Security Center and can hide the AV software window from the view of the infected user."
+  ],
+  [
+    "kimsuky",
+    "T1562.004",
+    "Disable or Modify System Firewall",
+    "command-execution|firewall-disable|firewall-rule-modification|windows-registry-key-modification",
+    "T1562.004::[Kimsuky] has been observed disabling the system firewall."
+  ],
+  [
+    "kimsuky",
+    "T1564.002",
+    "Hidden Users",
+    "command-execution|file-modification|process-creation|user-account-creation|user-account-metadata|windows-registry-key-modification",
+    "T1564.002::[Kimsuky] has run reg add ‘HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\SpecialAccounts\\UserList’ /v to hide a newly created user."
+  ],
+  [
+    "kimsuky",
+    "T1564.003",
+    "Hidden Window",
+    "command-execution|file-modification|process-creation|script-execution",
+    "T1564.003::[Kimsuky] has used an information gathering module that will hide an AV software window from the victim."
+  ],
+  [
+    "kimsuky",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[Kimsuky] has used emails containing Word, Excel and/or HWP (Hangul Word Processor) documents in their spearphishing campaigns."
+  ],
+  [
+    "kimsuky",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[Kimsuky] has sent spearphishing emails containing a link to a document that contained malicious macros or took the victim to an actor-controlled domain."
+  ],
+  [
+    "kimsuky",
+    "T1567.002",
+    "Exfiltration to Cloud Storage",
+    "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1567.002::[Kimsuky] has exfiltrated stolen files and data to actor-controlled Blogspot accounts."
+  ],
+  [
+    "kimsuky",
+    "T1583.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1583.001::[Kimsuky] has registered domains to spoof targeted organizations and trusted third parties."
+  ],
+  [
+    "kimsuky",
+    "T1583.004",
+    "Server",
+    "response-content|response-metadata",
+    "T1583.004::[Kimsuky] has purchased hosting servers with virtual currency and prepaid cards."
+  ],
+  [
+    "kimsuky",
+    "T1583.006",
+    "Web Services",
+    "response-content",
+    "T1583.006::[Kimsuky] has hosted content used for targeting efforts via web services such as Blogspot."
+  ],
+  [
+    "kimsuky",
+    "T1584.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1584.001::[Kimsuky] has compromised legitimate sites and used them to distribute malware."
+  ],
+  [
+    "kimsuky",
+    "T1585.001",
+    "Social Media Accounts",
+    "network-traffic-content|social-media",
+    "T1585.001::[Kimsuky] has created social media accounts to monitor news and security trends as well as potential targets."
+  ],
+  [
+    "kimsuky",
+    "T1585.002",
+    "Email Accounts",
+    "none",
+    "T1585.002::[Kimsuky] has created email accounts for phishing operations."
+  ],
+  [
+    "kimsuky",
+    "T1586.002",
+    "Email Accounts",
+    "none",
+    "T1586.002::[Kimsuky] has compromised email accounts to send spearphishing e-mails."
+  ],
+  [
+    "kimsuky",
+    "T1587.001",
+    "Malware",
+    "malware-content|malware-metadata",
+    "T1587.001::[Kimsuky] has developed its own unique malware such as MailFetch.py for use in operations."
+  ],
+  [
+    "kimsuky",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[Kimsuky] has obtained and used tools such as Nirsoft WebBrowserPassVIew, [Mimikatz], and [PsExec]."
+  ],
+  [
+    "kimsuky",
+    "T1588.005",
+    "Exploits",
+    "none",
+    "T1588.005::[Kimsuky] has obtained exploit code for various CVEs."
+  ],
+  [
+    "kimsuky",
+    "T1589.002",
+    "Email Addresses",
+    "network-traffic-content",
+    "T1589.002::[Kimsuky] has collected valid email addresses that were subsequently used in spearphishing campaigns."
+  ],
+  [
+    "kimsuky",
+    "T1589.003",
+    "Employee Names",
+    "none",
+    "T1589.003::[Kimsuky] has collected victim employee name information."
+  ],
+  [
+    "kimsuky",
+    "T1593.001",
+    "Social Media",
+    "none",
+    "T1593.001::[Kimsuky] has used Twitter to monitor potential victims and to prepare targeted phishing e-mails."
+  ],
+  [
+    "kimsuky",
+    "T1593.002",
+    "Search Engines",
+    "none",
+    "T1593.002::[Kimsuky] has searched for vulnerabilities, tools, and geopolitical trends on Google to target victims."
+  ],
+  [
+    "kimsuky",
+    "T1598.003",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1598.003::[Kimsuky] has used links in e-mail to steal account information."
+  ],
+  [
+    "kimsuky",
+    "T1608.001",
+    "Upload Malware",
+    "response-content",
+    "T1608.001::[Kimsuky] has used Blogspot to host malicious content such as beacons, file exfiltrators, and implants."
+  ]
+]

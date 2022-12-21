@@ -1,0 +1,72 @@
+[
+  {
+    "id": "intrusion-set--85403903-15e0-4f9f-9be4-a259ecad4022",
+    "name": "fin5",
+    "aliases": "fin5",
+    "group_id": "G0053",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 2,
+        "items": [
+          "flipside",
+          "rawpos"
+        ]
+      },
+      "tools": {
+        "count": 4,
+        "items": [
+          "psexec",
+          "pwdump",
+          "sdelete",
+          "windows-credential-editor"
+        ]
+      },
+      "techniques": {
+        "count": 11,
+        "items": [
+          "T1018",
+          "T1059",
+          "T1070.001",
+          "T1070.004",
+          "T1074.001",
+          "T1078",
+          "T1090.002",
+          "T1110",
+          "T1119",
+          "T1133",
+          "T1588.002"
+        ]
+      },
+      "tactics": {
+        "count": 10,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1018::[FIN5] has used the open source tool Essential NetTools to map the network and build a list of targets.",
+        "T1059::[FIN5] scans processes on all victim systems in the environment and uses automated scripts to pull back the results.",
+        "T1070.001::[FIN5] has cleared event logs from victims.",
+        "T1070.004::[FIN5] uses [SDelete] to clean up the environment and attempt to prevent detection.",
+        "T1074.001::[FIN5] scripts save memory dump data into a specific directory on hosts in the victim environment.",
+        "T1078::[FIN5] has used legitimate VPN, RDP, Citrix, or VNC credentials to maintain access to a victim environment.",
+        "T1090.002::[FIN5] maintains access to victim environments by using [FLIPSIDE] to create a proxy for a backup RDP tunnel.",
+        "T1110::[FIN5] has has used the tool GET2 Penetrator to look for remote login and hard-coded credentials.",
+        "T1119::[FIN5] scans processes on all victim systems in the environment and uses automated scripts to pull back the results.",
+        "T1133::[FIN5] has used legitimate VPN, Citrix, or VNC credentials to maintain access to a victim environment.",
+        "T1588.002::[FIN5] has obtained and used a customized version of [PsExec], as well as use other tools such as [pwdump], [SDelete], and [Windows Credential Editor]."
+      ]
+    },
+    "description": "[FIN5](https://attack.mitre.org/groups/G0053) is a financially motivated threat group that has targeted personally identifiable information and payment card information. The group has been active since at least 2008 and has targeted the restaurant, gaming, and hotel industries. The group is made up of actors who likely speak Russian. (Citation: FireEye Respond Webinar July 2017) (Citation: Mandiant FIN5 GrrCON Oct 2016) (Citation: DarkReading FireEye FIN5 Oct 2015)"
+  }
+]

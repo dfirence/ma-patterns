@@ -1,0 +1,100 @@
+[
+  [
+    "blue-mockingbird",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[Blue Mockingbird] has used Mimikatz to retrieve credentials from LSASS memory."
+  ],
+  [
+    "blue-mockingbird",
+    "T1021.001",
+    "Remote Desktop Protocol",
+    "logon-session-creation|network-connection-creation|network-traffic-flow|process-creation",
+    "T1021.001::[Blue Mockingbird] has used Remote Desktop to log on to servers interactively and manually copy files to remote hosts."
+  ],
+  [
+    "blue-mockingbird",
+    "T1021.002",
+    "SMB/Windows Admin Shares",
+    "command-execution|logon-session-creation|network-connection-creation|network-share-access|network-traffic-flow",
+    "T1021.002::[Blue Mockingbird] has used Windows Explorer to manually copy malicious files to remote hosts over SMB."
+  ],
+  [
+    "blue-mockingbird",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[Blue Mockingbird] has masqueraded their XMRIG payload name by naming it wercplsupporte.dll after the legitimate wercplsupport.dll file."
+  ],
+  [
+    "blue-mockingbird",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[Blue Mockingbird] has used Windows Scheduled Tasks to establish persistence on local and remote hosts."
+  ],
+  [
+    "blue-mockingbird",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[Blue Mockingbird] has used PowerShell reverse TCP shells to issue interactive commands over a network connection."
+  ],
+  [
+    "blue-mockingbird",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[Blue Mockingbird] has used batch script files to automate execution and deployment of payloads."
+  ],
+  [
+    "blue-mockingbird",
+    "T1218.010",
+    "Regsvr32",
+    "command-execution|module-load|network-connection-creation|process-creation",
+    "T1218.010::[Blue Mockingbird] has executed custom-compiled XMRIG miner DLLs using regsvr32.exe."
+  ],
+  [
+    "blue-mockingbird",
+    "T1218.011",
+    "Rundll32",
+    "command-execution|file-metadata|module-load|process-creation",
+    "T1218.011::[Blue Mockingbird] has executed custom-compiled XMRIG miner DLLs using rundll32.exe."
+  ],
+  [
+    "blue-mockingbird",
+    "T1543.003",
+    "Windows Service",
+    "command-execution|driver-load|os-api-execution|process-creation|service-creation|service-modification|windows-registry-key-creation|windows-registry-key-modification",
+    "T1543.003::[Blue Mockingbird] has made their XMRIG payloads persistent as a Windows Service."
+  ],
+  [
+    "blue-mockingbird",
+    "T1546.003",
+    "Windows Management Instrumentation Event Subscription",
+    "command-execution|process-creation|wmi-creation",
+    "T1546.003::[Blue Mockingbird] has used mofcomp.exe to establish WMI Event Subscription persistence mechanisms configured from a *.mof file."
+  ],
+  [
+    "blue-mockingbird",
+    "T1569.002",
+    "Service Execution",
+    "command-execution|process-creation|service-creation|windows-registry-key-modification",
+    "T1569.002::[Blue Mockingbird] has executed custom-compiled XMRIG miner DLLs by configuring them to execute via the \"wercplsupport\" service."
+  ],
+  [
+    "blue-mockingbird",
+    "T1574.012",
+    "COR_PROFILER",
+    "command-execution|module-load|process-creation|windows-registry-key-modification",
+    "T1574.012::[Blue Mockingbird] has used wmic.exe and Windows Registry modifications to set the COR_PROFILER environment variable to execute a malicious DLL whenever a process loads the .NET CLR."
+  ],
+  [
+    "blue-mockingbird",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[Blue Mockingbird] has obtained and used tools such as [Mimikatz]."
+  ]
+]

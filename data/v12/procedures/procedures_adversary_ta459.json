@@ -1,0 +1,30 @@
+[
+  [
+    "ta459",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[TA459] has used PowerShell for execution of a payload."
+  ],
+  [
+    "ta459",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[TA459] has a VBScript for execution."
+  ],
+  [
+    "ta459",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[TA459] has attempted to get victims to open malicious Microsoft Word attachment sent via spearphishing."
+  ],
+  [
+    "ta459",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[TA459] has targeted victims using spearphishing emails with malicious Microsoft Word attachments."
+  ]
+]

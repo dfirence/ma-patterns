@@ -1,0 +1,41 @@
+[
+  {
+    "id": "tool--90ac9266-68ce-46f2-b24f-5eb3b2a8ea38",
+    "name": "ruler",
+    "aliases": "none",
+    "platforms": "windows|office-365",
+    "tool_id": "S0358",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 2,
+        "items": [
+          "discovery",
+          "persistence"
+        ]
+      },
+      "techniques": {
+        "count": 4,
+        "items": [
+          "T1087.003",
+          "T1137.003",
+          "T1137.004",
+          "T1137.005"
+        ]
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "apt33"
+        ]
+      },
+      "procedures": [
+        "T1087.003::[Ruler] can be used to enumerate Exchange users and dump the GAL.",
+        "T1137.003::[Ruler] can be used to automate the abuse of Outlook Forms to establish persistence.",
+        "T1137.004::[Ruler] can be used to automate the abuse of Outlook Home Pages to establish persistence.",
+        "T1137.005::[Ruler] can be used to automate the abuse of Outlook Rules to establish persistence."
+      ]
+    },
+    "description": "[Ruler](https://attack.mitre.org/software/S0358) is a tool to abuse Microsoft Exchange services. It is publicly available on GitHub and the tool is executed via the command line. The creators of [Ruler](https://attack.mitre.org/software/S0358) have also released a defensive tool, NotRuler, to detect its usage.(Citation: SensePost Ruler GitHub)(Citation: SensePost NotRuler)"
+  }
+]

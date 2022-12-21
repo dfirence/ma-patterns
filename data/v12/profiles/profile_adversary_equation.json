@@ -1,0 +1,43 @@
+[
+  {
+    "id": "intrusion-set--96e239be-ad99-49eb-b127-3007b8c1bec9",
+    "name": "equation",
+    "aliases": "equation",
+    "group_id": "G0020",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 4,
+        "items": [
+          "T1120",
+          "T1480.001",
+          "T1542.002",
+          "T1564.005"
+        ]
+      },
+      "tactics": {
+        "count": 3,
+        "items": [
+          "defense-evasion",
+          "discovery",
+          "persistence"
+        ]
+      },
+      "procedures": [
+        "T1120::[Equation] has used tools with the functionality to search for specific information about the attached hard drive that could be used to identify and overwrite the firmware.",
+        "T1480.001::[Equation] has been observed utilizing environmental keying in payload delivery.",
+        "T1542.002::[Equation] is known to have the capability to overwrite the firmware on hard drives from some manufacturers.",
+        "T1564.005::[Equation] has used an encrypted virtual file system stored in the Windows Registry."
+      ]
+    },
+    "description": "[Equation](https://attack.mitre.org/groups/G0020) is a sophisticated threat group that employs multiple remote access tools. The group is known to use zero-day exploits and has developed the capability to overwrite the firmware of hard disk drives. (Citation: Kaspersky Equation QA)"
+  }
+]

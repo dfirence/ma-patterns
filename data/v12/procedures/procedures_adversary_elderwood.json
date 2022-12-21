@@ -1,0 +1,37 @@
+[
+  [
+    "elderwood",
+    "T1027.002",
+    "Software Packing",
+    "file-metadata",
+    "T1027.002::[Elderwood] has packed malware payloads before delivery to victims."
+  ],
+  [
+    "elderwood",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[Elderwood] has leveraged multiple types of spearphishing in order to attempt to get a user to open links."
+  ],
+  [
+    "elderwood",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Elderwood] has leveraged multiple types of spearphishing in order to attempt to get a user to open attachments."
+  ],
+  [
+    "elderwood",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[Elderwood] has delivered zero-day exploits and malware to victims via targeted emails containing malicious attachments."
+  ],
+  [
+    "elderwood",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[Elderwood] has delivered zero-day exploits and malware to victims via targeted emails containing a link to malicious content hosted on an uncommon Web server."
+  ]
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "intrusion-set--fed4f0a2-4347-4530-b0f5-6dfd49b29172",
+    "name": "nomadic-octopus",
+    "aliases": "nomadic-octopus|dustsquad",
+    "group_id": "G0133",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 1,
+        "items": [
+          "octopus"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 7,
+        "items": [
+          "T1036",
+          "T1059.001",
+          "T1059.003",
+          "T1105",
+          "T1204.002",
+          "T1564.003",
+          "T1566.001"
+        ]
+      },
+      "tactics": {
+        "count": 4,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "execution",
+          "initial-access"
+        ]
+      },
+      "procedures": [
+        "T1036::[Nomadic Octopus] attempted to make [Octopus] appear as a  Telegram Messenger with a Russian interface.",
+        "T1059.001::[Nomadic Octopus] has used PowerShell for execution.",
+        "T1059.003::[Nomadic Octopus] used cmd.exe /c within a malicious macro.",
+        "T1105::[Nomadic Octopus] has used malicious macros to download additional files to the victim's machine.",
+        "T1204.002::[Nomadic Octopus] as attempted to lure victims into clicking on malicious attachments within spearphishing emails.",
+        "T1564.003::[Nomadic Octopus] executed PowerShell in a hidden window.",
+        "T1566.001::[Nomadic Octopus] has targeted victims with spearphishing emails containing malicious attachments."
+      ]
+    },
+    "description": "\n[Nomadic Octopus](https://attack.mitre.org/groups/G0133) is a Russian-speaking cyber espionage threat group that has primarily targeted Central Asia, including local governments, diplomatic missions, and individuals, since at least 2014. [Nomadic Octopus](https://attack.mitre.org/groups/G0133) has been observed conducting campaigns involving Android and Windows malware, mainly using the Delphi programming language, and building custom variants.(Citation: Security Affairs DustSquad Oct 2018)(Citation: Securelist Octopus Oct 2018)(Citation: ESET Nomadic Octopus 2018)"
+  }
+]

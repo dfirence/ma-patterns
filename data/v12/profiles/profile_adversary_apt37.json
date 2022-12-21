@@ -1,0 +1,114 @@
+[
+  {
+    "id": "intrusion-set--4a2ce82e-1a74-468a-a6fb-bbead541383c",
+    "name": "apt37",
+    "aliases": "apt37|richochet-chollima|inkysquid|scarcruft|reaper|group123|temp.reaper",
+    "group_id": "G0067",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 13,
+        "items": [
+          "bluelight",
+          "cobalt-strike",
+          "coraldeck",
+          "dogcall",
+          "final1stspy",
+          "happywork",
+          "karae",
+          "navrat",
+          "pooraim",
+          "rokrat",
+          "shutterspeed",
+          "slowdrift",
+          "winerack"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 29,
+        "items": [
+          "T1005",
+          "T1027",
+          "T1027.003",
+          "T1033",
+          "T1036.001",
+          "T1053.005",
+          "T1055",
+          "T1057",
+          "T1059",
+          "T1059.003",
+          "T1059.005",
+          "T1059.006",
+          "T1071.001",
+          "T1082",
+          "T1102.002",
+          "T1105",
+          "T1106",
+          "T1120",
+          "T1123",
+          "T1189",
+          "T1203",
+          "T1204.002",
+          "T1529",
+          "T1547.001",
+          "T1548.002",
+          "T1555.003",
+          "T1559.002",
+          "T1561.002",
+          "T1566.001"
+        ]
+      },
+      "tactics": {
+        "count": 10,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "impact",
+          "initial-access",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "procedures": [
+        "T1005::[APT37] has collected data from victims' local systems.",
+        "T1027.003::[APT37] uses steganography to send images to users that are embedded with shellcode.",
+        "T1027::[APT37] obfuscates strings and payloads.",
+        "T1033::[APT37] identifies the victim username.",
+        "T1036.001::[APT37] has signed its malware with an invalid digital certificates listed as “Tencent Technology (Shenzhen) Company Limited.”",
+        "T1053.005::[APT37] has created scheduled tasks to run malicious scripts on a compromised host.",
+        "T1055::[APT37] injects its malware variant, [ROKRAT], into the cmd.exe process.",
+        "T1057::[APT37]'s Freenki malware lists running processes using the Microsoft Windows API.",
+        "T1059.003::[APT37] has used the command-line interface.",
+        "T1059.005::[APT37] executes shellcode and a VBA script to decode Base64 strings.",
+        "T1059.006::[APT37] has used Python scripts to execute payloads.",
+        "T1059::[APT37] has used Ruby scripts to execute payloads.",
+        "T1071.001::[APT37] uses HTTPS to conceal C2 communications.",
+        "T1082::[APT37] collects the computer name, the BIOS model, and execution path.",
+        "T1102.002::[APT37] leverages social networking sites and cloud platforms (AOL, Twitter, Yandex, Mediafire, pCloud, Dropbox, and Box) for C2.",
+        "T1105::[APT37] has downloaded second stage malware from compromised websites.",
+        "T1106::[APT37] leverages the Windows API calls: VirtualAlloc(), WriteProcessMemory(), and CreateRemoteThread() for process injection.",
+        "T1120::[APT37] has a Bluetooth device harvester, which uses Windows Bluetooth APIs to find information on connected Bluetooth devices.",
+        "T1123::[APT37] has used an audio capturing utility known as SOUNDWAVE that captures microphone input.",
+        "T1189::[APT37] has used strategic web compromises, particularly of South Korean websites, to distribute malware. The group has also used torrent file-sharing sites to more indiscriminately disseminate malware to victims. As part of their compromises, the group has used a Javascript based profiler called RICECURRY to profile a victim's web browser and deliver malicious code accordingly.",
+        "T1203::[APT37] has used exploits for Flash Player (CVE-2016-4117, CVE-2018-4878), Word (CVE-2017-0199), Internet Explorer (CVE-2020-1380 and CVE-2020-26411), and Microsoft Edge (CVE-2021-26411) for execution.",
+        "T1204.002::[APT37] has sent spearphishing attachments attempting to get a user to open them.",
+        "T1529::[APT37] has used malware that will issue the command shutdown /r /t 1 to reboot a system after wiping its MBR.",
+        "T1547.001::[APT37]'s has added persistence via the Registry key HKCU\\Software\\Microsoft\\CurrentVersion\\Run\\.",
+        "T1548.002::[APT37] has a function in the initial dropper to bypass Windows UAC in order to execute the next payload with higher privileges.",
+        "T1555.003::[APT37] has used a credential stealer known as ZUMKONG that can harvest usernames and passwords stored in browsers.",
+        "T1559.002::[APT37] has used Windows DDE for execution of commands and a malicious VBS.",
+        "T1561.002::[APT37] has access to destructive malware that is capable of overwriting a machine's Master Boot Record (MBR).",
+        "T1566.001::[APT37] delivers malware using spearphishing emails with malicious HWP attachments."
+      ]
+    },
+    "description": "[APT37](https://attack.mitre.org/groups/G0067) is a North Korean state-sponsored cyber espionage group that has been active since at least 2012. The group has targeted victims primarily in South Korea, but also in Japan, Vietnam, Russia, Nepal, China, India, Romania, Kuwait, and other parts of the Middle East. [APT37](https://attack.mitre.org/groups/G0067) has also been linked to the following campaigns between 2016-2018: Operation Daybreak, Operation Erebus, Golden Time, Evil New Year, Are you Happy?, FreeMilk, North Korean Human Rights, and Evil New Year 2018.(Citation: FireEye APT37 Feb 2018)(Citation: Securelist ScarCruft Jun 2016)(Citation: Talos Group123)\n\nNorth Korean group definitions are known to have significant overlap, and some security researchers report all North Korean state-sponsored cyber activity under the name [Lazarus Group](https://attack.mitre.org/groups/G0032) instead of tracking clusters or subgroups."
+  }
+]

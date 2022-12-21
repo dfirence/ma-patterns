@@ -1,0 +1,16 @@
+[
+  [
+    "orangeworm",
+    "T1021.002",
+    "SMB/Windows Admin Shares",
+    "command-execution|logon-session-creation|network-connection-creation|network-share-access|network-traffic-flow",
+    "T1021.002::[Orangeworm] has copied its backdoor across open network shares, including ADMIN$, C$WINDOWS, D$WINDOWS, and E$WINDOWS."
+  ],
+  [
+    "orangeworm",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[Orangeworm] has used HTTP for C2."
+  ]
+]

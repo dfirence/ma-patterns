@@ -1,0 +1,62 @@
+[
+  {
+    "id": "intrusion-set--55033a4d-3ffe-46b2-99b4-2c1541e9ce1c",
+    "name": "carbanak",
+    "aliases": "carbanak|anunak",
+    "group_id": "G0008",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 1,
+        "items": [
+          "carbanak"
+        ]
+      },
+      "tools": {
+        "count": 3,
+        "items": [
+          "mimikatz",
+          "netsh",
+          "psexec"
+        ]
+      },
+      "techniques": {
+        "count": 9,
+        "items": [
+          "T1036.004",
+          "T1036.005",
+          "T1078",
+          "T1102.002",
+          "T1218.011",
+          "T1219",
+          "T1543.003",
+          "T1562.004",
+          "T1588.002"
+        ]
+      },
+      "tactics": {
+        "count": 6,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1036.004::[Carbanak] has copied legitimate service names to use for malicious services.",
+        "T1036.005::[Carbanak] has named malware \"svchost.exe,\" which is the name of the Windows shared service host program.",
+        "T1078::[Carbanak] actors used legitimate credentials of banking employees to perform operations that sent them millions of dollars.",
+        "T1102.002::[Carbanak] has used a VBScript named \"ggldr\" that uses Google Apps Script, Sheets, and Forms services for C2.",
+        "T1218.011::[Carbanak] installs VNC server software that executes through rundll32.",
+        "T1219::[Carbanak] used legitimate programs such as AmmyyAdmin and Team Viewer for remote interactive C2 to target systems.",
+        "T1543.003::[Carbanak] malware installs itself as a service to provide persistence and SYSTEM privileges.",
+        "T1562.004::[Carbanak] may use [netsh] to add local firewall rule exceptions.",
+        "T1588.002::[Carbanak] has obtained and used open-source tools such as [PsExec] and [Mimikatz]."
+      ]
+    },
+    "description": "[Carbanak](https://attack.mitre.org/groups/G0008) is a cybercriminal group that has used [Carbanak](https://attack.mitre.org/software/S0030) malware to target financial institutions since at least 2013. [Carbanak](https://attack.mitre.org/groups/G0008) may be linked to groups tracked separately as [Cobalt Group](https://attack.mitre.org/groups/G0080) and [FIN7](https://attack.mitre.org/groups/G0046) that have also used [Carbanak](https://attack.mitre.org/software/S0030) malware.(Citation: Kaspersky Carbanak)(Citation: FireEye FIN7 April 2017)(Citation: Europol Cobalt Mar 2018)(Citation: Secureworks GOLD NIAGARA Threat Profile)(Citation: Secureworks GOLD KINGSWOOD Threat Profile)"
+  }
+]

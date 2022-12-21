@@ -1,0 +1,77 @@
+[
+  {
+    "id": "intrusion-set--1f21da59-6a13-455b-afd0-d58d0a5a7d27",
+    "name": "gorgon-group",
+    "aliases": "gorgon-group",
+    "group_id": "G0078",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 2,
+        "items": [
+          "nanocore",
+          "njrat"
+        ]
+      },
+      "tools": {
+        "count": 2,
+        "items": [
+          "quasarrat",
+          "remcos"
+        ]
+      },
+      "techniques": {
+        "count": 16,
+        "items": [
+          "T1055.002",
+          "T1055.012",
+          "T1059.001",
+          "T1059.003",
+          "T1059.005",
+          "T1105",
+          "T1106",
+          "T1112",
+          "T1140",
+          "T1204.002",
+          "T1547.001",
+          "T1547.009",
+          "T1562.001",
+          "T1564.003",
+          "T1566.001",
+          "T1588.002"
+        ]
+      },
+      "tactics": {
+        "count": 7,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "execution",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1055.002::[Gorgon Group] malware can download a remote access tool, [ShiftyBug], and inject into another process.",
+        "T1055.012::[Gorgon Group] malware can use process hollowing to inject one of its trojans into another process.",
+        "T1059.001::[Gorgon Group] malware can use PowerShell commands to download and execute a payload and open a decoy document on the victim’s machine.",
+        "T1059.003::[Gorgon Group] malware can use cmd.exe to download and execute payloads and to execute commands on the system.",
+        "T1059.005::[Gorgon Group] has used macros in [Spearphishing Attachment]s as well as executed VBScripts on victim machines.",
+        "T1105::[Gorgon Group] malware can download additional files from C2 servers.",
+        "T1106::[Gorgon Group] malware can leverage the Windows API call, CreateProcessA(), for execution.",
+        "T1112::[Gorgon Group] malware can deactivate security mechanisms in Microsoft Office by editing several keys and values under HKCU\\Software\\Microsoft\\Office\\.",
+        "T1140::[Gorgon Group] malware can decode contents from a payload that was Base64 encoded and write the contents to a file.",
+        "T1204.002::[Gorgon Group] attempted to get users to launch malicious Microsoft Office attachments delivered via spearphishing emails.",
+        "T1547.001::[Gorgon Group] malware can create a .lnk file and add a Registry Run key to establish persistence.",
+        "T1547.009::[Gorgon Group] malware can create a .lnk file and add a Registry Run key to establish persistence.",
+        "T1562.001::[Gorgon Group] malware can attempt to disable security features in Microsoft Office and Windows Defender using the taskkill command.",
+        "T1564.003::[Gorgon Group] has used -W Hidden to conceal [PowerShell] windows by setting the WindowStyle parameter to hidden.",
+        "T1566.001::[Gorgon Group] sent emails to victims with malicious Microsoft Office documents attached.",
+        "T1588.002::[Gorgon Group] has obtained and used tools such as [QuasarRAT] and [Remcos]."
+      ]
+    },
+    "description": "[Gorgon Group](https://attack.mitre.org/groups/G0078) is a threat group consisting of members who are suspected to be Pakistan-based or have other connections to Pakistan. The group has performed a mix of criminal and targeted attacks, including campaigns against government organizations in the United Kingdom, Spain, Russia, and the United States. (Citation: Unit 42 Gorgon Group Aug 2018)"
+  }
+]

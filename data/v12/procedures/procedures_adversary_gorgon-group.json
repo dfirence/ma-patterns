@@ -1,0 +1,86 @@
+[
+  [
+    "gorgon-group",
+    "T1055.002",
+    "Portable Executable Injection",
+    "os-api-execution|process-access|process-modification",
+    "T1055.002::[Gorgon Group] malware can download a remote access tool, [ShiftyBug], and inject into another process."
+  ],
+  [
+    "gorgon-group",
+    "T1055.012",
+    "Process Hollowing",
+    "os-api-execution|process-access|process-modification",
+    "T1055.012::[Gorgon Group] malware can use process hollowing to inject one of its trojans into another process."
+  ],
+  [
+    "gorgon-group",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[Gorgon Group] malware can use PowerShell commands to download and execute a payload and open a decoy document on the victim’s machine."
+  ],
+  [
+    "gorgon-group",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[Gorgon Group] malware can use cmd.exe to download and execute payloads and to execute commands on the system."
+  ],
+  [
+    "gorgon-group",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[Gorgon Group] has used macros in [Spearphishing Attachment]s as well as executed VBScripts on victim machines."
+  ],
+  [
+    "gorgon-group",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Gorgon Group] attempted to get users to launch malicious Microsoft Office attachments delivered via spearphishing emails."
+  ],
+  [
+    "gorgon-group",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[Gorgon Group] malware can create a .lnk file and add a Registry Run key to establish persistence."
+  ],
+  [
+    "gorgon-group",
+    "T1547.009",
+    "Shortcut Modification",
+    "file-creation|file-modification|process-creation",
+    "T1547.009::[Gorgon Group] malware can create a .lnk file and add a Registry Run key to establish persistence."
+  ],
+  [
+    "gorgon-group",
+    "T1562.001",
+    "Disable or Modify Tools",
+    "command-execution|driver-load|host-status|process-termination|service-metadata|windows-registry-key-deletion|windows-registry-key-modification",
+    "T1562.001::[Gorgon Group] malware can attempt to disable security features in Microsoft Office and Windows Defender using the taskkill command."
+  ],
+  [
+    "gorgon-group",
+    "T1564.003",
+    "Hidden Window",
+    "command-execution|file-modification|process-creation|script-execution",
+    "T1564.003::[Gorgon Group] has used -W Hidden to conceal [PowerShell] windows by setting the WindowStyle parameter to hidden."
+  ],
+  [
+    "gorgon-group",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[Gorgon Group] sent emails to victims with malicious Microsoft Office documents attached."
+  ],
+  [
+    "gorgon-group",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[Gorgon Group] has obtained and used tools such as [QuasarRAT] and [Remcos]."
+  ]
+]

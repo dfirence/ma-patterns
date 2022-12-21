@@ -1,0 +1,93 @@
+[
+  [
+    "inception",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[Inception] has used PowerShell to execute malicious commands and payloads."
+  ],
+  [
+    "inception",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[Inception] has used VBScript to execute malicious commands and payloads."
+  ],
+  [
+    "inception",
+    "T1069.002",
+    "Domain Groups",
+    "command-execution|group-enumeration|os-api-execution|process-creation",
+    "T1069.002::[Inception] has used specific malware modules to gather domain membership."
+  ],
+  [
+    "inception",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[Inception] has used HTTP, HTTPS, and WebDav in network communications."
+  ],
+  [
+    "inception",
+    "T1090.003",
+    "Multi-hop Proxy",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1090.003::[Inception] used chains of compromised routers to proxy C2 communications between them and cloud service providers."
+  ],
+  [
+    "inception",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Inception] lured victims into clicking malicious files for machine reconnaissance and to execute malware."
+  ],
+  [
+    "inception",
+    "T1218.005",
+    "Mshta",
+    "command-execution|file-creation|network-connection-creation|process-creation",
+    "T1218.005::[Inception] has used malicious HTA files to drop and execute malware."
+  ],
+  [
+    "inception",
+    "T1218.010",
+    "Regsvr32",
+    "command-execution|module-load|network-connection-creation|process-creation",
+    "T1218.010::[Inception] has ensured persistence at system boot by setting the value regsvr32 %path%\\ctfmonrn.dll /s."
+  ],
+  [
+    "inception",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[Inception] has maintained persistence by modifying Registry run key value \n HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\."
+  ],
+  [
+    "inception",
+    "T1555.003",
+    "Credentials from Web Browsers",
+    "command-execution|file-access|os-api-execution|process-access",
+    "T1555.003::[Inception] used a browser plugin to steal passwords and sessions from Internet Explorer, Chrome, Opera, Firefox, Torch, and Yandex."
+  ],
+  [
+    "inception",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[Inception] has used weaponized documents attached to spearphishing emails for reconnaissance and initial compromise."
+  ],
+  [
+    "inception",
+    "T1573.001",
+    "Symmetric Cryptography",
+    "network-traffic-content",
+    "T1573.001::[Inception] has encrypted network communications with AES."
+  ],
+  [
+    "inception",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[Inception] has obtained and used open-source tools such as [LaZagne]."
+  ]
+]

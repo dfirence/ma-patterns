@@ -1,0 +1,38 @@
+[
+  {
+    "id": "tool--3ffbdc1f-d2bf-41ab-91a2-c7b857e98079",
+    "name": "rawdisk",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0364",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "impact"
+        ]
+      },
+      "techniques": {
+        "count": 3,
+        "items": [
+          "T1485",
+          "T1561.001",
+          "T1561.002"
+        ]
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "lazarus-group"
+        ]
+      },
+      "procedures": [
+        "T1485::[RawDisk] was used in [Shamoon] to write to protected system locations such as the MBR and disk partitions in an effort to destroy data.",
+        "T1561.001::[RawDisk] has been used to directly access the hard disk to help overwrite arbitrarily sized portions of disk content.",
+        "T1561.002::[RawDisk] was used in [Shamoon] to help overwrite components of disk structure like the MBR and disk partitions."
+      ]
+    },
+    "description": "[RawDisk](https://attack.mitre.org/software/S0364) is a legitimate commercial driver from the EldoS Corporation that is used for interacting with files, disks, and partitions. The driver allows for direct modification of data on a local computer's hard drive. In some cases, the tool can enact these raw disk modifications from user-mode processes, circumventing Windows operating system security features.(Citation: EldoS RawDisk ITpro)(Citation: Novetta Blockbuster Destructive Malware)"
+  }
+]

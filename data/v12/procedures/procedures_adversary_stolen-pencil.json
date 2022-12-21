@@ -1,0 +1,51 @@
+[
+  [
+    "stolen-pencil",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[Stolen Pencil] gathers credentials using [Mimikatz] and Procdump."
+  ],
+  [
+    "stolen-pencil",
+    "T1021.001",
+    "Remote Desktop Protocol",
+    "logon-session-creation|network-connection-creation|network-traffic-flow|process-creation",
+    "T1021.001::[Stolen Pencil] utilized RDP for direct remote point-and-click access."
+  ],
+  [
+    "stolen-pencil",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[Stolen Pencil] has a tool to log keystrokes to %userprofile%\\appdata\\roaming\\apach.{txt,log}."
+  ],
+  [
+    "stolen-pencil",
+    "T1078.003",
+    "Local Accounts",
+    "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "T1078.003::[Stolen Pencil] has a tool to add a Windows admin account in order to allow them to ensure continued access via RDP."
+  ],
+  [
+    "stolen-pencil",
+    "T1552.001",
+    "Credentials In Files",
+    "command-execution|file-access",
+    "T1552.001::[Stolen Pencil] has used tools that are capable of obtaining credentials from saved mail."
+  ],
+  [
+    "stolen-pencil",
+    "T1555.003",
+    "Credentials from Web Browsers",
+    "command-execution|file-access|os-api-execution|process-access",
+    "T1555.003::[Stolen Pencil] has used tools that are capable of obtaining credentials from web browsers."
+  ],
+  [
+    "stolen-pencil",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[Stolen Pencil] sent spearphishing emails containing links to domains controlled by the threat actor."
+  ]
+]

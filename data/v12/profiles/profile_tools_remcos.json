@@ -1,0 +1,72 @@
+[
+  {
+    "id": "tool--7cd0bc75-055b-4098-a00e-83dc8beaff14",
+    "name": "remcos",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0332",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 8,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "techniques": {
+        "count": 16,
+        "items": [
+          "T1027",
+          "T1055",
+          "T1056.001",
+          "T1059.003",
+          "T1059.006",
+          "T1083",
+          "T1090",
+          "T1105",
+          "T1112",
+          "T1113",
+          "T1115",
+          "T1123",
+          "T1125",
+          "T1497.001",
+          "T1547.001",
+          "T1548.002"
+        ]
+      },
+      "adversaries": {
+        "count": 2,
+        "items": [
+          "gorgon-group",
+          "lazyscripter"
+        ]
+      },
+      "procedures": [
+        "T1027::[Remcos] uses RC4 and base64 to obfuscate data, including Registry entries and file paths.",
+        "T1055::[Remcos] has a command to hide itself through injecting into another process.",
+        "T1056.001::[Remcos] has a command for keylogging.",
+        "T1059.003::[Remcos] can launch a remote command line to execute commands on the victim’s machine.",
+        "T1059.006::[Remcos] uses Python scripts.",
+        "T1083::[Remcos] can search for files on the infected machine.",
+        "T1090::[Remcos] uses the infected hosts as SOCKS5 proxies to allow for tunneling and proxying.",
+        "T1105::[Remcos] can upload and download files to and from the victim’s machine.",
+        "T1112::[Remcos] has full control of the Registry, including the ability to modify it.",
+        "T1113::[Remcos] takes automated screenshots of the infected machine.",
+        "T1115::[Remcos] steals and modifies data from the clipboard.",
+        "T1123::[Remcos] can capture data from the system’s microphone.",
+        "T1125::[Remcos] can access a system’s webcam and take pictures.",
+        "T1497.001::[Remcos] searches for Sandboxie and VMware on the system.",
+        "T1547.001::[Remcos] can add itself to the Registry key HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run for persistence.",
+        "T1548.002::[Remcos] has a command for UAC bypassing."
+      ]
+    },
+    "description": "[Remcos](https://attack.mitre.org/software/S0332) is a closed-source tool that is marketed as a remote control and surveillance software by a company called Breaking Security. [Remcos](https://attack.mitre.org/software/S0332) has been observed being used in malware campaigns.(Citation: Riskiq Remcos Jan 2018)(Citation: Talos Remcos Aug 2018)"
+  }
+]

@@ -1,0 +1,114 @@
+[
+  [
+    "lazyscripter",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[LazyScripter] has used PowerShell scripts to execute malicious code."
+  ],
+  [
+    "lazyscripter",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[LazyScripter] has used batch files to deploy open-source and multi-stage RATs."
+  ],
+  [
+    "lazyscripter",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[LazyScripter] has used VBScript to execute malicious code."
+  ],
+  [
+    "lazyscripter",
+    "T1059.007",
+    "JavaScript",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.007::[LazyScripter] has used JavaScript in its attacks."
+  ],
+  [
+    "lazyscripter",
+    "T1071.004",
+    "DNS",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.004::[LazyScripter] has leveraged dynamic DNS providers for C2 communications."
+  ],
+  [
+    "lazyscripter",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[LazyScripter] has relied upon users clicking on links to malicious files."
+  ],
+  [
+    "lazyscripter",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[LazyScripter] has lured users to open malicious email attachments."
+  ],
+  [
+    "lazyscripter",
+    "T1218.005",
+    "Mshta",
+    "command-execution|file-creation|network-connection-creation|process-creation",
+    "T1218.005::[LazyScripter] has used `mshta.exe` to execute [Koadic] stagers."
+  ],
+  [
+    "lazyscripter",
+    "T1218.011",
+    "Rundll32",
+    "command-execution|file-metadata|module-load|process-creation",
+    "T1218.011::[LazyScripter] has used `rundll32.exe` to execute [Koadic] stagers."
+  ],
+  [
+    "lazyscripter",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[LazyScripter] has achieved persistence via writing a PowerShell script to the autorun registry key."
+  ],
+  [
+    "lazyscripter",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[LazyScripter] has used spam emails weaponized with archive or document files as its initial infection vector."
+  ],
+  [
+    "lazyscripter",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[LazyScripter] has used spam emails that contain a link that redirects the victim to download a malicious document."
+  ],
+  [
+    "lazyscripter",
+    "T1583.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1583.001::[LazyScripter] has used dynamic DNS providers to create legitimate-looking subdomains for C2."
+  ],
+  [
+    "lazyscripter",
+    "T1583.006",
+    "Web Services",
+    "response-content",
+    "T1583.006::[LazyScripter] has established GitHub accounts to host its toolsets."
+  ],
+  [
+    "lazyscripter",
+    "T1588.001",
+    "Malware",
+    "malware-content|malware-metadata",
+    "T1588.001::[LazyScripter] has used a variety of open-source remote access Trojans for its operations."
+  ],
+  [
+    "lazyscripter",
+    "T1608.001",
+    "Upload Malware",
+    "response-content",
+    "T1608.001::[LazyScripter] has hosted open-source remote access Trojans used in its operations in GitHub."
+  ]
+]

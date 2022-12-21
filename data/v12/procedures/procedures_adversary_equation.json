@@ -1,0 +1,23 @@
+[
+  [
+    "equation",
+    "T1480.001",
+    "Environmental Keying",
+    "command-execution|process-creation",
+    "T1480.001::[Equation] has been observed utilizing environmental keying in payload delivery."
+  ],
+  [
+    "equation",
+    "T1542.002",
+    "Component Firmware",
+    "driver-metadata|firmware-modification|os-api-execution",
+    "T1542.002::[Equation] is known to have the capability to overwrite the firmware on hard drives from some manufacturers."
+  ],
+  [
+    "equation",
+    "T1564.005",
+    "Hidden File System",
+    "file-modification|firmware-modification|windows-registry-key-modification",
+    "T1564.005::[Equation] has used an encrypted virtual file system stored in the Windows Registry."
+  ]
+]

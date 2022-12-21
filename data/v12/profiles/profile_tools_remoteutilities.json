@@ -1,0 +1,43 @@
+[
+  {
+    "id": "tool--03c6e0ea-96d3-4b23-9afb-05055663cf4b",
+    "name": "remoteutilities",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0592",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 4,
+        "items": [
+          "collection",
+          "command-and-control",
+          "defense-evasion",
+          "discovery"
+        ]
+      },
+      "techniques": {
+        "count": 4,
+        "items": [
+          "T1083",
+          "T1105",
+          "T1113",
+          "T1218.007"
+        ]
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "muddywater"
+        ]
+      },
+      "procedures": [
+        "T1083::[RemoteUtilities] can enumerate files and directories on a target machine.",
+        "T1105::[RemoteUtilities] can upload and download files to and from a target machine.",
+        "T1113::[RemoteUtilities] can take screenshots on a compromised host.",
+        "T1218.007::[RemoteUtilities] can use Msiexec to install a service."
+      ]
+    },
+    "description": "[RemoteUtilities](https://attack.mitre.org/software/S0592) is a legitimate remote administration tool that has been used by [MuddyWater](https://attack.mitre.org/groups/G0069) since at least 2021 for execution on target machines.(Citation: Trend Micro Muddy Water March 2021)"
+  }
+]

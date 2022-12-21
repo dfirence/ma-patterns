@@ -1,0 +1,16 @@
+[
+  [
+    "group5",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::Malware used by [Group5] is capable of capturing keystrokes."
+  ],
+  [
+    "group5",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::Malware used by [Group5] is capable of remotely deleting files from victims."
+  ]
+]

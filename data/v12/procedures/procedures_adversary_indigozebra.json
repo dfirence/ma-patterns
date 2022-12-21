@@ -1,0 +1,44 @@
+[
+  [
+    "indigozebra",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[IndigoZebra] sent spearphishing emails containing malicious attachments that urged recipients to review modifications in the file which would trigger the attack."
+  ],
+  [
+    "indigozebra",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[IndigoZebra] sent spearphishing emails containing malicious password-protected RAR attachments."
+  ],
+  [
+    "indigozebra",
+    "T1583.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1583.001::[IndigoZebra] has established domains, some of which were designed to look like official government domains, for their operations."
+  ],
+  [
+    "indigozebra",
+    "T1583.006",
+    "Web Services",
+    "response-content",
+    "T1583.006::[IndigoZebra] created Dropbox accounts for their operations."
+  ],
+  [
+    "indigozebra",
+    "T1586.002",
+    "Email Accounts",
+    "none",
+    "T1586.002::[IndigoZebra] has compromised legitimate email accounts to use in their spearphishing operations."
+  ],
+  [
+    "indigozebra",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[IndigoZebra] has acquired open source tools such as [NBTscan] and Meterpreter for their operations."
+  ]
+]

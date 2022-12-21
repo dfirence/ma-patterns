@@ -1,0 +1,44 @@
+[
+  {
+    "id": "tool--cde2d700-9ed1-46cf-9bce-07364fe8b24f",
+    "name": "reg",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0075",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 3,
+        "items": [
+          "credential-access",
+          "defense-evasion",
+          "discovery"
+        ]
+      },
+      "techniques": {
+        "count": 3,
+        "items": [
+          "T1012",
+          "T1112",
+          "T1552.002"
+        ]
+      },
+      "adversaries": {
+        "count": 5,
+        "items": [
+          "dragonfly",
+          "gallium",
+          "oilrig",
+          "rancor",
+          "turla"
+        ]
+      },
+      "procedures": [
+        "T1012::[Reg] may be used to gather details from the Windows Registry of a local or remote system at the command-line interface.",
+        "T1112::[Reg] may be used to interact with and modify the Windows Registry of a local or remote system at the command-line interface.",
+        "T1552.002::[Reg] may be used to find credentials in the Windows Registry."
+      ]
+    },
+    "description": "[Reg](https://attack.mitre.org/software/S0075) is a Windows utility used to interact with the Windows Registry. It can be used at the command-line interface to query, add, modify, and remove information. (Citation: Microsoft Reg)\n\nUtilities such as [Reg](https://attack.mitre.org/software/S0075) are known to be used by persistent threats. (Citation: Windows Commands JPCERT)"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "tool--4fa49fc0-9162-4bdb-a37e-7aa3dcb6d38b",
+    "name": "xcmd",
+    "aliases": "none",
+    "platforms": "none",
+    "tool_id": "S0123",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "execution"
+        ]
+      },
+      "techniques": {
+        "count": 1,
+        "items": [
+          "T1569.002"
+        ]
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "apt1"
+        ]
+      },
+      "procedures": [
+        "T1569.002::[xCmd] can be used to execute binaries on remote systems by creating and starting a service."
+      ]
+    },
+    "description": "[xCmd](https://attack.mitre.org/software/S0123) is an open source tool that is similar to [PsExec](https://attack.mitre.org/software/S0029) and allows the user to execute applications on remote systems. (Citation: xCmd)"
+  }
+]

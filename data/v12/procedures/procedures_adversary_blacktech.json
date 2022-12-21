@@ -1,0 +1,72 @@
+[
+  [
+    "blacktech",
+    "T1021.004",
+    "SSH",
+    "logon-session-creation|network-connection-creation|process-creation",
+    "T1021.004::[BlackTech] has used Putty for remote access."
+  ],
+  [
+    "blacktech",
+    "T1036.002",
+    "Right-to-Left Override",
+    "file-metadata",
+    "T1036.002::[BlackTech] has used right-to-left-override to obfuscate the filenames of malicious e-mail attachments."
+  ],
+  [
+    "blacktech",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[BlackTech] has used e-mails with malicious links to lure victims into installing malware."
+  ],
+  [
+    "blacktech",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[BlackTech] has used e-mails with malicious documents to lure victims into installing malware."
+  ],
+  [
+    "blacktech",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[BlackTech] has used spearphishing e-mails with malicious password-protected archived files (ZIP or RAR) to deliver malware."
+  ],
+  [
+    "blacktech",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[BlackTech] has used spearphishing e-mails with links to cloud services to deliver malware."
+  ],
+  [
+    "blacktech",
+    "T1574.002",
+    "DLL Side-Loading",
+    "file-creation|file-modification|module-load|process-creation",
+    "T1574.002::[BlackTech] has used DLL side loading by giving DLLs hardcoded names and placing them in searched directories."
+  ],
+  [
+    "blacktech",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[BlackTech] has obtained and used tools such as Putty, SNScan, and [PsExec] for its operations."
+  ],
+  [
+    "blacktech",
+    "T1588.003",
+    "Code Signing Certificates",
+    "malware-metadata",
+    "T1588.003::[BlackTech] has used stolen code-signing certificates for its malicious payloads."
+  ],
+  [
+    "blacktech",
+    "T1588.004",
+    "Digital Certificates",
+    "certificate-registration|response-content",
+    "T1588.004::[BlackTech] has used valid, stolen digital certificates for some of their malware and tools."
+  ]
+]

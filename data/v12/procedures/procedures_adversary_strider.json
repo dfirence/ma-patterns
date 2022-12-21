@@ -1,0 +1,23 @@
+[
+  [
+    "strider",
+    "T1090.001",
+    "Internal Proxy",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1090.001::[Strider] has used local servers with both local network and Internet access to act as internal proxy nodes to exfiltrate data from other parts of the network without direct Internet access."
+  ],
+  [
+    "strider",
+    "T1556.002",
+    "Password Filter DLL",
+    "file-creation|module-load|windows-registry-key-modification",
+    "T1556.002::[Strider] has registered its persistence module on domain controllers as a Windows LSA (Local System Authority) password filter to acquire credentials any time a domain, local user, or administrator logs in or changes a password."
+  ],
+  [
+    "strider",
+    "T1564.005",
+    "Hidden File System",
+    "file-modification|firmware-modification|windows-registry-key-modification",
+    "T1564.005::[Strider] has used a hidden file system that is stored as a file on disk."
+  ]
+]

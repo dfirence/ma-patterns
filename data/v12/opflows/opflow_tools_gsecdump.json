@@ -1,0 +1,84 @@
+[
+  {
+    "id": "attack-pattern--1644e709-12d2-41e5-a60f-3470991f5011",
+    "platform": "windows",
+    "tid": "T1003.002",
+    "technique": "Security Account Manager",
+    "tactic": "credential-access",
+    "datasources": "command-execution|file-access|windows-registry-key-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "gsecdump",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to extract credential material from the Security Account Manager (SAM) database either through in-memory techniques or through the Windows Registry where the SAM database is stored. The SAM is a database file that contains local accounts for the host, typically those found with the <code>net user</code> command. Enumerating the SAM database requires SYSTEM level access.\n\nA number of tools can be used to retrieve the SAM file through in-memory techniques:\n\n* pwdumpx.exe\n* [gsecdump](https://attack.mitre.org/software/S0008)\n* [Mimikatz](https://attack.mitre.org/software/S0002)\n* secretsdump.py\n\nAlternatively, the SAM can be extracted from the Registry with Reg:\n\n* <code>reg save HKLM\\sam sam</code>\n* <code>reg save HKLM\\system system</code>\n\nCreddump7 can then be used to process the SAM database locally to retrieve hashes.(Citation: GitHub Creddump7)\n\nNotes: \n\n* RID 500 account is the local, built-in administrator.\n* RID 501 is the guest account.\n* User accounts start with a RID of 1,000+.\n",
+    "technique_references": [
+      {
+        "source_name": "GitHub Creddump7",
+        "url": "https://github.com/Neohapsis/creddump7",
+        "description": "Flathers, R. (2018, February 19). creddump7. Retrieved April 11, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--1ecfdab8-7d59-4c98-95d4-dc41970f57fc",
+    "platform": "windows",
+    "tid": "T1003.004",
+    "technique": "LSA Secrets",
+    "tactic": "credential-access",
+    "datasources": "command-execution|windows-registry-key-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "gsecdump",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries with SYSTEM access to a host may attempt to access Local Security Authority (LSA) secrets, which can contain a variety of different credential materials, such as credentials for service accounts.(Citation: Passcape LSA Secrets)(Citation: Microsoft AD Admin Tier Model)(Citation: Tilbury Windows Credentials) LSA secrets are stored in the registry at <code>HKEY_LOCAL_MACHINE\\SECURITY\\Policy\\Secrets</code>. LSA secrets can also be dumped from memory.(Citation: ired Dumping LSA Secrets)\n\n[Reg](https://attack.mitre.org/software/S0075) can be used to extract from the Registry. [Mimikatz](https://attack.mitre.org/software/S0002) can be used to extract secrets from memory.(Citation: ired Dumping LSA Secrets)",
+    "technique_references": [
+      {
+        "source_name": "Passcape LSA Secrets",
+        "url": "https://www.passcape.com/index.php?section=docsys&cmd=details&id=23",
+        "description": "Passcape. (n.d.). Windows LSA secrets. Retrieved February 21, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft AD Admin Tier Model",
+        "url": "https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material?redirectedfrom=MSDN",
+        "description": "Microsoft. (2019, February 14). Active Directory administrative tier model. Retrieved February 21, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Tilbury Windows Credentials",
+        "url": "https://www.first.org/resources/papers/conf2017/Windows-Credentials-Attacks-and-Mitigation-Techniques.pdf",
+        "description": "Chad Tilbury. (2017, August 8). 1Windows Credentials: Attack, Mitigation, Defense. Retrieved February 21, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ired Dumping LSA Secrets",
+        "url": "https://ired.team/offensive-security/credential-access-and-credential-dumping/dumping-lsa-secrets",
+        "description": "Mantvydas Baranauskas. (2019, November 16). Dumping LSA Secrets. Retrieved February 21, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Powersploit",
+        "url": "https://github.com/mattifestation/PowerSploit",
+        "description": "PowerSploit. (n.d.). Retrieved December 4, 2014.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "system",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

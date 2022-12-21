@@ -1,0 +1,72 @@
+[
+  {
+    "id": "intrusion-set--894aab42-3371-47b1-8859-a4a074c804c8",
+    "name": "stealth-falcon",
+    "aliases": "stealth-falcon",
+    "group_id": "G0038",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 16,
+        "items": [
+          "T1005",
+          "T1012",
+          "T1016",
+          "T1033",
+          "T1041",
+          "T1047",
+          "T1053.005",
+          "T1057",
+          "T1059",
+          "T1059.001",
+          "T1071.001",
+          "T1082",
+          "T1555",
+          "T1555.003",
+          "T1555.004",
+          "T1573.001"
+        ]
+      },
+      "tactics": {
+        "count": 8,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "discovery",
+          "execution",
+          "exfiltration",
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "procedures": [
+        "T1005::[Stealth Falcon] malware gathers data from the local victim system.",
+        "T1012::[Stealth Falcon] malware attempts to determine the installed version of .NET by querying the Registry.",
+        "T1016::[Stealth Falcon] malware gathers the Address Resolution Protocol (ARP) table from the victim.",
+        "T1033::[Stealth Falcon] malware gathers the registered user and primary owner name via WMI.",
+        "T1041::After data is collected by [Stealth Falcon] malware, it is exfiltrated over the existing C2 channel.",
+        "T1047::[Stealth Falcon] malware gathers system information via Windows Management Instrumentation (WMI).",
+        "T1053.005::[Stealth Falcon] malware creates a scheduled task entitled “IE Web Cache” to execute a malicious file hourly.",
+        "T1057::[Stealth Falcon] malware gathers a list of running processes.",
+        "T1059.001::[Stealth Falcon] malware uses PowerShell commands to perform various functions, including gathering system information via WMI and executing commands from its C2 server.",
+        "T1059::[Stealth Falcon] malware uses WMI to script data collection and command execution on the victim.",
+        "T1071.001::[Stealth Falcon] malware communicates with its C2 server via HTTPS.",
+        "T1082::[Stealth Falcon] malware gathers system information via WMI, including the system directory, build number, serial number, version, manufacturer, model, and total physical memory.",
+        "T1555.003::[Stealth Falcon] malware gathers passwords from multiple sources, including Internet Explorer, Firefox, and Chrome.",
+        "T1555.004::[Stealth Falcon] malware gathers passwords from the Windows Credential Vault.",
+        "T1555::[Stealth Falcon] malware gathers passwords from multiple sources, including Windows Credential Vault and Outlook.",
+        "T1573.001::[Stealth Falcon] malware encrypts C2 traffic using RC4 with a hard-coded key."
+      ]
+    },
+    "description": "[Stealth Falcon](https://attack.mitre.org/groups/G0038) is a threat group that has conducted targeted spyware attacks against Emirati journalists, activists, and dissidents since at least 2012. Circumstantial evidence suggests there could be a link between this group and the United Arab Emirates (UAE) government, but that has not been confirmed. (Citation: Citizen Lab Stealth Falcon May 2016)"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "intrusion-set--6eded342-33e5-4451-b6b2-e1c62863129f",
+    "name": "confucius",
+    "aliases": "confucius|confucius-apt",
+    "group_id": "G0142",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 1,
+        "items": [
+          "warzonerat"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 19,
+        "items": [
+          "T1041",
+          "T1053.005",
+          "T1059.001",
+          "T1059.005",
+          "T1071.001",
+          "T1082",
+          "T1083",
+          "T1105",
+          "T1119",
+          "T1203",
+          "T1204.001",
+          "T1204.002",
+          "T1218.005",
+          "T1221",
+          "T1547.001",
+          "T1566.001",
+          "T1566.002",
+          "T1567.002",
+          "T1583.006"
+        ]
+      },
+      "tactics": {
+        "count": 10,
+        "items": [
+          "collection",
+          "command-and-control",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "exfiltration",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1041::[Confucius] has exfiltrated stolen files to its C2 server.",
+        "T1053.005::[Confucius] has created scheduled tasks to maintain persistence on a compromised host.",
+        "T1059.001::[Confucius] has used PowerShell to execute malicious files and payloads.",
+        "T1059.005::[Confucius] has used VBScript to execute malicious code.",
+        "T1071.001::[Confucius] has used HTTP for C2 communications.",
+        "T1082::[Confucius] has used a file stealer that can examine system drives, including those other than the C drive.",
+        "T1083::[Confucius] has used a file stealer that checks the Document, Downloads, Desktop, and Picture folders for documents and images with specific extensions.",
+        "T1105::[Confucius] has downloaded additional files and payloads onto a compromised host following initial access.",
+        "T1119::[Confucius] has used a file stealer to steal documents and images with the following extensions: txt, pdf, png, jpg, doc, xls, xlm, odp, ods, odt, rtf, ppt, xlsx, xlsm, docx, pptx, and jpeg.",
+        "T1203::[Confucius] has exploited Microsoft Office vulnerabilities, including CVE-2015-1641, CVE-2017-11882, and CVE-2018-0802.",
+        "T1204.001::[Confucius] has lured victims into clicking on a malicious link sent through spearphishing.",
+        "T1204.002::[Confucius] has lured victims to execute malicious attachments included in crafted spearphishing emails related to current topics.",
+        "T1218.005::[Confucius] has used mshta.exe to execute malicious VBScript.",
+        "T1221::[Confucius] has used a weaponized Microsoft Word document with an embedded RTF exploit.",
+        "T1547.001::[Confucius] has dropped malicious files into the startup folder `%AppData%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup` on a compromised host in order to maintain persistence.",
+        "T1566.001::[Confucius] has crafted and sent victims malicious attachments to gain initial access.",
+        "T1566.002::[Confucius] has sent malicious links to victims through email campaigns.",
+        "T1567.002::[Confucius] has exfiltrated victim data to cloud storage service accounts.",
+        "T1583.006::[Confucius] has obtained cloud storage service accounts to host stolen data."
+      ]
+    },
+    "description": "[Confucius](https://attack.mitre.org/groups/G0142) is a cyber espionage group that has primarily targeted military personnel, high-profile personalities, business persons, and government organizations in South Asia since at least 2013. Security researchers have noted similarities between [Confucius](https://attack.mitre.org/groups/G0142) and [Patchwork](https://attack.mitre.org/groups/G0040), particularly in their respective custom malware code and targets.(Citation: TrendMicro Confucius APT Feb 2018)(Citation: TrendMicro Confucius APT Aug 2021)(Citation: Uptycs Confucius APT Jan 2021)"
+  }
+]

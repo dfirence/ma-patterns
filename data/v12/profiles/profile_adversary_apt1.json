@@ -1,0 +1,105 @@
+[
+  {
+    "id": "intrusion-set--6a2e693f-24e5-451a-9f88-b36a108e5662",
+    "name": "apt1",
+    "aliases": "apt1|comment-crew|comment-group|comment-panda",
+    "group_id": "G0006",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 6,
+        "items": [
+          "biscuit",
+          "calendar",
+          "glooxmail",
+          "poisonivy",
+          "seasalt",
+          "webc2"
+        ]
+      },
+      "tools": {
+        "count": 11,
+        "items": [
+          "cachedump",
+          "gsecdump",
+          "ipconfig",
+          "lslsass",
+          "mimikatz",
+          "net",
+          "pass-the-hash-toolkit",
+          "psexec",
+          "pwdump",
+          "tasklist",
+          "xcmd"
+        ]
+      },
+      "techniques": {
+        "count": 23,
+        "items": [
+          "T1003.001",
+          "T1005",
+          "T1007",
+          "T1016",
+          "T1021.001",
+          "T1036.005",
+          "T1049",
+          "T1057",
+          "T1059.003",
+          "T1087.001",
+          "T1114.001",
+          "T1114.002",
+          "T1119",
+          "T1135",
+          "T1550.002",
+          "T1560.001",
+          "T1566.001",
+          "T1566.002",
+          "T1583.001",
+          "T1584.001",
+          "T1585.002",
+          "T1588.001",
+          "T1588.002"
+        ]
+      },
+      "tactics": {
+        "count": 8,
+        "items": [
+          "collection",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "lateral-movement",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1003.001::[APT1] has been known to use credential dumping using [Mimikatz].",
+        "T1005::[APT1] has collected files from a local victim.",
+        "T1007::[APT1] used the commands net start and tasklist to get a listing of the services on the system.",
+        "T1016::[APT1] used the ipconfig /all command to gather network configuration information.",
+        "T1021.001::The [APT1] group is known to have used RDP during operations.",
+        "T1036.005::The file name AcroRD32.exe, a legitimate process name for Adobe's Acrobat Reader, was used by [APT1] as a name for malware.",
+        "T1049::[APT1] used the net use command to get a listing on network connections.",
+        "T1057::[APT1] gathered a list of running processes on the system using tasklist /v.",
+        "T1059.003::[APT1] has used the Windows command shell to execute commands, and batch scripting to automate execution.",
+        "T1087.001::[APT1] used the commands net localgroup,net user, and net group to find accounts on the system.",
+        "T1114.001::[APT1] uses two utilities, GETMAIL and MAPIGET, to steal email. GETMAIL extracts emails from archived Outlook .pst files.",
+        "T1114.002::[APT1] uses two utilities, GETMAIL and MAPIGET, to steal email. MAPIGET steals email still on Exchange servers that has not yet been archived.",
+        "T1119::[APT1] used a batch script to perform a series of discovery techniques and saves it to a text file.",
+        "T1135::[APT1] listed connected network shares.",
+        "T1550.002::The [APT1] group is known to have used pass the hash.",
+        "T1560.001::[APT1] has used RAR to compress files before moving them outside of the victim network.",
+        "T1566.001::[APT1] has sent spearphishing emails containing malicious attachments.",
+        "T1566.002::[APT1] has sent spearphishing emails containing hyperlinks to malicious files.",
+        "T1583.001::[APT1] has registered hundreds of domains for use in operations.",
+        "T1584.001::[APT1] hijacked FQDNs associated with legitimate websites hosted by hop points.",
+        "T1585.002::[APT1] has created email accounts for later use in social engineering, phishing, and when registering domains.",
+        "T1588.001::[APT1] used publicly available malware for privilege escalation.",
+        "T1588.002::[APT1] has used various open-source tools for privilege escalation purposes."
+      ]
+    },
+    "description": "[APT1](https://attack.mitre.org/groups/G0006) is a Chinese threat group that has been attributed to the 2nd Bureau of the People’s Liberation Army (PLA) General Staff Department’s (GSD) 3rd Department, commonly known by its Military Unit Cover Designator (MUCD) as Unit 61398. (Citation: Mandiant APT1)"
+  }
+]

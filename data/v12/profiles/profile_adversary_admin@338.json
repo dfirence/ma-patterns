@@ -1,0 +1,69 @@
+[
+  {
+    "id": "intrusion-set--16ade1aa-0ea1-4bb7-88cc-9079df2ae756",
+    "name": "admin@338",
+    "aliases": "admin@338",
+    "group_id": "G0018",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 3,
+        "items": [
+          "bubblewrap",
+          "lowball",
+          "poisonivy"
+        ]
+      },
+      "tools": {
+        "count": 4,
+        "items": [
+          "ipconfig",
+          "net",
+          "netstat",
+          "systeminfo"
+        ]
+      },
+      "techniques": {
+        "count": 12,
+        "items": [
+          "T1007",
+          "T1016",
+          "T1036.005",
+          "T1049",
+          "T1059.003",
+          "T1069.001",
+          "T1082",
+          "T1083",
+          "T1087.001",
+          "T1203",
+          "T1204.002",
+          "T1566.001"
+        ]
+      },
+      "tactics": {
+        "count": 4,
+        "items": [
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access"
+        ]
+      },
+      "procedures": [
+        "T1007::[admin@338] actors used the following command following exploitation of a machine with [LOWBALL] malware to obtain information about services: net start >> %temp%\\download",
+        "T1016::[admin@338] actors used the following command after exploiting a machine with [LOWBALL] malware to acquire information about local networks: ipconfig /all >> %temp%\\download",
+        "T1036.005::[admin@338] actors used the following command to rename one of their tools to a benign file name: ren \"%temp%\\upload\" audiodg.exe",
+        "T1049::[admin@338] actors used the following command following exploitation of a machine with [LOWBALL] malware to display network connections: netstat -ano >> %temp%\\download",
+        "T1059.003::Following exploitation with [LOWBALL] malware, [admin@338] actors created a file containing a list of commands to be executed on the compromised computer.",
+        "T1069.001::[admin@338] actors used the following command following exploitation of a machine with [LOWBALL] malware to list local groups: net localgroup administrator >> %temp%\\download",
+        "T1082::[admin@338] actors used the following commands after exploiting a machine with [LOWBALL] malware to obtain information about the OS: ver >> %temp%\\download systeminfo >> %temp%\\download",
+        "T1083::[admin@338] actors used the following commands after exploiting a machine with [LOWBALL] malware to obtain information about files and directories: dir c:\\ >> %temp%\\download dir \"c:\\Documents and Settings\" >> %temp%\\download dir \"c:\\Program Files\\\" >> %temp%\\download dir d:\\ >> %temp%\\download",
+        "T1087.001::[admin@338] actors used the following commands following exploitation of a machine with [LOWBALL] malware to enumerate user accounts: net user >> %temp%\\download net user /domain >> %temp%\\download",
+        "T1203::[admin@338] has exploited client software vulnerabilities for execution, such as Microsoft Word CVE-2012-0158.",
+        "T1204.002::[admin@338] has attempted to get victims to launch malicious Microsoft Word attachments delivered via spearphishing emails.",
+        "T1566.001::[admin@338] has sent emails with malicious Microsoft Office documents attached."
+      ]
+    },
+    "description": "[admin@338](https://attack.mitre.org/groups/G0018) is a China-based cyber threat group. It has previously used newsworthy events as lures to deliver malware and has primarily targeted organizations involved in financial, economic, and trade policy, typically using publicly available RATs such as [PoisonIvy](https://attack.mitre.org/software/S0012), as well as some non-public backdoors. (Citation: FireEye admin@338)"
+  }
+]

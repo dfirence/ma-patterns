@@ -1,0 +1,76 @@
+[
+  {
+    "id": "intrusion-set--03be849d-b5a2-4766-9dda-48976bae5710",
+    "name": "sidecopy",
+    "aliases": "sidecopy",
+    "group_id": "G1008",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 2,
+        "items": [
+          "action-rat",
+          "auto-stealer"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 16,
+        "items": [
+          "T1016",
+          "T1036.005",
+          "T1059.005",
+          "T1082",
+          "T1105",
+          "T1106",
+          "T1204.002",
+          "T1218.005",
+          "T1518",
+          "T1518.001",
+          "T1566.001",
+          "T1574.002",
+          "T1584.001",
+          "T1598.002",
+          "T1608.001",
+          "T1614"
+        ]
+      },
+      "tactics": {
+        "count": 9,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "reconnaissance",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1016::[SideCopy] has identified the IP address of a compromised host.",
+        "T1036.005::[SideCopy] has used a legitimate DLL file name, `Duser.dll` to disguise a malicious remote access tool.",
+        "T1059.005::[SideCopy] has sent Microsoft Office Publisher documents to victims that have embedded malicious macros that execute an hta file via calling `mshta.exe`.",
+        "T1082::[SideCopy] has identified the OS version of a compromised host.",
+        "T1105::[SideCopy] has delivered trojanized executables via spearphishing emails that contacts actor-controlled servers to download malicious payloads.",
+        "T1106::[SideCopy] has executed malware by calling the API function `CreateProcessW`.",
+        "T1204.002::[SideCopy] has attempted to lure victims into clicking on malicious embedded archive files sent via spearphishing campaigns.",
+        "T1218.005::[SideCopy] has utilized `mshta.exe` to execute a malicious hta file.",
+        "T1518.001::[SideCopy] uses a loader DLL file to collect AV product names from an infected host.",
+        "T1518::[SideCopy] has collected browser information from a compromised host.",
+        "T1566.001::[SideCopy] has sent spearphishing emails with malicious hta file attachments.",
+        "T1574.002::[SideCopy] has used a malicious loader DLL file to execute the `credwiz.exe` process and side-load the malicious payload `Duser.dll`.",
+        "T1584.001::[SideCopy] has compromised domains for some of their infrastructure, including for C2 and staging malware.",
+        "T1598.002::[SideCopy] has crafted generic lures for spam campaigns to collect emails and credentials for targeting efforts.",
+        "T1608.001::[SideCopy] has used compromised domains to host its malicious payloads.",
+        "T1614::[SideCopy] has identified the country location of a compromised host."
+      ]
+    },
+    "description": "[SideCopy](https://attack.mitre.org/groups/G1008) is a Pakistani threat group that has primarily targeted South Asian countries, including Indian and Afghani government personnel, since at least 2019. [SideCopy](https://attack.mitre.org/groups/G1008)'s name comes from its infection chain that tries to mimic that of [Sidewinder](https://attack.mitre.org/groups/G0121), a suspected Indian threat group.(Citation: MalwareBytes SideCopy Dec 2021)"
+  }
+]

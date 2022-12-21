@@ -1,0 +1,39 @@
+[
+  {
+    "id": "tool--f91162cc-1686-4ff8-8115-bf3f61a4cc7a",
+    "name": "wevtutil",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0645",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 2,
+        "items": [
+          "collection",
+          "defense-evasion"
+        ]
+      },
+      "techniques": {
+        "count": 3,
+        "items": [
+          "T1005",
+          "T1070.001",
+          "T1562.002"
+        ]
+      },
+      "adversaries": {
+        "count": 1,
+        "items": [
+          "apt28"
+        ]
+      },
+      "procedures": [
+        "T1005::[Wevtutil] can be used to export events from a specific log.",
+        "T1070.001::[Wevtutil] can be used to clear system and security event logs from the system.",
+        "T1562.002::[Wevtutil] can be used to disable specific event logs on the system."
+      ]
+    },
+    "description": "[Wevtutil](https://attack.mitre.org/software/S0645) is a Windows command-line utility that enables administrators to retrieve information about event logs and publishers.(Citation: Wevtutil Microsoft Documentation)"
+  }
+]

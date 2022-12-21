@@ -1,0 +1,58 @@
+[
+  [
+    "fin10",
+    "T1021.001",
+    "Remote Desktop Protocol",
+    "logon-session-creation|network-connection-creation|network-traffic-flow|process-creation",
+    "T1021.001::[FIN10] has used RDP to move laterally to systems in the victim environment."
+  ],
+  [
+    "fin10",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[FIN10] has established persistence by using S4U tasks as well as the Scheduled Task option in PowerShell Empire."
+  ],
+  [
+    "fin10",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[FIN10] uses PowerShell for execution as well as PowerShell Empire to establish persistence."
+  ],
+  [
+    "fin10",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[FIN10] has executed malicious .bat files containing PowerShell commands."
+  ],
+  [
+    "fin10",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[FIN10] has used batch scripts and scheduled tasks to delete critical system files."
+  ],
+  [
+    "fin10",
+    "T1078.003",
+    "Local Accounts",
+    "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "T1078.003::[FIN10] has moved laterally using the Local Administrator account."
+  ],
+  [
+    "fin10",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[FIN10] has established persistence by using the Registry option in PowerShell Empire to add a Run key."
+  ],
+  [
+    "fin10",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[FIN10] has relied on publicly-available software to gain footholds and establish persistence in victim environments."
+  ]
+]

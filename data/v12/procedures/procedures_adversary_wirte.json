@@ -1,0 +1,58 @@
+[
+  [
+    "wirte",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[WIRTE] has named a first stage dropper `Kaspersky Update Agent` in order to appear legitimate."
+  ],
+  [
+    "wirte",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[WIRTE] has used PowerShell for script execution."
+  ],
+  [
+    "wirte",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[WIRTE] has used VBScript  in its operations."
+  ],
+  [
+    "wirte",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[WIRTE] has used HTTP for network communication."
+  ],
+  [
+    "wirte",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[WIRTE] has attempted to lure users into opening malicious MS Word and Excel files to execute malicious payloads."
+  ],
+  [
+    "wirte",
+    "T1218.010",
+    "Regsvr32",
+    "command-execution|module-load|network-connection-creation|process-creation",
+    "T1218.010::[WIRTE] has used `regsvr32.exe` to trigger the execution of a malicious script."
+  ],
+  [
+    "wirte",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[WIRTE] has sent emails to intended victims with malicious MS Word and Excel attachments."
+  ],
+  [
+    "wirte",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[WIRTE] has obtained and used [Empire] for post-exploitation activities."
+  ]
+]
