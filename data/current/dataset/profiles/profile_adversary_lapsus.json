@@ -1,0 +1,122 @@
+[
+  {
+    "id": "intrusion-set--d8bc9788-4f7d-41a9-9e9d-ee1ea18a8cf7",
+    "name": "lapsus",
+    "aliases": "lapsus|dev-0537",
+    "group_id": "G1004",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 1,
+        "items": [
+          "mimikatz"
+        ]
+      },
+      "techniques": {
+        "count": 38,
+        "items": [
+          "T1003.003",
+          "T1003.006",
+          "T1005",
+          "T1068",
+          "T1069.002",
+          "T1078",
+          "T1078.004",
+          "T1087.002",
+          "T1090",
+          "T1098.003",
+          "T1111",
+          "T1114.003",
+          "T1133",
+          "T1136.003",
+          "T1199",
+          "T1204",
+          "T1213",
+          "T1213.001",
+          "T1213.002",
+          "T1213.003",
+          "T1485",
+          "T1531",
+          "T1552.008",
+          "T1555.003",
+          "T1578.002",
+          "T1578.003",
+          "T1583.003",
+          "T1586.002",
+          "T1588.001",
+          "T1588.002",
+          "T1589",
+          "T1589.001",
+          "T1589.002",
+          "T1591.002",
+          "T1591.004",
+          "T1593.003",
+          "T1597.002",
+          "T1621"
+        ]
+      },
+      "tactics": {
+        "count": 12,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "impact",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "reconnaissance",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1003.003::[lapsus] has used Windows built-in tool `ntdsutil` to extract the Active Directory (AD) database.",
+        "T1003.006::[lapsus] has used DCSync attacks to gather credentials for privilege escalation routines.",
+        "T1005::[lapsus] uploaded sensitive files, information, and credentials from a targeted organization for extortion or public release.",
+        "T1068::[lapsus] has exploited unpatched vulnerabilities on internally accessible servers including JIRA, GitLab, and Confluence for privilege escalation.",
+        "T1069.002::[lapsus] has used the AD Explorer tool to enumerate groups on a victim's network.",
+        "T1078.004::[lapsus] has used compromised credentials to access cloud assets within a target organization.",
+        "T1078::[lapsus] has used compromised credentials and/or session tokens to gain access into a victim's VPN, VDI, RDP, and IAMs.",
+        "T1087.002::[lapsus] has used the AD Explorer tool to enumerate users on a victim's network.",
+        "T1090::[lapsus] has leverage NordVPN for its egress points when targeting intended victims.",
+        "T1098.003::[lapsus] has added the global admin role to accounts they have created in the targeted organization's cloud instances.",
+        "T1111::[lapsus] has replayed stolen session token and passwords to trigger simple-approval MFA prompts in hope of the legitimate user will grant necessary approval.",
+        "T1114.003::[lapsus] has set an Office 365 tenant level mail transport rule to send all mail in and out of the targeted organization to the newly created account.",
+        "T1133::[lapsus] has gained access to internet-facing systems and applications, including virtual private network (VPN), remote desktop protocol (RDP), and virtual desktop infrastructure (VDI) including Citrix.",
+        "T1136.003::[lapsus] has created global admin accounts in the targeted organization's cloud instances to gain persistence.",
+        "T1199::[lapsus] has accessed internet-facing identity providers such as Azure Active Directory and Okta to target specific organizations.",
+        "T1204::[lapsus] has recruited target organization employees or contractors who provide credentials and approve an associated MFA prompt, or install remote management software onto a corporate workstation, allowing [lapsus] to take control of an authenticated system.",
+        "T1213.001::[lapsus] has searched a victim's network for collaboration platforms like Confluence and JIRA to discover further high-privilege account credentials.",
+        "T1213.002::[lapsus] has searched a victim's network for collaboration platforms like SharePoint to discover further high-privilege account credentials.",
+        "T1213.003::[lapsus] has searched a victim's network for code repositories like GitLab and GitHub to discover further high-privilege account credentials.",
+        "T1213::[lapsus] has searched a victim's network for organization collaboration channels like MS Teams or Slack to discover further high-privilege account credentials.",
+        "T1485::[lapsus] has deleted the target's systems and resources both on-premises and in the cloud.",
+        "T1531::[lapsus] has removed a targeted organization's global admin accounts to lock the organization out of all access.",
+        "T1552.008::[lapsus] has targeted various collaboration tools like Slack, Teams, JIRA, Confluence, and others to hunt for exposed credentials to support privilege escalation and lateral movement.",
+        "T1555.003::[lapsus] has obtained passwords and session tokens with the use of the Redline password stealer.",
+        "T1578.002::[lapsus] has created new virtual machines within the target's cloud environment after leveraging credential access to cloud assets.",
+        "T1578.003::[lapsus] has deleted the target's systems and resources in the cloud to trigger the organization's incident and crisis response process.",
+        "T1583.003::[lapsus] has used VPS hosting providers for infrastructure.",
+        "T1586.002::[lapsus] has payed employees, suppliers, and business partners of target organizations for credentials.",
+        "T1588.001::[lapsus] acquired and used the Redline password stealer in their operations.",
+        "T1588.002::[lapsus] has obtained tools such as AD Explorer inspection software for their operations.",
+        "T1589.001::[lapsus] has gathered user identities and credentials to gain initial access to a victim's organization; the group has also called an organization's help desk to reset a target's credentials.",
+        "T1589.002::[lapsus] has gathered employee email addresses, including personal accounts, for social engineering and initial access efforts.",
+        "T1589::[lapsus] has gathered detailed information of target employees to enhance their social engineering lures.",
+        "T1591.002::[lapsus] has gathered detailed knowledge of an organization's supply chain relationships.",
+        "T1591.004::[lapsus] has gathered detailed knowledge of team structures within a target organization.",
+        "T1593.003::[lapsus] has searched public code repositories for exposed credentials.",
+        "T1597.002::[lapsus] has purchased credentials and session tokens from criminal underground forums.",
+        "T1621::[lapsus] has spammed target users with MFA prompts in the hope that the legitimate user will grant necessary approval."
+      ]
+    },
+    "description": "[lapsus](https://attack.mitre.org/groups/G1004) is cyber criminal threat group that has been active since at least mid-2021. [lapsus](https://attack.mitre.org/groups/G1004) specializes in large-scale social engineering and extortion operations, including destructive attacks without the use of ransomware. The group has targeted organizations globally, including in the government, manufacturing, higher education, energy, healthcare, technology, telecommunications, and media sectors.(Citation: BBC LAPSUS Apr 2022)(Citation: MSTIC DEV-0537 Mar 2022)(Citation: UNIT 42 LAPSUS Mar 2022)"
+  }
+]
