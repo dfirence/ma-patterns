@@ -1,0 +1,37 @@
+[
+  {
+    "id": "attack-pattern--348f1eef-964b-4eb6-bb53-69b3dcb0c643",
+    "platform": "windows|macos|linux",
+    "tid": "T1120",
+    "technique": "Peripheral Device Discovery",
+    "tactic": "discovery",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to gather information about attached peripheral devices and components connected to a computer system.(Citation: Peripheral Discovery Linux)(Citation: Peripheral Discovery macOS) Peripheral devices could include auxiliary resources that support a variety of functionalities such as keyboards, printers, cameras, smart card readers, or removable storage. The information may be used to enhance their awareness of the system and network environment or may be used for further actions.",
+    "technique_references": [
+      {
+        "source_name": "Peripheral Discovery Linux",
+        "url": "https://linuxhint.com/list-usb-devices-linux/",
+        "description": "Shahriar Shovon. (2018, March). List USB Devices Linux. Retrieved March 11, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Peripheral Discovery macOS",
+        "url": "https://ss64.com/osx/system_profiler.html",
+        "description": "SS64. (n.d.). system_profiler. Retrieved March 11, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator|system",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

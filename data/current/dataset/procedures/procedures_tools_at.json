@@ -1,0 +1,9 @@
+[
+  [
+    "at",
+    "T1053.002",
+    "At",
+    "command-execution|file-modification|process-creation|scheduled-job-creation",
+    "T1053.002::[at] can be used to schedule a task on a system to be executed at a specific date or time."
+  ]
+]

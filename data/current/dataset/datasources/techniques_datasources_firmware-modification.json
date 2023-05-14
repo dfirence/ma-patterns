@@ -1,0 +1,236 @@
+[
+  {
+    "id": "attack-pattern--0f20e3cb-245b-4a61-8a91-2d93f7cb0e9b",
+    "platform": "linux|macos|windows",
+    "tid": "T1014",
+    "technique": "Rootkit",
+    "tactic": "defense-evasion",
+    "datasources": "firmware-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use rootkits to hide the presence of programs, files, network connections, services, drivers, and other system components. Rootkits are programs that hide the existence of malware by intercepting/hooking and modifying operating system API calls that supply system information. (Citation: Symantec Windows Rootkits) \n\nRootkits or rootkit enabling functionality may reside at the user or kernel level in the operating system or lower, to include a hypervisor, Master Boot Record, or [System Firmware](https://attack.mitre.org/techniques/T1542/001). (Citation: Wikipedia Rootkit) Rootkits have been seen for Windows, Linux, and Mac OS X systems. (Citation: CrowdStrike Linux Rootkit) (Citation: BlackHat Mac OSX Rootkit)",
+    "technique_references": [
+      {
+        "source_name": "CrowdStrike Linux Rootkit",
+        "url": "https://www.crowdstrike.com/blog/http-iframe-injecting-linux-rootkit/",
+        "description": "Kurtz, G. (2012, November 19). HTTP iframe Injecting Linux Rootkit. Retrieved December 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "BlackHat Mac OSX Rootkit",
+        "url": "http://www.blackhat.com/docs/asia-14/materials/Tsai/WP-Asia-14-Tsai-You-Cant-See-Me-A-Mac-OS-X-Rootkit-Uses-The-Tricks-You-Havent-Known-Yet.pdf",
+        "description": "Pan, M., Tsai, S. (2014). You can’t see me: A Mac OS X Rootkit uses the tricks you haven't known yet. Retrieved December 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Symantec Windows Rootkits",
+        "url": "https://www.symantec.com/avcenter/reference/windows.rootkit.overview.pdf",
+        "description": "Symantec. (n.d.). Windows Rootkit Overview. Retrieved December 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia Rootkit",
+        "url": "https://en.wikipedia.org/wiki/Rootkit",
+        "description": "Wikipedia. (2016, June 1). Rootkit. Retrieved June 2, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f5bb433e-bdf6-4781-84bc-35e97e43be89",
+    "platform": "linux|macos|windows|network",
+    "tid": "T1495",
+    "technique": "Firmware Corruption",
+    "tactic": "impact",
+    "datasources": "firmware-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may overwrite or corrupt the flash memory contents of system BIOS or other firmware in devices attached to a system in order to render them inoperable or unable to boot, thus denying the availability to use the devices and/or the system.(Citation: Symantec Chernobyl W95.CIH) Firmware is software that is loaded and executed from non-volatile memory on hardware devices in order to initialize and manage device functionality. These devices may include the motherboard, hard drive, or video cards.\n\nIn general, adversaries may manipulate, overwrite, or corrupt firmware in order to deny the use of the system or devices. For example, corruption of firmware responsible for loading the operating system for network devices may render the network devices inoperable.(Citation: dhs_threat_to_net_devices)(Citation: cisa_malware_orgs_ukraine) Depending on the device, this attack may also result in [Data Destruction](https://attack.mitre.org/techniques/T1485). ",
+    "technique_references": [
+      {
+        "source_name": "cisa_malware_orgs_ukraine",
+        "url": "https://www.cisa.gov/uscert/ncas/alerts/aa22-057a",
+        "description": "CISA. (2022, April 28). Alert (AA22-057A) Update: Destructive Malware Targeting Organizations in Ukraine. Retrieved July 29, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "dhs_threat_to_net_devices",
+        "url": "https://cyber.dhs.gov/assets/report/ar-16-20173.pdf",
+        "description": "U.S. Department of Homeland Security. (2016, August 30). The Increasing Threat to Network Infrastructure Devices and Recommended Mitigations. Retrieved July 29, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MITRE Trustworthy Firmware Measurement",
+        "url": "http://www.mitre.org/publications/project-stories/going-deep-into-the-bios-with-mitre-firmware-security-research",
+        "description": "Upham, K. (2014, March). Going Deep into the BIOS with MITRE Firmware Security Research. Retrieved January 5, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Symantec Chernobyl W95.CIH",
+        "url": "https://web.archive.org/web/20190508170055/https://www.symantec.com/security-center/writeup/2000-122010-2655-99",
+        "description": "Yamamura, M. (2002, April 25). W95.CIH. Retrieved April 12, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--7f0ca133-88c4-40c6-a62f-b3083a7fbc2e",
+    "platform": "linux|windows|network|macos",
+    "tid": "T1542",
+    "technique": "Pre-OS Boot",
+    "tactic": "defense-evasion",
+    "datasources": "firmware-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1542.001",
+      "T1542.002",
+      "T1542.003",
+      "T1542.004",
+      "T1542.005"
+    ],
+    "count_subtechniques": 5,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse Pre-OS Boot mechanisms as a way to establish persistence on a system. During the booting process of a computer, firmware and various startup services are loaded before the operating system. These programs control flow of execution before the operating system takes control.(Citation: Wikipedia Booting)\n\nAdversaries may overwrite data in boot drivers or firmware such as BIOS (Basic Input/Output System) and The Unified Extensible Firmware Interface (UEFI) to persist on systems at a layer below the operating system. This can be particularly difficult to detect as malware at this level will not be detected by host software-based defenses.",
+    "technique_references": [
+      {
+        "source_name": "ITWorld Hard Disk Health Dec 2014",
+        "url": "https://www.itworld.com/article/2853992/3-tools-to-check-your-hard-drives-health-and-make-sure-its-not-already-dying-on-you.html",
+        "description": "Pinola, M. (2014, December 14). 3 tools to check your hard drive's health and make sure it's not already dying on you. Retrieved October 2, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia Booting",
+        "url": "https://en.wikipedia.org/wiki/Booting",
+        "description": "Wikipedia. (n.d.). Booting. Retrieved November 13, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--7f0ca133-88c4-40c6-a62f-b3083a7fbc2e",
+    "platform": "linux|windows|network|macos",
+    "tid": "T1542",
+    "technique": "Pre-OS Boot",
+    "tactic": "persistence",
+    "datasources": "firmware-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1542.001",
+      "T1542.002",
+      "T1542.003",
+      "T1542.004",
+      "T1542.005"
+    ],
+    "count_subtechniques": 5,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse Pre-OS Boot mechanisms as a way to establish persistence on a system. During the booting process of a computer, firmware and various startup services are loaded before the operating system. These programs control flow of execution before the operating system takes control.(Citation: Wikipedia Booting)\n\nAdversaries may overwrite data in boot drivers or firmware such as BIOS (Basic Input/Output System) and The Unified Extensible Firmware Interface (UEFI) to persist on systems at a layer below the operating system. This can be particularly difficult to detect as malware at this level will not be detected by host software-based defenses.",
+    "technique_references": [
+      {
+        "source_name": "ITWorld Hard Disk Health Dec 2014",
+        "url": "https://www.itworld.com/article/2853992/3-tools-to-check-your-hard-drives-health-and-make-sure-its-not-already-dying-on-you.html",
+        "description": "Pinola, M. (2014, December 14). 3 tools to check your hard drive's health and make sure it's not already dying on you. Retrieved October 2, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia Booting",
+        "url": "https://en.wikipedia.org/wiki/Booting",
+        "description": "Wikipedia. (n.d.). Booting. Retrieved November 13, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--22905430-4901-4c2a-84f6-98243cb173f8",
+    "platform": "linux|macos|windows|office-365",
+    "tid": "T1564",
+    "technique": "Hide Artifacts",
+    "tactic": "defense-evasion",
+    "datasources": "firmware-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1564.001",
+      "T1564.002",
+      "T1564.003",
+      "T1564.004",
+      "T1564.005",
+      "T1564.006",
+      "T1564.007",
+      "T1564.008",
+      "T1564.009",
+      "T1564.010"
+    ],
+    "count_subtechniques": 10,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to hide artifacts associated with their behaviors to evade detection. Operating systems may have features to hide various artifacts, such as important system files and administrative task execution, to avoid disrupting user work environments and prevent users from changing files or features on the system. Adversaries may abuse these features to hide artifacts such as files, directories, user accounts, or other system activity to evade detection.(Citation: Sofacy Komplex Trojan)(Citation: Cybereason OSX Pirrit)(Citation: MalwareBytes ADS July 2015)\n\nAdversaries may also attempt to hide artifacts associated with malicious behavior by creating computing regions that are isolated from common security instrumentation, such as through the use of virtualization technology.(Citation: Sophos Ragnar May 2020)",
+    "technique_references": [
+      {
+        "source_name": "Sofacy Komplex Trojan",
+        "url": "https://researchcenter.paloaltonetworks.com/2016/09/unit42-sofacys-komplex-os-x-trojan/",
+        "description": "Dani Creus, Tyler Halfpop, Robert Falcone. (2016, September 26). Sofacy's 'Komplex' OS X Trojan. Retrieved July 8, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cybereason OSX Pirrit",
+        "url": "https://cdn2.hubspot.net/hubfs/3354902/Content%20PDFs/Cybereason-Lab-Analysis-OSX-Pirrit-4-6-16.pdf",
+        "description": "Amit Serper. (2016). Cybereason Lab Analysis OSX.Pirrit. Retrieved December 10, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MalwareBytes ADS July 2015",
+        "url": "https://blog.malwarebytes.com/101/2015/07/introduction-to-alternate-data-streams/",
+        "description": "Arntz, P. (2015, July 22). Introduction to Alternate Data Streams. Retrieved March 21, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sophos Ragnar May 2020",
+        "url": "https://news.sophos.com/en-us/2020/05/21/ragnar-locker-ransomware-deploys-virtual-machine-to-dodge-security/",
+        "description": "SophosLabs. (2020, May 21). Ragnar Locker ransomware deploys virtual machine to dodge security. Retrieved June 29, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

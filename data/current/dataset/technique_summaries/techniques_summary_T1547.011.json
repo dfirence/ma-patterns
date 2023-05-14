@@ -1,0 +1,72 @@
+[
+  {
+    "id": "attack-pattern--6747daa2-3533-4e78-8fb8-446ebb86448a",
+    "platform": "macos",
+    "tid": "T1547.011",
+    "technique": "Plist Modification",
+    "tactic": "persistence",
+    "datasources": "none",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries can modify property list files (plist files) to execute their code as part of establishing persistence. Plist files are used by macOS applications to store properties and configuration settings for applications and services. Applications use information plist files, <code>Info.plist</code>, to tell the operating system how to handle the application at runtime using structured metadata in the form of keys and values. Plist files are formatted in XML and based on Apple's Core Foundation DTD and can be saved in text or binary format.(Citation: fileinfo plist file description) \n\nAdversaries can modify paths to executed binaries, add command line arguments, and insert key/pair values to plist files in auto-run locations which execute upon user logon or system startup. Through modifying plist files in these locations, adversaries can also execute a malicious dynamic library (dylib) by adding a dictionary containing the <code>DYLD_INSERT_LIBRARIES</code> key combined with a path to a malicious dylib under the <code>EnvironmentVariables</code> key in a plist file. Upon user logon, the plist is called for execution and the malicious dylib is executed within the process space. Persistence can also be achieved by modifying the <code>LSEnvironment</code> key in the application's <code>Info.plist</code> file.(Citation: wardle artofmalware volume1)",
+    "technique_references": [
+      {
+        "source_name": "fileinfo plist file description",
+        "url": "https://fileinfo.com/extension/plist",
+        "description": "FileInfo.com team. (2019, November 26). .PLIST File Extension. Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "wardle artofmalware volume1",
+        "url": "https://taomm.org/vol1/pdfs.html",
+        "description": "Patrick Wardle. (2020, August 5). The Art of Mac Malware Volume 0x1: Analysis. Retrieved March 19, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--6747daa2-3533-4e78-8fb8-446ebb86448a",
+    "platform": "macos",
+    "tid": "T1547.011",
+    "technique": "Plist Modification",
+    "tactic": "privilege-escalation",
+    "datasources": "none",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries can modify property list files (plist files) to execute their code as part of establishing persistence. Plist files are used by macOS applications to store properties and configuration settings for applications and services. Applications use information plist files, <code>Info.plist</code>, to tell the operating system how to handle the application at runtime using structured metadata in the form of keys and values. Plist files are formatted in XML and based on Apple's Core Foundation DTD and can be saved in text or binary format.(Citation: fileinfo plist file description) \n\nAdversaries can modify paths to executed binaries, add command line arguments, and insert key/pair values to plist files in auto-run locations which execute upon user logon or system startup. Through modifying plist files in these locations, adversaries can also execute a malicious dynamic library (dylib) by adding a dictionary containing the <code>DYLD_INSERT_LIBRARIES</code> key combined with a path to a malicious dylib under the <code>EnvironmentVariables</code> key in a plist file. Upon user logon, the plist is called for execution and the malicious dylib is executed within the process space. Persistence can also be achieved by modifying the <code>LSEnvironment</code> key in the application's <code>Info.plist</code> file.(Citation: wardle artofmalware volume1)",
+    "technique_references": [
+      {
+        "source_name": "fileinfo plist file description",
+        "url": "https://fileinfo.com/extension/plist",
+        "description": "FileInfo.com team. (2019, November 26). .PLIST File Extension. Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "wardle artofmalware volume1",
+        "url": "https://taomm.org/vol1/pdfs.html",
+        "description": "Patrick Wardle. (2020, August 5). The Art of Mac Malware Volume 0x1: Analysis. Retrieved March 19, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

@@ -1,0 +1,100 @@
+[
+  [
+    "poshc2",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[PoshC2] contains an implementation of [Mimikatz] to gather credentials from memory."
+  ],
+  [
+    "poshc2",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[PoshC2] has modules for keystroke logging and capturing credentials from spoofed Outlook authentication messages."
+  ],
+  [
+    "poshc2",
+    "T1069.001",
+    "Local Groups",
+    "command-execution|group-enumeration|os-api-execution|process-creation",
+    "T1069.001::[PoshC2] contains modules, such as Get-LocAdm for enumerating permission groups."
+  ],
+  [
+    "poshc2",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[PoshC2] can use protocols like HTTP/HTTPS for command and control traffic."
+  ],
+  [
+    "poshc2",
+    "T1087.001",
+    "Local Account",
+    "command-execution|file-access|group-enumeration|os-api-execution|process-creation",
+    "T1087.001::[PoshC2] can enumerate local and domain user account information."
+  ],
+  [
+    "poshc2",
+    "T1087.002",
+    "Domain Account",
+    "command-execution|group-enumeration|network-traffic-content|os-api-execution|process-creation",
+    "T1087.002::[PoshC2] can enumerate local and domain user account information."
+  ],
+  [
+    "poshc2",
+    "T1134.002",
+    "Create Process with Token",
+    "command-execution|os-api-execution",
+    "T1134.002::[PoshC2] can use Invoke-RunAs to make tokens."
+  ],
+  [
+    "poshc2",
+    "T1546.003",
+    "Windows Management Instrumentation Event Subscription",
+    "command-execution|process-creation|wmi-creation",
+    "T1546.003::[PoshC2] has the ability to persist on a system using WMI events."
+  ],
+  [
+    "poshc2",
+    "T1548.002",
+    "Bypass User Account Control",
+    "command-execution|process-creation|process-metadata|windows-registry-key-modification",
+    "T1548.002::[PoshC2] can utilize multiple methods to bypass UAC."
+  ],
+  [
+    "poshc2",
+    "T1550.002",
+    "Pass the Hash",
+    "active-directory-credential-request|logon-session-creation|user-account-authentication",
+    "T1550.002::[PoshC2] has a number of modules that leverage pass the hash for lateral movement."
+  ],
+  [
+    "poshc2",
+    "T1552.001",
+    "Credentials In Files",
+    "command-execution|file-access",
+    "T1552.001::[PoshC2] contains modules for searching for passwords in local and remote files."
+  ],
+  [
+    "poshc2",
+    "T1557.001",
+    "LLMNR/NBT-NS Poisoning and SMB Relay",
+    "network-traffic-content|network-traffic-flow|service-creation|windows-registry-key-modification",
+    "T1557.001::[PoshC2] can use Inveigh to conduct name service poisoning for credential theft and associated relay attacks."
+  ],
+  [
+    "poshc2",
+    "T1560.001",
+    "Archive via Utility",
+    "command-execution|file-creation|process-creation",
+    "T1560.001::[PoshC2] contains a module for compressing data using ZIP."
+  ],
+  [
+    "poshc2",
+    "T1569.002",
+    "Service Execution",
+    "command-execution|process-creation|service-creation|windows-registry-key-modification",
+    "T1569.002::[PoshC2] contains an implementation of [PsExec] for remote execution."
+  ]
+]

@@ -1,0 +1,61 @@
+[
+  {
+    "id": "attack-pattern--e848506b-8484-4410-8017-3d235a52f5b3",
+    "platform": "saas|iaas|office-365",
+    "tid": "T1648",
+    "technique": "Serverless Execution",
+    "tactic": "execution",
+    "datasources": "application-log-content|cloud-service-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse serverless computing, integration, and automation services to execute arbitrary code in cloud environments. Many cloud providers offer a variety of serverless resources, including compute engines, application integration services, and web servers. \n\nAdversaries may abuse these resources in various ways as a means of executing arbitrary commands. For example, adversaries may use serverless functions to execute malicious code, such as crypto-mining malware (i.e. [Resource Hijacking](https://attack.mitre.org/techniques/T1496)).(Citation: Cado Security Denonia) Adversaries may also create functions that enable further compromise of the cloud environment. For example, an adversary may use the `IAM:PassRole` permission in AWS or the `iam.serviceAccounts.actAs` permission in Google Cloud to add [Additional Cloud Roles](https://attack.mitre.org/techniques/T1098/003) to a serverless cloud function, which may then be able to perform actions the original user cannot.(Citation: Rhino Security Labs AWS Privilege Escalation)(Citation: Rhingo Security Labs GCP Privilege Escalation)\n\nServerless functions can also be invoked in response to cloud events (i.e. [Event Triggered Execution](https://attack.mitre.org/techniques/T1546)), potentially enabling persistent execution over time. For example, in AWS environments, an adversary may create a Lambda function that automatically adds [Additional Cloud Credentials](https://attack.mitre.org/techniques/T1098/001) to a user and a corresponding CloudWatch events rule that invokes that function whenever a new user is created.(Citation: Backdooring an AWS account) Similarly, an adversary may create a Power Automate workflow in Office 365 environments that forwards all emails a user receives or creates anonymous sharing links whenever a user is granted access to a document in SharePoint.(Citation: Varonis Power Automate Data Exfiltration)(Citation: Microsoft DART Case Report 001)",
+    "technique_references": [
+      {
+        "source_name": "Microsoft DART Case Report 001",
+        "url": "https://www.microsoft.com/security/blog/2020/03/09/real-life-cybercrime-stories-dart-microsoft-detection-and-response-team",
+        "description": "Berk Veral. (2020, March 9). Real-life cybercrime stories from DART, the Microsoft Detection and Response Team. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Backdooring an AWS account",
+        "url": "https://medium.com/daniel-grzelak/backdooring-an-aws-account-da007d36f8f9",
+        "description": "Daniel Grzelak. (2016, July 9). Backdooring an AWS account. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Varonis Power Automate Data Exfiltration",
+        "url": "https://www.varonis.com/blog/power-automate-data-exfiltration",
+        "description": "Eric Saraga. (2022, February 2). Using Power Automate for Covert Data Exfiltration in Microsoft 365. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cado Security Denonia",
+        "url": "https://www.cadosecurity.com/cado-discovers-denonia-the-first-malware-specifically-targeting-lambda/",
+        "description": "Matt Muir. (2022, April 6). Cado Discovers Denonia: The First Malware Specifically Targeting Lambda. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Rhino Security Labs AWS Privilege Escalation",
+        "url": "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/",
+        "description": "Rhino Security Labs. (n.d.). AWS IAM Privilege Escalation – Methods and Mitigation. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Rhingo Security Labs GCP Privilege Escalation",
+        "url": "https://rhinosecuritylabs.com/gcp/privilege-escalation-google-cloud-platform-part-1/",
+        "description": "Spencer Gietzen. (n.d.). Privilege Escalation in Google Cloud Platform – Part 1 (IAM). Retrieved May 27, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

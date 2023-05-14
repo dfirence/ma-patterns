@@ -1,0 +1,42 @@
+[
+  {
+    "id": "attack-pattern--3d333250-30e4-4a82-9edc-756c68afc529",
+    "platform": "windows|office-365|iaas|linux|macos|containers|network",
+    "tid": "T1562",
+    "technique": "Impair Defenses",
+    "tactic": "defense-evasion",
+    "datasources": "cloud-service-disable|cloud-service-modification|command-execution|driver-load|firewall-disable|firewall-rule-modification|host-status|process-creation|process-termination|script-execution|service-metadata|user-account-modification|windows-registry-key-deletion|windows-registry-key-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1562.001",
+      "T1562.002",
+      "T1562.003",
+      "T1562.004",
+      "T1562.006",
+      "T1562.007",
+      "T1562.008",
+      "T1562.009",
+      "T1562.010",
+      "T1562.011"
+    ],
+    "count_subtechniques": 10,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may maliciously modify components of a victim environment in order to hinder or disable defensive mechanisms. This not only involves impairing preventative defenses, such as firewalls and anti-virus, but also detection capabilities that defenders can use to audit activity and identify malicious behavior. This may also span both native defenses as well as supplemental capabilities installed by users and administrators.\n\nAdversaries may also impair routine operations that contribute to defensive hygiene, such as blocking users from logging out of a computer or stopping it from being shut down. These restrictions can further enable malicious operations as well as the continued propagation of incidents.(Citation: Emotet shutdown)\n\nAdversaries could also target event aggregation and analysis mechanisms, or otherwise disrupt these procedures by altering other system components.",
+    "technique_references": [
+      {
+        "source_name": "Emotet shutdown",
+        "url": "https://thedfirreport.com/2022/11/28/emotet-strikes-again-lnk-file-leads-to-domain-wide-ransomware/#:~:text=Don’t%20Sleep%20has%20the%20capability%20to%20keep%20the%20computer%20from%20being%20shutdown%20and%20the%20user%20from%20being%20signed%20off.%20This%20was%20likely%20done%20to%20ensure%20nothing%20will%20interfere%20with%20the%20propagation%20of%20the%20ransomware%20payload",
+        "description": "The DFIR Report. (2022, November 8). Emotet Strikes Again – LNK File Leads to Domain Wide Ransomware. Retrieved March 6, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

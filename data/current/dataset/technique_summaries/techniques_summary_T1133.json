@@ -1,0 +1,96 @@
+[
+  {
+    "id": "attack-pattern--10d51417-ee35-4589-b1ff-b6df1c334e8d",
+    "platform": "windows|linux|containers|macos",
+    "tid": "T1133",
+    "technique": "External Remote Services",
+    "tactic": "initial-access",
+    "datasources": "application-log-content|logon-session-metadata|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may leverage external-facing remote services to initially access and/or persist within a network. Remote services such as VPNs, Citrix, and other access mechanisms allow users to connect to internal enterprise network resources from external locations. There are often remote service gateways that manage connections and credential authentication for these services. Services such as [Windows Remote Management](https://attack.mitre.org/techniques/T1021/006) and [VNC](https://attack.mitre.org/techniques/T1021/005) can also be used externally.(Citation: MacOS VNC software for Remote Desktop)\n\nAccess to [Valid Accounts](https://attack.mitre.org/techniques/T1078) to use the service is often a requirement, which could be obtained through credential pharming or by obtaining the credentials from users after compromising the enterprise network.(Citation: Volexity Virtual Private Keylogging) Access to remote services may be used as a redundant or persistent access mechanism during an operation.\n\nAccess may also be gained through an exposed service that doesn’t require authentication. In containerized environments, this may include an exposed Docker API, Kubernetes API server, kubelet, or web application such as the Kubernetes dashboard.(Citation: Trend Micro Exposed Docker Server)(Citation: Unit 42 Hildegard Malware)",
+    "technique_references": [
+      {
+        "source_name": "Volexity Virtual Private Keylogging",
+        "url": "https://www.volexity.com/blog/2015/10/07/virtual-private-keylogging-cisco-web-vpns-leveraged-for-access-and-persistence/",
+        "description": "Adair, S. (2015, October 7). Virtual Private Keylogging: Cisco Web VPNs Leveraged for Access and Persistence. Retrieved March 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MacOS VNC software for Remote Desktop",
+        "url": "https://support.apple.com/guide/remote-desktop/set-up-a-computer-running-vnc-software-apdbed09830/mac",
+        "description": "Apple Support. (n.d.). Set up a computer running VNC software for Remote Desktop. Retrieved August 18, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Unit 42 Hildegard Malware",
+        "url": "https://unit42.paloaltonetworks.com/hildegard-malware-teamtnt/",
+        "description": "Chen, J. et al. (2021, February 3). Hildegard: New TeamTNT Cryptojacking Malware Targeting Kubernetes. Retrieved April 5, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Trend Micro Exposed Docker Server",
+        "url": "https://www.trendmicro.com/en_us/research/20/f/xorddos-kaiji-botnet-malware-variants-target-exposed-docker-servers.html",
+        "description": "Remillano II, A., et al. (2020, June 20). XORDDoS, Kaiji Variants Target Exposed Docker Servers. Retrieved April 5, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--10d51417-ee35-4589-b1ff-b6df1c334e8d",
+    "platform": "windows|linux|containers|macos",
+    "tid": "T1133",
+    "technique": "External Remote Services",
+    "tactic": "persistence",
+    "datasources": "application-log-content|logon-session-metadata|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may leverage external-facing remote services to initially access and/or persist within a network. Remote services such as VPNs, Citrix, and other access mechanisms allow users to connect to internal enterprise network resources from external locations. There are often remote service gateways that manage connections and credential authentication for these services. Services such as [Windows Remote Management](https://attack.mitre.org/techniques/T1021/006) and [VNC](https://attack.mitre.org/techniques/T1021/005) can also be used externally.(Citation: MacOS VNC software for Remote Desktop)\n\nAccess to [Valid Accounts](https://attack.mitre.org/techniques/T1078) to use the service is often a requirement, which could be obtained through credential pharming or by obtaining the credentials from users after compromising the enterprise network.(Citation: Volexity Virtual Private Keylogging) Access to remote services may be used as a redundant or persistent access mechanism during an operation.\n\nAccess may also be gained through an exposed service that doesn’t require authentication. In containerized environments, this may include an exposed Docker API, Kubernetes API server, kubelet, or web application such as the Kubernetes dashboard.(Citation: Trend Micro Exposed Docker Server)(Citation: Unit 42 Hildegard Malware)",
+    "technique_references": [
+      {
+        "source_name": "Volexity Virtual Private Keylogging",
+        "url": "https://www.volexity.com/blog/2015/10/07/virtual-private-keylogging-cisco-web-vpns-leveraged-for-access-and-persistence/",
+        "description": "Adair, S. (2015, October 7). Virtual Private Keylogging: Cisco Web VPNs Leveraged for Access and Persistence. Retrieved March 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MacOS VNC software for Remote Desktop",
+        "url": "https://support.apple.com/guide/remote-desktop/set-up-a-computer-running-vnc-software-apdbed09830/mac",
+        "description": "Apple Support. (n.d.). Set up a computer running VNC software for Remote Desktop. Retrieved August 18, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Unit 42 Hildegard Malware",
+        "url": "https://unit42.paloaltonetworks.com/hildegard-malware-teamtnt/",
+        "description": "Chen, J. et al. (2021, February 3). Hildegard: New TeamTNT Cryptojacking Malware Targeting Kubernetes. Retrieved April 5, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Trend Micro Exposed Docker Server",
+        "url": "https://www.trendmicro.com/en_us/research/20/f/xorddos-kaiji-botnet-malware-variants-target-exposed-docker-servers.html",
+        "description": "Remillano II, A., et al. (2020, June 20). XORDDoS, Kaiji Variants Target Exposed Docker Servers. Retrieved April 5, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

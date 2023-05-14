@@ -1,0 +1,43 @@
+[
+  {
+    "id": "attack-pattern--d456de47-a16f-4e46-8980-e67478a12dcb",
+    "platform": "windows|linux|macos|network",
+    "tid": "T1505",
+    "technique": "Server Software Component",
+    "tactic": "persistence",
+    "datasources": "application-log-content|file-creation|file-modification|network-traffic-content|network-traffic-flow|process-creation",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1505.001",
+      "T1505.002",
+      "T1505.003",
+      "T1505.004",
+      "T1505.005"
+    ],
+    "count_subtechniques": 5,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse legitimate extensible development features of servers to establish persistent access to systems. Enterprise server applications may include features that allow developers to write and install software or scripts to extend the functionality of the main application. Adversaries may install malicious components to extend and abuse server applications.(Citation: volexity_0day_sophos_FW)",
+    "technique_references": [
+      {
+        "source_name": "volexity_0day_sophos_FW",
+        "url": "https://www.volexity.com/blog/2022/06/15/driftingcloud-zero-day-sophos-firewall-exploitation-and-an-insidious-breach/",
+        "description": "Adair, S., Lancaster, T., Volexity Threat Research. (2022, June 15). DriftingCloud: Zero-Day Sophos Firewall Exploitation and an Insidious Breach. Retrieved July 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT Alert TA15-314A Web Shells",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA15-314A",
+        "description": "US-CERT. (2015, November 13). Compromised Web Servers and Web Shells - Threat Awareness and Guidance. Retrieved June 8, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

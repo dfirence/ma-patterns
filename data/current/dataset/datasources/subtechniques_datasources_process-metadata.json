@@ -1,0 +1,900 @@
+[
+  {
+    "id": "attack-pattern--bd5b58a4-a52d-4a29-bc0d-3f1d3968eb6b",
+    "platform": "linux|macos|windows",
+    "tid": "T1036.003",
+    "technique": "Rename System Utilities",
+    "tactic": "defense-evasion",
+    "datasources": "process-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may rename legitimate system utilities to try to evade security mechanisms concerning the usage of those utilities. Security monitoring and control mechanisms may be in place for system utilities adversaries are capable of abusing. (Citation: LOLBAS Main Site) It may be possible to bypass those security mechanisms by renaming the utility prior to utilization (ex: rename <code>rundll32.exe</code>). (Citation: Elastic Masquerade Ball) An alternative case occurs when a legitimate utility is copied or moved to a different directory and renamed to avoid detections based on system utilities executing from non-standard paths. (Citation: F-Secure CozyDuke)",
+    "technique_references": [
+      {
+        "source_name": "Twitter ItsReallyNick Masquerading Update",
+        "url": "https://twitter.com/ItsReallyNick/status/1055321652777619457",
+        "description": "Carr, N.. (2018, October 25). Nick Carr Status Update Masquerading. Retrieved April 22, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Elastic Masquerade Ball",
+        "url": "http://pages.endgame.com/rs/627-YBU-612/images/EndgameJournal_The%20Masquerade%20Ball_Pages_R2.pdf",
+        "description": "Ewing, P. (2016, October 31). How to Hunt: The Masquerade Ball. Retrieved October 31, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "F-Secure CozyDuke",
+        "url": "https://www.f-secure.com/documents/996508/1030745/CozyDuke",
+        "description": "F-Secure Labs. (2015, April 22). CozyDuke: Malware Analysis. Retrieved December 10, 2015.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "LOLBAS Main Site",
+        "url": "https://lolbas-project.github.io/",
+        "description": "LOLBAS. (n.d.). Living Off The Land Binaries and Scripts (and also Libraries). Retrieved February 10, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--1c4e5d32-1fe9-4116-9d9d-59e3925bd6a2",
+    "platform": "linux|macos|windows|containers",
+    "tid": "T1036.005",
+    "technique": "Match Legitimate Name or Location",
+    "tactic": "defense-evasion",
+    "datasources": "process-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may match or approximate the name or location of legitimate files or resources when naming/placing them. This is done for the sake of evading defenses and observation. This may be done by placing an executable in a commonly trusted directory (ex: under System32) or giving it the name of a legitimate, trusted program (ex: svchost.exe). In containerized environments, this may also be done by creating a resource in a namespace that matches the naming convention of a container pod or cluster. Alternatively, a file or container image name given may be a close approximation to legitimate programs/images or something innocuous.\n\nAdversaries may also use the same icon of the file they are trying to mimic.",
+    "technique_references": [
+      {
+        "source_name": "Twitter ItsReallyNick Masquerading Update",
+        "url": "https://twitter.com/ItsReallyNick/status/1055321652777619457",
+        "description": "Carr, N.. (2018, October 25). Nick Carr Status Update Masquerading. Retrieved April 22, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Docker Images",
+        "url": "https://docs.docker.com/engine/reference/commandline/images/",
+        "description": "Docker. (n.d.). Docker Images. Retrieved April 6, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Elastic Masquerade Ball",
+        "url": "http://pages.endgame.com/rs/627-YBU-612/images/EndgameJournal_The%20Masquerade%20Ball_Pages_R2.pdf",
+        "description": "Ewing, P. (2016, October 31). How to Hunt: The Masquerade Ball. Retrieved October 31, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f4599aa0-4f85-4a32-80ea-fc39dc965945",
+    "platform": "windows",
+    "tid": "T1055.001",
+    "technique": "Dynamic-link Library Injection",
+    "tactic": "defense-evasion",
+    "datasources": "process-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may inject dynamic-link libraries (DLLs) into processes in order to evade process-based defenses as well as possibly elevate privileges. DLL injection is a method of executing arbitrary code in the address space of a separate live process.  \n\nDLL injection is commonly performed by writing the path to a DLL in the virtual address space of the target process before loading the DLL by invoking a new thread. The write can be performed with native Windows API calls such as <code>VirtualAllocEx</code> and <code>WriteProcessMemory</code>, then invoked with <code>CreateRemoteThread</code> (which calls the <code>LoadLibrary</code> API responsible for loading the DLL). (Citation: Elastic Process Injection July 2017) \n\nVariations of this method such as reflective DLL injection (writing a self-mapping DLL into a process) and memory module (map DLL when writing into process) overcome the address relocation issue as well as the additional APIs to invoke execution (since these methods load and execute the files in memory by manually preforming the function of <code>LoadLibrary</code>).(Citation: Elastic HuntingNMemory June 2017)(Citation: Elastic Process Injection July 2017) \n\nAnother variation of this method, often referred to as Module Stomping/Overloading or DLL Hollowing, may be leveraged to conceal injected code within a process. This method involves loading a legitimate DLL into a remote process then manually overwriting the module's <code>AddressOfEntryPoint</code> before starting a new thread in the target process.(Citation: Module Stomping for Shellcode Injection) This variation allows attackers to hide malicious injected code by potentially backing its execution with a legitimate DLL file on disk.(Citation: Hiding Malicious Code with Module Stomping) \n\nRunning code in the context of another process may allow access to the process's memory, system/network resources, and possibly elevated privileges. Execution via DLL injection may also evade detection from security products since the execution is masked under a legitimate process. ",
+    "technique_references": [
+      {
+        "source_name": "Hiding Malicious Code with Module Stomping",
+        "url": "https://blog.f-secure.com/hiding-malicious-code-with-module-stomping/",
+        "description": "Aliz Hammond. (2019, August 15). Hiding Malicious Code with \"Module Stomping\": Part 1. Retrieved July 14, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Elastic HuntingNMemory June 2017",
+        "url": "https://www.endgame.com/blog/technical-blog/hunting-memory",
+        "description": "Desimone, J. (2017, June 13). Hunting in Memory. Retrieved December 7, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Elastic Process Injection July 2017",
+        "url": "https://www.endgame.com/blog/technical-blog/ten-process-injection-techniques-technical-survey-common-and-trending-process",
+        "description": "Hosseini, A. (2017, July 18). Ten Process Injection Techniques: A Technical Survey Of Common And Trending Process Injection Techniques. Retrieved December 7, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Module Stomping for Shellcode Injection",
+        "url": "https://www.ired.team/offensive-security/code-injection-process-injection/modulestomping-dll-hollowing-shellcode-injection",
+        "description": "Red Teaming Experiments. (n.d.). Module Stomping for Shellcode Injection. Retrieved July 14, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f4599aa0-4f85-4a32-80ea-fc39dc965945",
+    "platform": "windows",
+    "tid": "T1055.001",
+    "technique": "Dynamic-link Library Injection",
+    "tactic": "privilege-escalation",
+    "datasources": "process-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may inject dynamic-link libraries (DLLs) into processes in order to evade process-based defenses as well as possibly elevate privileges. DLL injection is a method of executing arbitrary code in the address space of a separate live process.  \n\nDLL injection is commonly performed by writing the path to a DLL in the virtual address space of the target process before loading the DLL by invoking a new thread. The write can be performed with native Windows API calls such as <code>VirtualAllocEx</code> and <code>WriteProcessMemory</code>, then invoked with <code>CreateRemoteThread</code> (which calls the <code>LoadLibrary</code> API responsible for loading the DLL). (Citation: Elastic Process Injection July 2017) \n\nVariations of this method such as reflective DLL injection (writing a self-mapping DLL into a process) and memory module (map DLL when writing into process) overcome the address relocation issue as well as the additional APIs to invoke execution (since these methods load and execute the files in memory by manually preforming the function of <code>LoadLibrary</code>).(Citation: Elastic HuntingNMemory June 2017)(Citation: Elastic Process Injection July 2017) \n\nAnother variation of this method, often referred to as Module Stomping/Overloading or DLL Hollowing, may be leveraged to conceal injected code within a process. This method involves loading a legitimate DLL into a remote process then manually overwriting the module's <code>AddressOfEntryPoint</code> before starting a new thread in the target process.(Citation: Module Stomping for Shellcode Injection) This variation allows attackers to hide malicious injected code by potentially backing its execution with a legitimate DLL file on disk.(Citation: Hiding Malicious Code with Module Stomping) \n\nRunning code in the context of another process may allow access to the process's memory, system/network resources, and possibly elevated privileges. Execution via DLL injection may also evade detection from security products since the execution is masked under a legitimate process. ",
+    "technique_references": [
+      {
+        "source_name": "Hiding Malicious Code with Module Stomping",
+        "url": "https://blog.f-secure.com/hiding-malicious-code-with-module-stomping/",
+        "description": "Aliz Hammond. (2019, August 15). Hiding Malicious Code with \"Module Stomping\": Part 1. Retrieved July 14, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Elastic HuntingNMemory June 2017",
+        "url": "https://www.endgame.com/blog/technical-blog/hunting-memory",
+        "description": "Desimone, J. (2017, June 13). Hunting in Memory. Retrieved December 7, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Elastic Process Injection July 2017",
+        "url": "https://www.endgame.com/blog/technical-blog/ten-process-injection-techniques-technical-survey-common-and-trending-process",
+        "description": "Hosseini, A. (2017, July 18). Ten Process Injection Techniques: A Technical Survey Of Common And Trending Process Injection Techniques. Retrieved December 7, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Module Stomping for Shellcode Injection",
+        "url": "https://www.ired.team/offensive-security/code-injection-process-injection/modulestomping-dll-hollowing-shellcode-injection",
+        "description": "Red Teaming Experiments. (n.d.). Module Stomping for Shellcode Injection. Retrieved July 14, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f5946b5e-9408-485f-a7f7-b5efc88909b6",
+    "platform": "windows",
+    "tid": "T1056.004",
+    "technique": "Credential API Hooking",
+    "tactic": "collection",
+    "datasources": "process-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may hook into Windows application programming interface (API) functions to collect user credentials. Malicious hooking mechanisms may capture API calls that include parameters that reveal user authentication credentials.(Citation: Microsoft TrojanSpy:Win32/Ursnif.gen!I Sept 2017) Unlike [Keylogging](https://attack.mitre.org/techniques/T1056/001),  this technique focuses specifically on API functions that include parameters that reveal user credentials. Hooking involves redirecting calls to these functions and can be implemented via:\n\n* **Hooks procedures**, which intercept and execute designated code in response to events such as messages, keystrokes, and mouse inputs.(Citation: Microsoft Hook Overview)(Citation: Elastic Process Injection July 2017)\n* **Import address table (IAT) hooking**, which use modifications to a process’s IAT, where pointers to imported API functions are stored.(Citation: Elastic Process Injection July 2017)(Citation: Adlice Software IAT Hooks Oct 2014)(Citation: MWRInfoSecurity Dynamic Hooking 2015)\n* **Inline hooking**, which overwrites the first bytes in an API function to redirect code flow.(Citation: Elastic Process Injection July 2017)(Citation: HighTech Bridge Inline Hooking Sept 2011)(Citation: MWRInfoSecurity Dynamic Hooking 2015)\n",
+    "technique_references": [
+      {
+        "source_name": "Microsoft TrojanSpy:Win32/Ursnif.gen!I Sept 2017",
+        "url": "https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=TrojanSpy:Win32/Ursnif.gen!I&threatId=-2147336918",
+        "description": "Microsoft. (2017, September 15). TrojanSpy:Win32/Ursnif.gen!I. Retrieved December 18, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Hook Overview",
+        "url": "https://msdn.microsoft.com/library/windows/desktop/ms644959.aspx",
+        "description": "Microsoft. (n.d.). Hooks Overview. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Elastic Process Injection July 2017",
+        "url": "https://www.endgame.com/blog/technical-blog/ten-process-injection-techniques-technical-survey-common-and-trending-process",
+        "description": "Hosseini, A. (2017, July 18). Ten Process Injection Techniques: A Technical Survey Of Common And Trending Process Injection Techniques. Retrieved December 7, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Adlice Software IAT Hooks Oct 2014",
+        "url": "https://www.adlice.com/userland-rootkits-part-1-iat-hooks/",
+        "description": "Tigzy. (2014, October 15). Userland Rootkits: Part 1, IAT hooks. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MWRInfoSecurity Dynamic Hooking 2015",
+        "url": "https://www.mwrinfosecurity.com/our-thinking/dynamic-hooking-techniques-user-mode/",
+        "description": "Hillman, M. (2015, August 8). Dynamic Hooking Techniques: User Mode. Retrieved December 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "HighTech Bridge Inline Hooking Sept 2011",
+        "url": "https://www.exploit-db.com/docs/17802.pdf",
+        "description": "Mariani, B. (2011, September 6). Inline Hooking in Windows. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Volatility Detecting Hooks Sept 2012",
+        "url": "https://volatility-labs.blogspot.com/2012/09/movp-31-detecting-malware-hooks-in.html",
+        "description": "Volatility Labs. (2012, September 24). MoVP 3.1 Detecting Malware Hooks in the Windows GUI Subsystem. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "PreKageo Winhook Jul 2011",
+        "url": "https://github.com/prekageo/winhook",
+        "description": "Prekas, G. (2011, July 11). Winhook. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Jay GetHooks Sept 2011",
+        "url": "https://github.com/jay/gethooks",
+        "description": "Satiro, J. (2011, September 14). GetHooks. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Zairon Hooking Dec 2006",
+        "url": "https://zairon.wordpress.com/2006/12/06/any-application-defined-hook-procedure-on-my-machine/",
+        "description": "Felici, M. (2006, December 6). Any application-defined hook procedure on my machine?. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "EyeofRa Detecting Hooking June 2017",
+        "url": "https://eyeofrablog.wordpress.com/2017/06/27/windows-keylogger-part-2-defense-against-user-land/",
+        "description": "Eye of Ra. (2017, June 27). Windows Keylogger Part 2: Defense against user-land. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GMER Rootkits",
+        "url": "http://www.gmer.net/",
+        "description": "GMER. (n.d.). GMER. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Process Snapshot",
+        "url": "https://msdn.microsoft.com/library/windows/desktop/ms686701.aspx",
+        "description": "Microsoft. (n.d.). Taking a Snapshot and Viewing Processes. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "StackExchange Hooks Jul 2012",
+        "url": "https://security.stackexchange.com/questions/17904/what-are-the-methods-to-find-hooked-functions-and-apis",
+        "description": "Stack Exchange - Security. (2012, July 31). What are the methods to find hooked functions and APIs?. Retrieved December 12, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|system",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f5946b5e-9408-485f-a7f7-b5efc88909b6",
+    "platform": "windows",
+    "tid": "T1056.004",
+    "technique": "Credential API Hooking",
+    "tactic": "credential-access",
+    "datasources": "process-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may hook into Windows application programming interface (API) functions to collect user credentials. Malicious hooking mechanisms may capture API calls that include parameters that reveal user authentication credentials.(Citation: Microsoft TrojanSpy:Win32/Ursnif.gen!I Sept 2017) Unlike [Keylogging](https://attack.mitre.org/techniques/T1056/001),  this technique focuses specifically on API functions that include parameters that reveal user credentials. Hooking involves redirecting calls to these functions and can be implemented via:\n\n* **Hooks procedures**, which intercept and execute designated code in response to events such as messages, keystrokes, and mouse inputs.(Citation: Microsoft Hook Overview)(Citation: Elastic Process Injection July 2017)\n* **Import address table (IAT) hooking**, which use modifications to a process’s IAT, where pointers to imported API functions are stored.(Citation: Elastic Process Injection July 2017)(Citation: Adlice Software IAT Hooks Oct 2014)(Citation: MWRInfoSecurity Dynamic Hooking 2015)\n* **Inline hooking**, which overwrites the first bytes in an API function to redirect code flow.(Citation: Elastic Process Injection July 2017)(Citation: HighTech Bridge Inline Hooking Sept 2011)(Citation: MWRInfoSecurity Dynamic Hooking 2015)\n",
+    "technique_references": [
+      {
+        "source_name": "Microsoft TrojanSpy:Win32/Ursnif.gen!I Sept 2017",
+        "url": "https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=TrojanSpy:Win32/Ursnif.gen!I&threatId=-2147336918",
+        "description": "Microsoft. (2017, September 15). TrojanSpy:Win32/Ursnif.gen!I. Retrieved December 18, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Hook Overview",
+        "url": "https://msdn.microsoft.com/library/windows/desktop/ms644959.aspx",
+        "description": "Microsoft. (n.d.). Hooks Overview. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Elastic Process Injection July 2017",
+        "url": "https://www.endgame.com/blog/technical-blog/ten-process-injection-techniques-technical-survey-common-and-trending-process",
+        "description": "Hosseini, A. (2017, July 18). Ten Process Injection Techniques: A Technical Survey Of Common And Trending Process Injection Techniques. Retrieved December 7, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Adlice Software IAT Hooks Oct 2014",
+        "url": "https://www.adlice.com/userland-rootkits-part-1-iat-hooks/",
+        "description": "Tigzy. (2014, October 15). Userland Rootkits: Part 1, IAT hooks. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MWRInfoSecurity Dynamic Hooking 2015",
+        "url": "https://www.mwrinfosecurity.com/our-thinking/dynamic-hooking-techniques-user-mode/",
+        "description": "Hillman, M. (2015, August 8). Dynamic Hooking Techniques: User Mode. Retrieved December 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "HighTech Bridge Inline Hooking Sept 2011",
+        "url": "https://www.exploit-db.com/docs/17802.pdf",
+        "description": "Mariani, B. (2011, September 6). Inline Hooking in Windows. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Volatility Detecting Hooks Sept 2012",
+        "url": "https://volatility-labs.blogspot.com/2012/09/movp-31-detecting-malware-hooks-in.html",
+        "description": "Volatility Labs. (2012, September 24). MoVP 3.1 Detecting Malware Hooks in the Windows GUI Subsystem. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "PreKageo Winhook Jul 2011",
+        "url": "https://github.com/prekageo/winhook",
+        "description": "Prekas, G. (2011, July 11). Winhook. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Jay GetHooks Sept 2011",
+        "url": "https://github.com/jay/gethooks",
+        "description": "Satiro, J. (2011, September 14). GetHooks. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Zairon Hooking Dec 2006",
+        "url": "https://zairon.wordpress.com/2006/12/06/any-application-defined-hook-procedure-on-my-machine/",
+        "description": "Felici, M. (2006, December 6). Any application-defined hook procedure on my machine?. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "EyeofRa Detecting Hooking June 2017",
+        "url": "https://eyeofrablog.wordpress.com/2017/06/27/windows-keylogger-part-2-defense-against-user-land/",
+        "description": "Eye of Ra. (2017, June 27). Windows Keylogger Part 2: Defense against user-land. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GMER Rootkits",
+        "url": "http://www.gmer.net/",
+        "description": "GMER. (n.d.). GMER. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Process Snapshot",
+        "url": "https://msdn.microsoft.com/library/windows/desktop/ms686701.aspx",
+        "description": "Microsoft. (n.d.). Taking a Snapshot and Viewing Processes. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "StackExchange Hooks Jul 2012",
+        "url": "https://security.stackexchange.com/questions/17904/what-are-the-methods-to-find-hooked-functions-and-apis",
+        "description": "Stack Exchange - Security. (2012, July 31). What are the methods to find hooked functions and APIs?. Retrieved December 12, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|system",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--970a3432-3237-47ad-bcca-7d8cbb217736",
+    "platform": "windows",
+    "tid": "T1059.001",
+    "technique": "PowerShell",
+    "tactic": "execution",
+    "datasources": "process-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse PowerShell commands and scripts for execution. PowerShell is a powerful interactive command-line interface and scripting environment included in the Windows operating system.(Citation: TechNet PowerShell) Adversaries can use PowerShell to perform a number of actions, including discovery of information and execution of code. Examples include the <code>Start-Process</code> cmdlet which can be used to run an executable and the <code>Invoke-Command</code> cmdlet which runs a command locally or on a remote computer (though administrator permissions are required to use PowerShell to connect to remote systems).\n\nPowerShell may also be used to download and run executables from the Internet, which can be executed from disk or in memory without touching disk.\n\nA number of PowerShell-based offensive testing tools are available, including [Empire](https://attack.mitre.org/software/S0363),  [PowerSploit](https://attack.mitre.org/software/S0194), [PoshC2](https://attack.mitre.org/software/S0378), and PSAttack.(Citation: Github PSAttack)\n\nPowerShell commands/scripts can also be executed without directly invoking the <code>powershell.exe</code> binary through interfaces to PowerShell's underlying <code>System.Management.Automation</code> assembly DLL exposed through the .NET framework and Windows Common Language Interface (CLI).(Citation: Sixdub PowerPick Jan 2016)(Citation: SilentBreak Offensive PS Dec 2015)(Citation: Microsoft PSfromCsharp APR 2014)",
+    "technique_references": [
+      {
+        "source_name": "Microsoft PSfromCsharp APR 2014",
+        "url": "https://blogs.msdn.microsoft.com/kebab/2014/04/28/executing-powershell-scripts-from-c/",
+        "description": "Babinec, K. (2014, April 28). Executing PowerShell scripts from C#. Retrieved April 22, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SilentBreak Offensive PS Dec 2015",
+        "url": "https://web.archive.org/web/20190508170150/https://silentbreaksecurity.com/powershell-jobs-without-powershell-exe/",
+        "description": "Christensen, L.. (2015, December 28). The Evolution of Offensive PowerShell Invocation. Retrieved December 8, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye PowerShell Logging 2016",
+        "url": "https://www.fireeye.com/blog/threat-research/2016/02/greater_visibilityt.html",
+        "description": "Dunwoody, M. (2016, February 11). GREATER VISIBILITY THROUGH POWERSHELL LOGGING. Retrieved February 16, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Github PSAttack",
+        "url": "https://github.com/jaredhaight/PSAttack",
+        "description": "Haight, J. (2016, April 21). PS>Attack. Retrieved June 1, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "inv_ps_attacks",
+        "url": "https://powershellmagazine.com/2014/07/16/investigating-powershell-attacks/",
+        "description": "Hastings, M. (2014, July 16). Investigating PowerShell Attacks. Retrieved December 1, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Malware Archaeology PowerShell Cheat Sheet",
+        "url": "http://www.malwarearchaeology.com/s/Windows-PowerShell-Logging-Cheat-Sheet-ver-June-2016-v2.pdf",
+        "description": "Malware Archaeology. (2016, June). WINDOWS POWERSHELL LOGGING CHEAT SHEET - Win 7/Win 2008 or later. Retrieved June 24, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet PowerShell",
+        "url": "https://technet.microsoft.com/en-us/scriptcenter/dd742419.aspx",
+        "description": "Microsoft. (n.d.). Windows PowerShell Scripting. Retrieved April 28, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sixdub PowerPick Jan 2016",
+        "url": "https://web.archive.org/web/20160327101330/http://www.sixdub.net/?p=367",
+        "description": "Warner, J.. (2015, January 6). Inexorable PowerShell – A Red Teamer’s Tale of Overcoming Simple AppLocker Policies. Retrieved December 8, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--93591901-3172-4e94-abf8-6034ab26f44a",
+    "platform": "windows",
+    "tid": "T1134.004",
+    "technique": "Parent PID Spoofing",
+    "tactic": "defense-evasion",
+    "datasources": "process-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may spoof the parent process identifier (PPID) of a new process to evade process-monitoring defenses or to elevate privileges. New processes are typically spawned directly from their parent, or calling, process unless explicitly specified. One way of explicitly assigning the PPID of a new process is via the <code>CreateProcess</code> API call, which supports a parameter that defines the PPID to use.(Citation: DidierStevens SelectMyParent Nov 2009) This functionality is used by Windows features such as User Account Control (UAC) to correctly set the PPID after a requested elevated process is spawned by SYSTEM (typically via <code>svchost.exe</code> or <code>consent.exe</code>) rather than the current user context.(Citation: Microsoft UAC Nov 2018)\n\nAdversaries may abuse these mechanisms to evade defenses, such as those blocking processes spawning directly from Office documents, and analysis targeting unusual/potentially malicious parent-child process relationships, such as spoofing the PPID of [PowerShell](https://attack.mitre.org/techniques/T1059/001)/[Rundll32](https://attack.mitre.org/techniques/T1218/011) to be <code>explorer.exe</code> rather than an Office document delivered as part of [Spearphishing Attachment](https://attack.mitre.org/techniques/T1566/001).(Citation: CounterCept PPID Spoofing Dec 2018) This spoofing could be executed via [Visual Basic](https://attack.mitre.org/techniques/T1059/005) within a malicious Office document or any code that can perform [Native API](https://attack.mitre.org/techniques/T1106).(Citation: CTD PPID Spoofing Macro Mar 2019)(Citation: CounterCept PPID Spoofing Dec 2018)\n\nExplicitly assigning the PPID may also enable elevated privileges given appropriate access rights to the parent process. For example, an adversary in a privileged user context (i.e. administrator) may spawn a new process and assign the parent as a process running as SYSTEM (such as <code>lsass.exe</code>), causing the new process to be elevated via the inherited access token.(Citation: XPNSec PPID Nov 2017)",
+    "technique_references": [
+      {
+        "source_name": "XPNSec PPID Nov 2017",
+        "url": "https://blog.xpnsec.com/becoming-system/",
+        "description": "Chester, A. (2017, November 20). Alternative methods of becoming SYSTEM. Retrieved June 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CounterCept PPID Spoofing Dec 2018",
+        "url": "https://www.countercept.com/blog/detecting-parent-pid-spoofing/",
+        "description": "Loh, I. (2018, December 21). Detecting Parent PID Spoofing. Retrieved June 3, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft UAC Nov 2018",
+        "url": "https://docs.microsoft.com/windows/security/identity-protection/user-account-control/how-user-account-control-works",
+        "description": "Montemayor, D. et al.. (2018, November 15). How User Account Control works. Retrieved June 3, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Process Creation Flags May 2018",
+        "url": "https://docs.microsoft.com/windows/desktop/ProcThread/process-creation-flags",
+        "description": "Schofield, M. & Satran, M. (2018, May 30). Process Creation Flags. Retrieved June 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Secuirtyinbits Ataware3 May 2019",
+        "url": "https://www.securityinbits.com/malware-analysis/parent-pid-spoofing-stage-2-ataware-ransomware-part-3",
+        "description": "Secuirtyinbits . (2019, May 14). Parent PID Spoofing (Stage 2) Ataware Ransomware Part 3. Retrieved June 6, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "DidierStevens SelectMyParent Nov 2009",
+        "url": "https://blog.didierstevens.com/2009/11/22/quickpost-selectmyparent-or-playing-with-the-windows-process-tree/",
+        "description": "Stevens, D. (2009, November 22). Quickpost: SelectMyParent or Playing With the Windows Process Tree. Retrieved June 3, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CTD PPID Spoofing Macro Mar 2019",
+        "url": "https://blog.christophetd.fr/building-an-office-macro-to-spoof-process-parent-and-command-line/",
+        "description": "Tafani-Dereeper, C. (2019, March 12). Building an Office macro to spoof parent processes and command line arguments. Retrieved June 3, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--93591901-3172-4e94-abf8-6034ab26f44a",
+    "platform": "windows",
+    "tid": "T1134.004",
+    "technique": "Parent PID Spoofing",
+    "tactic": "privilege-escalation",
+    "datasources": "process-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may spoof the parent process identifier (PPID) of a new process to evade process-monitoring defenses or to elevate privileges. New processes are typically spawned directly from their parent, or calling, process unless explicitly specified. One way of explicitly assigning the PPID of a new process is via the <code>CreateProcess</code> API call, which supports a parameter that defines the PPID to use.(Citation: DidierStevens SelectMyParent Nov 2009) This functionality is used by Windows features such as User Account Control (UAC) to correctly set the PPID after a requested elevated process is spawned by SYSTEM (typically via <code>svchost.exe</code> or <code>consent.exe</code>) rather than the current user context.(Citation: Microsoft UAC Nov 2018)\n\nAdversaries may abuse these mechanisms to evade defenses, such as those blocking processes spawning directly from Office documents, and analysis targeting unusual/potentially malicious parent-child process relationships, such as spoofing the PPID of [PowerShell](https://attack.mitre.org/techniques/T1059/001)/[Rundll32](https://attack.mitre.org/techniques/T1218/011) to be <code>explorer.exe</code> rather than an Office document delivered as part of [Spearphishing Attachment](https://attack.mitre.org/techniques/T1566/001).(Citation: CounterCept PPID Spoofing Dec 2018) This spoofing could be executed via [Visual Basic](https://attack.mitre.org/techniques/T1059/005) within a malicious Office document or any code that can perform [Native API](https://attack.mitre.org/techniques/T1106).(Citation: CTD PPID Spoofing Macro Mar 2019)(Citation: CounterCept PPID Spoofing Dec 2018)\n\nExplicitly assigning the PPID may also enable elevated privileges given appropriate access rights to the parent process. For example, an adversary in a privileged user context (i.e. administrator) may spawn a new process and assign the parent as a process running as SYSTEM (such as <code>lsass.exe</code>), causing the new process to be elevated via the inherited access token.(Citation: XPNSec PPID Nov 2017)",
+    "technique_references": [
+      {
+        "source_name": "XPNSec PPID Nov 2017",
+        "url": "https://blog.xpnsec.com/becoming-system/",
+        "description": "Chester, A. (2017, November 20). Alternative methods of becoming SYSTEM. Retrieved June 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CounterCept PPID Spoofing Dec 2018",
+        "url": "https://www.countercept.com/blog/detecting-parent-pid-spoofing/",
+        "description": "Loh, I. (2018, December 21). Detecting Parent PID Spoofing. Retrieved June 3, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft UAC Nov 2018",
+        "url": "https://docs.microsoft.com/windows/security/identity-protection/user-account-control/how-user-account-control-works",
+        "description": "Montemayor, D. et al.. (2018, November 15). How User Account Control works. Retrieved June 3, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Process Creation Flags May 2018",
+        "url": "https://docs.microsoft.com/windows/desktop/ProcThread/process-creation-flags",
+        "description": "Schofield, M. & Satran, M. (2018, May 30). Process Creation Flags. Retrieved June 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Secuirtyinbits Ataware3 May 2019",
+        "url": "https://www.securityinbits.com/malware-analysis/parent-pid-spoofing-stage-2-ataware-ransomware-part-3",
+        "description": "Secuirtyinbits . (2019, May 14). Parent PID Spoofing (Stage 2) Ataware Ransomware Part 3. Retrieved June 6, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "DidierStevens SelectMyParent Nov 2009",
+        "url": "https://blog.didierstevens.com/2009/11/22/quickpost-selectmyparent-or-playing-with-the-windows-process-tree/",
+        "description": "Stevens, D. (2009, November 22). Quickpost: SelectMyParent or Playing With the Windows Process Tree. Retrieved June 3, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CTD PPID Spoofing Macro Mar 2019",
+        "url": "https://blog.christophetd.fr/building-an-office-macro-to-spoof-process-parent-and-command-line/",
+        "description": "Tafani-Dereeper, C. (2019, March 12). Building an Office macro to spoof parent processes and command line arguments. Retrieved June 3, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--120d5519-3098-4e1c-9191-2aa61232f073",
+    "platform": "windows",
+    "tid": "T1548.002",
+    "technique": "Bypass User Account Control",
+    "tactic": "privilege-escalation",
+    "datasources": "process-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may bypass UAC mechanisms to elevate process privileges on system. Windows User Account Control (UAC) allows a program to elevate its privileges (tracked as integrity levels ranging from low to high) to perform a task under administrator-level permissions, possibly by prompting the user for confirmation. The impact to the user ranges from denying the operation under high enforcement to allowing the user to perform the action if they are in the local administrators group and click through the prompt or allowing them to enter an administrator password to complete the action.(Citation: TechNet How UAC Works)\n\nIf the UAC protection level of a computer is set to anything but the highest level, certain Windows programs can elevate privileges or execute some elevated [Component Object Model](https://attack.mitre.org/techniques/T1559/001) objects without prompting the user through the UAC notification box.(Citation: TechNet Inside UAC)(Citation: MSDN COM Elevation) An example of this is use of [Rundll32](https://attack.mitre.org/techniques/T1218/011) to load a specifically crafted DLL which loads an auto-elevated [Component Object Model](https://attack.mitre.org/techniques/T1559/001) object and performs a file operation in a protected directory which would typically require elevated access. Malicious software may also be injected into a trusted process to gain elevated privileges without prompting a user.(Citation: Davidson Windows)\n\nMany methods have been discovered to bypass UAC. The Github readme page for UACME contains an extensive list of methods(Citation: Github UACMe) that have been discovered and implemented, but may not be a comprehensive list of bypasses. Additional bypass methods are regularly discovered and some used in the wild, such as:\n\n* <code>eventvwr.exe</code> can auto-elevate and execute a specified binary or script.(Citation: enigma0x3 Fileless UAC Bypass)(Citation: Fortinet Fareit)\n\nAnother bypass is possible through some lateral movement techniques if credentials for an account with administrator privileges are known, since UAC is a single system security mechanism, and the privilege or integrity of a process running on one system will be unknown on remote systems and default to high integrity.(Citation: SANS UAC Bypass)",
+    "technique_references": [
+      {
+        "source_name": "Davidson Windows",
+        "url": "http://www.pretentiousname.com/misc/win7_uac_whitelist2.html",
+        "description": "Davidson, L. (n.d.). Windows 7 UAC whitelist. Retrieved November 12, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet How UAC Works",
+        "url": "https://technet.microsoft.com/en-us/itpro/windows/keep-secure/how-user-account-control-works",
+        "description": "Lich, B. (2016, May 31). How User Account Control Works. Retrieved June 3, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SANS UAC Bypass",
+        "url": "http://pen-testing.sans.org/blog/pen-testing/2013/08/08/psexec-uac-bypass",
+        "description": "Medin, T. (2013, August 8). PsExec UAC Bypass. Retrieved June 3, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MSDN COM Elevation",
+        "url": "https://msdn.microsoft.com/en-us/library/ms679687.aspx",
+        "description": "Microsoft. (n.d.). The COM Elevation Moniker. Retrieved July 26, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "enigma0x3 Fileless UAC Bypass",
+        "url": "https://enigma0x3.net/2016/08/15/fileless-uac-bypass-using-eventvwr-exe-and-registry-hijacking/",
+        "description": "Nelson, M. (2016, August 15). \"Fileless\" UAC Bypass using eventvwr.exe and Registry Hijacking. Retrieved December 27, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "enigma0x3 sdclt app paths",
+        "url": "https://enigma0x3.net/2017/03/14/bypassing-uac-using-app-paths/",
+        "description": "Nelson, M. (2017, March 14). Bypassing UAC using App Paths. Retrieved May 25, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "enigma0x3 sdclt bypass",
+        "url": "https://enigma0x3.net/2017/03/17/fileless-uac-bypass-using-sdclt-exe/",
+        "description": "Nelson, M. (2017, March 17). \"Fileless\" UAC Bypass Using sdclt.exe. Retrieved May 25, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Inside UAC",
+        "url": "https://technet.microsoft.com/en-US/magazine/2009.07.uac.aspx",
+        "description": "Russinovich, M. (2009, July). User Account Control: Inside Windows 7 User Account Control. Retrieved July 26, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Fortinet Fareit",
+        "url": "https://blog.fortinet.com/2016/12/16/malicious-macro-bypasses-uac-to-elevate-privilege-for-fareit-malware",
+        "description": "Salvio, J., Joven, R. (2016, December 16). Malicious Macro Bypasses UAC to Elevate Privilege for Fareit Malware. Retrieved December 27, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Github UACMe",
+        "url": "https://github.com/hfiref0x/UACME",
+        "description": "UACME Project. (2016, June 16). UACMe. Retrieved July 26, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "administrator",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--120d5519-3098-4e1c-9191-2aa61232f073",
+    "platform": "windows",
+    "tid": "T1548.002",
+    "technique": "Bypass User Account Control",
+    "tactic": "defense-evasion",
+    "datasources": "process-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may bypass UAC mechanisms to elevate process privileges on system. Windows User Account Control (UAC) allows a program to elevate its privileges (tracked as integrity levels ranging from low to high) to perform a task under administrator-level permissions, possibly by prompting the user for confirmation. The impact to the user ranges from denying the operation under high enforcement to allowing the user to perform the action if they are in the local administrators group and click through the prompt or allowing them to enter an administrator password to complete the action.(Citation: TechNet How UAC Works)\n\nIf the UAC protection level of a computer is set to anything but the highest level, certain Windows programs can elevate privileges or execute some elevated [Component Object Model](https://attack.mitre.org/techniques/T1559/001) objects without prompting the user through the UAC notification box.(Citation: TechNet Inside UAC)(Citation: MSDN COM Elevation) An example of this is use of [Rundll32](https://attack.mitre.org/techniques/T1218/011) to load a specifically crafted DLL which loads an auto-elevated [Component Object Model](https://attack.mitre.org/techniques/T1559/001) object and performs a file operation in a protected directory which would typically require elevated access. Malicious software may also be injected into a trusted process to gain elevated privileges without prompting a user.(Citation: Davidson Windows)\n\nMany methods have been discovered to bypass UAC. The Github readme page for UACME contains an extensive list of methods(Citation: Github UACMe) that have been discovered and implemented, but may not be a comprehensive list of bypasses. Additional bypass methods are regularly discovered and some used in the wild, such as:\n\n* <code>eventvwr.exe</code> can auto-elevate and execute a specified binary or script.(Citation: enigma0x3 Fileless UAC Bypass)(Citation: Fortinet Fareit)\n\nAnother bypass is possible through some lateral movement techniques if credentials for an account with administrator privileges are known, since UAC is a single system security mechanism, and the privilege or integrity of a process running on one system will be unknown on remote systems and default to high integrity.(Citation: SANS UAC Bypass)",
+    "technique_references": [
+      {
+        "source_name": "Davidson Windows",
+        "url": "http://www.pretentiousname.com/misc/win7_uac_whitelist2.html",
+        "description": "Davidson, L. (n.d.). Windows 7 UAC whitelist. Retrieved November 12, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet How UAC Works",
+        "url": "https://technet.microsoft.com/en-us/itpro/windows/keep-secure/how-user-account-control-works",
+        "description": "Lich, B. (2016, May 31). How User Account Control Works. Retrieved June 3, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SANS UAC Bypass",
+        "url": "http://pen-testing.sans.org/blog/pen-testing/2013/08/08/psexec-uac-bypass",
+        "description": "Medin, T. (2013, August 8). PsExec UAC Bypass. Retrieved June 3, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MSDN COM Elevation",
+        "url": "https://msdn.microsoft.com/en-us/library/ms679687.aspx",
+        "description": "Microsoft. (n.d.). The COM Elevation Moniker. Retrieved July 26, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "enigma0x3 Fileless UAC Bypass",
+        "url": "https://enigma0x3.net/2016/08/15/fileless-uac-bypass-using-eventvwr-exe-and-registry-hijacking/",
+        "description": "Nelson, M. (2016, August 15). \"Fileless\" UAC Bypass using eventvwr.exe and Registry Hijacking. Retrieved December 27, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "enigma0x3 sdclt app paths",
+        "url": "https://enigma0x3.net/2017/03/14/bypassing-uac-using-app-paths/",
+        "description": "Nelson, M. (2017, March 14). Bypassing UAC using App Paths. Retrieved May 25, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "enigma0x3 sdclt bypass",
+        "url": "https://enigma0x3.net/2017/03/17/fileless-uac-bypass-using-sdclt-exe/",
+        "description": "Nelson, M. (2017, March 17). \"Fileless\" UAC Bypass Using sdclt.exe. Retrieved May 25, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Inside UAC",
+        "url": "https://technet.microsoft.com/en-US/magazine/2009.07.uac.aspx",
+        "description": "Russinovich, M. (2009, July). User Account Control: Inside Windows 7 User Account Control. Retrieved July 26, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Fortinet Fareit",
+        "url": "https://blog.fortinet.com/2016/12/16/malicious-macro-bypasses-uac-to-elevate-privilege-for-fareit-malware",
+        "description": "Salvio, J., Joven, R. (2016, December 16). Malicious Macro Bypasses UAC to Elevate Privilege for Fareit Malware. Retrieved December 27, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Github UACMe",
+        "url": "https://github.com/hfiref0x/UACME",
+        "description": "UACME Project. (2016, June 16). UACMe. Retrieved July 26, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "administrator",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--1365fe3b-0f50-455d-b4da-266ce31c23b0",
+    "platform": "linux|macos",
+    "tid": "T1548.003",
+    "technique": "Sudo and Sudo Caching",
+    "tactic": "privilege-escalation",
+    "datasources": "process-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may perform sudo caching and/or use the sudoers file to elevate privileges. Adversaries may do this to execute commands as other users or spawn processes with higher privileges.\n\nWithin Linux and MacOS systems, sudo (sometimes referred to as \"superuser do\") allows users to perform commands from terminals with elevated privileges and to control who can perform these commands on the system. The <code>sudo</code> command \"allows a system administrator to delegate authority to give certain users (or groups of users) the ability to run some (or all) commands as root or another user while providing an audit trail of the commands and their arguments.\"(Citation: sudo man page 2018) Since sudo was made for the system administrator, it has some useful configuration features such as a <code>timestamp_timeout</code>, which is the amount of time in minutes between instances of <code>sudo</code> before it will re-prompt for a password. This is because <code>sudo</code> has the ability to cache credentials for a period of time. Sudo creates (or touches) a file at <code>/var/db/sudo</code> with a timestamp of when sudo was last run to determine this timeout. Additionally, there is a <code>tty_tickets</code> variable that treats each new tty (terminal session) in isolation. This means that, for example, the sudo timeout of one tty will not affect another tty (you will have to type the password again).\n\nThe sudoers file, <code>/etc/sudoers</code>, describes which users can run which commands and from which terminals. This also describes which commands users can run as other users or groups. This provides the principle of least privilege such that users are running in their lowest possible permissions for most of the time and only elevate to other users or permissions as needed, typically by prompting for a password. However, the sudoers file can also specify when to not prompt users for passwords with a line like <code>user1 ALL=(ALL) NOPASSWD: ALL</code>.(Citation: OSX.Dok Malware) Elevated privileges are required to edit this file though.\n\nAdversaries can also abuse poor configurations of these mechanisms to escalate privileges without needing the user's password. For example, <code>/var/db/sudo</code>'s timestamp can be monitored to see if it falls within the <code>timestamp_timeout</code> range. If it does, then malware can execute sudo commands without needing to supply the user's password. Additional, if <code>tty_tickets</code> is disabled, adversaries can do this from any tty for that user.\n\nIn the wild, malware has disabled <code>tty_tickets</code> to potentially make scripting easier by issuing <code>echo \\'Defaults !tty_tickets\\' >> /etc/sudoers</code>.(Citation: cybereason osx proton) In order for this change to be reflected, the malware also issued <code>killall Terminal</code>. As of macOS Sierra, the sudoers file has <code>tty_tickets</code> enabled by default.",
+    "technique_references": [
+      {
+        "source_name": "sudo man page 2018",
+        "url": "https://www.sudo.ws/",
+        "description": "Todd C. Miller. (2018). Sudo Man Page. Retrieved March 19, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "OSX.Dok Malware",
+        "url": "https://blog.malwarebytes.com/threat-analysis/2017/04/new-osx-dok-malware-intercepts-web-traffic/",
+        "description": "Thomas Reed. (2017, July 7). New OSX.Dok malware intercepts web traffic. Retrieved July 10, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "cybereason osx proton",
+        "url": "https://www.cybereason.com/blog/labs-proton-b-what-this-mac-malware-actually-does",
+        "description": "Amit Serper. (2018, May 10). ProtonB What this Mac Malware Actually Does. Retrieved March 19, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "root",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--1365fe3b-0f50-455d-b4da-266ce31c23b0",
+    "platform": "linux|macos",
+    "tid": "T1548.003",
+    "technique": "Sudo and Sudo Caching",
+    "tactic": "defense-evasion",
+    "datasources": "process-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may perform sudo caching and/or use the sudoers file to elevate privileges. Adversaries may do this to execute commands as other users or spawn processes with higher privileges.\n\nWithin Linux and MacOS systems, sudo (sometimes referred to as \"superuser do\") allows users to perform commands from terminals with elevated privileges and to control who can perform these commands on the system. The <code>sudo</code> command \"allows a system administrator to delegate authority to give certain users (or groups of users) the ability to run some (or all) commands as root or another user while providing an audit trail of the commands and their arguments.\"(Citation: sudo man page 2018) Since sudo was made for the system administrator, it has some useful configuration features such as a <code>timestamp_timeout</code>, which is the amount of time in minutes between instances of <code>sudo</code> before it will re-prompt for a password. This is because <code>sudo</code> has the ability to cache credentials for a period of time. Sudo creates (or touches) a file at <code>/var/db/sudo</code> with a timestamp of when sudo was last run to determine this timeout. Additionally, there is a <code>tty_tickets</code> variable that treats each new tty (terminal session) in isolation. This means that, for example, the sudo timeout of one tty will not affect another tty (you will have to type the password again).\n\nThe sudoers file, <code>/etc/sudoers</code>, describes which users can run which commands and from which terminals. This also describes which commands users can run as other users or groups. This provides the principle of least privilege such that users are running in their lowest possible permissions for most of the time and only elevate to other users or permissions as needed, typically by prompting for a password. However, the sudoers file can also specify when to not prompt users for passwords with a line like <code>user1 ALL=(ALL) NOPASSWD: ALL</code>.(Citation: OSX.Dok Malware) Elevated privileges are required to edit this file though.\n\nAdversaries can also abuse poor configurations of these mechanisms to escalate privileges without needing the user's password. For example, <code>/var/db/sudo</code>'s timestamp can be monitored to see if it falls within the <code>timestamp_timeout</code> range. If it does, then malware can execute sudo commands without needing to supply the user's password. Additional, if <code>tty_tickets</code> is disabled, adversaries can do this from any tty for that user.\n\nIn the wild, malware has disabled <code>tty_tickets</code> to potentially make scripting easier by issuing <code>echo \\'Defaults !tty_tickets\\' >> /etc/sudoers</code>.(Citation: cybereason osx proton) In order for this change to be reflected, the malware also issued <code>killall Terminal</code>. As of macOS Sierra, the sudoers file has <code>tty_tickets</code> enabled by default.",
+    "technique_references": [
+      {
+        "source_name": "sudo man page 2018",
+        "url": "https://www.sudo.ws/",
+        "description": "Todd C. Miller. (2018). Sudo Man Page. Retrieved March 19, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "OSX.Dok Malware",
+        "url": "https://blog.malwarebytes.com/threat-analysis/2017/04/new-osx-dok-malware-intercepts-web-traffic/",
+        "description": "Thomas Reed. (2017, July 7). New OSX.Dok malware intercepts web traffic. Retrieved July 10, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "cybereason osx proton",
+        "url": "https://www.cybereason.com/blog/labs-proton-b-what-this-mac-malware-actually-does",
+        "description": "Amit Serper. (2018, May 10). ProtonB What this Mac Malware Actually Does. Retrieved March 19, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "root",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--824add00-99a1-4b15-9a2d-6c5683b7b497",
+    "platform": "windows|linux|macos",
+    "tid": "T1562.010",
+    "technique": "Downgrade Attack",
+    "tactic": "defense-evasion",
+    "datasources": "process-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may downgrade or use a version of system features that may be outdated, vulnerable, and/or does not support updated security controls such as logging. For example, [PowerShell](https://attack.mitre.org/techniques/T1059/001) versions 5+ includes Script Block Logging (SBL) which can record executed script content. However, adversaries may attempt to execute a previous version of PowerShell that does not support SBL with the intent to [Impair Defenses](https://attack.mitre.org/techniques/T1562) while running malicious scripts that may have otherwise been detected.(Citation: CrowdStrike BGH Ransomware 2021)(Citation: Mandiant BYOL 2018)(Citation: att_def_ps_logging)\n\nAdversaries may downgrade and use less-secure versions of various features of a system, such as [Command and Scripting Interpreter](https://attack.mitre.org/techniques/T1059)s or even network protocols that can be abused to enable [Adversary-in-the-Middle](https://attack.mitre.org/techniques/T1557).(Citation: Praetorian TLS Downgrade Attack 2014)",
+    "technique_references": [
+      {
+        "source_name": "CrowdStrike BGH Ransomware 2021",
+        "url": "https://www.crowdstrike.com/blog/how-falcon-complete-stopped-a-big-game-hunting-ransomware-attack/",
+        "description": "Falcon Complete Team. (2021, May 11). Response When Minutes Matter: Rising Up Against Ransomware. Retrieved October 8, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "att_def_ps_logging",
+        "url": "https://nsfocusglobal.com/attack-and-defense-around-powershell-event-logging/",
+        "description": "Hao, M. (2019, February 27). Attack and Defense Around PowerShell Event Logging. Retrieved November 24, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "inv_ps_attacks",
+        "url": "https://powershellmagazine.com/2014/07/16/investigating-powershell-attacks/",
+        "description": "Hastings, M. (2014, July 16). Investigating PowerShell Attacks. Retrieved December 1, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant BYOL 2018",
+        "url": "https://www.mandiant.com/resources/bring-your-own-land-novel-red-teaming-technique",
+        "description": "Kirk, N. (2018, June 18). Bring Your Own Land (BYOL) – A Novel Red Teaming Technique. Retrieved October 8, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Praetorian TLS Downgrade Attack 2014",
+        "url": "https://www.praetorian.com/blog/man-in-the-middle-tls-ssl-protocol-downgrade-attack/",
+        "description": "Praetorian. (2014, August 19). Man-in-the-Middle TLS Protocol Downgrade Attack. Retrieved October 8, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

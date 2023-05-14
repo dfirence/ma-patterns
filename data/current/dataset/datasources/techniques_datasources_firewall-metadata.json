@@ -1,0 +1,26 @@
+[
+  {
+    "id": "attack-pattern--e3b6daca-e963-4a69-aee6-ed4fd653ad58",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace",
+    "tid": "T1518",
+    "technique": "Software Discovery",
+    "tactic": "discovery",
+    "datasources": "firewall-metadata",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1518.001"
+    ],
+    "count_subtechniques": 1,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to get a listing of software and software versions that are installed on a system or in a cloud environment. Adversaries may use the information from [Software Discovery](https://attack.mitre.org/techniques/T1518) during automated discovery to shape follow-on behaviors, including whether or not the adversary fully infects the target and/or attempts specific actions.\n\nAdversaries may attempt to enumerate software for a variety of reasons, such as figuring out what security measures are present or if the compromised system has a version of software that is vulnerable to [Exploitation for Privilege Escalation](https://attack.mitre.org/techniques/T1068).",
+    "technique_references": [],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

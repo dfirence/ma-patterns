@@ -1,0 +1,212 @@
+[
+  {
+    "id": "attack-pattern--799ace7f-e227-4411-baa0-8868704f2a69",
+    "platform": "linux|macos|windows|containers|network|office-365|google-workspace",
+    "tid": "T1070",
+    "technique": "Indicator Removal",
+    "tactic": "defense-evasion",
+    "datasources": "file-deletion",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1070.001",
+      "T1070.002",
+      "T1070.003",
+      "T1070.004",
+      "T1070.005",
+      "T1070.006",
+      "T1070.007",
+      "T1070.008",
+      "T1070.009"
+    ],
+    "count_subtechniques": 9,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may delete or modify artifacts generated within systems to remove evidence of their presence or hinder defenses. Various artifacts may be created by an adversary or something that can be attributed to an adversary’s actions. Typically these artifacts are used as defensive indicators related to monitored events, such as strings from downloaded files, logs that are generated from user actions, and other data analyzed by defenders. Location, format, and type of artifact (such as command or login history) are often specific to each platform.\n\nRemoval of these indicators may interfere with event collection, reporting, or other processes used to detect intrusion activity. This may compromise the integrity of security solutions by causing notable events to go unreported. This activity may also impede forensic analysis and incident response, due to lack of sufficient data to determine what occurred.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d45a3d09-b3cf-48f4-9f0f-f521ee5cb05c",
+    "platform": "windows|iaas|linux|macos",
+    "tid": "T1485",
+    "technique": "Data Destruction",
+    "tactic": "impact",
+    "datasources": "file-deletion",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may destroy data and files on specific systems or in large numbers on a network to interrupt availability to systems, services, and network resources. Data destruction is likely to render stored data irrecoverable by forensic techniques through overwriting files or data on local and remote drives.(Citation: Symantec Shamoon 2012)(Citation: FireEye Shamoon Nov 2016)(Citation: Palo Alto Shamoon Nov 2016)(Citation: Kaspersky StoneDrill 2017)(Citation: Unit 42 Shamoon3 2018)(Citation: Talos Olympic Destroyer 2018) Common operating system file deletion commands such as <code>del</code> and <code>rm</code> often only remove pointers to files without wiping the contents of the files themselves, making the files recoverable by proper forensic methodology. This behavior is distinct from [Disk Content Wipe](https://attack.mitre.org/techniques/T1561/001) and [Disk Structure Wipe](https://attack.mitre.org/techniques/T1561/002) because individual files are destroyed rather than sections of a storage disk or the disk's logical structure.\n\nAdversaries may attempt to overwrite files and directories with randomly generated data to make it irrecoverable.(Citation: Kaspersky StoneDrill 2017)(Citation: Unit 42 Shamoon3 2018) In some cases politically oriented image files have been used to overwrite data.(Citation: FireEye Shamoon Nov 2016)(Citation: Palo Alto Shamoon Nov 2016)(Citation: Kaspersky StoneDrill 2017)\n\nTo maximize impact on the target organization in operations where network-wide availability interruption is the goal, malware designed for destroying data may have worm-like features to propagate across a network by leveraging additional techniques like [Valid Accounts](https://attack.mitre.org/techniques/T1078), [OS Credential Dumping](https://attack.mitre.org/techniques/T1003), and [SMB/Windows Admin Shares](https://attack.mitre.org/techniques/T1021/002).(Citation: Symantec Shamoon 2012)(Citation: FireEye Shamoon Nov 2016)(Citation: Palo Alto Shamoon Nov 2016)(Citation: Kaspersky StoneDrill 2017)(Citation: Talos Olympic Destroyer 2018).\n\nIn cloud environments, adversaries may leverage access to delete cloud storage, cloud storage accounts, machine images, and other infrastructure crucial to operations to damage an organization or their customers.(Citation: Data Destruction - Threat Post)(Citation: DOJ  - Cisco Insider)",
+    "technique_references": [
+      {
+        "source_name": "Symantec Shamoon 2012",
+        "url": "https://www.symantec.com/connect/blogs/shamoon-attacks",
+        "description": "Symantec. (2012, August 16). The Shamoon Attacks. Retrieved March 14, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye Shamoon Nov 2016",
+        "url": "https://www.fireeye.com/blog/threat-research/2016/11/fireeye_respondsto.html",
+        "description": "FireEye. (2016, November 30). FireEye Responds to Wave of Destructive Cyber Attacks in Gulf Region. Retrieved January 11, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Palo Alto Shamoon Nov 2016",
+        "url": "http://researchcenter.paloaltonetworks.com/2016/11/unit42-shamoon-2-return-disttrack-wiper/",
+        "description": "Falcone, R.. (2016, November 30). Shamoon 2: Return of the Disttrack Wiper. Retrieved January 11, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kaspersky StoneDrill 2017",
+        "url": "https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/07180722/Report_Shamoon_StoneDrill_final.pdf",
+        "description": "Kaspersky Lab. (2017, March 7). From Shamoon to StoneDrill: Wipers attacking Saudi organizations and beyond. Retrieved March 14, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Unit 42 Shamoon3 2018",
+        "url": "https://unit42.paloaltonetworks.com/shamoon-3-targets-oil-gas-organization/",
+        "description": "Falcone, R. (2018, December 13). Shamoon 3 Targets Oil and Gas Organization. Retrieved March 14, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Talos Olympic Destroyer 2018",
+        "url": "https://blog.talosintelligence.com/2018/02/olympic-destroyer.html",
+        "description": "Mercer, W. and Rascagneres, P. (2018, February 12). Olympic Destroyer Takes Aim At Winter Olympics. Retrieved March 14, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Data Destruction - Threat Post",
+        "url": "https://threatpost.com/hacker-puts-hosting-service-code-spaces-out-of-business/106761/",
+        "description": "Mimoso, M.. (2014, June 18). Hacker Puts Hosting Service Code Spaces Out of Business. Retrieved December 15, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "DOJ  - Cisco Insider",
+        "url": "https://www.justice.gov/usao-ndca/pr/san-jose-man-pleads-guilty-damaging-cisco-s-network",
+        "description": "DOJ. (2020, August 26). San Jose Man Pleads Guilty To Damaging Cisco’s Network. Retrieved December 15, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator|root|system",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f5d8eed6-48a9-4cdf-a3d7-d1ffa99c3d2a",
+    "platform": "windows|macos|linux|network|iaas",
+    "tid": "T1490",
+    "technique": "Inhibit System Recovery",
+    "tactic": "impact",
+    "datasources": "file-deletion",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may delete or remove built-in data and turn off services designed to aid in the recovery of a corrupted system to prevent recovery.(Citation: Talos Olympic Destroyer 2018)(Citation: FireEye WannaCry 2017) This may deny access to available backups and recovery options.\n\nOperating systems may contain features that can help fix corrupted systems, such as a backup catalog, volume shadow copies, and automatic repair features. Adversaries may disable or delete system recovery features to augment the effects of [Data Destruction](https://attack.mitre.org/techniques/T1485) and [Data Encrypted for Impact](https://attack.mitre.org/techniques/T1486).(Citation: Talos Olympic Destroyer 2018)(Citation: FireEye WannaCry 2017) Furthermore, adversaries may disable recovery notifications, then corrupt backups.(Citation: disable_notif_synology_ransom)\n\nA number of native Windows utilities have been used by adversaries to disable or delete system recovery features:\n\n* <code>vssadmin.exe</code> can be used to delete all volume shadow copies on a system - <code>vssadmin.exe delete shadows /all /quiet</code>\n* [Windows Management Instrumentation](https://attack.mitre.org/techniques/T1047) can be used to delete volume shadow copies - <code>wmic shadowcopy delete</code>\n* <code>wbadmin.exe</code> can be used to delete the Windows Backup Catalog - <code>wbadmin.exe delete catalog -quiet</code>\n* <code>bcdedit.exe</code> can be used to disable automatic Windows recovery features by modifying boot configuration data - <code>bcdedit.exe /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no</code>\n* <code>REAgentC.exe</code> can be used to disable Windows Recovery Environment (WinRE) repair/recovery options of an infected system\n\nOn network devices, adversaries may leverage [Disk Wipe](https://attack.mitre.org/techniques/T1561) to delete backup firmware images and reformat the file system, then [System Shutdown/Reboot](https://attack.mitre.org/techniques/T1529) to reload the device. Together this activity may leave network devices completely inoperable and inhibit recovery operations.\n\nAdversaries may also delete “online” backups that are connected to their network – whether via network storage media or through folders that sync to cloud services.(Citation: ZDNet Ransomware Backups 2020) In cloud environments, adversaries may disable versioning and backup policies and delete snapshots, machine images, and prior versions of objects designed to be used in disaster recovery scenarios.(Citation: Dark Reading Code Spaces Cyber Attack)(Citation: Rhino Security Labs AWS S3 Ransomware)",
+    "technique_references": [
+      {
+        "source_name": "Dark Reading Code Spaces Cyber Attack",
+        "url": "https://www.darkreading.com/attacks-breaches/code-hosting-service-shuts-down-after-cyber-attack",
+        "description": " Brian Prince. (2014, June 20). Code Hosting Service Shuts Down After Cyber Attack. Retrieved March 21, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye WannaCry 2017",
+        "url": "https://www.fireeye.com/blog/threat-research/2017/05/wannacry-malware-profile.html",
+        "description": "Berry, A., Homan, J., and Eitzman, R. (2017, May 23). WannaCry Malware Profile. Retrieved March 15, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Talos Olympic Destroyer 2018",
+        "url": "https://blog.talosintelligence.com/2018/02/olympic-destroyer.html",
+        "description": "Mercer, W. and Rascagneres, P. (2018, February 12). Olympic Destroyer Takes Aim At Winter Olympics. Retrieved March 14, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Rhino Security Labs AWS S3 Ransomware",
+        "url": "https://rhinosecuritylabs.com/aws/s3-ransomware-part-2-prevention-and-defense/",
+        "description": "Spencer Gietzen. (n.d.). AWS Simple Storage Service S3 Ransomware Part 2: Prevention and Defense. Retrieved March 21, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ZDNet Ransomware Backups 2020",
+        "url": "https://www.zdnet.com/article/ransomware-victims-thought-their-backups-were-safe-they-were-wrong/",
+        "description": "Steve Ranger. (2020, February 27). Ransomware victims thought their backups were safe. They were wrong. Retrieved March 21, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "disable_notif_synology_ransom",
+        "url": "https://twitter.com/TheDFIRReport/status/1498657590259109894",
+        "description": "TheDFIRReport. (2022, March 1). Disabling notifications on Synology servers before ransom. Retrieved October 19, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--960c3c86-1480-4d72-b4e0-8c242e84a5c5",
+    "platform": "linux|macos|windows",
+    "tid": "T1554",
+    "technique": "Compromise Client Software Binary",
+    "tactic": "persistence",
+    "datasources": "file-deletion",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify client software binaries to establish persistent access to systems. Client software enables users to access services provided by a server. Common client software types are SSH clients, FTP clients, email clients, and web browsers.\n\nAdversaries may make modifications to client software binaries to carry out malicious tasks when those applications are in use. For example, an adversary may copy source code for the client software, add a backdoor, compile for the target, and replace the legitimate application binary (or support files) with the backdoored one. Since these applications may be routinely executed by the user, the adversary can leverage this for persistent access to the host.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--ac9e6b22-11bf-45d7-9181-c1cb08360931",
+    "platform": "linux|macos|windows",
+    "tid": "T1565",
+    "technique": "Data Manipulation",
+    "tactic": "impact",
+    "datasources": "file-deletion",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1565.001",
+      "T1565.002",
+      "T1565.003"
+    ],
+    "count_subtechniques": 3,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may insert, delete, or manipulate data in order to influence external outcomes or hide activity, thus threatening the integrity of the data. By manipulating data, adversaries may attempt to affect a business process, organizational understanding, or decision making.\n\nThe type of modification and the impact it will have depends on the target application and process as well as the goals and objectives of the adversary. For complex systems, an adversary would likely need special expertise and possibly access to specialized software related to the system that would typically be gained through a prolonged information gathering campaign in order to have the desired impact.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

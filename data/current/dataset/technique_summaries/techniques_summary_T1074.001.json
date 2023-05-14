@@ -1,0 +1,31 @@
+[
+  {
+    "id": "attack-pattern--1c34f7aa-9341-4a48-bfab-af22e51aca6c",
+    "platform": "linux|macos|windows",
+    "tid": "T1074.001",
+    "technique": "Local Data Staging",
+    "tactic": "collection",
+    "datasources": "command-execution|file-access|file-creation|windows-registry-key-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may stage collected data in a central location or directory on the local system prior to Exfiltration. Data may be kept in separate files or combined into one file through techniques such as [Archive Collected Data](https://attack.mitre.org/techniques/T1560). Interactive command shells may be used, and common functionality within [cmd](https://attack.mitre.org/software/S0106) and bash may be used to copy data into a staging location.\n\nAdversaries may also stage collected data in various available formats/locations of a system, including local storage databases/repositories or the Windows Registry.(Citation: Prevailion DarkWatchman 2021)",
+    "technique_references": [
+      {
+        "source_name": "Prevailion DarkWatchman 2021",
+        "url": "https://www.prevailion.com/darkwatchman-new-fileless-techniques/",
+        "description": "Smith, S., Stafford, M. (2021, December 14). DarkWatchman: A new evolution in fileless techniques. Retrieved January 10, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

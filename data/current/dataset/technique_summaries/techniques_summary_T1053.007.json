@@ -1,0 +1,125 @@
+[
+  {
+    "id": "attack-pattern--1126cab1-c700-412f-a510-61f4937bb096",
+    "platform": "containers",
+    "tid": "T1053.007",
+    "technique": "Container Orchestration Job",
+    "tactic": "execution",
+    "datasources": "container-creation|file-creation|scheduled-job-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse task scheduling functionality provided by container orchestration tools such as Kubernetes to schedule deployment of containers configured to execute malicious code. Container orchestration jobs run these automated tasks at a specific date and time, similar to cron jobs on a Linux system. Deployments of this type can also be configured to maintain a quantity of containers over time, automating the process of maintaining persistence within a cluster.\n\nIn Kubernetes, a CronJob may be used to schedule a Job that runs one or more containers to perform specific tasks.(Citation: Kubernetes Jobs)(Citation: Kubernetes CronJob) An adversary therefore may utilize a CronJob to schedule deployment of a Job that executes malicious code in various nodes within a cluster.(Citation: Threat Matrix for Kubernetes)",
+    "technique_references": [
+      {
+        "source_name": "Kubernetes CronJob",
+        "url": "https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/",
+        "description": "The Kubernetes Authors. (n.d.). Kubernetes CronJob. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubernetes Jobs",
+        "url": "https://kubernetes.io/docs/concepts/workloads/controllers/job/",
+        "description": "The Kubernetes Authors. (n.d.). Kubernetes Jobs. Retrieved March 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Threat Matrix for Kubernetes",
+        "url": "https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/",
+        "description": "Weizman, Y. (2020, April 2). Threat Matrix for Kubernetes. Retrieved March 30, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--1126cab1-c700-412f-a510-61f4937bb096",
+    "platform": "containers",
+    "tid": "T1053.007",
+    "technique": "Container Orchestration Job",
+    "tactic": "persistence",
+    "datasources": "container-creation|file-creation|scheduled-job-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse task scheduling functionality provided by container orchestration tools such as Kubernetes to schedule deployment of containers configured to execute malicious code. Container orchestration jobs run these automated tasks at a specific date and time, similar to cron jobs on a Linux system. Deployments of this type can also be configured to maintain a quantity of containers over time, automating the process of maintaining persistence within a cluster.\n\nIn Kubernetes, a CronJob may be used to schedule a Job that runs one or more containers to perform specific tasks.(Citation: Kubernetes Jobs)(Citation: Kubernetes CronJob) An adversary therefore may utilize a CronJob to schedule deployment of a Job that executes malicious code in various nodes within a cluster.(Citation: Threat Matrix for Kubernetes)",
+    "technique_references": [
+      {
+        "source_name": "Kubernetes CronJob",
+        "url": "https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/",
+        "description": "The Kubernetes Authors. (n.d.). Kubernetes CronJob. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubernetes Jobs",
+        "url": "https://kubernetes.io/docs/concepts/workloads/controllers/job/",
+        "description": "The Kubernetes Authors. (n.d.). Kubernetes Jobs. Retrieved March 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Threat Matrix for Kubernetes",
+        "url": "https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/",
+        "description": "Weizman, Y. (2020, April 2). Threat Matrix for Kubernetes. Retrieved March 30, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--1126cab1-c700-412f-a510-61f4937bb096",
+    "platform": "containers",
+    "tid": "T1053.007",
+    "technique": "Container Orchestration Job",
+    "tactic": "privilege-escalation",
+    "datasources": "container-creation|file-creation|scheduled-job-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse task scheduling functionality provided by container orchestration tools such as Kubernetes to schedule deployment of containers configured to execute malicious code. Container orchestration jobs run these automated tasks at a specific date and time, similar to cron jobs on a Linux system. Deployments of this type can also be configured to maintain a quantity of containers over time, automating the process of maintaining persistence within a cluster.\n\nIn Kubernetes, a CronJob may be used to schedule a Job that runs one or more containers to perform specific tasks.(Citation: Kubernetes Jobs)(Citation: Kubernetes CronJob) An adversary therefore may utilize a CronJob to schedule deployment of a Job that executes malicious code in various nodes within a cluster.(Citation: Threat Matrix for Kubernetes)",
+    "technique_references": [
+      {
+        "source_name": "Kubernetes CronJob",
+        "url": "https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/",
+        "description": "The Kubernetes Authors. (n.d.). Kubernetes CronJob. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubernetes Jobs",
+        "url": "https://kubernetes.io/docs/concepts/workloads/controllers/job/",
+        "description": "The Kubernetes Authors. (n.d.). Kubernetes Jobs. Retrieved March 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Threat Matrix for Kubernetes",
+        "url": "https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/",
+        "description": "Weizman, Y. (2020, April 2). Threat Matrix for Kubernetes. Retrieved March 30, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

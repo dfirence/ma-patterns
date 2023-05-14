@@ -1,0 +1,30 @@
+[
+  [
+    "peirates",
+    "T1078.004",
+    "Cloud Accounts",
+    "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "T1078.004::[Peirates] can use stolen service account tokens to perform its operations."
+  ],
+  [
+    "peirates",
+    "T1550.001",
+    "Application Access Token",
+    "web-credential-usage",
+    "T1550.001::[Peirates] can use stolen service account tokens to perform its operations. It also enables adversaries to switch between valid service accounts."
+  ],
+  [
+    "peirates",
+    "T1552.005",
+    "Cloud Instance Metadata API",
+    "user-account-authentication",
+    "T1552.005::[Peirates] can query the query AWS and GCP metadata APIs for secrets."
+  ],
+  [
+    "peirates",
+    "T1552.007",
+    "Container API",
+    "command-execution|user-account-authentication",
+    "T1552.007::[Peirates] can query the Kubernetes API for secrets."
+  ]
+]

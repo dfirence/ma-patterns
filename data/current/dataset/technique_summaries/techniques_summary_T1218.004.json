@@ -1,0 +1,37 @@
+[
+  {
+    "id": "attack-pattern--2cd950a6-16c4-404a-aa01-044322395107",
+    "platform": "windows",
+    "tid": "T1218.004",
+    "technique": "InstallUtil",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use InstallUtil to proxy execution of code through a trusted Windows utility. InstallUtil is a command-line utility that allows for installation and uninstallation of resources by executing specific installer components specified in .NET binaries. (Citation: MSDN InstallUtil) The InstallUtil binary may also be digitally signed by Microsoft and located in the .NET directories on a Windows system: <code>C:\\Windows\\Microsoft.NET\\Framework\\v<version>\\InstallUtil.exe</code> and <code>C:\\Windows\\Microsoft.NET\\Framework64\\v<version>\\InstallUtil.exe</code>.\n\nInstallUtil may also be used to bypass application control through use of attributes within the binary that execute the class decorated with the attribute <code>[System.ComponentModel.RunInstaller(true)]</code>. (Citation: LOLBAS Installutil)",
+    "technique_references": [
+      {
+        "source_name": "MSDN InstallUtil",
+        "url": "https://msdn.microsoft.com/en-us/library/50614e95.aspx",
+        "description": "Microsoft. (n.d.). Installutil.exe (Installer Tool). Retrieved July 1, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "LOLBAS Installutil",
+        "url": "https://lolbas-project.github.io/lolbas/Binaries/Installutil/",
+        "description": "LOLBAS. (n.d.). Installutil.exe. Retrieved July 31, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

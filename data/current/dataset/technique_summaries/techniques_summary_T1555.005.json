@@ -1,0 +1,55 @@
+[
+  {
+    "id": "attack-pattern--315f51f0-6b03-4c1e-bfb2-84740afb8e21",
+    "platform": "linux|macos|windows",
+    "tid": "T1555.005",
+    "technique": "Password Managers",
+    "tactic": "credential-access",
+    "datasources": "command-execution|file-access|os-api-execution|process-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may acquire user credentials from third-party password managers.(Citation: ise Password Manager February 2019) Password managers are applications designed to store user credentials, normally in an encrypted database. Credentials are typically accessible after a user provides a master password that unlocks the database. After the database is unlocked, these credentials may be copied to memory. These databases can be stored as files on disk.(Citation: ise Password Manager February 2019)\n\nAdversaries may acquire user credentials from password managers by extracting the master password and/or plain-text credentials from memory.(Citation: FoxIT Wocao December 2019)(Citation: Github KeeThief) Adversaries may extract credentials from memory via [Exploitation for Credential Access](https://attack.mitre.org/techniques/T1212).(Citation: NVD CVE-2019-3610)\n Adversaries may also try brute forcing via [Password Guessing](https://attack.mitre.org/techniques/T1110/001) to obtain the master password of a password manager.(Citation: Cyberreason Anchor December 2019)",
+    "technique_references": [
+      {
+        "source_name": "ise Password Manager February 2019",
+        "url": "https://www.ise.io/casestudies/password-manager-hacking/",
+        "description": "ise. (2019, February 19). Password Managers: Under the Hood of Secrets Management. Retrieved January 22, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FoxIT Wocao December 2019",
+        "url": "https://www.fox-it.com/media/kadlze5c/201912_report_operation_wocao.pdf",
+        "description": "Dantzig, M. v., Schamper, E. (2019, December 19). Operation Wocao: Shining a light on one of China’s hidden hacking groups. Retrieved October 8, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Github KeeThief",
+        "url": "https://github.com/GhostPack/KeeThief",
+        "description": "Lee, C., Schoreder, W. (n.d.). KeeThief. Retrieved February 8, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NVD CVE-2019-3610",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-3610",
+        "description": "National Vulnerability Database. (2019, October 9). CVE-2019-3610 Detail. Retrieved April 14, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cyberreason Anchor December 2019",
+        "url": "https://www.cybereason.com/blog/dropping-anchor-from-a-trickbot-infection-to-the-discovery-of-the-anchor-malware",
+        "description": "Dahan, A. et al. (2019, December 11). DROPPING ANCHOR: FROM A TRICKBOT INFECTION TO THE DISCOVERY OF THE ANCHOR MALWARE. Retrieved September 10, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

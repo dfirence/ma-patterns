@@ -1,0 +1,37 @@
+[
+  {
+    "id": "attack-pattern--4ae4f953-fe58-4cc8-a327-33257e30a830",
+    "platform": "macos|windows|linux",
+    "tid": "T1010",
+    "technique": "Application Window Discovery",
+    "tactic": "discovery",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to get a listing of open application windows. Window listings could convey information about how the system is used.(Citation: Prevailion DarkWatchman 2021) For example, information about application windows could be used identify potential data to collect as well as identifying security tooling ([Security Software Discovery](https://attack.mitre.org/techniques/T1518/001)) to evade.(Citation: ESET Grandoreiro April 2020)\n\nAdversaries typically abuse system features for this type of enumeration. For example, they may gather information through native system features such as [Command and Scripting Interpreter](https://attack.mitre.org/techniques/T1059) commands and [Native API](https://attack.mitre.org/techniques/T1106) functions.",
+    "technique_references": [
+      {
+        "source_name": "ESET Grandoreiro April 2020",
+        "url": "https://www.welivesecurity.com/2020/04/28/grandoreiro-how-engorged-can-exe-get/",
+        "description": "ESET. (2020, April 28). Grandoreiro: How engorged can an EXE get?. Retrieved November 13, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Prevailion DarkWatchman 2021",
+        "url": "https://www.prevailion.com/darkwatchman-new-fileless-techniques/",
+        "description": "Smith, S., Stafford, M. (2021, December 14). DarkWatchman: A new evolution in fileless techniques. Retrieved January 10, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

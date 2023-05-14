@@ -1,0 +1,9 @@
+[
+  [
+    "mimipenguin",
+    "T1003.007",
+    "Proc Filesystem",
+    "command-execution|file-access",
+    "T1003.007::[MimiPenguin] can use the `<PID>/maps` and `<PID>/mem` file to search for regex patterns and dump the process memory."
+  ]
+]

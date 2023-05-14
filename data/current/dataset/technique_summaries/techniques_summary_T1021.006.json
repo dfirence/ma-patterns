@@ -1,0 +1,49 @@
+[
+  {
+    "id": "attack-pattern--60d0c01d-e2bf-49dd-a453-f8a9c9fa6f65",
+    "platform": "windows",
+    "tid": "T1021.006",
+    "technique": "Windows Remote Management",
+    "tactic": "lateral-movement",
+    "datasources": "command-execution|logon-session-creation|network-connection-creation|process-creation|service-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use [Valid Accounts](https://attack.mitre.org/techniques/T1078) to interact with remote systems using Windows Remote Management (WinRM). The adversary may then perform actions as the logged-on user.\n\nWinRM is the name of both a Windows service and a protocol that allows a user to interact with a remote system (e.g., run an executable, modify the Registry, modify services).(Citation: Microsoft WinRM) It may be called with the `winrm` command or by any number of programs such as PowerShell.(Citation: Jacobsen 2014) WinRM  can be used as a method of remotely interacting with [Windows Management Instrumentation](https://attack.mitre.org/techniques/T1047).(Citation: MSDN WMI)",
+    "technique_references": [
+      {
+        "source_name": "Microsoft WinRM",
+        "url": "http://msdn.microsoft.com/en-us/library/aa384426",
+        "description": "Microsoft. (n.d.). Windows Remote Management. Retrieved November 12, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Jacobsen 2014",
+        "url": "https://www.slideshare.net/kieranjacobsen/lateral-movement-with-power-shell-2",
+        "description": "Jacobsen, K. (2014, May 16). Lateral Movement with PowerShell&#91;slides&#93;. Retrieved November 12, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MSDN WMI",
+        "url": "https://msdn.microsoft.com/en-us/library/aa394582.aspx",
+        "description": "Microsoft. (n.d.). Windows Management Instrumentation. Retrieved April 27, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Medium Detecting Lateral Movement",
+        "url": "https://medium.com/threatpunter/detecting-lateral-movement-using-sysmon-and-splunk-318d3be141bc",
+        "description": "French, D. (2018, September 30). Detecting Lateral Movement Using Sysmon and Splunk. Retrieved October 11, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

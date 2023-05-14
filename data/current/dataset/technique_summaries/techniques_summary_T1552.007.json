@@ -1,0 +1,43 @@
+[
+  {
+    "id": "attack-pattern--f8ef3a62-3f44-40a4-abca-761ab235c436",
+    "platform": "containers",
+    "tid": "T1552.007",
+    "technique": "Container API",
+    "tactic": "credential-access",
+    "datasources": "command-execution|user-account-authentication",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may gather credentials via APIs within a containers environment. APIs in these environments, such as the Docker API and Kubernetes APIs, allow a user to remotely manage their container resources and cluster components.(Citation: Docker API)(Citation: Kubernetes API)\n\nAn adversary may access the Docker API to collect logs that contain credentials to cloud, container, and various other resources in the environment.(Citation: Unit 42 Unsecured Docker Daemons) An adversary with sufficient permissions, such as via a pod's service account, may also use the Kubernetes API to retrieve credentials from the Kubernetes API server. These credentials may include those needed for Docker API authentication or secrets from Kubernetes cluster components. ",
+    "technique_references": [
+      {
+        "source_name": "Unit 42 Unsecured Docker Daemons",
+        "url": "https://unit42.paloaltonetworks.com/attackers-tactics-and-techniques-in-unsecured-docker-daemons-revealed/",
+        "description": "Chen, J.. (2020, January 29). Attacker's Tactics and Techniques in Unsecured Docker Daemons Revealed. Retrieved March 31, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Docker API",
+        "url": "https://docs.docker.com/engine/api/v1.41/",
+        "description": "Docker. (n.d.). Docker Engine API v1.41 Reference. Retrieved March 31, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubernetes API",
+        "url": "https://kubernetes.io/docs/concepts/overview/kubernetes-api/",
+        "description": "The Kubernetes Authors. (n.d.). The Kubernetes API. Retrieved March 29, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

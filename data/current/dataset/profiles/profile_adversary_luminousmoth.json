@@ -1,0 +1,103 @@
+[
+  {
+    "id": "intrusion-set--b7f627e2-0817-4cd5-8d50-e75f8aa85cc6",
+    "name": "luminousmoth",
+    "aliases": "luminousmoth",
+    "group_id": "G1014",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 2,
+        "items": [
+          "cobalt-strike",
+          "plugx"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 28,
+        "items": [
+          "T1005",
+          "T1030",
+          "T1033",
+          "T1036.005",
+          "T1041",
+          "T1053.005",
+          "T1071.001",
+          "T1083",
+          "T1091",
+          "T1105",
+          "T1112",
+          "T1204.001",
+          "T1539",
+          "T1547.001",
+          "T1553.002",
+          "T1557.002",
+          "T1560",
+          "T1564.001",
+          "T1566.002",
+          "T1567.002",
+          "T1574.002",
+          "T1587.001",
+          "T1588.001",
+          "T1588.002",
+          "T1588.004",
+          "T1608.001",
+          "T1608.004",
+          "T1608.005"
+        ]
+      },
+      "tactics": {
+        "count": 12,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "exfiltration",
+          "initial-access",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1005::[LuminousMoth] has collected files and data from compromised machines.",
+        "T1030::[LuminousMoth] has split archived files into multiple parts to bypass a 5MB limit.",
+        "T1033::[LuminousMoth] has used a malicious DLL to collect the username from compromised hosts.",
+        "T1036.005::[LuminousMoth] has disguised their exfiltration malware as `ZoomVideoApp.exe`.",
+        "T1041::[LuminousMoth] has used malware that exfiltrates stolen data to its C2 server.",
+        "T1053.005::[LuminousMoth] has created scheduled tasks to establish persistence for their tools.",
+        "T1071.001::[LuminousMoth] has used HTTP for C2.",
+        "T1083::[LuminousMoth] has used malware that scans for files in the Documents, Desktop, and Download folders and in other drives.",
+        "T1091::[LuminousMoth] has used malicious DLLs to spread malware to connected removable USB drives on infected machines.",
+        "T1105::[LuminousMoth] has downloaded additional malware and tools onto a compromised host.",
+        "T1112::[LuminousMoth] has used malware that adds Registry keys for persistence.",
+        "T1204.001::[LuminousMoth] has lured victims into clicking malicious Dropbox download links delivered through spearphishing.",
+        "T1539::[LuminousMoth] has used an unnamed post-exploitation tool to steal cookies from the Chrome browser.",
+        "T1547.001::[LuminousMoth] has used malicious DLLs that setup persistence in the Registry Key `HKCU\\Software\\Microsoft\\Windows\\Current Version\\Run`.",
+        "T1553.002::[LuminousMoth] has signed their malware with a valid digital signature.",
+        "T1557.002::[LuminousMoth] has used ARP spoofing to redirect a compromised machine to an actor-controlled website.",
+        "T1560::[LuminousMoth] has manually archived stolen files from victim machines before exfiltration.",
+        "T1564.001::[LuminousMoth] has used malware to store malicious binaries in hidden directories on victim's USB drives.",
+        "T1566.002::[LuminousMoth] has sent spearphishing emails containing a malicious Dropbox download link.",
+        "T1567.002::[LuminousMoth] has exfiltrated data to Google Drive.",
+        "T1574.002::[LuminousMoth] has used legitimate executables such as `winword.exe` and `igfxem.exe` to side-load their malware.",
+        "T1587.001::[LuminousMoth] has used unique malware for information theft and exfiltration.",
+        "T1588.001::[LuminousMoth] has obtained and used malware such as [Cobalt Strike].",
+        "T1588.002::[LuminousMoth] has obtained an ARP spoofing tool from GitHub.",
+        "T1588.004::[LuminousMoth] has used a valid digital certificate for some of their malware.",
+        "T1608.001::[LuminousMoth] has hosted malicious payloads on Dropbox.",
+        "T1608.004::[LuminousMoth] has redirected compromised machines to an actor-controlled webpage through HTML injection.",
+        "T1608.005::[LuminousMoth] has created a link to a Dropbox file that has been used in their spear-phishing operations."
+      ]
+    },
+    "description": "[LuminousMoth](https://attack.mitre.org/groups/G1014) is a Chinese-speaking cyber espionage group that has been active since at least October 2020. [LuminousMoth](https://attack.mitre.org/groups/G1014) has targeted high-profile organizations, including government entities, in Myanmar, the Philippines, Thailand, and other parts of Southeast Asia. Some security researchers have concluded there is a connection between [LuminousMoth](https://attack.mitre.org/groups/G1014) and [Mustang Panda](https://attack.mitre.org/groups/G0129) based on similar targeting and TTPs, as well as network infrastructure overlaps.(Citation: Kaspersky LuminousMoth July 2021)(Citation: Bitdefender LuminousMoth July 2021)"
+  }
+]

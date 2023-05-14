@@ -1,0 +1,93 @@
+[
+  [
+    "mimikatz",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[Mimikatz] performs credential dumping to obtain account and password information useful in gaining access to additional systems and enterprise network resources. It contains functionality to acquire information about credentials in many ways, including from the LSASS Memory."
+  ],
+  [
+    "mimikatz",
+    "T1003.002",
+    "Security Account Manager",
+    "command-execution|file-access|windows-registry-key-access",
+    "T1003.002::[Mimikatz] performs credential dumping to obtain account and password information useful in gaining access to additional systems and enterprise network resources. It contains functionality to acquire information about credentials in many ways, including from the SAM table."
+  ],
+  [
+    "mimikatz",
+    "T1003.004",
+    "LSA Secrets",
+    "command-execution|windows-registry-key-access",
+    "T1003.004::[Mimikatz] performs credential dumping to obtain account and password information useful in gaining access to additional systems and enterprise network resources. It contains functionality to acquire information about credentials in many ways, including from the LSA."
+  ],
+  [
+    "mimikatz",
+    "T1003.006",
+    "DCSync",
+    "active-directory-object-access|network-traffic-content|network-traffic-flow",
+    "T1003.006::[Mimikatz] performs credential dumping to obtain account and password information useful in gaining access to additional systems and enterprise network resources. It contains functionality to acquire information about credentials in many ways, including from DCSync/NetSync."
+  ],
+  [
+    "mimikatz",
+    "T1134.005",
+    "SID-History Injection",
+    "active-directory-object-modification|os-api-execution|user-account-metadata",
+    "T1134.005::[Mimikatz]'s MISCAddSid module can appended any SID or user/group account to a user's SID-History. [Mimikatz] also utilizes [SID-History Injection] to expand the scope of other components such as generated Kerberos Golden Tickets and DCSync beyond a single domain."
+  ],
+  [
+    "mimikatz",
+    "T1547.005",
+    "Security Support Provider",
+    "command-execution|module-load|windows-registry-key-modification",
+    "T1547.005::The [Mimikatz] credential dumper contains an implementation of an SSP."
+  ],
+  [
+    "mimikatz",
+    "T1550.002",
+    "Pass the Hash",
+    "active-directory-credential-request|logon-session-creation|user-account-authentication",
+    "T1550.002::[Mimikatz]'s SEKURLSAPth module can impersonate a user, with only a password hash, to execute arbitrary commands."
+  ],
+  [
+    "mimikatz",
+    "T1550.003",
+    "Pass the Ticket",
+    "active-directory-credential-request|logon-session-creation|user-account-authentication",
+    "T1550.003::[Mimikatz]’s LSADUMPDCSync and KERBEROSPTT modules implement the three steps required to extract the krbtgt account hash and create/use Kerberos tickets."
+  ],
+  [
+    "mimikatz",
+    "T1552.004",
+    "Private Keys",
+    "command-execution|file-access",
+    "T1552.004::[Mimikatz]'s CRYPTOExtract module can extract keys by interacting with Windows cryptographic application programming interface (API) functions."
+  ],
+  [
+    "mimikatz",
+    "T1555.003",
+    "Credentials from Web Browsers",
+    "command-execution|file-access|os-api-execution|process-access",
+    "T1555.003::[Mimikatz] performs credential dumping to obtain account and password information useful in gaining access to additional systems and enterprise network resources. It contains functionality to acquire information about credentials in many ways, including from DPAPI."
+  ],
+  [
+    "mimikatz",
+    "T1555.004",
+    "Windows Credential Manager",
+    "command-execution|file-access|os-api-execution|process-creation",
+    "T1555.004::[Mimikatz] contains functionality to acquire credentials from the Windows Credential Manager."
+  ],
+  [
+    "mimikatz",
+    "T1558.001",
+    "Golden Ticket",
+    "active-directory-credential-request|logon-session-metadata",
+    "T1558.001::[Mimikatz]'s kerberos module can create golden tickets."
+  ],
+  [
+    "mimikatz",
+    "T1558.002",
+    "Silver Ticket",
+    "logon-session-metadata",
+    "T1558.002::[Mimikatz]'s kerberos module can create silver tickets."
+  ]
+]

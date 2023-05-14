@@ -1,0 +1,24 @@
+[
+  {
+    "id": "attack-pattern--86a96bf6-cf8b-411c-aaeb-8959944d64f7",
+    "platform": "linux|macos|windows",
+    "tid": "T1567.001",
+    "technique": "Exfiltration to Code Repository",
+    "tactic": "exfiltration",
+    "datasources": "command-execution|file-access|network-traffic-content|network-traffic-flow",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may exfiltrate data to a code repository rather than over their primary command and control channel. Code repositories are often accessible via an API (ex: https://api.github.com). Access to these APIs are often over HTTPS, which gives the adversary an additional level of protection.\n\nExfiltration to a code repository can also provide a significant amount of cover to the adversary if it is a popular service already used by hosts within the network. ",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

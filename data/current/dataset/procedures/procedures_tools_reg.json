@@ -1,0 +1,9 @@
+[
+  [
+    "reg",
+    "T1552.002",
+    "Credentials in Registry",
+    "command-execution|process-creation|windows-registry-key-access",
+    "T1552.002::[Reg] may be used to find credentials in the Windows Registry."
+  ]
+]

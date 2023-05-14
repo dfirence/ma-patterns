@@ -1,9 +1,0 @@
-{
-  "malware": [],
-  "T1562.007:Disable or Modify Cloud Firewall": [
-    "firewall-disable",
-    "firewall-rule-modification"
-  ],
-  "tools": [],
-  "adversaries": []
-}

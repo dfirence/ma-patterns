@@ -1,0 +1,49 @@
+[
+  {
+    "id": "attack-pattern--c48a67ee-b657-45c1-91bf-6cdbe27205f8",
+    "platform": "windows",
+    "tid": "T1218.009",
+    "technique": "Regsvcs/Regasm",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse Regsvcs and Regasm to proxy execution of code through a trusted Windows utility. Regsvcs and Regasm are Windows command-line utilities that are used to register .NET [Component Object Model](https://attack.mitre.org/techniques/T1559/001) (COM) assemblies. Both are binaries that may be digitally signed by Microsoft. (Citation: MSDN Regsvcs) (Citation: MSDN Regasm)\n\nBoth utilities may be used to bypass application control through use of attributes within the binary to specify code that should be run before registration or unregistration: <code>[ComRegisterFunction]</code> or <code>[ComUnregisterFunction]</code> respectively. The code with the registration and unregistration attributes will be executed even if the process is run under insufficient privileges and fails to execute. (Citation: LOLBAS Regsvcs)(Citation: LOLBAS Regasm)",
+    "technique_references": [
+      {
+        "source_name": "MSDN Regsvcs",
+        "url": "https://msdn.microsoft.com/en-us/library/04za0hca.aspx",
+        "description": "Microsoft. (n.d.). Regsvcs.exe (.NET Services Installation Tool). Retrieved July 1, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MSDN Regasm",
+        "url": "https://msdn.microsoft.com/en-us/library/tzat5yw6.aspx",
+        "description": "Microsoft. (n.d.). Regasm.exe (Assembly Registration Tool). Retrieved July 1, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "LOLBAS Regsvcs",
+        "url": "https://lolbas-project.github.io/lolbas/Binaries/Regsvcs/",
+        "description": "LOLBAS. (n.d.). Regsvcs.exe. Retrieved July 31, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "LOLBAS Regasm",
+        "url": "https://lolbas-project.github.io/lolbas/Binaries/Regasm/",
+        "description": "LOLBAS. (n.d.). Regasm.exe. Retrieved July 31, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

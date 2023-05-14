@@ -1,0 +1,16 @@
+[
+  [
+    "carrotball",
+    "T1071.002",
+    "File Transfer Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.002::[CARROTBALL] has the ability to use FTP in C2 communications."
+  ],
+  [
+    "carrotball",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[CARROTBALL] has been executed through users being lured into opening malicious e-mail attachments."
+  ]
+]

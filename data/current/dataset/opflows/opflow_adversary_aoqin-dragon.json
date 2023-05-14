@@ -1,0 +1,854 @@
+[
+  {
+    "id": "attack-pattern--3c4a2599-71ee-4405-ba1e-0e28414b4bc5",
+    "platform": "linux|macos|windows|network",
+    "tid": "T1005",
+    "technique": "Data from Local System",
+    "tactic": "collection",
+    "datasources": "command-execution|file-access|os-api-execution|process-creation|script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "aoqin-dragon",
+    "correlation_malware": "mongall",
+    "correlation_tool": "none",
+    "correlation_gid": "G1007",
+    "technique_description": "Adversaries may search local system sources, such as file systems and configuration files or local databases, to find files of interest and sensitive data prior to Exfiltration.\n\nAdversaries may do this using a [Command and Scripting Interpreter](https://attack.mitre.org/techniques/T1059), such as [cmd](https://attack.mitre.org/software/S0106) as well as a [Network Device CLI](https://attack.mitre.org/techniques/T1059/008), which have functionality to interact with the file system to gather information.(Citation: show_run_config_cmd_cisco) Adversaries may also use [Automated Collection](https://attack.mitre.org/techniques/T1119) on the local system.\n",
+    "technique_references": [
+      {
+        "source_name": "show_run_config_cmd_cisco",
+        "url": "https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/fundamentals/command/cf_command_ref/show_protocols_through_showmon.html#wp2760878733",
+        "description": "Cisco. (2022, August 16). show running-config - Cisco IOS Configuration Fundamentals Command Reference . Retrieved July 13, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant APT41 Global Intrusion ",
+        "url": "https://www.mandiant.com/resources/apt41-initiates-global-intrusion-campaign-using-multiple-exploits",
+        "description": "Gyler, C.,Perez D.,Jones, S.,Miller, S.. (2021, February 25). This is Not a Test: APT41 Initiates Global Intrusion Campaign Using Multiple Exploits. Retrieved February 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT-TA18-106A",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA18-106A",
+        "description": "US-CERT. (2018, April 20). Alert (TA18-106A) Russian State-Sponsored Cyber Actors Targeting Network Infrastructure Devices. Retrieved October 19, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--322bad5a-1c49-4d23-ab79-76d641794afa",
+    "platform": "windows|macos|linux",
+    "tid": "T1007",
+    "technique": "System Service Discovery",
+    "tactic": "discovery",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "aoqin-dragon",
+    "correlation_malware": "heyoka-backdoor",
+    "correlation_tool": "none",
+    "correlation_gid": "G1007",
+    "technique_description": "Adversaries may try to gather information about registered local system services. Adversaries may obtain information about services using tools as well as OS utility commands such as <code>sc query</code>, <code>tasklist /svc</code>, <code>systemctl --type=service</code>, and <code>net start</code>.\n\nAdversaries may use the information from [System Service Discovery](https://attack.mitre.org/techniques/T1007) during automated discovery to shape follow-on behaviors, including whether or not the adversary fully infects the target and/or attempts specific actions.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
+    "platform": "linux|macos|windows",
+    "tid": "T1027",
+    "technique": "Obfuscated Files or Information",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|file-creation|file-metadata|module-load|os-api-execution|process-creation|script-execution|windows-registry-key-creation|wmi-creation",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1027.001",
+      "T1027.002",
+      "T1027.003",
+      "T1027.004",
+      "T1027.005",
+      "T1027.006",
+      "T1027.007",
+      "T1027.008",
+      "T1027.009",
+      "T1027.010",
+      "T1027.011"
+    ],
+    "count_subtechniques": 11,
+    "correlation_adversary": "aoqin-dragon",
+    "correlation_malware": "heyoka-backdoor",
+    "correlation_tool": "none",
+    "correlation_gid": "G1007",
+    "technique_description": "Adversaries may attempt to make an executable or file difficult to discover or analyze by encrypting, encoding, or otherwise obfuscating its contents on the system or in transit. This is common behavior that can be used across different platforms and the network to evade defenses. \n\nPayloads may be compressed, archived, or encrypted in order to avoid detection. These payloads may be used during Initial Access or later to mitigate detection. Sometimes a user's action may be required to open and [Deobfuscate/Decode Files or Information](https://attack.mitre.org/techniques/T1140) for [User Execution](https://attack.mitre.org/techniques/T1204). The user may also be required to input a password to open a password protected compressed/encrypted file that was provided by the adversary. (Citation: Volexity PowerDuke November 2016) Adversaries may also use compressed or archived scripts, such as JavaScript. \n\nPortions of files can also be encoded to hide the plain-text strings that would otherwise help defenders with discovery. (Citation: Linux/Cdorked.A We Live Security Analysis) Payloads may also be split into separate, seemingly benign files that only reveal malicious functionality when reassembled. (Citation: Carbon Black Obfuscation Sept 2016)\n\nAdversaries may also abuse [Command Obfuscation](https://attack.mitre.org/techniques/T1027/010) to obscure commands executed from payloads or directly via [Command and Scripting Interpreter](https://attack.mitre.org/techniques/T1059). Environment variables, aliases, characters, and other platform/language specific semantics can be used to evade signature based detections and application control mechanisms. (Citation: FireEye Obfuscation June 2017) (Citation: FireEye Revoke-Obfuscation July 2017)(Citation: PaloAlto EncodedCommand March 2017) ",
+    "technique_references": [
+      {
+        "source_name": "Volexity PowerDuke November 2016",
+        "url": "https://www.volexity.com/blog/2016/11/09/powerduke-post-election-spear-phishing-campaigns-targeting-think-tanks-and-ngos/",
+        "description": "Adair, S.. (2016, November 9). PowerDuke: Widespread Post-Election Spear Phishing Campaigns Targeting Think Tanks and NGOs. Retrieved January 11, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub Revoke-Obfuscation",
+        "url": "https://github.com/danielbohannon/Revoke-Obfuscation",
+        "description": "Bohannon, D. (2017, July 27). Revoke-Obfuscation. Retrieved February 12, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye Obfuscation June 2017",
+        "url": "https://web.archive.org/web/20170923102302/https://www.fireeye.com/blog/threat-research/2017/06/obfuscation-in-the-wild.html",
+        "description": "Bohannon, D. & Carr N. (2017, June 30). Obfuscation in the Wild: Targeted Attackers Lead the Way in Evasion Techniques. Retrieved February 12, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye Revoke-Obfuscation July 2017",
+        "url": "https://www.fireeye.com/content/dam/fireeye-www/blog/pdfs/revoke-obfuscation-report.pdf",
+        "description": "Bohannon, D. & Holmes, L. (2017, July 27). Revoke-Obfuscation: PowerShell Obfuscation Detection Using Science. Retrieved February 12, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub Office-Crackros Aug 2016",
+        "url": "https://github.com/itsreallynick/office-crackros",
+        "description": "Carr, N. (2016, August 14). OfficeCrackros. Retrieved February 12, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Linux/Cdorked.A We Live Security Analysis",
+        "url": "https://www.welivesecurity.com/2013/04/26/linuxcdorked-new-apache-backdoor-in-the-wild-serves-blackhole/",
+        "description": "Pierre-Marc Bureau. (2013, April 26). Linux/Cdorked.A: New Apache backdoor being used in the wild to serve Blackhole. Retrieved September 10, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Carbon Black Obfuscation Sept 2016",
+        "url": "https://www.carbonblack.com/2016/09/23/security-advisory-variants-well-known-adware-families-discovered-include-sophisticated-obfuscation-techniques-previously-associated-nation-state-attacks/",
+        "description": "Tedesco, B. (2016, September 23). Security Alert Summary. Retrieved February 12, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "PaloAlto EncodedCommand March 2017",
+        "url": "https://researchcenter.paloaltonetworks.com/2017/03/unit42-pulling-back-the-curtains-on-encodedcommand-powershell-attacks/",
+        "description": "White, J. (2017, March 10). Pulling Back the Curtains on EncodedCommand PowerShell Attacks. Retrieved February 12, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--deb98323-e13f-4b0c-8d94-175379069062",
+    "platform": "macos|windows|linux",
+    "tid": "T1027.002",
+    "technique": "Software Packing",
+    "tactic": "defense-evasion",
+    "datasources": "file-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "aoqin-dragon",
+    "correlation_malware": "mongall",
+    "correlation_tool": "none",
+    "correlation_gid": "G1007",
+    "technique_description": "Adversaries may perform software packing or virtual machine software protection to conceal their code. Software packing is a method of compressing or encrypting an executable. Packing an executable changes the file signature in an attempt to avoid signature-based detection. Most decompression techniques decompress the executable code in memory. Virtual machine software protection translates an executable's original code into a special format that only a special virtual machine can run. A virtual machine is then called to run this code.(Citation: ESET FinFisher Jan 2018) \n\nUtilities used to perform software packing are called packers. Example packers are MPRESS and UPX. A more comprehensive list of known packers is available, but adversaries may create their own packing techniques that do not leave the same artifacts as well-known packers to evade defenses.(Citation: Awesome Executable Packing)  ",
+    "technique_references": [
+      {
+        "source_name": "Awesome Executable Packing",
+        "url": "https://github.com/dhondta/awesome-executable-packing",
+        "description": "Alexandre D'Hondt. (n.d.). Awesome Executable Packing. Retrieved March 11, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ESET FinFisher Jan 2018",
+        "url": "https://www.welivesecurity.com/wp-content/uploads/2018/01/WP-FinFisher.pdf",
+        "description": "Kafka, F. (2018, January). ESET's Guide to Deobfuscating and Devirtualizing FinFisher. Retrieved August 12, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--7bdca9d5-d500-4d7d-8c52-5fd47baf4c0c",
+    "platform": "windows|linux|macos",
+    "tid": "T1036.004",
+    "technique": "Masquerade Task or Service",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|scheduled-job-metadata|scheduled-job-modification|service-creation|service-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "aoqin-dragon",
+    "correlation_malware": "heyoka-backdoor",
+    "correlation_tool": "none",
+    "correlation_gid": "G1007",
+    "technique_description": "Adversaries may attempt to manipulate the name of a task or service to make it appear legitimate or benign. Tasks/services executed by the Task Scheduler or systemd will typically be given a name and/or description.(Citation: TechNet Schtasks)(Citation: Systemd Service Units) Windows services will have a service name as well as a display name. Many benign tasks and services exist that have commonly associated names. Adversaries may give tasks or services names that are similar or identical to those of legitimate ones.\n\nTasks or services contain other fields, such as a description, that adversaries may attempt to make appear legitimate.(Citation: Palo Alto Shamoon Nov 2016)(Citation: Fysbis Dr Web Analysis)",
+    "technique_references": [
+      {
+        "source_name": "TechNet Schtasks",
+        "url": "https://technet.microsoft.com/en-us/library/bb490996.aspx",
+        "description": "Microsoft. (n.d.). Schtasks. Retrieved April 28, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Systemd Service Units",
+        "url": "https://www.freedesktop.org/software/systemd/man/systemd.service.html",
+        "description": "Freedesktop.org. (n.d.). systemd.service — Service unit configuration. Retrieved March 16, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Palo Alto Shamoon Nov 2016",
+        "url": "http://researchcenter.paloaltonetworks.com/2016/11/unit42-shamoon-2-return-disttrack-wiper/",
+        "description": "Falcone, R.. (2016, November 30). Shamoon 2: Return of the Disttrack Wiper. Retrieved January 11, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Fysbis Dr Web Analysis",
+        "url": "https://vms.drweb.com/virus/?i=4276269",
+        "description": "Doctor Web. (2014, November 21). Linux.BackDoor.Fysbis.1. Retrieved December 7, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator|system",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--1c4e5d32-1fe9-4116-9d9d-59e3925bd6a2",
+    "platform": "linux|macos|windows|containers",
+    "tid": "T1036.005",
+    "technique": "Match Legitimate Name or Location",
+    "tactic": "defense-evasion",
+    "datasources": "file-metadata|image-metadata|process-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "aoqin-dragon",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "G1007",
+    "technique_description": "Adversaries may match or approximate the name or location of legitimate files or resources when naming/placing them. This is done for the sake of evading defenses and observation. This may be done by placing an executable in a commonly trusted directory (ex: under System32) or giving it the name of a legitimate, trusted program (ex: svchost.exe). In containerized environments, this may also be done by creating a resource in a namespace that matches the naming convention of a container pod or cluster. Alternatively, a file or container image name given may be a close approximation to legitimate programs/images or something innocuous.\n\nAdversaries may also use the same icon of the file they are trying to mimic.",
+    "technique_references": [
+      {
+        "source_name": "Twitter ItsReallyNick Masquerading Update",
+        "url": "https://twitter.com/ItsReallyNick/status/1055321652777619457",
+        "description": "Carr, N.. (2018, October 25). Nick Carr Status Update Masquerading. Retrieved April 22, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Docker Images",
+        "url": "https://docs.docker.com/engine/reference/commandline/images/",
+        "description": "Docker. (n.d.). Docker Images. Retrieved April 6, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Elastic Masquerade Ball",
+        "url": "http://pages.endgame.com/rs/627-YBU-612/images/EndgameJournal_The%20Masquerade%20Ball_Pages_R2.pdf",
+        "description": "Ewing, P. (2016, October 31). How to Hunt: The Masquerade Ball. Retrieved October 31, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--92d7da27-2d91-488e-a00c-059dc162766d",
+    "platform": "linux|macos|windows",
+    "tid": "T1041",
+    "technique": "Exfiltration Over C2 Channel",
+    "tactic": "exfiltration",
+    "datasources": "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "aoqin-dragon",
+    "correlation_malware": "mongall",
+    "correlation_tool": "none",
+    "correlation_gid": "G1007",
+    "technique_description": "Adversaries may steal data by exfiltrating it over an existing command and control channel. Stolen data is encoded into the normal communications channel using the same protocol as command and control communications.",
+    "technique_references": [
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--8f4a33ec-8b1f-4b80-a2f6-642b2e479580",
+    "platform": "linux|macos|windows|network",
+    "tid": "T1057",
+    "technique": "Process Discovery",
+    "tactic": "discovery",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "aoqin-dragon",
+    "correlation_malware": "heyoka-backdoor",
+    "correlation_tool": "none",
+    "correlation_gid": "G1007",
+    "technique_description": "Adversaries may attempt to get information about running processes on a system. Information obtained could be used to gain an understanding of common software/applications running on systems within the network. Adversaries may use the information from [Process Discovery](https://attack.mitre.org/techniques/T1057) during automated discovery to shape follow-on behaviors, including whether or not the adversary fully infects the target and/or attempts specific actions.\n\nIn Windows environments, adversaries could obtain details on running processes using the [Tasklist](https://attack.mitre.org/software/S0057) utility via [cmd](https://attack.mitre.org/software/S0106) or <code>Get-Process</code> via [PowerShell](https://attack.mitre.org/techniques/T1059/001). Information about processes can also be extracted from the output of [Native API](https://attack.mitre.org/techniques/T1106) calls such as <code>CreateToolhelp32Snapshot</code>. In Mac and Linux, this is accomplished with the <code>ps</code> command. Adversaries may also opt to enumerate processes via /proc.\n\nOn network devices, [Network Device CLI](https://attack.mitre.org/techniques/T1059/008) commands such as `show processes` can be used to display current running processes.(Citation: US-CERT-TA18-106A)(Citation: show_processes_cisco_cmd)",
+    "technique_references": [
+      {
+        "source_name": "show_processes_cisco_cmd",
+        "url": "https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/fundamentals/command/cf_command_ref/show_monitor_permit_list_through_show_process_memory.html#wp3599497760",
+        "description": "Cisco. (2022, August 16). show processes - . Retrieved July 13, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT-TA18-106A",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA18-106A",
+        "description": "US-CERT. (2018, April 20). Alert (TA18-106A) Russian State-Sponsored Cyber Actors Targeting Network Infrastructure Devices. Retrieved October 19, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d63a3fb8-9452-4e9d-a60a-54be68d5998c",
+    "platform": "linux|macos|windows",
+    "tid": "T1070.004",
+    "technique": "File Deletion",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|file-deletion",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "aoqin-dragon",
+    "correlation_malware": "heyoka-backdoor",
+    "correlation_tool": "none",
+    "correlation_gid": "G1007",
+    "technique_description": "Adversaries may delete files left behind by the actions of their intrusion activity. Malware, tools, or other non-native files dropped or created on a system by an adversary (ex: [Ingress Tool Transfer](https://attack.mitre.org/techniques/T1105)) may leave traces to indicate to what was done within a network and how. Removal of these files can occur during an intrusion, or as part of a post-intrusion process to minimize the adversary's footprint.\n\nThere are tools available from the host operating system to perform cleanup, but adversaries may use other tools as well.(Citation: Microsoft SDelete July 2016) Examples of built-in [Command and Scripting Interpreter](https://attack.mitre.org/techniques/T1059) functions include <code>del</code> on Windows and <code>rm</code> or <code>unlink</code> on Linux and macOS.",
+    "technique_references": [
+      {
+        "source_name": "Microsoft SDelete July 2016",
+        "url": "https://docs.microsoft.com/en-us/sysinternals/downloads/sdelete",
+        "description": "Russinovich, M. (2016, July 4). SDelete v2.0. Retrieved February 8, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--df8b2a25-8bdf-4856-953c-a04372b1c161",
+    "platform": "linux|macos|windows",
+    "tid": "T1071.001",
+    "technique": "Web Protocols",
+    "tactic": "command-and-control",
+    "datasources": "network-traffic-content|network-traffic-flow",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "aoqin-dragon",
+    "correlation_malware": "mongall",
+    "correlation_tool": "none",
+    "correlation_gid": "G1007",
+    "technique_description": "Adversaries may communicate using application layer protocols associated with web traffic to avoid detection/network filtering by blending in with existing traffic. Commands to the remote system, and often the results of those commands, will be embedded within the protocol traffic between the client and server. \n\nProtocols such as HTTP/S(Citation: CrowdStrike Putter Panda) and WebSocket(Citation: Brazking-Websockets) that carry web traffic may be very common in environments. HTTP/S packets have many fields and headers in which data can be concealed. An adversary may abuse these protocols to communicate with systems under their control within a victim network while also mimicking normal, expected traffic. ",
+    "technique_references": [
+      {
+        "source_name": "CrowdStrike Putter Panda",
+        "url": "http://cdn0.vox-cdn.com/assets/4589853/crowdstrike-intelligence-report-putter-panda.original.pdf",
+        "description": "Crowdstrike Global Intelligence Team. (2014, June 9). CrowdStrike Intelligence Report: Putter Panda. Retrieved January 22, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Brazking-Websockets",
+        "url": "https://securityintelligence.com/posts/brazking-android-malware-upgraded-targeting-brazilian-banks/",
+        "description": "Shahar Tavor. (n.d.). BrazKing Android Malware Upgraded and Targeting Brazilian Banks. Retrieved March 24, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--1996eef1-ced3-4d7f-bf94-33298cabbf72",
+    "platform": "linux|macos|windows",
+    "tid": "T1071.004",
+    "technique": "DNS",
+    "tactic": "command-and-control",
+    "datasources": "network-traffic-content|network-traffic-flow",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "aoqin-dragon",
+    "correlation_malware": "heyoka-backdoor",
+    "correlation_tool": "none",
+    "correlation_gid": "G1007",
+    "technique_description": "Adversaries may communicate using the Domain Name System (DNS) application layer protocol to avoid detection/network filtering by blending in with existing traffic. Commands to the remote system, and often the results of those commands, will be embedded within the protocol traffic between the client and server. \n\nThe DNS protocol serves an administrative function in computer networking and thus may be very common in environments. DNS traffic may also be allowed even before network authentication is completed. DNS packets contain many fields and headers in which data can be concealed. Often known as DNS tunneling, adversaries may abuse DNS to communicate with systems under their control within a victim network while also mimicking normal, expected traffic.(Citation: PAN DNS Tunneling)(Citation: Medium DnsTunneling) ",
+    "technique_references": [
+      {
+        "source_name": "Medium DnsTunneling",
+        "url": "https://medium.com/@galolbardes/learn-how-easy-is-to-bypass-firewalls-using-dns-tunneling-and-also-how-to-block-it-3ed652f4a000",
+        "description": "Galobardes, R. (2018, October 30). Learn how easy is to bypass firewalls using DNS tunneling (and also how to block it). Retrieved March 15, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "PAN DNS Tunneling",
+        "url": "https://www.paloaltonetworks.com/cyberpedia/what-is-dns-tunneling",
+        "description": "Palo Alto Networks. (n.d.). What Is DNS Tunneling?. Retrieved March 15, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--7bc57495-ea59-4380-be31-a64af124ef18",
+    "platform": "linux|macos|windows|network",
+    "tid": "T1083",
+    "technique": "File and Directory Discovery",
+    "tactic": "discovery",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "aoqin-dragon",
+    "correlation_malware": "heyoka-backdoor",
+    "correlation_tool": "none",
+    "correlation_gid": "G1007",
+    "technique_description": "Adversaries may enumerate files and directories or may search in specific locations of a host or network share for certain information within a file system. Adversaries may use the information from [File and Directory Discovery](https://attack.mitre.org/techniques/T1083) during automated discovery to shape follow-on behaviors, including whether or not the adversary fully infects the target and/or attempts specific actions.\n\nMany command shell utilities can be used to obtain this information. Examples include <code>dir</code>, <code>tree</code>, <code>ls</code>, <code>find</code>, and <code>locate</code>.(Citation: Windows Commands JPCERT) Custom tools may also be used to gather file and directory information and interact with the [Native API](https://attack.mitre.org/techniques/T1106). Adversaries may also leverage a [Network Device CLI](https://attack.mitre.org/techniques/T1059/008) on network devices to gather file and directory information (e.g. <code>dir</code>, <code>show flash</code>, and/or <code>nvram</code>).(Citation: US-CERT-TA18-106A)",
+    "technique_references": [
+      {
+        "source_name": "Windows Commands JPCERT",
+        "url": "https://blogs.jpcert.or.jp/en/2016/01/windows-commands-abused-by-attackers.html",
+        "description": "Tomonaga, S. (2016, January 26). Windows Commands Abused by Attackers. Retrieved February 2, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT-TA18-106A",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA18-106A",
+        "description": "US-CERT. (2018, April 20). Alert (TA18-106A) Russian State-Sponsored Cyber Actors Targeting Network Infrastructure Devices. Retrieved October 19, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--3b744087-9945-4a6f-91e8-9dbceda417a4",
+    "platform": "windows",
+    "tid": "T1091",
+    "technique": "Replication Through Removable Media",
+    "tactic": "initial-access",
+    "datasources": "drive-creation|file-access|file-creation|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "aoqin-dragon",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "G1007",
+    "technique_description": "Adversaries may move onto systems, possibly those on disconnected or air-gapped networks, by copying malware to removable media and taking advantage of Autorun features when the media is inserted into a system and executes. In the case of Lateral Movement, this may occur through modification of executable files stored on removable media or by copying malware and renaming it to look like a legitimate file to trick users into executing it on a separate system. In the case of Initial Access, this may occur through manual manipulation of the media, modification of systems used to initially format the media, or modification to the media's firmware itself.\n\nMobile devices may also be used to infect PCs with malware if connected via USB.(Citation: Exploiting Smartphone USB ) This infection may be achieved using devices (Android, iOS, etc.) and, in some instances, USB charging cables.(Citation: Windows Malware Infecting Android)(Citation: iPhone Charging Cable Hack) For example, when a smartphone is connected to a system, it may appear to be mounted similar to a USB-connected disk drive. If malware that is compatible with the connected system is on the mobile device, the malware could infect the machine (especially if Autorun features are enabled).",
+    "technique_references": [
+      {
+        "source_name": "Windows Malware Infecting Android",
+        "url": "https://www.computerworld.com/article/2486903/windows-malware-tries-to-infect-android-devices-connected-to-pcs.html",
+        "description": "Lucian Constantin. (2014, January 23). Windows malware tries to infect Android devices connected to PCs. Retrieved May 25, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "iPhone Charging Cable Hack",
+        "url": "https://techcrunch.com/2019/08/12/iphone-charging-cable-hack-computer-def-con/",
+        "description": "Zack Whittaker. (2019, August 12). This hacker’s iPhone charging cable can hijack your computer. Retrieved May 25, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Exploiting Smartphone USB ",
+        "url": "https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.226.3427&rep=rep1&type=pdf",
+        "description": "Zhaohui Wang & Angelos Stavrou. (n.d.). Exploiting Smart-Phone USB Connectivity For Fun And Profit. Retrieved May 25, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--3b744087-9945-4a6f-91e8-9dbceda417a4",
+    "platform": "windows",
+    "tid": "T1091",
+    "technique": "Replication Through Removable Media",
+    "tactic": "lateral-movement",
+    "datasources": "drive-creation|file-access|file-creation|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "aoqin-dragon",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "G1007",
+    "technique_description": "Adversaries may move onto systems, possibly those on disconnected or air-gapped networks, by copying malware to removable media and taking advantage of Autorun features when the media is inserted into a system and executes. In the case of Lateral Movement, this may occur through modification of executable files stored on removable media or by copying malware and renaming it to look like a legitimate file to trick users into executing it on a separate system. In the case of Initial Access, this may occur through manual manipulation of the media, modification of systems used to initially format the media, or modification to the media's firmware itself.\n\nMobile devices may also be used to infect PCs with malware if connected via USB.(Citation: Exploiting Smartphone USB ) This infection may be achieved using devices (Android, iOS, etc.) and, in some instances, USB charging cables.(Citation: Windows Malware Infecting Android)(Citation: iPhone Charging Cable Hack) For example, when a smartphone is connected to a system, it may appear to be mounted similar to a USB-connected disk drive. If malware that is compatible with the connected system is on the mobile device, the malware could infect the machine (especially if Autorun features are enabled).",
+    "technique_references": [
+      {
+        "source_name": "Windows Malware Infecting Android",
+        "url": "https://www.computerworld.com/article/2486903/windows-malware-tries-to-infect-android-devices-connected-to-pcs.html",
+        "description": "Lucian Constantin. (2014, January 23). Windows malware tries to infect Android devices connected to PCs. Retrieved May 25, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "iPhone Charging Cable Hack",
+        "url": "https://techcrunch.com/2019/08/12/iphone-charging-cable-hack-computer-def-con/",
+        "description": "Zack Whittaker. (2019, August 12). This hacker’s iPhone charging cable can hijack your computer. Retrieved May 25, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Exploiting Smartphone USB ",
+        "url": "https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.226.3427&rep=rep1&type=pdf",
+        "description": "Zhaohui Wang & Angelos Stavrou. (n.d.). Exploiting Smart-Phone USB Connectivity For Fun And Profit. Retrieved May 25, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--e6919abc-99f9-4c6c-95a5-14761e7b2add",
+    "platform": "linux|macos|windows",
+    "tid": "T1105",
+    "technique": "Ingress Tool Transfer",
+    "tactic": "command-and-control",
+    "datasources": "file-creation|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "aoqin-dragon",
+    "correlation_malware": "mongall",
+    "correlation_tool": "none",
+    "correlation_gid": "G1007",
+    "technique_description": "Adversaries may transfer tools or other files from an external system into a compromised environment. Tools or files may be copied from an external adversary-controlled system to the victim network through the command and control channel or through alternate protocols such as [ftp](https://attack.mitre.org/software/S0095). Once present, adversaries may also transfer/spread tools between victim devices within a compromised environment (i.e. [Lateral Tool Transfer](https://attack.mitre.org/techniques/T1570)). \n\nFiles can also be transferred using various [Web Service](https://attack.mitre.org/techniques/T1102)s as well as native or otherwise present tools on the victim system.(Citation: PTSecurity Cobalt Dec 2016)\n\nOn Windows, adversaries may use various utilities to download tools, such as `copy`, `finger`, [certutil](https://attack.mitre.org/software/S0160), and [PowerShell](https://attack.mitre.org/techniques/T1059/001) commands such as <code>IEX(New-Object Net.WebClient).downloadString()</code> and <code>Invoke-WebRequest</code>. On Linux and macOS systems, a variety of utilities also exist, such as `curl`, `scp`, `sftp`, `tftp`, `rsync`, `finger`, and `wget`.(Citation: t1105_lolbas)",
+    "technique_references": [
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "t1105_lolbas",
+        "url": "https://lolbas-project.github.io/#t1105",
+        "description": "LOLBAS. (n.d.). LOLBAS Mapped to T1105. Retrieved March 11, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "PTSecurity Cobalt Dec 2016",
+        "url": "https://www.ptsecurity.com/upload/corporate/ww-en/analytics/Cobalt-Snatch-eng.pdf",
+        "description": "Positive Technologies. (2016, December 16). Cobalt Snatch. Retrieved October 9, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--04fd5427-79c7-44ea-ae13-11b24778ff1c",
+    "platform": "linux|macos|windows",
+    "tid": "T1132.001",
+    "technique": "Standard Encoding",
+    "tactic": "command-and-control",
+    "datasources": "network-traffic-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "aoqin-dragon",
+    "correlation_malware": "mongall",
+    "correlation_tool": "none",
+    "correlation_gid": "G1007",
+    "technique_description": "Adversaries may encode data with a standard data encoding system to make the content of command and control traffic more difficult to detect. Command and control (C2) information can be encoded using a standard data encoding system that adheres to existing protocol specifications. Common data encoding schemes include ASCII, Unicode, hexadecimal, Base64, and MIME.(Citation: Wikipedia Binary-to-text Encoding)(Citation: Wikipedia Character Encoding) Some data encoding systems may also result in data compression, such as gzip.",
+    "technique_references": [
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia Binary-to-text Encoding",
+        "url": "https://en.wikipedia.org/wiki/Binary-to-text_encoding",
+        "description": "Wikipedia. (2016, December 26). Binary-to-text encoding. Retrieved March 1, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia Character Encoding",
+        "url": "https://en.wikipedia.org/wiki/Character_encoding",
+        "description": "Wikipedia. (2017, February 19). Character Encoding. Retrieved March 1, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--be2dcee9-a7a7-4e38-afd6-21b31ecc3d63",
+    "platform": "linux|windows|macos",
+    "tid": "T1203",
+    "technique": "Exploitation for Client Execution",
+    "tactic": "execution",
+    "datasources": "application-log-content|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "aoqin-dragon",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "G1007",
+    "technique_description": "Adversaries may exploit software vulnerabilities in client applications to execute code. Vulnerabilities can exist in software due to unsecure coding practices that can lead to unanticipated behavior. Adversaries can take advantage of certain vulnerabilities through targeted exploitation for the purpose of arbitrary code execution. Oftentimes the most valuable exploits to an offensive toolkit are those that can be used to obtain code execution on a remote system because they can be used to gain access to that system. Users will expect to see files related to the applications they commonly used to do work, so they are a useful target for exploit research and development because of their high utility.\n\nSeveral types exist:\n\n### Browser-based Exploitation\n\nWeb browsers are a common target through [Drive-by Compromise](https://attack.mitre.org/techniques/T1189) and [Spearphishing Link](https://attack.mitre.org/techniques/T1566/002). Endpoint systems may be compromised through normal web browsing or from certain users being targeted by links in spearphishing emails to adversary controlled sites used to exploit the web browser. These often do not require an action by the user for the exploit to be executed.\n\n### Office Applications\n\nCommon office and productivity applications such as Microsoft Office are also targeted through [Phishing](https://attack.mitre.org/techniques/T1566). Malicious files will be transmitted directly as attachments or through links to download them. These require the user to open the document or file for the exploit to run.\n\n### Common Third-party Applications\n\nOther applications that are commonly seen or are part of the software deployed in a target network may also be used for exploitation. Applications such as Adobe Reader and Flash, which are common in enterprise environments, have been routinely targeted by adversaries attempting to gain access to systems. Depending on the software and nature of the vulnerability, some may be exploited in the browser or require the user to open a file. For instance, some Flash exploits have been delivered as objects within Microsoft Office documents.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--bf90d72c-c00b-45e3-b3aa-68560560d4c5",
+    "platform": "linux|macos|windows",
+    "tid": "T1570",
+    "technique": "Lateral Tool Transfer",
+    "tactic": "lateral-movement",
+    "datasources": "command-execution|file-creation|file-metadata|named-pipe-metadata|network-share-access|network-traffic-content|network-traffic-flow|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "aoqin-dragon",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "G1007",
+    "technique_description": "Adversaries may transfer tools or other files between systems in a compromised environment. Once brought into the victim environment (i.e. [Ingress Tool Transfer](https://attack.mitre.org/techniques/T1105)) files may then be copied from one system to another to stage adversary tools or other files over the course of an operation. Adversaries may copy files between internal victim systems to support lateral movement using inherent file sharing protocols such as file sharing over [SMB/Windows Admin Shares](https://attack.mitre.org/techniques/T1021/002) to connected network shares or with authenticated connections via [Remote Desktop Protocol](https://attack.mitre.org/techniques/T1021/001).(Citation: Unit42 LockerGoga 2019)\n\nFiles can also be transferred using native or otherwise present tools on the victim system, such as scp, rsync, curl, sftp, and [ftp](https://attack.mitre.org/software/S0095).",
+    "technique_references": [
+      {
+        "source_name": "Unit42 LockerGoga 2019",
+        "url": "https://unit42.paloaltonetworks.com/born-this-way-origins-of-lockergoga/",
+        "description": "Harbison, M. (2019, March 26). Born This Way? Origins of LockerGoga. Retrieved April 16, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--4fe28b27-b13c-453e-a386-c2ef362a573b",
+    "platform": "linux|macos|windows",
+    "tid": "T1572",
+    "technique": "Protocol Tunneling",
+    "tactic": "command-and-control",
+    "datasources": "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "aoqin-dragon",
+    "correlation_malware": "heyoka-backdoor",
+    "correlation_tool": "none",
+    "correlation_gid": "G1007",
+    "technique_description": "Adversaries may tunnel network communications to and from a victim system within a separate protocol to avoid detection/network filtering and/or enable access to otherwise unreachable systems. Tunneling involves explicitly encapsulating a protocol within another. This behavior may conceal malicious traffic by blending in with existing traffic and/or provide an outer layer of encryption (similar to a VPN). Tunneling could also enable routing of network packets that would otherwise not reach their intended destination, such as SMB, RDP, or other traffic that would be filtered by network appliances or not routed over the Internet. \n\nThere are various means to encapsulate a protocol within another protocol. For example, adversaries may perform SSH tunneling (also known as SSH port forwarding), which involves forwarding arbitrary data over an encrypted SSH tunnel.(Citation: SSH Tunneling) \n\n[Protocol Tunneling](https://attack.mitre.org/techniques/T1572) may also be abused by adversaries during [Dynamic Resolution](https://attack.mitre.org/techniques/T1568). Known as DNS over HTTPS (DoH), queries to resolve C2 infrastructure may be encapsulated within encrypted HTTPS packets.(Citation: BleepingComp Godlua JUL19) \n\nAdversaries may also leverage [Protocol Tunneling](https://attack.mitre.org/techniques/T1572) in conjunction with [Proxy](https://attack.mitre.org/techniques/T1090) and/or [Protocol Impersonation](https://attack.mitre.org/techniques/T1001/003) to further conceal C2 communications and infrastructure. ",
+    "technique_references": [
+      {
+        "source_name": "SSH Tunneling",
+        "url": "https://www.ssh.com/ssh/tunneling",
+        "description": "SSH.COM. (n.d.). SSH tunnel. Retrieved March 15, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "BleepingComp Godlua JUL19",
+        "url": "https://www.bleepingcomputer.com/news/security/new-godlua-malware-evades-traffic-monitoring-via-dns-over-https/",
+        "description": "Gatlan, S. (2019, July 3). New Godlua Malware Evades Traffic Monitoring via DNS over HTTPS. Retrieved March 15, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--24bfaeba-cb0d-4525-b3dc-507c77ecec41",
+    "platform": "linux|windows|macos",
+    "tid": "T1573.001",
+    "technique": "Symmetric Cryptography",
+    "tactic": "command-and-control",
+    "datasources": "network-traffic-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "aoqin-dragon",
+    "correlation_malware": "mongall",
+    "correlation_tool": "none",
+    "correlation_gid": "G1007",
+    "technique_description": "Adversaries may employ a known symmetric encryption algorithm to conceal command and control traffic rather than relying on any inherent protections provided by a communication protocol. Symmetric encryption algorithms use the same key for plaintext encryption and ciphertext decryption. Common symmetric encryption algorithms include AES, DES, 3DES, Blowfish, and RC4.",
+    "technique_references": [
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--212306d8-efa4-44c9-8c2d-ed3d2e224aa0",
+    "platform": "pre",
+    "tid": "T1587.001",
+    "technique": "Malware",
+    "tactic": "resource-development",
+    "datasources": "malware-content|malware-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "aoqin-dragon",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "G1007",
+    "technique_description": "Adversaries may develop malware and malware components that can be used during targeting. Building malicious software can include the development of payloads, droppers, post-compromise tools, backdoors (including backdoored images), packers, C2 protocols, and the creation of infected removable media. Adversaries may develop malware to support their operations, creating a means for maintaining control of remote machines, evading defenses, and executing post-compromise behaviors.(Citation: Mandiant APT1)(Citation: Kaspersky Sofacy)(Citation: ActiveMalwareEnergy)(Citation: FBI Flash FIN7 USB)\n\nAs with legitimate development efforts, different skill sets may be required for developing malware. The skills needed may be located in-house, or may need to be contracted out. Use of a contractor may be considered an extension of that adversary's malware development capabilities, provided the adversary plays a role in shaping requirements and maintains a degree of exclusivity to the malware.\n\nSome aspects of malware development, such as C2 protocol development, may require adversaries to obtain additional infrastructure. For example, malware developed that will communicate with Twitter for C2, may require use of [Web Services](https://attack.mitre.org/techniques/T1583/006).(Citation: FireEye APT29)",
+    "technique_references": [
+      {
+        "source_name": "Mandiant APT1",
+        "url": "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/mandiant-apt1-report.pdf",
+        "description": "Mandiant. (n.d.). APT1 Exposing One of China’s Cyber Espionage Units. Retrieved July 18, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kaspersky Sofacy",
+        "url": "https://securelist.com/sofacy-apt-hits-high-profile-targets-with-updated-toolset/72924/",
+        "description": "Kaspersky Lab's Global Research and Analysis Team. (2015, December 4). Sofacy APT hits high profile targets with updated toolset. Retrieved December 10, 2015.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ActiveMalwareEnergy",
+        "url": "https://arstechnica.com/information-technology/2014/06/active-malware-operation-let-attackers-sabotage-us-energy-industry/",
+        "description": "Dan Goodin. (2014, June 30). Active malware operation let attackers sabotage US energy industry. Retrieved March 9, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FBI Flash FIN7 USB",
+        "url": "https://therecord.media/fbi-fin7-hackers-target-us-companies-with-badusb-devices-to-install-ransomware/",
+        "description": "The Record. (2022, January 7). FBI: FIN7 hackers target US companies with BadUSB devices to install ransomware. Retrieved January 14, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye APT29",
+        "url": "https://www2.fireeye.com/rs/848-DID-242/images/rpt-apt29-hammertoss.pdf",
+        "description": "FireEye Labs. (2015, July). HAMMERTOSS: Stealthy Tactics Define a Russian Cyber Threat Group. Retrieved September 17, 2015.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--a2fdce72-04b2-409a-ac10-cc1695f4fce0",
+    "platform": "pre",
+    "tid": "T1588.002",
+    "technique": "Tool",
+    "tactic": "resource-development",
+    "datasources": "malware-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "aoqin-dragon",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "G1007",
+    "technique_description": "Adversaries may buy, steal, or download software tools that can be used during targeting. Tools can be open or closed source, free or commercial. A tool can be used for malicious purposes by an adversary, but (unlike malware) were not intended to be used for those purposes (ex: [PsExec](https://attack.mitre.org/software/S0029)). Tool acquisition can involve the procurement of commercial software licenses, including for red teaming tools such as [Cobalt Strike](https://attack.mitre.org/software/S0154). Commercial software may be obtained through purchase, stealing licenses (or licensed copies of the software), or cracking trial versions.(Citation: Recorded Future Beacon 2019)\n\nAdversaries may obtain tools to support their operations, including to support execution of post-compromise behaviors. In addition to freely downloading or purchasing software, adversaries may steal software and/or software licenses from third-party entities (including other adversaries).",
+    "technique_references": [
+      {
+        "source_name": "Recorded Future Beacon 2019",
+        "url": "https://www.recordedfuture.com/identifying-cobalt-strike-servers/",
+        "description": "Recorded Future. (2019, June 20). Out of the Blue: How Recorded Future Identified Rogue Cobalt Strike Servers. Retrieved October 16, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Analyzing CS Dec 2020",
+        "url": "https://www.randhome.io/blog/2020/12/20/analyzing-cobalt-strike-for-fun-and-profit/",
+        "description": "Maynier, E. (2020, December 20). Analyzing Cobalt Strike for Fun and Profit. Retrieved October 12, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

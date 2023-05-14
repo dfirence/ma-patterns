@@ -1,0 +1,31 @@
+[
+  {
+    "id": "attack-pattern--ba04e672-da86-4e69-aa15-0eca5db25f43",
+    "platform": "linux|macos|windows",
+    "tid": "T1567.003",
+    "technique": "Exfiltration to Text Storage Sites",
+    "tactic": "exfiltration",
+    "datasources": "network-traffic-content|network-traffic-flow",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may exfiltrate data to text storage sites instead of their primary command and control channel. Text storage sites, such as <code>pastebin[.]com</code>, are commonly used by developers to share code and other information.  \n\nText storage sites are often used to host malicious code for C2 communication (e.g., [Stage Capabilities](https://attack.mitre.org/techniques/T1608)), but adversaries may also use these sites to exfiltrate collected data. Furthermore, paid features and encryption options may allow adversaries to conceal and store data more securely.(Citation: Pastebin EchoSec)\n\n**Note:** This is distinct from [Exfiltration to Code Repository](https://attack.mitre.org/techniques/T1567/001), which highlight access to code repositories via APIs.",
+    "technique_references": [
+      {
+        "source_name": "Pastebin EchoSec",
+        "url": "https://web.archive.org/web/20201107203304/https://www.echosec.net/blog/what-is-pastebin-and-why-do-hackers-love-it",
+        "description": "Ciarniello, A. (2019, September 24). What is Pastebin and Why Do Hackers Love It?. Retrieved April 11, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

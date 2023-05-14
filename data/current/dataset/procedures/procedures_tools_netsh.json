@@ -1,0 +1,23 @@
+[
+  [
+    "netsh",
+    "T1518.001",
+    "Security Software Discovery",
+    "command-execution|firewall-enumeration|firewall-metadata|os-api-execution|process-creation",
+    "T1518.001::[netsh] can be used to discover system firewall settings."
+  ],
+  [
+    "netsh",
+    "T1546.007",
+    "Netsh Helper DLL",
+    "command-execution|module-load|process-creation|windows-registry-key-modification",
+    "T1546.007::[netsh] can be used as a persistence proxy technique to execute a helper DLL when netsh.exe is executed."
+  ],
+  [
+    "netsh",
+    "T1562.004",
+    "Disable or Modify System Firewall",
+    "command-execution|firewall-disable|firewall-rule-modification|windows-registry-key-modification",
+    "T1562.004::[netsh] can be used to disable local firewall settings."
+  ]
+]

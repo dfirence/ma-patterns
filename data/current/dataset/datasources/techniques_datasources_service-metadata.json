@@ -1,0 +1,472 @@
+[
+  {
+    "id": "attack-pattern--42e8de7b-37b2-4258-905a-6897815e58e0",
+    "platform": "linux|macos|windows|containers",
+    "tid": "T1036",
+    "technique": "Masquerading",
+    "tactic": "defense-evasion",
+    "datasources": "service-metadata",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1036.001",
+      "T1036.002",
+      "T1036.003",
+      "T1036.004",
+      "T1036.005",
+      "T1036.006",
+      "T1036.007",
+      "T1036.008"
+    ],
+    "count_subtechniques": 8,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to manipulate features of their artifacts to make them appear legitimate or benign to users and/or security tools. Masquerading occurs when the name or location of an object, legitimate or malicious, is manipulated or abused for the sake of evading defenses and observation. This may include manipulating file metadata, tricking users into misidentifying the file type, and giving legitimate task or service names.\n\nRenaming abusable system utilities to evade security monitoring is also a form of [Masquerading](https://attack.mitre.org/techniques/T1036).(Citation: LOLBAS Main Site)",
+    "technique_references": [
+      {
+        "source_name": "Twitter ItsReallyNick Masquerading Update",
+        "url": "https://twitter.com/ItsReallyNick/status/1055321652777619457",
+        "description": "Carr, N.. (2018, October 25). Nick Carr Status Update Masquerading. Retrieved April 22, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Elastic Masquerade Ball",
+        "url": "http://pages.endgame.com/rs/627-YBU-612/images/EndgameJournal_The%20Masquerade%20Ball_Pages_R2.pdf",
+        "description": "Ewing, P. (2016, October 31). How to Hunt: The Masquerade Ball. Retrieved October 31, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "LOLBAS Main Site",
+        "url": "https://lolbas-project.github.io/",
+        "description": "LOLBAS. (n.d.). Living Off The Land Binaries and Scripts (and also Libraries). Retrieved February 10, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--c8e87b83-edbb-48d4-9295-4974897525b7",
+    "platform": "windows",
+    "tid": "T1197",
+    "technique": "BITS Jobs",
+    "tactic": "defense-evasion",
+    "datasources": "service-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse BITS jobs to persistently execute code and perform various background tasks. Windows Background Intelligent Transfer Service (BITS) is a low-bandwidth, asynchronous file transfer mechanism exposed through [Component Object Model](https://attack.mitre.org/techniques/T1559/001) (COM).(Citation: Microsoft COM)(Citation: Microsoft BITS) BITS is commonly used by updaters, messengers, and other applications preferred to operate in the background (using available idle bandwidth) without interrupting other networked applications. File transfer tasks are implemented as BITS jobs, which contain a queue of one or more file operations.\n\nThe interface to create and manage BITS jobs is accessible through [PowerShell](https://attack.mitre.org/techniques/T1059/001) and the [BITSAdmin](https://attack.mitre.org/software/S0190) tool.(Citation: Microsoft BITS)(Citation: Microsoft BITSAdmin)\n\nAdversaries may abuse BITS to download (e.g. [Ingress Tool Transfer](https://attack.mitre.org/techniques/T1105)), execute, and even clean up after running malicious code (e.g. [Indicator Removal](https://attack.mitre.org/techniques/T1070)). BITS tasks are self-contained in the BITS job database, without new files or registry modifications, and often permitted by host firewalls.(Citation: CTU BITS Malware June 2016)(Citation: Mondok Windows PiggyBack BITS May 2007)(Citation: Symantec BITS May 2007) BITS enabled execution may also enable persistence by creating long-standing jobs (the default maximum lifetime is 90 days and extendable) or invoking an arbitrary program when a job completes or errors (including after system reboots).(Citation: PaloAlto UBoatRAT Nov 2017)(Citation: CTU BITS Malware June 2016)\n\nBITS upload functionalities can also be used to perform [Exfiltration Over Alternative Protocol](https://attack.mitre.org/techniques/T1048).(Citation: CTU BITS Malware June 2016)",
+    "technique_references": [
+      {
+        "source_name": "CTU BITS Malware June 2016",
+        "url": "https://www.secureworks.com/blog/malware-lingers-with-bits",
+        "description": "Counter Threat Unit Research Team. (2016, June 6). Malware Lingers with BITS. Retrieved January 12, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Symantec BITS May 2007",
+        "url": "https://www.symantec.com/connect/blogs/malware-update-windows-update",
+        "description": "Florio, E. (2007, May 9). Malware Update with Windows Update. Retrieved January 12, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Elastic - Hunting for Persistence Part 1",
+        "url": "https://www.elastic.co/blog/hunting-for-persistence-using-elastic-security-part-1",
+        "description": "French, D., Murphy, B. (2020, March 24). Adversary tradecraft 101: Hunting for persistence using Elastic Security (Part 1). Retrieved December 21, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "PaloAlto UBoatRAT Nov 2017",
+        "url": "https://researchcenter.paloaltonetworks.com/2017/11/unit42-uboatrat-navigates-east-asia/",
+        "description": "Hayashi, K. (2017, November 28). UBoatRAT Navigates East Asia. Retrieved January 12, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Issues with BITS July 2011",
+        "url": "https://technet.microsoft.com/library/dd939934.aspx",
+        "description": "Microsoft. (2011, July 19). Issues with BITS. Retrieved January 12, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft BITS",
+        "url": "https://msdn.microsoft.com/library/windows/desktop/bb968799.aspx",
+        "description": "Microsoft. (n.d.). Background Intelligent Transfer Service. Retrieved January 12, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft BITSAdmin",
+        "url": "https://msdn.microsoft.com/library/aa362813.aspx",
+        "description": "Microsoft. (n.d.). BITSAdmin Tool. Retrieved January 12, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft COM",
+        "url": "https://msdn.microsoft.com/library/windows/desktop/ms680573.aspx",
+        "description": "Microsoft. (n.d.). Component Object Model (COM). Retrieved November 22, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mondok Windows PiggyBack BITS May 2007",
+        "url": "https://arstechnica.com/information-technology/2007/05/malware-piggybacks-on-windows-background-intelligent-transfer-service/",
+        "description": "Mondok, M. (2007, May 11). Malware piggybacks on Windows’ Background Intelligent Transfer Service. Retrieved January 12, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--c8e87b83-edbb-48d4-9295-4974897525b7",
+    "platform": "windows",
+    "tid": "T1197",
+    "technique": "BITS Jobs",
+    "tactic": "persistence",
+    "datasources": "service-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse BITS jobs to persistently execute code and perform various background tasks. Windows Background Intelligent Transfer Service (BITS) is a low-bandwidth, asynchronous file transfer mechanism exposed through [Component Object Model](https://attack.mitre.org/techniques/T1559/001) (COM).(Citation: Microsoft COM)(Citation: Microsoft BITS) BITS is commonly used by updaters, messengers, and other applications preferred to operate in the background (using available idle bandwidth) without interrupting other networked applications. File transfer tasks are implemented as BITS jobs, which contain a queue of one or more file operations.\n\nThe interface to create and manage BITS jobs is accessible through [PowerShell](https://attack.mitre.org/techniques/T1059/001) and the [BITSAdmin](https://attack.mitre.org/software/S0190) tool.(Citation: Microsoft BITS)(Citation: Microsoft BITSAdmin)\n\nAdversaries may abuse BITS to download (e.g. [Ingress Tool Transfer](https://attack.mitre.org/techniques/T1105)), execute, and even clean up after running malicious code (e.g. [Indicator Removal](https://attack.mitre.org/techniques/T1070)). BITS tasks are self-contained in the BITS job database, without new files or registry modifications, and often permitted by host firewalls.(Citation: CTU BITS Malware June 2016)(Citation: Mondok Windows PiggyBack BITS May 2007)(Citation: Symantec BITS May 2007) BITS enabled execution may also enable persistence by creating long-standing jobs (the default maximum lifetime is 90 days and extendable) or invoking an arbitrary program when a job completes or errors (including after system reboots).(Citation: PaloAlto UBoatRAT Nov 2017)(Citation: CTU BITS Malware June 2016)\n\nBITS upload functionalities can also be used to perform [Exfiltration Over Alternative Protocol](https://attack.mitre.org/techniques/T1048).(Citation: CTU BITS Malware June 2016)",
+    "technique_references": [
+      {
+        "source_name": "CTU BITS Malware June 2016",
+        "url": "https://www.secureworks.com/blog/malware-lingers-with-bits",
+        "description": "Counter Threat Unit Research Team. (2016, June 6). Malware Lingers with BITS. Retrieved January 12, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Symantec BITS May 2007",
+        "url": "https://www.symantec.com/connect/blogs/malware-update-windows-update",
+        "description": "Florio, E. (2007, May 9). Malware Update with Windows Update. Retrieved January 12, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Elastic - Hunting for Persistence Part 1",
+        "url": "https://www.elastic.co/blog/hunting-for-persistence-using-elastic-security-part-1",
+        "description": "French, D., Murphy, B. (2020, March 24). Adversary tradecraft 101: Hunting for persistence using Elastic Security (Part 1). Retrieved December 21, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "PaloAlto UBoatRAT Nov 2017",
+        "url": "https://researchcenter.paloaltonetworks.com/2017/11/unit42-uboatrat-navigates-east-asia/",
+        "description": "Hayashi, K. (2017, November 28). UBoatRAT Navigates East Asia. Retrieved January 12, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Issues with BITS July 2011",
+        "url": "https://technet.microsoft.com/library/dd939934.aspx",
+        "description": "Microsoft. (2011, July 19). Issues with BITS. Retrieved January 12, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft BITS",
+        "url": "https://msdn.microsoft.com/library/windows/desktop/bb968799.aspx",
+        "description": "Microsoft. (n.d.). Background Intelligent Transfer Service. Retrieved January 12, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft BITSAdmin",
+        "url": "https://msdn.microsoft.com/library/aa362813.aspx",
+        "description": "Microsoft. (n.d.). BITSAdmin Tool. Retrieved January 12, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft COM",
+        "url": "https://msdn.microsoft.com/library/windows/desktop/ms680573.aspx",
+        "description": "Microsoft. (n.d.). Component Object Model (COM). Retrieved November 22, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mondok Windows PiggyBack BITS May 2007",
+        "url": "https://arstechnica.com/information-technology/2007/05/malware-piggybacks-on-windows-background-intelligent-transfer-service/",
+        "description": "Mondok, M. (2007, May 11). Malware piggybacks on Windows’ Background Intelligent Transfer Service. Retrieved January 12, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--20fb2507-d71c-455d-9b6d-6104461cf26b",
+    "platform": "windows|linux|macos",
+    "tid": "T1489",
+    "technique": "Service Stop",
+    "tactic": "impact",
+    "datasources": "service-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may stop or disable services on a system to render those services unavailable to legitimate users. Stopping critical services or processes can inhibit or stop response to an incident or aid in the adversary's overall objectives to cause damage to the environment.(Citation: Talos Olympic Destroyer 2018)(Citation: Novetta Blockbuster) \n\nAdversaries may accomplish this by disabling individual services of high importance to an organization, such as <code>MSExchangeIS</code>, which will make Exchange content inaccessible (Citation: Novetta Blockbuster). In some cases, adversaries may stop or disable many or all services to render systems unusable.(Citation: Talos Olympic Destroyer 2018) Services or processes may not allow for modification of their data stores while running. Adversaries may stop services or processes in order to conduct [Data Destruction](https://attack.mitre.org/techniques/T1485) or [Data Encrypted for Impact](https://attack.mitre.org/techniques/T1486) on the data stores of services like Exchange and SQL Server.(Citation: SecureWorks WannaCry Analysis)",
+    "technique_references": [
+      {
+        "source_name": "SecureWorks WannaCry Analysis",
+        "url": "https://www.secureworks.com/research/wcry-ransomware-analysis",
+        "description": "Counter Threat Unit Research Team. (2017, May 18). WCry Ransomware Analysis. Retrieved March 26, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Talos Olympic Destroyer 2018",
+        "url": "https://blog.talosintelligence.com/2018/02/olympic-destroyer.html",
+        "description": "Mercer, W. and Rascagneres, P. (2018, February 12). Olympic Destroyer Takes Aim At Winter Olympics. Retrieved March 14, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Novetta Blockbuster",
+        "url": "https://web.archive.org/web/20160226161828/https://www.operationblockbuster.com/wp-content/uploads/2016/02/Operation-Blockbuster-Report.pdf",
+        "description": "Novetta Threat Research Group. (2016, February 24). Operation Blockbuster: Unraveling the Long Thread of the Sony Attack. Retrieved February 25, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f5d8eed6-48a9-4cdf-a3d7-d1ffa99c3d2a",
+    "platform": "windows|macos|linux|network|iaas",
+    "tid": "T1490",
+    "technique": "Inhibit System Recovery",
+    "tactic": "impact",
+    "datasources": "service-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may delete or remove built-in data and turn off services designed to aid in the recovery of a corrupted system to prevent recovery.(Citation: Talos Olympic Destroyer 2018)(Citation: FireEye WannaCry 2017) This may deny access to available backups and recovery options.\n\nOperating systems may contain features that can help fix corrupted systems, such as a backup catalog, volume shadow copies, and automatic repair features. Adversaries may disable or delete system recovery features to augment the effects of [Data Destruction](https://attack.mitre.org/techniques/T1485) and [Data Encrypted for Impact](https://attack.mitre.org/techniques/T1486).(Citation: Talos Olympic Destroyer 2018)(Citation: FireEye WannaCry 2017) Furthermore, adversaries may disable recovery notifications, then corrupt backups.(Citation: disable_notif_synology_ransom)\n\nA number of native Windows utilities have been used by adversaries to disable or delete system recovery features:\n\n* <code>vssadmin.exe</code> can be used to delete all volume shadow copies on a system - <code>vssadmin.exe delete shadows /all /quiet</code>\n* [Windows Management Instrumentation](https://attack.mitre.org/techniques/T1047) can be used to delete volume shadow copies - <code>wmic shadowcopy delete</code>\n* <code>wbadmin.exe</code> can be used to delete the Windows Backup Catalog - <code>wbadmin.exe delete catalog -quiet</code>\n* <code>bcdedit.exe</code> can be used to disable automatic Windows recovery features by modifying boot configuration data - <code>bcdedit.exe /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no</code>\n* <code>REAgentC.exe</code> can be used to disable Windows Recovery Environment (WinRE) repair/recovery options of an infected system\n\nOn network devices, adversaries may leverage [Disk Wipe](https://attack.mitre.org/techniques/T1561) to delete backup firmware images and reformat the file system, then [System Shutdown/Reboot](https://attack.mitre.org/techniques/T1529) to reload the device. Together this activity may leave network devices completely inoperable and inhibit recovery operations.\n\nAdversaries may also delete “online” backups that are connected to their network – whether via network storage media or through folders that sync to cloud services.(Citation: ZDNet Ransomware Backups 2020) In cloud environments, adversaries may disable versioning and backup policies and delete snapshots, machine images, and prior versions of objects designed to be used in disaster recovery scenarios.(Citation: Dark Reading Code Spaces Cyber Attack)(Citation: Rhino Security Labs AWS S3 Ransomware)",
+    "technique_references": [
+      {
+        "source_name": "Dark Reading Code Spaces Cyber Attack",
+        "url": "https://www.darkreading.com/attacks-breaches/code-hosting-service-shuts-down-after-cyber-attack",
+        "description": " Brian Prince. (2014, June 20). Code Hosting Service Shuts Down After Cyber Attack. Retrieved March 21, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye WannaCry 2017",
+        "url": "https://www.fireeye.com/blog/threat-research/2017/05/wannacry-malware-profile.html",
+        "description": "Berry, A., Homan, J., and Eitzman, R. (2017, May 23). WannaCry Malware Profile. Retrieved March 15, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Talos Olympic Destroyer 2018",
+        "url": "https://blog.talosintelligence.com/2018/02/olympic-destroyer.html",
+        "description": "Mercer, W. and Rascagneres, P. (2018, February 12). Olympic Destroyer Takes Aim At Winter Olympics. Retrieved March 14, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Rhino Security Labs AWS S3 Ransomware",
+        "url": "https://rhinosecuritylabs.com/aws/s3-ransomware-part-2-prevention-and-defense/",
+        "description": "Spencer Gietzen. (n.d.). AWS Simple Storage Service S3 Ransomware Part 2: Prevention and Defense. Retrieved March 21, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ZDNet Ransomware Backups 2020",
+        "url": "https://www.zdnet.com/article/ransomware-victims-thought-their-backups-were-safe-they-were-wrong/",
+        "description": "Steve Ranger. (2020, February 27). Ransomware victims thought their backups were safe. They were wrong. Retrieved March 21, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "disable_notif_synology_ransom",
+        "url": "https://twitter.com/TheDFIRReport/status/1498657590259109894",
+        "description": "TheDFIRReport. (2022, March 1). Disabling notifications on Synology servers before ransom. Retrieved October 19, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--3d333250-30e4-4a82-9edc-756c68afc529",
+    "platform": "windows|office-365|iaas|linux|macos|containers|network",
+    "tid": "T1562",
+    "technique": "Impair Defenses",
+    "tactic": "defense-evasion",
+    "datasources": "service-metadata",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1562.001",
+      "T1562.002",
+      "T1562.003",
+      "T1562.004",
+      "T1562.006",
+      "T1562.007",
+      "T1562.008",
+      "T1562.009",
+      "T1562.010",
+      "T1562.011"
+    ],
+    "count_subtechniques": 10,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may maliciously modify components of a victim environment in order to hinder or disable defensive mechanisms. This not only involves impairing preventative defenses, such as firewalls and anti-virus, but also detection capabilities that defenders can use to audit activity and identify malicious behavior. This may also span both native defenses as well as supplemental capabilities installed by users and administrators.\n\nAdversaries may also impair routine operations that contribute to defensive hygiene, such as blocking users from logging out of a computer or stopping it from being shut down. These restrictions can further enable malicious operations as well as the continued propagation of incidents.(Citation: Emotet shutdown)\n\nAdversaries could also target event aggregation and analysis mechanisms, or otherwise disrupt these procedures by altering other system components.",
+    "technique_references": [
+      {
+        "source_name": "Emotet shutdown",
+        "url": "https://thedfirreport.com/2022/11/28/emotet-strikes-again-lnk-file-leads-to-domain-wide-ransomware/#:~:text=Don’t%20Sleep%20has%20the%20capability%20to%20keep%20the%20computer%20from%20being%20shutdown%20and%20the%20user%20from%20being%20signed%20off.%20This%20was%20likely%20done%20to%20ensure%20nothing%20will%20interfere%20with%20the%20propagation%20of%20the%20ransomware%20payload",
+        "description": "The DFIR Report. (2022, November 8). Emotet Strikes Again – LNK File Leads to Domain Wide Ransomware. Retrieved March 6, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--aedfca76-3b30-4866-b2aa-0f1d7fd1e4b6",
+    "platform": "linux|macos|windows",
+    "tid": "T1574",
+    "technique": "Hijack Execution Flow",
+    "tactic": "persistence",
+    "datasources": "service-metadata",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1574.001",
+      "T1574.002",
+      "T1574.004",
+      "T1574.005",
+      "T1574.006",
+      "T1574.007",
+      "T1574.008",
+      "T1574.009",
+      "T1574.010",
+      "T1574.011",
+      "T1574.012",
+      "T1574.013"
+    ],
+    "count_subtechniques": 12,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may execute their own malicious payloads by hijacking the way operating systems run programs. Hijacking execution flow can be for the purposes of persistence, since this hijacked execution may reoccur over time. Adversaries may also use these mechanisms to elevate privileges or evade defenses, such as application control or other restrictions on execution.\n\nThere are many ways an adversary may hijack the flow of execution, including by manipulating how the operating system locates programs to be executed. How the operating system locates libraries to be used by a program can also be intercepted. Locations where the operating system looks for programs/resources, such as file directories and in the case of Windows the Registry, could also be poisoned to include malicious payloads.",
+    "technique_references": [
+      {
+        "source_name": "Autoruns for Windows",
+        "url": "https://docs.microsoft.com/en-us/sysinternals/downloads/autoruns",
+        "description": "Mark Russinovich. (2019, June 28). Autoruns for Windows v13.96. Retrieved March 13, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--aedfca76-3b30-4866-b2aa-0f1d7fd1e4b6",
+    "platform": "linux|macos|windows",
+    "tid": "T1574",
+    "technique": "Hijack Execution Flow",
+    "tactic": "privilege-escalation",
+    "datasources": "service-metadata",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1574.001",
+      "T1574.002",
+      "T1574.004",
+      "T1574.005",
+      "T1574.006",
+      "T1574.007",
+      "T1574.008",
+      "T1574.009",
+      "T1574.010",
+      "T1574.011",
+      "T1574.012",
+      "T1574.013"
+    ],
+    "count_subtechniques": 12,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may execute their own malicious payloads by hijacking the way operating systems run programs. Hijacking execution flow can be for the purposes of persistence, since this hijacked execution may reoccur over time. Adversaries may also use these mechanisms to elevate privileges or evade defenses, such as application control or other restrictions on execution.\n\nThere are many ways an adversary may hijack the flow of execution, including by manipulating how the operating system locates programs to be executed. How the operating system locates libraries to be used by a program can also be intercepted. Locations where the operating system looks for programs/resources, such as file directories and in the case of Windows the Registry, could also be poisoned to include malicious payloads.",
+    "technique_references": [
+      {
+        "source_name": "Autoruns for Windows",
+        "url": "https://docs.microsoft.com/en-us/sysinternals/downloads/autoruns",
+        "description": "Mark Russinovich. (2019, June 28). Autoruns for Windows v13.96. Retrieved March 13, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--aedfca76-3b30-4866-b2aa-0f1d7fd1e4b6",
+    "platform": "linux|macos|windows",
+    "tid": "T1574",
+    "technique": "Hijack Execution Flow",
+    "tactic": "defense-evasion",
+    "datasources": "service-metadata",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1574.001",
+      "T1574.002",
+      "T1574.004",
+      "T1574.005",
+      "T1574.006",
+      "T1574.007",
+      "T1574.008",
+      "T1574.009",
+      "T1574.010",
+      "T1574.011",
+      "T1574.012",
+      "T1574.013"
+    ],
+    "count_subtechniques": 12,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may execute their own malicious payloads by hijacking the way operating systems run programs. Hijacking execution flow can be for the purposes of persistence, since this hijacked execution may reoccur over time. Adversaries may also use these mechanisms to elevate privileges or evade defenses, such as application control or other restrictions on execution.\n\nThere are many ways an adversary may hijack the flow of execution, including by manipulating how the operating system locates programs to be executed. How the operating system locates libraries to be used by a program can also be intercepted. Locations where the operating system looks for programs/resources, such as file directories and in the case of Windows the Registry, could also be poisoned to include malicious payloads.",
+    "technique_references": [
+      {
+        "source_name": "Autoruns for Windows",
+        "url": "https://docs.microsoft.com/en-us/sysinternals/downloads/autoruns",
+        "description": "Mark Russinovich. (2019, June 28). Autoruns for Windows v13.96. Retrieved March 13, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

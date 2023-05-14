@@ -1,0 +1,1721 @@
+[
+  {
+    "id": "attack-pattern--65f2d882-3f41-4d48-8a06-29af77ec9f90",
+    "platform": "windows",
+    "tid": "T1003.001",
+    "technique": "LSASS Memory",
+    "tactic": "credential-access",
+    "datasources": "command-execution|os-api-execution|process-access|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "mafalda",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may attempt to access credential material stored in the process memory of the Local Security Authority Subsystem Service (LSASS). After a user logs on, the system generates and stores a variety of credential materials in LSASS process memory. These credential materials can be harvested by an administrative user or SYSTEM and used to conduct [Lateral Movement](https://attack.mitre.org/tactics/TA0008) using [Use Alternate Authentication Material](https://attack.mitre.org/techniques/T1550).\n\nAs well as in-memory techniques, the LSASS process memory can be dumped from the target host and analyzed on a local system.\n\nFor example, on the target host use procdump:\n\n* <code>procdump -ma lsass.exe lsass_dump</code>\n\nLocally, mimikatz can be run using:\n\n* <code>sekurlsa::Minidump lsassdump.dmp</code>\n* <code>sekurlsa::logonPasswords</code>\n\nBuilt-in Windows tools such as comsvcs.dll can also be used:\n\n* <code>rundll32.exe C:\\Windows\\System32\\comsvcs.dll MiniDump PID  lsass.dmp full</code>(Citation: Volexity Exchange Marauder March 2021)(Citation: Symantec Attacks Against Government Sector)\n\n\nWindows Security Support Provider (SSP) DLLs are loaded into LSASS process at system start. Once loaded into the LSA, SSP DLLs have access to encrypted and plaintext passwords that are stored in Windows, such as any logged-on user's Domain password or smart card PINs. The SSP configuration is stored in two Registry keys: <code>HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Security Packages</code> and <code>HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\OSConfig\\Security Packages</code>. An adversary may modify these Registry keys to add new SSPs, which will be loaded the next time the system boots, or when the AddSecurityPackage Windows API function is called.(Citation: Graeber 2014)\n\nThe following SSPs can be used to access credentials:\n\n* Msv: Interactive logons, batch logons, and service logons are done through the MSV authentication package.\n* Wdigest: The Digest Authentication protocol is designed for use with Hypertext Transfer Protocol (HTTP) and Simple Authentication Security Layer (SASL) exchanges.(Citation: TechNet Blogs Credential Protection)\n* Kerberos: Preferred for mutual client-server domain authentication in Windows 2000 and later.\n* CredSSP:  Provides SSO and Network Level Authentication for Remote Desktop Services.(Citation: TechNet Blogs Credential Protection)\n",
+    "technique_references": [
+      {
+        "source_name": "Medium Detecting Attempts to Steal Passwords from Memory",
+        "url": "https://medium.com/threatpunter/detecting-attempts-to-steal-passwords-from-memory-558f16dce4ea",
+        "description": "French, D. (2018, October 2). Detecting Attempts to Steal Passwords from Memory. Retrieved October 11, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Graeber 2014",
+        "url": "http://docplayer.net/20839173-Analysis-of-malicious-security-support-provider-dlls.html",
+        "description": "Graeber, M. (2014, October). Analysis of Malicious Security Support Provider DLLs. Retrieved March 1, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Volexity Exchange Marauder March 2021",
+        "url": "https://www.volexity.com/blog/2021/03/02/active-exploitation-of-microsoft-exchange-zero-day-vulnerabilities/",
+        "description": "Gruzweig, J. et al. (2021, March 2). Operation Exchange Marauder: Active Exploitation of Multiple Zero-Day Microsoft Exchange Vulnerabilities. Retrieved March 3, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Powersploit",
+        "url": "https://github.com/mattifestation/PowerSploit",
+        "description": "PowerSploit. (n.d.). Retrieved December 4, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Symantec Attacks Against Government Sector",
+        "url": "https://symantec.broadcom.com/hubfs/Attacks-Against-Government-Sector.pdf",
+        "description": "Symantec. (2021, June 10). Attacks Against the Government Sector. Retrieved September 28, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Blogs Credential Protection",
+        "url": "https://blogs.technet.microsoft.com/askpfeplat/2016/04/18/the-importance-of-kb2871997-and-kb2928120-for-credential-protection/",
+        "description": "Wilson, B. (2016, April 18). The Importance of KB2871997 and KB2928120 for Credential Protection. Retrieved April 11, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--c32f7008-9fea-41f7-8366-5eb9b74bd896",
+    "platform": "windows",
+    "tid": "T1012",
+    "technique": "Query Registry",
+    "tactic": "discovery",
+    "datasources": "command-execution|os-api-execution|process-creation|windows-registry-key-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "mafalda",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may interact with the Windows Registry to gather information about the system, configuration, and installed software.\n\nThe Registry contains a significant amount of information about the operating system, configuration, software, and security.(Citation: Wikipedia Windows Registry) Information can easily be queried using the [Reg](https://attack.mitre.org/software/S0075) utility, though other means to access the Registry exist. Some of the information may help adversaries to further their operation within a network. Adversaries may use the information from [Query Registry](https://attack.mitre.org/techniques/T1012) during automated discovery to shape follow-on behaviors, including whether or not the adversary fully infects the target and/or attempts specific actions.",
+    "technique_references": [
+      {
+        "source_name": "Wikipedia Windows Registry",
+        "url": "https://en.wikipedia.org/wiki/Windows_Registry",
+        "description": "Wikipedia. (n.d.). Windows Registry. Retrieved February 2, 2015.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--707399d6-ab3e-4963-9315-d9d3818cd6a0",
+    "platform": "linux|macos|windows|network",
+    "tid": "T1016",
+    "technique": "System Network Configuration Discovery",
+    "tactic": "discovery",
+    "datasources": "command-execution|os-api-execution|process-creation|script-execution",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1016.001"
+    ],
+    "count_subtechniques": 1,
+    "correlation_adversary": "metador",
+    "correlation_malware": "mafalda",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may look for details about the network configuration and settings, such as IP and/or MAC addresses, of systems they access or through information discovery of remote systems. Several operating system administration utilities exist that can be used to gather this information. Examples include [Arp](https://attack.mitre.org/software/S0099), [ipconfig](https://attack.mitre.org/software/S0100)/[ifconfig](https://attack.mitre.org/software/S0101), [nbtstat](https://attack.mitre.org/software/S0102), and [route](https://attack.mitre.org/software/S0103).\n\nAdversaries may also leverage a [Network Device CLI](https://attack.mitre.org/techniques/T1059/008) on network devices to gather information about configurations and settings, such as IP addresses of configured interfaces and static/dynamic routes (e.g. <code>show ip route</code>, <code>show ip interface</code>).(Citation: US-CERT-TA18-106A)(Citation: Mandiant APT41 Global Intrusion )\n\nAdversaries may use the information from [System Network Configuration Discovery](https://attack.mitre.org/techniques/T1016) during automated discovery to shape follow-on behaviors, including determining certain access within the target network and what actions to do next. ",
+    "technique_references": [
+      {
+        "source_name": "Mandiant APT41 Global Intrusion ",
+        "url": "https://www.mandiant.com/resources/apt41-initiates-global-intrusion-campaign-using-multiple-exploits",
+        "description": "Gyler, C.,Perez D.,Jones, S.,Miller, S.. (2021, February 25). This is Not a Test: APT41 Initiates Global Intrusion Campaign Using Multiple Exploits. Retrieved February 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT-TA18-106A",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA18-106A",
+        "description": "US-CERT. (2018, April 20). Alert (TA18-106A) Russian State-Sponsored Cyber Actors Targeting Network Infrastructure Devices. Retrieved October 19, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--7e150503-88e7-4861-866b-ff1ac82c4475",
+    "platform": "windows|iaas|linux|macos|network",
+    "tid": "T1049",
+    "technique": "System Network Connections Discovery",
+    "tactic": "discovery",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "mafalda",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may attempt to get a listing of network connections to or from the compromised system they are currently accessing or from remote systems by querying for information over the network. \n\nAn adversary who gains access to a system that is part of a cloud-based environment may map out Virtual Private Clouds or Virtual Networks in order to determine what systems and services are connected. The actions performed are likely the same types of discovery techniques depending on the operating system, but the resulting information may include details about the networked cloud environment relevant to the adversary's goals. Cloud providers may have different ways in which their virtual networks operate.(Citation: Amazon AWS VPC Guide)(Citation: Microsoft Azure Virtual Network Overview)(Citation: Google VPC Overview) Similarly, adversaries who gain access to network devices may also perform similar discovery activities to gather information about connected systems and services.\n\nUtilities and commands that acquire this information include [netstat](https://attack.mitre.org/software/S0104), \"net use,\" and \"net session\" with [Net](https://attack.mitre.org/software/S0039). In Mac and Linux, [netstat](https://attack.mitre.org/software/S0104) and <code>lsof</code> can be used to list current connections. <code>who -a</code> and <code>w</code> can be used to show which users are currently logged in, similar to \"net session\". Additionally, built-in features native to network devices and [Network Device CLI](https://attack.mitre.org/techniques/T1059/008) may be used (e.g. <code>show ip sockets</code>, <code>show tcp brief</code>).(Citation: US-CERT-TA18-106A)",
+    "technique_references": [
+      {
+        "source_name": "Amazon AWS VPC Guide",
+        "url": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html",
+        "description": "Amazon. (n.d.). What Is Amazon VPC?. Retrieved October 6, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Azure Virtual Network Overview",
+        "url": "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview",
+        "description": "Annamalai, N., Casey, C., Almeida, M., et. al.. (2019, June 18). What is Azure Virtual Network?. Retrieved October 6, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Google VPC Overview",
+        "url": "https://cloud.google.com/vpc/docs/vpc",
+        "description": "Google. (2019, September 23). Virtual Private Cloud (VPC) network overview. Retrieved October 6, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT-TA18-106A",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA18-106A",
+        "description": "US-CERT. (2018, April 20). Alert (TA18-106A) Russian State-Sponsored Cyber Actors Targeting Network Infrastructure Devices. Retrieved October 19, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--43e7dc91-05b2-474c-b9ac-2ed4fe101f4d",
+    "platform": "linux|macos|windows",
+    "tid": "T1055",
+    "technique": "Process Injection",
+    "tactic": "defense-evasion",
+    "datasources": "file-metadata|file-modification|module-load|os-api-execution|process-access|process-metadata|process-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1055.001",
+      "T1055.002",
+      "T1055.003",
+      "T1055.004",
+      "T1055.005",
+      "T1055.008",
+      "T1055.009",
+      "T1055.011",
+      "T1055.012",
+      "T1055.013",
+      "T1055.014",
+      "T1055.015"
+    ],
+    "count_subtechniques": 12,
+    "correlation_adversary": "metador",
+    "correlation_malware": "metamain",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may inject code into processes in order to evade process-based defenses as well as possibly elevate privileges. Process injection is a method of executing arbitrary code in the address space of a separate live process. Running code in the context of another process may allow access to the process's memory, system/network resources, and possibly elevated privileges. Execution via process injection may also evade detection from security products since the execution is masked under a legitimate process. \n\nThere are many different ways to inject code into a process, many of which abuse legitimate functionalities. These implementations exist for every major OS but are typically platform specific. \n\nMore sophisticated samples may perform multiple process injections to segment modules and further evade detection, utilizing named pipes or other inter-process communication (IPC) mechanisms as a communication channel. ",
+    "technique_references": [
+      {
+        "source_name": "GNU Acct",
+        "url": "https://www.gnu.org/software/acct/",
+        "description": "GNU. (2010, February 5). The GNU Accounting Utilities. Retrieved December 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Elastic Process Injection July 2017",
+        "url": "https://www.endgame.com/blog/technical-blog/ten-process-injection-techniques-technical-survey-common-and-trending-process",
+        "description": "Hosseini, A. (2017, July 18). Ten Process Injection Techniques: A Technical Survey Of Common And Trending Process Injection Techniques. Retrieved December 7, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "RHEL auditd",
+        "url": "https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/security_guide/chap-system_auditing",
+        "description": "Jahoda, M. et al.. (2017, March 14). redhat Security Guide - Chapter 7 - System Auditing. Retrieved December 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ArtOfMemoryForensics",
+        "url": "none",
+        "description": "Ligh, M.H. et al.. (2014, July). The Art of Memory Forensics: Detecting Malware and Threats in Windows, Linux, and Mac Memory. Retrieved December 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Sysmon v6 May 2017",
+        "url": "https://docs.microsoft.com/sysinternals/downloads/sysmon",
+        "description": "Russinovich, M. & Garnier, T. (2017, May 22). Sysmon v6.20. Retrieved December 13, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Chokepoint preload rootkits",
+        "url": "http://www.chokepoint.net/2014/02/detecting-userland-preload-rootkits.html",
+        "description": "stderr. (2014, February 14). Detecting Userland Preload Rootkits. Retrieved December 20, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--43e7dc91-05b2-474c-b9ac-2ed4fe101f4d",
+    "platform": "linux|macos|windows",
+    "tid": "T1055",
+    "technique": "Process Injection",
+    "tactic": "privilege-escalation",
+    "datasources": "file-metadata|file-modification|module-load|os-api-execution|process-access|process-metadata|process-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1055.001",
+      "T1055.002",
+      "T1055.003",
+      "T1055.004",
+      "T1055.005",
+      "T1055.008",
+      "T1055.009",
+      "T1055.011",
+      "T1055.012",
+      "T1055.013",
+      "T1055.014",
+      "T1055.015"
+    ],
+    "count_subtechniques": 12,
+    "correlation_adversary": "metador",
+    "correlation_malware": "metamain",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may inject code into processes in order to evade process-based defenses as well as possibly elevate privileges. Process injection is a method of executing arbitrary code in the address space of a separate live process. Running code in the context of another process may allow access to the process's memory, system/network resources, and possibly elevated privileges. Execution via process injection may also evade detection from security products since the execution is masked under a legitimate process. \n\nThere are many different ways to inject code into a process, many of which abuse legitimate functionalities. These implementations exist for every major OS but are typically platform specific. \n\nMore sophisticated samples may perform multiple process injections to segment modules and further evade detection, utilizing named pipes or other inter-process communication (IPC) mechanisms as a communication channel. ",
+    "technique_references": [
+      {
+        "source_name": "GNU Acct",
+        "url": "https://www.gnu.org/software/acct/",
+        "description": "GNU. (2010, February 5). The GNU Accounting Utilities. Retrieved December 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Elastic Process Injection July 2017",
+        "url": "https://www.endgame.com/blog/technical-blog/ten-process-injection-techniques-technical-survey-common-and-trending-process",
+        "description": "Hosseini, A. (2017, July 18). Ten Process Injection Techniques: A Technical Survey Of Common And Trending Process Injection Techniques. Retrieved December 7, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "RHEL auditd",
+        "url": "https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/security_guide/chap-system_auditing",
+        "description": "Jahoda, M. et al.. (2017, March 14). redhat Security Guide - Chapter 7 - System Auditing. Retrieved December 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ArtOfMemoryForensics",
+        "url": "none",
+        "description": "Ligh, M.H. et al.. (2014, July). The Art of Memory Forensics: Detecting Malware and Threats in Windows, Linux, and Mac Memory. Retrieved December 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Sysmon v6 May 2017",
+        "url": "https://docs.microsoft.com/sysinternals/downloads/sysmon",
+        "description": "Russinovich, M. & Garnier, T. (2017, May 22). Sysmon v6.20. Retrieved December 13, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Chokepoint preload rootkits",
+        "url": "http://www.chokepoint.net/2014/02/detecting-userland-preload-rootkits.html",
+        "description": "stderr. (2014, February 14). Detecting Userland Preload Rootkits. Retrieved December 20, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--09a60ea3-a8d1-4ae5-976e-5783248b72a4",
+    "platform": "windows|macos|linux|network",
+    "tid": "T1056.001",
+    "technique": "Keylogging",
+    "tactic": "collection",
+    "datasources": "driver-load|os-api-execution|windows-registry-key-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "metamain",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may log user keystrokes to intercept credentials as the user types them. Keylogging is likely to be used to acquire credentials for new access opportunities when [OS Credential Dumping](https://attack.mitre.org/techniques/T1003) efforts are not effective, and may require an adversary to intercept keystrokes on a system for a substantial period of time before credentials can be successfully captured.\n\nKeylogging is the most prevalent type of input capture, with many different ways of intercepting keystrokes.(Citation: Adventures of a Keystroke) Some methods include:\n\n* Hooking API callbacks used for processing keystrokes. Unlike [Credential API Hooking](https://attack.mitre.org/techniques/T1056/004), this focuses solely on API functions intended for processing keystroke data.\n* Reading raw keystroke data from the hardware buffer.\n* Windows Registry modifications.\n* Custom drivers.\n* [Modify System Image](https://attack.mitre.org/techniques/T1601) may provide adversaries with hooks into the operating system of network devices to read raw keystrokes for login sessions.(Citation: Cisco Blog Legacy Device Attacks) ",
+    "technique_references": [
+      {
+        "source_name": "Adventures of a Keystroke",
+        "url": "http://opensecuritytraining.info/Keylogging_files/The%20Adventures%20of%20a%20Keystroke.pdf",
+        "description": "Tinaztepe,  E. (n.d.). The Adventures of a Keystroke:  An in-depth look into keyloggers on Windows. Retrieved April 27, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco Blog Legacy Device Attacks",
+        "url": "https://community.cisco.com/t5/security-blogs/attackers-continue-to-target-legacy-devices/ba-p/4169954",
+        "description": "Omar Santos. (2020, October 19). Attackers Continue to Target Legacy Devices. Retrieved October 20, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|root|system|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--09a60ea3-a8d1-4ae5-976e-5783248b72a4",
+    "platform": "windows|macos|linux|network",
+    "tid": "T1056.001",
+    "technique": "Keylogging",
+    "tactic": "credential-access",
+    "datasources": "driver-load|os-api-execution|windows-registry-key-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "metamain",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may log user keystrokes to intercept credentials as the user types them. Keylogging is likely to be used to acquire credentials for new access opportunities when [OS Credential Dumping](https://attack.mitre.org/techniques/T1003) efforts are not effective, and may require an adversary to intercept keystrokes on a system for a substantial period of time before credentials can be successfully captured.\n\nKeylogging is the most prevalent type of input capture, with many different ways of intercepting keystrokes.(Citation: Adventures of a Keystroke) Some methods include:\n\n* Hooking API callbacks used for processing keystrokes. Unlike [Credential API Hooking](https://attack.mitre.org/techniques/T1056/004), this focuses solely on API functions intended for processing keystroke data.\n* Reading raw keystroke data from the hardware buffer.\n* Windows Registry modifications.\n* Custom drivers.\n* [Modify System Image](https://attack.mitre.org/techniques/T1601) may provide adversaries with hooks into the operating system of network devices to read raw keystrokes for login sessions.(Citation: Cisco Blog Legacy Device Attacks) ",
+    "technique_references": [
+      {
+        "source_name": "Adventures of a Keystroke",
+        "url": "http://opensecuritytraining.info/Keylogging_files/The%20Adventures%20of%20a%20Keystroke.pdf",
+        "description": "Tinaztepe,  E. (n.d.). The Adventures of a Keystroke:  An in-depth look into keyloggers on Windows. Retrieved April 27, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco Blog Legacy Device Attacks",
+        "url": "https://community.cisco.com/t5/security-blogs/attackers-continue-to-target-legacy-devices/ba-p/4169954",
+        "description": "Omar Santos. (2020, October 19). Attackers Continue to Target Legacy Devices. Retrieved October 20, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|root|system|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--970a3432-3237-47ad-bcca-7d8cbb217736",
+    "platform": "windows",
+    "tid": "T1059.001",
+    "technique": "PowerShell",
+    "tactic": "execution",
+    "datasources": "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "mafalda",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may abuse PowerShell commands and scripts for execution. PowerShell is a powerful interactive command-line interface and scripting environment included in the Windows operating system.(Citation: TechNet PowerShell) Adversaries can use PowerShell to perform a number of actions, including discovery of information and execution of code. Examples include the <code>Start-Process</code> cmdlet which can be used to run an executable and the <code>Invoke-Command</code> cmdlet which runs a command locally or on a remote computer (though administrator permissions are required to use PowerShell to connect to remote systems).\n\nPowerShell may also be used to download and run executables from the Internet, which can be executed from disk or in memory without touching disk.\n\nA number of PowerShell-based offensive testing tools are available, including [Empire](https://attack.mitre.org/software/S0363),  [PowerSploit](https://attack.mitre.org/software/S0194), [PoshC2](https://attack.mitre.org/software/S0378), and PSAttack.(Citation: Github PSAttack)\n\nPowerShell commands/scripts can also be executed without directly invoking the <code>powershell.exe</code> binary through interfaces to PowerShell's underlying <code>System.Management.Automation</code> assembly DLL exposed through the .NET framework and Windows Common Language Interface (CLI).(Citation: Sixdub PowerPick Jan 2016)(Citation: SilentBreak Offensive PS Dec 2015)(Citation: Microsoft PSfromCsharp APR 2014)",
+    "technique_references": [
+      {
+        "source_name": "Microsoft PSfromCsharp APR 2014",
+        "url": "https://blogs.msdn.microsoft.com/kebab/2014/04/28/executing-powershell-scripts-from-c/",
+        "description": "Babinec, K. (2014, April 28). Executing PowerShell scripts from C#. Retrieved April 22, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SilentBreak Offensive PS Dec 2015",
+        "url": "https://web.archive.org/web/20190508170150/https://silentbreaksecurity.com/powershell-jobs-without-powershell-exe/",
+        "description": "Christensen, L.. (2015, December 28). The Evolution of Offensive PowerShell Invocation. Retrieved December 8, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye PowerShell Logging 2016",
+        "url": "https://www.fireeye.com/blog/threat-research/2016/02/greater_visibilityt.html",
+        "description": "Dunwoody, M. (2016, February 11). GREATER VISIBILITY THROUGH POWERSHELL LOGGING. Retrieved February 16, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Github PSAttack",
+        "url": "https://github.com/jaredhaight/PSAttack",
+        "description": "Haight, J. (2016, April 21). PS>Attack. Retrieved June 1, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "inv_ps_attacks",
+        "url": "https://powershellmagazine.com/2014/07/16/investigating-powershell-attacks/",
+        "description": "Hastings, M. (2014, July 16). Investigating PowerShell Attacks. Retrieved December 1, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Malware Archaeology PowerShell Cheat Sheet",
+        "url": "http://www.malwarearchaeology.com/s/Windows-PowerShell-Logging-Cheat-Sheet-ver-June-2016-v2.pdf",
+        "description": "Malware Archaeology. (2016, June). WINDOWS POWERSHELL LOGGING CHEAT SHEET - Win 7/Win 2008 or later. Retrieved June 24, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet PowerShell",
+        "url": "https://technet.microsoft.com/en-us/scriptcenter/dd742419.aspx",
+        "description": "Microsoft. (n.d.). Windows PowerShell Scripting. Retrieved April 28, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sixdub PowerPick Jan 2016",
+        "url": "https://web.archive.org/web/20160327101330/http://www.sixdub.net/?p=367",
+        "description": "Warner, J.. (2015, January 6). Inexorable PowerShell – A Red Teamer’s Tale of Overcoming Simple AppLocker Policies. Retrieved December 8, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d1fcf083-a721-4223-aedf-bf8960798d62",
+    "platform": "windows",
+    "tid": "T1059.003",
+    "technique": "Windows Command Shell",
+    "tactic": "execution",
+    "datasources": "command-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "mafalda",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may abuse the Windows command shell for execution. The Windows command shell ([cmd](https://attack.mitre.org/software/S0106)) is the primary command prompt on Windows systems. The Windows command prompt can be used to control almost any aspect of a system, with various permission levels required for different subsets of commands. The command prompt can be invoked remotely via [Remote Services](https://attack.mitre.org/techniques/T1021) such as [SSH](https://attack.mitre.org/techniques/T1021/004).(Citation: SSH in Windows)\n\nBatch files (ex: .bat or .cmd) also provide the shell with a list of sequential commands to run, as well as normal scripting operations such as conditionals and loops. Common uses of batch files include long or repetitive tasks, or the need to run the same set of commands on multiple systems.\n\nAdversaries may leverage [cmd](https://attack.mitre.org/software/S0106) to execute various commands and payloads. Common uses include [cmd](https://attack.mitre.org/software/S0106) to execute a single command, or abusing [cmd](https://attack.mitre.org/software/S0106) interactively with input and output forwarded over a command and control channel.",
+    "technique_references": [
+      {
+        "source_name": "SSH in Windows",
+        "url": "https://docs.microsoft.com/en-us/windows/terminal/tutorials/ssh",
+        "description": "Microsoft. (2020, May 19). Tutorial: SSH in Windows Terminal. Retrieved July 26, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--6495ae23-3ab4-43c5-a94f-5638a2c31fd2",
+    "platform": "windows",
+    "tid": "T1070.001",
+    "technique": "Clear Windows Event Logs",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|file-deletion|os-api-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "mafalda",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may clear Windows Event Logs to hide the activity of an intrusion. Windows Event Logs are a record of a computer's alerts and notifications. There are three system-defined sources of events: System, Application, and Security, with five event types: Error, Warning, Information, Success Audit, and Failure Audit.\n\nThe event logs can be cleared with the following utility commands:\n\n* <code>wevtutil cl system</code>\n* <code>wevtutil cl application</code>\n* <code>wevtutil cl security</code>\n\nThese logs may also be cleared through other mechanisms, such as the event viewer GUI or [PowerShell](https://attack.mitre.org/techniques/T1059/001). For example, adversaries may use the PowerShell command <code>Remove-EventLog -LogName Security</code> to delete the Security EventLog and after reboot, disable future logging. Note: events may still be generated and logged in the .evtx file between the time the command is run and the reboot.(Citation: disable_win_evt_logging)",
+    "technique_references": [
+      {
+        "source_name": "disable_win_evt_logging",
+        "url": "https://ptylu.github.io/content/report/report.html?report=25",
+        "description": "Heiligenstein, L. (n.d.). REP-25: Disable Windows Event Logging. Retrieved April 7, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Clear-EventLog",
+        "url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-eventlog",
+        "description": "Microsoft. (n.d.). Clear-EventLog. Retrieved July 2, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft EventLog.Clear",
+        "url": "https://msdn.microsoft.com/library/system.diagnostics.eventlog.clear.aspx",
+        "description": "Microsoft. (n.d.). EventLog.Clear Method (). Retrieved July 2, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft wevtutil Oct 2017",
+        "url": "https://docs.microsoft.com/windows-server/administration/windows-commands/wevtutil",
+        "description": "Plett, C. et al.. (2017, October 16). wevtutil. Retrieved July 2, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d63a3fb8-9452-4e9d-a60a-54be68d5998c",
+    "platform": "linux|macos|windows",
+    "tid": "T1070.004",
+    "technique": "File Deletion",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|file-deletion",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "metamain",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may delete files left behind by the actions of their intrusion activity. Malware, tools, or other non-native files dropped or created on a system by an adversary (ex: [Ingress Tool Transfer](https://attack.mitre.org/techniques/T1105)) may leave traces to indicate to what was done within a network and how. Removal of these files can occur during an intrusion, or as part of a post-intrusion process to minimize the adversary's footprint.\n\nThere are tools available from the host operating system to perform cleanup, but adversaries may use other tools as well.(Citation: Microsoft SDelete July 2016) Examples of built-in [Command and Scripting Interpreter](https://attack.mitre.org/techniques/T1059) functions include <code>del</code> on Windows and <code>rm</code> or <code>unlink</code> on Linux and macOS.",
+    "technique_references": [
+      {
+        "source_name": "Microsoft SDelete July 2016",
+        "url": "https://docs.microsoft.com/en-us/sysinternals/downloads/sdelete",
+        "description": "Russinovich, M. (2016, July 4). SDelete v2.0. Retrieved February 8, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--47f2d673-ca62-47e9-929b-1b0be9657611",
+    "platform": "linux|macos|windows",
+    "tid": "T1070.006",
+    "technique": "Timestomp",
+    "tactic": "defense-evasion",
+    "datasources": "file-metadata|file-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "metamain",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may modify file time attributes to hide new or changes to existing files. Timestomping is a technique that modifies the timestamps of a file (the modify, access, create, and change times), often to mimic files that are in the same folder. This is done, for example, on files that have been modified or created by the adversary so that they do not appear conspicuous to forensic investigators or file analysis tools.\n\nTimestomping may be used along with file name [Masquerading](https://attack.mitre.org/techniques/T1036) to hide malware and tools.(Citation: WindowsIR Anti-Forensic Techniques)",
+    "technique_references": [
+      {
+        "source_name": "WindowsIR Anti-Forensic Techniques",
+        "url": "http://windowsir.blogspot.com/2013/07/howto-determinedetect-use-of-anti.html",
+        "description": "Carvey, H. (2013, July 23). HowTo: Determine/Detect the use of Anti-Forensics Techniques. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "root|system|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--04fd5427-79c7-44ea-ae13-11b24778ff1c",
+    "platform": "linux|macos|windows",
+    "tid": "T1132.001",
+    "technique": "Standard Encoding",
+    "tactic": "command-and-control",
+    "datasources": "network-traffic-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "mafalda",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may encode data with a standard data encoding system to make the content of command and control traffic more difficult to detect. Command and control (C2) information can be encoded using a standard data encoding system that adheres to existing protocol specifications. Common data encoding schemes include ASCII, Unicode, hexadecimal, Base64, and MIME.(Citation: Wikipedia Binary-to-text Encoding)(Citation: Wikipedia Character Encoding) Some data encoding systems may also result in data compression, such as gzip.",
+    "technique_references": [
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia Binary-to-text Encoding",
+        "url": "https://en.wikipedia.org/wiki/Binary-to-text_encoding",
+        "description": "Wikipedia. (2016, December 26). Binary-to-text encoding. Retrieved March 1, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia Character Encoding",
+        "url": "https://en.wikipedia.org/wiki/Character_encoding",
+        "description": "Wikipedia. (2017, February 19). Character Encoding. Retrieved March 1, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--10d51417-ee35-4589-b1ff-b6df1c334e8d",
+    "platform": "windows|linux|containers|macos",
+    "tid": "T1133",
+    "technique": "External Remote Services",
+    "tactic": "initial-access",
+    "datasources": "application-log-content|logon-session-metadata|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "mafalda",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may leverage external-facing remote services to initially access and/or persist within a network. Remote services such as VPNs, Citrix, and other access mechanisms allow users to connect to internal enterprise network resources from external locations. There are often remote service gateways that manage connections and credential authentication for these services. Services such as [Windows Remote Management](https://attack.mitre.org/techniques/T1021/006) and [VNC](https://attack.mitre.org/techniques/T1021/005) can also be used externally.(Citation: MacOS VNC software for Remote Desktop)\n\nAccess to [Valid Accounts](https://attack.mitre.org/techniques/T1078) to use the service is often a requirement, which could be obtained through credential pharming or by obtaining the credentials from users after compromising the enterprise network.(Citation: Volexity Virtual Private Keylogging) Access to remote services may be used as a redundant or persistent access mechanism during an operation.\n\nAccess may also be gained through an exposed service that doesn’t require authentication. In containerized environments, this may include an exposed Docker API, Kubernetes API server, kubelet, or web application such as the Kubernetes dashboard.(Citation: Trend Micro Exposed Docker Server)(Citation: Unit 42 Hildegard Malware)",
+    "technique_references": [
+      {
+        "source_name": "Volexity Virtual Private Keylogging",
+        "url": "https://www.volexity.com/blog/2015/10/07/virtual-private-keylogging-cisco-web-vpns-leveraged-for-access-and-persistence/",
+        "description": "Adair, S. (2015, October 7). Virtual Private Keylogging: Cisco Web VPNs Leveraged for Access and Persistence. Retrieved March 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MacOS VNC software for Remote Desktop",
+        "url": "https://support.apple.com/guide/remote-desktop/set-up-a-computer-running-vnc-software-apdbed09830/mac",
+        "description": "Apple Support. (n.d.). Set up a computer running VNC software for Remote Desktop. Retrieved August 18, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Unit 42 Hildegard Malware",
+        "url": "https://unit42.paloaltonetworks.com/hildegard-malware-teamtnt/",
+        "description": "Chen, J. et al. (2021, February 3). Hildegard: New TeamTNT Cryptojacking Malware Targeting Kubernetes. Retrieved April 5, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Trend Micro Exposed Docker Server",
+        "url": "https://www.trendmicro.com/en_us/research/20/f/xorddos-kaiji-botnet-malware-variants-target-exposed-docker-servers.html",
+        "description": "Remillano II, A., et al. (2020, June 20). XORDDoS, Kaiji Variants Target Exposed Docker Servers. Retrieved April 5, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--10d51417-ee35-4589-b1ff-b6df1c334e8d",
+    "platform": "windows|linux|containers|macos",
+    "tid": "T1133",
+    "technique": "External Remote Services",
+    "tactic": "persistence",
+    "datasources": "application-log-content|logon-session-metadata|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "mafalda",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may leverage external-facing remote services to initially access and/or persist within a network. Remote services such as VPNs, Citrix, and other access mechanisms allow users to connect to internal enterprise network resources from external locations. There are often remote service gateways that manage connections and credential authentication for these services. Services such as [Windows Remote Management](https://attack.mitre.org/techniques/T1021/006) and [VNC](https://attack.mitre.org/techniques/T1021/005) can also be used externally.(Citation: MacOS VNC software for Remote Desktop)\n\nAccess to [Valid Accounts](https://attack.mitre.org/techniques/T1078) to use the service is often a requirement, which could be obtained through credential pharming or by obtaining the credentials from users after compromising the enterprise network.(Citation: Volexity Virtual Private Keylogging) Access to remote services may be used as a redundant or persistent access mechanism during an operation.\n\nAccess may also be gained through an exposed service that doesn’t require authentication. In containerized environments, this may include an exposed Docker API, Kubernetes API server, kubelet, or web application such as the Kubernetes dashboard.(Citation: Trend Micro Exposed Docker Server)(Citation: Unit 42 Hildegard Malware)",
+    "technique_references": [
+      {
+        "source_name": "Volexity Virtual Private Keylogging",
+        "url": "https://www.volexity.com/blog/2015/10/07/virtual-private-keylogging-cisco-web-vpns-leveraged-for-access-and-persistence/",
+        "description": "Adair, S. (2015, October 7). Virtual Private Keylogging: Cisco Web VPNs Leveraged for Access and Persistence. Retrieved March 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MacOS VNC software for Remote Desktop",
+        "url": "https://support.apple.com/guide/remote-desktop/set-up-a-computer-running-vnc-software-apdbed09830/mac",
+        "description": "Apple Support. (n.d.). Set up a computer running VNC software for Remote Desktop. Retrieved August 18, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Unit 42 Hildegard Malware",
+        "url": "https://unit42.paloaltonetworks.com/hildegard-malware-teamtnt/",
+        "description": "Chen, J. et al. (2021, February 3). Hildegard: New TeamTNT Cryptojacking Malware Targeting Kubernetes. Retrieved April 5, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Trend Micro Exposed Docker Server",
+        "url": "https://www.trendmicro.com/en_us/research/20/f/xorddos-kaiji-botnet-malware-variants-target-exposed-docker-servers.html",
+        "description": "Remillano II, A., et al. (2020, June 20). XORDDoS, Kaiji Variants Target Exposed Docker Servers. Retrieved April 5, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--dcaa092b-7de9-4a21-977f-7fcb77e89c48",
+    "platform": "windows",
+    "tid": "T1134",
+    "technique": "Access Token Manipulation",
+    "tactic": "defense-evasion",
+    "datasources": "active-directory-object-modification|command-execution|os-api-execution|process-creation|process-metadata|user-account-metadata",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1134.001",
+      "T1134.002",
+      "T1134.003",
+      "T1134.004",
+      "T1134.005"
+    ],
+    "count_subtechniques": 5,
+    "correlation_adversary": "metador",
+    "correlation_malware": "mafalda",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may modify access tokens to operate under a different user or system security context to perform actions and bypass access controls. Windows uses access tokens to determine the ownership of a running process. A user can manipulate access tokens to make a running process appear as though it is the child of a different process or belongs to someone other than the user that started the process. When this occurs, the process also takes on the security context associated with the new token.\n\nAn adversary can use built-in Windows API functions to copy access tokens from existing processes; this is known as token stealing. These token can then be applied to an existing process (i.e. [Token Impersonation/Theft](https://attack.mitre.org/techniques/T1134/001)) or used to spawn a new process (i.e. [Create Process with Token](https://attack.mitre.org/techniques/T1134/002)). An adversary must already be in a privileged user context (i.e. administrator) to steal a token. However, adversaries commonly use token stealing to elevate their security context from the administrator level to the SYSTEM level. An adversary can then use a token to authenticate to a remote system as the account for that token if the account has appropriate permissions on the remote system.(Citation: Pentestlab Token Manipulation)\n\nAny standard user can use the <code>runas</code> command, and the Windows API functions, to create impersonation tokens; it does not require access to an administrator account. There are also other mechanisms, such as Active Directory fields, that can be used to modify access tokens.",
+    "technique_references": [
+      {
+        "source_name": "BlackHat Atkinson Winchester Token Manipulation",
+        "url": "https://www.blackhat.com/docs/eu-17/materials/eu-17-Atkinson-A-Process-Is-No-One-Hunting-For-Token-Manipulation.pdf",
+        "description": "Atkinson, J., Winchester, R. (2017, December 7). A Process is No One: Hunting for Token Manipulation. Retrieved December 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Command-line Logging",
+        "url": "https://technet.microsoft.com/en-us/windows-server-docs/identity/ad-ds/manage/component-updates/command-line-process-auditing",
+        "description": "Mathers, B. (2017, March 7). Command line process auditing. Retrieved April 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft LogonUser",
+        "url": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa378184(v=vs.85).aspx",
+        "description": "Microsoft TechNet. (n.d.). Retrieved April 25, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft DuplicateTokenEx",
+        "url": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa446617(v=vs.85).aspx",
+        "description": "Microsoft TechNet. (n.d.). Retrieved April 25, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft ImpersonateLoggedOnUser",
+        "url": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa378612(v=vs.85).aspx",
+        "description": "Microsoft TechNet. (n.d.). Retrieved April 25, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Pentestlab Token Manipulation",
+        "url": "https://pentestlab.blog/2017/04/03/token-manipulation/",
+        "description": "netbiosX. (2017, April 3). Token Manipulation. Retrieved April 21, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "system",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--dcaa092b-7de9-4a21-977f-7fcb77e89c48",
+    "platform": "windows",
+    "tid": "T1134",
+    "technique": "Access Token Manipulation",
+    "tactic": "privilege-escalation",
+    "datasources": "active-directory-object-modification|command-execution|os-api-execution|process-creation|process-metadata|user-account-metadata",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1134.001",
+      "T1134.002",
+      "T1134.003",
+      "T1134.004",
+      "T1134.005"
+    ],
+    "count_subtechniques": 5,
+    "correlation_adversary": "metador",
+    "correlation_malware": "mafalda",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may modify access tokens to operate under a different user or system security context to perform actions and bypass access controls. Windows uses access tokens to determine the ownership of a running process. A user can manipulate access tokens to make a running process appear as though it is the child of a different process or belongs to someone other than the user that started the process. When this occurs, the process also takes on the security context associated with the new token.\n\nAn adversary can use built-in Windows API functions to copy access tokens from existing processes; this is known as token stealing. These token can then be applied to an existing process (i.e. [Token Impersonation/Theft](https://attack.mitre.org/techniques/T1134/001)) or used to spawn a new process (i.e. [Create Process with Token](https://attack.mitre.org/techniques/T1134/002)). An adversary must already be in a privileged user context (i.e. administrator) to steal a token. However, adversaries commonly use token stealing to elevate their security context from the administrator level to the SYSTEM level. An adversary can then use a token to authenticate to a remote system as the account for that token if the account has appropriate permissions on the remote system.(Citation: Pentestlab Token Manipulation)\n\nAny standard user can use the <code>runas</code> command, and the Windows API functions, to create impersonation tokens; it does not require access to an administrator account. There are also other mechanisms, such as Active Directory fields, that can be used to modify access tokens.",
+    "technique_references": [
+      {
+        "source_name": "BlackHat Atkinson Winchester Token Manipulation",
+        "url": "https://www.blackhat.com/docs/eu-17/materials/eu-17-Atkinson-A-Process-Is-No-One-Hunting-For-Token-Manipulation.pdf",
+        "description": "Atkinson, J., Winchester, R. (2017, December 7). A Process is No One: Hunting for Token Manipulation. Retrieved December 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Command-line Logging",
+        "url": "https://technet.microsoft.com/en-us/windows-server-docs/identity/ad-ds/manage/component-updates/command-line-process-auditing",
+        "description": "Mathers, B. (2017, March 7). Command line process auditing. Retrieved April 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft LogonUser",
+        "url": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa378184(v=vs.85).aspx",
+        "description": "Microsoft TechNet. (n.d.). Retrieved April 25, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft DuplicateTokenEx",
+        "url": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa446617(v=vs.85).aspx",
+        "description": "Microsoft TechNet. (n.d.). Retrieved April 25, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft ImpersonateLoggedOnUser",
+        "url": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa378612(v=vs.85).aspx",
+        "description": "Microsoft TechNet. (n.d.). Retrieved April 25, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Pentestlab Token Manipulation",
+        "url": "https://pentestlab.blog/2017/04/03/token-manipulation/",
+        "description": "netbiosX. (2017, April 3). Token Manipulation. Retrieved April 21, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "system",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--8cdeb020-e31e-4f88-a582-f53dcfbda819",
+    "platform": "windows",
+    "tid": "T1134.003",
+    "technique": "Make and Impersonate Token",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|os-api-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "mafalda",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may make new tokens and impersonate users to escalate privileges and bypass access controls. For example, if an adversary has a username and password but the user is not logged onto the system the adversary can then create a logon session for the user using the `LogonUser` function. The function will return a copy of the new session's access token and the adversary can use `SetThreadToken` to assign the token to a thread.\n\nThis behavior is distinct from [Token Impersonation/Theft](https://attack.mitre.org/techniques/T1134/001) in that this refers to creating a new user token instead of stealing or duplicating an existing one.",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Command-line Logging",
+        "url": "https://technet.microsoft.com/en-us/windows-server-docs/identity/ad-ds/manage/component-updates/command-line-process-auditing",
+        "description": "Mathers, B. (2017, March 7). Command line process auditing. Retrieved April 21, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "system",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--8cdeb020-e31e-4f88-a582-f53dcfbda819",
+    "platform": "windows",
+    "tid": "T1134.003",
+    "technique": "Make and Impersonate Token",
+    "tactic": "privilege-escalation",
+    "datasources": "command-execution|os-api-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "mafalda",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may make new tokens and impersonate users to escalate privileges and bypass access controls. For example, if an adversary has a username and password but the user is not logged onto the system the adversary can then create a logon session for the user using the `LogonUser` function. The function will return a copy of the new session's access token and the adversary can use `SetThreadToken` to assign the token to a thread.\n\nThis behavior is distinct from [Token Impersonation/Theft](https://attack.mitre.org/techniques/T1134/001) in that this refers to creating a new user token instead of stealing or duplicating an existing one.",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Command-line Logging",
+        "url": "https://technet.microsoft.com/en-us/windows-server-docs/identity/ad-ds/manage/component-updates/command-line-process-auditing",
+        "description": "Mathers, B. (2017, March 7). Command line process auditing. Retrieved April 21, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "system",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--5e4a2073-9643-44cb-a0b5-e7f4048446c7",
+    "platform": "linux|windows|macos",
+    "tid": "T1217",
+    "technique": "Browser Information Discovery",
+    "tactic": "discovery",
+    "datasources": "command-execution|file-access|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "mafalda",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may enumerate information about browsers to learn more about compromised environments. Data saved by browsers (such as bookmarks, accounts, and browsing history) may reveal a variety of personal information about users (e.g., banking sites, relationships/interests, social media, etc.) as well as details about internal network resources such as servers, tools/dashboards, or other related infrastructure.(Citation: Kaspersky Autofill)\n\nBrowser information may also highlight additional targets after an adversary has access to valid credentials, especially [Credentials In Files](https://attack.mitre.org/techniques/T1552/001) associated with logins cached by a browser.\n\nSpecific storage locations vary based on platform and/or application, but browser information is typically stored in local files and databases (e.g., `%APPDATA%/Google/Chrome`).(Citation: Chrome Roaming Profiles)",
+    "technique_references": [
+      {
+        "source_name": "Chrome Roaming Profiles",
+        "url": "https://support.google.com/chrome/a/answer/7349337",
+        "description": "Chrome Enterprise and Education Help. (n.d.). Use Chrome Browser with Roaming User Profiles. Retrieved March 28, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kaspersky Autofill",
+        "url": "https://www.kaspersky.com/blog/browser-data-theft/27871/",
+        "description": "Golubev, S. (n.d.). How malware steals autofill data from browsers. Retrieved March 28, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--4bed873f-0b7d-41d4-b93a-b6905d1f90b0",
+    "platform": "linux|macos|windows",
+    "tid": "T1497.003",
+    "technique": "Time Based Evasion",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "metamain",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may employ various time-based methods to detect and avoid virtualization and analysis environments. This may include enumerating time-based properties, such as uptime or the system clock, as well as the use of timers or other triggers to avoid a virtual machine environment (VME) or sandbox, specifically those that are automated or only operate for a limited amount of time.\n\nAdversaries may employ various time-based evasions, such as delaying malware functionality upon initial execution using programmatic sleep commands or native system scheduling functionality (ex: [Scheduled Task/Job](https://attack.mitre.org/techniques/T1053)). Delays may also be based on waiting for specific victim conditions to be met (ex: system time, events, etc.) or employ scheduled [Multi-Stage Channels](https://attack.mitre.org/techniques/T1104) to avoid analysis and scrutiny.(Citation: Deloitte Environment Awareness)\n\nBenign commands or other operations may also be used to delay malware execution. Loops or otherwise needless repetitions of commands, such as [Ping](https://attack.mitre.org/software/S0097)s, may be used to delay malware execution and potentially exceed time thresholds of automated analysis environments.(Citation: Revil Independence Day)(Citation: Netskope Nitol) Another variation, commonly referred to as API hammering, involves making various calls to [Native API](https://attack.mitre.org/techniques/T1106) functions in order to delay execution (while also potentially overloading analysis environments with junk data).(Citation: Joe Sec Nymaim)(Citation: Joe Sec Trickbot)\n\nAdversaries may also use time as a metric to detect sandboxes and analysis environments, particularly those that attempt to manipulate time mechanisms to simulate longer elapses of time. For example, an adversary may be able to identify a sandbox accelerating time by sampling and calculating the expected value for an environment's timestamp before and after execution of a sleep function.(Citation: ISACA Malware Tricks)",
+    "technique_references": [
+      {
+        "source_name": "Deloitte Environment Awareness",
+        "url": "https://drive.google.com/file/d/1t0jn3xr4ff2fR30oQAUn_RsWSnMpOAQc",
+        "description": "Torello, A. & Guibernau, F. (n.d.). Environment Awareness. Retrieved May 18, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Revil Independence Day",
+        "url": "https://news.sophos.com/en-us/2021/07/04/independence-day-revil-uses-supply-chain-exploit-to-attack-hundreds-of-businesses/",
+        "description": "Loman, M. et al. (2021, July 4). Independence Day: REvil uses supply chain exploit to attack hundreds of businesses. Retrieved September 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Netskope Nitol",
+        "url": "https://www.netskope.com/blog/nitol-botnet-makes-resurgence-evasive-sandbox-analysis-technique",
+        "description": "Malik, A. (2016, October 14). Nitol Botnet makes a resurgence with evasive sandbox analysis technique. Retrieved September 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Joe Sec Nymaim",
+        "url": "https://www.joesecurity.org/blog/3660886847485093803",
+        "description": "Joe Security. (2016, April 21). Nymaim - evading Sandboxes with API hammering. Retrieved September 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Joe Sec Trickbot",
+        "url": "https://www.joesecurity.org/blog/498839998833561473",
+        "description": "Joe Security. (2020, July 13). TrickBot's new API-Hammering explained. Retrieved September 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ISACA Malware Tricks",
+        "url": "https://www.isaca.org/resources/isaca-journal/issues/2017/volume-6/evasive-malware-tricks-how-malware-evades-detection-by-sandboxes",
+        "description": "Kolbitsch, C. (2017, November 1). Evasive Malware Tricks: How Malware Evades Detection by Sandboxes. Retrieved March 30, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--4bed873f-0b7d-41d4-b93a-b6905d1f90b0",
+    "platform": "linux|macos|windows",
+    "tid": "T1497.003",
+    "technique": "Time Based Evasion",
+    "tactic": "discovery",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "metamain",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may employ various time-based methods to detect and avoid virtualization and analysis environments. This may include enumerating time-based properties, such as uptime or the system clock, as well as the use of timers or other triggers to avoid a virtual machine environment (VME) or sandbox, specifically those that are automated or only operate for a limited amount of time.\n\nAdversaries may employ various time-based evasions, such as delaying malware functionality upon initial execution using programmatic sleep commands or native system scheduling functionality (ex: [Scheduled Task/Job](https://attack.mitre.org/techniques/T1053)). Delays may also be based on waiting for specific victim conditions to be met (ex: system time, events, etc.) or employ scheduled [Multi-Stage Channels](https://attack.mitre.org/techniques/T1104) to avoid analysis and scrutiny.(Citation: Deloitte Environment Awareness)\n\nBenign commands or other operations may also be used to delay malware execution. Loops or otherwise needless repetitions of commands, such as [Ping](https://attack.mitre.org/software/S0097)s, may be used to delay malware execution and potentially exceed time thresholds of automated analysis environments.(Citation: Revil Independence Day)(Citation: Netskope Nitol) Another variation, commonly referred to as API hammering, involves making various calls to [Native API](https://attack.mitre.org/techniques/T1106) functions in order to delay execution (while also potentially overloading analysis environments with junk data).(Citation: Joe Sec Nymaim)(Citation: Joe Sec Trickbot)\n\nAdversaries may also use time as a metric to detect sandboxes and analysis environments, particularly those that attempt to manipulate time mechanisms to simulate longer elapses of time. For example, an adversary may be able to identify a sandbox accelerating time by sampling and calculating the expected value for an environment's timestamp before and after execution of a sleep function.(Citation: ISACA Malware Tricks)",
+    "technique_references": [
+      {
+        "source_name": "Deloitte Environment Awareness",
+        "url": "https://drive.google.com/file/d/1t0jn3xr4ff2fR30oQAUn_RsWSnMpOAQc",
+        "description": "Torello, A. & Guibernau, F. (n.d.). Environment Awareness. Retrieved May 18, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Revil Independence Day",
+        "url": "https://news.sophos.com/en-us/2021/07/04/independence-day-revil-uses-supply-chain-exploit-to-attack-hundreds-of-businesses/",
+        "description": "Loman, M. et al. (2021, July 4). Independence Day: REvil uses supply chain exploit to attack hundreds of businesses. Retrieved September 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Netskope Nitol",
+        "url": "https://www.netskope.com/blog/nitol-botnet-makes-resurgence-evasive-sandbox-analysis-technique",
+        "description": "Malik, A. (2016, October 14). Nitol Botnet makes a resurgence with evasive sandbox analysis technique. Retrieved September 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Joe Sec Nymaim",
+        "url": "https://www.joesecurity.org/blog/3660886847485093803",
+        "description": "Joe Security. (2016, April 21). Nymaim - evading Sandboxes with API hammering. Retrieved September 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Joe Sec Trickbot",
+        "url": "https://www.joesecurity.org/blog/498839998833561473",
+        "description": "Joe Security. (2020, July 13). TrickBot's new API-Hammering explained. Retrieved September 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ISACA Malware Tricks",
+        "url": "https://www.isaca.org/resources/isaca-journal/issues/2017/volume-6/evasive-malware-tricks-how-malware-evades-detection-by-sandboxes",
+        "description": "Kolbitsch, C. (2017, November 1). Evasive Malware Tricks: How Malware Evades Detection by Sandboxes. Retrieved March 30, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--cba37adb-d6fb-4610-b069-dd04c0643384",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace",
+    "tid": "T1518.001",
+    "technique": "Security Software Discovery",
+    "tactic": "discovery",
+    "datasources": "command-execution|firewall-enumeration|firewall-metadata|os-api-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "mafalda",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may attempt to get a listing of security software, configurations, defensive tools, and sensors that are installed on a system or in a cloud environment. This may include things such as firewall rules and anti-virus. Adversaries may use the information from [Security Software Discovery](https://attack.mitre.org/techniques/T1518/001) during automated discovery to shape follow-on behaviors, including whether or not the adversary fully infects the target and/or attempts specific actions.\n\nExample commands that can be used to obtain security software information are [netsh](https://attack.mitre.org/software/S0108), <code>reg query</code> with [Reg](https://attack.mitre.org/software/S0075), <code>dir</code> with [cmd](https://attack.mitre.org/software/S0106), and [Tasklist](https://attack.mitre.org/software/S0057), but other indicators of discovery behavior may be more specific to the type of software or security system the adversary is looking for. It is becoming more common to see macOS malware perform checks for LittleSnitch and KnockKnock software.\n\nAdversaries may also utilize cloud APIs to discover the configurations of firewall rules within an environment.(Citation: Expel IO Evil in AWS) For example, the permitted IP ranges, ports or user accounts for the inbound/outbound rules of security groups, virtual firewalls established within AWS for EC2 and/or VPC instances, can be revealed by the <code>DescribeSecurityGroups</code> action with various request parameters. (Citation: DescribeSecurityGroups - Amazon Elastic Compute Cloud)",
+    "technique_references": [
+      {
+        "source_name": "Expel IO Evil in AWS",
+        "url": "https://expel.io/blog/finding-evil-in-aws/",
+        "description": "A. Randazzo, B. Manahan and S. Lipton. (2020, April 28). Finding Evil in AWS. Retrieved June 25, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "DescribeSecurityGroups - Amazon Elastic Compute Cloud",
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html",
+        "description": "Amazon Web Services, Inc. . (2022). DescribeSecurityGroups. Retrieved January 28, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--910906dd-8c0a-475a-9cc1-5e029e2fad58",
+    "platform": "windows",
+    "tid": "T1546.003",
+    "technique": "Windows Management Instrumentation Event Subscription",
+    "tactic": "persistence",
+    "datasources": "command-execution|process-creation|wmi-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "metamain",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may establish persistence and elevate privileges by executing malicious content triggered by a Windows Management Instrumentation (WMI) event subscription. WMI can be used to install event filters, providers, consumers, and bindings that execute code when a defined event occurs. Examples of events that may be subscribed to are the wall clock time, user loging, or the computer's uptime.(Citation: Mandiant M-Trends 2015)\n\nAdversaries may use the capabilities of WMI to subscribe to an event and execute arbitrary code when that event occurs, providing persistence on a system.(Citation: FireEye WMI SANS 2015)(Citation: FireEye WMI 2015) Adversaries may also compile WMI scripts into Windows Management Object (MOF) files (.mof extension) that can be used to create a malicious subscription.(Citation: Dell WMI Persistence)(Citation: Microsoft MOF May 2018)\n\nWMI subscription execution is proxied by the WMI Provider Host process (WmiPrvSe.exe) and thus may result in elevated SYSTEM privileges.",
+    "technique_references": [
+      {
+        "source_name": "FireEye WMI 2015",
+        "url": "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/wp-windows-management-instrumentation.pdf",
+        "description": "Ballenthin, W., et al. (2015). Windows Management Instrumentation (WMI) Offense, Defense, and Forensics. Retrieved March 30, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Dell WMI Persistence",
+        "url": "https://www.secureworks.com/blog/wmi-persistence",
+        "description": "Dell SecureWorks Counter Threat Unit™ (CTU) Research Team. (2016, March 28). A Novel WMI Persistence Implementation. Retrieved March 30, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye WMI SANS 2015",
+        "url": "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/sans-dfir-2015.pdf",
+        "description": "Devon Kerr. (2015). There's Something About WMI. Retrieved May 4, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Medium Detecting WMI Persistence",
+        "url": "https://medium.com/threatpunter/detecting-removing-wmi-persistence-60ccbb7dff96",
+        "description": "French, D. (2018, October 9). Detecting & Removing an Attacker’s WMI Persistence. Retrieved October 11, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Elastic - Hunting for Persistence Part 1",
+        "url": "https://www.elastic.co/blog/hunting-for-persistence-using-elastic-security-part-1",
+        "description": "French, D., Murphy, B. (2020, March 24). Adversary tradecraft 101: Hunting for persistence using Elastic Security (Part 1). Retrieved December 21, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant M-Trends 2015",
+        "url": "https://www2.fireeye.com/rs/fireye/images/rpt-m-trends-2015.pdf",
+        "description": "Mandiant. (2015, February 24). M-Trends 2015: A View from the Front Lines. Retrieved May 18, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Register-WmiEvent",
+        "url": "https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/register-wmievent?view=powershell-5.1",
+        "description": "Microsoft. (n.d.). Retrieved January 24, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Autoruns",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb963902",
+        "description": "Russinovich, M. (2016, January 4). Autoruns for Windows v13.51. Retrieved June 6, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft MOF May 2018",
+        "url": "https://docs.microsoft.com/en-us/windows/win32/wmisdk/managed-object-format--mof-",
+        "description": "Satran, M. (2018, May 30). Managed Object Format (MOF). Retrieved January 24, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|system",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--910906dd-8c0a-475a-9cc1-5e029e2fad58",
+    "platform": "windows",
+    "tid": "T1546.003",
+    "technique": "Windows Management Instrumentation Event Subscription",
+    "tactic": "privilege-escalation",
+    "datasources": "command-execution|process-creation|wmi-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "metamain",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may establish persistence and elevate privileges by executing malicious content triggered by a Windows Management Instrumentation (WMI) event subscription. WMI can be used to install event filters, providers, consumers, and bindings that execute code when a defined event occurs. Examples of events that may be subscribed to are the wall clock time, user loging, or the computer's uptime.(Citation: Mandiant M-Trends 2015)\n\nAdversaries may use the capabilities of WMI to subscribe to an event and execute arbitrary code when that event occurs, providing persistence on a system.(Citation: FireEye WMI SANS 2015)(Citation: FireEye WMI 2015) Adversaries may also compile WMI scripts into Windows Management Object (MOF) files (.mof extension) that can be used to create a malicious subscription.(Citation: Dell WMI Persistence)(Citation: Microsoft MOF May 2018)\n\nWMI subscription execution is proxied by the WMI Provider Host process (WmiPrvSe.exe) and thus may result in elevated SYSTEM privileges.",
+    "technique_references": [
+      {
+        "source_name": "FireEye WMI 2015",
+        "url": "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/wp-windows-management-instrumentation.pdf",
+        "description": "Ballenthin, W., et al. (2015). Windows Management Instrumentation (WMI) Offense, Defense, and Forensics. Retrieved March 30, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Dell WMI Persistence",
+        "url": "https://www.secureworks.com/blog/wmi-persistence",
+        "description": "Dell SecureWorks Counter Threat Unit™ (CTU) Research Team. (2016, March 28). A Novel WMI Persistence Implementation. Retrieved March 30, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye WMI SANS 2015",
+        "url": "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/sans-dfir-2015.pdf",
+        "description": "Devon Kerr. (2015). There's Something About WMI. Retrieved May 4, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Medium Detecting WMI Persistence",
+        "url": "https://medium.com/threatpunter/detecting-removing-wmi-persistence-60ccbb7dff96",
+        "description": "French, D. (2018, October 9). Detecting & Removing an Attacker’s WMI Persistence. Retrieved October 11, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Elastic - Hunting for Persistence Part 1",
+        "url": "https://www.elastic.co/blog/hunting-for-persistence-using-elastic-security-part-1",
+        "description": "French, D., Murphy, B. (2020, March 24). Adversary tradecraft 101: Hunting for persistence using Elastic Security (Part 1). Retrieved December 21, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant M-Trends 2015",
+        "url": "https://www2.fireeye.com/rs/fireye/images/rpt-m-trends-2015.pdf",
+        "description": "Mandiant. (2015, February 24). M-Trends 2015: A View from the Front Lines. Retrieved May 18, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Register-WmiEvent",
+        "url": "https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/register-wmievent?view=powershell-5.1",
+        "description": "Microsoft. (n.d.). Retrieved January 24, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Autoruns",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb963902",
+        "description": "Russinovich, M. (2016, January 4). Autoruns for Windows v13.51. Retrieved June 6, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft MOF May 2018",
+        "url": "https://docs.microsoft.com/en-us/windows/win32/wmisdk/managed-object-format--mof-",
+        "description": "Satran, M. (2018, May 30). Managed Object Format (MOF). Retrieved January 24, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|system",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--60b508a1-6a5e-46b1-821a-9f7b78752abf",
+    "platform": "linux|macos|windows|network",
+    "tid": "T1552.004",
+    "technique": "Private Keys",
+    "tactic": "credential-access",
+    "datasources": "command-execution|file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "mafalda",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may search for private key certificate files on compromised systems for insecurely stored credentials. Private cryptographic keys and certificates are used for authentication, encryption/decryption, and digital signatures.(Citation: Wikipedia Public Key Crypto) Common key and certificate file extensions include: .key, .pgp, .gpg, .ppk., .p12, .pem, .pfx, .cer, .p7b, .asc. \n\nAdversaries may also look in common key directories, such as <code>~/.ssh</code> for SSH keys on * nix-based systems or <code>C:&#92;Users&#92;(username)&#92;.ssh&#92;</code> on Windows. Adversary tools may also search compromised systems for file extensions relating to cryptographic keys and certificates.(Citation: Kaspersky Careto)(Citation: Palo Alto Prince of Persia)\n\nWhen a device is registered to Azure AD, a device key and a transport key are generated and used to verify the device’s identity.(Citation: Microsoft Primary Refresh Token) An adversary with access to the device may be able to export the keys in order to impersonate the device.(Citation: AADInternals Azure AD Device Identities)\n\nOn network devices, private keys may be exported via [Network Device CLI](https://attack.mitre.org/techniques/T1059/008) commands such as `crypto pki export`.(Citation: cisco_deploy_rsa_keys) \n\nSome private keys require a password or passphrase for operation, so an adversary may also use [Input Capture](https://attack.mitre.org/techniques/T1056) for keylogging or attempt to [Brute Force](https://attack.mitre.org/techniques/T1110) the passphrase off-line. These private keys can be used to authenticate to [Remote Services](https://attack.mitre.org/techniques/T1021) like SSH or for use in decrypting other collected files such as email.",
+    "technique_references": [
+      {
+        "source_name": "Palo Alto Prince of Persia",
+        "url": "https://researchcenter.paloaltonetworks.com/2016/06/unit42-prince-of-persia-game-over/",
+        "description": "Bar, T., Conant, S., Efraim, L. (2016, June 28). Prince of Persia – Game Over. Retrieved July 5, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "cisco_deploy_rsa_keys",
+        "url": "https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_conn_pki/configuration/xe-17/sec-pki-xe-17-book/sec-deploy-rsa-pki.html#GUID-1CB802D8-9DE3-447F-BECE-CF22F5E11436",
+        "description": "Cisco. (2023, February 17). Chapter: Deploying RSA Keys Within a PKI . Retrieved March 27, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AADInternals Azure AD Device Identities",
+        "url": "https://aadinternals.com/post/deviceidentity/",
+        "description": "Dr. Nestori Syynimaa. (2022, February 15). Stealing and faking Azure AD device identities. Retrieved February 21, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kaspersky Careto",
+        "url": "https://kasperskycontenthub.com/wp-content/uploads/sites/43/vlpdfs/unveilingthemask_v1.0.pdf",
+        "description": "Kaspersky Labs. (2014, February 11). Unveiling “Careto” - The Masked APT. Retrieved July 5, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Primary Refresh Token",
+        "url": "https://learn.microsoft.com/en-us/azure/active-directory/devices/concept-primary-refresh-token",
+        "description": "Microsoft. (2022, September 9). What is a Primary Refresh Token?. Retrieved February 21, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia Public Key Crypto",
+        "url": "https://en.wikipedia.org/wiki/Public-key_cryptography",
+        "description": "Wikipedia. (2017, June 29). Public-key cryptography. Retrieved July 5, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--143c0cbb-a297-4142-9624-87ffc778980b",
+    "platform": "linux|macos|windows",
+    "tid": "T1560.003",
+    "technique": "Archive via Custom Method",
+    "tactic": "collection",
+    "datasources": "file-creation|script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "metamain",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "An adversary may compress or encrypt data that is collected prior to exfiltration using a custom method. Adversaries may choose to use custom archival methods, such as encryption with XOR or stream ciphers implemented with no external library or utility references. Custom implementations of well-known compression algorithms have also been used.(Citation: ESET Sednit Part 2)",
+    "technique_references": [
+      {
+        "source_name": "ESET Sednit Part 2",
+        "url": "http://www.welivesecurity.com/wp-content/uploads/2016/10/eset-sednit-part-2.pdf",
+        "description": "ESET. (2016, October). En Route with Sednit - Part 2: Observing the Comings and Goings. Retrieved November 21, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f1951e8a-500e-4a26-8803-76d95c4554b4",
+    "platform": "windows",
+    "tid": "T1569.002",
+    "technique": "Service Execution",
+    "tactic": "execution",
+    "datasources": "command-execution|process-creation|service-creation|windows-registry-key-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "mafalda",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may abuse the Windows service control manager to execute malicious commands or payloads. The Windows service control manager (<code>services.exe</code>) is an interface to manage and manipulate services.(Citation: Microsoft Service Control Manager) The service control manager is accessible to users via GUI components as well as system utilities such as <code>sc.exe</code> and [Net](https://attack.mitre.org/software/S0039).\n\n[PsExec](https://attack.mitre.org/software/S0029) can also be used to execute commands or payloads via a temporary Windows service created through the service control manager API.(Citation: Russinovich Sysinternals) Tools such as [PsExec](https://attack.mitre.org/software/S0029) and <code>sc.exe</code> can accept remote servers as arguments and may be used to conduct remote execution.\n\nAdversaries may leverage these mechanisms to execute malicious content. This can be done by either executing a new or modified service. This technique is the execution used in conjunction with [Windows Service](https://attack.mitre.org/techniques/T1543/003) during service persistence or privilege escalation.",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Service Control Manager",
+        "url": "https://docs.microsoft.com/windows/win32/services/service-control-manager",
+        "description": "Microsoft. (2018, May 31). Service Control Manager. Retrieved March 28, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Russinovich Sysinternals",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb897553.aspx",
+        "description": "Russinovich, M. (2014, May 2). Windows Sysinternals PsExec v2.11. Retrieved May 13, 2015.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|system",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--e64c62cf-9cd7-4a14-94ec-cdaac43ab44b",
+    "platform": "windows",
+    "tid": "T1574.002",
+    "technique": "DLL Side-Loading",
+    "tactic": "defense-evasion",
+    "datasources": "file-creation|file-modification|module-load|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "metamain",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may execute their own malicious payloads by side-loading DLLs. Similar to [DLL Search Order Hijacking](https://attack.mitre.org/techniques/T1574/001), side-loading involves hijacking which DLL a program loads. But rather than just planting the DLL within the search order of a program then waiting for the victim application to be invoked, adversaries may directly side-load their payloads by planting then invoking a legitimate application that executes their payload(s).\n\nSide-loading takes advantage of the DLL search order used by the loader by positioning both the victim application and malicious payload(s) alongside each other. Adversaries likely use side-loading as a means of masking actions they perform under a legitimate, trusted, and potentially elevated system or software process. Benign executables used to side-load payloads may not be flagged during delivery and/or execution. Adversary payloads may also be encrypted/packed or otherwise obfuscated until loaded into the memory of the trusted process.(Citation: FireEye DLL Side-Loading)",
+    "technique_references": [
+      {
+        "source_name": "FireEye DLL Side-Loading",
+        "url": "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/rpt-dll-sideloading.pdf",
+        "description": "Amanda Steward. (2014). FireEye DLL Side-Loading: A Thorn in the Side of the Anti-Virus Industry. Retrieved March 13, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--e64c62cf-9cd7-4a14-94ec-cdaac43ab44b",
+    "platform": "windows",
+    "tid": "T1574.002",
+    "technique": "DLL Side-Loading",
+    "tactic": "persistence",
+    "datasources": "file-creation|file-modification|module-load|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "metamain",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may execute their own malicious payloads by side-loading DLLs. Similar to [DLL Search Order Hijacking](https://attack.mitre.org/techniques/T1574/001), side-loading involves hijacking which DLL a program loads. But rather than just planting the DLL within the search order of a program then waiting for the victim application to be invoked, adversaries may directly side-load their payloads by planting then invoking a legitimate application that executes their payload(s).\n\nSide-loading takes advantage of the DLL search order used by the loader by positioning both the victim application and malicious payload(s) alongside each other. Adversaries likely use side-loading as a means of masking actions they perform under a legitimate, trusted, and potentially elevated system or software process. Benign executables used to side-load payloads may not be flagged during delivery and/or execution. Adversary payloads may also be encrypted/packed or otherwise obfuscated until loaded into the memory of the trusted process.(Citation: FireEye DLL Side-Loading)",
+    "technique_references": [
+      {
+        "source_name": "FireEye DLL Side-Loading",
+        "url": "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/rpt-dll-sideloading.pdf",
+        "description": "Amanda Steward. (2014). FireEye DLL Side-Loading: A Thorn in the Side of the Anti-Virus Industry. Retrieved March 13, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--e64c62cf-9cd7-4a14-94ec-cdaac43ab44b",
+    "platform": "windows",
+    "tid": "T1574.002",
+    "technique": "DLL Side-Loading",
+    "tactic": "privilege-escalation",
+    "datasources": "file-creation|file-modification|module-load|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "metamain",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may execute their own malicious payloads by side-loading DLLs. Similar to [DLL Search Order Hijacking](https://attack.mitre.org/techniques/T1574/001), side-loading involves hijacking which DLL a program loads. But rather than just planting the DLL within the search order of a program then waiting for the victim application to be invoked, adversaries may directly side-load their payloads by planting then invoking a legitimate application that executes their payload(s).\n\nSide-loading takes advantage of the DLL search order used by the loader by positioning both the victim application and malicious payload(s) alongside each other. Adversaries likely use side-loading as a means of masking actions they perform under a legitimate, trusted, and potentially elevated system or software process. Benign executables used to side-load payloads may not be flagged during delivery and/or execution. Adversary payloads may also be encrypted/packed or otherwise obfuscated until loaded into the memory of the trusted process.(Citation: FireEye DLL Side-Loading)",
+    "technique_references": [
+      {
+        "source_name": "FireEye DLL Side-Loading",
+        "url": "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/rpt-dll-sideloading.pdf",
+        "description": "Amanda Steward. (2014). FireEye DLL Side-Loading: A Thorn in the Side of the Anti-Virus Industry. Retrieved March 13, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--7807d3a4-a885-4639-a786-c1ed41484970",
+    "platform": "pre",
+    "tid": "T1588.001",
+    "technique": "Malware",
+    "tactic": "resource-development",
+    "datasources": "malware-content|malware-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may buy, steal, or download malware that can be used during targeting. Malicious software can include payloads, droppers, post-compromise tools, backdoors, packers, and C2 protocols. Adversaries may acquire malware to support their operations, obtaining a means for maintaining control of remote machines, evading defenses, and executing post-compromise behaviors.\n\nIn addition to downloading free malware from the internet, adversaries may purchase these capabilities from third-party entities. Third-party entities can include technology companies that specialize in malware development, criminal marketplaces (including Malware-as-a-Service, or MaaS), or from individuals. In addition to purchasing malware, adversaries may steal and repurpose malware from third-party entities (including other adversaries).",
+    "technique_references": [
+      {
+        "source_name": "FireEyeSupplyChain",
+        "url": "https://www.mandiant.com/resources/supply-chain-analysis-from-quartermaster-to-sunshop",
+        "description": "FireEye. (2014). SUPPLY CHAIN ANALYSIS: From Quartermaster to SunshopFireEye. Retrieved March 6, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--a2fdce72-04b2-409a-ac10-cc1695f4fce0",
+    "platform": "pre",
+    "tid": "T1588.002",
+    "technique": "Tool",
+    "tactic": "resource-development",
+    "datasources": "malware-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may buy, steal, or download software tools that can be used during targeting. Tools can be open or closed source, free or commercial. A tool can be used for malicious purposes by an adversary, but (unlike malware) were not intended to be used for those purposes (ex: [PsExec](https://attack.mitre.org/software/S0029)). Tool acquisition can involve the procurement of commercial software licenses, including for red teaming tools such as [Cobalt Strike](https://attack.mitre.org/software/S0154). Commercial software may be obtained through purchase, stealing licenses (or licensed copies of the software), or cracking trial versions.(Citation: Recorded Future Beacon 2019)\n\nAdversaries may obtain tools to support their operations, including to support execution of post-compromise behaviors. In addition to freely downloading or purchasing software, adversaries may steal software and/or software licenses from third-party entities (including other adversaries).",
+    "technique_references": [
+      {
+        "source_name": "Recorded Future Beacon 2019",
+        "url": "https://www.recordedfuture.com/identifying-cobalt-strike-servers/",
+        "description": "Recorded Future. (2019, June 20). Out of the Blue: How Recorded Future Identified Rogue Cobalt Strike Servers. Retrieved October 16, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Analyzing CS Dec 2020",
+        "url": "https://www.randhome.io/blog/2020/12/20/analyzing-cobalt-strike-for-fun-and-profit/",
+        "description": "Maynier, E. (2020, December 20). Analyzing Cobalt Strike for Fun and Profit. Retrieved October 12, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--4933e63b-9b77-476e-ab29-761bc5b7d15a",
+    "platform": "macos|linux|windows",
+    "tid": "T1620",
+    "technique": "Reflective Code Loading",
+    "tactic": "defense-evasion",
+    "datasources": "module-load|os-api-execution|script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "metamain",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may reflectively load code into a process in order to conceal the execution of malicious payloads. Reflective loading involves allocating then executing payloads directly within the memory of the process, vice creating a thread or process backed by a file path on disk. Reflectively loaded payloads may be compiled binaries, anonymous files (only present in RAM), or just snubs of fileless executable code (ex: position-independent shellcode).(Citation: Introducing Donut)(Citation: S1 Custom Shellcode Tool)(Citation: Stuart ELF Memory)(Citation: 00sec Droppers)(Citation: Mandiant BYOL)\n\nReflective code injection is very similar to [Process Injection](https://attack.mitre.org/techniques/T1055) except that the “injection” loads code into the processes’ own memory instead of that of a separate process. Reflective loading may evade process-based detections since the execution of the arbitrary code may be masked within a legitimate or otherwise benign process. Reflectively loading payloads directly into memory may also avoid creating files or other artifacts on disk, while also enabling malware to keep these payloads encrypted (or otherwise obfuscated) until execution.(Citation: Stuart ELF Memory)(Citation: 00sec Droppers)(Citation: Intezer ACBackdoor)(Citation: S1 Old Rat New Tricks)",
+    "technique_references": [
+      {
+        "source_name": "00sec Droppers",
+        "url": "https://0x00sec.org/t/super-stealthy-droppers/3715",
+        "description": "0x00pico. (2017, September 25). Super-Stealthy Droppers. Retrieved October 4, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "S1 Custom Shellcode Tool",
+        "url": "https://www.sentinelone.com/blog/building-a-custom-tool-for-shellcode-analysis/",
+        "description": "Bunce, D. (2019, October 31). Building A Custom Tool For Shellcode Analysis. Retrieved October 4, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant BYOL",
+        "url": "https://www.mandiant.com/resources/bring-your-own-land-novel-red-teaming-technique",
+        "description": "Kirk, N. (2018, June 18). Bring Your Own Land (BYOL) – A Novel Red Teaming Technique. Retrieved October 4, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "S1 Old Rat New Tricks",
+        "url": "https://www.sentinelone.com/blog/teaching-an-old-rat-new-tricks/",
+        "description": "Landry, J. (2016, April 21). Teaching an old RAT new tricks. Retrieved October 4, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MDSec Detecting DOTNET",
+        "url": "https://www.mdsec.co.uk/2020/06/detecting-and-advancing-in-memory-net-tradecraft/",
+        "description": "MDSec Research. (n.d.). Detecting and Advancing In-Memory .NET Tradecraft. Retrieved October 4, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Intezer ACBackdoor",
+        "url": "https://www.intezer.com/blog/research/acbackdoor-analysis-of-a-new-multiplatform-backdoor/",
+        "description": "Sanmillan, I. (2019, November 18). ACBackdoor: Analysis of a New Multiplatform Backdoor. Retrieved October 4, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Stuart ELF Memory",
+        "url": "https://magisterquis.github.io/2018/03/31/in-memory-only-elf-execution.html",
+        "description": "Stuart. (2018, March 31). In-Memory-Only ELF Execution (Without tmpfs). Retrieved October 4, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Introducing Donut",
+        "url": "https://thewover.github.io/Introducing-Donut/",
+        "description": "The Wover. (2019, May 9). Donut - Injecting .NET Assemblies as Shellcode. Retrieved October 4, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--e4dc8c01-417f-458d-9ee0-bb0617c1b391",
+    "platform": "windows|linux|macos",
+    "tid": "T1622",
+    "technique": "Debugger Evasion",
+    "tactic": "defense-evasion",
+    "datasources": "application-log-content|command-execution|os-api-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "mafalda",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may employ various means to detect and avoid debuggers. Debuggers are typically used by defenders to trace and/or analyze the execution of potential malware payloads.(Citation: ProcessHacker Github)\n\nDebugger evasion may include changing behaviors based on the results of the checks for the presence of artifacts indicative of a debugged environment. Similar to [Virtualization/Sandbox Evasion](https://attack.mitre.org/techniques/T1497), if the adversary detects a debugger, they may alter their malware to disengage from the victim or conceal the core functions of the implant. They may also search for debugger artifacts before dropping secondary or additional payloads.\n\nSpecific checks will vary based on the target and/or adversary, but may involve [Native API](https://attack.mitre.org/techniques/T1106) function calls such as <code>IsDebuggerPresent()</code> and <code> NtQueryInformationProcess()</code>, or manually checking the <code>BeingDebugged</code> flag of the Process Environment Block (PEB). Other checks for debugging artifacts may also seek to enumerate hardware breakpoints, interrupt assembly opcodes, time checks, or measurements if exceptions are raised in the current process (assuming a present debugger would “swallow” or handle the potential error).(Citation: hasherezade debug)(Citation: AlKhaser Debug)(Citation: vxunderground debug)\n\nAdversaries may use the information learned from these debugger checks during automated discovery to shape follow-on behaviors. Debuggers can also be evaded by detaching the process or flooding debug logs with meaningless data via messages produced by looping [Native API](https://attack.mitre.org/techniques/T1106) function calls such as <code>OutputDebugStringW()</code>.(Citation: wardle evilquest partii)(Citation: Checkpoint Dridex Jan 2021)",
+    "technique_references": [
+      {
+        "source_name": "Checkpoint Dridex Jan 2021",
+        "url": "https://research.checkpoint.com/2021/stopping-serial-killer-catching-the-next-strike/",
+        "description": "Check Point Research. (2021, January 4). Stopping Serial Killer: Catching the Next Strike. Retrieved September 7, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "hasherezade debug",
+        "url": "https://github.com/hasherezade/malware_training_vol1/blob/main/slides/module3/Module3_2_fingerprinting.pdf",
+        "description": "hasherezade. (2021, June 30). Module 3 - Understanding and countering malware's evasion and self-defence. Retrieved April 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AlKhaser Debug",
+        "url": "https://github.com/LordNoteworthy/al-khaser/tree/master/al-khaser/AntiDebug",
+        "description": "Noteworthy. (2019, January 6). Al-Khaser. Retrieved April 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "wardle evilquest partii",
+        "url": "https://objective-see.com/blog/blog_0x60.html",
+        "description": "Patrick Wardle. (2020, July 3). OSX.EvilQuest Uncovered part ii: insidious capabilities. Retrieved March 21, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ProcessHacker Github",
+        "url": "https://github.com/processhacker/processhacker",
+        "description": "ProcessHacker. (2009, October 27). Process Hacker. Retrieved April 11, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "vxunderground debug",
+        "url": "https://github.com/vxunderground/VX-API/tree/main/Anti%20Debug",
+        "description": "vxunderground. (2021, June 30). VX-API. Retrieved April 1, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--e4dc8c01-417f-458d-9ee0-bb0617c1b391",
+    "platform": "windows|linux|macos",
+    "tid": "T1622",
+    "technique": "Debugger Evasion",
+    "tactic": "discovery",
+    "datasources": "application-log-content|command-execution|os-api-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "metador",
+    "correlation_malware": "mafalda",
+    "correlation_tool": "none",
+    "correlation_gid": "G1013",
+    "technique_description": "Adversaries may employ various means to detect and avoid debuggers. Debuggers are typically used by defenders to trace and/or analyze the execution of potential malware payloads.(Citation: ProcessHacker Github)\n\nDebugger evasion may include changing behaviors based on the results of the checks for the presence of artifacts indicative of a debugged environment. Similar to [Virtualization/Sandbox Evasion](https://attack.mitre.org/techniques/T1497), if the adversary detects a debugger, they may alter their malware to disengage from the victim or conceal the core functions of the implant. They may also search for debugger artifacts before dropping secondary or additional payloads.\n\nSpecific checks will vary based on the target and/or adversary, but may involve [Native API](https://attack.mitre.org/techniques/T1106) function calls such as <code>IsDebuggerPresent()</code> and <code> NtQueryInformationProcess()</code>, or manually checking the <code>BeingDebugged</code> flag of the Process Environment Block (PEB). Other checks for debugging artifacts may also seek to enumerate hardware breakpoints, interrupt assembly opcodes, time checks, or measurements if exceptions are raised in the current process (assuming a present debugger would “swallow” or handle the potential error).(Citation: hasherezade debug)(Citation: AlKhaser Debug)(Citation: vxunderground debug)\n\nAdversaries may use the information learned from these debugger checks during automated discovery to shape follow-on behaviors. Debuggers can also be evaded by detaching the process or flooding debug logs with meaningless data via messages produced by looping [Native API](https://attack.mitre.org/techniques/T1106) function calls such as <code>OutputDebugStringW()</code>.(Citation: wardle evilquest partii)(Citation: Checkpoint Dridex Jan 2021)",
+    "technique_references": [
+      {
+        "source_name": "Checkpoint Dridex Jan 2021",
+        "url": "https://research.checkpoint.com/2021/stopping-serial-killer-catching-the-next-strike/",
+        "description": "Check Point Research. (2021, January 4). Stopping Serial Killer: Catching the Next Strike. Retrieved September 7, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "hasherezade debug",
+        "url": "https://github.com/hasherezade/malware_training_vol1/blob/main/slides/module3/Module3_2_fingerprinting.pdf",
+        "description": "hasherezade. (2021, June 30). Module 3 - Understanding and countering malware's evasion and self-defence. Retrieved April 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AlKhaser Debug",
+        "url": "https://github.com/LordNoteworthy/al-khaser/tree/master/al-khaser/AntiDebug",
+        "description": "Noteworthy. (2019, January 6). Al-Khaser. Retrieved April 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "wardle evilquest partii",
+        "url": "https://objective-see.com/blog/blog_0x60.html",
+        "description": "Patrick Wardle. (2020, July 3). OSX.EvilQuest Uncovered part ii: insidious capabilities. Retrieved March 21, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ProcessHacker Github",
+        "url": "https://github.com/processhacker/processhacker",
+        "description": "ProcessHacker. (2009, October 27). Process Hacker. Retrieved April 11, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "vxunderground debug",
+        "url": "https://github.com/vxunderground/VX-API/tree/main/Anti%20Debug",
+        "description": "vxunderground. (2021, June 30). VX-API. Retrieved April 1, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

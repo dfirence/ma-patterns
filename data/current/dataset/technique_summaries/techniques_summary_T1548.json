@@ -1,0 +1,56 @@
+[
+  {
+    "id": "attack-pattern--67720091-eee3-4d2d-ae16-8264567f6f5b",
+    "platform": "linux|macos|windows",
+    "tid": "T1548",
+    "technique": "Abuse Elevation Control Mechanism",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|file-metadata|file-modification|os-api-execution|process-creation|process-metadata|windows-registry-key-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1548.001",
+      "T1548.002",
+      "T1548.003",
+      "T1548.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may circumvent mechanisms designed to control elevate privileges to gain higher-level permissions. Most modern systems contain native elevation control mechanisms that are intended to limit privileges that a user can perform on a machine. Authorization has to be granted to specific users in order to perform tasks that can be considered of higher risk. An adversary can perform several methods to take advantage of built-in control mechanisms in order to escalate privileges on a system.",
+    "technique_references": [],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--67720091-eee3-4d2d-ae16-8264567f6f5b",
+    "platform": "linux|macos|windows",
+    "tid": "T1548",
+    "technique": "Abuse Elevation Control Mechanism",
+    "tactic": "privilege-escalation",
+    "datasources": "command-execution|file-metadata|file-modification|os-api-execution|process-creation|process-metadata|windows-registry-key-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1548.001",
+      "T1548.002",
+      "T1548.003",
+      "T1548.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may circumvent mechanisms designed to control elevate privileges to gain higher-level permissions. Most modern systems contain native elevation control mechanisms that are intended to limit privileges that a user can perform on a machine. Authorization has to be granted to specific users in order to perform tasks that can be considered of higher risk. An adversary can perform several methods to take advantage of built-in control mechanisms in order to escalate privileges on a system.",
+    "technique_references": [],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

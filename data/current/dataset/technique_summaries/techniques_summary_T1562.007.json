@@ -1,0 +1,37 @@
+[
+  {
+    "id": "attack-pattern--77532a55-c283-4cd2-bc5d-2d0b65e9d88c",
+    "platform": "iaas",
+    "tid": "T1562.007",
+    "technique": "Disable or Modify Cloud Firewall",
+    "tactic": "defense-evasion",
+    "datasources": "firewall-disable|firewall-rule-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may disable or modify a firewall within a cloud environment to bypass controls that limit access to cloud resources. Cloud firewalls are separate from system firewalls that are described in [Disable or Modify System Firewall](https://attack.mitre.org/techniques/T1562/004). \n\nCloud environments typically utilize restrictive security groups and firewall rules that only allow network activity from trusted IP addresses via expected ports and protocols. An adversary may introduce new firewall rules or policies to allow access into a victim cloud environment. For example, an adversary may use a script or utility that creates new ingress rules in existing security groups to allow any TCP/IP connectivity, or remove networking limitations to support traffic associated with malicious activity (such as cryptomining).(Citation: Expel IO Evil in AWS)(Citation: Palo Alto Unit 42 Compromised Cloud Compute Credentials 2022)\n\nModifying or disabling a cloud firewall may enable adversary C2 communications, lateral movement, and/or data exfiltration that would otherwise not be allowed.",
+    "technique_references": [
+      {
+        "source_name": "Expel IO Evil in AWS",
+        "url": "https://expel.io/blog/finding-evil-in-aws/",
+        "description": "A. Randazzo, B. Manahan and S. Lipton. (2020, April 28). Finding Evil in AWS. Retrieved June 25, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Palo Alto Unit 42 Compromised Cloud Compute Credentials 2022",
+        "url": "https://unit42.paloaltonetworks.com/compromised-cloud-compute-credentials/",
+        "description": "Dror Alon. (2022, December 8). Compromised Cloud Compute Credentials: Case Studies From the Wild. Retrieved March 9, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

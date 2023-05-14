@@ -1,0 +1,9 @@
+[
+  [
+    "meek",
+    "T1090.004",
+    "Domain Fronting",
+    "network-traffic-content",
+    "T1090.004::[meek] uses Domain Fronting to disguise the destination of network traffic as another server that is hosted in the same Content Delivery Network (CDN) as the intended destination."
+  ]
+]

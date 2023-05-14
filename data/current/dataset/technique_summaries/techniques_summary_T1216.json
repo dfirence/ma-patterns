@@ -1,0 +1,39 @@
+[
+  {
+    "id": "attack-pattern--f6fe9070-7a65-49ea-ae72-76292f42cebe",
+    "platform": "windows",
+    "tid": "T1216",
+    "technique": "System Script Proxy Execution",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|process-creation|script-execution",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1216.001"
+    ],
+    "count_subtechniques": 1,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use trusted scripts, often signed with certificates, to proxy the execution of malicious files. Several Microsoft signed scripts that have been downloaded from Microsoft or are default on Windows installations can be used to proxy execution of other files.(Citation: LOLBAS Project) This behavior may be abused by adversaries to execute malicious files that could bypass application control and signature validation on systems.(Citation: GitHub Ultimate AppLocker Bypass List)",
+    "technique_references": [
+      {
+        "source_name": "GitHub Ultimate AppLocker Bypass List",
+        "url": "https://github.com/api0cradle/UltimateAppLockerByPassList",
+        "description": "Moe, O. (2018, March 1). Ultimate AppLocker Bypass List. Retrieved April 10, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "LOLBAS Project",
+        "url": "https://github.com/LOLBAS-Project/LOLBAS#criteria",
+        "description": "Oddvar Moe et al. (2022, February).  Living Off The Land Binaries, Scripts and Libraries. Retrieved March 7, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

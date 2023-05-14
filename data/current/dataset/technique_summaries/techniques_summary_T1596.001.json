@@ -1,0 +1,37 @@
+[
+  {
+    "id": "attack-pattern--17fd695c-b88c-455a-a3d1-43b6cb728532",
+    "platform": "pre",
+    "tid": "T1596.001",
+    "technique": "DNS/Passive DNS",
+    "tactic": "reconnaissance",
+    "datasources": "none",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may search DNS data for information about victims that can be used during targeting. DNS information may include a variety of details, including registered name servers as well as records that outline addressing for a target’s subdomains, mail servers, and other hosts.\n\nAdversaries may search DNS data to gather actionable information. Threat actors can query nameservers for a target organization directly, or search through centralized repositories of logged DNS query responses (known as passive DNS).(Citation: DNS Dumpster)(Citation: Circl Passive DNS) Adversaries may also seek and target DNS misconfigurations/leaks that reveal information about internal networks. Information from these sources may reveal opportunities for other forms of reconnaissance (ex: [Search Victim-Owned Websites](https://attack.mitre.org/techniques/T1594) or [Search Open Websites/Domains](https://attack.mitre.org/techniques/T1593)), establishing operational resources (ex: [Acquire Infrastructure](https://attack.mitre.org/techniques/T1583) or [Compromise Infrastructure](https://attack.mitre.org/techniques/T1584)), and/or initial access (ex: [External Remote Services](https://attack.mitre.org/techniques/T1133) or [Trusted Relationship](https://attack.mitre.org/techniques/T1199)).",
+    "technique_references": [
+      {
+        "source_name": "DNS Dumpster",
+        "url": "https://dnsdumpster.com/",
+        "description": "Hacker Target. (n.d.). DNS Dumpster. Retrieved October 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Circl Passive DNS",
+        "url": "https://www.circl.lu/services/passive-dns/",
+        "description": "CIRCL Computer Incident Response Center. (n.d.). Passive DNS. Retrieved October 20, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

@@ -1,0 +1,603 @@
+[
+  {
+    "id": "attack-pattern--65f2d882-3f41-4d48-8a06-29af77ec9f90",
+    "platform": "windows",
+    "tid": "T1003.001",
+    "technique": "LSASS Memory",
+    "tactic": "credential-access",
+    "datasources": "command-execution|os-api-execution|process-access|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "impacket",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to access credential material stored in the process memory of the Local Security Authority Subsystem Service (LSASS). After a user logs on, the system generates and stores a variety of credential materials in LSASS process memory. These credential materials can be harvested by an administrative user or SYSTEM and used to conduct [Lateral Movement](https://attack.mitre.org/tactics/TA0008) using [Use Alternate Authentication Material](https://attack.mitre.org/techniques/T1550).\n\nAs well as in-memory techniques, the LSASS process memory can be dumped from the target host and analyzed on a local system.\n\nFor example, on the target host use procdump:\n\n* <code>procdump -ma lsass.exe lsass_dump</code>\n\nLocally, mimikatz can be run using:\n\n* <code>sekurlsa::Minidump lsassdump.dmp</code>\n* <code>sekurlsa::logonPasswords</code>\n\nBuilt-in Windows tools such as comsvcs.dll can also be used:\n\n* <code>rundll32.exe C:\\Windows\\System32\\comsvcs.dll MiniDump PID  lsass.dmp full</code>(Citation: Volexity Exchange Marauder March 2021)(Citation: Symantec Attacks Against Government Sector)\n\n\nWindows Security Support Provider (SSP) DLLs are loaded into LSASS process at system start. Once loaded into the LSA, SSP DLLs have access to encrypted and plaintext passwords that are stored in Windows, such as any logged-on user's Domain password or smart card PINs. The SSP configuration is stored in two Registry keys: <code>HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Security Packages</code> and <code>HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\OSConfig\\Security Packages</code>. An adversary may modify these Registry keys to add new SSPs, which will be loaded the next time the system boots, or when the AddSecurityPackage Windows API function is called.(Citation: Graeber 2014)\n\nThe following SSPs can be used to access credentials:\n\n* Msv: Interactive logons, batch logons, and service logons are done through the MSV authentication package.\n* Wdigest: The Digest Authentication protocol is designed for use with Hypertext Transfer Protocol (HTTP) and Simple Authentication Security Layer (SASL) exchanges.(Citation: TechNet Blogs Credential Protection)\n* Kerberos: Preferred for mutual client-server domain authentication in Windows 2000 and later.\n* CredSSP:  Provides SSO and Network Level Authentication for Remote Desktop Services.(Citation: TechNet Blogs Credential Protection)\n",
+    "technique_references": [
+      {
+        "source_name": "Medium Detecting Attempts to Steal Passwords from Memory",
+        "url": "https://medium.com/threatpunter/detecting-attempts-to-steal-passwords-from-memory-558f16dce4ea",
+        "description": "French, D. (2018, October 2). Detecting Attempts to Steal Passwords from Memory. Retrieved October 11, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Graeber 2014",
+        "url": "http://docplayer.net/20839173-Analysis-of-malicious-security-support-provider-dlls.html",
+        "description": "Graeber, M. (2014, October). Analysis of Malicious Security Support Provider DLLs. Retrieved March 1, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Volexity Exchange Marauder March 2021",
+        "url": "https://www.volexity.com/blog/2021/03/02/active-exploitation-of-microsoft-exchange-zero-day-vulnerabilities/",
+        "description": "Gruzweig, J. et al. (2021, March 2). Operation Exchange Marauder: Active Exploitation of Multiple Zero-Day Microsoft Exchange Vulnerabilities. Retrieved March 3, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Powersploit",
+        "url": "https://github.com/mattifestation/PowerSploit",
+        "description": "PowerSploit. (n.d.). Retrieved December 4, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Symantec Attacks Against Government Sector",
+        "url": "https://symantec.broadcom.com/hubfs/Attacks-Against-Government-Sector.pdf",
+        "description": "Symantec. (2021, June 10). Attacks Against the Government Sector. Retrieved September 28, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Blogs Credential Protection",
+        "url": "https://blogs.technet.microsoft.com/askpfeplat/2016/04/18/the-importance-of-kb2871997-and-kb2928120-for-credential-protection/",
+        "description": "Wilson, B. (2016, April 18). The Importance of KB2871997 and KB2928120 for Credential Protection. Retrieved April 11, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--1644e709-12d2-41e5-a60f-3470991f5011",
+    "platform": "windows",
+    "tid": "T1003.002",
+    "technique": "Security Account Manager",
+    "tactic": "credential-access",
+    "datasources": "command-execution|file-access|windows-registry-key-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "impacket",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to extract credential material from the Security Account Manager (SAM) database either through in-memory techniques or through the Windows Registry where the SAM database is stored. The SAM is a database file that contains local accounts for the host, typically those found with the <code>net user</code> command. Enumerating the SAM database requires SYSTEM level access.\n\nA number of tools can be used to retrieve the SAM file through in-memory techniques:\n\n* pwdumpx.exe\n* [gsecdump](https://attack.mitre.org/software/S0008)\n* [Mimikatz](https://attack.mitre.org/software/S0002)\n* secretsdump.py\n\nAlternatively, the SAM can be extracted from the Registry with Reg:\n\n* <code>reg save HKLM\\sam sam</code>\n* <code>reg save HKLM\\system system</code>\n\nCreddump7 can then be used to process the SAM database locally to retrieve hashes.(Citation: GitHub Creddump7)\n\nNotes: \n\n* RID 500 account is the local, built-in administrator.\n* RID 501 is the guest account.\n* User accounts start with a RID of 1,000+.\n",
+    "technique_references": [
+      {
+        "source_name": "GitHub Creddump7",
+        "url": "https://github.com/Neohapsis/creddump7",
+        "description": "Flathers, R. (2018, February 19). creddump7. Retrieved April 11, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--edf91964-b26e-4b4a-9600-ccacd7d7df24",
+    "platform": "windows",
+    "tid": "T1003.003",
+    "technique": "NTDS",
+    "tactic": "credential-access",
+    "datasources": "command-execution|file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "impacket",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to access or create a copy of the Active Directory domain database in order to steal credential information, as well as obtain other information about domain members such as devices, users, and access rights. By default, the NTDS file (NTDS.dit) is located in <code>%SystemRoot%\\NTDS\\Ntds.dit</code> of a domain controller.(Citation: Wikipedia Active Directory)\n\nIn addition to looking for NTDS files on active Domain Controllers, adversaries may search for backups that contain the same or similar information.(Citation: Metcalf 2015)\n\nThe following tools and techniques can be used to enumerate the NTDS file and the contents of the entire Active Directory hashes.\n\n* Volume Shadow Copy\n* secretsdump.py\n* Using the in-built Windows tool, ntdsutil.exe\n* Invoke-NinjaCopy\n",
+    "technique_references": [
+      {
+        "source_name": "Wikipedia Active Directory",
+        "url": "https://en.wikipedia.org/wiki/Active_Directory",
+        "description": "Wikipedia. (2018, March 10). Active Directory. Retrieved April 11, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Metcalf 2015",
+        "url": "http://adsecurity.org/?p=1275",
+        "description": "Metcalf, S. (2015, January 19). Attackers Can Now Use Mimikatz to Implant Skeleton Key on Domain Controllers & BackDoor Your Active Directory Forest. Retrieved February 3, 2015.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--1ecfdab8-7d59-4c98-95d4-dc41970f57fc",
+    "platform": "windows",
+    "tid": "T1003.004",
+    "technique": "LSA Secrets",
+    "tactic": "credential-access",
+    "datasources": "command-execution|windows-registry-key-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "impacket",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries with SYSTEM access to a host may attempt to access Local Security Authority (LSA) secrets, which can contain a variety of different credential materials, such as credentials for service accounts.(Citation: Passcape LSA Secrets)(Citation: Microsoft AD Admin Tier Model)(Citation: Tilbury Windows Credentials) LSA secrets are stored in the registry at <code>HKEY_LOCAL_MACHINE\\SECURITY\\Policy\\Secrets</code>. LSA secrets can also be dumped from memory.(Citation: ired Dumping LSA Secrets)\n\n[Reg](https://attack.mitre.org/software/S0075) can be used to extract from the Registry. [Mimikatz](https://attack.mitre.org/software/S0002) can be used to extract secrets from memory.(Citation: ired Dumping LSA Secrets)",
+    "technique_references": [
+      {
+        "source_name": "Passcape LSA Secrets",
+        "url": "https://www.passcape.com/index.php?section=docsys&cmd=details&id=23",
+        "description": "Passcape. (n.d.). Windows LSA secrets. Retrieved February 21, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft AD Admin Tier Model",
+        "url": "https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material?redirectedfrom=MSDN",
+        "description": "Microsoft. (2019, February 14). Active Directory administrative tier model. Retrieved February 21, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Tilbury Windows Credentials",
+        "url": "https://www.first.org/resources/papers/conf2017/Windows-Credentials-Attacks-and-Mitigation-Techniques.pdf",
+        "description": "Chad Tilbury. (2017, August 8). 1Windows Credentials: Attack, Mitigation, Defense. Retrieved February 21, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ired Dumping LSA Secrets",
+        "url": "https://ired.team/offensive-security/credential-access-and-credential-dumping/dumping-lsa-secrets",
+        "description": "Mantvydas Baranauskas. (2019, November 16). Dumping LSA Secrets. Retrieved February 21, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Powersploit",
+        "url": "https://github.com/mattifestation/PowerSploit",
+        "description": "PowerSploit. (n.d.). Retrieved December 4, 2014.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "system",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--3257eb21-f9a7-4430-8de1-d8b6e288f529",
+    "platform": "linux|macos|windows|network|iaas",
+    "tid": "T1040",
+    "technique": "Network Sniffing",
+    "tactic": "credential-access",
+    "datasources": "command-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "impacket",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may sniff network traffic to capture information about an environment, including authentication material passed over the network. Network sniffing refers to using the network interface on a system to monitor or capture information sent over a wired or wireless connection. An adversary may place a network interface into promiscuous mode to passively access data in transit over the network, or use span ports to capture a larger amount of data.\n\nData captured via this technique may include user credentials, especially those sent over an insecure, unencrypted protocol. Techniques for name service resolution poisoning, such as [LLMNR/NBT-NS Poisoning and SMB Relay](https://attack.mitre.org/techniques/T1557/001), can also be used to capture credentials to websites, proxies, and internal systems by redirecting traffic to an adversary.\n\nNetwork sniffing may also reveal configuration details, such as running services, version numbers, and other network characteristics (e.g. IP addresses, hostnames, VLAN IDs) necessary for subsequent Lateral Movement and/or Defense Evasion activities.\n\nIn cloud-based environments, adversaries may still be able to use traffic mirroring services to sniff network traffic from virtual machines. For example, AWS Traffic Mirroring, GCP Packet Mirroring, and Azure vTap allow users to define specified instances to collect traffic from and specified targets to send collected traffic to.(Citation: AWS Traffic Mirroring)(Citation: GCP Packet Mirroring)(Citation: Azure Virtual Network TAP) Often, much of this traffic will be in cleartext due to the use of TLS termination at the load balancer level to reduce the strain of encrypting and decrypting traffic.(Citation: Rhino Security Labs AWS VPC Traffic Mirroring)(Citation: SpecterOps AWS Traffic Mirroring) The adversary can then use exfiltration techniques such as Transfer Data to Cloud Account in order to access the sniffed traffic.(Citation: Rhino Security Labs AWS VPC Traffic Mirroring)\n\nOn network devices, adversaries may perform network captures using [Network Device CLI](https://attack.mitre.org/techniques/T1059/008) commands such as `monitor capture`.(Citation: US-CERT-TA18-106A)(Citation: capture_embedded_packet_on_software)",
+    "technique_references": [
+      {
+        "source_name": "AWS Traffic Mirroring",
+        "url": "https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-how-it-works.html",
+        "description": "Amazon Web Services. (n.d.). How Traffic Mirroring works. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "capture_embedded_packet_on_software",
+        "url": "https://www.cisco.com/c/en/us/support/docs/ios-nx-os-software/ios-embedded-packet-capture/116045-productconfig-epc-00.html",
+        "description": "Cisco. (2022, August 17). Configure and Capture Embedded Packet on Software. Retrieved July 13, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GCP Packet Mirroring",
+        "url": "https://cloud.google.com/vpc/docs/packet-mirroring",
+        "description": "Google Cloud. (n.d.). Packet Mirroring overview. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SpecterOps AWS Traffic Mirroring",
+        "url": "https://posts.specterops.io/through-the-looking-glass-part-1-f539ae308512",
+        "description": "Luke Paine. (2020, March 11). Through the Looking Glass — Part 1. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Azure Virtual Network TAP",
+        "url": "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-tap-overview",
+        "description": "Microsoft. (2022, February 9). Virtual network TAP. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Rhino Security Labs AWS VPC Traffic Mirroring",
+        "url": "https://rhinosecuritylabs.com/aws/abusing-vpc-traffic-mirroring-in-aws/",
+        "description": "Spencer Gietzen. (2019, September 17). Abusing VPC Traffic Mirroring in AWS. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT-TA18-106A",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA18-106A",
+        "description": "US-CERT. (2018, April 20). Alert (TA18-106A) Russian State-Sponsored Cyber Actors Targeting Network Infrastructure Devices. Retrieved October 19, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--3257eb21-f9a7-4430-8de1-d8b6e288f529",
+    "platform": "linux|macos|windows|network|iaas",
+    "tid": "T1040",
+    "technique": "Network Sniffing",
+    "tactic": "discovery",
+    "datasources": "command-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "impacket",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may sniff network traffic to capture information about an environment, including authentication material passed over the network. Network sniffing refers to using the network interface on a system to monitor or capture information sent over a wired or wireless connection. An adversary may place a network interface into promiscuous mode to passively access data in transit over the network, or use span ports to capture a larger amount of data.\n\nData captured via this technique may include user credentials, especially those sent over an insecure, unencrypted protocol. Techniques for name service resolution poisoning, such as [LLMNR/NBT-NS Poisoning and SMB Relay](https://attack.mitre.org/techniques/T1557/001), can also be used to capture credentials to websites, proxies, and internal systems by redirecting traffic to an adversary.\n\nNetwork sniffing may also reveal configuration details, such as running services, version numbers, and other network characteristics (e.g. IP addresses, hostnames, VLAN IDs) necessary for subsequent Lateral Movement and/or Defense Evasion activities.\n\nIn cloud-based environments, adversaries may still be able to use traffic mirroring services to sniff network traffic from virtual machines. For example, AWS Traffic Mirroring, GCP Packet Mirroring, and Azure vTap allow users to define specified instances to collect traffic from and specified targets to send collected traffic to.(Citation: AWS Traffic Mirroring)(Citation: GCP Packet Mirroring)(Citation: Azure Virtual Network TAP) Often, much of this traffic will be in cleartext due to the use of TLS termination at the load balancer level to reduce the strain of encrypting and decrypting traffic.(Citation: Rhino Security Labs AWS VPC Traffic Mirroring)(Citation: SpecterOps AWS Traffic Mirroring) The adversary can then use exfiltration techniques such as Transfer Data to Cloud Account in order to access the sniffed traffic.(Citation: Rhino Security Labs AWS VPC Traffic Mirroring)\n\nOn network devices, adversaries may perform network captures using [Network Device CLI](https://attack.mitre.org/techniques/T1059/008) commands such as `monitor capture`.(Citation: US-CERT-TA18-106A)(Citation: capture_embedded_packet_on_software)",
+    "technique_references": [
+      {
+        "source_name": "AWS Traffic Mirroring",
+        "url": "https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-how-it-works.html",
+        "description": "Amazon Web Services. (n.d.). How Traffic Mirroring works. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "capture_embedded_packet_on_software",
+        "url": "https://www.cisco.com/c/en/us/support/docs/ios-nx-os-software/ios-embedded-packet-capture/116045-productconfig-epc-00.html",
+        "description": "Cisco. (2022, August 17). Configure and Capture Embedded Packet on Software. Retrieved July 13, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GCP Packet Mirroring",
+        "url": "https://cloud.google.com/vpc/docs/packet-mirroring",
+        "description": "Google Cloud. (n.d.). Packet Mirroring overview. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SpecterOps AWS Traffic Mirroring",
+        "url": "https://posts.specterops.io/through-the-looking-glass-part-1-f539ae308512",
+        "description": "Luke Paine. (2020, March 11). Through the Looking Glass — Part 1. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Azure Virtual Network TAP",
+        "url": "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-tap-overview",
+        "description": "Microsoft. (2022, February 9). Virtual network TAP. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Rhino Security Labs AWS VPC Traffic Mirroring",
+        "url": "https://rhinosecuritylabs.com/aws/abusing-vpc-traffic-mirroring-in-aws/",
+        "description": "Spencer Gietzen. (2019, September 17). Abusing VPC Traffic Mirroring in AWS. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT-TA18-106A",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA18-106A",
+        "description": "US-CERT. (2018, April 20). Alert (TA18-106A) Russian State-Sponsored Cyber Actors Targeting Network Infrastructure Devices. Retrieved October 19, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--01a5a209-b94c-450b-b7f9-946497d91055",
+    "platform": "windows",
+    "tid": "T1047",
+    "technique": "Windows Management Instrumentation",
+    "tactic": "execution",
+    "datasources": "command-execution|network-connection-creation|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "impacket",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse Windows Management Instrumentation (WMI) to execute malicious commands and payloads. WMI is an administration feature that provides a uniform environment to access Windows system components. The WMI service enables both local and remote access, though the latter is facilitated by [Remote Services](https://attack.mitre.org/techniques/T1021) such as [Distributed Component Object Model](https://attack.mitre.org/techniques/T1021/003) (DCOM) and [Windows Remote Management](https://attack.mitre.org/techniques/T1021/006) (WinRM).(Citation: MSDN WMI) Remote WMI over DCOM operates using port 135, whereas WMI over WinRM operates over port 5985 when using HTTP and 5986 for HTTPS.(Citation: MSDN WMI)(Citation: FireEye WMI 2015)\n\nAn adversary can use WMI to interact with local and remote systems and use it as a means to execute various behaviors, such as gathering information for Discovery as well as remote Execution of files as part of Lateral Movement. (Citation: FireEye WMI SANS 2015) (Citation: FireEye WMI 2015)",
+    "technique_references": [
+      {
+        "source_name": "FireEye WMI 2015",
+        "url": "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/wp-windows-management-instrumentation.pdf",
+        "description": "Ballenthin, W., et al. (2015). Windows Management Instrumentation (WMI) Offense, Defense, and Forensics. Retrieved March 30, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye WMI SANS 2015",
+        "url": "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/sans-dfir-2015.pdf",
+        "description": "Devon Kerr. (2015). There's Something About WMI. Retrieved May 4, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MSDN WMI",
+        "url": "https://msdn.microsoft.com/en-us/library/aa394582.aspx",
+        "description": "Microsoft. (n.d.). Windows Management Instrumentation. Retrieved April 27, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--650c784b-7504-4df7-ab2c-4ea882384d1e",
+    "platform": "windows",
+    "tid": "T1557.001",
+    "technique": "LLMNR/NBT-NS Poisoning and SMB Relay",
+    "tactic": "collection",
+    "datasources": "network-traffic-content|network-traffic-flow|service-creation|windows-registry-key-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "impacket",
+    "correlation_gid": "none",
+    "technique_description": "By responding to LLMNR/NBT-NS network traffic, adversaries may spoof an authoritative source for name resolution to force communication with an adversary controlled system. This activity may be used to collect or relay authentication materials. \n\nLink-Local Multicast Name Resolution (LLMNR) and NetBIOS Name Service (NBT-NS) are Microsoft Windows components that serve as alternate methods of host identification. LLMNR is based upon the Domain Name System (DNS) format and allows hosts on the same local link to perform name resolution for other hosts. NBT-NS identifies systems on a local network by their NetBIOS name. (Citation: Wikipedia LLMNR)(Citation: TechNet NetBIOS)\n\nAdversaries can spoof an authoritative source for name resolution on a victim network by responding to LLMNR (UDP 5355)/NBT-NS (UDP 137) traffic as if they know the identity of the requested host, effectively poisoning the service so that the victims will communicate with the adversary controlled system. If the requested host belongs to a resource that requires identification/authentication, the username and NTLMv2 hash will then be sent to the adversary controlled system. The adversary can then collect the hash information sent over the wire through tools that monitor the ports for traffic or through [Network Sniffing](https://attack.mitre.org/techniques/T1040) and crack the hashes offline through [Brute Force](https://attack.mitre.org/techniques/T1110) to obtain the plaintext passwords.\n\nIn some cases where an adversary has access to a system that is in the authentication path between systems or when automated scans that use credentials attempt to authenticate to an adversary controlled system, the NTLMv1/v2 hashes can be intercepted and relayed to access and execute code against a target system. The relay step can happen in conjunction with poisoning but may also be independent of it.(Citation: byt3bl33d3r NTLM Relaying)(Citation: Secure Ideas SMB Relay) Additionally, adversaries may encapsulate the NTLMv1/v2 hashes into various protocols, such as LDAP, SMB, MSSQL and HTTP, to expand and use multiple services with the valid NTLM response. \n\nSeveral tools may be used to poison name services within local networks such as NBNSpoof, Metasploit, and [Responder](https://attack.mitre.org/software/S0174).(Citation: GitHub NBNSpoof)(Citation: Rapid7 LLMNR Spoofer)(Citation: GitHub Responder)",
+    "technique_references": [
+      {
+        "source_name": "Rapid7 LLMNR Spoofer",
+        "url": "https://www.rapid7.com/db/modules/auxiliary/spoof/llmnr/llmnr_response",
+        "description": "Francois, R. (n.d.). LLMNR Spoofer. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub Responder",
+        "url": "https://github.com/SpiderLabs/Responder",
+        "description": "Gaffie, L. (2016, August 25). Responder. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Secure Ideas SMB Relay",
+        "url": "https://blog.secureideas.com/2018/04/ever-run-a-relay-why-smb-relays-should-be-on-your-mind.html",
+        "description": "Kuehn, E. (2018, April 11). Ever Run a Relay? Why SMB Relays Should Be On Your Mind. Retrieved February 7, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet NetBIOS",
+        "url": "https://technet.microsoft.com/library/cc958811.aspx",
+        "description": "Microsoft. (n.d.). NetBIOS Name Resolution. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub NBNSpoof",
+        "url": "https://github.com/nomex/nbnspoof",
+        "description": "Nomex. (2014, February 7). NBNSpoof. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub Conveigh",
+        "url": "https://github.com/Kevin-Robertson/Conveigh",
+        "description": "Robertson, K. (2016, August 28). Conveigh. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "byt3bl33d3r NTLM Relaying",
+        "url": "https://byt3bl33d3r.github.io/practical-guide-to-ntlm-relaying-in-2017-aka-getting-a-foothold-in-under-5-minutes.html",
+        "description": "Salvati, M. (2017, June 2). Practical guide to NTLM Relaying in 2017 (A.K.A getting a foothold in under 5 minutes). Retrieved February 7, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sternsecurity LLMNR-NBTNS",
+        "url": "https://www.sternsecurity.com/blog/local-network-attacks-llmnr-and-nbt-ns-poisoning",
+        "description": "Sternstein, J. (2013, November). Local Network Attacks: LLMNR and NBT-NS Poisoning. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia LLMNR",
+        "url": "https://en.wikipedia.org/wiki/Link-Local_Multicast_Name_Resolution",
+        "description": "Wikipedia. (2016, July 7). Link-Local Multicast Name Resolution. Retrieved November 17, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--650c784b-7504-4df7-ab2c-4ea882384d1e",
+    "platform": "windows",
+    "tid": "T1557.001",
+    "technique": "LLMNR/NBT-NS Poisoning and SMB Relay",
+    "tactic": "credential-access",
+    "datasources": "network-traffic-content|network-traffic-flow|service-creation|windows-registry-key-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "impacket",
+    "correlation_gid": "none",
+    "technique_description": "By responding to LLMNR/NBT-NS network traffic, adversaries may spoof an authoritative source for name resolution to force communication with an adversary controlled system. This activity may be used to collect or relay authentication materials. \n\nLink-Local Multicast Name Resolution (LLMNR) and NetBIOS Name Service (NBT-NS) are Microsoft Windows components that serve as alternate methods of host identification. LLMNR is based upon the Domain Name System (DNS) format and allows hosts on the same local link to perform name resolution for other hosts. NBT-NS identifies systems on a local network by their NetBIOS name. (Citation: Wikipedia LLMNR)(Citation: TechNet NetBIOS)\n\nAdversaries can spoof an authoritative source for name resolution on a victim network by responding to LLMNR (UDP 5355)/NBT-NS (UDP 137) traffic as if they know the identity of the requested host, effectively poisoning the service so that the victims will communicate with the adversary controlled system. If the requested host belongs to a resource that requires identification/authentication, the username and NTLMv2 hash will then be sent to the adversary controlled system. The adversary can then collect the hash information sent over the wire through tools that monitor the ports for traffic or through [Network Sniffing](https://attack.mitre.org/techniques/T1040) and crack the hashes offline through [Brute Force](https://attack.mitre.org/techniques/T1110) to obtain the plaintext passwords.\n\nIn some cases where an adversary has access to a system that is in the authentication path between systems or when automated scans that use credentials attempt to authenticate to an adversary controlled system, the NTLMv1/v2 hashes can be intercepted and relayed to access and execute code against a target system. The relay step can happen in conjunction with poisoning but may also be independent of it.(Citation: byt3bl33d3r NTLM Relaying)(Citation: Secure Ideas SMB Relay) Additionally, adversaries may encapsulate the NTLMv1/v2 hashes into various protocols, such as LDAP, SMB, MSSQL and HTTP, to expand and use multiple services with the valid NTLM response. \n\nSeveral tools may be used to poison name services within local networks such as NBNSpoof, Metasploit, and [Responder](https://attack.mitre.org/software/S0174).(Citation: GitHub NBNSpoof)(Citation: Rapid7 LLMNR Spoofer)(Citation: GitHub Responder)",
+    "technique_references": [
+      {
+        "source_name": "Rapid7 LLMNR Spoofer",
+        "url": "https://www.rapid7.com/db/modules/auxiliary/spoof/llmnr/llmnr_response",
+        "description": "Francois, R. (n.d.). LLMNR Spoofer. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub Responder",
+        "url": "https://github.com/SpiderLabs/Responder",
+        "description": "Gaffie, L. (2016, August 25). Responder. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Secure Ideas SMB Relay",
+        "url": "https://blog.secureideas.com/2018/04/ever-run-a-relay-why-smb-relays-should-be-on-your-mind.html",
+        "description": "Kuehn, E. (2018, April 11). Ever Run a Relay? Why SMB Relays Should Be On Your Mind. Retrieved February 7, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet NetBIOS",
+        "url": "https://technet.microsoft.com/library/cc958811.aspx",
+        "description": "Microsoft. (n.d.). NetBIOS Name Resolution. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub NBNSpoof",
+        "url": "https://github.com/nomex/nbnspoof",
+        "description": "Nomex. (2014, February 7). NBNSpoof. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub Conveigh",
+        "url": "https://github.com/Kevin-Robertson/Conveigh",
+        "description": "Robertson, K. (2016, August 28). Conveigh. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "byt3bl33d3r NTLM Relaying",
+        "url": "https://byt3bl33d3r.github.io/practical-guide-to-ntlm-relaying-in-2017-aka-getting-a-foothold-in-under-5-minutes.html",
+        "description": "Salvati, M. (2017, June 2). Practical guide to NTLM Relaying in 2017 (A.K.A getting a foothold in under 5 minutes). Retrieved February 7, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sternsecurity LLMNR-NBTNS",
+        "url": "https://www.sternsecurity.com/blog/local-network-attacks-llmnr-and-nbt-ns-poisoning",
+        "description": "Sternstein, J. (2013, November). Local Network Attacks: LLMNR and NBT-NS Poisoning. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia LLMNR",
+        "url": "https://en.wikipedia.org/wiki/Link-Local_Multicast_Name_Resolution",
+        "description": "Wikipedia. (2016, July 7). Link-Local Multicast Name Resolution. Retrieved November 17, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f2877f7f-9a4c-4251-879f-1224e3006bee",
+    "platform": "windows",
+    "tid": "T1558.003",
+    "technique": "Kerberoasting",
+    "tactic": "credential-access",
+    "datasources": "active-directory-credential-request",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "impacket",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse a valid Kerberos ticket-granting ticket (TGT) or sniff network traffic to obtain a ticket-granting service (TGS) ticket that may be vulnerable to [Brute Force](https://attack.mitre.org/techniques/T1110).(Citation: Empire InvokeKerberoast Oct 2016)(Citation: AdSecurity Cracking Kerberos Dec 2015) \n\nService principal names (SPNs) are used to uniquely identify each instance of a Windows service. To enable authentication, Kerberos requires that SPNs be associated with at least one service logon account (an account specifically tasked with running a service(Citation: Microsoft Detecting Kerberoasting Feb 2018)).(Citation: Microsoft SPN)(Citation: Microsoft SetSPN)(Citation: SANS Attacking Kerberos Nov 2014)(Citation: Harmj0y Kerberoast Nov 2016)\n\nAdversaries possessing a valid Kerberos ticket-granting ticket (TGT) may request one or more Kerberos ticket-granting service (TGS) service tickets for any SPN from a domain controller (DC).(Citation: Empire InvokeKerberoast Oct 2016)(Citation: AdSecurity Cracking Kerberos Dec 2015) Portions of these tickets may be encrypted with the RC4 algorithm, meaning the Kerberos 5 TGS-REP etype 23 hash of the service account associated with the SPN is used as the private key and is thus vulnerable to offline [Brute Force](https://attack.mitre.org/techniques/T1110) attacks that may expose plaintext credentials.(Citation: AdSecurity Cracking Kerberos Dec 2015)(Citation: Empire InvokeKerberoast Oct 2016) (Citation: Harmj0y Kerberoast Nov 2016)\n\nThis same behavior could be executed using service tickets captured from network traffic.(Citation: AdSecurity Cracking Kerberos Dec 2015)\n\nCracked hashes may enable [Persistence](https://attack.mitre.org/tactics/TA0003), [Privilege Escalation](https://attack.mitre.org/tactics/TA0004), and [Lateral Movement](https://attack.mitre.org/tactics/TA0008) via access to [Valid Accounts](https://attack.mitre.org/techniques/T1078).(Citation: SANS Attacking Kerberos Nov 2014)",
+    "technique_references": [
+      {
+        "source_name": "Empire InvokeKerberoast Oct 2016",
+        "url": "https://github.com/EmpireProject/Empire/blob/master/data/module_source/credentials/Invoke-Kerberoast.ps1",
+        "description": "EmpireProject. (2016, October 31). Invoke-Kerberoast.ps1. Retrieved March 22, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AdSecurity Cracking Kerberos Dec 2015",
+        "url": "https://adsecurity.org/?p=2293",
+        "description": "Metcalf, S. (2015, December 31). Cracking Kerberos TGS Tickets Using Kerberoast – Exploiting Kerberos to Compromise the Active Directory Domain. Retrieved March 22, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Detecting Kerberoasting Feb 2018",
+        "url": "https://blogs.technet.microsoft.com/motiba/2018/02/23/detecting-kerberoasting-activity-using-azure-security-center/",
+        "description": "Bani, M. (2018, February 23). Detecting Kerberoasting activity using Azure Security Center. Retrieved March 23, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft SPN",
+        "url": "https://msdn.microsoft.com/library/ms677949.aspx",
+        "description": "Microsoft. (n.d.). Service Principal Names. Retrieved March 22, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft SetSPN",
+        "url": "https://social.technet.microsoft.com/wiki/contents/articles/717.service-principal-names-spns-setspn-syntax-setspn-exe.aspx",
+        "description": "Microsoft. (2010, April 13). Service Principal Names (SPNs) SetSPN Syntax (Setspn.exe). Retrieved March 22, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SANS Attacking Kerberos Nov 2014",
+        "url": "https://redsiege.com/kerberoast-slides",
+        "description": "Medin, T. (2014, November). Attacking Kerberos - Kicking the Guard Dog of Hades. Retrieved March 22, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Harmj0y Kerberoast Nov 2016",
+        "url": "https://www.harmj0y.net/blog/powershell/kerberoasting-without-mimikatz/",
+        "description": "Schroeder, W. (2016, November 1). Kerberoasting Without Mimikatz. Retrieved March 23, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f1951e8a-500e-4a26-8803-76d95c4554b4",
+    "platform": "windows",
+    "tid": "T1569.002",
+    "technique": "Service Execution",
+    "tactic": "execution",
+    "datasources": "command-execution|process-creation|service-creation|windows-registry-key-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "impacket",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse the Windows service control manager to execute malicious commands or payloads. The Windows service control manager (<code>services.exe</code>) is an interface to manage and manipulate services.(Citation: Microsoft Service Control Manager) The service control manager is accessible to users via GUI components as well as system utilities such as <code>sc.exe</code> and [Net](https://attack.mitre.org/software/S0039).\n\n[PsExec](https://attack.mitre.org/software/S0029) can also be used to execute commands or payloads via a temporary Windows service created through the service control manager API.(Citation: Russinovich Sysinternals) Tools such as [PsExec](https://attack.mitre.org/software/S0029) and <code>sc.exe</code> can accept remote servers as arguments and may be used to conduct remote execution.\n\nAdversaries may leverage these mechanisms to execute malicious content. This can be done by either executing a new or modified service. This technique is the execution used in conjunction with [Windows Service](https://attack.mitre.org/techniques/T1543/003) during service persistence or privilege escalation.",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Service Control Manager",
+        "url": "https://docs.microsoft.com/windows/win32/services/service-control-manager",
+        "description": "Microsoft. (2018, May 31). Service Control Manager. Retrieved March 28, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Russinovich Sysinternals",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb897553.aspx",
+        "description": "Russinovich, M. (2014, May 2). Windows Sysinternals PsExec v2.11. Retrieved May 13, 2015.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|system",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

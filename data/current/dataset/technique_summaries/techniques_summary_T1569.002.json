@@ -1,0 +1,37 @@
+[
+  {
+    "id": "attack-pattern--f1951e8a-500e-4a26-8803-76d95c4554b4",
+    "platform": "windows",
+    "tid": "T1569.002",
+    "technique": "Service Execution",
+    "tactic": "execution",
+    "datasources": "command-execution|process-creation|service-creation|windows-registry-key-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse the Windows service control manager to execute malicious commands or payloads. The Windows service control manager (<code>services.exe</code>) is an interface to manage and manipulate services.(Citation: Microsoft Service Control Manager) The service control manager is accessible to users via GUI components as well as system utilities such as <code>sc.exe</code> and [Net](https://attack.mitre.org/software/S0039).\n\n[PsExec](https://attack.mitre.org/software/S0029) can also be used to execute commands or payloads via a temporary Windows service created through the service control manager API.(Citation: Russinovich Sysinternals) Tools such as [PsExec](https://attack.mitre.org/software/S0029) and <code>sc.exe</code> can accept remote servers as arguments and may be used to conduct remote execution.\n\nAdversaries may leverage these mechanisms to execute malicious content. This can be done by either executing a new or modified service. This technique is the execution used in conjunction with [Windows Service](https://attack.mitre.org/techniques/T1543/003) during service persistence or privilege escalation.",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Service Control Manager",
+        "url": "https://docs.microsoft.com/windows/win32/services/service-control-manager",
+        "description": "Microsoft. (2018, May 31). Service Control Manager. Retrieved March 28, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Russinovich Sysinternals",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb897553.aspx",
+        "description": "Russinovich, M. (2014, May 2). Windows Sysinternals PsExec v2.11. Retrieved May 13, 2015.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|system",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

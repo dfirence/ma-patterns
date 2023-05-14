@@ -1,0 +1,128 @@
+[
+  [
+    "brute-ratel-c4",
+    "T1021.002",
+    "SMB/Windows Admin Shares",
+    "command-execution|logon-session-creation|network-connection-creation|network-share-access|network-traffic-flow",
+    "T1021.002::[Brute Ratel C4] has the ability to use SMB to pivot in compromised networks."
+  ],
+  [
+    "brute-ratel-c4",
+    "T1021.006",
+    "Windows Remote Management",
+    "command-execution|logon-session-creation|network-connection-creation|process-creation|service-metadata",
+    "T1021.006::[Brute Ratel C4] can use WinRM for pivoting."
+  ],
+  [
+    "brute-ratel-c4",
+    "T1027.007",
+    "Dynamic API Resolution",
+    "file-metadata|module-load|os-api-execution",
+    "T1027.007::[Brute Ratel C4] can call and dynamically resolve hashed APIs."
+  ],
+  [
+    "brute-ratel-c4",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[Brute Ratel C4] has used a payload file named OneDrive.update to appear benign."
+  ],
+  [
+    "brute-ratel-c4",
+    "T1036.008",
+    "Masquerade File Type",
+    "command-execution|file-modification",
+    "T1036.008::[Brute Ratel C4] has used Microsoft Word icons to hide malicious LNK files."
+  ],
+  [
+    "brute-ratel-c4",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[Brute Ratel C4] can use cmd.exe for execution."
+  ],
+  [
+    "brute-ratel-c4",
+    "T1069.002",
+    "Domain Groups",
+    "command-execution|group-enumeration|os-api-execution|process-creation",
+    "T1069.002::[Brute Ratel C4] can use `net group` for discovery on targeted domains."
+  ],
+  [
+    "brute-ratel-c4",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[Brute Ratel C4] can use HTTPS and HTTPS for C2 communication."
+  ],
+  [
+    "brute-ratel-c4",
+    "T1071.004",
+    "DNS",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.004::[Brute Ratel C4] can use DNS over HTTPS for C2."
+  ],
+  [
+    "brute-ratel-c4",
+    "T1087.002",
+    "Domain Account",
+    "command-execution|group-enumeration|network-traffic-content|os-api-execution|process-creation",
+    "T1087.002::[Brute Ratel C4] can use LDAP queries, `net group \"Domain Admins\" /domain` and `net user /domain` for discovery."
+  ],
+  [
+    "brute-ratel-c4",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Brute Ratel C4] has gained execution through users opening malicious documents."
+  ],
+  [
+    "brute-ratel-c4",
+    "T1497.003",
+    "Time Based Evasion",
+    "command-execution|os-api-execution|process-creation",
+    "T1497.003::[Brute Ratel C4] can call `NtDelayExecution` to pause execution."
+  ],
+  [
+    "brute-ratel-c4",
+    "T1518.001",
+    "Security Software Discovery",
+    "command-execution|firewall-enumeration|firewall-metadata|os-api-execution|process-creation",
+    "T1518.001::[Brute Ratel C4] can detect EDR userland hooks."
+  ],
+  [
+    "brute-ratel-c4",
+    "T1558.003",
+    "Kerberoasting",
+    "active-directory-credential-request",
+    "T1558.003::[Brute Ratel C4] can decode Kerberos 5 tickets and convert it to hashcat format for subsequent cracking."
+  ],
+  [
+    "brute-ratel-c4",
+    "T1562.006",
+    "Indicator Blocking",
+    "command-execution|host-status|windows-registry-key-modification",
+    "T1562.006::[Brute Ratel C4] has the ability to hide memory artifacts and to patch Event Tracing for Windows (ETW) and the Anti Malware Scan Interface (AMSI)."
+  ],
+  [
+    "brute-ratel-c4",
+    "T1569.002",
+    "Service Execution",
+    "command-execution|process-creation|service-creation|windows-registry-key-modification",
+    "T1569.002::[Brute Ratel C4] can create Windows system services for execution."
+  ],
+  [
+    "brute-ratel-c4",
+    "T1574.001",
+    "DLL Search Order Hijacking",
+    "file-creation|file-modification|module-load",
+    "T1574.001::[Brute Ratel C4] has used search order hijacking to load a malicious payload DLL as a dependency to a benign application packaged in the same ISO."
+  ],
+  [
+    "brute-ratel-c4",
+    "T1574.002",
+    "DLL Side-Loading",
+    "file-creation|file-modification|module-load|process-creation",
+    "T1574.002::[Brute Ratel C4] has loaded a malicious DLL by spoofing the name of the legitimate Version.DLL  and placing it in the same folder as the digitally-signed Microsoft binary OneDriveUpdater.exe."
+  ]
+]

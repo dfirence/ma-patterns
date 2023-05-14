@@ -1,0 +1,16 @@
+[
+  [
+    "dsquery",
+    "T1069.002",
+    "Domain Groups",
+    "command-execution|group-enumeration|os-api-execution|process-creation",
+    "T1069.002::[dsquery] can be used to gather information on permission groups within a domain."
+  ],
+  [
+    "dsquery",
+    "T1087.002",
+    "Domain Account",
+    "command-execution|group-enumeration|network-traffic-content|os-api-execution|process-creation",
+    "T1087.002::[dsquery] can be used to gather information on user accounts within a domain."
+  ]
+]

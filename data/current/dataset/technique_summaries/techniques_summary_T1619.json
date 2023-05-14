@@ -1,0 +1,37 @@
+[
+  {
+    "id": "attack-pattern--8565825b-21c8-4518-b75e-cbc4c717a156",
+    "platform": "iaas",
+    "tid": "T1619",
+    "technique": "Cloud Storage Object Discovery",
+    "tactic": "discovery",
+    "datasources": "cloud-storage-access|cloud-storage-enumeration",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may enumerate objects in cloud storage infrastructure. Adversaries may use this information during automated discovery to shape follow-on behaviors, including requesting all or specific objects from cloud storage.  Similar to [File and Directory Discovery](https://attack.mitre.org/techniques/T1083) on a local host, after identifying available storage services (i.e. [Cloud Infrastructure Discovery](https://attack.mitre.org/techniques/T1580)) adversaries may access the contents/objects stored in cloud infrastructure.\n\nCloud service providers offer APIs allowing users to enumerate objects stored within cloud storage. Examples include ListObjectsV2 in AWS (Citation: ListObjectsV2) and List Blobs in Azure(Citation: List Blobs) .",
+    "technique_references": [
+      {
+        "source_name": "ListObjectsV2",
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html",
+        "description": "Amazon - ListObjectsV2. Retrieved October 4, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "List Blobs",
+        "url": "https://docs.microsoft.com/en-us/rest/api/storageservices/list-blobs",
+        "description": "Microsoft - List Blobs. (n.d.). Retrieved October 4, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

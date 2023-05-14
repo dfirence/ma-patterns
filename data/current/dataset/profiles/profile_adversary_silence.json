@@ -1,0 +1,103 @@
+[
+  {
+    "id": "intrusion-set--d13c8a7f-740b-4efa-a232-de7d6bb05321",
+    "name": "silence",
+    "aliases": "silence|whisper-spider",
+    "group_id": "G0091",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 3,
+        "items": [
+          "empire",
+          "sdelete",
+          "winexe"
+        ]
+      },
+      "techniques": {
+        "count": 28,
+        "items": [
+          "T1003.001",
+          "T1018",
+          "T1021.001",
+          "T1027.010",
+          "T1036.005",
+          "T1053.005",
+          "T1055",
+          "T1059.001",
+          "T1059.003",
+          "T1059.005",
+          "T1059.007",
+          "T1070.004",
+          "T1072",
+          "T1078",
+          "T1090.002",
+          "T1105",
+          "T1106",
+          "T1112",
+          "T1113",
+          "T1125",
+          "T1204.002",
+          "T1218.001",
+          "T1547.001",
+          "T1553.002",
+          "T1566.001",
+          "T1569.002",
+          "T1571",
+          "T1588.002"
+        ]
+      },
+      "tactics": {
+        "count": 11,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1003.001::[Silence] has used the Farse6.1 utility (based on [Mimikatz]) to extract credentials from lsass.exe.",
+        "T1018::[Silence] has used Nmap to scan the corporate network, build a network topology, and identify vulnerable hosts.",
+        "T1021.001::[Silence] has used RDP for lateral movement.",
+        "T1027.010::[Silence] has used environment variable string substitution for obfuscation.",
+        "T1036.005::[Silence] has named its backdoor \"WINWORD.exe\".",
+        "T1053.005::[Silence] has used scheduled tasks to stage its operation.",
+        "T1055::[Silence] has injected a DLL library containing a Trojan into the fwmain32.exe process.",
+        "T1059.001::[Silence] has used PowerShell to download and execute payloads.",
+        "T1059.003::[Silence] has used Windows command-line to run commands.",
+        "T1059.005::[Silence] has used VBS scripts.",
+        "T1059.007::[Silence] has used JS scripts.",
+        "T1070.004::[Silence] has deleted artifacts, including scheduled tasks, communicates files from the C2 and other logs.",
+        "T1072::[Silence] has used RAdmin, a remote software tool used to remotely control workstations and ATMs.",
+        "T1078::[Silence] has used compromised credentials to log on to other systems and escalate privileges.",
+        "T1090.002::[Silence] has used ProxyBot, which allows the attacker to redirect traffic from the current node to the backconnect server via Sock4\\Socks5.",
+        "T1105::[Silence] has downloaded additional modules and malware to victim’s machines.",
+        "T1106::[Silence] has leveraged the Windows API, including using CreateProcess() or ShellExecute(), to perform a variety of tasks.",
+        "T1112::[Silence] can create, delete, or modify a specified Registry key or value.",
+        "T1113::[Silence] can capture victim screen activity.",
+        "T1125::[Silence] has been observed making videos of victims to observe bank employees day to day activities.",
+        "T1204.002::[Silence] attempts to get users to launch malicious attachments delivered via spearphishing emails.",
+        "T1218.001::[Silence] has weaponized CHM files in their phishing campaigns.",
+        "T1547.001::[Silence] has used HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run, HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run, and the Startup folder to establish persistence.",
+        "T1553.002::[Silence] has used a valid certificate to sign their primary loader Silence.Downloader (aka TrueBot).",
+        "T1566.001::[Silence] has sent emails with malicious DOCX, CHM, LNK and ZIP attachments.",
+        "T1569.002::[Silence] has used [Winexe] to install a service on the remote system.",
+        "T1571::[Silence] has used port 444 when sending data about the system from the client to the server.",
+        "T1588.002::[Silence] has obtained and modified versions of publicly-available tools like [Empire] and [PsExec]."
+      ]
+    },
+    "description": "[Silence](https://attack.mitre.org/groups/G0091) is a financially motivated threat actor targeting financial institutions in different countries. The group was first seen in June 2016. Their main targets reside in Russia, Ukraine, Belarus, Azerbaijan, Poland and Kazakhstan. They compromised various banking systems, including the Russian Central Bank's Automated Workstation Client, ATMs, and card processing.(Citation: Cyber Forensicator Silence Jan 2019)(Citation: SecureList Silence Nov 2017) "
+  }
+]

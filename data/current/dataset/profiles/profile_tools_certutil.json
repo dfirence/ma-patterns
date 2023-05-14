@@ -1,0 +1,50 @@
+[
+  {
+    "id": "tool--0a68f1f1-da74-4d28-8d9a-696c082706cc",
+    "name": "certutil",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0160",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 3,
+        "items": [
+          "collection",
+          "command-and-control",
+          "defense-evasion"
+        ]
+      },
+      "techniques": {
+        "count": 4,
+        "items": [
+          "T1105",
+          "T1140",
+          "T1553.004",
+          "T1560.001"
+        ]
+      },
+      "adversaries": {
+        "count": 9,
+        "items": [
+          "apt28",
+          "apt41",
+          "earth-lusca",
+          "higaisa",
+          "menupass",
+          "oilrig",
+          "rancor",
+          "threat-group-3390",
+          "turla"
+        ]
+      },
+      "procedures": [
+        "T1105::[certutil] can be used to download files from a given URL.",
+        "T1140::[certutil] has been used to decode binaries hidden inside certificate files as Base64 information.",
+        "T1553.004::[certutil] can be used to install browser root certificates as a precursor to performing [Adversary-in-the-Middle] between connections to banking websites. Example command: certutil -addstore -f -user ROOT ProgramData\\cert512121.der.",
+        "T1560.001::[certutil] may be used to Base64 encode collected data."
+      ]
+    },
+    "description": "[certutil](https://attack.mitre.org/software/S0160) is a command-line utility that can be used to obtain certificate authority information and configure Certificate Services. (Citation: TechNet Certutil)"
+  }
+]

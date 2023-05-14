@@ -1,0 +1,742 @@
+[
+  {
+    "id": "attack-pattern--799ace7f-e227-4411-baa0-8868704f2a69",
+    "platform": "linux|macos|windows|containers|network|office-365|google-workspace",
+    "tid": "T1070",
+    "technique": "Indicator Removal",
+    "tactic": "defense-evasion",
+    "datasources": "user-account-authentication",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1070.001",
+      "T1070.002",
+      "T1070.003",
+      "T1070.004",
+      "T1070.005",
+      "T1070.006",
+      "T1070.007",
+      "T1070.008",
+      "T1070.009"
+    ],
+    "count_subtechniques": 9,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may delete or modify artifacts generated within systems to remove evidence of their presence or hinder defenses. Various artifacts may be created by an adversary or something that can be attributed to an adversary’s actions. Typically these artifacts are used as defensive indicators related to monitored events, such as strings from downloaded files, logs that are generated from user actions, and other data analyzed by defenders. Location, format, and type of artifact (such as command or login history) are often specific to each platform.\n\nRemoval of these indicators may interfere with event collection, reporting, or other processes used to detect intrusion activity. This may compromise the integrity of security solutions by causing notable events to go unreported. This activity may also impede forensic analysis and incident response, due to lack of sufficient data to determine what occurred.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b17a1a56-e99c-403c-8948-561df0cffe81",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "tid": "T1078",
+    "technique": "Valid Accounts",
+    "tactic": "defense-evasion",
+    "datasources": "user-account-authentication",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1078.001",
+      "T1078.002",
+      "T1078.003",
+      "T1078.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Compromised credentials may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access, network devices, and remote desktop.(Citation: volexity_0day_sophos_FW) Compromised credentials may also grant an adversary increased privilege to specific systems or access to restricted areas of the network. Adversaries may choose not to use malware or tools in conjunction with the legitimate access those credentials provide to make it harder to detect their presence.\n\nIn some cases, adversaries may abuse inactive accounts: for example, those belonging to individuals who are no longer part of an organization. Using these accounts may allow the adversary to evade detection, as the original account user will not be present to identify any anomalous activity taking place on their account.(Citation: CISA MFA PrintNightmare)\n\nThe overlap of permissions for local, domain, and cloud accounts across a network of systems is of concern because the adversary may be able to pivot across accounts and systems to reach a high level of access (i.e., domain or enterprise administrator) to bypass access controls set within the enterprise.(Citation: TechNet Credential Theft)",
+    "technique_references": [
+      {
+        "source_name": "volexity_0day_sophos_FW",
+        "url": "https://www.volexity.com/blog/2022/06/15/driftingcloud-zero-day-sophos-firewall-exploitation-and-an-insidious-breach/",
+        "description": "Adair, S., Lancaster, T., Volexity Threat Research. (2022, June 15). DriftingCloud: Zero-Day Sophos Firewall Exploitation and an Insidious Breach. Retrieved July 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CISA MFA PrintNightmare",
+        "url": "https://www.cisa.gov/uscert/ncas/alerts/aa22-074a",
+        "description": "Cybersecurity and Infrastructure Security Agency. (2022, March 15). Russian State-Sponsored Cyber Actors Gain Network Access by Exploiting Default Multifactor Authentication Protocols and “PrintNightmare” Vulnerability. Retrieved March 16, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Credential Theft",
+        "url": "https://technet.microsoft.com/en-us/library/dn535501.aspx",
+        "description": "Microsoft. (2016, April 15). Attractive Accounts for Credential Theft. Retrieved June 3, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "user|administrator",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b17a1a56-e99c-403c-8948-561df0cffe81",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "tid": "T1078",
+    "technique": "Valid Accounts",
+    "tactic": "persistence",
+    "datasources": "user-account-authentication",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1078.001",
+      "T1078.002",
+      "T1078.003",
+      "T1078.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Compromised credentials may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access, network devices, and remote desktop.(Citation: volexity_0day_sophos_FW) Compromised credentials may also grant an adversary increased privilege to specific systems or access to restricted areas of the network. Adversaries may choose not to use malware or tools in conjunction with the legitimate access those credentials provide to make it harder to detect their presence.\n\nIn some cases, adversaries may abuse inactive accounts: for example, those belonging to individuals who are no longer part of an organization. Using these accounts may allow the adversary to evade detection, as the original account user will not be present to identify any anomalous activity taking place on their account.(Citation: CISA MFA PrintNightmare)\n\nThe overlap of permissions for local, domain, and cloud accounts across a network of systems is of concern because the adversary may be able to pivot across accounts and systems to reach a high level of access (i.e., domain or enterprise administrator) to bypass access controls set within the enterprise.(Citation: TechNet Credential Theft)",
+    "technique_references": [
+      {
+        "source_name": "volexity_0day_sophos_FW",
+        "url": "https://www.volexity.com/blog/2022/06/15/driftingcloud-zero-day-sophos-firewall-exploitation-and-an-insidious-breach/",
+        "description": "Adair, S., Lancaster, T., Volexity Threat Research. (2022, June 15). DriftingCloud: Zero-Day Sophos Firewall Exploitation and an Insidious Breach. Retrieved July 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CISA MFA PrintNightmare",
+        "url": "https://www.cisa.gov/uscert/ncas/alerts/aa22-074a",
+        "description": "Cybersecurity and Infrastructure Security Agency. (2022, March 15). Russian State-Sponsored Cyber Actors Gain Network Access by Exploiting Default Multifactor Authentication Protocols and “PrintNightmare” Vulnerability. Retrieved March 16, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Credential Theft",
+        "url": "https://technet.microsoft.com/en-us/library/dn535501.aspx",
+        "description": "Microsoft. (2016, April 15). Attractive Accounts for Credential Theft. Retrieved June 3, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "user|administrator",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b17a1a56-e99c-403c-8948-561df0cffe81",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "tid": "T1078",
+    "technique": "Valid Accounts",
+    "tactic": "privilege-escalation",
+    "datasources": "user-account-authentication",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1078.001",
+      "T1078.002",
+      "T1078.003",
+      "T1078.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Compromised credentials may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access, network devices, and remote desktop.(Citation: volexity_0day_sophos_FW) Compromised credentials may also grant an adversary increased privilege to specific systems or access to restricted areas of the network. Adversaries may choose not to use malware or tools in conjunction with the legitimate access those credentials provide to make it harder to detect their presence.\n\nIn some cases, adversaries may abuse inactive accounts: for example, those belonging to individuals who are no longer part of an organization. Using these accounts may allow the adversary to evade detection, as the original account user will not be present to identify any anomalous activity taking place on their account.(Citation: CISA MFA PrintNightmare)\n\nThe overlap of permissions for local, domain, and cloud accounts across a network of systems is of concern because the adversary may be able to pivot across accounts and systems to reach a high level of access (i.e., domain or enterprise administrator) to bypass access controls set within the enterprise.(Citation: TechNet Credential Theft)",
+    "technique_references": [
+      {
+        "source_name": "volexity_0day_sophos_FW",
+        "url": "https://www.volexity.com/blog/2022/06/15/driftingcloud-zero-day-sophos-firewall-exploitation-and-an-insidious-breach/",
+        "description": "Adair, S., Lancaster, T., Volexity Threat Research. (2022, June 15). DriftingCloud: Zero-Day Sophos Firewall Exploitation and an Insidious Breach. Retrieved July 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CISA MFA PrintNightmare",
+        "url": "https://www.cisa.gov/uscert/ncas/alerts/aa22-074a",
+        "description": "Cybersecurity and Infrastructure Security Agency. (2022, March 15). Russian State-Sponsored Cyber Actors Gain Network Access by Exploiting Default Multifactor Authentication Protocols and “PrintNightmare” Vulnerability. Retrieved March 16, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Credential Theft",
+        "url": "https://technet.microsoft.com/en-us/library/dn535501.aspx",
+        "description": "Microsoft. (2016, April 15). Attractive Accounts for Credential Theft. Retrieved June 3, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "user|administrator",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b17a1a56-e99c-403c-8948-561df0cffe81",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "tid": "T1078",
+    "technique": "Valid Accounts",
+    "tactic": "initial-access",
+    "datasources": "user-account-authentication",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1078.001",
+      "T1078.002",
+      "T1078.003",
+      "T1078.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Compromised credentials may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access, network devices, and remote desktop.(Citation: volexity_0day_sophos_FW) Compromised credentials may also grant an adversary increased privilege to specific systems or access to restricted areas of the network. Adversaries may choose not to use malware or tools in conjunction with the legitimate access those credentials provide to make it harder to detect their presence.\n\nIn some cases, adversaries may abuse inactive accounts: for example, those belonging to individuals who are no longer part of an organization. Using these accounts may allow the adversary to evade detection, as the original account user will not be present to identify any anomalous activity taking place on their account.(Citation: CISA MFA PrintNightmare)\n\nThe overlap of permissions for local, domain, and cloud accounts across a network of systems is of concern because the adversary may be able to pivot across accounts and systems to reach a high level of access (i.e., domain or enterprise administrator) to bypass access controls set within the enterprise.(Citation: TechNet Credential Theft)",
+    "technique_references": [
+      {
+        "source_name": "volexity_0day_sophos_FW",
+        "url": "https://www.volexity.com/blog/2022/06/15/driftingcloud-zero-day-sophos-firewall-exploitation-and-an-insidious-breach/",
+        "description": "Adair, S., Lancaster, T., Volexity Threat Research. (2022, June 15). DriftingCloud: Zero-Day Sophos Firewall Exploitation and an Insidious Breach. Retrieved July 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CISA MFA PrintNightmare",
+        "url": "https://www.cisa.gov/uscert/ncas/alerts/aa22-074a",
+        "description": "Cybersecurity and Infrastructure Security Agency. (2022, March 15). Russian State-Sponsored Cyber Actors Gain Network Access by Exploiting Default Multifactor Authentication Protocols and “PrintNightmare” Vulnerability. Retrieved March 16, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Credential Theft",
+        "url": "https://technet.microsoft.com/en-us/library/dn535501.aspx",
+        "description": "Microsoft. (2016, April 15). Attractive Accounts for Credential Theft. Retrieved June 3, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "user|administrator",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--a93494bb-4b80-4ea1-8695-3236a49916fd",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "tid": "T1110",
+    "technique": "Brute Force",
+    "tactic": "credential-access",
+    "datasources": "user-account-authentication",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1110.001",
+      "T1110.002",
+      "T1110.003",
+      "T1110.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use brute force techniques to gain access to accounts when passwords are unknown or when password hashes are obtained. Without knowledge of the password for an account or set of accounts, an adversary may systematically guess the password using a repetitive or iterative mechanism. Brute forcing passwords can take place via interaction with a service that will check the validity of those credentials or offline against previously acquired credential data, such as password hashes.\n\nBrute forcing credentials may take place at various points during a breach. For example, adversaries may attempt to brute force access to [Valid Accounts](https://attack.mitre.org/techniques/T1078) within a victim environment leveraging knowledge gathered from other post-compromise behaviors such as [OS Credential Dumping](https://attack.mitre.org/techniques/T1003), [Account Discovery](https://attack.mitre.org/techniques/T1087), or [Password Policy Discovery](https://attack.mitre.org/techniques/T1201). Adversaries may also combine brute forcing activity with behaviors such as [External Remote Services](https://attack.mitre.org/techniques/T1133) as part of Initial Access.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--564998d8-ab3e-4123-93fb-eccaa6b9714a",
+    "platform": "windows",
+    "tid": "T1207",
+    "technique": "Rogue Domain Controller",
+    "tactic": "defense-evasion",
+    "datasources": "user-account-authentication",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may register a rogue Domain Controller to enable manipulation of Active Directory data. DCShadow may be used to create a rogue Domain Controller (DC). DCShadow is a method of manipulating Active Directory (AD) data, including objects and schemas, by registering (or reusing an inactive registration) and simulating the behavior of a DC. (Citation: DCShadow Blog) Once registered, a rogue DC may be able to inject and replicate changes into AD infrastructure for any domain object, including credentials and keys.\n\nRegistering a rogue DC involves creating a new server and nTDSDSA objects in the Configuration partition of the AD schema, which requires Administrator privileges (either Domain or local to the DC) or the KRBTGT hash. (Citation: Adsecurity Mimikatz Guide)\n\nThis technique may bypass system logging and security monitors such as security information and event management (SIEM) products (since actions taken on a rogue DC may not be reported to these sensors). (Citation: DCShadow Blog) The technique may also be used to alter and delete replication and other associated metadata to obstruct forensic analysis. Adversaries may also utilize this technique to perform [SID-History Injection](https://attack.mitre.org/techniques/T1134/005) and/or manipulate AD objects (such as accounts, access control lists, schemas) to establish backdoors for Persistence. (Citation: DCShadow Blog)",
+    "technique_references": [
+      {
+        "source_name": "DCShadow Blog",
+        "url": "https://www.dcshadow.com/",
+        "description": "Delpy, B. & LE TOUX, V. (n.d.). DCShadow. Retrieved March 20, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Adsecurity Mimikatz Guide",
+        "url": "https://adsecurity.org/?page_id=1821",
+        "description": "Metcalf, S. (2015, November 13). Unofficial Guide to Mimikatz & Command Reference. Retrieved December 23, 2015.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub DCSYNCMonitor",
+        "url": "https://github.com/shellster/DCSYNCMonitor",
+        "description": "Spencer S. (2018, February 22). DCSYNCMonitor. Retrieved March 30, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft DirSync",
+        "url": "https://msdn.microsoft.com/en-us/library/ms677626.aspx",
+        "description": "Microsoft. (n.d.). Polling for Changes Using the DirSync Control. Retrieved March 30, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ADDSecurity DCShadow Feb 2018",
+        "url": "https://adds-security.blogspot.fr/2018/02/detecter-dcshadow-impossible.html",
+        "description": "Lucand,G. (2018, February 18). Detect DCShadow, impossible?. Retrieved March 30, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--9c306d8d-cde7-4b4c-b6e8-d0bb16caca36",
+    "platform": "linux|windows|macos",
+    "tid": "T1212",
+    "technique": "Exploitation for Credential Access",
+    "tactic": "credential-access",
+    "datasources": "user-account-authentication",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may exploit software vulnerabilities in an attempt to collect credentials. Exploitation of a software vulnerability occurs when an adversary takes advantage of a programming error in a program, service, or within the operating system software or kernel itself to execute adversary-controlled code. Credentialing and authentication mechanisms may be targeted for exploitation by adversaries as a means to gain access to useful credentials or circumvent the process to gain access to systems. One example of this is MS14-068, which targets Kerberos and can be used to forge Kerberos tickets using domain user permissions.(Citation: Technet MS14-068)(Citation: ADSecurity Detecting Forged Tickets) Exploitation for credential access may also result in Privilege Escalation depending on the process targeted or credentials obtained.",
+    "technique_references": [
+      {
+        "source_name": "ADSecurity Detecting Forged Tickets",
+        "url": "https://adsecurity.org/?p=1515",
+        "description": "Metcalf, S. (2015, May 03). Detecting Forged Kerberos Ticket (Golden Ticket & Silver Ticket) Use in Active Directory. Retrieved December 23, 2015.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Technet MS14-068",
+        "url": "https://technet.microsoft.com/en-us/library/security/ms14-068.aspx",
+        "description": "Microsoft. (2014, November 18). Vulnerability in Kerberos Could Allow Elevation of Privilege (3011780). Retrieved December 23, 2015.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--e49920b0-6c54-40c1-9571-73723653205f",
+    "platform": "azure-ad|office-365|iaas|google-workspace",
+    "tid": "T1538",
+    "technique": "Cloud Service Dashboard",
+    "tactic": "discovery",
+    "datasources": "user-account-authentication",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "An adversary may use a cloud service dashboard GUI with stolen credentials to gain useful information from an operational cloud environment, such as specific services, resources, and features. For example, the GCP Command Center can be used to view all assets, findings of potential security risks, and to run additional queries, such as finding public IP addresses and open ports.(Citation: Google Command Center Dashboard)\n\nDepending on the configuration of the environment, an adversary may be able to enumerate more information via the graphical dashboard than an API. This allows the adversary to gain information without making any API requests.",
+    "technique_references": [
+      {
+        "source_name": "Google Command Center Dashboard",
+        "url": "https://cloud.google.com/security-command-center/docs/quickstart-scc-dashboard",
+        "description": "Google. (2019, October 3). Quickstart: Using the dashboard. Retrieved October 8, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AWS Console Sign-in Events",
+        "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-aws-console-sign-in-events.html",
+        "description": "Amazon. (n.d.). AWS Console Sign-in Events. Retrieved October 23, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--51a14c76-dd3b-440b-9c20-2bf91d25a814",
+    "platform": "windows|office-365|saas|google-workspace|iaas|containers",
+    "tid": "T1550",
+    "technique": "Use Alternate Authentication Material",
+    "tactic": "defense-evasion",
+    "datasources": "user-account-authentication",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1550.001",
+      "T1550.002",
+      "T1550.003",
+      "T1550.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use alternate authentication material, such as password hashes, Kerberos tickets, and application access tokens, in order to move laterally within an environment and bypass normal system access controls. \n\nAuthentication processes generally require a valid identity (e.g., username) along with one or more authentication factors (e.g., password, pin, physical smart card, token generator, etc.). Alternate authentication material is legitimately generated by systems after a user or application successfully authenticates by providing a valid identity and the required authentication factor(s). Alternate authentication material may also be generated during the identity creation process.(Citation: NIST Authentication)(Citation: NIST MFA)\n\nCaching alternate authentication material allows the system to verify an identity has successfully authenticated without asking the user to reenter authentication factor(s). Because the alternate authentication must be maintained by the system—either in memory or on disk—it may be at risk of being stolen through [Credential Access](https://attack.mitre.org/tactics/TA0006) techniques. By stealing alternate authentication material, adversaries are able to bypass system access controls and authenticate to systems without knowing the plaintext password or any additional authentication factors.\n",
+    "technique_references": [
+      {
+        "source_name": "NIST Authentication",
+        "url": "https://csrc.nist.gov/glossary/term/authentication",
+        "description": "NIST. (n.d.). Authentication. Retrieved January 30, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NIST MFA",
+        "url": "https://csrc.nist.gov/glossary/term/Multi_Factor-Authentication",
+        "description": "NIST. (n.d.). Multi-Factor Authentication (MFA). Retrieved January 30, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--51a14c76-dd3b-440b-9c20-2bf91d25a814",
+    "platform": "windows|office-365|saas|google-workspace|iaas|containers",
+    "tid": "T1550",
+    "technique": "Use Alternate Authentication Material",
+    "tactic": "lateral-movement",
+    "datasources": "user-account-authentication",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1550.001",
+      "T1550.002",
+      "T1550.003",
+      "T1550.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use alternate authentication material, such as password hashes, Kerberos tickets, and application access tokens, in order to move laterally within an environment and bypass normal system access controls. \n\nAuthentication processes generally require a valid identity (e.g., username) along with one or more authentication factors (e.g., password, pin, physical smart card, token generator, etc.). Alternate authentication material is legitimately generated by systems after a user or application successfully authenticates by providing a valid identity and the required authentication factor(s). Alternate authentication material may also be generated during the identity creation process.(Citation: NIST Authentication)(Citation: NIST MFA)\n\nCaching alternate authentication material allows the system to verify an identity has successfully authenticated without asking the user to reenter authentication factor(s). Because the alternate authentication must be maintained by the system—either in memory or on disk—it may be at risk of being stolen through [Credential Access](https://attack.mitre.org/tactics/TA0006) techniques. By stealing alternate authentication material, adversaries are able to bypass system access controls and authenticate to systems without knowing the plaintext password or any additional authentication factors.\n",
+    "technique_references": [
+      {
+        "source_name": "NIST Authentication",
+        "url": "https://csrc.nist.gov/glossary/term/authentication",
+        "description": "NIST. (n.d.). Authentication. Retrieved January 30, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NIST MFA",
+        "url": "https://csrc.nist.gov/glossary/term/Multi_Factor-Authentication",
+        "description": "NIST. (n.d.). Multi-Factor Authentication (MFA). Retrieved January 30, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--435dfb86-2697-4867-85b5-2fef496c0517",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "tid": "T1552",
+    "technique": "Unsecured Credentials",
+    "tactic": "credential-access",
+    "datasources": "user-account-authentication",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1552.001",
+      "T1552.002",
+      "T1552.003",
+      "T1552.004",
+      "T1552.005",
+      "T1552.006",
+      "T1552.007",
+      "T1552.008"
+    ],
+    "count_subtechniques": 8,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may search compromised systems to find and obtain insecurely stored credentials. These credentials can be stored and/or misplaced in many locations on a system, including plaintext files (e.g. [Bash History](https://attack.mitre.org/techniques/T1552/003)), operating system or application-specific repositories (e.g. [Credentials in Registry](https://attack.mitre.org/techniques/T1552/002)), or other specialized files/artifacts (e.g. [Private Keys](https://attack.mitre.org/techniques/T1552/004)).",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f4c1826f-a322-41cd-9557-562100848c84",
+    "platform": "windows|linux|macos|network|azure-ad|google-workspace|iaas|office-365|saas",
+    "tid": "T1556",
+    "technique": "Modify Authentication Process",
+    "tactic": "credential-access",
+    "datasources": "user-account-authentication",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1556.001",
+      "T1556.002",
+      "T1556.003",
+      "T1556.004",
+      "T1556.005",
+      "T1556.006",
+      "T1556.007",
+      "T1556.008"
+    ],
+    "count_subtechniques": 8,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify authentication mechanisms and processes to access user credentials or enable otherwise unwarranted access to accounts. The authentication process is handled by mechanisms, such as the Local Security Authentication Server (LSASS) process and the Security Accounts Manager (SAM) on Windows, pluggable authentication modules (PAM) on Unix-based systems, and authorization plugins on MacOS systems, responsible for gathering, storing, and validating credentials. By modifying an authentication process, an adversary may be able to authenticate to a service or system without using [Valid Accounts](https://attack.mitre.org/techniques/T1078).\n\nAdversaries may maliciously modify a part of this process to either reveal credentials or bypass authentication mechanisms. Compromised credentials or access may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access and remote desktop.",
+    "technique_references": [
+      {
+        "source_name": "Clymb3r Function Hook Passwords Sept 2013",
+        "url": "https://clymb3r.wordpress.com/2013/09/15/intercepting-password-changes-with-function-hooking/",
+        "description": "Bialek, J. (2013, September 15). Intercepting Password Changes With Function Hooking. Retrieved November 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Xorrior Authorization Plugins",
+        "url": "https://xorrior.com/persistent-credential-theft/",
+        "description": "Chris Ross. (2018, October 17). Persistent Credential Theft with Authorization Plugins. Retrieved April 22, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Dell Skeleton",
+        "url": "https://www.secureworks.com/research/skeleton-key-malware-analysis",
+        "description": "Dell SecureWorks. (2015, January 12). Skeleton Key Malware Analysis. Retrieved April 8, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "dump_pwd_dcsync",
+        "url": "https://adsecurity.org/?p=2053",
+        "description": "Metcalf, S. (2015, November 22). Dump Clear-Text Passwords for All Admins in the Domain Using Mimikatz DCSync. Retrieved November 15, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f4c1826f-a322-41cd-9557-562100848c84",
+    "platform": "windows|linux|macos|network|azure-ad|google-workspace|iaas|office-365|saas",
+    "tid": "T1556",
+    "technique": "Modify Authentication Process",
+    "tactic": "defense-evasion",
+    "datasources": "user-account-authentication",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1556.001",
+      "T1556.002",
+      "T1556.003",
+      "T1556.004",
+      "T1556.005",
+      "T1556.006",
+      "T1556.007",
+      "T1556.008"
+    ],
+    "count_subtechniques": 8,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify authentication mechanisms and processes to access user credentials or enable otherwise unwarranted access to accounts. The authentication process is handled by mechanisms, such as the Local Security Authentication Server (LSASS) process and the Security Accounts Manager (SAM) on Windows, pluggable authentication modules (PAM) on Unix-based systems, and authorization plugins on MacOS systems, responsible for gathering, storing, and validating credentials. By modifying an authentication process, an adversary may be able to authenticate to a service or system without using [Valid Accounts](https://attack.mitre.org/techniques/T1078).\n\nAdversaries may maliciously modify a part of this process to either reveal credentials or bypass authentication mechanisms. Compromised credentials or access may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access and remote desktop.",
+    "technique_references": [
+      {
+        "source_name": "Clymb3r Function Hook Passwords Sept 2013",
+        "url": "https://clymb3r.wordpress.com/2013/09/15/intercepting-password-changes-with-function-hooking/",
+        "description": "Bialek, J. (2013, September 15). Intercepting Password Changes With Function Hooking. Retrieved November 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Xorrior Authorization Plugins",
+        "url": "https://xorrior.com/persistent-credential-theft/",
+        "description": "Chris Ross. (2018, October 17). Persistent Credential Theft with Authorization Plugins. Retrieved April 22, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Dell Skeleton",
+        "url": "https://www.secureworks.com/research/skeleton-key-malware-analysis",
+        "description": "Dell SecureWorks. (2015, January 12). Skeleton Key Malware Analysis. Retrieved April 8, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "dump_pwd_dcsync",
+        "url": "https://adsecurity.org/?p=2053",
+        "description": "Metcalf, S. (2015, November 22). Dump Clear-Text Passwords for All Admins in the Domain Using Mimikatz DCSync. Retrieved November 15, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f4c1826f-a322-41cd-9557-562100848c84",
+    "platform": "windows|linux|macos|network|azure-ad|google-workspace|iaas|office-365|saas",
+    "tid": "T1556",
+    "technique": "Modify Authentication Process",
+    "tactic": "persistence",
+    "datasources": "user-account-authentication",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1556.001",
+      "T1556.002",
+      "T1556.003",
+      "T1556.004",
+      "T1556.005",
+      "T1556.006",
+      "T1556.007",
+      "T1556.008"
+    ],
+    "count_subtechniques": 8,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify authentication mechanisms and processes to access user credentials or enable otherwise unwarranted access to accounts. The authentication process is handled by mechanisms, such as the Local Security Authentication Server (LSASS) process and the Security Accounts Manager (SAM) on Windows, pluggable authentication modules (PAM) on Unix-based systems, and authorization plugins on MacOS systems, responsible for gathering, storing, and validating credentials. By modifying an authentication process, an adversary may be able to authenticate to a service or system without using [Valid Accounts](https://attack.mitre.org/techniques/T1078).\n\nAdversaries may maliciously modify a part of this process to either reveal credentials or bypass authentication mechanisms. Compromised credentials or access may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access and remote desktop.",
+    "technique_references": [
+      {
+        "source_name": "Clymb3r Function Hook Passwords Sept 2013",
+        "url": "https://clymb3r.wordpress.com/2013/09/15/intercepting-password-changes-with-function-hooking/",
+        "description": "Bialek, J. (2013, September 15). Intercepting Password Changes With Function Hooking. Retrieved November 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Xorrior Authorization Plugins",
+        "url": "https://xorrior.com/persistent-credential-theft/",
+        "description": "Chris Ross. (2018, October 17). Persistent Credential Theft with Authorization Plugins. Retrieved April 22, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Dell Skeleton",
+        "url": "https://www.secureworks.com/research/skeleton-key-malware-analysis",
+        "description": "Dell SecureWorks. (2015, January 12). Skeleton Key Malware Analysis. Retrieved April 8, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "dump_pwd_dcsync",
+        "url": "https://adsecurity.org/?p=2053",
+        "description": "Metcalf, S. (2015, November 22). Dump Clear-Text Passwords for All Admins in the Domain Using Mimikatz DCSync. Retrieved November 15, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--954a1639-f2d6-407d-aef3-4917622ca493",
+    "platform": "windows|office-365|linux|macos|iaas|saas|azure-ad|google-workspace",
+    "tid": "T1621",
+    "technique": "Multi-Factor Authentication Request Generation",
+    "tactic": "credential-access",
+    "datasources": "user-account-authentication",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to bypass multi-factor authentication (MFA) mechanisms and gain access to accounts by generating MFA requests sent to users.\n\nAdversaries in possession of credentials to [Valid Accounts](https://attack.mitre.org/techniques/T1078) may be unable to complete the login process if they lack access to the 2FA or MFA mechanisms required as an additional credential and security control. To circumvent this, adversaries may abuse the automatic generation of push notifications to MFA services such as Duo Push, Microsoft Authenticator, Okta, or similar services to have the user grant access to their account.\n\nIn some cases, adversaries may continuously repeat login attempts in order to bombard users with MFA push notifications, SMS messages, and phone calls, potentially resulting in the user finally accepting the authentication request in response to “MFA fatigue.”(Citation: Russian 2FA Push Annoyance - Cimpanu)(Citation: MFA Fatigue Attacks - PortSwigger)(Citation: Suspected Russian Activity Targeting Government and Business Entities Around the Globe)",
+    "technique_references": [
+      {
+        "source_name": "Russian 2FA Push Annoyance - Cimpanu",
+        "url": "https://therecord.media/russian-hackers-bypass-2fa-by-annoying-victims-with-repeated-push-notifications/",
+        "description": "Catalin Cimpanu. (2021, December 9). Russian hackers bypass 2FA by annoying victims with repeated push notifications. Retrieved March 31, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MFA Fatigue Attacks - PortSwigger",
+        "url": "https://portswigger.net/daily-swig/mfa-fatigue-attacks-users-tricked-into-allowing-device-access-due-to-overload-of-push-notifications",
+        "description": "Jessica Haworth. (2022, February 16). MFA fatigue attacks: Users tricked into allowing device access due to overload of push notifications. Retrieved March 31, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Suspected Russian Activity Targeting Government and Business Entities Around the Globe",
+        "url": "https://www.mandiant.com/resources/russian-targeting-gov-business",
+        "description": "Luke Jenkins, Sarah Hawley, Parnian Najafi, Doug Bienstock. (2021, December 6). Suspected Russian Activity Targeting Government and Business Entities Around the Globe. Retrieved April 15, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

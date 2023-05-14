@@ -1,0 +1,57 @@
+[
+  {
+    "id": "attack-pattern--457c7820-d331-465a-915e-42f85500ccc4",
+    "platform": "windows|linux|macos",
+    "tid": "T1218",
+    "technique": "System Binary Proxy Execution",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|file-creation|module-load|network-connection-creation|os-api-execution|process-creation|windows-registry-key-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1218.001",
+      "T1218.002",
+      "T1218.003",
+      "T1218.004",
+      "T1218.005",
+      "T1218.007",
+      "T1218.008",
+      "T1218.009",
+      "T1218.010",
+      "T1218.011",
+      "T1218.012",
+      "T1218.013",
+      "T1218.014"
+    ],
+    "count_subtechniques": 13,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may bypass process and/or signature-based defenses by proxying execution of malicious content with signed, or otherwise trusted, binaries. Binaries used in this technique are often Microsoft-signed files, indicating that they have been either downloaded from Microsoft or are already native in the operating system.(Citation: LOLBAS Project) Binaries signed with trusted digital certificates can typically execute on Windows systems protected by digital signature validation. Several Microsoft signed binaries that are default on Windows installations can be used to proxy execution of other files or commands.\n\nSimilarly, on Linux systems adversaries may abuse trusted binaries such as <code>split</code> to proxy execution of malicious commands.(Citation: split man page)(Citation: GTFO split)",
+    "technique_references": [
+      {
+        "source_name": "GTFO split",
+        "url": "https://gtfobins.github.io/gtfobins/split/",
+        "description": "GTFOBins. (2020, November 13). split. Retrieved April 18, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "LOLBAS Project",
+        "url": "https://github.com/LOLBAS-Project/LOLBAS#criteria",
+        "description": "Oddvar Moe et al. (2022, February).  Living Off The Land Binaries, Scripts and Libraries. Retrieved March 7, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "split man page",
+        "url": "https://man7.org/linux/man-pages/man1/split.1.html",
+        "description": "Torbjorn Granlund, Richard M. Stallman. (2020, March null). split(1) — Linux manual page. Retrieved March 25, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

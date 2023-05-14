@@ -1,0 +1,43 @@
+[
+  {
+    "id": "attack-pattern--0ff59227-8aa8-4c09-bf1f-925605bd07ea",
+    "platform": "pre",
+    "tid": "T1590.002",
+    "technique": "DNS",
+    "tactic": "reconnaissance",
+    "datasources": "none",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may gather information about the victim's DNS that can be used during targeting. DNS information may include a variety of details, including registered name servers as well as records that outline addressing for a target’s subdomains, mail servers, and other hosts. DNS, MX, TXT, and SPF records may also reveal the use of third party cloud and SaaS providers, such as Office 365, G Suite, Salesforce, or Zendesk.(Citation: Sean Metcalf Twitter DNS Records)\n\nAdversaries may gather this information in various ways, such as querying or otherwise collecting details via [DNS/Passive DNS](https://attack.mitre.org/techniques/T1596/001). DNS information may also be exposed to adversaries via online or other accessible data sets (ex: [Search Open Technical Databases](https://attack.mitre.org/techniques/T1596)).(Citation: DNS Dumpster)(Citation: Circl Passive DNS) Gathering this information may reveal opportunities for other forms of reconnaissance (ex: [Search Open Technical Databases](https://attack.mitre.org/techniques/T1596), [Search Open Websites/Domains](https://attack.mitre.org/techniques/T1593), or [Active Scanning](https://attack.mitre.org/techniques/T1595)), establishing operational resources (ex: [Acquire Infrastructure](https://attack.mitre.org/techniques/T1583) or [Compromise Infrastructure](https://attack.mitre.org/techniques/T1584)), and/or initial access (ex: [External Remote Services](https://attack.mitre.org/techniques/T1133)).",
+    "technique_references": [
+      {
+        "source_name": "Circl Passive DNS",
+        "url": "https://www.circl.lu/services/passive-dns/",
+        "description": "CIRCL Computer Incident Response Center. (n.d.). Passive DNS. Retrieved October 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "DNS Dumpster",
+        "url": "https://dnsdumpster.com/",
+        "description": "Hacker Target. (n.d.). DNS Dumpster. Retrieved October 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sean Metcalf Twitter DNS Records",
+        "url": "https://twitter.com/PyroTek3/status/1126487227712921600/photo/1",
+        "description": "Sean Metcalf. (2019, May 9). Sean Metcalf Twitter. Retrieved May 27, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

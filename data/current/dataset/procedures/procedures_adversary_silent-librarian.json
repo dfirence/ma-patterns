@@ -1,0 +1,72 @@
+[
+  [
+    "silent-librarian",
+    "T1110.003",
+    "Password Spraying",
+    "application-log-content|user-account-authentication",
+    "T1110.003::[Silent Librarian] has used collected lists of names and e-mail accounts to use in password spraying attacks against private sector targets."
+  ],
+  [
+    "silent-librarian",
+    "T1114.003",
+    "Email Forwarding Rule",
+    "application-log-content|command-execution",
+    "T1114.003::[Silent Librarian] has set up auto forwarding rules on compromised e-mail accounts."
+  ],
+  [
+    "silent-librarian",
+    "T1583.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1583.001::[Silent Librarian] has acquired domains to establish credential harvesting pages, often spoofing the target organization and using free top level domains .TK, .ML, .GA, .CF, and .GQ."
+  ],
+  [
+    "silent-librarian",
+    "T1585.002",
+    "Email Accounts",
+    "none",
+    "T1585.002::[Silent Librarian] has established e-mail accounts to receive e-mails forwarded from compromised accounts."
+  ],
+  [
+    "silent-librarian",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[Silent Librarian] has obtained free and publicly available tools including SingleFile and HTTrack to copy login pages of targeted organizations."
+  ],
+  [
+    "silent-librarian",
+    "T1588.004",
+    "Digital Certificates",
+    "certificate-registration|response-content",
+    "T1588.004::[Silent Librarian] has obtained free Let's Encrypt SSL certificates for use on their phishing pages."
+  ],
+  [
+    "silent-librarian",
+    "T1589.002",
+    "Email Addresses",
+    "network-traffic-content",
+    "T1589.002::[Silent Librarian] has collected e-mail addresses from targeted organizations from open Internet searches."
+  ],
+  [
+    "silent-librarian",
+    "T1589.003",
+    "Employee Names",
+    "none",
+    "T1589.003::[Silent Librarian] has collected lists of names for individuals from targeted organizations."
+  ],
+  [
+    "silent-librarian",
+    "T1598.003",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1598.003::[Silent Librarian] has used links in e-mails to direct victims to credential harvesting websites designed to appear like the targeted organization's login page."
+  ],
+  [
+    "silent-librarian",
+    "T1608.005",
+    "Link Target",
+    "response-content",
+    "T1608.005::[Silent Librarian] has cloned victim organization login pages and staged them for later use in credential harvesting campaigns. [Silent Librarian] has also made use of a variety of URL shorteners for these staged websites."
+  ]
+]

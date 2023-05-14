@@ -1,0 +1,9 @@
+[
+  [
+    "remoteutilities",
+    "T1218.007",
+    "Msiexec",
+    "command-execution|module-load|network-connection-creation|process-creation",
+    "T1218.007::[RemoteUtilities] can use Msiexec to install a service."
+  ]
+]

@@ -1,0 +1,317 @@
+[
+  [
+    "empire",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[Empire] contains an implementation of [Mimikatz] to gather credentials from memory."
+  ],
+  [
+    "empire",
+    "T1021.003",
+    "Distributed Component Object Model",
+    "module-load|network-connection-creation|process-creation",
+    "T1021.003::[Empire] can utilize Invoke-DCOM to leverage remote COM execution for lateral movement."
+  ],
+  [
+    "empire",
+    "T1021.004",
+    "SSH",
+    "logon-session-creation|network-connection-creation|process-creation",
+    "T1021.004::[Empire] contains modules for executing commands over SSH as well as in-memory VNC agent injection."
+  ],
+  [
+    "empire",
+    "T1027.010",
+    "Command Obfuscation",
+    "command-execution|file-metadata|script-execution",
+    "T1027.010::[Empire] has the ability to obfuscate commands using Invoke-Obfuscation."
+  ],
+  [
+    "empire",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[Empire] has modules to interact with the Windows task scheduler."
+  ],
+  [
+    "empire",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[Empire] includes keylogging capabilities for Windows, Linux, and macOS systems."
+  ],
+  [
+    "empire",
+    "T1056.004",
+    "Credential API Hooking",
+    "os-api-execution|process-metadata",
+    "T1056.004::[Empire] contains some modules that leverage API hooking to carry out tasks, such as netripper."
+  ],
+  [
+    "empire",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[Empire] leverages PowerShell for the majority of its client-side agent tasks. [Empire] also contains the ability to conduct PowerShell remoting with the Invoke-PSRemoting module."
+  ],
+  [
+    "empire",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[Empire] has modules for executing scripts."
+  ],
+  [
+    "empire",
+    "T1070.006",
+    "Timestomp",
+    "file-metadata|file-modification",
+    "T1070.006::[Empire] can timestomp any files or payloads placed on a target machine to help them blend in."
+  ],
+  [
+    "empire",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[Empire] can conduct command and control over protocols like HTTP and HTTPS."
+  ],
+  [
+    "empire",
+    "T1087.001",
+    "Local Account",
+    "command-execution|file-access|group-enumeration|os-api-execution|process-creation",
+    "T1087.001::[Empire] can acquire local and domain user account information."
+  ],
+  [
+    "empire",
+    "T1087.002",
+    "Domain Account",
+    "command-execution|group-enumeration|network-traffic-content|os-api-execution|process-creation",
+    "T1087.002::[Empire] can acquire local and domain user account information."
+  ],
+  [
+    "empire",
+    "T1102.002",
+    "Bidirectional Communication",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1102.002::[Empire] can use Dropbox and GitHub for C2."
+  ],
+  [
+    "empire",
+    "T1114.001",
+    "Local Email Collection",
+    "command-execution|file-access",
+    "T1114.001::[Empire] has the ability to collect emails on a target system."
+  ],
+  [
+    "empire",
+    "T1127.001",
+    "MSBuild",
+    "command-execution|process-creation",
+    "T1127.001::[Empire] can use built-in modules to abuse trusted utilities like MSBuild.exe."
+  ],
+  [
+    "empire",
+    "T1134.002",
+    "Create Process with Token",
+    "command-execution|os-api-execution",
+    "T1134.002::[Empire] can use Invoke-RunAs to make tokens."
+  ],
+  [
+    "empire",
+    "T1134.005",
+    "SID-History Injection",
+    "active-directory-object-modification|os-api-execution|user-account-metadata",
+    "T1134.005::[Empire] can add a SID-History to a user if on a domain controller."
+  ],
+  [
+    "empire",
+    "T1136.001",
+    "Local Account",
+    "command-execution|process-creation|user-account-creation",
+    "T1136.001::[Empire] has a module for creating a local user if permissions allow."
+  ],
+  [
+    "empire",
+    "T1136.002",
+    "Domain Account",
+    "command-execution|process-creation|user-account-creation",
+    "T1136.002::[Empire] has a module for creating a new domain user if permissions allow."
+  ],
+  [
+    "empire",
+    "T1484.001",
+    "Group Policy Modification",
+    "active-directory-object-creation|active-directory-object-deletion|active-directory-object-modification|command-execution",
+    "T1484.001::[Empire] can use New-GPOImmediateTask to modify a GPO that will install and execute a malicious [Scheduled Task/Job]."
+  ],
+  [
+    "empire",
+    "T1518.001",
+    "Security Software Discovery",
+    "command-execution|firewall-enumeration|firewall-metadata|os-api-execution|process-creation",
+    "T1518.001::[Empire] can enumerate antivirus software on the target."
+  ],
+  [
+    "empire",
+    "T1543.003",
+    "Windows Service",
+    "command-execution|driver-load|os-api-execution|process-creation|service-creation|service-modification|windows-registry-key-creation|windows-registry-key-modification",
+    "T1543.003::[Empire] can utilize built-in modules to modify service binaries and restore them to their original state."
+  ],
+  [
+    "empire",
+    "T1546.008",
+    "Accessibility Features",
+    "command-execution|file-creation|file-modification|process-creation|windows-registry-key-modification",
+    "T1546.008::[Empire] can leverage WMI debugging to remotely replace binaries like sethc.exe, Utilman.exe, and Magnify.exe with cmd.exe."
+  ],
+  [
+    "empire",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[Empire] can modify the registry run keys HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run and HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run for persistence."
+  ],
+  [
+    "empire",
+    "T1547.005",
+    "Security Support Provider",
+    "command-execution|module-load|windows-registry-key-modification",
+    "T1547.005::[Empire] can enumerate Security Support Providers (SSPs) as well as utilize [PowerSploit]'s Install-SSP and Invoke-Mimikatz to install malicious SSPs and log authentication events."
+  ],
+  [
+    "empire",
+    "T1547.009",
+    "Shortcut Modification",
+    "file-creation|file-modification|process-creation",
+    "T1547.009::[Empire] can persist by modifying a .LNK file to include a backdoor."
+  ],
+  [
+    "empire",
+    "T1548.002",
+    "Bypass User Account Control",
+    "command-execution|process-creation|process-metadata|windows-registry-key-modification",
+    "T1548.002::[Empire] includes various modules to attempt to bypass UAC for escalation of privileges."
+  ],
+  [
+    "empire",
+    "T1550.002",
+    "Pass the Hash",
+    "active-directory-credential-request|logon-session-creation|user-account-authentication",
+    "T1550.002::[Empire] can perform pass the hash attacks."
+  ],
+  [
+    "empire",
+    "T1552.001",
+    "Credentials In Files",
+    "command-execution|file-access",
+    "T1552.001::[Empire] can use various modules to search for files containing passwords."
+  ],
+  [
+    "empire",
+    "T1552.004",
+    "Private Keys",
+    "command-execution|file-access",
+    "T1552.004::[Empire] can use modules like Invoke-SessionGopher to extract private key and session information."
+  ],
+  [
+    "empire",
+    "T1555.003",
+    "Credentials from Web Browsers",
+    "command-execution|file-access|os-api-execution|process-access",
+    "T1555.003::[Empire] can use modules that extract passwords from common web browsers such as Firefox and Chrome."
+  ],
+  [
+    "empire",
+    "T1557.001",
+    "LLMNR/NBT-NS Poisoning and SMB Relay",
+    "network-traffic-content|network-traffic-flow|service-creation|windows-registry-key-modification",
+    "T1557.001::[Empire] can use Inveigh to conduct name service poisoning for credential theft and associated relay attacks."
+  ],
+  [
+    "empire",
+    "T1558.001",
+    "Golden Ticket",
+    "active-directory-credential-request|logon-session-metadata",
+    "T1558.001::[Empire] can leverage its implementation of [Mimikatz] to obtain and use golden tickets."
+  ],
+  [
+    "empire",
+    "T1558.002",
+    "Silver Ticket",
+    "logon-session-metadata",
+    "T1558.002::[Empire] can leverage its implementation of [Mimikatz] to obtain and use silver tickets."
+  ],
+  [
+    "empire",
+    "T1558.003",
+    "Kerberoasting",
+    "active-directory-credential-request",
+    "T1558.003::[Empire] uses [PowerSploit]'s Invoke-Kerberoast to request service tickets and return crackable ticket hashes."
+  ],
+  [
+    "empire",
+    "T1567.001",
+    "Exfiltration to Code Repository",
+    "command-execution|file-access|network-traffic-content|network-traffic-flow",
+    "T1567.001::[Empire] can use GitHub for data exfiltration."
+  ],
+  [
+    "empire",
+    "T1567.002",
+    "Exfiltration to Cloud Storage",
+    "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1567.002::[Empire] can use Dropbox for data exfiltration."
+  ],
+  [
+    "empire",
+    "T1569.002",
+    "Service Execution",
+    "command-execution|process-creation|service-creation|windows-registry-key-modification",
+    "T1569.002::[Empire] can use [PsExec] to execute a payload on a remote host."
+  ],
+  [
+    "empire",
+    "T1573.002",
+    "Asymmetric Cryptography",
+    "network-traffic-content",
+    "T1573.002::[Empire] can use TLS to encrypt its C2 channel."
+  ],
+  [
+    "empire",
+    "T1574.001",
+    "DLL Search Order Hijacking",
+    "file-creation|file-modification|module-load",
+    "T1574.001::[Empire] contains modules that can discover and exploit various DLL hijacking opportunities."
+  ],
+  [
+    "empire",
+    "T1574.004",
+    "Dylib Hijacking",
+    "file-creation|file-modification|module-load",
+    "T1574.004::[Empire] has a dylib hijacker module that generates a malicious dylib given the path to a legitimate dylib of a vulnerable application."
+  ],
+  [
+    "empire",
+    "T1574.007",
+    "Path Interception by PATH Environment Variable",
+    "file-creation|process-creation|windows-registry-key-modification",
+    "T1574.007::[Empire] contains modules that can discover and exploit path interception opportunities in the PATH environment variable."
+  ],
+  [
+    "empire",
+    "T1574.008",
+    "Path Interception by Search Order Hijacking",
+    "file-creation|file-modification|process-creation",
+    "T1574.008::[Empire] contains modules that can discover and exploit search order hijacking vulnerabilities."
+  ],
+  [
+    "empire",
+    "T1574.009",
+    "Path Interception by Unquoted Path",
+    "file-creation|file-modification|process-creation",
+    "T1574.009::[Empire] contains modules that can discover and exploit unquoted path vulnerabilities."
+  ]
+]

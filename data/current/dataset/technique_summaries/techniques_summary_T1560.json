@@ -1,0 +1,35 @@
+[
+  {
+    "id": "attack-pattern--53ac20cd-aca3-406e-9aa0-9fc7fdc60a5a",
+    "platform": "linux|macos|windows",
+    "tid": "T1560",
+    "technique": "Archive Collected Data",
+    "tactic": "collection",
+    "datasources": "command-execution|file-creation|process-creation|script-execution",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1560.001",
+      "T1560.002",
+      "T1560.003"
+    ],
+    "count_subtechniques": 3,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "An adversary may compress and/or encrypt data that is collected prior to exfiltration. Compressing the data can help to obfuscate the collected data and minimize the amount of data sent over the network. Encryption can be used to hide information that is being exfiltrated from detection or make exfiltration less conspicuous upon inspection by a defender.\n\nBoth compression and encryption are done prior to exfiltration, and can be performed using a utility, 3rd party library, or custom method.",
+    "technique_references": [
+      {
+        "source_name": "Wikipedia File Header Signatures",
+        "url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+        "description": "Wikipedia. (2016, March 31). List of file signatures. Retrieved April 22, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

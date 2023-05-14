@@ -1,0 +1,31 @@
+[
+  {
+    "id": "attack-pattern--2bce5b30-7014-4a5d-ade7-12913fe6ac36",
+    "platform": "linux|macos",
+    "tid": "T1070.002",
+    "technique": "Clear Linux or Mac System Logs",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|file-deletion|file-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may clear system logs to hide evidence of an intrusion. macOS and Linux both keep track of system or user-initiated actions via system logs. The majority of native system logging is stored under the <code>/var/log/</code> directory. Subfolders in this directory categorize logs by their related functions, such as:(Citation: Linux Logs)\n\n* <code>/var/log/messages:</code>: General and system-related messages\n* <code>/var/log/secure</code> or <code>/var/log/auth.log</code>: Authentication logs\n* <code>/var/log/utmp</code> or <code>/var/log/wtmp</code>: Login records\n* <code>/var/log/kern.log</code>: Kernel logs\n* <code>/var/log/cron.log</code>: Crond logs\n* <code>/var/log/maillog</code>: Mail server logs\n* <code>/var/log/httpd/</code>: Web server access and error logs\n",
+    "technique_references": [
+      {
+        "source_name": "Linux Logs",
+        "url": "https://www.eurovps.com/blog/important-linux-log-files-you-must-be-monitoring/",
+        "description": "Marcel. (2018, April 19). 12 Critical Linux Log Files You Must be Monitoring. Retrieved March 29, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

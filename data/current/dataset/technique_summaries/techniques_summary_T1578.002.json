@@ -1,0 +1,49 @@
+[
+  {
+    "id": "attack-pattern--cf1c2504-433f-4c4e-a1f8-91de45a0318c",
+    "platform": "iaas",
+    "tid": "T1578.002",
+    "technique": "Create Cloud Instance",
+    "tactic": "defense-evasion",
+    "datasources": "instance-creation|instance-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "An adversary may create a new instance or virtual machine (VM) within the compute service of a cloud account to evade defenses. Creating a new instance may allow an adversary to bypass firewall rules and permissions that exist on instances currently residing within an account. An adversary may [Create Snapshot](https://attack.mitre.org/techniques/T1578/001) of one or more volumes in an account, create a new instance, mount the snapshots, and then apply a less restrictive security policy to collect [Data from Local System](https://attack.mitre.org/techniques/T1005) or for [Remote Data Staging](https://attack.mitre.org/techniques/T1074/002).(Citation: Mandiant M-Trends 2020)\n\nCreating a new instance may also allow an adversary to carry out malicious activity within an environment without affecting the execution of current running instances.",
+    "technique_references": [
+      {
+        "source_name": "Mandiant M-Trends 2020",
+        "url": "https://content.fireeye.com/m-trends/rpt-m-trends-2020",
+        "description": "Mandiant. (2020, February). M-Trends 2020. Retrieved April 24, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AWS CloudTrail Search",
+        "url": "https://aws.amazon.com/premiumsupport/knowledge-center/cloudtrail-search-api-calls/",
+        "description": "Amazon. (n.d.). Search CloudTrail logs for API calls to EC2 Instances. Retrieved June 17, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Azure Activity Logs",
+        "url": "https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/view-activity-logs",
+        "description": "Microsoft. (n.d.). View Azure activity logs. Retrieved June 17, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cloud Audit Logs",
+        "url": "https://cloud.google.com/logging/docs/audit#admin-activity",
+        "description": "Google. (n.d.). Audit Logs. Retrieved June 1, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

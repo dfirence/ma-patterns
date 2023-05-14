@@ -1,8 +1,0 @@
-{
-  "adversaries": [],
-  "T1608.006:SEO Poisoning": [
-    "response-content"
-  ],
-  "malware": [],
-  "tools": []
-}

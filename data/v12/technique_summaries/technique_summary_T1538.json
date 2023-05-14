@@ -1,9 +1,0 @@
-{
-  "adversaries": [],
-  "malware": [],
-  "T1538:Cloud Service Dashboard": [
-    "logon-session-creation",
-    "user-account-authentication"
-  ],
-  "tools": []
-}

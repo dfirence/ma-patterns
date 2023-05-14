@@ -1,0 +1,9 @@
+[
+  [
+    "schtasks",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[schtasks] is used to schedule tasks on a Windows system to run at a specific date and time."
+  ]
+]

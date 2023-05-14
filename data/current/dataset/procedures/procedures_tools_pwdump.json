@@ -1,0 +1,9 @@
+[
+  [
+    "pwdump",
+    "T1003.002",
+    "Security Account Manager",
+    "command-execution|file-access|windows-registry-key-access",
+    "T1003.002::[pwdump] can be used to dump credentials from the SAM."
+  ]
+]

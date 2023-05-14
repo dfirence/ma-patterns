@@ -1,0 +1,53 @@
+[
+  {
+    "id": "attack-pattern--7bd9c723-2f78-4309-82c5-47cad406572b",
+    "platform": "linux|macos|windows",
+    "tid": "T1568",
+    "technique": "Dynamic Resolution",
+    "tactic": "command-and-control",
+    "datasources": "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1568.001",
+      "T1568.002",
+      "T1568.003"
+    ],
+    "count_subtechniques": 3,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may dynamically establish connections to command and control infrastructure to evade common detections and remediations. This may be achieved by using malware that shares a common algorithm with the infrastructure the adversary uses to receive the malware's communications. These calculations can be used to dynamically adjust parameters such as the domain name, IP address, or port number the malware uses for command and control.\n\nAdversaries may use dynamic resolution for the purpose of [Fallback Channels](https://attack.mitre.org/techniques/T1008). When contact is lost with the primary command and control server malware may employ dynamic resolution as a means to reestablishing command and control.(Citation: Talos CCleanup 2017)(Citation: FireEye POSHSPY April 2017)(Citation: ESET Sednit 2017 Activity)",
+    "technique_references": [
+      {
+        "source_name": "Talos CCleanup 2017",
+        "url": "http://blog.talosintelligence.com/2017/09/avast-distributes-malware.html",
+        "description": "Brumaghin, E. et al. (2017, September 18). CCleanup: A Vast Number of Machines at Risk. Retrieved March 9, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye POSHSPY April 2017",
+        "url": "https://www.fireeye.com/blog/threat-research/2017/03/dissecting_one_ofap.html",
+        "description": "Dunwoody, M.. (2017, April 3). Dissecting One of APT29’s Fileless WMI and PowerShell Backdoors (POSHSPY). Retrieved April 5, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ESET Sednit 2017 Activity",
+        "url": "https://www.welivesecurity.com/2017/12/21/sednit-update-fancy-bear-spent-year/",
+        "description": "ESET. (2017, December 21). Sednit update: How Fancy Bear Spent the Year. Retrieved February 18, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Data Driven Security DGA",
+        "url": "https://datadrivensecurity.info/blog/posts/2014/Oct/dga-part2/",
+        "description": "Jacobs, J. (2014, October 2). Building a DGA Classifier: Part 2, Feature Engineering. Retrieved February 18, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

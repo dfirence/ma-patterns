@@ -1,0 +1,128 @@
+[
+  {
+    "id": "attack-pattern--35dd844a-b219-4e2b-a6bb-efa9a75995a9",
+    "platform": "windows|linux|macos|containers",
+    "tid": "T1053",
+    "technique": "Scheduled Task/Job",
+    "tactic": "execution",
+    "datasources": "scheduled-job-creation",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1053.001",
+      "T1053.002",
+      "T1053.003",
+      "T1053.005",
+      "T1053.006",
+      "T1053.007"
+    ],
+    "count_subtechniques": 6,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse task scheduling functionality to facilitate initial or recurring execution of malicious code. Utilities exist within all major operating systems to schedule programs or scripts to be executed at a specified date and time. A task can also be scheduled on a remote system, provided the proper authentication is met (ex: RPC and file and printer sharing in Windows environments). Scheduling a task on a remote system typically may require being a member of an admin or otherwise privileged group on the remote system.(Citation: TechNet Task Scheduler Security)\n\nAdversaries may use task scheduling to execute programs at system startup or on a scheduled basis for persistence. These mechanisms can also be abused to run a process under the context of a specified account (such as one with elevated permissions/privileges). Similar to [System Binary Proxy Execution](https://attack.mitre.org/techniques/T1218), adversaries have also abused task scheduling to potentially mask one-time execution under a trusted system process.(Citation: ProofPoint Serpent)",
+    "technique_references": [
+      {
+        "source_name": "ProofPoint Serpent",
+        "url": "https://www.proofpoint.com/us/blog/threat-insight/serpent-no-swiping-new-backdoor-targets-french-entities-unique-attack-chain",
+        "description": "Campbell, B. et al. (2022, March 21). Serpent, No Swiping! New Backdoor Targets French Entities with Unique Attack Chain. Retrieved April 11, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Task Scheduler Security",
+        "url": "https://technet.microsoft.com/en-us/library/cc785125.aspx",
+        "description": "Microsoft. (2005, January 21). Task Scheduler and security. Retrieved June 8, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|system|user",
+    "technique_effective_permissions": "system|administrator|user",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--35dd844a-b219-4e2b-a6bb-efa9a75995a9",
+    "platform": "windows|linux|macos|containers",
+    "tid": "T1053",
+    "technique": "Scheduled Task/Job",
+    "tactic": "persistence",
+    "datasources": "scheduled-job-creation",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1053.001",
+      "T1053.002",
+      "T1053.003",
+      "T1053.005",
+      "T1053.006",
+      "T1053.007"
+    ],
+    "count_subtechniques": 6,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse task scheduling functionality to facilitate initial or recurring execution of malicious code. Utilities exist within all major operating systems to schedule programs or scripts to be executed at a specified date and time. A task can also be scheduled on a remote system, provided the proper authentication is met (ex: RPC and file and printer sharing in Windows environments). Scheduling a task on a remote system typically may require being a member of an admin or otherwise privileged group on the remote system.(Citation: TechNet Task Scheduler Security)\n\nAdversaries may use task scheduling to execute programs at system startup or on a scheduled basis for persistence. These mechanisms can also be abused to run a process under the context of a specified account (such as one with elevated permissions/privileges). Similar to [System Binary Proxy Execution](https://attack.mitre.org/techniques/T1218), adversaries have also abused task scheduling to potentially mask one-time execution under a trusted system process.(Citation: ProofPoint Serpent)",
+    "technique_references": [
+      {
+        "source_name": "ProofPoint Serpent",
+        "url": "https://www.proofpoint.com/us/blog/threat-insight/serpent-no-swiping-new-backdoor-targets-french-entities-unique-attack-chain",
+        "description": "Campbell, B. et al. (2022, March 21). Serpent, No Swiping! New Backdoor Targets French Entities with Unique Attack Chain. Retrieved April 11, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Task Scheduler Security",
+        "url": "https://technet.microsoft.com/en-us/library/cc785125.aspx",
+        "description": "Microsoft. (2005, January 21). Task Scheduler and security. Retrieved June 8, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|system|user",
+    "technique_effective_permissions": "system|administrator|user",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--35dd844a-b219-4e2b-a6bb-efa9a75995a9",
+    "platform": "windows|linux|macos|containers",
+    "tid": "T1053",
+    "technique": "Scheduled Task/Job",
+    "tactic": "privilege-escalation",
+    "datasources": "scheduled-job-creation",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1053.001",
+      "T1053.002",
+      "T1053.003",
+      "T1053.005",
+      "T1053.006",
+      "T1053.007"
+    ],
+    "count_subtechniques": 6,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse task scheduling functionality to facilitate initial or recurring execution of malicious code. Utilities exist within all major operating systems to schedule programs or scripts to be executed at a specified date and time. A task can also be scheduled on a remote system, provided the proper authentication is met (ex: RPC and file and printer sharing in Windows environments). Scheduling a task on a remote system typically may require being a member of an admin or otherwise privileged group on the remote system.(Citation: TechNet Task Scheduler Security)\n\nAdversaries may use task scheduling to execute programs at system startup or on a scheduled basis for persistence. These mechanisms can also be abused to run a process under the context of a specified account (such as one with elevated permissions/privileges). Similar to [System Binary Proxy Execution](https://attack.mitre.org/techniques/T1218), adversaries have also abused task scheduling to potentially mask one-time execution under a trusted system process.(Citation: ProofPoint Serpent)",
+    "technique_references": [
+      {
+        "source_name": "ProofPoint Serpent",
+        "url": "https://www.proofpoint.com/us/blog/threat-insight/serpent-no-swiping-new-backdoor-targets-french-entities-unique-attack-chain",
+        "description": "Campbell, B. et al. (2022, March 21). Serpent, No Swiping! New Backdoor Targets French Entities with Unique Attack Chain. Retrieved April 11, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Task Scheduler Security",
+        "url": "https://technet.microsoft.com/en-us/library/cc785125.aspx",
+        "description": "Microsoft. (2005, January 21). Task Scheduler and security. Retrieved June 8, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|system|user",
+    "technique_effective_permissions": "system|administrator|user",
+    "search_token": "none"
+  }
+]

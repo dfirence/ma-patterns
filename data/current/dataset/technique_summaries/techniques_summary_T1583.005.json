@@ -1,0 +1,55 @@
+[
+  {
+    "id": "attack-pattern--31225cd3-cd46-4575-b287-c2c14011c074",
+    "platform": "pre",
+    "tid": "T1583.005",
+    "technique": "Botnet",
+    "tactic": "resource-development",
+    "datasources": "none",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may buy, lease, or rent a network of compromised systems that can be used during targeting. A botnet is a network of compromised systems that can be instructed to perform coordinated tasks.(Citation: Norton Botnet) Adversaries may purchase a subscription to use an existing botnet from a booter/stresser service. With a botnet at their disposal, adversaries may perform follow-on activity such as large-scale [Phishing](https://attack.mitre.org/techniques/T1566) or Distributed Denial of Service (DDoS).(Citation: Imperva DDoS for Hire)(Citation: Krebs-Anna)(Citation: Krebs-Bazaar)(Citation: Krebs-Booter)",
+    "technique_references": [
+      {
+        "source_name": "Norton Botnet",
+        "url": "https://us.norton.com/internetsecurity-malware-what-is-a-botnet.html",
+        "description": "Norton. (n.d.). What is a botnet?. Retrieved October 4, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Imperva DDoS for Hire",
+        "url": "https://www.imperva.com/learn/ddos/booters-stressers-ddosers/",
+        "description": "Imperva. (n.d.). Booters, Stressers and DDoSers. Retrieved October 4, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Krebs-Anna",
+        "url": "https://krebsonsecurity.com/2017/01/who-is-anna-senpai-the-mirai-worm-author/",
+        "description": "Brian Krebs. (2017, January 18). Who is Anna-Senpai, the Mirai Worm Author?. Retrieved May 15, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Krebs-Bazaar",
+        "url": "https://krebsonsecurity.com/2016/10/hackforums-shutters-booter-service-bazaar/",
+        "description": "Brian Krebs. (2016, October 31). Hackforums Shutters Booter Service Bazaar. Retrieved May 15, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Krebs-Booter",
+        "url": "https://krebsonsecurity.com/2016/10/are-the-days-of-booter-services-numbered/",
+        "description": "Brian Krebs. (2016, October 27). Are the Days of “Booter” Services Numbered?. Retrieved May 15, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

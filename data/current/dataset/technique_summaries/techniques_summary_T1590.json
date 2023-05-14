@@ -1,0 +1,50 @@
+[
+  {
+    "id": "attack-pattern--9d48cab2-7929-4812-ad22-f536665f0109",
+    "platform": "pre",
+    "tid": "T1590",
+    "technique": "Gather Victim Network Information",
+    "tactic": "reconnaissance",
+    "datasources": "none",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1590.001",
+      "T1590.002",
+      "T1590.003",
+      "T1590.004",
+      "T1590.005",
+      "T1590.006"
+    ],
+    "count_subtechniques": 6,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may gather information about the victim's networks that can be used during targeting. Information about networks may include a variety of details, including administrative data (ex: IP ranges, domain names, etc.) as well as specifics regarding its topology and operations.\n\nAdversaries may gather this information in various ways, such as direct collection actions via [Active Scanning](https://attack.mitre.org/techniques/T1595) or [Phishing for Information](https://attack.mitre.org/techniques/T1598). Information about networks may also be exposed to adversaries via online or other accessible data sets (ex: [Search Open Technical Databases](https://attack.mitre.org/techniques/T1596)).(Citation: WHOIS)(Citation: DNS Dumpster)(Citation: Circl Passive DNS) Gathering this information may reveal opportunities for other forms of reconnaissance (ex: [Active Scanning](https://attack.mitre.org/techniques/T1595) or [Search Open Websites/Domains](https://attack.mitre.org/techniques/T1593)), establishing operational resources (ex: [Acquire Infrastructure](https://attack.mitre.org/techniques/T1583) or [Compromise Infrastructure](https://attack.mitre.org/techniques/T1584)), and/or initial access (ex: [Trusted Relationship](https://attack.mitre.org/techniques/T1199)).",
+    "technique_references": [
+      {
+        "source_name": "WHOIS",
+        "url": "https://www.whois.net/",
+        "description": "NTT America. (n.d.). Whois Lookup. Retrieved October 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "DNS Dumpster",
+        "url": "https://dnsdumpster.com/",
+        "description": "Hacker Target. (n.d.). DNS Dumpster. Retrieved October 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Circl Passive DNS",
+        "url": "https://www.circl.lu/services/passive-dns/",
+        "description": "CIRCL Computer Incident Response Center. (n.d.). Passive DNS. Retrieved October 20, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

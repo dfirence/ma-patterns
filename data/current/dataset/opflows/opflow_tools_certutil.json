@@ -1,0 +1,202 @@
+[
+  {
+    "id": "attack-pattern--e6919abc-99f9-4c6c-95a5-14761e7b2add",
+    "platform": "linux|macos|windows",
+    "tid": "T1105",
+    "technique": "Ingress Tool Transfer",
+    "tactic": "command-and-control",
+    "datasources": "file-creation|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "certutil",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may transfer tools or other files from an external system into a compromised environment. Tools or files may be copied from an external adversary-controlled system to the victim network through the command and control channel or through alternate protocols such as [ftp](https://attack.mitre.org/software/S0095). Once present, adversaries may also transfer/spread tools between victim devices within a compromised environment (i.e. [Lateral Tool Transfer](https://attack.mitre.org/techniques/T1570)). \n\nFiles can also be transferred using various [Web Service](https://attack.mitre.org/techniques/T1102)s as well as native or otherwise present tools on the victim system.(Citation: PTSecurity Cobalt Dec 2016)\n\nOn Windows, adversaries may use various utilities to download tools, such as `copy`, `finger`, [certutil](https://attack.mitre.org/software/S0160), and [PowerShell](https://attack.mitre.org/techniques/T1059/001) commands such as <code>IEX(New-Object Net.WebClient).downloadString()</code> and <code>Invoke-WebRequest</code>. On Linux and macOS systems, a variety of utilities also exist, such as `curl`, `scp`, `sftp`, `tftp`, `rsync`, `finger`, and `wget`.(Citation: t1105_lolbas)",
+    "technique_references": [
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "t1105_lolbas",
+        "url": "https://lolbas-project.github.io/#t1105",
+        "description": "LOLBAS. (n.d.). LOLBAS Mapped to T1105. Retrieved March 11, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "PTSecurity Cobalt Dec 2016",
+        "url": "https://www.ptsecurity.com/upload/corporate/ww-en/analytics/Cobalt-Snatch-eng.pdf",
+        "description": "Positive Technologies. (2016, December 16). Cobalt Snatch. Retrieved October 9, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--3ccef7ae-cb5e-48f6-8302-897105fbf55c",
+    "platform": "windows|linux|macos",
+    "tid": "T1140",
+    "technique": "Deobfuscate/Decode Files or Information",
+    "tactic": "defense-evasion",
+    "datasources": "file-modification|process-creation|script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "certutil",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use [Obfuscated Files or Information](https://attack.mitre.org/techniques/T1027) to hide artifacts of an intrusion from analysis. They may require separate mechanisms to decode or deobfuscate that information depending on how they intend to use it. Methods for doing that include built-in functionality of malware or by using utilities present on the system.\n\nOne such example is the use of [certutil](https://attack.mitre.org/software/S0160) to decode a remote access tool portable executable file that has been hidden inside a certificate file.(Citation: Malwarebytes Targeted Attack against Saudi Arabia) Another example is using the Windows <code>copy /b</code> command to reassemble binary fragments into a malicious payload.(Citation: Carbon Black Obfuscation Sept 2016)\n\nSometimes a user's action may be required to open it for deobfuscation or decryption as part of [User Execution](https://attack.mitre.org/techniques/T1204). The user may also be required to input a password to open a password protected compressed/encrypted file that was provided by the adversary. (Citation: Volexity PowerDuke November 2016)",
+    "technique_references": [
+      {
+        "source_name": "Volexity PowerDuke November 2016",
+        "url": "https://www.volexity.com/blog/2016/11/09/powerduke-post-election-spear-phishing-campaigns-targeting-think-tanks-and-ngos/",
+        "description": "Adair, S.. (2016, November 9). PowerDuke: Widespread Post-Election Spear Phishing Campaigns Targeting Think Tanks and NGOs. Retrieved January 11, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Malwarebytes Targeted Attack against Saudi Arabia",
+        "url": "https://blog.malwarebytes.com/cybercrime/social-engineering-cybercrime/2017/03/new-targeted-attack-saudi-arabia-government/",
+        "description": "Malwarebytes Labs. (2017, March 27). New targeted attack against Saudi Arabia Government. Retrieved July 3, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Carbon Black Obfuscation Sept 2016",
+        "url": "https://www.carbonblack.com/2016/09/23/security-advisory-variants-well-known-adware-families-discovered-include-sophisticated-obfuscation-techniques-previously-associated-nation-state-attacks/",
+        "description": "Tedesco, B. (2016, September 23). Security Alert Summary. Retrieved February 12, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--c615231b-f253-4f58-9d47-d5b4cbdb6839",
+    "platform": "linux|macos|windows",
+    "tid": "T1553.004",
+    "technique": "Install Root Certificate",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "certutil",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may install a root certificate on a compromised system to avoid warnings when connecting to adversary controlled web servers. Root certificates are used in public key cryptography to identify a root certificate authority (CA). When a root certificate is installed, the system or application will trust certificates in the root's chain of trust that have been signed by the root certificate.(Citation: Wikipedia Root Certificate) Certificates are commonly used for establishing secure TLS/SSL communications within a web browser. When a user attempts to browse a website that presents a certificate that is not trusted an error message will be displayed to warn the user of the security risk. Depending on the security settings, the browser may not allow the user to establish a connection to the website.\n\nInstallation of a root certificate on a compromised system would give an adversary a way to degrade the security of that system. Adversaries have used this technique to avoid security warnings prompting users when compromised systems connect over HTTPS to adversary controlled web servers that spoof legitimate websites in order to collect login credentials.(Citation: Operation Emmental)\n\nAtypical root certificates have also been pre-installed on systems by the manufacturer or in the software supply chain and were used in conjunction with malware/adware to provide [Adversary-in-the-Middle](https://attack.mitre.org/techniques/T1557) capability for intercepting information transmitted over secure TLS/SSL communications.(Citation: Kaspersky Superfish)\n\nRoot certificates (and their associated chains) can also be cloned and reinstalled. Cloned certificate chains will carry many of the same metadata characteristics of the source and can be used to sign malicious code that may then bypass signature validation tools (ex: Sysinternals, antivirus, etc.) used to block execution and/or uncover artifacts of Persistence.(Citation: SpectorOps Code Signing Dec 2017)\n\nIn macOS, the Ay MaMi malware uses <code>/usr/bin/security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain /path/to/malicious/cert</code> to install a malicious certificate as a trusted root certificate into the system keychain.(Citation: objective-see ay mami 2018)",
+    "technique_references": [
+      {
+        "source_name": "Wikipedia Root Certificate",
+        "url": "https://en.wikipedia.org/wiki/Root_certificate",
+        "description": "Wikipedia. (2016, December 6). Root certificate. Retrieved February 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Operation Emmental",
+        "url": "http://www.trendmicro.com/cloud-content/us/pdfs/security-intelligence/white-papers/wp-finding-holes-operation-emmental.pdf",
+        "description": "Sancho, D., Hacquebord, F., Link, R. (2014, July 22). Finding Holes Operation Emmental. Retrieved February 9, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kaspersky Superfish",
+        "url": "https://www.kaspersky.com/blog/lenovo-pc-with-adware-superfish-preinstalled/7712/",
+        "description": "Onuma. (2015, February 24). Superfish: Adware Preinstalled on Lenovo Laptops. Retrieved February 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SpectorOps Code Signing Dec 2017",
+        "url": "https://posts.specterops.io/code-signing-certificate-cloning-attacks-and-defenses-6f98657fc6ec",
+        "description": "Graeber, M. (2017, December 22). Code Signing Certificate Cloning Attacks and Defenses. Retrieved April 3, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "objective-see ay mami 2018",
+        "url": "https://objective-see.com/blog/blog_0x26.html",
+        "description": "Patrick Wardle. (2018, January 11). Ay MaMi. Retrieved March 19, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Sigcheck May 2017",
+        "url": "https://docs.microsoft.com/sysinternals/downloads/sigcheck",
+        "description": "Russinovich, M. et al.. (2017, May 22). Sigcheck. Retrieved April 3, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Tripwire AppUNBlocker",
+        "url": "https://www.tripwire.com/state-of-security/off-topic/appunblocker-bypassing-applocker/",
+        "description": "Smith, T. (2016, October 27). AppUNBlocker: Bypassing AppLocker. Retrieved December 19, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+    "platform": "linux|macos|windows",
+    "tid": "T1560.001",
+    "technique": "Archive via Utility",
+    "tactic": "collection",
+    "datasources": "command-execution|file-creation|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "certutil",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use utilities to compress and/or encrypt collected data prior to exfiltration. Many utilities include functionalities to compress, encrypt, or otherwise package data into a format that is easier/more secure to transport.\n\nAdversaries may abuse various utilities to compress or encrypt data before exfiltration. Some third party utilities may be preinstalled, such as <code>tar</code> on Linux and macOS or <code>zip</code> on Windows systems. \n\nOn Windows, <code>diantz</code> or <code> makecab</code> may be used to package collected files into a cabinet (.cab) file. <code>diantz</code> may also be used to download and compress files from remote locations (i.e. [Remote Data Staging](https://attack.mitre.org/techniques/T1074/002)).(Citation: diantz.exe_lolbas) <code>xcopy</code> on Windows can copy files and directories with a variety of options. Additionally, adversaries may use [certutil](https://attack.mitre.org/software/S0160) to Base64 encode collected data before exfiltration. \n\nAdversaries may use also third party utilities, such as 7-Zip, WinRAR, and WinZip, to perform similar activities.(Citation: 7zip Homepage)(Citation: WinRAR Homepage)(Citation: WinZip Homepage)",
+    "technique_references": [
+      {
+        "source_name": "WinRAR Homepage",
+        "url": "https://www.rarlab.com/",
+        "description": "A. Roshal. (2020). RARLAB. Retrieved February 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "WinZip Homepage",
+        "url": "https://www.winzip.com/win/en/",
+        "description": "Corel Corporation. (2020). WinZip. Retrieved February 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "7zip Homepage",
+        "url": "https://www.7-zip.org/",
+        "description": "I. Pavlov. (2019). 7-Zip. Retrieved February 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "diantz.exe_lolbas",
+        "url": "https://lolbas-project.github.io/lolbas/Binaries/Diantz/",
+        "description": "Living Off The Land Binaries, Scripts and Libraries (LOLBAS). (n.d.). Diantz.exe. Retrieved October 25, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia File Header Signatures",
+        "url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+        "description": "Wikipedia. (2016, March 31). List of file signatures. Retrieved April 22, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

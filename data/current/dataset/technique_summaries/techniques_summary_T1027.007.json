@@ -1,0 +1,49 @@
+[
+  {
+    "id": "attack-pattern--ea4c2f9c-9df1-477c-8c42-6da1118f2ac4",
+    "platform": "windows",
+    "tid": "T1027.007",
+    "technique": "Dynamic API Resolution",
+    "tactic": "defense-evasion",
+    "datasources": "file-metadata|module-load|os-api-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obfuscate then dynamically resolve API functions called by their malware in order to conceal malicious functionalities and impair defensive analysis. Malware commonly uses various [Native API](https://attack.mitre.org/techniques/T1106) functions provided by the OS to perform various tasks such as those involving processes, files, and other system artifacts.\n\nAPI functions called by malware may leave static artifacts such as strings in payload files. Defensive analysts may also uncover which functions a binary file may execute via an import address table (IAT) or other structures that help dynamically link calling code to the shared modules that provide functions.(Citation: Huntress API Hash)(Citation: IRED API Hashing)\n\nTo avoid static or other defensive analysis, adversaries may use dynamic API resolution to conceal malware characteristics and functionalities. Similar to [Software Packing](https://attack.mitre.org/techniques/T1027/002), dynamic API resolution may change file signatures and obfuscate malicious API function calls until they are resolved and invoked during runtime.\n\nVarious methods may be used to obfuscate malware calls to API functions. For example, hashes of function names are commonly stored in malware in lieu of literal strings. Malware can use these hashes (or other identifiers) to manually reproduce the linking and loading process using functions such as `GetProcAddress()` and `LoadLibrary()`. These hashes/identifiers can also be further obfuscated using encryption or other string manipulation tricks (requiring various forms of [Deobfuscate/Decode Files or Information](https://attack.mitre.org/techniques/T1140) during execution).(Citation: BlackHat API Packers)(Citation: Drakonia HInvoke)(Citation: Huntress API Hash)",
+    "technique_references": [
+      {
+        "source_name": "Huntress API Hash",
+        "url": "https://www.huntress.com/blog/hackers-no-hashing-randomizing-api-hashes-to-evade-cobalt-strike-shellcode-detection",
+        "description": "Brennan, M. (2022, February 16). Hackers No Hashing: Randomizing API Hashes to Evade Cobalt Strike Shellcode Detection. Retrieved August 22, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "BlackHat API Packers",
+        "url": "https://www.blackhat.com/docs/us-15/materials/us-15-Choi-API-Deobfuscator-Resolving-Obfuscated-API-Functions-In-Modern-Packers.pdf",
+        "description": "Choi, S. (2015, August 6). Obfuscated API Functions in Modern Packers. Retrieved August 22, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Drakonia HInvoke",
+        "url": "https://dr4k0nia.github.io/dotnet/coding/2022/08/10/HInvoke-and-avoiding-PInvoke.html?s=03",
+        "description": "drakonia. (2022, August 10). HInvoke and avoiding PInvoke. Retrieved August 22, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "IRED API Hashing",
+        "url": "https://www.ired.team/offensive-security/defense-evasion/windows-api-hashing-in-malware",
+        "description": "spotheplanet. (n.d.). Windows API Hashing in Malware. Retrieved August 22, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

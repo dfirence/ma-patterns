@@ -1,0 +1,84 @@
+[
+  {
+    "id": "attack-pattern--e5cc9e7a-e61a-46a1-b869-55fb6eab058e",
+    "platform": "macos",
+    "tid": "T1547.007",
+    "technique": "Re-opened Applications",
+    "tactic": "persistence",
+    "datasources": "command-execution|file-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify plist files to automatically run an application when a user logs in. When a user logs out or restarts via the macOS Graphical User Interface (GUI), a prompt is provided to the user with a checkbox to \"Reopen windows when logging back in\".(Citation: Re-Open windows on Mac) When selected, all applications currently open are added to a property list file named <code>com.apple.loginwindow.[UUID].plist</code> within the <code>~/Library/Preferences/ByHost</code> directory.(Citation: Methods of Mac Malware Persistence)(Citation: Wardle Persistence Chapter) Applications listed in this file are automatically reopened upon the user’s next logon.\n\nAdversaries can establish [Persistence](https://attack.mitre.org/tactics/TA0003) by adding a malicious application path to the <code>com.apple.loginwindow.[UUID].plist</code> file to execute payloads when a user logs in.",
+    "technique_references": [
+      {
+        "source_name": "Re-Open windows on Mac",
+        "url": "https://support.apple.com/en-us/HT204005",
+        "description": "Apple. (2016, December 6). Automatically re-open windows, apps, and documents on your Mac. Retrieved July 11, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Methods of Mac Malware Persistence",
+        "url": "https://www.virusbulletin.com/uploads/pdf/conference/vb2014/VB2014-Wardle.pdf",
+        "description": "Patrick Wardle. (2014, September). Methods of Malware Persistence on Mac OS X. Retrieved July 5, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wardle Persistence Chapter",
+        "url": "https://taomm.org/PDFs/vol1/CH%200x02%20Persistence.pdf",
+        "description": "Patrick Wardle. (n.d.). Chapter 0x2: Persistence. Retrieved April 13, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--e5cc9e7a-e61a-46a1-b869-55fb6eab058e",
+    "platform": "macos",
+    "tid": "T1547.007",
+    "technique": "Re-opened Applications",
+    "tactic": "privilege-escalation",
+    "datasources": "command-execution|file-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify plist files to automatically run an application when a user logs in. When a user logs out or restarts via the macOS Graphical User Interface (GUI), a prompt is provided to the user with a checkbox to \"Reopen windows when logging back in\".(Citation: Re-Open windows on Mac) When selected, all applications currently open are added to a property list file named <code>com.apple.loginwindow.[UUID].plist</code> within the <code>~/Library/Preferences/ByHost</code> directory.(Citation: Methods of Mac Malware Persistence)(Citation: Wardle Persistence Chapter) Applications listed in this file are automatically reopened upon the user’s next logon.\n\nAdversaries can establish [Persistence](https://attack.mitre.org/tactics/TA0003) by adding a malicious application path to the <code>com.apple.loginwindow.[UUID].plist</code> file to execute payloads when a user logs in.",
+    "technique_references": [
+      {
+        "source_name": "Re-Open windows on Mac",
+        "url": "https://support.apple.com/en-us/HT204005",
+        "description": "Apple. (2016, December 6). Automatically re-open windows, apps, and documents on your Mac. Retrieved July 11, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Methods of Mac Malware Persistence",
+        "url": "https://www.virusbulletin.com/uploads/pdf/conference/vb2014/VB2014-Wardle.pdf",
+        "description": "Patrick Wardle. (2014, September). Methods of Malware Persistence on Mac OS X. Retrieved July 5, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wardle Persistence Chapter",
+        "url": "https://taomm.org/PDFs/vol1/CH%200x02%20Persistence.pdf",
+        "description": "Patrick Wardle. (n.d.). Chapter 0x2: Persistence. Retrieved April 13, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

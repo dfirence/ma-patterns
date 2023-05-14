@@ -1,8 +1,0 @@
-{
-  "adversaries": [],
-  "tools": [],
-  "T1600:Weaken Encryption": [
-    "file-modification"
-  ],
-  "malware": []
-}

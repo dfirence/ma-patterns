@@ -1,0 +1,30 @@
+[
+  [
+    "psexec",
+    "T1021.002",
+    "SMB/Windows Admin Shares",
+    "command-execution|logon-session-creation|network-connection-creation|network-share-access|network-traffic-flow",
+    "T1021.002::[PsExec], a tool that has been used by adversaries, writes programs to the ADMIN$ network share to execute commands on remote systems."
+  ],
+  [
+    "psexec",
+    "T1136.002",
+    "Domain Account",
+    "command-execution|process-creation|user-account-creation",
+    "T1136.002::[PsExec] has the ability to remotely create accounts on target systems."
+  ],
+  [
+    "psexec",
+    "T1543.003",
+    "Windows Service",
+    "command-execution|driver-load|os-api-execution|process-creation|service-creation|service-modification|windows-registry-key-creation|windows-registry-key-modification",
+    "T1543.003::[PsExec] can leverage Windows services to escalate privileges from administrator to SYSTEM with the -s argument."
+  ],
+  [
+    "psexec",
+    "T1569.002",
+    "Service Execution",
+    "command-execution|process-creation|service-creation|windows-registry-key-modification",
+    "T1569.002::Microsoft Sysinternals [PsExec] is a popular administration tool that can be used to execute binaries on remote systems using a temporary Windows service."
+  ]
+]

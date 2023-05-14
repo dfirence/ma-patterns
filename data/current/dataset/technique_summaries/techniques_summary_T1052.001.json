@@ -1,0 +1,24 @@
+[
+  {
+    "id": "attack-pattern--a3e1e6c5-9c74-4fc0-a16c-a9d228c17829",
+    "platform": "linux|macos|windows",
+    "tid": "T1052.001",
+    "technique": "Exfiltration over USB",
+    "tactic": "exfiltration",
+    "datasources": "command-execution|drive-creation|file-access|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to exfiltrate data over a USB connected physical device. In certain circumstances, such as an air-gapped network compromise, exfiltration could occur via a USB device introduced by a user. The USB device could be used as the final exfiltration point or to hop between otherwise disconnected systems.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

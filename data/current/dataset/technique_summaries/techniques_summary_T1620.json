@@ -1,0 +1,73 @@
+[
+  {
+    "id": "attack-pattern--4933e63b-9b77-476e-ab29-761bc5b7d15a",
+    "platform": "macos|linux|windows",
+    "tid": "T1620",
+    "technique": "Reflective Code Loading",
+    "tactic": "defense-evasion",
+    "datasources": "module-load|os-api-execution|script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may reflectively load code into a process in order to conceal the execution of malicious payloads. Reflective loading involves allocating then executing payloads directly within the memory of the process, vice creating a thread or process backed by a file path on disk. Reflectively loaded payloads may be compiled binaries, anonymous files (only present in RAM), or just snubs of fileless executable code (ex: position-independent shellcode).(Citation: Introducing Donut)(Citation: S1 Custom Shellcode Tool)(Citation: Stuart ELF Memory)(Citation: 00sec Droppers)(Citation: Mandiant BYOL)\n\nReflective code injection is very similar to [Process Injection](https://attack.mitre.org/techniques/T1055) except that the “injection” loads code into the processes’ own memory instead of that of a separate process. Reflective loading may evade process-based detections since the execution of the arbitrary code may be masked within a legitimate or otherwise benign process. Reflectively loading payloads directly into memory may also avoid creating files or other artifacts on disk, while also enabling malware to keep these payloads encrypted (or otherwise obfuscated) until execution.(Citation: Stuart ELF Memory)(Citation: 00sec Droppers)(Citation: Intezer ACBackdoor)(Citation: S1 Old Rat New Tricks)",
+    "technique_references": [
+      {
+        "source_name": "00sec Droppers",
+        "url": "https://0x00sec.org/t/super-stealthy-droppers/3715",
+        "description": "0x00pico. (2017, September 25). Super-Stealthy Droppers. Retrieved October 4, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "S1 Custom Shellcode Tool",
+        "url": "https://www.sentinelone.com/blog/building-a-custom-tool-for-shellcode-analysis/",
+        "description": "Bunce, D. (2019, October 31). Building A Custom Tool For Shellcode Analysis. Retrieved October 4, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant BYOL",
+        "url": "https://www.mandiant.com/resources/bring-your-own-land-novel-red-teaming-technique",
+        "description": "Kirk, N. (2018, June 18). Bring Your Own Land (BYOL) – A Novel Red Teaming Technique. Retrieved October 4, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "S1 Old Rat New Tricks",
+        "url": "https://www.sentinelone.com/blog/teaching-an-old-rat-new-tricks/",
+        "description": "Landry, J. (2016, April 21). Teaching an old RAT new tricks. Retrieved October 4, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MDSec Detecting DOTNET",
+        "url": "https://www.mdsec.co.uk/2020/06/detecting-and-advancing-in-memory-net-tradecraft/",
+        "description": "MDSec Research. (n.d.). Detecting and Advancing In-Memory .NET Tradecraft. Retrieved October 4, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Intezer ACBackdoor",
+        "url": "https://www.intezer.com/blog/research/acbackdoor-analysis-of-a-new-multiplatform-backdoor/",
+        "description": "Sanmillan, I. (2019, November 18). ACBackdoor: Analysis of a New Multiplatform Backdoor. Retrieved October 4, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Stuart ELF Memory",
+        "url": "https://magisterquis.github.io/2018/03/31/in-memory-only-elf-execution.html",
+        "description": "Stuart. (2018, March 31). In-Memory-Only ELF Execution (Without tmpfs). Retrieved October 4, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Introducing Donut",
+        "url": "https://thewover.github.io/Introducing-Donut/",
+        "description": "The Wover. (2019, May 9). Donut - Injecting .NET Assemblies as Shellcode. Retrieved October 4, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

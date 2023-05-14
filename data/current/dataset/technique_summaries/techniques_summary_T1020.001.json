@@ -1,0 +1,67 @@
+[
+  {
+    "id": "attack-pattern--7c46b364-8496-4234-8a56-f7e6727e21e1",
+    "platform": "network|iaas",
+    "tid": "T1020.001",
+    "technique": "Traffic Duplication",
+    "tactic": "exfiltration",
+    "datasources": "network-connection-creation|network-traffic-flow",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may leverage traffic mirroring in order to automate data exfiltration over compromised infrastructure. Traffic mirroring is a native feature for some devices, often used for network analysis. For example, devices may be configured to forward network traffic to one or more destinations for analysis by a network analyzer or other monitoring device. (Citation: Cisco Traffic Mirroring)(Citation: Juniper Traffic Mirroring)\n\nAdversaries may abuse traffic mirroring to mirror or redirect network traffic through other infrastructure they control. Malicious modifications to network devices to enable traffic redirection may be possible through [ROMMONkit](https://attack.mitre.org/techniques/T1542/004) or [Patch System Image](https://attack.mitre.org/techniques/T1601/001).(Citation: US-CERT-TA18-106A)(Citation: Cisco Blog Legacy Device Attacks)\n\nMany cloud-based environments also support traffic mirroring. For example, AWS Traffic Mirroring, GCP Packet Mirroring, and Azure vTap allow users to define specified instances to collect traffic from and specified targets to send collected traffic to.(Citation: AWS Traffic Mirroring)(Citation: GCP Packet Mirroring)(Citation: Azure Virtual Network TAP)\n\nAdversaries may use traffic duplication in conjunction with [Network Sniffing](https://attack.mitre.org/techniques/T1040), [Input Capture](https://attack.mitre.org/techniques/T1056), or [Adversary-in-the-Middle](https://attack.mitre.org/techniques/T1557) depending on the goals and objectives of the adversary.",
+    "technique_references": [
+      {
+        "source_name": "AWS Traffic Mirroring",
+        "url": "https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-how-it-works.html",
+        "description": "Amazon Web Services. (n.d.). How Traffic Mirroring works. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco Traffic Mirroring",
+        "url": "https://www.cisco.com/c/en/us/td/docs/routers/crs/software/crs_r5-1/interfaces/configuration/guide/hc51xcrsbook/hc51span.html",
+        "description": "Cisco. (n.d.). Cisco IOS XR Interface and Hardware Component Configuration Guide for the Cisco CRS Router, Release 5.1.x. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GCP Packet Mirroring",
+        "url": "https://cloud.google.com/vpc/docs/packet-mirroring",
+        "description": "Google Cloud. (n.d.). Packet Mirroring overview. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Juniper Traffic Mirroring",
+        "url": "https://www.juniper.net/documentation/en_US/junos/topics/concept/port-mirroring-ex-series.html",
+        "description": "Juniper. (n.d.). Understanding Port Mirroring on EX2200, EX3200, EX3300, EX4200, EX4500, EX4550, EX6200, and EX8200 Series Switches. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Azure Virtual Network TAP",
+        "url": "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-tap-overview",
+        "description": "Microsoft. (2022, February 9). Virtual network TAP. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco Blog Legacy Device Attacks",
+        "url": "https://community.cisco.com/t5/security-blogs/attackers-continue-to-target-legacy-devices/ba-p/4169954",
+        "description": "Omar Santos. (2020, October 19). Attackers Continue to Target Legacy Devices. Retrieved October 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT-TA18-106A",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA18-106A",
+        "description": "US-CERT. (2018, April 20). Alert (TA18-106A) Russian State-Sponsored Cyber Actors Targeting Network Infrastructure Devices. Retrieved October 19, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

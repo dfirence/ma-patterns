@@ -1,0 +1,81 @@
+[
+  {
+    "id": "attack-pattern--54a649ff-439a-41a4-9856-8d144a2551ba",
+    "platform": "linux|macos|windows",
+    "tid": "T1021",
+    "technique": "Remote Services",
+    "tactic": "lateral-movement",
+    "datasources": "command-execution|logon-session-creation|module-load|network-connection-creation|network-share-access|network-traffic-flow|process-creation",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1021.001",
+      "T1021.002",
+      "T1021.003",
+      "T1021.004",
+      "T1021.005",
+      "T1021.006",
+      "T1021.007"
+    ],
+    "count_subtechniques": 7,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use [Valid Accounts](https://attack.mitre.org/techniques/T1078) to log into a service that accepts remote connections, such as telnet, SSH, and VNC. The adversary may then perform actions as the logged-on user.\n\nIn an enterprise environment, servers and workstations can be organized into domains. Domains provide centralized identity management, allowing users to login using one set of credentials across the entire network. If an adversary is able to obtain a set of valid domain credentials, they could login to many different machines using remote access protocols such as secure shell (SSH) or remote desktop protocol (RDP).(Citation: SSH Secure Shell)(Citation: TechNet Remote Desktop Services) They could also login to accessible SaaS or IaaS services, such as those that federate their identities to the domain. \n\nLegitimate applications (such as [Software Deployment Tools](https://attack.mitre.org/techniques/T1072) and other administrative programs) may utilize [Remote Services](https://attack.mitre.org/techniques/T1021) to access remote hosts. For example, Apple Remote Desktop (ARD) on macOS is native software used for remote management. ARD leverages a blend of protocols, including [VNC](https://attack.mitre.org/techniques/T1021/005) to send the screen and control buffers and [SSH](https://attack.mitre.org/techniques/T1021/004) for secure file transfer.(Citation: Remote Management MDM macOS)(Citation: Kickstart Apple Remote Desktop commands)(Citation: Apple Remote Desktop Admin Guide 3.3) Adversaries can abuse applications such as ARD to gain remote code execution and perform lateral movement. In versions of macOS prior to 10.14, an adversary can escalate an SSH session to an ARD session which enables an adversary to accept TCC (Transparency, Consent, and Control) prompts without user interaction and gain access to data.(Citation: FireEye 2019 Apple Remote Desktop)(Citation: Lockboxx ARD 2019)(Citation: Kickstart Apple Remote Desktop commands)",
+    "technique_references": [
+      {
+        "source_name": "Apple Remote Desktop Admin Guide 3.3",
+        "url": "https://images.apple.com/remotedesktop/pdf/ARD_Admin_Guide_v3.3.pdf",
+        "description": "Apple. (n.d.). Apple Remote Desktop Administrator Guide Version 3.3. Retrieved October 5, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Remote Management MDM macOS",
+        "url": "https://support.apple.com/en-us/HT209161",
+        "description": "Apple. (n.d.). Use MDM to enable Remote Management in macOS. Retrieved September 23, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kickstart Apple Remote Desktop commands",
+        "url": "https://support.apple.com/en-us/HT201710",
+        "description": "Apple. (n.d.). Use the kickstart command-line utility in Apple Remote Desktop. Retrieved September 23, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Lockboxx ARD 2019",
+        "url": "http://lockboxx.blogspot.com/2019/07/macos-red-teaming-206-ard-apple-remote.html",
+        "description": "Dan Borges. (2019, July 21). MacOS Red Teaming 206: ARD (Apple Remote Desktop Protocol). Retrieved September 10, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye 2019 Apple Remote Desktop",
+        "url": "https://www.fireeye.com/blog/threat-research/2019/10/leveraging-apple-remote-desktop-for-good-and-evil.html",
+        "description": "Jake Nicastro, Willi Ballenthin. (2019, October 9). Living off the Orchard: Leveraging Apple Remote Desktop for Good and Evil. Retrieved August 16, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Remote Desktop Services",
+        "url": "https://technet.microsoft.com/en-us/windowsserver/ee236407.aspx",
+        "description": "Microsoft. (n.d.). Remote Desktop Services. Retrieved June 1, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Apple Unified Log Analysis Remote Login and Screen Sharing",
+        "url": "https://sarah-edwards-xzkc.squarespace.com/blog/2020/4/30/analysis-of-apple-unified-logs-quarantine-edition-entry-6-working-from-home-remote-logins",
+        "description": "Sarah Edwards. (2020, April 30). Analysis of Apple Unified Logs: Quarantine Edition [Entry 6] – Working From Home? Remote Logins. Retrieved August 19, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SSH Secure Shell",
+        "url": "https://www.ssh.com/ssh",
+        "description": "SSH.COM. (n.d.). SSH (Secure Shell). Retrieved March 23, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "attack-pattern--5909f20f-3c39-4795-be06-ef1ea40d350b",
+    "platform": "windows|iaas|linux|macos",
+    "tid": "T1491",
+    "technique": "Defacement",
+    "tactic": "impact",
+    "datasources": "application-log-content|file-creation|file-modification|network-traffic-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1491.001",
+      "T1491.002"
+    ],
+    "count_subtechniques": 2,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify visual content available internally or externally to an enterprise network, thus affecting the integrity of the original content. Reasons for [Defacement](https://attack.mitre.org/techniques/T1491) include delivering messaging, intimidation, or claiming (possibly false) credit for an intrusion. Disturbing or offensive images may be used as a part of [Defacement](https://attack.mitre.org/techniques/T1491) in order to cause user discomfort, or to pressure compliance with accompanying messages. \n",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

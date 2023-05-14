@@ -1,0 +1,37 @@
+[
+  {
+    "id": "attack-pattern--5e4a2073-9643-44cb-a0b5-e7f4048446c7",
+    "platform": "linux|windows|macos",
+    "tid": "T1217",
+    "technique": "Browser Information Discovery",
+    "tactic": "discovery",
+    "datasources": "command-execution|file-access|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may enumerate information about browsers to learn more about compromised environments. Data saved by browsers (such as bookmarks, accounts, and browsing history) may reveal a variety of personal information about users (e.g., banking sites, relationships/interests, social media, etc.) as well as details about internal network resources such as servers, tools/dashboards, or other related infrastructure.(Citation: Kaspersky Autofill)\n\nBrowser information may also highlight additional targets after an adversary has access to valid credentials, especially [Credentials In Files](https://attack.mitre.org/techniques/T1552/001) associated with logins cached by a browser.\n\nSpecific storage locations vary based on platform and/or application, but browser information is typically stored in local files and databases (e.g., `%APPDATA%/Google/Chrome`).(Citation: Chrome Roaming Profiles)",
+    "technique_references": [
+      {
+        "source_name": "Chrome Roaming Profiles",
+        "url": "https://support.google.com/chrome/a/answer/7349337",
+        "description": "Chrome Enterprise and Education Help. (n.d.). Use Chrome Browser with Roaming User Profiles. Retrieved March 28, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kaspersky Autofill",
+        "url": "https://www.kaspersky.com/blog/browser-data-theft/27871/",
+        "description": "Golubev, S. (n.d.). How malware steals autofill data from browsers. Retrieved March 28, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

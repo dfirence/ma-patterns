@@ -1,0 +1,55 @@
+[
+  {
+    "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+    "platform": "linux|macos|windows",
+    "tid": "T1560.001",
+    "technique": "Archive via Utility",
+    "tactic": "collection",
+    "datasources": "command-execution|file-creation|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use utilities to compress and/or encrypt collected data prior to exfiltration. Many utilities include functionalities to compress, encrypt, or otherwise package data into a format that is easier/more secure to transport.\n\nAdversaries may abuse various utilities to compress or encrypt data before exfiltration. Some third party utilities may be preinstalled, such as <code>tar</code> on Linux and macOS or <code>zip</code> on Windows systems. \n\nOn Windows, <code>diantz</code> or <code> makecab</code> may be used to package collected files into a cabinet (.cab) file. <code>diantz</code> may also be used to download and compress files from remote locations (i.e. [Remote Data Staging](https://attack.mitre.org/techniques/T1074/002)).(Citation: diantz.exe_lolbas) <code>xcopy</code> on Windows can copy files and directories with a variety of options. Additionally, adversaries may use [certutil](https://attack.mitre.org/software/S0160) to Base64 encode collected data before exfiltration. \n\nAdversaries may use also third party utilities, such as 7-Zip, WinRAR, and WinZip, to perform similar activities.(Citation: 7zip Homepage)(Citation: WinRAR Homepage)(Citation: WinZip Homepage)",
+    "technique_references": [
+      {
+        "source_name": "WinRAR Homepage",
+        "url": "https://www.rarlab.com/",
+        "description": "A. Roshal. (2020). RARLAB. Retrieved February 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "WinZip Homepage",
+        "url": "https://www.winzip.com/win/en/",
+        "description": "Corel Corporation. (2020). WinZip. Retrieved February 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "7zip Homepage",
+        "url": "https://www.7-zip.org/",
+        "description": "I. Pavlov. (2019). 7-Zip. Retrieved February 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "diantz.exe_lolbas",
+        "url": "https://lolbas-project.github.io/lolbas/Binaries/Diantz/",
+        "description": "Living Off The Land Binaries, Scripts and Libraries (LOLBAS). (n.d.). Diantz.exe. Retrieved October 25, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia File Header Signatures",
+        "url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+        "description": "Wikipedia. (2016, March 31). List of file signatures. Retrieved April 22, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

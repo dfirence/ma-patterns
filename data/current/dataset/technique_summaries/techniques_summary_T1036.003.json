@@ -1,0 +1,49 @@
+[
+  {
+    "id": "attack-pattern--bd5b58a4-a52d-4a29-bc0d-3f1d3968eb6b",
+    "platform": "linux|macos|windows",
+    "tid": "T1036.003",
+    "technique": "Rename System Utilities",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|file-metadata|file-modification|process-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may rename legitimate system utilities to try to evade security mechanisms concerning the usage of those utilities. Security monitoring and control mechanisms may be in place for system utilities adversaries are capable of abusing. (Citation: LOLBAS Main Site) It may be possible to bypass those security mechanisms by renaming the utility prior to utilization (ex: rename <code>rundll32.exe</code>). (Citation: Elastic Masquerade Ball) An alternative case occurs when a legitimate utility is copied or moved to a different directory and renamed to avoid detections based on system utilities executing from non-standard paths. (Citation: F-Secure CozyDuke)",
+    "technique_references": [
+      {
+        "source_name": "Twitter ItsReallyNick Masquerading Update",
+        "url": "https://twitter.com/ItsReallyNick/status/1055321652777619457",
+        "description": "Carr, N.. (2018, October 25). Nick Carr Status Update Masquerading. Retrieved April 22, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Elastic Masquerade Ball",
+        "url": "http://pages.endgame.com/rs/627-YBU-612/images/EndgameJournal_The%20Masquerade%20Ball_Pages_R2.pdf",
+        "description": "Ewing, P. (2016, October 31). How to Hunt: The Masquerade Ball. Retrieved October 31, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "F-Secure CozyDuke",
+        "url": "https://www.f-secure.com/documents/996508/1030745/CozyDuke",
+        "description": "F-Secure Labs. (2015, April 22). CozyDuke: Malware Analysis. Retrieved December 10, 2015.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "LOLBAS Main Site",
+        "url": "https://lolbas-project.github.io/",
+        "description": "LOLBAS. (n.d.). Living Off The Land Binaries and Scripts (and also Libraries). Retrieved February 10, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

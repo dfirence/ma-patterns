@@ -1,0 +1,163 @@
+[
+  [
+    "gamaredon-group",
+    "T1016.001",
+    "Internet Connection Discovery",
+    "command-execution|process-creation",
+    "T1016.001::[Gamaredon Group] has tested connectivity between a compromised machine and a C2 server using  [Ping] with commands such as `CSIDL_SYSTEM\\cmd.exe /c ping -n 1`."
+  ],
+  [
+    "gamaredon-group",
+    "T1021.005",
+    "VNC",
+    "logon-session-creation|network-connection-creation|process-creation",
+    "T1021.005::[Gamaredon Group] has used VNC tools, including UltraVNC, to remotely interact with compromised hosts."
+  ],
+  [
+    "gamaredon-group",
+    "T1027.001",
+    "Binary Padding",
+    "file-metadata",
+    "T1027.001::[Gamaredon Group] has obfuscated .NET executables by inserting junk code."
+  ],
+  [
+    "gamaredon-group",
+    "T1027.004",
+    "Compile After Delivery",
+    "command-execution|file-creation|file-metadata|process-creation",
+    "T1027.004::[Gamaredon Group] has compiled the source code for a downloader directly on the infected system using the built-in Microsoft.CSharp.CSharpCodeProvider class."
+  ],
+  [
+    "gamaredon-group",
+    "T1027.010",
+    "Command Obfuscation",
+    "command-execution|file-metadata|script-execution",
+    "T1027.010::[Gamaredon Group] has used obfuscated or encrypted scripts."
+  ],
+  [
+    "gamaredon-group",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[Gamaredon Group] has used legitimate process names to hide malware including svchosst."
+  ],
+  [
+    "gamaredon-group",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[Gamaredon Group] has created scheduled tasks to launch executables after a designated number of minutes have passed."
+  ],
+  [
+    "gamaredon-group",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[Gamaredon Group] has used obfuscated PowerShell scripts for staging."
+  ],
+  [
+    "gamaredon-group",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[Gamaredon Group] has used various batch scripts to establish C2 and download additional files. [Gamaredon Group]'s backdoor malware has also been written to a batch file."
+  ],
+  [
+    "gamaredon-group",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[Gamaredon Group] has embedded malicious macros in document templates, which executed VBScript. [Gamaredon Group] has also delivered Microsoft Outlook VBA projects with embedded macros."
+  ],
+  [
+    "gamaredon-group",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[Gamaredon Group] tools can delete files used during an operation."
+  ],
+  [
+    "gamaredon-group",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[Gamaredon Group] has used HTTP and HTTPS for C2 communications."
+  ],
+  [
+    "gamaredon-group",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Gamaredon Group] has attempted to get users to click on Office attachments with malicious macros embedded."
+  ],
+  [
+    "gamaredon-group",
+    "T1218.005",
+    "Mshta",
+    "command-execution|file-creation|network-connection-creation|process-creation",
+    "T1218.005::[Gamaredon Group] has used `mshta.exe` to execute malicious HTA files."
+  ],
+  [
+    "gamaredon-group",
+    "T1218.011",
+    "Rundll32",
+    "command-execution|file-metadata|module-load|process-creation",
+    "T1218.011::[Gamaredon Group] malware has used rundll32 to launch additional malicious components."
+  ],
+  [
+    "gamaredon-group",
+    "T1491.001",
+    "Internal Defacement",
+    "application-log-content|file-creation|file-modification|network-traffic-content",
+    "T1491.001::[Gamaredon Group] has left taunting images and messages on the victims' desktops as proof of system access."
+  ],
+  [
+    "gamaredon-group",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[Gamaredon Group] tools have registered Run keys in the registry to give malicious VBS files persistence."
+  ],
+  [
+    "gamaredon-group",
+    "T1559.001",
+    "Component Object Model",
+    "module-load|process-creation|script-execution",
+    "T1559.001::[Gamaredon Group] malware can insert malicious macros into documents using a Microsoft.Office.Interop object."
+  ],
+  [
+    "gamaredon-group",
+    "T1562.001",
+    "Disable or Modify Tools",
+    "command-execution|driver-load|host-status|process-termination|service-metadata|windows-registry-key-deletion|windows-registry-key-modification",
+    "T1562.001::[Gamaredon Group] has delivered macros which can tamper with Microsoft Office security settings."
+  ],
+  [
+    "gamaredon-group",
+    "T1564.003",
+    "Hidden Window",
+    "command-execution|file-modification|process-creation|script-execution",
+    "T1564.003::[Gamaredon Group] has used hidcon to run batch files in a hidden console window."
+  ],
+  [
+    "gamaredon-group",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[Gamaredon Group] has delivered spearphishing emails with malicious attachments to targets."
+  ],
+  [
+    "gamaredon-group",
+    "T1583.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1583.001::[Gamaredon Group] has registered multiple domains to facilitate payload staging and C2."
+  ],
+  [
+    "gamaredon-group",
+    "T1608.001",
+    "Upload Malware",
+    "response-content",
+    "T1608.001::[Gamaredon Group] has registered domains to stage payloads."
+  ]
+]

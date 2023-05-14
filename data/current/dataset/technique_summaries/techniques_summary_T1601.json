@@ -1,0 +1,40 @@
+[
+  {
+    "id": "attack-pattern--ae7f3575-0a5e-427e-991b-fe03ad44c754",
+    "platform": "network",
+    "tid": "T1601",
+    "technique": "Modify System Image",
+    "tactic": "defense-evasion",
+    "datasources": "file-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1601.001",
+      "T1601.002"
+    ],
+    "count_subtechniques": 2,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may make changes to the operating system of embedded network devices to weaken defenses and provide new capabilities for themselves.  On such devices, the operating systems are typically monolithic and most of the device functionality and capabilities are contained within a single file.\n\nTo change the operating system, the adversary typically only needs to affect this one file, replacing or modifying it.  This can either be done live in memory during system runtime for immediate effect, or in storage to implement the change on the next boot of the network device.",
+    "technique_references": [
+      {
+        "source_name": "Cisco IOS Software Integrity Assurance - Image File Verification",
+        "url": "https://tools.cisco.com/security/center/resources/integrity_assurance.html#7",
+        "description": "Cisco. (n.d.). Cisco IOS Software Integrity Assurance - Cisco IOS Image File Verification. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco IOS Software Integrity Assurance - Run-Time Memory Verification",
+        "url": "https://tools.cisco.com/security/center/resources/integrity_assurance.html#13",
+        "description": "Cisco. (n.d.). Cisco IOS Software Integrity Assurance - Cisco IOS Run-Time Memory Integrity Verification. Retrieved October 19, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

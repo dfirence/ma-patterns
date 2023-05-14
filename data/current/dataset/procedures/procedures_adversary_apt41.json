@@ -1,0 +1,254 @@
+[
+  [
+    "apt41",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[APT41] has used hashdump, [Mimikatz], and the Windows Credential Editor to dump password hashes from memory and authenticate to other user accounts."
+  ],
+  [
+    "apt41",
+    "T1021.001",
+    "Remote Desktop Protocol",
+    "logon-session-creation|network-connection-creation|network-traffic-flow|process-creation",
+    "T1021.001::[APT41] used RDP for lateral movement."
+  ],
+  [
+    "apt41",
+    "T1021.002",
+    "SMB/Windows Admin Shares",
+    "command-execution|logon-session-creation|network-connection-creation|network-share-access|network-traffic-flow",
+    "T1021.002::[APT41] has transferred implant files using Windows Admin Shares."
+  ],
+  [
+    "apt41",
+    "T1036.004",
+    "Masquerade Task or Service",
+    "command-execution|scheduled-job-metadata|scheduled-job-modification|service-creation|service-metadata",
+    "T1036.004::[APT41] has created services to appear as benign system tools."
+  ],
+  [
+    "apt41",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[APT41] attempted to masquerade their files as popular anti-virus software."
+  ],
+  [
+    "apt41",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[APT41] used a compromised account to create a scheduled task on a system."
+  ],
+  [
+    "apt41",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[APT41] used a keylogger called GEARSHIFT on a target system."
+  ],
+  [
+    "apt41",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[APT41] leveraged PowerShell to deploy malware families in victims’ environments."
+  ],
+  [
+    "apt41",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[APT41] used cmd.exe /c to execute commands on remote machines.\n[APT41] used a batch file to install persistence for the [Cobalt Strike] BEACON loader."
+  ],
+  [
+    "apt41",
+    "T1059.004",
+    "Unix Shell",
+    "command-execution|process-creation",
+    "T1059.004::[APT41] executed file /bin/pwd in activity exploiting CVE-2019-19781 against Citrix devices."
+  ],
+  [
+    "apt41",
+    "T1070.001",
+    "Clear Windows Event Logs",
+    "command-execution|file-deletion|os-api-execution",
+    "T1070.001::[APT41] attempted to remove evidence of some of its activity by clearing Windows security and system events."
+  ],
+  [
+    "apt41",
+    "T1070.003",
+    "Clear Command History",
+    "command-execution|file-deletion|file-modification|user-account-authentication",
+    "T1070.003::[APT41] attempted to remove evidence of some of its activity by deleting Bash histories."
+  ],
+  [
+    "apt41",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[APT41] deleted files from the system."
+  ],
+  [
+    "apt41",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[APT41] used HTTP to download payloads for CVE-2019-19781 and CVE-2020-10189 exploits."
+  ],
+  [
+    "apt41",
+    "T1071.002",
+    "File Transfer Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.002::[APT41] used exploit payloads that initiate download via [ftp]."
+  ],
+  [
+    "apt41",
+    "T1071.004",
+    "DNS",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.004::[APT41] used DNS for C2 communications."
+  ],
+  [
+    "apt41",
+    "T1102.001",
+    "Dead Drop Resolver",
+    "network-traffic-content|network-traffic-flow",
+    "T1102.001::[APT41] used legitimate websites for C2 through dead drop resolvers (DDR), including GitHub, Pastebin, and Microsoft TechNet."
+  ],
+  [
+    "apt41",
+    "T1110.002",
+    "Password Cracking",
+    "application-log-content|user-account-authentication",
+    "T1110.002::[APT41] performed password brute-force attacks on the local admin account."
+  ],
+  [
+    "apt41",
+    "T1136.001",
+    "Local Account",
+    "command-execution|process-creation|user-account-creation",
+    "T1136.001::[APT41] has created user accounts."
+  ],
+  [
+    "apt41",
+    "T1195.002",
+    "Compromise Software Supply Chain",
+    "file-metadata",
+    "T1195.002::[APT41] gained access to production environments where they could inject malicious code into legitimate, signed files and widely distribute them to end users."
+  ],
+  [
+    "apt41",
+    "T1218.001",
+    "Compiled HTML File",
+    "command-execution|file-creation|process-creation",
+    "T1218.001::[APT41] used compiled HTML (.chm) files for targeting."
+  ],
+  [
+    "apt41",
+    "T1218.011",
+    "Rundll32",
+    "command-execution|file-metadata|module-load|process-creation",
+    "T1218.011::[APT41] has used rundll32.exe to execute a loader."
+  ],
+  [
+    "apt41",
+    "T1480.001",
+    "Environmental Keying",
+    "command-execution|process-creation",
+    "T1480.001::[APT41] has encrypted payloads using the Data Protection API (DPAPI), which relies on keys tied to specific user accounts on specific machines. [APT41] has also environmentally keyed second stage malware with an RC5 key derived in part from the infected system's volume serial number."
+  ],
+  [
+    "apt41",
+    "T1542.003",
+    "Bootkit",
+    "drive-modification",
+    "T1542.003::[APT41] deployed Master Boot Record bootkits on Windows systems to hide their malware and maintain persistence on victim systems."
+  ],
+  [
+    "apt41",
+    "T1543.003",
+    "Windows Service",
+    "command-execution|driver-load|os-api-execution|process-creation|service-creation|service-modification|windows-registry-key-creation|windows-registry-key-modification",
+    "T1543.003::[APT41] modified legitimate Windows services to install malware backdoors."
+  ],
+  [
+    "apt41",
+    "T1546.008",
+    "Accessibility Features",
+    "command-execution|file-creation|file-modification|process-creation|windows-registry-key-modification",
+    "T1546.008::[APT41] leveraged sticky keys to establish persistence."
+  ],
+  [
+    "apt41",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[APT41] created and modified startup files for persistence."
+  ],
+  [
+    "apt41",
+    "T1553.002",
+    "Code Signing",
+    "file-metadata",
+    "T1553.002::[APT41] leveraged code-signing certificates to sign malware when targeting both gaming and non-gaming organizations."
+  ],
+  [
+    "apt41",
+    "T1560.001",
+    "Archive via Utility",
+    "command-execution|file-creation|process-creation",
+    "T1560.001::[APT41] created a RAR archive of targeted files for exfiltration."
+  ],
+  [
+    "apt41",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[APT41] sent spearphishing emails with attachments such as compiled HTML (.chm) files to initially compromise their victims."
+  ],
+  [
+    "apt41",
+    "T1568.002",
+    "Domain Generation Algorithms",
+    "network-traffic-flow",
+    "T1568.002::[APT41] has used DGAs to change their C2 servers monthly."
+  ],
+  [
+    "apt41",
+    "T1569.002",
+    "Service Execution",
+    "command-execution|process-creation|service-creation|windows-registry-key-modification",
+    "T1569.002::[APT41] used  svchost.exe and [Net] to execute a system service installed to launch a [Cobalt Strike] BEACON loader."
+  ],
+  [
+    "apt41",
+    "T1574.001",
+    "DLL Search Order Hijacking",
+    "file-creation|file-modification|module-load",
+    "T1574.001::[APT41] has used search order hijacking to execute malicious payloads, such as Winnti RAT."
+  ],
+  [
+    "apt41",
+    "T1574.002",
+    "DLL Side-Loading",
+    "file-creation|file-modification|module-load|process-creation",
+    "T1574.002::[APT41] used legitimate executables to perform DLL side-loading of their malware."
+  ],
+  [
+    "apt41",
+    "T1574.006",
+    "Dynamic Linker Hijacking",
+    "command-execution|file-creation|file-modification|module-load|process-creation",
+    "T1574.006::[APT41] has configured payloads to load via LD_PRELOAD."
+  ],
+  [
+    "apt41",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[APT41] has obtained and used tools such as [Mimikatz], [pwdump], [PowerSploit], and [Windows Credential Editor]."
+  ]
+]

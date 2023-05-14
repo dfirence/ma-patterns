@@ -1,0 +1,120 @@
+[
+  {
+    "id": "attack-pattern--4bed873f-0b7d-41d4-b93a-b6905d1f90b0",
+    "platform": "linux|macos|windows",
+    "tid": "T1497.003",
+    "technique": "Time Based Evasion",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may employ various time-based methods to detect and avoid virtualization and analysis environments. This may include enumerating time-based properties, such as uptime or the system clock, as well as the use of timers or other triggers to avoid a virtual machine environment (VME) or sandbox, specifically those that are automated or only operate for a limited amount of time.\n\nAdversaries may employ various time-based evasions, such as delaying malware functionality upon initial execution using programmatic sleep commands or native system scheduling functionality (ex: [Scheduled Task/Job](https://attack.mitre.org/techniques/T1053)). Delays may also be based on waiting for specific victim conditions to be met (ex: system time, events, etc.) or employ scheduled [Multi-Stage Channels](https://attack.mitre.org/techniques/T1104) to avoid analysis and scrutiny.(Citation: Deloitte Environment Awareness)\n\nBenign commands or other operations may also be used to delay malware execution. Loops or otherwise needless repetitions of commands, such as [Ping](https://attack.mitre.org/software/S0097)s, may be used to delay malware execution and potentially exceed time thresholds of automated analysis environments.(Citation: Revil Independence Day)(Citation: Netskope Nitol) Another variation, commonly referred to as API hammering, involves making various calls to [Native API](https://attack.mitre.org/techniques/T1106) functions in order to delay execution (while also potentially overloading analysis environments with junk data).(Citation: Joe Sec Nymaim)(Citation: Joe Sec Trickbot)\n\nAdversaries may also use time as a metric to detect sandboxes and analysis environments, particularly those that attempt to manipulate time mechanisms to simulate longer elapses of time. For example, an adversary may be able to identify a sandbox accelerating time by sampling and calculating the expected value for an environment's timestamp before and after execution of a sleep function.(Citation: ISACA Malware Tricks)",
+    "technique_references": [
+      {
+        "source_name": "Deloitte Environment Awareness",
+        "url": "https://drive.google.com/file/d/1t0jn3xr4ff2fR30oQAUn_RsWSnMpOAQc",
+        "description": "Torello, A. & Guibernau, F. (n.d.). Environment Awareness. Retrieved May 18, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Revil Independence Day",
+        "url": "https://news.sophos.com/en-us/2021/07/04/independence-day-revil-uses-supply-chain-exploit-to-attack-hundreds-of-businesses/",
+        "description": "Loman, M. et al. (2021, July 4). Independence Day: REvil uses supply chain exploit to attack hundreds of businesses. Retrieved September 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Netskope Nitol",
+        "url": "https://www.netskope.com/blog/nitol-botnet-makes-resurgence-evasive-sandbox-analysis-technique",
+        "description": "Malik, A. (2016, October 14). Nitol Botnet makes a resurgence with evasive sandbox analysis technique. Retrieved September 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Joe Sec Nymaim",
+        "url": "https://www.joesecurity.org/blog/3660886847485093803",
+        "description": "Joe Security. (2016, April 21). Nymaim - evading Sandboxes with API hammering. Retrieved September 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Joe Sec Trickbot",
+        "url": "https://www.joesecurity.org/blog/498839998833561473",
+        "description": "Joe Security. (2020, July 13). TrickBot's new API-Hammering explained. Retrieved September 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ISACA Malware Tricks",
+        "url": "https://www.isaca.org/resources/isaca-journal/issues/2017/volume-6/evasive-malware-tricks-how-malware-evades-detection-by-sandboxes",
+        "description": "Kolbitsch, C. (2017, November 1). Evasive Malware Tricks: How Malware Evades Detection by Sandboxes. Retrieved March 30, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--4bed873f-0b7d-41d4-b93a-b6905d1f90b0",
+    "platform": "linux|macos|windows",
+    "tid": "T1497.003",
+    "technique": "Time Based Evasion",
+    "tactic": "discovery",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may employ various time-based methods to detect and avoid virtualization and analysis environments. This may include enumerating time-based properties, such as uptime or the system clock, as well as the use of timers or other triggers to avoid a virtual machine environment (VME) or sandbox, specifically those that are automated or only operate for a limited amount of time.\n\nAdversaries may employ various time-based evasions, such as delaying malware functionality upon initial execution using programmatic sleep commands or native system scheduling functionality (ex: [Scheduled Task/Job](https://attack.mitre.org/techniques/T1053)). Delays may also be based on waiting for specific victim conditions to be met (ex: system time, events, etc.) or employ scheduled [Multi-Stage Channels](https://attack.mitre.org/techniques/T1104) to avoid analysis and scrutiny.(Citation: Deloitte Environment Awareness)\n\nBenign commands or other operations may also be used to delay malware execution. Loops or otherwise needless repetitions of commands, such as [Ping](https://attack.mitre.org/software/S0097)s, may be used to delay malware execution and potentially exceed time thresholds of automated analysis environments.(Citation: Revil Independence Day)(Citation: Netskope Nitol) Another variation, commonly referred to as API hammering, involves making various calls to [Native API](https://attack.mitre.org/techniques/T1106) functions in order to delay execution (while also potentially overloading analysis environments with junk data).(Citation: Joe Sec Nymaim)(Citation: Joe Sec Trickbot)\n\nAdversaries may also use time as a metric to detect sandboxes and analysis environments, particularly those that attempt to manipulate time mechanisms to simulate longer elapses of time. For example, an adversary may be able to identify a sandbox accelerating time by sampling and calculating the expected value for an environment's timestamp before and after execution of a sleep function.(Citation: ISACA Malware Tricks)",
+    "technique_references": [
+      {
+        "source_name": "Deloitte Environment Awareness",
+        "url": "https://drive.google.com/file/d/1t0jn3xr4ff2fR30oQAUn_RsWSnMpOAQc",
+        "description": "Torello, A. & Guibernau, F. (n.d.). Environment Awareness. Retrieved May 18, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Revil Independence Day",
+        "url": "https://news.sophos.com/en-us/2021/07/04/independence-day-revil-uses-supply-chain-exploit-to-attack-hundreds-of-businesses/",
+        "description": "Loman, M. et al. (2021, July 4). Independence Day: REvil uses supply chain exploit to attack hundreds of businesses. Retrieved September 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Netskope Nitol",
+        "url": "https://www.netskope.com/blog/nitol-botnet-makes-resurgence-evasive-sandbox-analysis-technique",
+        "description": "Malik, A. (2016, October 14). Nitol Botnet makes a resurgence with evasive sandbox analysis technique. Retrieved September 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Joe Sec Nymaim",
+        "url": "https://www.joesecurity.org/blog/3660886847485093803",
+        "description": "Joe Security. (2016, April 21). Nymaim - evading Sandboxes with API hammering. Retrieved September 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Joe Sec Trickbot",
+        "url": "https://www.joesecurity.org/blog/498839998833561473",
+        "description": "Joe Security. (2020, July 13). TrickBot's new API-Hammering explained. Retrieved September 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ISACA Malware Tricks",
+        "url": "https://www.isaca.org/resources/isaca-journal/issues/2017/volume-6/evasive-malware-tricks-how-malware-evades-detection-by-sandboxes",
+        "description": "Kolbitsch, C. (2017, November 1). Evasive Malware Tricks: How Malware Evades Detection by Sandboxes. Retrieved March 30, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

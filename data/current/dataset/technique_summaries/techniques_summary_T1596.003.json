@@ -1,0 +1,37 @@
+[
+  {
+    "id": "attack-pattern--0979abf9-4e26-43ec-9b6e-54efc4e70fca",
+    "platform": "pre",
+    "tid": "T1596.003",
+    "technique": "Digital Certificates",
+    "tactic": "reconnaissance",
+    "datasources": "none",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may search public digital certificate data for information about victims that can be used during targeting. Digital certificates are issued by a certificate authority (CA) in order to cryptographically verify the origin of signed content. These certificates, such as those used for encrypted web traffic (HTTPS SSL/TLS communications), contain information about the registered organization such as name and location.\n\nAdversaries may search digital certificate data to gather actionable information. Threat actors can use online resources and lookup tools to harvest information about certificates.(Citation: SSLShopper Lookup) Digital certificate data may also be available from artifacts signed by the organization (ex: certificates used from encrypted web traffic are served with content).(Citation: Medium SSL Cert) Information from these sources may reveal opportunities for other forms of reconnaissance (ex: [Active Scanning](https://attack.mitre.org/techniques/T1595) or [Phishing for Information](https://attack.mitre.org/techniques/T1598)), establishing operational resources (ex: [Develop Capabilities](https://attack.mitre.org/techniques/T1587) or [Obtain Capabilities](https://attack.mitre.org/techniques/T1588)), and/or initial access (ex: [External Remote Services](https://attack.mitre.org/techniques/T1133) or [Trusted Relationship](https://attack.mitre.org/techniques/T1199)).",
+    "technique_references": [
+      {
+        "source_name": "SSLShopper Lookup",
+        "url": "https://www.sslshopper.com/ssl-checker.html",
+        "description": "SSL Shopper. (n.d.). SSL Checker. Retrieved October 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Medium SSL Cert",
+        "url": "https://medium.com/@menakajain/export-download-ssl-certificate-from-server-site-url-bcfc41ea46a2",
+        "description": "Jain, M. (2019, September 16). Export & Download — SSL Certificate from Server (Site URL). Retrieved October 20, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

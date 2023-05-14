@@ -1,9 +1,0 @@
-{
-  "adversaries": [],
-  "tools": [],
-  "T1602.001:SNMP (MIB Dump)": [
-    "network-connection-creation",
-    "network-traffic-content"
-  ],
-  "malware": []
-}

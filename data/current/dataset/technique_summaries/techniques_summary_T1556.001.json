@@ -1,0 +1,107 @@
+[
+  {
+    "id": "attack-pattern--d4b96d2c-1032-4b22-9235-2b5b649d0605",
+    "platform": "windows",
+    "tid": "T1556.001",
+    "technique": "Domain Controller Authentication",
+    "tactic": "credential-access",
+    "datasources": "file-modification|logon-session-creation|os-api-execution|process-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may patch the authentication process on a domain controller to bypass the typical authentication mechanisms and enable access to accounts. \n\nMalware may be used to inject false credentials into the authentication process on a domain controller with the intent of creating a backdoor used to access any user’s account and/or credentials (ex: [Skeleton Key](https://attack.mitre.org/software/S0007)). Skeleton key works through a patch on an enterprise domain controller authentication process (LSASS) with credentials that adversaries may use to bypass the standard authentication system. Once patched, an adversary can use the injected password to successfully authenticate as any domain user account (until the the skeleton key is erased from memory by a reboot of the domain controller). Authenticated access may enable unfettered access to hosts and/or resources within single-factor authentication environments.(Citation: Dell Skeleton)",
+    "technique_references": [
+      {
+        "source_name": "Dell Skeleton",
+        "url": "https://www.secureworks.com/research/skeleton-key-malware-analysis",
+        "description": "Dell SecureWorks. (2015, January 12). Skeleton Key Malware Analysis. Retrieved April 8, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d4b96d2c-1032-4b22-9235-2b5b649d0605",
+    "platform": "windows",
+    "tid": "T1556.001",
+    "technique": "Domain Controller Authentication",
+    "tactic": "defense-evasion",
+    "datasources": "file-modification|logon-session-creation|os-api-execution|process-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may patch the authentication process on a domain controller to bypass the typical authentication mechanisms and enable access to accounts. \n\nMalware may be used to inject false credentials into the authentication process on a domain controller with the intent of creating a backdoor used to access any user’s account and/or credentials (ex: [Skeleton Key](https://attack.mitre.org/software/S0007)). Skeleton key works through a patch on an enterprise domain controller authentication process (LSASS) with credentials that adversaries may use to bypass the standard authentication system. Once patched, an adversary can use the injected password to successfully authenticate as any domain user account (until the the skeleton key is erased from memory by a reboot of the domain controller). Authenticated access may enable unfettered access to hosts and/or resources within single-factor authentication environments.(Citation: Dell Skeleton)",
+    "technique_references": [
+      {
+        "source_name": "Dell Skeleton",
+        "url": "https://www.secureworks.com/research/skeleton-key-malware-analysis",
+        "description": "Dell SecureWorks. (2015, January 12). Skeleton Key Malware Analysis. Retrieved April 8, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d4b96d2c-1032-4b22-9235-2b5b649d0605",
+    "platform": "windows",
+    "tid": "T1556.001",
+    "technique": "Domain Controller Authentication",
+    "tactic": "persistence",
+    "datasources": "file-modification|logon-session-creation|os-api-execution|process-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may patch the authentication process on a domain controller to bypass the typical authentication mechanisms and enable access to accounts. \n\nMalware may be used to inject false credentials into the authentication process on a domain controller with the intent of creating a backdoor used to access any user’s account and/or credentials (ex: [Skeleton Key](https://attack.mitre.org/software/S0007)). Skeleton key works through a patch on an enterprise domain controller authentication process (LSASS) with credentials that adversaries may use to bypass the standard authentication system. Once patched, an adversary can use the injected password to successfully authenticate as any domain user account (until the the skeleton key is erased from memory by a reboot of the domain controller). Authenticated access may enable unfettered access to hosts and/or resources within single-factor authentication environments.(Citation: Dell Skeleton)",
+    "technique_references": [
+      {
+        "source_name": "Dell Skeleton",
+        "url": "https://www.secureworks.com/research/skeleton-key-malware-analysis",
+        "description": "Dell SecureWorks. (2015, January 12). Skeleton Key Malware Analysis. Retrieved April 8, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

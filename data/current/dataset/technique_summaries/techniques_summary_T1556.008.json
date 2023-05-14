@@ -1,0 +1,161 @@
+[
+  {
+    "id": "attack-pattern--90c4a591-d02d-490b-92aa-619d9701ac04",
+    "platform": "windows",
+    "tid": "T1556.008",
+    "technique": "Network Provider DLL",
+    "tactic": "credential-access",
+    "datasources": "file-creation|os-api-execution|windows-registry-key-creation|windows-registry-key-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may register malicious network provider dynamic link libraries (DLLs) to capture cleartext user credentials during the authentication process. Network provider DLLs allow Windows to interface with specific network protocols and can also support add-on credential management functions.(Citation: Network Provider API) During the logon process, Winlogon (the interactive logon module) sends credentials to the local `mpnotify.exe` process via RPC. The `mpnotify.exe` process then shares the credentials in cleartext with registered credential managers when notifying that a logon event is happening.(Citation: NPPSPY - Huntress)(Citation: NPPSPY Video)(Citation: NPLogonNotify) \n\nAdversaries can configure a malicious network provider DLL to receive credentials from `mpnotify.exe`.(Citation: NPPSPY) Once installed as a credential manager (via the Registry), a malicious DLL can receive and save credentials each time a user logs onto a Windows workstation or domain via the `NPLogonNotify()` function.(Citation: NPLogonNotify)\n\nAdversaries may target planting malicious network provider DLLs on systems known to have increased logon activity and/or administrator logon activity, such as servers and domain controllers.(Citation: NPPSPY - Huntress)",
+    "technique_references": [
+      {
+        "source_name": "NPPSPY - Huntress",
+        "url": "https://www.huntress.com/blog/cleartext-shenanigans-gifting-user-passwords-to-adversaries-with-nppspy",
+        "description": " Dray Agha. (2022, August 16). Cleartext Shenanigans: Gifting User Passwords to Adversaries With NPPSPY. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NPPSPY Video",
+        "url": "https://www.youtube.com/watch?v=ggY3srD9dYs",
+        "description": "Grzegorz Tworek. (2021, December 14). How winlogon.exe shares the cleartext password with custom DLLs. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NPPSPY",
+        "url": "https://github.com/gtworek/PSBits/tree/master/PasswordStealing/NPPSpy",
+        "description": "Grzegorz Tworek. (2021, December 15). NPPSpy. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Network Provider API",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/secauthn/network-provider-api",
+        "description": "Microsoft. (2021, January 7). Network Provider API. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NPLogonNotify",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/api/npapi/nf-npapi-nplogonnotify",
+        "description": "Microsoft. (2021, October 21). NPLogonNotify function (npapi.h). Retrieved March 30, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--90c4a591-d02d-490b-92aa-619d9701ac04",
+    "platform": "windows",
+    "tid": "T1556.008",
+    "technique": "Network Provider DLL",
+    "tactic": "defense-evasion",
+    "datasources": "file-creation|os-api-execution|windows-registry-key-creation|windows-registry-key-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may register malicious network provider dynamic link libraries (DLLs) to capture cleartext user credentials during the authentication process. Network provider DLLs allow Windows to interface with specific network protocols and can also support add-on credential management functions.(Citation: Network Provider API) During the logon process, Winlogon (the interactive logon module) sends credentials to the local `mpnotify.exe` process via RPC. The `mpnotify.exe` process then shares the credentials in cleartext with registered credential managers when notifying that a logon event is happening.(Citation: NPPSPY - Huntress)(Citation: NPPSPY Video)(Citation: NPLogonNotify) \n\nAdversaries can configure a malicious network provider DLL to receive credentials from `mpnotify.exe`.(Citation: NPPSPY) Once installed as a credential manager (via the Registry), a malicious DLL can receive and save credentials each time a user logs onto a Windows workstation or domain via the `NPLogonNotify()` function.(Citation: NPLogonNotify)\n\nAdversaries may target planting malicious network provider DLLs on systems known to have increased logon activity and/or administrator logon activity, such as servers and domain controllers.(Citation: NPPSPY - Huntress)",
+    "technique_references": [
+      {
+        "source_name": "NPPSPY - Huntress",
+        "url": "https://www.huntress.com/blog/cleartext-shenanigans-gifting-user-passwords-to-adversaries-with-nppspy",
+        "description": " Dray Agha. (2022, August 16). Cleartext Shenanigans: Gifting User Passwords to Adversaries With NPPSPY. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NPPSPY Video",
+        "url": "https://www.youtube.com/watch?v=ggY3srD9dYs",
+        "description": "Grzegorz Tworek. (2021, December 14). How winlogon.exe shares the cleartext password with custom DLLs. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NPPSPY",
+        "url": "https://github.com/gtworek/PSBits/tree/master/PasswordStealing/NPPSpy",
+        "description": "Grzegorz Tworek. (2021, December 15). NPPSpy. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Network Provider API",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/secauthn/network-provider-api",
+        "description": "Microsoft. (2021, January 7). Network Provider API. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NPLogonNotify",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/api/npapi/nf-npapi-nplogonnotify",
+        "description": "Microsoft. (2021, October 21). NPLogonNotify function (npapi.h). Retrieved March 30, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--90c4a591-d02d-490b-92aa-619d9701ac04",
+    "platform": "windows",
+    "tid": "T1556.008",
+    "technique": "Network Provider DLL",
+    "tactic": "persistence",
+    "datasources": "file-creation|os-api-execution|windows-registry-key-creation|windows-registry-key-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may register malicious network provider dynamic link libraries (DLLs) to capture cleartext user credentials during the authentication process. Network provider DLLs allow Windows to interface with specific network protocols and can also support add-on credential management functions.(Citation: Network Provider API) During the logon process, Winlogon (the interactive logon module) sends credentials to the local `mpnotify.exe` process via RPC. The `mpnotify.exe` process then shares the credentials in cleartext with registered credential managers when notifying that a logon event is happening.(Citation: NPPSPY - Huntress)(Citation: NPPSPY Video)(Citation: NPLogonNotify) \n\nAdversaries can configure a malicious network provider DLL to receive credentials from `mpnotify.exe`.(Citation: NPPSPY) Once installed as a credential manager (via the Registry), a malicious DLL can receive and save credentials each time a user logs onto a Windows workstation or domain via the `NPLogonNotify()` function.(Citation: NPLogonNotify)\n\nAdversaries may target planting malicious network provider DLLs on systems known to have increased logon activity and/or administrator logon activity, such as servers and domain controllers.(Citation: NPPSPY - Huntress)",
+    "technique_references": [
+      {
+        "source_name": "NPPSPY - Huntress",
+        "url": "https://www.huntress.com/blog/cleartext-shenanigans-gifting-user-passwords-to-adversaries-with-nppspy",
+        "description": " Dray Agha. (2022, August 16). Cleartext Shenanigans: Gifting User Passwords to Adversaries With NPPSPY. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NPPSPY Video",
+        "url": "https://www.youtube.com/watch?v=ggY3srD9dYs",
+        "description": "Grzegorz Tworek. (2021, December 14). How winlogon.exe shares the cleartext password with custom DLLs. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NPPSPY",
+        "url": "https://github.com/gtworek/PSBits/tree/master/PasswordStealing/NPPSpy",
+        "description": "Grzegorz Tworek. (2021, December 15). NPPSpy. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Network Provider API",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/secauthn/network-provider-api",
+        "description": "Microsoft. (2021, January 7). Network Provider API. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NPLogonNotify",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/api/npapi/nf-npapi-nplogonnotify",
+        "description": "Microsoft. (2021, October 21). NPLogonNotify function (npapi.h). Retrieved March 30, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

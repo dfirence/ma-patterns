@@ -1,0 +1,101 @@
+[
+  {
+    "id": "attack-pattern--cca0ccb6-a068-4574-a722-b1556f86833a",
+    "platform": "pre",
+    "tid": "T1598",
+    "technique": "Phishing for Information",
+    "tactic": "reconnaissance",
+    "datasources": "application-log-content|network-traffic-content|network-traffic-flow",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1598.001",
+      "T1598.002",
+      "T1598.003"
+    ],
+    "count_subtechniques": 3,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may send phishing messages to elicit sensitive information that can be used during targeting. Phishing for information is an attempt to trick targets into divulging information, frequently credentials or other actionable information. Phishing for information is different from [Phishing](https://attack.mitre.org/techniques/T1566) in that the objective is gathering data from the victim rather than executing malicious code.\n\nAll forms of phishing are electronically delivered social engineering. Phishing can be targeted, known as spearphishing. In spearphishing, a specific individual, company, or industry will be targeted by the adversary. More generally, adversaries can conduct non-targeted phishing, such as in mass credential harvesting campaigns.\n\nAdversaries may also try to obtain information directly through the exchange of emails, instant messages, or other electronic conversation means.(Citation: ThreatPost Social Media Phishing)(Citation: TrendMictro Phishing)(Citation: PCMag FakeLogin)(Citation: Sophos Attachment)(Citation: GitHub Phishery) Victims may also receive phishing messages that direct them to call a phone number where the adversary attempts to collect confidential information.(Citation: Avertium callback phishing)\n\nPhishing for information frequently involves social engineering techniques, such as posing as a source with a reason to collect information (ex: [Establish Accounts](https://attack.mitre.org/techniques/T1585) or [Compromise Accounts](https://attack.mitre.org/techniques/T1586)) and/or sending multiple, seemingly urgent messages. Another way to accomplish this is by forging or spoofing(Citation: Proofpoint-spoof) the identity of the sender which can be used to fool both the human recipient as well as automated security tools.(Citation: cyberproof-double-bounce) \n\nPhishing for information may also involve evasive techniques, such as removing or manipulating emails or metadata/headers from compromised accounts being abused to send messages (e.g., [Email Hiding Rules](https://attack.mitre.org/techniques/T1564/008)).(Citation: Microsoft OAuth Spam 2022)(Citation: Palo Alto Unit 42 VBA Infostealer 2014)",
+    "technique_references": [
+      {
+        "source_name": "ACSC Email Spoofing",
+        "url": "https://www.cyber.gov.au/sites/default/files/2019-03/spoof_email_sender_policy_framework.pdf",
+        "description": "Australian Cyber Security Centre. (2012, December). Mitigating Spoofed Emails Using Sender Policy Framework. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Avertium callback phishing",
+        "url": "https://www.avertium.com/resources/threat-reports/everything-you-need-to-know-about-callback-phishing",
+        "description": "Avertium. (n.d.). EVERYTHING YOU NEED TO KNOW ABOUT CALLBACK PHISHING. Retrieved February 2, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TrendMictro Phishing",
+        "url": "https://www.trendmicro.com/en_us/research/20/i/tricky-forms-of-phishing.html",
+        "description": "Babon, P. (2020, September 3). Tricky 'Forms' of Phishing. Retrieved October 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sophos Attachment",
+        "url": "https://nakedsecurity.sophos.com/2020/10/02/serious-security-phishing-without-links-when-phishers-bring-along-their-own-web-pages/",
+        "description": "Ducklin, P. (2020, October 2). Serious Security: Phishing without links – when phishers bring along their own web pages. Retrieved October 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "cyberproof-double-bounce",
+        "url": "https://blog.cyberproof.com/blog/double-bounced-attacks-with-email-spoofing-2022-trends",
+        "description": "Itkin, Liora. (2022, September 1). Double-bounced attacks with email spoofing . Retrieved February 24, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "PCMag FakeLogin",
+        "url": "https://www.pcmag.com/news/hackers-try-to-phish-united-nations-staffers-with-fake-login-pages",
+        "description": "Kan, M. (2019, October 24). Hackers Try to Phish United Nations Staffers With Fake Login Pages. Retrieved October 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Anti Spoofing",
+        "url": "https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-spoofing-protection?view=o365-worldwide",
+        "description": "Microsoft. (2020, October 13). Anti-spoofing protection in EOP. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft OAuth Spam 2022",
+        "url": "https://www.microsoft.com/en-us/security/blog/2022/09/22/malicious-oauth-applications-used-to-compromise-email-servers-and-spread-spam/",
+        "description": "Microsoft. (2023, September 22). Malicious OAuth applications abuse cloud email services to spread spam. Retrieved March 13, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ThreatPost Social Media Phishing",
+        "url": "https://threatpost.com/facebook-launching-pad-phishing-attacks/160351/",
+        "description": "O'Donnell, L. (2020, October 20). Facebook: A Top Launching Pad For Phishing Attacks. Retrieved October 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Proofpoint-spoof",
+        "url": "https://www.proofpoint.com/us/threat-reference/email-spoofing",
+        "description": "Proofpoint. (n.d.). What Is Email Spoofing?. Retrieved February 24, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub Phishery",
+        "url": "https://github.com/ryhanson/phishery",
+        "description": "Ryan Hanson. (2016, September 24). phishery. Retrieved October 23, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Palo Alto Unit 42 VBA Infostealer 2014",
+        "url": "https://unit42.paloaltonetworks.com/examining-vba-initiated-infostealer-campaign/",
+        "description": "Vicky Ray and Rob Downs. (2014, October 29). Examining a VBA-Initiated Infostealer Campaign. Retrieved March 13, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

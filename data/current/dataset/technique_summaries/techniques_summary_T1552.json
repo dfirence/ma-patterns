@@ -1,0 +1,33 @@
+[
+  {
+    "id": "attack-pattern--435dfb86-2697-4867-85b5-2fef496c0517",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "tid": "T1552",
+    "technique": "Unsecured Credentials",
+    "tactic": "credential-access",
+    "datasources": "application-log-content|command-execution|file-access|process-creation|user-account-authentication|windows-registry-key-access",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1552.001",
+      "T1552.002",
+      "T1552.003",
+      "T1552.004",
+      "T1552.005",
+      "T1552.006",
+      "T1552.007",
+      "T1552.008"
+    ],
+    "count_subtechniques": 8,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may search compromised systems to find and obtain insecurely stored credentials. These credentials can be stored and/or misplaced in many locations on a system, including plaintext files (e.g. [Bash History](https://attack.mitre.org/techniques/T1552/003)), operating system or application-specific repositories (e.g. [Credentials in Registry](https://attack.mitre.org/techniques/T1552/002)), or other specialized files/artifacts (e.g. [Private Keys](https://attack.mitre.org/techniques/T1552/004)).",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

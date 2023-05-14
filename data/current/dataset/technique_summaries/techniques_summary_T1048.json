@@ -1,0 +1,47 @@
+[
+  {
+    "id": "attack-pattern--a19e86f8-1c0a-4fea-8407-23b73d615776",
+    "platform": "linux|macos|windows|office-365|saas|iaas|google-workspace|network",
+    "tid": "T1048",
+    "technique": "Exfiltration Over Alternative Protocol",
+    "tactic": "exfiltration",
+    "datasources": "application-log-content|cloud-storage-access|command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1048.001",
+      "T1048.002",
+      "T1048.003"
+    ],
+    "count_subtechniques": 3,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may steal data by exfiltrating it over a different protocol than that of the existing command and control channel. The data may also be sent to an alternate network location from the main command and control server.  \n\nAlternate protocols include FTP, SMTP, HTTP/S, DNS, SMB, or any other network protocol not being used as the main command and control channel. Adversaries may also opt to encrypt and/or obfuscate these alternate channels. \n\n[Exfiltration Over Alternative Protocol](https://attack.mitre.org/techniques/T1048) can be done using various common operating system utilities such as [Net](https://attack.mitre.org/software/S0039)/SMB or FTP.(Citation: Palo Alto OilRig Oct 2016) On macOS and Linux <code>curl</code> may be used to invoke protocols such as HTTP/S or FTP/S to exfiltrate data from a system.(Citation: 20 macOS Common Tools and Techniques)\n\nMany IaaS and SaaS platforms (such as Microsoft Exchange, Microsoft SharePoint, GitHub, and AWS S3) support the direct download of files, emails, source code, and other sensitive information via the web console or [Cloud API](https://attack.mitre.org/techniques/T1059/009).",
+    "technique_references": [
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Palo Alto OilRig Oct 2016",
+        "url": "http://researchcenter.paloaltonetworks.com/2016/10/unit42-oilrig-malware-campaign-updates-toolset-and-expands-targets/",
+        "description": "Grunzweig, J. and Falcone, R.. (2016, October 4). OilRig Malware Campaign Updates Toolset and Expands Targets. Retrieved May 3, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "20 macOS Common Tools and Techniques",
+        "url": "https://labs.sentinelone.com/20-common-tools-techniques-used-by-macos-threat-actors-malware/",
+        "description": "Phil Stokes. (2021, February 16). 20 Common Tools & Techniques Used by macOS Threat Actors & Malware. Retrieved August 23, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

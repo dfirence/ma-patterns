@@ -1,0 +1,34 @@
+[
+  {
+    "id": "attack-pattern--799ace7f-e227-4411-baa0-8868704f2a69",
+    "platform": "linux|macos|windows|containers|network|office-365|google-workspace",
+    "tid": "T1070",
+    "technique": "Indicator Removal",
+    "tactic": "defense-evasion",
+    "datasources": "application-log-content|command-execution|file-deletion|file-metadata|file-modification|firewall-rule-modification|network-traffic-content|os-api-execution|process-creation|scheduled-job-modification|user-account-authentication|user-account-deletion|windows-registry-key-deletion|windows-registry-key-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1070.001",
+      "T1070.002",
+      "T1070.003",
+      "T1070.004",
+      "T1070.005",
+      "T1070.006",
+      "T1070.007",
+      "T1070.008",
+      "T1070.009"
+    ],
+    "count_subtechniques": 9,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may delete or modify artifacts generated within systems to remove evidence of their presence or hinder defenses. Various artifacts may be created by an adversary or something that can be attributed to an adversary’s actions. Typically these artifacts are used as defensive indicators related to monitored events, such as strings from downloaded files, logs that are generated from user actions, and other data analyzed by defenders. Location, format, and type of artifact (such as command or login history) are often specific to each platform.\n\nRemoval of these indicators may interfere with event collection, reporting, or other processes used to detect intrusion activity. This may compromise the integrity of security solutions by causing notable events to go unreported. This activity may also impede forensic analysis and incident response, due to lack of sufficient data to determine what occurred.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

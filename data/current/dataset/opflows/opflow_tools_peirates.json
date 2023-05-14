@@ -1,0 +1,915 @@
+[
+  {
+    "id": "attack-pattern--e3a12395-188d-4051-9a16-ea8e14d07b88",
+    "platform": "windows|iaas|linux|macos|containers|network",
+    "tid": "T1046",
+    "technique": "Network Service Discovery",
+    "tactic": "discovery",
+    "datasources": "cloud-service-enumeration|command-execution|network-traffic-flow",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "peirates",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to get a listing of services running on remote hosts and local network infrastructure devices, including those that may be vulnerable to remote software exploitation. Common methods to acquire this information include port and/or vulnerability scans using tools that are brought onto a system.(Citation: CISA AR21-126A FIVEHANDS May 2021)   \n\nWithin cloud environments, adversaries may attempt to discover services running on other cloud hosts. Additionally, if the cloud environment is connected to a on-premises environment, adversaries may be able to identify services running on non-cloud systems as well.\n\nWithin macOS environments, adversaries may use the native Bonjour application to discover services running on other macOS hosts within a network. The Bonjour mDNSResponder daemon automatically registers and advertises a host’s registered services on the network. For example, adversaries can use a mDNS query (such as <code>dns-sd -B _ssh._tcp .</code>) to find other systems broadcasting the ssh service.(Citation: apple doco bonjour description)(Citation: macOS APT Activity Bradley)",
+    "technique_references": [
+      {
+        "source_name": "apple doco bonjour description",
+        "url": "https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/NetServices/Introduction.html",
+        "description": "Apple Inc. (2013, April 23). Bonjour Overview. Retrieved October 11, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CISA AR21-126A FIVEHANDS May 2021",
+        "url": "https://us-cert.cisa.gov/ncas/analysis-reports/ar21-126a",
+        "description": "CISA. (2021, May 6). Analysis Report (AR21-126A) FiveHands Ransomware. Retrieved June 7, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "macOS APT Activity Bradley",
+        "url": "https://themittenmac.com/what-does-apt-activity-look-like-on-macos/",
+        "description": "Jaron Bradley. (2021, November 14). What does APT Activity Look Like on macOS?. Retrieved January 19, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f232fa7a-025c-4d43-abc7-318e81a73d65",
+    "platform": "azure-ad|office-365|saas|iaas|google-workspace",
+    "tid": "T1078.004",
+    "technique": "Cloud Accounts",
+    "tactic": "defense-evasion",
+    "datasources": "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "peirates",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a cloud account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Cloud accounts are those created and configured by an organization for use by users, remote support, services, or for administration of resources within a cloud service provider or SaaS application. In some cases, cloud accounts may be federated with traditional identity management systems, such as Windows Active Directory.(Citation: AWS Identity Federation)(Citation: Google Federating GC)(Citation: Microsoft Deploying AD Federation)\n\nCompromised credentials for cloud accounts can be used to harvest sensitive data from online storage accounts and databases. Access to cloud accounts can also be abused to gain Initial Access to a network by abusing a [Trusted Relationship](https://attack.mitre.org/techniques/T1199). Similar to [Domain Accounts](https://attack.mitre.org/techniques/T1078/002), compromise of federated cloud accounts may allow adversaries to more easily move laterally within an environment.\n\nOnce a cloud account is compromised, an adversary may perform [Account Manipulation](https://attack.mitre.org/techniques/T1098) - for example, by adding [Additional Cloud Roles](https://attack.mitre.org/techniques/T1098/003) - to maintain persistence and potentially escalate their privileges.",
+    "technique_references": [
+      {
+        "source_name": "AWS Identity Federation",
+        "url": "https://aws.amazon.com/identity/federation/",
+        "description": "Amazon. (n.d.). Identity Federation in AWS. Retrieved March 13, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Google Federating GC",
+        "url": "https://cloud.google.com/solutions/federating-gcp-with-active-directory-introduction",
+        "description": "Google. (n.d.). Federating Google Cloud with Active Directory. Retrieved March 13, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Deploying AD Federation",
+        "url": "https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/how-to-connect-fed-azure-adfs",
+        "description": "Microsoft. (n.d.). Deploying Active Directory Federation Services in Azure. Retrieved March 13, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f232fa7a-025c-4d43-abc7-318e81a73d65",
+    "platform": "azure-ad|office-365|saas|iaas|google-workspace",
+    "tid": "T1078.004",
+    "technique": "Cloud Accounts",
+    "tactic": "initial-access",
+    "datasources": "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "peirates",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a cloud account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Cloud accounts are those created and configured by an organization for use by users, remote support, services, or for administration of resources within a cloud service provider or SaaS application. In some cases, cloud accounts may be federated with traditional identity management systems, such as Windows Active Directory.(Citation: AWS Identity Federation)(Citation: Google Federating GC)(Citation: Microsoft Deploying AD Federation)\n\nCompromised credentials for cloud accounts can be used to harvest sensitive data from online storage accounts and databases. Access to cloud accounts can also be abused to gain Initial Access to a network by abusing a [Trusted Relationship](https://attack.mitre.org/techniques/T1199). Similar to [Domain Accounts](https://attack.mitre.org/techniques/T1078/002), compromise of federated cloud accounts may allow adversaries to more easily move laterally within an environment.\n\nOnce a cloud account is compromised, an adversary may perform [Account Manipulation](https://attack.mitre.org/techniques/T1098) - for example, by adding [Additional Cloud Roles](https://attack.mitre.org/techniques/T1098/003) - to maintain persistence and potentially escalate their privileges.",
+    "technique_references": [
+      {
+        "source_name": "AWS Identity Federation",
+        "url": "https://aws.amazon.com/identity/federation/",
+        "description": "Amazon. (n.d.). Identity Federation in AWS. Retrieved March 13, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Google Federating GC",
+        "url": "https://cloud.google.com/solutions/federating-gcp-with-active-directory-introduction",
+        "description": "Google. (n.d.). Federating Google Cloud with Active Directory. Retrieved March 13, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Deploying AD Federation",
+        "url": "https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/how-to-connect-fed-azure-adfs",
+        "description": "Microsoft. (n.d.). Deploying Active Directory Federation Services in Azure. Retrieved March 13, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f232fa7a-025c-4d43-abc7-318e81a73d65",
+    "platform": "azure-ad|office-365|saas|iaas|google-workspace",
+    "tid": "T1078.004",
+    "technique": "Cloud Accounts",
+    "tactic": "persistence",
+    "datasources": "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "peirates",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a cloud account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Cloud accounts are those created and configured by an organization for use by users, remote support, services, or for administration of resources within a cloud service provider or SaaS application. In some cases, cloud accounts may be federated with traditional identity management systems, such as Windows Active Directory.(Citation: AWS Identity Federation)(Citation: Google Federating GC)(Citation: Microsoft Deploying AD Federation)\n\nCompromised credentials for cloud accounts can be used to harvest sensitive data from online storage accounts and databases. Access to cloud accounts can also be abused to gain Initial Access to a network by abusing a [Trusted Relationship](https://attack.mitre.org/techniques/T1199). Similar to [Domain Accounts](https://attack.mitre.org/techniques/T1078/002), compromise of federated cloud accounts may allow adversaries to more easily move laterally within an environment.\n\nOnce a cloud account is compromised, an adversary may perform [Account Manipulation](https://attack.mitre.org/techniques/T1098) - for example, by adding [Additional Cloud Roles](https://attack.mitre.org/techniques/T1098/003) - to maintain persistence and potentially escalate their privileges.",
+    "technique_references": [
+      {
+        "source_name": "AWS Identity Federation",
+        "url": "https://aws.amazon.com/identity/federation/",
+        "description": "Amazon. (n.d.). Identity Federation in AWS. Retrieved March 13, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Google Federating GC",
+        "url": "https://cloud.google.com/solutions/federating-gcp-with-active-directory-introduction",
+        "description": "Google. (n.d.). Federating Google Cloud with Active Directory. Retrieved March 13, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Deploying AD Federation",
+        "url": "https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/how-to-connect-fed-azure-adfs",
+        "description": "Microsoft. (n.d.). Deploying Active Directory Federation Services in Azure. Retrieved March 13, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f232fa7a-025c-4d43-abc7-318e81a73d65",
+    "platform": "azure-ad|office-365|saas|iaas|google-workspace",
+    "tid": "T1078.004",
+    "technique": "Cloud Accounts",
+    "tactic": "privilege-escalation",
+    "datasources": "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "peirates",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a cloud account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Cloud accounts are those created and configured by an organization for use by users, remote support, services, or for administration of resources within a cloud service provider or SaaS application. In some cases, cloud accounts may be federated with traditional identity management systems, such as Windows Active Directory.(Citation: AWS Identity Federation)(Citation: Google Federating GC)(Citation: Microsoft Deploying AD Federation)\n\nCompromised credentials for cloud accounts can be used to harvest sensitive data from online storage accounts and databases. Access to cloud accounts can also be abused to gain Initial Access to a network by abusing a [Trusted Relationship](https://attack.mitre.org/techniques/T1199). Similar to [Domain Accounts](https://attack.mitre.org/techniques/T1078/002), compromise of federated cloud accounts may allow adversaries to more easily move laterally within an environment.\n\nOnce a cloud account is compromised, an adversary may perform [Account Manipulation](https://attack.mitre.org/techniques/T1098) - for example, by adding [Additional Cloud Roles](https://attack.mitre.org/techniques/T1098/003) - to maintain persistence and potentially escalate their privileges.",
+    "technique_references": [
+      {
+        "source_name": "AWS Identity Federation",
+        "url": "https://aws.amazon.com/identity/federation/",
+        "description": "Amazon. (n.d.). Identity Federation in AWS. Retrieved March 13, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Google Federating GC",
+        "url": "https://cloud.google.com/solutions/federating-gcp-with-active-directory-introduction",
+        "description": "Google. (n.d.). Federating Google Cloud with Active Directory. Retrieved March 13, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Deploying AD Federation",
+        "url": "https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/how-to-connect-fed-azure-adfs",
+        "description": "Microsoft. (n.d.). Deploying Active Directory Federation Services in Azure. Retrieved March 13, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--890c9858-598c-401d-a4d5-c67ebcdd703a",
+    "platform": "saas|office-365|azure-ad|google-workspace|containers",
+    "tid": "T1528",
+    "technique": "Steal Application Access Token",
+    "tactic": "credential-access",
+    "datasources": "user-account-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "peirates",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries can steal application access tokens as a means of acquiring credentials to access remote systems and resources.\n\nApplication access tokens are used to make authorized API requests on behalf of a user or service and are commonly used as a way to access resources in cloud and container-based applications and software-as-a-service (SaaS).(Citation: Auth0 - Why You Should Always Use Access Tokens to Secure APIs Sept 2019) OAuth is one commonly implemented framework that issues tokens to users for access to systems. Adversaries who steal account API tokens in cloud and containerized environments may be able to access data and perform actions with the permissions of these accounts, which can lead to privilege escalation and further compromise of the environment.\n\nIn Kubernetes environments, processes running inside a container communicate with the Kubernetes API server using service account tokens. If a container is compromised, an attacker may be able to steal the container’s token and thereby gain access to Kubernetes API commands.(Citation: Kubernetes Service Accounts)\n\nToken theft can also occur through social engineering, in which case user action may be required to grant access. An application desiring access to cloud-based services or protected APIs can gain entry using OAuth 2.0 through a variety of authorization protocols. An example commonly-used sequence is Microsoft's Authorization Code Grant flow.(Citation: Microsoft Identity Platform Protocols May 2019)(Citation: Microsoft - OAuth Code Authorization flow - June 2019) An OAuth access token enables a third-party application to interact with resources containing user data in the ways requested by the application without obtaining user credentials. \n \nAdversaries can leverage OAuth authorization by constructing a malicious application designed to be granted access to resources with the target user's OAuth token.(Citation: Amnesty OAuth Phishing Attacks, August 2019)(Citation: Trend Micro Pawn Storm OAuth 2017) The adversary will need to complete registration of their application with the authorization server, for example Microsoft Identity Platform using Azure Portal, the Visual Studio IDE, the command-line interface, PowerShell, or REST API calls.(Citation: Microsoft - Azure AD App Registration - May 2019) Then, they can send a [Spearphishing Link](https://attack.mitre.org/techniques/T1566/002) to the target user to entice them to grant access to the application. Once the OAuth access token is granted, the application can gain potentially long-term access to features of the user account through [Application Access Token](https://attack.mitre.org/techniques/T1550/001).(Citation: Microsoft - Azure AD Identity Tokens - Aug 2019)\n\nApplication access tokens may function within a limited lifetime, limiting how long an adversary can utilize the stolen token. However, in some cases, adversaries can also steal application refresh tokens(Citation: Auth0 Understanding Refresh Tokens), allowing them to obtain new access tokens without prompting the user.  \n\n",
+    "technique_references": [
+      {
+        "source_name": "Amnesty OAuth Phishing Attacks, August 2019",
+        "url": "https://www.amnesty.org/en/latest/research/2019/08/evolving-phishing-attacks-targeting-journalists-and-human-rights-defenders-from-the-middle-east-and-north-africa/",
+        "description": "Amnesty International. (2019, August 16). Evolving Phishing Attacks Targeting Journalists and Human Rights Defenders from the Middle-East and North Africa. Retrieved October 8, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Auth0 Understanding Refresh Tokens",
+        "url": "https://auth0.com/learn/refresh-tokens/",
+        "description": "Auth0 Inc.. (n.d.). Understanding Refresh Tokens. Retrieved December 16, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Auth0 - Why You Should Always Use Access Tokens to Secure APIs Sept 2019",
+        "url": "https://auth0.com/blog/why-should-use-accesstokens-to-secure-an-api/",
+        "description": "Auth0. (n.d.). Why You Should Always Use Access Tokens to Secure APIs. Retrieved September 12, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Trend Micro Pawn Storm OAuth 2017",
+        "url": "https://blog.trendmicro.com/trendlabs-security-intelligence/pawn-storm-abuses-open-authentication-advanced-social-engineering-attacks",
+        "description": "Hacquebord, F.. (2017, April 25). Pawn Storm Abuses Open Authentication in Advanced Social Engineering Attacks. Retrieved October 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubernetes Service Accounts",
+        "url": "https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/",
+        "description": "Kubernetes. (2022, February 26). Configure Service Accounts for Pods. Retrieved April 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft - Azure AD Identity Tokens - Aug 2019",
+        "url": "https://docs.microsoft.com/en-us/azure/active-directory/develop/access-tokens",
+        "description": "Microsoft. (2019, August 29). Microsoft identity platform access tokens. Retrieved September 12, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft - Azure AD App Registration - May 2019",
+        "url": "https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app",
+        "description": "Microsoft. (2019, May 8). Quickstart: Register an application with the Microsoft identity platform. Retrieved September 12, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft - OAuth Code Authorization flow - June 2019",
+        "url": "https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow",
+        "description": "Microsoft. (n.d.). Microsoft identity platform and OAuth 2.0 authorization code flow. Retrieved September 12, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Identity Platform Protocols May 2019",
+        "url": "https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-protocols",
+        "description": "Microsoft. (n.d.). Retrieved September 12, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--3298ce88-1628-43b1-87d9-0b5336b193d7",
+    "platform": "iaas|saas",
+    "tid": "T1530",
+    "technique": "Data from Cloud Storage",
+    "tactic": "collection",
+    "datasources": "cloud-storage-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "peirates",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may access data from improperly secured cloud storage.\n\nMany cloud service providers offer solutions for online data object storage such as Amazon S3, Azure Storage, and Google Cloud Storage. These solutions differ from other storage solutions (such as SQL or Elasticsearch) in that there is no overarching application. Data from these solutions can be retrieved directly using the cloud provider's APIs. \n\nIn other cases, SaaS application providers such as Slack, Confluence, and Salesforce also provide cloud storage solutions as a peripheral use case of their platform. These cloud objects can be extracted directly from their associated application.(Citation: EA Hacked via Slack - June 2021)(Citation: SecureWorld - How Secure Is Your Slack Channel - Dec 2021)(Citation: HackerNews - 3 SaaS App Cyber Attacks - April 2022)(Citation: Dark Clouds_Usenix_Mulazzani_08_2011)\n\nAdversaries may collect sensitive data from these cloud storage solutions. Providers typically offer security guides to help end users configure systems, though misconfigurations are a common problem.(Citation: Amazon S3 Security, 2019)(Citation: Microsoft Azure Storage Security, 2019)(Citation: Google Cloud Storage Best Practices, 2019) There have been numerous incidents where cloud storage has been improperly secured, typically by unintentionally allowing public access to unauthenticated users, overly-broad access by all users, or even access for any anonymous person outside the control of the Identity Access Management system without even needing basic user permissions.\n\nThis open access may expose various types of sensitive data, such as credit cards, personally identifiable information, or medical records.(Citation: Trend Micro S3 Exposed PII, 2017)(Citation: Wired Magecart S3 Buckets, 2019)(Citation: HIPAA Journal S3 Breach, 2017)(Citation: Rclone-mega-extortion_05_2021)\n\nAdversaries may also obtain then abuse leaked credentials from source repositories, logs, or other means as a way to gain access to cloud storage objects.",
+    "technique_references": [
+      {
+        "source_name": "SecureWorld - How Secure Is Your Slack Channel - Dec 2021",
+        "url": "https://www.secureworld.io/industry-news/how-secure-is-your-slack-channel#:~:text=Electronic%20Arts%20hacked%20through%20Slack%20channel&text=In%20total%2C%20the%20hackers%20claim,credentials%20over%20a%20Slack%20channel.",
+        "description": " Drew Todd. (2021, December 28). How Secure Is Your Slack Channel?. Retrieved May 31, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Amazon S3 Security, 2019",
+        "url": "https://aws.amazon.com/premiumsupport/knowledge-center/secure-s3-resources/",
+        "description": "Amazon. (2019, May 17). How can I secure the files in my Amazon S3 bucket?. Retrieved October 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Azure Storage Security, 2019",
+        "url": "https://docs.microsoft.com/en-us/azure/storage/common/storage-security-guide",
+        "description": "Amlekar, M., Brooks, C., Claman, L., et. al.. (2019, March 20). Azure Storage security guide. Retrieved October 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "EA Hacked via Slack - June 2021",
+        "url": "https://www.techradar.com/news/ea-hack-reportedly-used-stolen-cookies-and-slack-to-hack-gaming-giant",
+        "description": "Anthony Spadafora. (2021, June 11). EA hack reportedly used stolen cookies and Slack to target gaming giant. Retrieved May 31, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wired Magecart S3 Buckets, 2019",
+        "url": "https://www.wired.com/story/magecart-amazon-cloud-hacks/",
+        "description": "Barrett, B.. (2019, July 11). Hack Brief: A Card-Skimming Hacker Group Hit 17K Domains—and Counting. Retrieved October 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Google Cloud Storage Best Practices, 2019",
+        "url": "https://cloud.google.com/storage/docs/best-practices",
+        "description": "Google. (2019, September 16). Best practices for Cloud Storage. Retrieved October 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "HackerNews - 3 SaaS App Cyber Attacks - April 2022",
+        "url": "https://thehackernews.com/2022/04/into-breach-breaking-down-3-saas-app.html",
+        "description": "Hananel Livneh. (2022, April 7). Into the Breach: Breaking Down 3 SaaS App Cyber Attacks in 2022. Retrieved May 31, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "HIPAA Journal S3 Breach, 2017",
+        "url": "https://www.hipaajournal.com/47gb-medical-records-unsecured-amazon-s3-bucket/",
+        "description": "HIPAA Journal. (2017, October 11). 47GB of Medical Records and Test Results Found in Unsecured Amazon S3 Bucket. Retrieved October 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Rclone-mega-extortion_05_2021",
+        "url": "https://redcanary.com/blog/rclone-mega-extortion/",
+        "description": "Justin Schoenfeld, Aaron Didier. (2021, May 4). Transferring leverage in a ransomware attack. Retrieved July 14, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Dark Clouds_Usenix_Mulazzani_08_2011",
+        "url": "https://www.usenix.org/conference/usenix-security-11/dark-clouds-horizon-using-cloud-storage-attack-vector-and-online-slack",
+        "description": "Martin Mulazzani, Sebastian Schrittwieser, Manuel Leithner, Markus Huber, and Edgar Weippl. (2011, August). Dark Clouds on the Horizon: Using Cloud Storage as Attack Vector and Online Slack Space. Retrieved July 14, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Trend Micro S3 Exposed PII, 2017",
+        "url": "https://www.trendmicro.com/vinfo/us/security/news/virtualization-and-cloud/a-misconfigured-amazon-s3-exposed-almost-50-thousand-pii-in-australia",
+        "description": "Trend Micro. (2017, November 6). A Misconfigured Amazon S3 Exposed Almost 50 Thousand PII in Australia. Retrieved October 4, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f005e783-57d4-4837-88ad-dbe7faee1c51",
+    "platform": "office-365|saas|google-workspace|containers|iaas|azure-ad",
+    "tid": "T1550.001",
+    "technique": "Application Access Token",
+    "tactic": "defense-evasion",
+    "datasources": "web-credential-usage",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "peirates",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use stolen application access tokens to bypass the typical authentication process and access restricted accounts, information, or services on remote systems. These tokens are typically stolen from users or services and used in lieu of login credentials.\n\nApplication access tokens are used to make authorized API requests on behalf of a user or service and are commonly used to access resources in cloud, container-based applications, and software-as-a-service (SaaS).(Citation: Auth0 - Why You Should Always Use Access Tokens to Secure APIs Sept 2019) \n\nOAuth is one commonly implemented framework that issues tokens to users for access to systems. These frameworks are used collaboratively to verify the user and determine what actions the user is allowed to perform. Once identity is established, the token allows actions to be authorized, without passing the actual credentials of the user. Therefore, compromise of the token can grant the adversary access to resources of other sites through a malicious application.(Citation: okta)\n\nFor example, with a cloud-based email service, once an OAuth access token is granted to a malicious application, it can potentially gain long-term access to features of the user account if a \"refresh\" token enabling background access is awarded.(Citation: Microsoft Identity Platform Access 2019) With an OAuth access token an adversary can use the user-granted REST API to perform functions such as email searching and contact enumeration.(Citation: Staaldraad Phishing with OAuth 2017)\n\nCompromised access tokens may be used as an initial step in compromising other services. For example, if a token grants access to a victim’s primary email, the adversary may be able to extend access to all other services which the target subscribes by triggering forgotten password routines. In AWS and GCP environments, adversaries can trigger a request for a short-lived access token with the privileges of another user account.(Citation: Google Cloud Service Account Credentials)(Citation: AWS Temporary Security Credentials) The adversary can then use this token to request data or perform actions the original account could not. If permissions for this feature are misconfigured – for example, by allowing all users to request a token for a particular account - an adversary may be able to gain initial access to a Cloud Account or escalate their privileges.(Citation: Rhino Security Labs Enumerating AWS Roles)\n\nDirect API access through a token negates the effectiveness of a second authentication factor and may be immune to intuitive countermeasures like changing passwords.  For example, in AWS environments, an adversary who compromises a user’s AWS API credentials may be able to use the `sts:GetFederationToken` API call to create a federated user session, which will have the same permissions as the original user but may persist even if the original user credentials are deactivated.(Citation: Crowdstrike AWS User Federation Persistence) Additionally, access abuse over an API channel can be difficult to detect even from the service provider end, as the access can still align well with a legitimate workflow.",
+    "technique_references": [
+      {
+        "source_name": "Crowdstrike AWS User Federation Persistence",
+        "url": "https://www.crowdstrike.com/blog/how-adversaries-persist-with-aws-user-federation/",
+        "description": " Vaishnav Murthy and Joel Eng. (2023, January 30). How Adversaries Can Persist with AWS User Federation. Retrieved March 10, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Auth0 - Why You Should Always Use Access Tokens to Secure APIs Sept 2019",
+        "url": "https://auth0.com/blog/why-should-use-accesstokens-to-secure-an-api/",
+        "description": "Auth0. (n.d.). Why You Should Always Use Access Tokens to Secure APIs. Retrieved September 12, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AWS Logging IAM Calls",
+        "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html",
+        "description": "AWS. (n.d.). Logging IAM and AWS STS API calls with AWS CloudTrail. Retrieved April 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AWS Temporary Security Credentials",
+        "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html",
+        "description": "AWS. (n.d.). Requesting temporary security credentials. Retrieved April 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Identity Platform Access 2019",
+        "url": "https://docs.microsoft.com/en-us/azure/active-directory/develop/access-tokens",
+        "description": "Cai, S., Flores, J., de Guzman, C., et. al.. (2019, August 27). Microsoft identity platform access tokens. Retrieved October 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Google Cloud Service Account Credentials",
+        "url": "https://cloud.google.com/iam/docs/creating-short-lived-service-account-credentials",
+        "description": "Google Cloud. (2022, March 31). Creating short-lived service account credentials. Retrieved April 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GCP Monitoring Service Account Usage",
+        "url": "https://cloud.google.com/iam/docs/service-account-monitoring",
+        "description": "Google Cloud. (2022, March 31). Monitor usage patterns for service accounts and keys . Retrieved April 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "okta",
+        "url": "https://developer.okta.com/blog/2018/06/20/what-happens-if-your-jwt-is-stolen",
+        "description": "okta. (n.d.). What Happens If Your JWT Is Stolen?. Retrieved September 12, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Rhino Security Labs Enumerating AWS Roles",
+        "url": "https://rhinosecuritylabs.com/aws/assume-worst-aws-assume-role-enumeration",
+        "description": "Spencer Gietzen. (2018, August 8). Assume the Worst: Enumerating AWS Roles through ‘AssumeRole’. Retrieved April 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Staaldraad Phishing with OAuth 2017",
+        "url": "https://staaldraad.github.io/2017/08/02/o356-phishing-with-oauth/",
+        "description": "Stalmans, E.. (2017, August 2). Phishing with OAuth and o365/Azure. Retrieved October 4, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f005e783-57d4-4837-88ad-dbe7faee1c51",
+    "platform": "office-365|saas|google-workspace|containers|iaas|azure-ad",
+    "tid": "T1550.001",
+    "technique": "Application Access Token",
+    "tactic": "lateral-movement",
+    "datasources": "web-credential-usage",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "peirates",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use stolen application access tokens to bypass the typical authentication process and access restricted accounts, information, or services on remote systems. These tokens are typically stolen from users or services and used in lieu of login credentials.\n\nApplication access tokens are used to make authorized API requests on behalf of a user or service and are commonly used to access resources in cloud, container-based applications, and software-as-a-service (SaaS).(Citation: Auth0 - Why You Should Always Use Access Tokens to Secure APIs Sept 2019) \n\nOAuth is one commonly implemented framework that issues tokens to users for access to systems. These frameworks are used collaboratively to verify the user and determine what actions the user is allowed to perform. Once identity is established, the token allows actions to be authorized, without passing the actual credentials of the user. Therefore, compromise of the token can grant the adversary access to resources of other sites through a malicious application.(Citation: okta)\n\nFor example, with a cloud-based email service, once an OAuth access token is granted to a malicious application, it can potentially gain long-term access to features of the user account if a \"refresh\" token enabling background access is awarded.(Citation: Microsoft Identity Platform Access 2019) With an OAuth access token an adversary can use the user-granted REST API to perform functions such as email searching and contact enumeration.(Citation: Staaldraad Phishing with OAuth 2017)\n\nCompromised access tokens may be used as an initial step in compromising other services. For example, if a token grants access to a victim’s primary email, the adversary may be able to extend access to all other services which the target subscribes by triggering forgotten password routines. In AWS and GCP environments, adversaries can trigger a request for a short-lived access token with the privileges of another user account.(Citation: Google Cloud Service Account Credentials)(Citation: AWS Temporary Security Credentials) The adversary can then use this token to request data or perform actions the original account could not. If permissions for this feature are misconfigured – for example, by allowing all users to request a token for a particular account - an adversary may be able to gain initial access to a Cloud Account or escalate their privileges.(Citation: Rhino Security Labs Enumerating AWS Roles)\n\nDirect API access through a token negates the effectiveness of a second authentication factor and may be immune to intuitive countermeasures like changing passwords.  For example, in AWS environments, an adversary who compromises a user’s AWS API credentials may be able to use the `sts:GetFederationToken` API call to create a federated user session, which will have the same permissions as the original user but may persist even if the original user credentials are deactivated.(Citation: Crowdstrike AWS User Federation Persistence) Additionally, access abuse over an API channel can be difficult to detect even from the service provider end, as the access can still align well with a legitimate workflow.",
+    "technique_references": [
+      {
+        "source_name": "Crowdstrike AWS User Federation Persistence",
+        "url": "https://www.crowdstrike.com/blog/how-adversaries-persist-with-aws-user-federation/",
+        "description": " Vaishnav Murthy and Joel Eng. (2023, January 30). How Adversaries Can Persist with AWS User Federation. Retrieved March 10, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Auth0 - Why You Should Always Use Access Tokens to Secure APIs Sept 2019",
+        "url": "https://auth0.com/blog/why-should-use-accesstokens-to-secure-an-api/",
+        "description": "Auth0. (n.d.). Why You Should Always Use Access Tokens to Secure APIs. Retrieved September 12, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AWS Logging IAM Calls",
+        "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html",
+        "description": "AWS. (n.d.). Logging IAM and AWS STS API calls with AWS CloudTrail. Retrieved April 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AWS Temporary Security Credentials",
+        "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html",
+        "description": "AWS. (n.d.). Requesting temporary security credentials. Retrieved April 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Identity Platform Access 2019",
+        "url": "https://docs.microsoft.com/en-us/azure/active-directory/develop/access-tokens",
+        "description": "Cai, S., Flores, J., de Guzman, C., et. al.. (2019, August 27). Microsoft identity platform access tokens. Retrieved October 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Google Cloud Service Account Credentials",
+        "url": "https://cloud.google.com/iam/docs/creating-short-lived-service-account-credentials",
+        "description": "Google Cloud. (2022, March 31). Creating short-lived service account credentials. Retrieved April 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GCP Monitoring Service Account Usage",
+        "url": "https://cloud.google.com/iam/docs/service-account-monitoring",
+        "description": "Google Cloud. (2022, March 31). Monitor usage patterns for service accounts and keys . Retrieved April 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "okta",
+        "url": "https://developer.okta.com/blog/2018/06/20/what-happens-if-your-jwt-is-stolen",
+        "description": "okta. (n.d.). What Happens If Your JWT Is Stolen?. Retrieved September 12, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Rhino Security Labs Enumerating AWS Roles",
+        "url": "https://rhinosecuritylabs.com/aws/assume-worst-aws-assume-role-enumeration",
+        "description": "Spencer Gietzen. (2018, August 8). Assume the Worst: Enumerating AWS Roles through ‘AssumeRole’. Retrieved April 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Staaldraad Phishing with OAuth 2017",
+        "url": "https://staaldraad.github.io/2017/08/02/o356-phishing-with-oauth/",
+        "description": "Stalmans, E.. (2017, August 2). Phishing with OAuth and o365/Azure. Retrieved October 4, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--19bf235b-8620-4997-b5b4-94e0659ed7c3",
+    "platform": "iaas",
+    "tid": "T1552.005",
+    "technique": "Cloud Instance Metadata API",
+    "tactic": "credential-access",
+    "datasources": "user-account-authentication",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "peirates",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to access the Cloud Instance Metadata API to collect credentials and other sensitive data.\n\nMost cloud service providers support a Cloud Instance Metadata API which is a service provided to running virtual instances that allows applications to access information about the running virtual instance. Available information generally includes name, security group, and additional metadata including sensitive data such as credentials and UserData scripts that may contain additional secrets. The Instance Metadata API is provided as a convenience to assist in managing applications and is accessible by anyone who can access the instance.(Citation: AWS Instance Metadata API) A cloud metadata API has been used in at least one high profile compromise.(Citation: Krebs Capital One August 2019)\n\nIf adversaries have a presence on the running virtual instance, they may query the Instance Metadata API directly to identify credentials that grant access to additional resources. Additionally, adversaries may exploit a Server-Side Request Forgery (SSRF) vulnerability in a public facing web proxy that allows them to gain access to the sensitive information via a request to the Instance Metadata API.(Citation: RedLock Instance Metadata API 2018)\n\nThe de facto standard across cloud service providers is to host the Instance Metadata API at <code>http[:]//169.254.169.254</code>.\n",
+    "technique_references": [
+      {
+        "source_name": "AWS Instance Metadata API",
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html",
+        "description": "AWS. (n.d.). Instance Metadata and User Data. Retrieved July 18, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "RedLock Instance Metadata API 2018",
+        "url": "https://redlock.io/blog/instance-metadata-api-a-modern-day-trojan-horse",
+        "description": "Higashi, Michael. (2018, May 15). Instance Metadata API: A Modern Day Trojan Horse. Retrieved July 16, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Krebs Capital One August 2019",
+        "url": "https://krebsonsecurity.com/2019/08/what-we-can-learn-from-the-capital-one-hack/",
+        "description": "Krebs, B.. (2019, August 19). What We Can Learn from the Capital One Hack. Retrieved March 25, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f8ef3a62-3f44-40a4-abca-761ab235c436",
+    "platform": "containers",
+    "tid": "T1552.007",
+    "technique": "Container API",
+    "tactic": "credential-access",
+    "datasources": "command-execution|user-account-authentication",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "peirates",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may gather credentials via APIs within a containers environment. APIs in these environments, such as the Docker API and Kubernetes APIs, allow a user to remotely manage their container resources and cluster components.(Citation: Docker API)(Citation: Kubernetes API)\n\nAn adversary may access the Docker API to collect logs that contain credentials to cloud, container, and various other resources in the environment.(Citation: Unit 42 Unsecured Docker Daemons) An adversary with sufficient permissions, such as via a pod's service account, may also use the Kubernetes API to retrieve credentials from the Kubernetes API server. These credentials may include those needed for Docker API authentication or secrets from Kubernetes cluster components. ",
+    "technique_references": [
+      {
+        "source_name": "Unit 42 Unsecured Docker Daemons",
+        "url": "https://unit42.paloaltonetworks.com/attackers-tactics-and-techniques-in-unsecured-docker-daemons-revealed/",
+        "description": "Chen, J.. (2020, January 29). Attacker's Tactics and Techniques in Unsecured Docker Daemons Revealed. Retrieved March 31, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Docker API",
+        "url": "https://docs.docker.com/engine/api/v1.41/",
+        "description": "Docker. (n.d.). Docker Engine API v1.41 Reference. Retrieved March 31, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubernetes API",
+        "url": "https://kubernetes.io/docs/concepts/overview/kubernetes-api/",
+        "description": "The Kubernetes Authors. (n.d.). The Kubernetes API. Retrieved March 29, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--7b50a1d3-4ca7-45d1-989d-a6503f04bfe1",
+    "platform": "containers",
+    "tid": "T1609",
+    "technique": "Container Administration Command",
+    "tactic": "execution",
+    "datasources": "command-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "peirates",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse a container administration service to execute commands within a container. A container administration service such as the Docker daemon, the Kubernetes API server, or the kubelet may allow remote management of containers within an environment.(Citation: Docker Daemon CLI)(Citation: Kubernetes API)(Citation: Kubernetes Kubelet)\n\nIn Docker, adversaries may specify an entrypoint during container deployment that executes a script or command, or they may use a command such as <code>docker exec</code> to execute a command within a running container.(Citation: Docker Entrypoint)(Citation: Docker Exec) In Kubernetes, if an adversary has sufficient permissions, they may gain remote execution in a container in the cluster via interaction with the Kubernetes API server, the kubelet, or by running a command such as <code>kubectl exec</code>.(Citation: Kubectl Exec Get Shell)",
+    "technique_references": [
+      {
+        "source_name": "Docker Exec",
+        "url": "https://docs.docker.com/engine/reference/commandline/exec/",
+        "description": "Docker. (n.d.). Docker Exec. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Docker Entrypoint",
+        "url": "https://docs.docker.com/engine/reference/run/#entrypoint-default-command-to-execute-at-runtime",
+        "description": "Docker. (n.d.). Docker run reference. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Docker Daemon CLI",
+        "url": "https://docs.docker.com/engine/reference/commandline/dockerd/",
+        "description": "Docker. (n.d.). DockerD CLI. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubectl Exec Get Shell",
+        "url": "https://kubernetes.io/docs/tasks/debug-application-cluster/get-shell-running-container/",
+        "description": "The Kubernetes Authors. (n.d.). Get a Shell to a Running Container. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubernetes Kubelet",
+        "url": "https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/",
+        "description": "The Kubernetes Authors. (n.d.). Kubelet. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubernetes API",
+        "url": "https://kubernetes.io/docs/concepts/overview/kubernetes-api/",
+        "description": "The Kubernetes Authors. (n.d.). The Kubernetes API. Retrieved March 29, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--56e0d8b8-3e25-49dd-9050-3aa252f5aa92",
+    "platform": "containers",
+    "tid": "T1610",
+    "technique": "Deploy Container",
+    "tactic": "defense-evasion",
+    "datasources": "application-log-content|container-creation|container-start|pod-creation|pod-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "peirates",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may deploy a container into an environment to facilitate execution or evade defenses. In some cases, adversaries may deploy a new container to execute processes associated with a particular image or deployment, such as processes that execute or download malware. In others, an adversary may deploy a new container configured without network rules, user limitations, etc. to bypass existing defenses within the environment.\n\nContainers can be deployed by various means, such as via Docker's <code>create</code> and <code>start</code> APIs or via a web application such as the Kubernetes dashboard or Kubeflow.(Citation: Docker Containers API)(Citation: Kubernetes Dashboard)(Citation: Kubeflow Pipelines) Adversaries may deploy containers based on retrieved or built malicious images or from benign images that download and execute malicious payloads at runtime.(Citation: Aqua Build Images on Hosts)",
+    "technique_references": [
+      {
+        "source_name": "Aqua Build Images on Hosts",
+        "url": "https://blog.aquasec.com/malicious-container-image-docker-container-host",
+        "description": "Assaf Morag. (2020, July 15). Threat Alert: Attackers Building Malicious Images on Your Hosts. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Docker Containers API",
+        "url": "https://docs.docker.com/engine/api/v1.41/#tag/Container",
+        "description": "Docker. (n.d.). Docker Engine API v1.41 Reference - Container. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubeflow Pipelines",
+        "url": "https://www.kubeflow.org/docs/components/pipelines/overview/pipelines-overview/",
+        "description": "The Kubeflow Authors. (n.d.). Overview of Kubeflow Pipelines. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubernetes Dashboard",
+        "url": "https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/",
+        "description": "The Kubernetes Authors. (n.d.). Kubernetes Web UI (Dashboard). Retrieved March 29, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--56e0d8b8-3e25-49dd-9050-3aa252f5aa92",
+    "platform": "containers",
+    "tid": "T1610",
+    "technique": "Deploy Container",
+    "tactic": "execution",
+    "datasources": "application-log-content|container-creation|container-start|pod-creation|pod-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "peirates",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may deploy a container into an environment to facilitate execution or evade defenses. In some cases, adversaries may deploy a new container to execute processes associated with a particular image or deployment, such as processes that execute or download malware. In others, an adversary may deploy a new container configured without network rules, user limitations, etc. to bypass existing defenses within the environment.\n\nContainers can be deployed by various means, such as via Docker's <code>create</code> and <code>start</code> APIs or via a web application such as the Kubernetes dashboard or Kubeflow.(Citation: Docker Containers API)(Citation: Kubernetes Dashboard)(Citation: Kubeflow Pipelines) Adversaries may deploy containers based on retrieved or built malicious images or from benign images that download and execute malicious payloads at runtime.(Citation: Aqua Build Images on Hosts)",
+    "technique_references": [
+      {
+        "source_name": "Aqua Build Images on Hosts",
+        "url": "https://blog.aquasec.com/malicious-container-image-docker-container-host",
+        "description": "Assaf Morag. (2020, July 15). Threat Alert: Attackers Building Malicious Images on Your Hosts. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Docker Containers API",
+        "url": "https://docs.docker.com/engine/api/v1.41/#tag/Container",
+        "description": "Docker. (n.d.). Docker Engine API v1.41 Reference - Container. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubeflow Pipelines",
+        "url": "https://www.kubeflow.org/docs/components/pipelines/overview/pipelines-overview/",
+        "description": "The Kubeflow Authors. (n.d.). Overview of Kubeflow Pipelines. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubernetes Dashboard",
+        "url": "https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/",
+        "description": "The Kubernetes Authors. (n.d.). Kubernetes Web UI (Dashboard). Retrieved March 29, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--4a5b7ade-8bb5-4853-84ed-23f262002665",
+    "platform": "windows|linux|containers",
+    "tid": "T1611",
+    "technique": "Escape to Host",
+    "tactic": "privilege-escalation",
+    "datasources": "container-creation|kernel-module-load|os-api-execution|process-creation|volume-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "peirates",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may break out of a container to gain access to the underlying host. This can allow an adversary access to other containerized resources from the host level or to the host itself. In principle, containerized resources should provide a clear separation of application functionality and be isolated from the host environment.(Citation: Docker Overview)\n\nThere are multiple ways an adversary may escape to a host environment. Examples include creating a container configured to mount the host’s filesystem using the bind parameter, which allows the adversary to drop payloads and execute control utilities such as cron on the host; utilizing a privileged container to run commands or load a malicious kernel module on the underlying host; or abusing system calls such as `unshare` and `keyctl` to escalate privileges and steal secrets.(Citation: Docker Bind Mounts)(Citation: Trend Micro Privileged Container)(Citation: Intezer Doki July 20)(Citation: Container Escape)(Citation: Crowdstrike Kubernetes Container Escape)(Citation: Keyctl-unmask)\n\nAdditionally, an adversary may be able to exploit a compromised container with a mounted container management socket, such as `docker.sock`, to break out of the container via a [Container Administration Command](https://attack.mitre.org/techniques/T1609).(Citation: Container Escape) Adversaries may also escape via [Exploitation for Privilege Escalation](https://attack.mitre.org/techniques/T1068), such as exploiting vulnerabilities in global symbolic links in order to access the root directory of a host machine.(Citation: Windows Server Containers Are Open)\n\nGaining access to the host may provide the adversary with the opportunity to achieve follow-on objectives, such as establishing persistence, moving laterally within the environment, or setting up a command and control channel on the host.",
+    "technique_references": [
+      {
+        "source_name": "Container Escape",
+        "url": "https://0xn3va.gitbook.io/cheat-sheets/container/escaping",
+        "description": "0xn3va. (n.d.). Escaping. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Windows Server Containers Are Open",
+        "url": "https://unit42.paloaltonetworks.com/windows-server-containers-vulnerabilities/",
+        "description": "Daniel Prizmant. (2020, July 15). Windows Server Containers Are Open, and Here's How You Can Break Out. Retrieved October 1, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Docker Overview",
+        "url": "https://docs.docker.com/get-started/overview/",
+        "description": "Docker. (n.d.). Docker Overview. Retrieved March 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Docker Bind Mounts",
+        "url": "https://docs.docker.com/storage/bind-mounts/",
+        "description": "Docker. (n.d.). Use Bind Mounts. Retrieved March 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Trend Micro Privileged Container",
+        "url": "https://www.trendmicro.com/en_us/research/19/l/why-running-a-privileged-container-in-docker-is-a-bad-idea.html",
+        "description": "Fiser, D., Oliveira, A.. (2019, December 20). Why a Privileged Container in Docker is a Bad Idea. Retrieved March 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Intezer Doki July 20",
+        "url": "https://www.intezer.com/blog/cloud-security/watch-your-containers-doki-infecting-docker-servers-in-the-cloud/",
+        "description": "Fishbein, N., Kajiloti, M.. (2020, July 28). Watch Your Containers: Doki Infecting Docker Servers in the Cloud. Retrieved March 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Crowdstrike Kubernetes Container Escape",
+        "url": "https://www.crowdstrike.com/blog/cve-2022-0185-kubernetes-container-escape-using-linux-kernel-exploit/",
+        "description": "Manoj Ahuje. (2022, January 31). CVE-2022-0185: Kubernetes Container Escape Using Linux Kernel Exploit. Retrieved July 6, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Keyctl-unmask",
+        "url": "https://www.antitree.com/2020/07/keyctl-unmask-going-florida-on-the-state-of-containerizing-linux-keyrings/",
+        "description": "Mark Manning. (2020, July 23). Keyctl-unmask: \"Going Florida\" on The State Of Containerizing Linux Keyrings. Retrieved July 6, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user|root",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--0470e792-32f8-46b0-a351-652bc35e9336",
+    "platform": "containers",
+    "tid": "T1613",
+    "technique": "Container and Resource Discovery",
+    "tactic": "discovery",
+    "datasources": "container-enumeration|pod-enumeration",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "peirates",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to discover containers and other resources that are available within a containers environment. Other resources may include images, deployments, pods, nodes, and other information such as the status of a cluster.\n\nThese resources can be viewed within web applications such as the Kubernetes dashboard or can be queried via the Docker and Kubernetes APIs.(Citation: Docker API)(Citation: Kubernetes API) In Docker, logs may leak information about the environment, such as the environment’s configuration, which services are available, and what cloud provider the victim may be utilizing. The discovery of these resources may inform an adversary’s next steps in the environment, such as how to perform lateral movement and which methods to utilize for execution. ",
+    "technique_references": [
+      {
+        "source_name": "Docker API",
+        "url": "https://docs.docker.com/engine/api/v1.41/",
+        "description": "Docker. (n.d.). Docker Engine API v1.41 Reference. Retrieved March 31, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubernetes API",
+        "url": "https://kubernetes.io/docs/concepts/overview/kubernetes-api/",
+        "description": "The Kubernetes Authors. (n.d.). The Kubernetes API. Retrieved March 29, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--8565825b-21c8-4518-b75e-cbc4c717a156",
+    "platform": "iaas",
+    "tid": "T1619",
+    "technique": "Cloud Storage Object Discovery",
+    "tactic": "discovery",
+    "datasources": "cloud-storage-access|cloud-storage-enumeration",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "peirates",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may enumerate objects in cloud storage infrastructure. Adversaries may use this information during automated discovery to shape follow-on behaviors, including requesting all or specific objects from cloud storage.  Similar to [File and Directory Discovery](https://attack.mitre.org/techniques/T1083) on a local host, after identifying available storage services (i.e. [Cloud Infrastructure Discovery](https://attack.mitre.org/techniques/T1580)) adversaries may access the contents/objects stored in cloud infrastructure.\n\nCloud service providers offer APIs allowing users to enumerate objects stored within cloud storage. Examples include ListObjectsV2 in AWS (Citation: ListObjectsV2) and List Blobs in Azure(Citation: List Blobs) .",
+    "technique_references": [
+      {
+        "source_name": "ListObjectsV2",
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html",
+        "description": "Amazon - ListObjectsV2. Retrieved October 4, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "List Blobs",
+        "url": "https://docs.microsoft.com/en-us/rest/api/storageservices/list-blobs",
+        "description": "Microsoft - List Blobs. (n.d.). Retrieved October 4, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

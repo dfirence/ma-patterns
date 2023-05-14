@@ -1,0 +1,30 @@
+[
+  [
+    "ironnetinjector",
+    "T1036.004",
+    "Masquerade Task or Service",
+    "command-execution|scheduled-job-metadata|scheduled-job-modification|service-creation|service-metadata",
+    "T1036.004::[IronNetInjector] has been disguised as a legitimate service using the name PythonUpdateSrvc."
+  ],
+  [
+    "ironnetinjector",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[IronNetInjector] has used a task XML file named mssch.xml to run an IronPython script when a user logs in or when specific system events are created."
+  ],
+  [
+    "ironnetinjector",
+    "T1055.001",
+    "Dynamic-link Library Injection",
+    "module-load|os-api-execution|process-access|process-metadata|process-modification",
+    "T1055.001::[IronNetInjector] has the ability to inject a DLL into running processes, including the [IronNetInjector] DLL into explorer.exe."
+  ],
+  [
+    "ironnetinjector",
+    "T1059.006",
+    "Python",
+    "command-execution|process-creation",
+    "T1059.006::[IronNetInjector] can use IronPython scripts to load payloads with the help of a .NET injector."
+  ]
+]

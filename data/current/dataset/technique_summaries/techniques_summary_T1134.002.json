@@ -1,0 +1,72 @@
+[
+  {
+    "id": "attack-pattern--677569f9-a8b0-459e-ab24-7f18091fa7bf",
+    "platform": "windows",
+    "tid": "T1134.002",
+    "technique": "Create Process with Token",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|os-api-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may create a new process with an existing token to escalate privileges and bypass access controls. Processes can be created with the token and resulting security context of another user using features such as <code>CreateProcessWithTokenW</code> and <code>runas</code>.(Citation: Microsoft RunAs)\n\nCreating processes with a token not associated with the current user may require the credentials of the target user, specific privileges to impersonate that user, or access to the token to be used. For example, the token could be duplicated via [Token Impersonation/Theft](https://attack.mitre.org/techniques/T1134/001) or created via [Make and Impersonate Token](https://attack.mitre.org/techniques/T1134/003) before being used to create a process.\n\nWhile this technique is distinct from [Token Impersonation/Theft](https://attack.mitre.org/techniques/T1134/001), the techniques can be used in conjunction where a token is duplicated and then used to create a new process.",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Command-line Logging",
+        "url": "https://technet.microsoft.com/en-us/windows-server-docs/identity/ad-ds/manage/component-updates/command-line-process-auditing",
+        "description": "Mathers, B. (2017, March 7). Command line process auditing. Retrieved April 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft RunAs",
+        "url": "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771525(v=ws.11)",
+        "description": "Microsoft. (2016, August 31). Runas. Retrieved October 1, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--677569f9-a8b0-459e-ab24-7f18091fa7bf",
+    "platform": "windows",
+    "tid": "T1134.002",
+    "technique": "Create Process with Token",
+    "tactic": "privilege-escalation",
+    "datasources": "command-execution|os-api-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may create a new process with an existing token to escalate privileges and bypass access controls. Processes can be created with the token and resulting security context of another user using features such as <code>CreateProcessWithTokenW</code> and <code>runas</code>.(Citation: Microsoft RunAs)\n\nCreating processes with a token not associated with the current user may require the credentials of the target user, specific privileges to impersonate that user, or access to the token to be used. For example, the token could be duplicated via [Token Impersonation/Theft](https://attack.mitre.org/techniques/T1134/001) or created via [Make and Impersonate Token](https://attack.mitre.org/techniques/T1134/003) before being used to create a process.\n\nWhile this technique is distinct from [Token Impersonation/Theft](https://attack.mitre.org/techniques/T1134/001), the techniques can be used in conjunction where a token is duplicated and then used to create a new process.",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Command-line Logging",
+        "url": "https://technet.microsoft.com/en-us/windows-server-docs/identity/ad-ds/manage/component-updates/command-line-process-auditing",
+        "description": "Mathers, B. (2017, March 7). Command line process auditing. Retrieved April 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft RunAs",
+        "url": "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771525(v=ws.11)",
+        "description": "Microsoft. (2016, August 31). Runas. Retrieved October 1, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

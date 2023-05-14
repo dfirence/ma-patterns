@@ -1,0 +1,41 @@
+[
+  {
+    "id": "tool--e33267fe-099f-4af2-8730-63d49f8813b2",
+    "name": "rubeus",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S1071",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 2,
+        "items": [
+          "credential-access",
+          "discovery"
+        ]
+      },
+      "techniques": {
+        "count": 5,
+        "items": [
+          "T1482",
+          "T1558.001",
+          "T1558.002",
+          "T1558.003",
+          "T1558.004"
+        ]
+      },
+      "adversaries": {
+        "count": 0,
+        "items": []
+      },
+      "procedures": [
+        "T1482::[Rubeus] can gather information about domain trusts.",
+        "T1558.001::[Rubeus] can forge a ticket-granting ticket.",
+        "T1558.002::[Rubeus] can create silver tickets.",
+        "T1558.003::[Rubeus] can use the `KerberosRequestorSecurityToken.GetRequest` method to request kerberoastable service tickets.",
+        "T1558.004::[Rubeus] can reveal the credentials of accounts that have Kerberos pre-authentication disabled through AS-REP roasting."
+      ]
+    },
+    "description": "[Rubeus](https://attack.mitre.org/software/S1071) is a C# toolset designed for raw Kerberos interaction that has been used since at least 2020, including in ransomware operations.(Citation: GitHub Rubeus March 2023)(Citation: FireEye KEGTAP SINGLEMALT October 2020)(Citation: DFIR Ryuk's Return October 2020)(Citation: DFIR Ryuk 2 Hour Speed Run November 2020)"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "attack-pattern--0259baeb-9f63-4c69-bf10-eb038c390688",
+    "platform": "linux|macos|windows",
+    "tid": "T1113",
+    "technique": "Screen Capture",
+    "tactic": "collection",
+    "datasources": "command-execution|os-api-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to take screen captures of the desktop to gather information over the course of an operation. Screen capturing functionality may be included as a feature of a remote access tool used in post-compromise operations. Taking a screenshot is also typically possible through native utilities or API calls, such as <code>CopyFromScreen</code>, <code>xwd</code>, or <code>screencapture</code>.(Citation: CopyFromScreen .NET)(Citation: Antiquated Mac Malware)\n",
+    "technique_references": [
+      {
+        "source_name": "CopyFromScreen .NET",
+        "url": "https://docs.microsoft.com/en-us/dotnet/api/system.drawing.graphics.copyfromscreen?view=netframework-4.8",
+        "description": "Microsoft. (n.d.). Graphics.CopyFromScreen Method. Retrieved March 24, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Antiquated Mac Malware",
+        "url": "https://blog.malwarebytes.com/threat-analysis/2017/01/new-mac-backdoor-using-antiquated-code/",
+        "description": "Thomas Reed. (2017, January 18). New Mac backdoor using antiquated code. Retrieved July 5, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

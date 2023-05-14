@@ -1,0 +1,65 @@
+[
+  [
+    "lazagne",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[LaZagne] can perform credential dumping from memory to obtain account and password information."
+  ],
+  [
+    "lazagne",
+    "T1003.004",
+    "LSA Secrets",
+    "command-execution|windows-registry-key-access",
+    "T1003.004::[LaZagne] can perform credential dumping from LSA secrets to obtain account and password information."
+  ],
+  [
+    "lazagne",
+    "T1003.005",
+    "Cached Domain Credentials",
+    "command-execution",
+    "T1003.005::[LaZagne] can perform credential dumping from MSCache to obtain account and password information."
+  ],
+  [
+    "lazagne",
+    "T1003.007",
+    "Proc Filesystem",
+    "command-execution|file-access",
+    "T1003.007::[LaZagne] can use the `<PID>/maps` and `<PID>/mem` files to identify regex patterns to dump cleartext passwords from the browser's process memory."
+  ],
+  [
+    "lazagne",
+    "T1003.008",
+    "/etc/passwd and /etc/shadow",
+    "command-execution|file-access",
+    "T1003.008::[LaZagne] can obtain credential information from /etc/shadow using the shadow.py module."
+  ],
+  [
+    "lazagne",
+    "T1552.001",
+    "Credentials In Files",
+    "command-execution|file-access",
+    "T1552.001::[LaZagne] can obtain credentials from chats, databases, mail, and WiFi."
+  ],
+  [
+    "lazagne",
+    "T1555.001",
+    "Keychain",
+    "command-execution|file-access|os-api-execution|process-creation",
+    "T1555.001::[LaZagne] can obtain credentials from macOS Keychains."
+  ],
+  [
+    "lazagne",
+    "T1555.003",
+    "Credentials from Web Browsers",
+    "command-execution|file-access|os-api-execution|process-access",
+    "T1555.003::[LaZagne] can obtain credentials from web browsers such as Google Chrome, Internet Explorer, and Firefox."
+  ],
+  [
+    "lazagne",
+    "T1555.004",
+    "Windows Credential Manager",
+    "command-execution|file-access|os-api-execution|process-creation",
+    "T1555.004::[LaZagne] can obtain credentials from Vault files."
+  ]
+]

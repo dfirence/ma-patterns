@@ -1,0 +1,226 @@
+[
+  {
+    "id": "attack-pattern--54a649ff-439a-41a4-9856-8d144a2551ba",
+    "platform": "linux|macos|windows",
+    "tid": "T1021",
+    "technique": "Remote Services",
+    "tactic": "lateral-movement",
+    "datasources": "network-share-access",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1021.001",
+      "T1021.002",
+      "T1021.003",
+      "T1021.004",
+      "T1021.005",
+      "T1021.006",
+      "T1021.007"
+    ],
+    "count_subtechniques": 7,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use [Valid Accounts](https://attack.mitre.org/techniques/T1078) to log into a service that accepts remote connections, such as telnet, SSH, and VNC. The adversary may then perform actions as the logged-on user.\n\nIn an enterprise environment, servers and workstations can be organized into domains. Domains provide centralized identity management, allowing users to login using one set of credentials across the entire network. If an adversary is able to obtain a set of valid domain credentials, they could login to many different machines using remote access protocols such as secure shell (SSH) or remote desktop protocol (RDP).(Citation: SSH Secure Shell)(Citation: TechNet Remote Desktop Services) They could also login to accessible SaaS or IaaS services, such as those that federate their identities to the domain. \n\nLegitimate applications (such as [Software Deployment Tools](https://attack.mitre.org/techniques/T1072) and other administrative programs) may utilize [Remote Services](https://attack.mitre.org/techniques/T1021) to access remote hosts. For example, Apple Remote Desktop (ARD) on macOS is native software used for remote management. ARD leverages a blend of protocols, including [VNC](https://attack.mitre.org/techniques/T1021/005) to send the screen and control buffers and [SSH](https://attack.mitre.org/techniques/T1021/004) for secure file transfer.(Citation: Remote Management MDM macOS)(Citation: Kickstart Apple Remote Desktop commands)(Citation: Apple Remote Desktop Admin Guide 3.3) Adversaries can abuse applications such as ARD to gain remote code execution and perform lateral movement. In versions of macOS prior to 10.14, an adversary can escalate an SSH session to an ARD session which enables an adversary to accept TCC (Transparency, Consent, and Control) prompts without user interaction and gain access to data.(Citation: FireEye 2019 Apple Remote Desktop)(Citation: Lockboxx ARD 2019)(Citation: Kickstart Apple Remote Desktop commands)",
+    "technique_references": [
+      {
+        "source_name": "Apple Remote Desktop Admin Guide 3.3",
+        "url": "https://images.apple.com/remotedesktop/pdf/ARD_Admin_Guide_v3.3.pdf",
+        "description": "Apple. (n.d.). Apple Remote Desktop Administrator Guide Version 3.3. Retrieved October 5, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Remote Management MDM macOS",
+        "url": "https://support.apple.com/en-us/HT209161",
+        "description": "Apple. (n.d.). Use MDM to enable Remote Management in macOS. Retrieved September 23, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kickstart Apple Remote Desktop commands",
+        "url": "https://support.apple.com/en-us/HT201710",
+        "description": "Apple. (n.d.). Use the kickstart command-line utility in Apple Remote Desktop. Retrieved September 23, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Lockboxx ARD 2019",
+        "url": "http://lockboxx.blogspot.com/2019/07/macos-red-teaming-206-ard-apple-remote.html",
+        "description": "Dan Borges. (2019, July 21). MacOS Red Teaming 206: ARD (Apple Remote Desktop Protocol). Retrieved September 10, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye 2019 Apple Remote Desktop",
+        "url": "https://www.fireeye.com/blog/threat-research/2019/10/leveraging-apple-remote-desktop-for-good-and-evil.html",
+        "description": "Jake Nicastro, Willi Ballenthin. (2019, October 9). Living off the Orchard: Leveraging Apple Remote Desktop for Good and Evil. Retrieved August 16, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Remote Desktop Services",
+        "url": "https://technet.microsoft.com/en-us/windowsserver/ee236407.aspx",
+        "description": "Microsoft. (n.d.). Remote Desktop Services. Retrieved June 1, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Apple Unified Log Analysis Remote Login and Screen Sharing",
+        "url": "https://sarah-edwards-xzkc.squarespace.com/blog/2020/4/30/analysis-of-apple-unified-logs-quarantine-edition-entry-6-working-from-home-remote-logins",
+        "description": "Sarah Edwards. (2020, April 30). Analysis of Apple Unified Logs: Quarantine Edition [Entry 6] – Working From Home? Remote Logins. Retrieved August 19, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SSH Secure Shell",
+        "url": "https://www.ssh.com/ssh",
+        "description": "SSH.COM. (n.d.). SSH (Secure Shell). Retrieved March 23, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--ae676644-d2d2-41b7-af7e-9bed1b55898c",
+    "platform": "linux|macos|windows",
+    "tid": "T1039",
+    "technique": "Data from Network Shared Drive",
+    "tactic": "collection",
+    "datasources": "network-share-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may search network shares on computers they have compromised to find files of interest. Sensitive data can be collected from remote systems via shared network drives (host shared directory, network file server, etc.) that are accessible from the current system prior to Exfiltration. Interactive command shells may be in use, and common functionality within [cmd](https://attack.mitre.org/software/S0106) may be used to gather information.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--246fd3c7-f5e3-466d-8787-4c13d9e3b61c",
+    "platform": "windows|office-365|saas|linux|macos",
+    "tid": "T1080",
+    "technique": "Taint Shared Content",
+    "tactic": "lateral-movement",
+    "datasources": "network-share-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "\nAdversaries may deliver payloads to remote systems by adding content to shared storage locations, such as network drives or internal code repositories. Content stored on network drives or in other shared locations may be tainted by adding malicious programs, scripts, or exploit code to otherwise valid files. Once a user opens the shared tainted content, the malicious portion can be executed to run the adversary's code on a remote system. Adversaries may use tainted shared content to move laterally.\n\nA directory share pivot is a variation on this technique that uses several other techniques to propagate malware when users access a shared network directory. It uses [Shortcut Modification](https://attack.mitre.org/techniques/T1547/009) of directory .LNK files that use [Masquerading](https://attack.mitre.org/techniques/T1036) to look like the real directories, which are hidden through [Hidden Files and Directories](https://attack.mitre.org/techniques/T1564/001). The malicious .LNK-based directories have an embedded command that executes the hidden malware file in the directory and then opens the real intended directory so that the user's expected action still occurs. When used with frequently used network directories, the technique may result in frequent reinfections and broad access to systems and potentially to new and higher privileged accounts. (Citation: Retwin Directory Share Pivot)\n\nAdversaries may also compromise shared network directories through binary infections by appending or prepending its code to the healthy binary on the shared network directory. The malware may modify the original entry point (OEP) of the healthy binary to ensure that it is executed before the legitimate code. The infection could continue to spread via the newly infected file when it is executed by a remote system. These infections may target both binary and non-binary formats that end with extensions including, but not limited to, .EXE, .DLL, .SCR, .BAT, and/or .VBS.",
+    "technique_references": [
+      {
+        "source_name": "Retwin Directory Share Pivot",
+        "url": "https://rewtin.blogspot.ch/2017/11/abusing-user-shares-for-efficient.html",
+        "description": "Routin, D. (2017, November 13). Abusing network shares for efficient lateral movements and privesc (DirSharePivot). Retrieved April 12, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b80d107d-fa0d-4b60-9684-b0433e8bdba0",
+    "platform": "linux|macos|windows|iaas",
+    "tid": "T1486",
+    "technique": "Data Encrypted for Impact",
+    "tactic": "impact",
+    "datasources": "network-share-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may encrypt data on target systems or on large numbers of systems in a network to interrupt availability to system and network resources. They can attempt to render stored data inaccessible by encrypting files or data on local and remote drives and withholding access to a decryption key. This may be done in order to extract monetary compensation from a victim in exchange for decryption or a decryption key (ransomware) or to render data permanently inaccessible in cases where the key is not saved or transmitted.(Citation: US-CERT Ransomware 2016)(Citation: FireEye WannaCry 2017)(Citation: US-CERT NotPetya 2017)(Citation: US-CERT SamSam 2018)\n\nIn the case of ransomware, it is typical that common user files like Office documents, PDFs, images, videos, audio, text, and source code files will be encrypted (and often renamed and/or tagged with specific file markers). Adversaries may need to first employ other behaviors, such as [File and Directory Permissions Modification](https://attack.mitre.org/techniques/T1222) or [System Shutdown/Reboot](https://attack.mitre.org/techniques/T1529), in order to unlock and/or gain access to manipulate these files.(Citation: CarbonBlack Conti July 2020) In some cases, adversaries may encrypt critical system files, disk partitions, and the MBR.(Citation: US-CERT NotPetya 2017) \n\nTo maximize impact on the target organization, malware designed for encrypting data may have worm-like features to propagate across a network by leveraging other attack techniques like [Valid Accounts](https://attack.mitre.org/techniques/T1078), [OS Credential Dumping](https://attack.mitre.org/techniques/T1003), and [SMB/Windows Admin Shares](https://attack.mitre.org/techniques/T1021/002).(Citation: FireEye WannaCry 2017)(Citation: US-CERT NotPetya 2017) Encryption malware may also leverage [Internal Defacement](https://attack.mitre.org/techniques/T1491/001), such as changing victim wallpapers, or otherwise intimidate victims by sending ransom notes or other messages to connected printers (known as \"print bombing\").(Citation: NHS Digital Egregor Nov 2020)\n\nIn cloud environments, storage objects within compromised accounts may also be encrypted.(Citation: Rhino S3 Ransomware Part 1)",
+    "technique_references": [
+      {
+        "source_name": "CarbonBlack Conti July 2020",
+        "url": "https://www.carbonblack.com/blog/tau-threat-discovery-conti-ransomware/",
+        "description": "Baskin, B. (2020, July 8). TAU Threat Discovery: Conti Ransomware. Retrieved February 17, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye WannaCry 2017",
+        "url": "https://www.fireeye.com/blog/threat-research/2017/05/wannacry-malware-profile.html",
+        "description": "Berry, A., Homan, J., and Eitzman, R. (2017, May 23). WannaCry Malware Profile. Retrieved March 15, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Rhino S3 Ransomware Part 1",
+        "url": "https://rhinosecuritylabs.com/aws/s3-ransomware-part-1-attack-vector/",
+        "description": "Gietzen, S. (n.d.). S3 Ransomware Part 1: Attack Vector. Retrieved April 14, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NHS Digital Egregor Nov 2020",
+        "url": "https://digital.nhs.uk/cyber-alerts/2020/cc-3681#summary",
+        "description": "NHS Digital. (2020, November 26). Egregor Ransomware The RaaS successor to Maze. Retrieved December 29, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT Ransomware 2016",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA16-091A",
+        "description": "US-CERT. (2016, March 31). Alert (TA16-091A): Ransomware and Recent Variants. Retrieved March 15, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT NotPetya 2017",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA17-181A",
+        "description": "US-CERT. (2017, July 1). Alert (TA17-181A): Petya Ransomware. Retrieved March 15, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT SamSam 2018",
+        "url": "https://www.us-cert.gov/ncas/alerts/AA18-337A",
+        "description": "US-CERT. (2018, December 3). Alert (AA18-337A): SamSam Ransomware. Retrieved March 15, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--bf90d72c-c00b-45e3-b3aa-68560560d4c5",
+    "platform": "linux|macos|windows",
+    "tid": "T1570",
+    "technique": "Lateral Tool Transfer",
+    "tactic": "lateral-movement",
+    "datasources": "network-share-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may transfer tools or other files between systems in a compromised environment. Once brought into the victim environment (i.e. [Ingress Tool Transfer](https://attack.mitre.org/techniques/T1105)) files may then be copied from one system to another to stage adversary tools or other files over the course of an operation. Adversaries may copy files between internal victim systems to support lateral movement using inherent file sharing protocols such as file sharing over [SMB/Windows Admin Shares](https://attack.mitre.org/techniques/T1021/002) to connected network shares or with authenticated connections via [Remote Desktop Protocol](https://attack.mitre.org/techniques/T1021/001).(Citation: Unit42 LockerGoga 2019)\n\nFiles can also be transferred using native or otherwise present tools on the victim system, such as scp, rsync, curl, sftp, and [ftp](https://attack.mitre.org/software/S0095).",
+    "technique_references": [
+      {
+        "source_name": "Unit42 LockerGoga 2019",
+        "url": "https://unit42.paloaltonetworks.com/born-this-way-origins-of-lockergoga/",
+        "description": "Harbison, M. (2019, March 26). Born This Way? Origins of LockerGoga. Retrieved April 16, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

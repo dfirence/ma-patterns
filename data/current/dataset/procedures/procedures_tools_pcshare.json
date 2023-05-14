@@ -1,0 +1,58 @@
+[
+  [
+    "pcshare",
+    "T1036.001",
+    "Invalid Code Signature",
+    "file-metadata",
+    "T1036.001::[PcShare] has used an invalid certificate in attempt to appear legitimate."
+  ],
+  [
+    "pcshare",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[PcShare] has been named `wuauclt.exe` to appear as the legitimate Windows Update AutoUpdate Client."
+  ],
+  [
+    "pcshare",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[PcShare] has the ability to capture keystrokes."
+  ],
+  [
+    "pcshare",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[PcShare] can execute `cmd` commands on a compromised host."
+  ],
+  [
+    "pcshare",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[PcShare] has deleted its files and components from a compromised host."
+  ],
+  [
+    "pcshare",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[PcShare] has used HTTP for C2 communication."
+  ],
+  [
+    "pcshare",
+    "T1218.011",
+    "Rundll32",
+    "command-execution|file-metadata|module-load|process-creation",
+    "T1218.011::[PcShare] has used `rundll32.exe` for execution."
+  ],
+  [
+    "pcshare",
+    "T1546.015",
+    "Component Object Model Hijacking",
+    "command-execution|module-load|process-creation|windows-registry-key-modification",
+    "T1546.015::[PcShare] has created the `HKCU\\\\Software\\\\Classes\\\\CLSID\\\\{42aedc87-2188-41fd-b9a3-0c966feabec1}\\\\InprocServer32` Registry key for persistence."
+  ]
+]

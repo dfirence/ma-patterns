@@ -1,0 +1,9 @@
+[
+  [
+    "connectwise",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[ConnectWise] can be used to execute PowerShell commands on target machines."
+  ]
+]

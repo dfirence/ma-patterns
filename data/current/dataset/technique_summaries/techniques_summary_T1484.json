@@ -1,0 +1,162 @@
+[
+  {
+    "id": "attack-pattern--ebb42bbe-62d7-47d7-a55f-3b08b61d792d",
+    "platform": "windows|azure-ad",
+    "tid": "T1484",
+    "technique": "Domain Policy Modification",
+    "tactic": "defense-evasion",
+    "datasources": "active-directory-object-creation|active-directory-object-deletion|active-directory-object-modification|command-execution",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1484.001",
+      "T1484.002"
+    ],
+    "count_subtechniques": 2,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify the configuration settings of a domain to evade defenses and/or escalate privileges in domain environments. Domains provide a centralized means of managing how computer resources (ex: computers, user accounts) can act, and interact with each other, on a network. The policy of the domain also includes configuration settings that may apply between domains in a multi-domain/forest environment. Modifications to domain settings may include altering domain Group Policy Objects (GPOs) or changing trust settings for domains, including federation trusts.\n\nWith sufficient permissions, adversaries can modify domain policy settings. Since domain configuration settings control many of the interactions within the Active Directory (AD) environment, there are a great number of potential attacks that can stem from this abuse. Examples of such abuse include modifying GPOs to push a malicious [Scheduled Task](https://attack.mitre.org/techniques/T1053/005) to computers throughout the domain environment(Citation: ADSecurity GPO Persistence 2016)(Citation: Wald0 Guide to GPOs)(Citation: Harmj0y Abusing GPO Permissions) or modifying domain trusts to include an adversary controlled domain where they can control access tokens that will subsequently be accepted by victim domain resources.(Citation: Microsoft - Customer Guidance on Recent Nation-State Cyber Attacks) Adversaries can also change configuration settings within the AD environment to implement a [Rogue Domain Controller](https://attack.mitre.org/techniques/T1207).\n\nAdversaries may temporarily modify domain policy, carry out a malicious action(s), and then revert the change to remove suspicious indicators.",
+    "technique_references": [
+      {
+        "source_name": "ADSecurity GPO Persistence 2016",
+        "url": "https://adsecurity.org/?p=2716",
+        "description": "Metcalf, S. (2016, March 14). Sneaky Active Directory Persistence #17: Group Policy. Retrieved March 5, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wald0 Guide to GPOs",
+        "url": "https://wald0.com/?p=179",
+        "description": "Robbins, A. (2018, April 2). A Red Teamer’s Guide to GPOs and OUs. Retrieved March 5, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Harmj0y Abusing GPO Permissions",
+        "url": "http://www.harmj0y.net/blog/redteaming/abusing-gpo-permissions/",
+        "description": "Schroeder, W. (2016, March 17). Abusing GPO Permissions. Retrieved March 5, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft - Customer Guidance on Recent Nation-State Cyber Attacks",
+        "url": "https://msrc-blog.microsoft.com/2020/12/13/customer-guidance-on-recent-nation-state-cyber-attacks/",
+        "description": "MSRC. (2020, December 13). Customer Guidance on Recent Nation-State Cyber Attacks. Retrieved December 30, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft - Azure Sentinel ADFSDomainTrustMods",
+        "url": "https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/ADFSDomainTrustMods.yaml",
+        "description": "Microsoft. (2020, December). Azure Sentinel Detections. Retrieved December 30, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft 365 Defender Solorigate",
+        "url": "https://www.microsoft.com/security/blog/2020/12/28/using-microsoft-365-defender-to-coordinate-protection-against-solorigate/",
+        "description": "Microsoft 365 Defender Team. (2020, December 28). Using Microsoft 365 Defender to protect against Solorigate. Retrieved January 7, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sygnia Golden SAML",
+        "url": "https://www.sygnia.co/golden-saml-advisory",
+        "description": "Sygnia. (2020, December). Detection and Hunting of Golden SAML Attack. Retrieved January 6, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CISA SolarWinds Cloud Detection",
+        "url": "https://us-cert.cisa.gov/ncas/alerts/aa21-008a",
+        "description": "CISA. (2021, January 8). Detecting Post-Compromise Threat Activity in Microsoft Cloud Environments. Retrieved January 8, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft - Update or Repair Federated domain",
+        "url": "https://docs.microsoft.com/en-us/office365/troubleshoot/active-directory/update-federated-domain-office-365",
+        "description": "Microsoft. (2020, September 14). Update or repair the settings of a federated domain in Office 365, Azure, or Intune. Retrieved December 30, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--ebb42bbe-62d7-47d7-a55f-3b08b61d792d",
+    "platform": "windows|azure-ad",
+    "tid": "T1484",
+    "technique": "Domain Policy Modification",
+    "tactic": "privilege-escalation",
+    "datasources": "active-directory-object-creation|active-directory-object-deletion|active-directory-object-modification|command-execution",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1484.001",
+      "T1484.002"
+    ],
+    "count_subtechniques": 2,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify the configuration settings of a domain to evade defenses and/or escalate privileges in domain environments. Domains provide a centralized means of managing how computer resources (ex: computers, user accounts) can act, and interact with each other, on a network. The policy of the domain also includes configuration settings that may apply between domains in a multi-domain/forest environment. Modifications to domain settings may include altering domain Group Policy Objects (GPOs) or changing trust settings for domains, including federation trusts.\n\nWith sufficient permissions, adversaries can modify domain policy settings. Since domain configuration settings control many of the interactions within the Active Directory (AD) environment, there are a great number of potential attacks that can stem from this abuse. Examples of such abuse include modifying GPOs to push a malicious [Scheduled Task](https://attack.mitre.org/techniques/T1053/005) to computers throughout the domain environment(Citation: ADSecurity GPO Persistence 2016)(Citation: Wald0 Guide to GPOs)(Citation: Harmj0y Abusing GPO Permissions) or modifying domain trusts to include an adversary controlled domain where they can control access tokens that will subsequently be accepted by victim domain resources.(Citation: Microsoft - Customer Guidance on Recent Nation-State Cyber Attacks) Adversaries can also change configuration settings within the AD environment to implement a [Rogue Domain Controller](https://attack.mitre.org/techniques/T1207).\n\nAdversaries may temporarily modify domain policy, carry out a malicious action(s), and then revert the change to remove suspicious indicators.",
+    "technique_references": [
+      {
+        "source_name": "ADSecurity GPO Persistence 2016",
+        "url": "https://adsecurity.org/?p=2716",
+        "description": "Metcalf, S. (2016, March 14). Sneaky Active Directory Persistence #17: Group Policy. Retrieved March 5, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wald0 Guide to GPOs",
+        "url": "https://wald0.com/?p=179",
+        "description": "Robbins, A. (2018, April 2). A Red Teamer’s Guide to GPOs and OUs. Retrieved March 5, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Harmj0y Abusing GPO Permissions",
+        "url": "http://www.harmj0y.net/blog/redteaming/abusing-gpo-permissions/",
+        "description": "Schroeder, W. (2016, March 17). Abusing GPO Permissions. Retrieved March 5, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft - Customer Guidance on Recent Nation-State Cyber Attacks",
+        "url": "https://msrc-blog.microsoft.com/2020/12/13/customer-guidance-on-recent-nation-state-cyber-attacks/",
+        "description": "MSRC. (2020, December 13). Customer Guidance on Recent Nation-State Cyber Attacks. Retrieved December 30, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft - Azure Sentinel ADFSDomainTrustMods",
+        "url": "https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/ADFSDomainTrustMods.yaml",
+        "description": "Microsoft. (2020, December). Azure Sentinel Detections. Retrieved December 30, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft 365 Defender Solorigate",
+        "url": "https://www.microsoft.com/security/blog/2020/12/28/using-microsoft-365-defender-to-coordinate-protection-against-solorigate/",
+        "description": "Microsoft 365 Defender Team. (2020, December 28). Using Microsoft 365 Defender to protect against Solorigate. Retrieved January 7, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sygnia Golden SAML",
+        "url": "https://www.sygnia.co/golden-saml-advisory",
+        "description": "Sygnia. (2020, December). Detection and Hunting of Golden SAML Attack. Retrieved January 6, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CISA SolarWinds Cloud Detection",
+        "url": "https://us-cert.cisa.gov/ncas/alerts/aa21-008a",
+        "description": "CISA. (2021, January 8). Detecting Post-Compromise Threat Activity in Microsoft Cloud Environments. Retrieved January 8, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft - Update or Repair Federated domain",
+        "url": "https://docs.microsoft.com/en-us/office365/troubleshoot/active-directory/update-federated-domain-office-365",
+        "description": "Microsoft. (2020, September 14). Update or repair the settings of a federated domain in Office 365, Azure, or Intune. Retrieved December 30, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

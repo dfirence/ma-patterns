@@ -1,0 +1,172 @@
+[
+  {
+    "id": "attack-pattern--635cbe30-392d-4e27-978e-66774357c762",
+    "platform": "linux|macos|windows|network",
+    "tid": "T1136.001",
+    "technique": "Local Account",
+    "tactic": "persistence",
+    "datasources": "user-account-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may create a local account to maintain access to victim systems. Local accounts are those configured by an organization for use by users, remote support, services, or for administration on a single system or service. With a sufficient level of access, the <code>net user /add</code> command can be used to create a local account. On macOS systems the <code>dscl -create</code> command can be used to create a local account. Local accounts may also be added to network devices, often via common [Network Device CLI](https://attack.mitre.org/techniques/T1059/008) commands such as <code>username</code>.(Citation: cisco_username_cmd)\n\nSuch accounts may be used to establish secondary credentialed access that do not require persistent remote access tools to be deployed on the system.",
+    "technique_references": [
+      {
+        "source_name": "cisco_username_cmd",
+        "url": "https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/s1/sec-s1-cr-book/sec-cr-t2.html#wp1047035630",
+        "description": "Cisco. (2023, March 6). username - Cisco IOS Security Command Reference: Commands S to Z. Retrieved July 13, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft User Creation Event",
+        "url": "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4720",
+        "description": "Lich, B., Miroshnikov, A. (2017, April 5). 4720(S): A user account was created. Retrieved June 30, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--7610cada-1499-41a4-b3dd-46467b68d177",
+    "platform": "windows|macos|linux",
+    "tid": "T1136.002",
+    "technique": "Domain Account",
+    "tactic": "persistence",
+    "datasources": "user-account-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may create a domain account to maintain access to victim systems. Domain accounts are those managed by Active Directory Domain Services where access and permissions are configured across systems and services that are part of that domain. Domain accounts can cover user, administrator, and service accounts. With a sufficient level of access, the <code>net user /add /domain</code> command can be used to create a domain account.\n\nSuch accounts may be used to establish secondary credentialed access that do not require persistent remote access tools to be deployed on the system.",
+    "technique_references": [
+      {
+        "source_name": "Microsoft User Creation Event",
+        "url": "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4720",
+        "description": "Lich, B., Miroshnikov, A. (2017, April 5). 4720(S): A user account was created. Retrieved June 30, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--a009cb25-4801-4116-9105-80a91cf15c1b",
+    "platform": "azure-ad|office-365|iaas|google-workspace|saas",
+    "tid": "T1136.003",
+    "technique": "Cloud Account",
+    "tactic": "persistence",
+    "datasources": "user-account-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may create a cloud account to maintain access to victim systems. With a sufficient level of access, such accounts may be used to establish secondary credentialed access that does not require persistent remote access tools to be deployed on the system.(Citation: Microsoft O365 Admin Roles)(Citation: Microsoft Support O365 Add Another Admin, October 2019)(Citation: AWS Create IAM User)(Citation: GCP Create Cloud Identity Users)(Citation: Microsoft Azure AD Users)\n\nAdversaries may create accounts that only have access to specific cloud services, which can reduce the chance of detection.\n\nOnce an adversary has created a cloud account, they can then manipulate that account to ensure persistence and allow access to additional resources - for example, by adding [Additional Cloud Credentials](https://attack.mitre.org/techniques/T1098/001) or assigning [Additional Cloud Roles](https://attack.mitre.org/techniques/T1098/003).",
+    "technique_references": [
+      {
+        "source_name": "Microsoft O365 Admin Roles",
+        "url": "https://docs.microsoft.com/en-us/office365/admin/add-users/about-admin-roles?view=o365-worldwide",
+        "description": "Ako-Adjei, K., Dickhaus, M., Baumgartner, P., Faigel, D., et. al.. (2019, October 8). About admin roles. Retrieved October 18, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AWS Create IAM User",
+        "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html",
+        "description": "AWS. (n.d.). Creating an IAM User in Your AWS Account. Retrieved January 29, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GCP Create Cloud Identity Users",
+        "url": "https://support.google.com/cloudidentity/answer/7332836?hl=en&ref_topic=7558554",
+        "description": "Google. (n.d.). Create Cloud Identity user accounts. Retrieved January 29, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Azure AD Users",
+        "url": "https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/add-users-azure-active-directory",
+        "description": "Microsoft. (2019, November 11). Add or delete users using Azure Active Directory. Retrieved January 30, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Support O365 Add Another Admin, October 2019",
+        "url": "https://support.office.com/en-us/article/add-another-admin-f693489f-9f55-4bd0-a637-a81ce93de22d",
+        "description": "Microsoft. (n.d.). Add Another Admin. Retrieved October 18, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--8c4aef43-48d5-49aa-b2af-c0cd58d30c3d",
+    "platform": "macos|windows|linux",
+    "tid": "T1564.002",
+    "technique": "Hidden Users",
+    "tactic": "defense-evasion",
+    "datasources": "user-account-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use hidden users to hide the presence of user accounts they create or modify. Administrators may want to hide users when there are many user accounts on a given system or if they want to hide their administrative or other management accounts from other users. \n\nIn macOS, adversaries can create or modify a user to be hidden through manipulating plist files, folder attributes, and user attributes. To prevent a user from being shown on the login screen and in System Preferences, adversaries can set the userID to be under 500 and set the key value <code>Hide500Users</code> to <code>TRUE</code> in the <code>/Library/Preferences/com.apple.loginwindow</code> plist file.(Citation: Cybereason OSX Pirrit) Every user has a userID associated with it. When the <code>Hide500Users</code> key value is set to <code>TRUE</code>, users with a userID under 500 do not appear on the login screen and in System Preferences. Using the command line, adversaries can use the <code>dscl</code> utility to create hidden user accounts by setting the <code>IsHidden</code> attribute to <code>1</code>. Adversaries can also hide a user’s home folder by changing the <code>chflags</code> to hidden.(Citation: Apple Support Hide a User Account) \n\nAdversaries may similarly hide user accounts in Windows. Adversaries can set the <code>HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\SpecialAccounts\\UserList</code> Registry key value to <code>0</code> for a specific user to prevent that user from being listed on the logon screen.(Citation: FireEye SMOKEDHAM June 2021)(Citation: US-CERT TA18-074A)\n\nOn Linux systems, adversaries may hide user accounts from the login screen, also referred to as the greeter. The method an adversary may use depends on which Display Manager the distribution is currently using. For example, on an Ubuntu system using the GNOME Display Manger (GDM), accounts may be hidden from the greeter using the <code>gsettings</code> command (ex: <code>sudo -u gdm gsettings set org.gnome.login-screen disable-user-list true</code>).(Citation: Hide GDM User Accounts) Display Managers are not anchored to specific distributions and may be changed by a user or adversary.",
+    "technique_references": [
+      {
+        "source_name": "Cybereason OSX Pirrit",
+        "url": "https://cdn2.hubspot.net/hubfs/3354902/Content%20PDFs/Cybereason-Lab-Analysis-OSX-Pirrit-4-6-16.pdf",
+        "description": "Amit Serper. (2016). Cybereason Lab Analysis OSX.Pirrit. Retrieved December 10, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Apple Support Hide a User Account",
+        "url": "https://support.apple.com/en-us/HT203998",
+        "description": "Apple. (2020, November 30). Hide a user account in macOS. Retrieved December 10, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye SMOKEDHAM June 2021",
+        "url": "https://www.fireeye.com/blog/threat-research/2021/06/darkside-affiliate-supply-chain-software-compromise.html",
+        "description": "FireEye. (2021, June 16). Smoking Out a DARKSIDE Affiliate’s Supply Chain Software Compromise. Retrieved September 22, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Hide GDM User Accounts",
+        "url": "https://ubuntuhandbook.org/index.php/2021/06/hide-user-accounts-ubuntu-20-04-login-screen/",
+        "description": "Ji Mingkui. (2021, June 17). How to Hide All The User Accounts in Ubuntu 20.04, 21.04 Login Screen. Retrieved March 15, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT TA18-074A",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA18-074A",
+        "description": "US-CERT. (2018, March 16). Alert (TA18-074A): Russian Government Cyber Activity Targeting Energy and Other Critical Infrastructure Sectors. Retrieved June 6, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

@@ -1,0 +1,128 @@
+[
+  {
+    "id": "attack-pattern--aedfca76-3b30-4866-b2aa-0f1d7fd1e4b6",
+    "platform": "linux|macos|windows",
+    "tid": "T1574",
+    "technique": "Hijack Execution Flow",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|file-creation|file-modification|module-load|process-creation|service-metadata|windows-registry-key-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1574.001",
+      "T1574.002",
+      "T1574.004",
+      "T1574.005",
+      "T1574.006",
+      "T1574.007",
+      "T1574.008",
+      "T1574.009",
+      "T1574.010",
+      "T1574.011",
+      "T1574.012",
+      "T1574.013"
+    ],
+    "count_subtechniques": 12,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may execute their own malicious payloads by hijacking the way operating systems run programs. Hijacking execution flow can be for the purposes of persistence, since this hijacked execution may reoccur over time. Adversaries may also use these mechanisms to elevate privileges or evade defenses, such as application control or other restrictions on execution.\n\nThere are many ways an adversary may hijack the flow of execution, including by manipulating how the operating system locates programs to be executed. How the operating system locates libraries to be used by a program can also be intercepted. Locations where the operating system looks for programs/resources, such as file directories and in the case of Windows the Registry, could also be poisoned to include malicious payloads.",
+    "technique_references": [
+      {
+        "source_name": "Autoruns for Windows",
+        "url": "https://docs.microsoft.com/en-us/sysinternals/downloads/autoruns",
+        "description": "Mark Russinovich. (2019, June 28). Autoruns for Windows v13.96. Retrieved March 13, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--aedfca76-3b30-4866-b2aa-0f1d7fd1e4b6",
+    "platform": "linux|macos|windows",
+    "tid": "T1574",
+    "technique": "Hijack Execution Flow",
+    "tactic": "persistence",
+    "datasources": "command-execution|file-creation|file-modification|module-load|process-creation|service-metadata|windows-registry-key-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1574.001",
+      "T1574.002",
+      "T1574.004",
+      "T1574.005",
+      "T1574.006",
+      "T1574.007",
+      "T1574.008",
+      "T1574.009",
+      "T1574.010",
+      "T1574.011",
+      "T1574.012",
+      "T1574.013"
+    ],
+    "count_subtechniques": 12,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may execute their own malicious payloads by hijacking the way operating systems run programs. Hijacking execution flow can be for the purposes of persistence, since this hijacked execution may reoccur over time. Adversaries may also use these mechanisms to elevate privileges or evade defenses, such as application control or other restrictions on execution.\n\nThere are many ways an adversary may hijack the flow of execution, including by manipulating how the operating system locates programs to be executed. How the operating system locates libraries to be used by a program can also be intercepted. Locations where the operating system looks for programs/resources, such as file directories and in the case of Windows the Registry, could also be poisoned to include malicious payloads.",
+    "technique_references": [
+      {
+        "source_name": "Autoruns for Windows",
+        "url": "https://docs.microsoft.com/en-us/sysinternals/downloads/autoruns",
+        "description": "Mark Russinovich. (2019, June 28). Autoruns for Windows v13.96. Retrieved March 13, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--aedfca76-3b30-4866-b2aa-0f1d7fd1e4b6",
+    "platform": "linux|macos|windows",
+    "tid": "T1574",
+    "technique": "Hijack Execution Flow",
+    "tactic": "privilege-escalation",
+    "datasources": "command-execution|file-creation|file-modification|module-load|process-creation|service-metadata|windows-registry-key-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1574.001",
+      "T1574.002",
+      "T1574.004",
+      "T1574.005",
+      "T1574.006",
+      "T1574.007",
+      "T1574.008",
+      "T1574.009",
+      "T1574.010",
+      "T1574.011",
+      "T1574.012",
+      "T1574.013"
+    ],
+    "count_subtechniques": 12,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may execute their own malicious payloads by hijacking the way operating systems run programs. Hijacking execution flow can be for the purposes of persistence, since this hijacked execution may reoccur over time. Adversaries may also use these mechanisms to elevate privileges or evade defenses, such as application control or other restrictions on execution.\n\nThere are many ways an adversary may hijack the flow of execution, including by manipulating how the operating system locates programs to be executed. How the operating system locates libraries to be used by a program can also be intercepted. Locations where the operating system looks for programs/resources, such as file directories and in the case of Windows the Registry, could also be poisoned to include malicious payloads.",
+    "technique_references": [
+      {
+        "source_name": "Autoruns for Windows",
+        "url": "https://docs.microsoft.com/en-us/sysinternals/downloads/autoruns",
+        "description": "Mark Russinovich. (2019, June 28). Autoruns for Windows v13.96. Retrieved March 13, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

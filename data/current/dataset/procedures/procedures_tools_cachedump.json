@@ -1,0 +1,9 @@
+[
+  [
+    "cachedump",
+    "T1003.005",
+    "Cached Domain Credentials",
+    "command-execution",
+    "T1003.005::[Cachedump] can extract cached password hashes from cache entry information."
+  ]
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "attack-pattern--03259939-0b57-482f-8eb5-87c0e0d54334",
+    "platform": "macos|windows|linux",
+    "tid": "T1037",
+    "technique": "Boot or Logon Initialization Scripts",
+    "tactic": "persistence",
+    "datasources": "active-directory-object-modification|command-execution|file-creation|file-modification|process-creation|windows-registry-key-creation",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1037.001",
+      "T1037.002",
+      "T1037.003",
+      "T1037.004",
+      "T1037.005"
+    ],
+    "count_subtechniques": 5,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use scripts automatically executed at boot or logon initialization to establish persistence. Initialization scripts can be used to perform administrative functions, which may often execute other programs or send information to an internal logging server. These scripts can vary based on operating system and whether applied locally or remotely.  \n\nAdversaries may use these scripts to maintain persistence on a single system. Depending on the access configuration of the logon scripts, either local credentials or an administrator account may be necessary. \n\nAn adversary may also be able to escalate their privileges since some boot or logon initialization scripts run with higher privileges.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--03259939-0b57-482f-8eb5-87c0e0d54334",
+    "platform": "macos|windows|linux",
+    "tid": "T1037",
+    "technique": "Boot or Logon Initialization Scripts",
+    "tactic": "privilege-escalation",
+    "datasources": "active-directory-object-modification|command-execution|file-creation|file-modification|process-creation|windows-registry-key-creation",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1037.001",
+      "T1037.002",
+      "T1037.003",
+      "T1037.004",
+      "T1037.005"
+    ],
+    "count_subtechniques": 5,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use scripts automatically executed at boot or logon initialization to establish persistence. Initialization scripts can be used to perform administrative functions, which may often execute other programs or send information to an internal logging server. These scripts can vary based on operating system and whether applied locally or remotely.  \n\nAdversaries may use these scripts to maintain persistence on a single system. Depending on the access configuration of the logon scripts, either local credentials or an administrator account may be necessary. \n\nAn adversary may also be able to escalate their privileges since some boot or logon initialization scripts run with higher privileges.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

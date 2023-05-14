@@ -1,0 +1,9 @@
+[
+  [
+    "ftp",
+    "T1048.003",
+    "Exfiltration Over Unencrypted Non-C2 Protocol",
+    "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1048.003::[ftp] may be used to exfiltrate data separate from the main command and control protocol."
+  ]
+]

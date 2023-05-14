@@ -1,0 +1,65 @@
+[
+  [
+    "cspy-downloader",
+    "T1027.002",
+    "Software Packing",
+    "file-metadata",
+    "T1027.002::[CSPY Downloader] has been packed with UPX."
+  ],
+  [
+    "cspy-downloader",
+    "T1036.004",
+    "Masquerade Task or Service",
+    "command-execution|scheduled-job-metadata|scheduled-job-modification|service-creation|service-metadata",
+    "T1036.004::[CSPY Downloader] has attempted to appear as a legitimate Windows service with a fake description claiming it is used to support packed applications."
+  ],
+  [
+    "cspy-downloader",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[CSPY Downloader] can use the schtasks utility to bypass UAC."
+  ],
+  [
+    "cspy-downloader",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[CSPY Downloader] has the ability to self delete."
+  ],
+  [
+    "cspy-downloader",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[CSPY Downloader] can use GET requests to download additional payloads from C2."
+  ],
+  [
+    "cspy-downloader",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[CSPY Downloader] has been delivered via malicious documents with embedded macros."
+  ],
+  [
+    "cspy-downloader",
+    "T1497.001",
+    "System Checks",
+    "command-execution|os-api-execution|process-creation",
+    "T1497.001::[CSPY Downloader] can search loaded modules, PEB structure, file paths, Registry keys, and memory to determine if it is being debugged or running in a virtual environment."
+  ],
+  [
+    "cspy-downloader",
+    "T1548.002",
+    "Bypass User Account Control",
+    "command-execution|process-creation|process-metadata|windows-registry-key-modification",
+    "T1548.002::[CSPY Downloader] can bypass UAC using the SilentCleanup task to execute the binary with elevated privileges."
+  ],
+  [
+    "cspy-downloader",
+    "T1553.002",
+    "Code Signing",
+    "file-metadata",
+    "T1553.002::[CSPY Downloader] has come signed with revoked certificates."
+  ]
+]

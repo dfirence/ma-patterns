@@ -1,0 +1,9 @@
+[
+  [
+    "tasklist",
+    "T1518.001",
+    "Security Software Discovery",
+    "command-execution|firewall-enumeration|firewall-metadata|os-api-execution|process-creation",
+    "T1518.001::[Tasklist] can be used to enumerate security software currently running on a system by process name of known products."
+  ]
+]

@@ -1,0 +1,86 @@
+[
+  [
+    "aquatic-panda",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[Aquatic Panda] has attempted to harvest credentials through LSASS memory dumping."
+  ],
+  [
+    "aquatic-panda",
+    "T1027.010",
+    "Command Obfuscation",
+    "command-execution|file-metadata|script-execution",
+    "T1027.010::[Aquatic Panda] has encoded PowerShell commands in Base64."
+  ],
+  [
+    "aquatic-panda",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[Aquatic Panda] has downloaded additional scripts and executed Base64 encoded commands in PowerShell."
+  ],
+  [
+    "aquatic-panda",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[Aquatic Panda] has attempted and failed to run Bash commands on a Windows host by passing them to cmd /C."
+  ],
+  [
+    "aquatic-panda",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[Aquatic Panda] has deleted malicious executables from compromised machines."
+  ],
+  [
+    "aquatic-panda",
+    "T1518.001",
+    "Security Software Discovery",
+    "command-execution|firewall-enumeration|firewall-metadata|os-api-execution|process-creation",
+    "T1518.001::[Aquatic Panda] has attempted to discover third party endpoint detection and response (EDR) tools on compromised systems."
+  ],
+  [
+    "aquatic-panda",
+    "T1560.001",
+    "Archive via Utility",
+    "command-execution|file-creation|process-creation",
+    "T1560.001::[Aquatic Panda] has used WinRAR to compress memory dumps prior to exfiltration."
+  ],
+  [
+    "aquatic-panda",
+    "T1562.001",
+    "Disable or Modify Tools",
+    "command-execution|driver-load|host-status|process-termination|service-metadata|windows-registry-key-deletion|windows-registry-key-modification",
+    "T1562.001::[Aquatic Panda] has attempted to stop endpoint detection and response (EDR) tools on compromised systems."
+  ],
+  [
+    "aquatic-panda",
+    "T1574.001",
+    "DLL Search Order Hijacking",
+    "file-creation|file-modification|module-load",
+    "T1574.001::[Aquatic Panda] has used DLL search-order hijacking to load `exe`, `dll`, and `dat` files into memory."
+  ],
+  [
+    "aquatic-panda",
+    "T1588.001",
+    "Malware",
+    "malware-content|malware-metadata",
+    "T1588.001::[Aquatic Panda] has acquired and used [njRAT] in its operations."
+  ],
+  [
+    "aquatic-panda",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[Aquatic Panda] has acquired and used [Cobalt Strike] in its operations."
+  ],
+  [
+    "aquatic-panda",
+    "T1595.002",
+    "Vulnerability Scanning",
+    "network-traffic-content|network-traffic-flow",
+    "T1595.002::[Aquatic Panda] has used publicly accessible DNS logging services to identify servers vulnerable to Log4j (CVE 2021-44228)."
+  ]
+]

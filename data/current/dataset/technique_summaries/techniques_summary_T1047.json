@@ -1,0 +1,43 @@
+[
+  {
+    "id": "attack-pattern--01a5a209-b94c-450b-b7f9-946497d91055",
+    "platform": "windows",
+    "tid": "T1047",
+    "technique": "Windows Management Instrumentation",
+    "tactic": "execution",
+    "datasources": "command-execution|network-connection-creation|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse Windows Management Instrumentation (WMI) to execute malicious commands and payloads. WMI is an administration feature that provides a uniform environment to access Windows system components. The WMI service enables both local and remote access, though the latter is facilitated by [Remote Services](https://attack.mitre.org/techniques/T1021) such as [Distributed Component Object Model](https://attack.mitre.org/techniques/T1021/003) (DCOM) and [Windows Remote Management](https://attack.mitre.org/techniques/T1021/006) (WinRM).(Citation: MSDN WMI) Remote WMI over DCOM operates using port 135, whereas WMI over WinRM operates over port 5985 when using HTTP and 5986 for HTTPS.(Citation: MSDN WMI)(Citation: FireEye WMI 2015)\n\nAn adversary can use WMI to interact with local and remote systems and use it as a means to execute various behaviors, such as gathering information for Discovery as well as remote Execution of files as part of Lateral Movement. (Citation: FireEye WMI SANS 2015) (Citation: FireEye WMI 2015)",
+    "technique_references": [
+      {
+        "source_name": "FireEye WMI 2015",
+        "url": "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/wp-windows-management-instrumentation.pdf",
+        "description": "Ballenthin, W., et al. (2015). Windows Management Instrumentation (WMI) Offense, Defense, and Forensics. Retrieved March 30, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye WMI SANS 2015",
+        "url": "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/sans-dfir-2015.pdf",
+        "description": "Devon Kerr. (2015). There's Something About WMI. Retrieved May 4, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MSDN WMI",
+        "url": "https://msdn.microsoft.com/en-us/library/aa394582.aspx",
+        "description": "Microsoft. (n.d.). Windows Management Instrumentation. Retrieved April 27, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

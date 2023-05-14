@@ -1,0 +1,135 @@
+[
+  [
+    "powersploit",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[PowerSploit] contains a collection of Exfiltration modules that can harvest credentials using [Mimikatz]."
+  ],
+  [
+    "powersploit",
+    "T1027.005",
+    "Indicator Removal from Tools",
+    "application-log-content",
+    "T1027.005::[PowerSploit]'s Find-AVSignature AntivirusBypass module can be used to locate single byte anti-virus signatures."
+  ],
+  [
+    "powersploit",
+    "T1027.010",
+    "Command Obfuscation",
+    "command-execution|file-metadata|script-execution",
+    "T1027.010::[PowerSploit] contains a collection of ScriptModification modules that compress and encode scripts and payloads."
+  ],
+  [
+    "powersploit",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[PowerSploit]'s New-UserPersistenceOption Persistence argument can be used to establish via a [Scheduled Task/Job]."
+  ],
+  [
+    "powersploit",
+    "T1055.001",
+    "Dynamic-link Library Injection",
+    "module-load|os-api-execution|process-access|process-metadata|process-modification",
+    "T1055.001::[PowerSploit] contains a collection of CodeExecution modules that inject code (DLL, shellcode) into a process."
+  ],
+  [
+    "powersploit",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[PowerSploit]'s Get-Keystrokes Exfiltration module can log keystrokes."
+  ],
+  [
+    "powersploit",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[PowerSploit] modules are written in and executed via [PowerShell]."
+  ],
+  [
+    "powersploit",
+    "T1087.001",
+    "Local Account",
+    "command-execution|file-access|group-enumeration|os-api-execution|process-creation",
+    "T1087.001::[PowerSploit]'s Get-ProcessTokenGroup Privesc-PowerUp module can enumerate all SIDs associated with its current token."
+  ],
+  [
+    "powersploit",
+    "T1543.003",
+    "Windows Service",
+    "command-execution|driver-load|os-api-execution|process-creation|service-creation|service-modification|windows-registry-key-creation|windows-registry-key-modification",
+    "T1543.003::[PowerSploit] contains a collection of Privesc-PowerUp modules that can discover and replace/modify service binaries, paths, and configs."
+  ],
+  [
+    "powersploit",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[PowerSploit]'s New-UserPersistenceOption Persistence argument can be used to establish via the HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run Registry key."
+  ],
+  [
+    "powersploit",
+    "T1547.005",
+    "Security Support Provider",
+    "command-execution|module-load|windows-registry-key-modification",
+    "T1547.005::[PowerSploit]'s Install-SSP Persistence module can be used to establish by installing a SSP DLL."
+  ],
+  [
+    "powersploit",
+    "T1552.002",
+    "Credentials in Registry",
+    "command-execution|process-creation|windows-registry-key-access",
+    "T1552.002::[PowerSploit] has several modules that search the Windows Registry for stored credentials: Get-UnattendedInstallFile, Get-Webconfig, Get-ApplicationHost, Get-SiteListPassword, Get-CachedGPPPassword, and Get-RegistryAutoLogon."
+  ],
+  [
+    "powersploit",
+    "T1552.006",
+    "Group Policy Preferences",
+    "command-execution|file-access",
+    "T1552.006::[PowerSploit] contains a collection of Exfiltration modules that can harvest credentials from Group Policy Preferences."
+  ],
+  [
+    "powersploit",
+    "T1555.004",
+    "Windows Credential Manager",
+    "command-execution|file-access|os-api-execution|process-creation",
+    "T1555.004::[PowerSploit] contains a collection of Exfiltration modules that can harvest credentials from Windows vault credential objects."
+  ],
+  [
+    "powersploit",
+    "T1558.003",
+    "Kerberoasting",
+    "active-directory-credential-request",
+    "T1558.003::[PowerSploit]'s Invoke-Kerberoast module can request service tickets and return crackable ticket hashes."
+  ],
+  [
+    "powersploit",
+    "T1574.001",
+    "DLL Search Order Hijacking",
+    "file-creation|file-modification|module-load",
+    "T1574.001::[PowerSploit] contains a collection of Privesc-PowerUp modules that can discover and exploit DLL hijacking opportunities in services and processes."
+  ],
+  [
+    "powersploit",
+    "T1574.007",
+    "Path Interception by PATH Environment Variable",
+    "file-creation|process-creation|windows-registry-key-modification",
+    "T1574.007::[PowerSploit] contains a collection of Privesc-PowerUp modules that can discover and exploit path interception opportunities in the PATH environment variable."
+  ],
+  [
+    "powersploit",
+    "T1574.008",
+    "Path Interception by Search Order Hijacking",
+    "file-creation|file-modification|process-creation",
+    "T1574.008::[PowerSploit] contains a collection of Privesc-PowerUp modules that can discover and exploit search order hijacking vulnerabilities."
+  ],
+  [
+    "powersploit",
+    "T1574.009",
+    "Path Interception by Unquoted Path",
+    "file-creation|file-modification|process-creation",
+    "T1574.009::[PowerSploit] contains a collection of Privesc-PowerUp modules that can discover and exploit unquoted path vulnerabilities."
+  ]
+]

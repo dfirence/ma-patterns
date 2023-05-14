@@ -1,0 +1,9 @@
+[
+  [
+    "spwebmember",
+    "T1213.002",
+    "Sharepoint",
+    "application-log-content|logon-session-creation",
+    "T1213.002::[spwebmember] is used to enumerate and dump information from Microsoft SharePoint."
+  ]
+]

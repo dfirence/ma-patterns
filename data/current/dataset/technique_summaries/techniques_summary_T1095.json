@@ -1,0 +1,55 @@
+[
+  {
+    "id": "attack-pattern--c21d5a77-d422-4a69-acd7-2c53c1faa34b",
+    "platform": "windows|linux|macos|network",
+    "tid": "T1095",
+    "technique": "Non-Application Layer Protocol",
+    "tactic": "command-and-control",
+    "datasources": "network-traffic-content|network-traffic-flow",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use an OSI non-application layer protocol for communication between host and C2 server or among infected hosts within a network. The list of possible protocols is extensive.(Citation: Wikipedia OSI) Specific examples include use of network layer protocols, such as the Internet Control Message Protocol (ICMP), transport layer protocols, such as the User Datagram Protocol (UDP), session layer protocols, such as Socket Secure (SOCKS), as well as redirected/tunneled protocols, such as Serial over LAN (SOL).\n\nICMP communication between hosts is one example.(Citation: Cisco Synful Knock Evolution) Because ICMP is part of the Internet Protocol Suite, it is required to be implemented by all IP-compatible hosts.(Citation: Microsoft ICMP) However, it is not as commonly monitored as other Internet Protocols such as TCP or UDP and may be used by adversaries to hide communications.",
+    "technique_references": [
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco Synful Knock Evolution",
+        "url": "https://blogs.cisco.com/security/evolution-of-attacks-on-cisco-ios-devices",
+        "description": "Graham Holmes. (2015, October 8). Evolution of attacks on Cisco IOS devices. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft ICMP",
+        "url": "http://support.microsoft.com/KB/170292",
+        "description": "Microsoft. (n.d.). Internet Control Message Protocol (ICMP) Basics. Retrieved December 1, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco Blog Legacy Device Attacks",
+        "url": "https://community.cisco.com/t5/security-blogs/attackers-continue-to-target-legacy-devices/ba-p/4169954",
+        "description": "Omar Santos. (2020, October 19). Attackers Continue to Target Legacy Devices. Retrieved October 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia OSI",
+        "url": "http://en.wikipedia.org/wiki/List_of_network_protocols_%28OSI_model%29",
+        "description": "Wikipedia. (n.d.). List of network protocols (OSI model). Retrieved December 4, 2014.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

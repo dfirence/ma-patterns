@@ -1,0 +1,49 @@
+[
+  {
+    "id": "attack-pattern--6495ae23-3ab4-43c5-a94f-5638a2c31fd2",
+    "platform": "windows",
+    "tid": "T1070.001",
+    "technique": "Clear Windows Event Logs",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|file-deletion|os-api-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may clear Windows Event Logs to hide the activity of an intrusion. Windows Event Logs are a record of a computer's alerts and notifications. There are three system-defined sources of events: System, Application, and Security, with five event types: Error, Warning, Information, Success Audit, and Failure Audit.\n\nThe event logs can be cleared with the following utility commands:\n\n* <code>wevtutil cl system</code>\n* <code>wevtutil cl application</code>\n* <code>wevtutil cl security</code>\n\nThese logs may also be cleared through other mechanisms, such as the event viewer GUI or [PowerShell](https://attack.mitre.org/techniques/T1059/001). For example, adversaries may use the PowerShell command <code>Remove-EventLog -LogName Security</code> to delete the Security EventLog and after reboot, disable future logging. Note: events may still be generated and logged in the .evtx file between the time the command is run and the reboot.(Citation: disable_win_evt_logging)",
+    "technique_references": [
+      {
+        "source_name": "disable_win_evt_logging",
+        "url": "https://ptylu.github.io/content/report/report.html?report=25",
+        "description": "Heiligenstein, L. (n.d.). REP-25: Disable Windows Event Logging. Retrieved April 7, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Clear-EventLog",
+        "url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-eventlog",
+        "description": "Microsoft. (n.d.). Clear-EventLog. Retrieved July 2, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft EventLog.Clear",
+        "url": "https://msdn.microsoft.com/library/system.diagnostics.eventlog.clear.aspx",
+        "description": "Microsoft. (n.d.). EventLog.Clear Method (). Retrieved July 2, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft wevtutil Oct 2017",
+        "url": "https://docs.microsoft.com/windows-server/administration/windows-commands/wevtutil",
+        "description": "Plett, C. et al.. (2017, October 16). wevtutil. Retrieved July 2, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

@@ -1,0 +1,210 @@
+[
+  {
+    "id": "attack-pattern--b17a1a56-e99c-403c-8948-561df0cffe81",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "tid": "T1078",
+    "technique": "Valid Accounts",
+    "tactic": "defense-evasion",
+    "datasources": "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1078.001",
+      "T1078.002",
+      "T1078.003",
+      "T1078.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Compromised credentials may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access, network devices, and remote desktop.(Citation: volexity_0day_sophos_FW) Compromised credentials may also grant an adversary increased privilege to specific systems or access to restricted areas of the network. Adversaries may choose not to use malware or tools in conjunction with the legitimate access those credentials provide to make it harder to detect their presence.\n\nIn some cases, adversaries may abuse inactive accounts: for example, those belonging to individuals who are no longer part of an organization. Using these accounts may allow the adversary to evade detection, as the original account user will not be present to identify any anomalous activity taking place on their account.(Citation: CISA MFA PrintNightmare)\n\nThe overlap of permissions for local, domain, and cloud accounts across a network of systems is of concern because the adversary may be able to pivot across accounts and systems to reach a high level of access (i.e., domain or enterprise administrator) to bypass access controls set within the enterprise.(Citation: TechNet Credential Theft)",
+    "technique_references": [
+      {
+        "source_name": "volexity_0day_sophos_FW",
+        "url": "https://www.volexity.com/blog/2022/06/15/driftingcloud-zero-day-sophos-firewall-exploitation-and-an-insidious-breach/",
+        "description": "Adair, S., Lancaster, T., Volexity Threat Research. (2022, June 15). DriftingCloud: Zero-Day Sophos Firewall Exploitation and an Insidious Breach. Retrieved July 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CISA MFA PrintNightmare",
+        "url": "https://www.cisa.gov/uscert/ncas/alerts/aa22-074a",
+        "description": "Cybersecurity and Infrastructure Security Agency. (2022, March 15). Russian State-Sponsored Cyber Actors Gain Network Access by Exploiting Default Multifactor Authentication Protocols and “PrintNightmare” Vulnerability. Retrieved March 16, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Credential Theft",
+        "url": "https://technet.microsoft.com/en-us/library/dn535501.aspx",
+        "description": "Microsoft. (2016, April 15). Attractive Accounts for Credential Theft. Retrieved June 3, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "user|administrator",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b17a1a56-e99c-403c-8948-561df0cffe81",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "tid": "T1078",
+    "technique": "Valid Accounts",
+    "tactic": "initial-access",
+    "datasources": "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1078.001",
+      "T1078.002",
+      "T1078.003",
+      "T1078.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Compromised credentials may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access, network devices, and remote desktop.(Citation: volexity_0day_sophos_FW) Compromised credentials may also grant an adversary increased privilege to specific systems or access to restricted areas of the network. Adversaries may choose not to use malware or tools in conjunction with the legitimate access those credentials provide to make it harder to detect their presence.\n\nIn some cases, adversaries may abuse inactive accounts: for example, those belonging to individuals who are no longer part of an organization. Using these accounts may allow the adversary to evade detection, as the original account user will not be present to identify any anomalous activity taking place on their account.(Citation: CISA MFA PrintNightmare)\n\nThe overlap of permissions for local, domain, and cloud accounts across a network of systems is of concern because the adversary may be able to pivot across accounts and systems to reach a high level of access (i.e., domain or enterprise administrator) to bypass access controls set within the enterprise.(Citation: TechNet Credential Theft)",
+    "technique_references": [
+      {
+        "source_name": "volexity_0day_sophos_FW",
+        "url": "https://www.volexity.com/blog/2022/06/15/driftingcloud-zero-day-sophos-firewall-exploitation-and-an-insidious-breach/",
+        "description": "Adair, S., Lancaster, T., Volexity Threat Research. (2022, June 15). DriftingCloud: Zero-Day Sophos Firewall Exploitation and an Insidious Breach. Retrieved July 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CISA MFA PrintNightmare",
+        "url": "https://www.cisa.gov/uscert/ncas/alerts/aa22-074a",
+        "description": "Cybersecurity and Infrastructure Security Agency. (2022, March 15). Russian State-Sponsored Cyber Actors Gain Network Access by Exploiting Default Multifactor Authentication Protocols and “PrintNightmare” Vulnerability. Retrieved March 16, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Credential Theft",
+        "url": "https://technet.microsoft.com/en-us/library/dn535501.aspx",
+        "description": "Microsoft. (2016, April 15). Attractive Accounts for Credential Theft. Retrieved June 3, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "user|administrator",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b17a1a56-e99c-403c-8948-561df0cffe81",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "tid": "T1078",
+    "technique": "Valid Accounts",
+    "tactic": "persistence",
+    "datasources": "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1078.001",
+      "T1078.002",
+      "T1078.003",
+      "T1078.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Compromised credentials may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access, network devices, and remote desktop.(Citation: volexity_0day_sophos_FW) Compromised credentials may also grant an adversary increased privilege to specific systems or access to restricted areas of the network. Adversaries may choose not to use malware or tools in conjunction with the legitimate access those credentials provide to make it harder to detect their presence.\n\nIn some cases, adversaries may abuse inactive accounts: for example, those belonging to individuals who are no longer part of an organization. Using these accounts may allow the adversary to evade detection, as the original account user will not be present to identify any anomalous activity taking place on their account.(Citation: CISA MFA PrintNightmare)\n\nThe overlap of permissions for local, domain, and cloud accounts across a network of systems is of concern because the adversary may be able to pivot across accounts and systems to reach a high level of access (i.e., domain or enterprise administrator) to bypass access controls set within the enterprise.(Citation: TechNet Credential Theft)",
+    "technique_references": [
+      {
+        "source_name": "volexity_0day_sophos_FW",
+        "url": "https://www.volexity.com/blog/2022/06/15/driftingcloud-zero-day-sophos-firewall-exploitation-and-an-insidious-breach/",
+        "description": "Adair, S., Lancaster, T., Volexity Threat Research. (2022, June 15). DriftingCloud: Zero-Day Sophos Firewall Exploitation and an Insidious Breach. Retrieved July 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CISA MFA PrintNightmare",
+        "url": "https://www.cisa.gov/uscert/ncas/alerts/aa22-074a",
+        "description": "Cybersecurity and Infrastructure Security Agency. (2022, March 15). Russian State-Sponsored Cyber Actors Gain Network Access by Exploiting Default Multifactor Authentication Protocols and “PrintNightmare” Vulnerability. Retrieved March 16, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Credential Theft",
+        "url": "https://technet.microsoft.com/en-us/library/dn535501.aspx",
+        "description": "Microsoft. (2016, April 15). Attractive Accounts for Credential Theft. Retrieved June 3, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "user|administrator",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b17a1a56-e99c-403c-8948-561df0cffe81",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "tid": "T1078",
+    "technique": "Valid Accounts",
+    "tactic": "privilege-escalation",
+    "datasources": "logon-session-creation|logon-session-metadata|user-account-authentication",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1078.001",
+      "T1078.002",
+      "T1078.003",
+      "T1078.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Compromised credentials may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access, network devices, and remote desktop.(Citation: volexity_0day_sophos_FW) Compromised credentials may also grant an adversary increased privilege to specific systems or access to restricted areas of the network. Adversaries may choose not to use malware or tools in conjunction with the legitimate access those credentials provide to make it harder to detect their presence.\n\nIn some cases, adversaries may abuse inactive accounts: for example, those belonging to individuals who are no longer part of an organization. Using these accounts may allow the adversary to evade detection, as the original account user will not be present to identify any anomalous activity taking place on their account.(Citation: CISA MFA PrintNightmare)\n\nThe overlap of permissions for local, domain, and cloud accounts across a network of systems is of concern because the adversary may be able to pivot across accounts and systems to reach a high level of access (i.e., domain or enterprise administrator) to bypass access controls set within the enterprise.(Citation: TechNet Credential Theft)",
+    "technique_references": [
+      {
+        "source_name": "volexity_0day_sophos_FW",
+        "url": "https://www.volexity.com/blog/2022/06/15/driftingcloud-zero-day-sophos-firewall-exploitation-and-an-insidious-breach/",
+        "description": "Adair, S., Lancaster, T., Volexity Threat Research. (2022, June 15). DriftingCloud: Zero-Day Sophos Firewall Exploitation and an Insidious Breach. Retrieved July 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CISA MFA PrintNightmare",
+        "url": "https://www.cisa.gov/uscert/ncas/alerts/aa22-074a",
+        "description": "Cybersecurity and Infrastructure Security Agency. (2022, March 15). Russian State-Sponsored Cyber Actors Gain Network Access by Exploiting Default Multifactor Authentication Protocols and “PrintNightmare” Vulnerability. Retrieved March 16, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Credential Theft",
+        "url": "https://technet.microsoft.com/en-us/library/dn535501.aspx",
+        "description": "Microsoft. (2016, April 15). Attractive Accounts for Credential Theft. Retrieved June 3, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "user|administrator",
+    "search_token": "none"
+  }
+]

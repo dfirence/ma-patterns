@@ -1,0 +1,16 @@
+[
+  [
+    "tor",
+    "T1090.003",
+    "Multi-hop Proxy",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1090.003::Traffic traversing the [Tor] network will be forwarded to multiple nodes before exiting the [Tor] network and continuing on to its intended destination."
+  ],
+  [
+    "tor",
+    "T1573.002",
+    "Asymmetric Cryptography",
+    "network-traffic-content",
+    "T1573.002::[Tor] encapsulates traffic in multiple layers of encryption, using TLS by default."
+  ]
+]

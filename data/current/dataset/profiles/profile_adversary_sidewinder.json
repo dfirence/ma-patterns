@@ -1,0 +1,104 @@
+[
+  {
+    "id": "intrusion-set--3fc023b2-c5cc-481d-9c3e-70141ae1a87e",
+    "name": "sidewinder",
+    "aliases": "sidewinder|t-apt-04|rattlesnake",
+    "group_id": "G0121",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 0,
+        "items": []
+      },
+      "tools": {
+        "count": 1,
+        "items": [
+          "koadic"
+        ]
+      },
+      "techniques": {
+        "count": 30,
+        "items": [
+          "T1016",
+          "T1020",
+          "T1027",
+          "T1027.010",
+          "T1033",
+          "T1036.005",
+          "T1057",
+          "T1059.001",
+          "T1059.005",
+          "T1059.007",
+          "T1071.001",
+          "T1074.001",
+          "T1082",
+          "T1083",
+          "T1105",
+          "T1119",
+          "T1124",
+          "T1203",
+          "T1204.001",
+          "T1204.002",
+          "T1218.005",
+          "T1518",
+          "T1518.001",
+          "T1547.001",
+          "T1559.002",
+          "T1566.001",
+          "T1566.002",
+          "T1574.002",
+          "T1598.002",
+          "T1598.003"
+        ]
+      },
+      "tactics": {
+        "count": 10,
+        "items": [
+          "collection",
+          "command-and-control",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "exfiltration",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "reconnaissance"
+        ]
+      },
+      "procedures": [
+        "T1016::[Sidewinder] has used malware to collect information on network interfaces, including the MAC address.",
+        "T1020::[Sidewinder] has configured tools to automatically send collected files to attacker controlled servers.",
+        "T1027.010::[Sidewinder] has used base64 encoding for scripts.",
+        "T1027::[Sidewinder] has used base64 encoding and ECDH-P256 encryption for payloads.",
+        "T1033::[Sidewinder] has used tools to identify the user of a compromised host.",
+        "T1036.005::[Sidewinder] has named malicious files rekeywiz.exe to match the name of a legitimate Windows executable.",
+        "T1057::[Sidewinder] has used tools to identify running processes on the victim's machine.",
+        "T1059.001::[Sidewinder] has used PowerShell to drop and execute malware loaders.",
+        "T1059.005::[Sidewinder] has used VBScript to drop and execute malware loaders.",
+        "T1059.007::[Sidewinder] has used JavaScript to drop and execute malware loaders.",
+        "T1071.001::[Sidewinder] has used HTTP in C2 communications.",
+        "T1074.001::[Sidewinder] has collected stolen files in a temporary folder in preparation for exfiltration.",
+        "T1082::[Sidewinder] has used tools to collect the computer name, OS version, installed hotfixes, as well as information regarding the memory and processor on a compromised host.",
+        "T1083::[Sidewinder] has used malware to collect information on files and directories.",
+        "T1105::[Sidewinder] has used LNK files to download remote files to the victim's network.",
+        "T1119::[Sidewinder] has used tools to automatically collect system and network configuration information.",
+        "T1124::[Sidewinder] has used tools to obtain the current system time.",
+        "T1203::[Sidewinder] has exploited vulnerabilities to gain execution including CVE-2017-11882 and CVE-2020-0674.",
+        "T1204.001::[Sidewinder] has lured targets to click on malicious links to gain execution in the target environment.",
+        "T1204.002::[Sidewinder] has lured targets to click on malicious files to gain execution in the target environment.",
+        "T1218.005::[Sidewinder] has used mshta.exe to execute malicious payloads.",
+        "T1518.001::[Sidewinder] has used the Windows service winmgmts:\\\\.\\root\\SecurityCenter2 to check installed antivirus products.",
+        "T1518::[Sidewinder] has used tools to enumerate software installed on an infected host.",
+        "T1547.001::[Sidewinder] has added paths to executables in the Registry to establish persistence.",
+        "T1559.002::[Sidewinder] has used the ActiveXObject utility to create OLE objects to obtain execution through Internet Explorer.",
+        "T1566.001::[Sidewinder] has sent e-mails with malicious attachments often crafted for specific targets.",
+        "T1566.002::[Sidewinder] has sent e-mails with malicious links often crafted for specific targets.",
+        "T1574.002::[Sidewinder] has used DLL side-loading to drop and execute malicious payloads including the hijacking of the legitimate Windows application file rekeywiz.exe.",
+        "T1598.002::[Sidewinder] has sent e-mails with malicious attachments that lead victims to credential harvesting websites.",
+        "T1598.003::[Sidewinder] has sent e-mails with malicious links to credential harvesting websites."
+      ]
+    },
+    "description": "[Sidewinder](https://attack.mitre.org/groups/G0121) is a suspected Indian threat actor group that has been active since at least 2012. They have been observed targeting government, military, and business entities throughout Asia, primarily focusing on Pakistan, China, Nepal, and Afghanistan.(Citation: ATT Sidewinder January 2021)(Citation: Securelist APT Trends April 2018)(Citation: Cyble Sidewinder September 2020)"
+  }
+]

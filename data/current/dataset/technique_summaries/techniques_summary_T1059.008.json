@@ -1,0 +1,37 @@
+[
+  {
+    "id": "attack-pattern--818302b2-d640-477b-bf88-873120ce85c4",
+    "platform": "network",
+    "tid": "T1059.008",
+    "technique": "Network Device CLI",
+    "tactic": "execution",
+    "datasources": "command-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse scripting or built-in command line interpreters (CLI) on network devices to execute malicious command and payloads. The CLI is the primary means through which users and administrators interact with the device in order to view system information, modify device operations, or perform diagnostic and administrative functions. CLIs typically contain various permission levels required for different commands. \n\nScripting interpreters automate tasks and extend functionality beyond the command set included in the network OS. The CLI and scripting interpreter are accessible through a direct console connection, or through remote means, such as telnet or [SSH](https://attack.mitre.org/techniques/T1021/004).\n\nAdversaries can use the network CLI to change how network devices behave and operate. The CLI may be used to manipulate traffic flows to intercept or manipulate data, modify startup configuration parameters to load malicious system software, or to disable security features or logging to avoid detection.(Citation: Cisco Synful Knock Evolution)",
+    "technique_references": [
+      {
+        "source_name": "Cisco IOS Software Integrity Assurance - Command History",
+        "url": "https://tools.cisco.com/security/center/resources/integrity_assurance.html#23",
+        "description": "Cisco. (n.d.). Cisco IOS Software Integrity Assurance - Command History. Retrieved October 21, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco Synful Knock Evolution",
+        "url": "https://blogs.cisco.com/security/evolution-of-attacks-on-cisco-ios-devices",
+        "description": "Graham Holmes. (2015, October 8). Evolution of attacks on Cisco IOS devices. Retrieved October 19, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

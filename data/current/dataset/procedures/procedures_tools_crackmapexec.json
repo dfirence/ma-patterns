@@ -1,0 +1,72 @@
+[
+  [
+    "crackmapexec",
+    "T1003.002",
+    "Security Account Manager",
+    "command-execution|file-access|windows-registry-key-access",
+    "T1003.002::[CrackMapExec] can dump usernames and hashed passwords from the SAM."
+  ],
+  [
+    "crackmapexec",
+    "T1003.003",
+    "NTDS",
+    "command-execution|file-access",
+    "T1003.003::[CrackMapExec] can dump hashed passwords associated with Active Directory using Windows' Directory Replication Services API (DRSUAPI), or Volume Shadow Copy."
+  ],
+  [
+    "crackmapexec",
+    "T1003.004",
+    "LSA Secrets",
+    "command-execution|windows-registry-key-access",
+    "T1003.004::[CrackMapExec] can dump hashed passwords from LSA secrets for the targeted system."
+  ],
+  [
+    "crackmapexec",
+    "T1053.002",
+    "At",
+    "command-execution|file-modification|process-creation|scheduled-job-creation",
+    "T1053.002::[CrackMapExec] can set a scheduled task on the target system to execute commands remotely using [at]."
+  ],
+  [
+    "crackmapexec",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[CrackMapExec] can execute PowerShell commands via WMI."
+  ],
+  [
+    "crackmapexec",
+    "T1069.002",
+    "Domain Groups",
+    "command-execution|group-enumeration|os-api-execution|process-creation",
+    "T1069.002::[CrackMapExec] can gather the user accounts within domain groups."
+  ],
+  [
+    "crackmapexec",
+    "T1087.002",
+    "Domain Account",
+    "command-execution|group-enumeration|network-traffic-content|os-api-execution|process-creation",
+    "T1087.002::[CrackMapExec] can enumerate the domain user accounts on a targeted system."
+  ],
+  [
+    "crackmapexec",
+    "T1110.001",
+    "Password Guessing",
+    "application-log-content|user-account-authentication",
+    "T1110.001::[CrackMapExec] can brute force passwords for a specified user on a single target system or across an entire network."
+  ],
+  [
+    "crackmapexec",
+    "T1110.003",
+    "Password Spraying",
+    "application-log-content|user-account-authentication",
+    "T1110.003::[CrackMapExec] can brute force credential authentication by using a supplied list of usernames and a single password."
+  ],
+  [
+    "crackmapexec",
+    "T1550.002",
+    "Pass the Hash",
+    "active-directory-credential-request|logon-session-creation|user-account-authentication",
+    "T1550.002::[CrackMapExec] can pass the hash to authenticate via SMB."
+  ]
+]

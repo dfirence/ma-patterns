@@ -1,0 +1,26 @@
+[
+  {
+    "id": "attack-pattern--774a3188-6ba9-4dc4-879d-d54ee48a5ce9",
+    "platform": "linux|macos|windows|network",
+    "tid": "T1020",
+    "technique": "Automated Exfiltration",
+    "tactic": "exfiltration",
+    "datasources": "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow|script-execution",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1020.001"
+    ],
+    "count_subtechniques": 1,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may exfiltrate data, such as sensitive documents, through the use of automated processing after being gathered during Collection. \n\nWhen automated exfiltration is used, other exfiltration techniques likely apply as well to transfer the information out of the network, such as [Exfiltration Over C2 Channel](https://attack.mitre.org/techniques/T1041) and [Exfiltration Over Alternative Protocol](https://attack.mitre.org/techniques/T1048).",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

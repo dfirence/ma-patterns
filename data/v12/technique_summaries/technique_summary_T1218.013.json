@@ -1,9 +1,0 @@
-{
-  "adversaries": [],
-  "T1218.013:Mavinject": [
-    "command-execution",
-    "process-creation"
-  ],
-  "tools": [],
-  "malware": []
-}

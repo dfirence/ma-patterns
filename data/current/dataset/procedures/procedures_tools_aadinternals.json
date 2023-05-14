@@ -1,0 +1,121 @@
+[
+  [
+    "aadinternals",
+    "T1003.004",
+    "LSA Secrets",
+    "command-execution|windows-registry-key-access",
+    "T1003.004::[AADInternals] can dump secrets from the Local Security Authority."
+  ],
+  [
+    "aadinternals",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[AADInternals] is written and executed via PowerShell."
+  ],
+  [
+    "aadinternals",
+    "T1069.003",
+    "Cloud Groups",
+    "application-log-content|command-execution|group-enumeration|group-metadata|process-creation",
+    "T1069.003::[AADInternals] can enumerate Azure AD groups."
+  ],
+  [
+    "aadinternals",
+    "T1087.004",
+    "Cloud Account",
+    "command-execution",
+    "T1087.004::[AADInternals] can enumerate Azure AD users."
+  ],
+  [
+    "aadinternals",
+    "T1098.005",
+    "Device Registration",
+    "active-directory-object-creation|application-log-content|user-account-modification",
+    "T1098.005::[AADInternals] can register a device to Azure AD."
+  ],
+  [
+    "aadinternals",
+    "T1136.003",
+    "Cloud Account",
+    "user-account-creation",
+    "T1136.003::[AADInternals] can create new Azure AD users."
+  ],
+  [
+    "aadinternals",
+    "T1484.002",
+    "Domain Trust Modification",
+    "active-directory-object-creation|active-directory-object-modification|command-execution",
+    "T1484.002::[AADInternals] can create a backdoor by converting a domain to a federated domain which will be able to authenticate any user across the tenant. [AADInternals] can also modify DesktopSSO information."
+  ],
+  [
+    "aadinternals",
+    "T1552.001",
+    "Credentials In Files",
+    "command-execution|file-access",
+    "T1552.001::[AADInternals] can gather unsecured credentials for Azure AD services, such as Azure AD Connect, from a local machine."
+  ],
+  [
+    "aadinternals",
+    "T1552.004",
+    "Private Keys",
+    "command-execution|file-access",
+    "T1552.004::[AADInternals] can gather encryption keys from Azure AD services such as ADSync and Active Directory Federated Services servers."
+  ],
+  [
+    "aadinternals",
+    "T1556.006",
+    "Multi-Factor Authentication",
+    "active-directory-object-modification|logon-session-creation|user-account-authentication|user-account-modification",
+    "T1556.006::The [AADInternals] `Set-AADIntUserMFA` command can be used to disable MFA for a specified user."
+  ],
+  [
+    "aadinternals",
+    "T1556.007",
+    "Hybrid Identity",
+    "application-log-content|file-modification|logon-session-creation|module-load",
+    "T1556.007::[AADInternals] can inject a malicious DLL (`PTASpy`) into the `AzureADConnectAuthenticationAgentService` to backdoor Azure AD Pass-Through Authentication."
+  ],
+  [
+    "aadinternals",
+    "T1558.002",
+    "Silver Ticket",
+    "logon-session-metadata",
+    "T1558.002::[AADInternals] can be used to forge Kerberos tickets using the password hash of the AZUREADSSOACC account."
+  ],
+  [
+    "aadinternals",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[AADInternals] can send \"consent phishing\" emails containing malicious links designed to steal users’ access tokens."
+  ],
+  [
+    "aadinternals",
+    "T1589.002",
+    "Email Addresses",
+    "network-traffic-content",
+    "T1589.002::[AADInternals] can check for the existence of user email addresses using public Microsoft APIs."
+  ],
+  [
+    "aadinternals",
+    "T1590.001",
+    "Domain Properties",
+    "none",
+    "T1590.001::[AADInternals] can gather information about a tenant’s domains using public Microsoft APIs."
+  ],
+  [
+    "aadinternals",
+    "T1598.003",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1598.003::[AADInternals] can send phishing emails containing malicious links designed to collect users’ credentials."
+  ],
+  [
+    "aadinternals",
+    "T1606.002",
+    "SAML Tokens",
+    "logon-session-creation|logon-session-metadata|user-account-authentication|web-credential-creation|web-credential-usage",
+    "T1606.002::[AADInternals] can be used to create SAML tokens using the AD Federated Services token signing certificate."
+  ]
+]

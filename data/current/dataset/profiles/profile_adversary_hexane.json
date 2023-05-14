@@ -1,0 +1,128 @@
+[
+  {
+    "id": "intrusion-set--f29b7c5e-2439-42ad-a86f-9f8984fafae3",
+    "name": "hexane",
+    "aliases": "hexane|lyceum|siamesekitten|spirlin",
+    "group_id": "G1001",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 5,
+        "items": [
+          "danbot",
+          "dnssystem",
+          "kevin",
+          "milan",
+          "shark"
+        ]
+      },
+      "tools": {
+        "count": 7,
+        "items": [
+          "bitsadmin",
+          "empire",
+          "ipconfig",
+          "mimikatz",
+          "netstat",
+          "ping",
+          "poshc2"
+        ]
+      },
+      "techniques": {
+        "count": 35,
+        "items": [
+          "T1010",
+          "T1016",
+          "T1016.001",
+          "T1018",
+          "T1021.001",
+          "T1027.010",
+          "T1033",
+          "T1049",
+          "T1053.005",
+          "T1056.001",
+          "T1057",
+          "T1059.001",
+          "T1059.005",
+          "T1069.001",
+          "T1082",
+          "T1102.002",
+          "T1105",
+          "T1110",
+          "T1110.003",
+          "T1204.002",
+          "T1518",
+          "T1534",
+          "T1555",
+          "T1555.003",
+          "T1567.002",
+          "T1583.001",
+          "T1583.002",
+          "T1585.001",
+          "T1585.002",
+          "T1586.002",
+          "T1588.002",
+          "T1589",
+          "T1589.002",
+          "T1591.004",
+          "T1608.001"
+        ]
+      },
+      "tactics": {
+        "count": 12,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "exfiltration",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation",
+          "reconnaissance",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1010::[HEXANE] has used a PowerShell-based keylogging tool to capture the window title.",
+        "T1016.001::[HEXANE] has used tools including [BITSAdmin] to test internet connectivity from compromised hosts.",
+        "T1016::[HEXANE] has used [Ping] and `tracert` for network discovery.",
+        "T1018::[HEXANE] has used `net view` to enumerate domain machines.",
+        "T1021.001::[HEXANE] has used remote desktop sessions for lateral movement.",
+        "T1027.010::[HEXANE] has used Base64-encoded scripts.",
+        "T1033::[HEXANE] has run `whoami` on compromised machines to identify the current user.",
+        "T1049::[HEXANE] has used [netstat] to monitor connections to specific ports.",
+        "T1053.005::[HEXANE] has used a scheduled task to establish persistence for a keylogger.",
+        "T1056.001::[HEXANE] has used a PowerShell-based keylogger named `kl.ps1`.",
+        "T1057::[HEXANE] has enumerated processes on targeted systems.",
+        "T1059.001::[HEXANE] has used PowerShell-based tools and scripts for discovery and collection on compromised hosts.",
+        "T1059.005::[HEXANE] has used a VisualBasic script named `MicrosoftUpdator.vbs` for execution of a PowerShell keylogger.",
+        "T1069.001::[HEXANE] has run `net localgroup` to enumerate local groups.",
+        "T1082::[HEXANE] has collected the hostname of a compromised machine.",
+        "T1102.002::[HEXANE] has used cloud services, including OneDrive, for C2.",
+        "T1105::[HEXANE] has downloaded additional payloads and malicious scripts onto a compromised host.",
+        "T1110.003::[HEXANE] has used password spraying attacks to obtain valid credentials.",
+        "T1110::[HEXANE] has used brute force attacks to compromise valid credentials.",
+        "T1204.002::[HEXANE] has relied on victim's executing malicious file attachments delivered via email or embedded within actor-controlled websites to deliver malware.",
+        "T1518::[HEXANE] has enumerated programs installed on an infected machine.",
+        "T1534::[HEXANE] has conducted internal spearphishing attacks against executives, HR, and IT personnel to gain information and access.",
+        "T1555.003::[HEXANE] has used a [Mimikatz]-based tool and a PowerShell script to steal passwords from Google Chrome.",
+        "T1555::[HEXANE] has run `cmdkey` on victim machines to identify stored credentials.",
+        "T1567.002::[HEXANE] has used cloud services, including OneDrive, for data exfiltration.",
+        "T1583.001::[HEXANE] has registered and operated domains for campaigns, often using a security or web technology theme or impersonating the targeted organization.",
+        "T1583.002::[HEXANE] has set up custom DNS servers to send commands to compromised hosts via TXT records.",
+        "T1585.001::[HEXANE] has established fraudulent LinkedIn accounts impersonating HR department employees to target potential victims with fake job offers.",
+        "T1585.002::[HEXANE] has established email accounts for use in domain registration including for ProtonMail addresses.",
+        "T1586.002::[HEXANE] has used compromised accounts to send spearphishing emails.",
+        "T1588.002::[HEXANE] has acquired, and sometimes customized, open source tools such as [Mimikatz], [Empire], VNC remote access software, and DIG.net.",
+        "T1589.002::[HEXANE] has targeted executives, human resources staff, and IT personnel for spearphishing.",
+        "T1589::[HEXANE] has identified specific potential victims at targeted organizations.",
+        "T1591.004::[HEXANE] has identified executives, HR, and IT staff at victim organizations for further targeting.",
+        "T1608.001::[HEXANE] has staged malware on fraudulent websites set up to impersonate targeted organizations."
+      ]
+    },
+    "description": "[HEXANE](https://attack.mitre.org/groups/G1001) is a cyber espionage threat group that has targeted oil & gas, telecommunications, aviation, and internet service provider organizations since at least 2017. Targeted companies have been located in the Middle East and Africa, including Israel, Saudi Arabia, Kuwait, Morocco, and Tunisia. [HEXANE](https://attack.mitre.org/groups/G1001)'s TTPs appear similar to [APT33](https://attack.mitre.org/groups/G0064) and [OilRig](https://attack.mitre.org/groups/G0049) but due to differences in victims and tools it is tracked as a separate entity.(Citation: Dragos Hexane)(Citation: Kaspersky Lyceum October 2021)(Citation: ClearSky Siamesekitten August 2021)(Citation: Accenture Lyceum Targets November 2021)"
+  }
+]

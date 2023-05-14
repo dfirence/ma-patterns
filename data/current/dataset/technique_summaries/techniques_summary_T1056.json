@@ -1,0 +1,70 @@
+[
+  {
+    "id": "attack-pattern--bb5a00de-e086-4859-a231-fa793f6797e2",
+    "platform": "linux|macos|windows|network",
+    "tid": "T1056",
+    "technique": "Input Capture",
+    "tactic": "collection",
+    "datasources": "driver-load|file-modification|os-api-execution|process-creation|process-metadata|windows-registry-key-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1056.001",
+      "T1056.002",
+      "T1056.003",
+      "T1056.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use methods of capturing user input to obtain credentials or collect information. During normal system usage, users often provide credentials to various different locations, such as login pages/portals or system dialog boxes. Input capture mechanisms may be transparent to the user (e.g. [Credential API Hooking](https://attack.mitre.org/techniques/T1056/004)) or rely on deceiving the user into providing input into what they believe to be a genuine service (e.g. [Web Portal Capture](https://attack.mitre.org/techniques/T1056/003)).",
+    "technique_references": [
+      {
+        "source_name": "Adventures of a Keystroke",
+        "url": "http://opensecuritytraining.info/Keylogging_files/The%20Adventures%20of%20a%20Keystroke.pdf",
+        "description": "Tinaztepe,  E. (n.d.). The Adventures of a Keystroke:  An in-depth look into keyloggers on Windows. Retrieved April 27, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|system|root|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--bb5a00de-e086-4859-a231-fa793f6797e2",
+    "platform": "linux|macos|windows|network",
+    "tid": "T1056",
+    "technique": "Input Capture",
+    "tactic": "credential-access",
+    "datasources": "driver-load|file-modification|os-api-execution|process-creation|process-metadata|windows-registry-key-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1056.001",
+      "T1056.002",
+      "T1056.003",
+      "T1056.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use methods of capturing user input to obtain credentials or collect information. During normal system usage, users often provide credentials to various different locations, such as login pages/portals or system dialog boxes. Input capture mechanisms may be transparent to the user (e.g. [Credential API Hooking](https://attack.mitre.org/techniques/T1056/004)) or rely on deceiving the user into providing input into what they believe to be a genuine service (e.g. [Web Portal Capture](https://attack.mitre.org/techniques/T1056/003)).",
+    "technique_references": [
+      {
+        "source_name": "Adventures of a Keystroke",
+        "url": "http://opensecuritytraining.info/Keylogging_files/The%20Adventures%20of%20a%20Keystroke.pdf",
+        "description": "Tinaztepe,  E. (n.d.). The Adventures of a Keystroke:  An in-depth look into keyloggers on Windows. Retrieved April 27, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|system|root|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  [
+    "sliver",
+    "T1001.002",
+    "Steganography",
+    "network-traffic-content",
+    "T1001.002::[Sliver] can encode binary data into a .PNG file for C2 communication."
+  ],
+  [
+    "sliver",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[Sliver] has the ability to support C2 communications over HTTP/S."
+  ],
+  [
+    "sliver",
+    "T1071.004",
+    "DNS",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.004::[Sliver] can support C2 communications over DNS."
+  ],
+  [
+    "sliver",
+    "T1132.001",
+    "Standard Encoding",
+    "network-traffic-content",
+    "T1132.001::[Sliver] can use standard encoding techniques like gzip and hex to ASCII to encode the C2 communication payload."
+  ],
+  [
+    "sliver",
+    "T1573.001",
+    "Symmetric Cryptography",
+    "network-traffic-content",
+    "T1573.001::[Sliver] can use AES-GCM-256 to encrypt a session key for C2 message exchange."
+  ],
+  [
+    "sliver",
+    "T1573.002",
+    "Asymmetric Cryptography",
+    "network-traffic-content",
+    "T1573.002::[Sliver] can use mutual TLS and RSA  cryptography to exchange a session key."
+  ]
+]

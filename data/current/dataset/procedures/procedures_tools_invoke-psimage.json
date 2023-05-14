@@ -1,0 +1,16 @@
+[
+  [
+    "invoke-psimage",
+    "T1027.003",
+    "Steganography",
+    "file-metadata",
+    "T1027.003::[Invoke-PSImage] can be used to embed a PowerShell script within the pixels of a PNG file."
+  ],
+  [
+    "invoke-psimage",
+    "T1027.009",
+    "Embedded Payloads",
+    "file-creation|file-metadata",
+    "T1027.009::[Invoke-PSImage] can be used to embed payload data within a new image file."
+  ]
+]

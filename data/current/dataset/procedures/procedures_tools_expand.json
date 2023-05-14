@@ -1,0 +1,9 @@
+[
+  [
+    "expand",
+    "T1564.004",
+    "NTFS File Attributes",
+    "command-execution|file-metadata|file-modification|os-api-execution",
+    "T1564.004::[Expand] can be used to download or copy a file into an alternate data stream."
+  ]
+]

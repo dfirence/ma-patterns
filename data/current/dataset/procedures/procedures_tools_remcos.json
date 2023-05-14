@@ -1,0 +1,44 @@
+[
+  [
+    "remcos",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[Remcos] has a command for keylogging."
+  ],
+  [
+    "remcos",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[Remcos] can launch a remote command line to execute commands on the victim’s machine."
+  ],
+  [
+    "remcos",
+    "T1059.006",
+    "Python",
+    "command-execution|process-creation",
+    "T1059.006::[Remcos] uses Python scripts."
+  ],
+  [
+    "remcos",
+    "T1497.001",
+    "System Checks",
+    "command-execution|os-api-execution|process-creation",
+    "T1497.001::[Remcos] searches for Sandboxie and VMware on the system."
+  ],
+  [
+    "remcos",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[Remcos] can add itself to the Registry key HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run for persistence."
+  ],
+  [
+    "remcos",
+    "T1548.002",
+    "Bypass User Account Control",
+    "command-execution|process-creation|process-metadata|windows-registry-key-modification",
+    "T1548.002::[Remcos] has a command for UAC bypassing."
+  ]
+]

@@ -1,0 +1,9 @@
+[
+  [
+    "sdelete",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[SDelete] deletes data in a way that makes it unrecoverable."
+  ]
+]

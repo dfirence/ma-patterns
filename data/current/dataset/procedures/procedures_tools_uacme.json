@@ -1,0 +1,9 @@
+[
+  [
+    "uacme",
+    "T1548.002",
+    "Bypass User Account Control",
+    "command-execution|process-creation|process-metadata|windows-registry-key-modification",
+    "T1548.002::[UACMe] contains many methods for bypassing Windows User Account Control on multiple versions of the operating system."
+  ]
+]

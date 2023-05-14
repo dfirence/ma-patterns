@@ -1,0 +1,31 @@
+[
+  {
+    "id": "attack-pattern--7807d3a4-a885-4639-a786-c1ed41484970",
+    "platform": "pre",
+    "tid": "T1588.001",
+    "technique": "Malware",
+    "tactic": "resource-development",
+    "datasources": "malware-content|malware-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may buy, steal, or download malware that can be used during targeting. Malicious software can include payloads, droppers, post-compromise tools, backdoors, packers, and C2 protocols. Adversaries may acquire malware to support their operations, obtaining a means for maintaining control of remote machines, evading defenses, and executing post-compromise behaviors.\n\nIn addition to downloading free malware from the internet, adversaries may purchase these capabilities from third-party entities. Third-party entities can include technology companies that specialize in malware development, criminal marketplaces (including Malware-as-a-Service, or MaaS), or from individuals. In addition to purchasing malware, adversaries may steal and repurpose malware from third-party entities (including other adversaries).",
+    "technique_references": [
+      {
+        "source_name": "FireEyeSupplyChain",
+        "url": "https://www.mandiant.com/resources/supply-chain-analysis-from-quartermaster-to-sunshop",
+        "description": "FireEye. (2014). SUPPLY CHAIN ANALYSIS: From Quartermaster to SunshopFireEye. Retrieved March 6, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

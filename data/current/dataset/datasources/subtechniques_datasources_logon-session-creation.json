@@ -1,0 +1,1930 @@
+[
+  {
+    "id": "attack-pattern--eb062747-2193-45de-8fa2-e62549c37ddf",
+    "platform": "windows",
+    "tid": "T1021.001",
+    "technique": "Remote Desktop Protocol",
+    "tactic": "lateral-movement",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use [Valid Accounts](https://attack.mitre.org/techniques/T1078) to log into a computer using the Remote Desktop Protocol (RDP). The adversary may then perform actions as the logged-on user.\n\nRemote desktop is a common feature in operating systems. It allows a user to log into an interactive session with a system desktop graphical user interface on a remote system. Microsoft refers to its implementation of the Remote Desktop Protocol (RDP) as Remote Desktop Services (RDS).(Citation: TechNet Remote Desktop Services) \n\nAdversaries may connect to a remote system over RDP/RDS to expand access if the service is enabled and allows access to accounts with known credentials. Adversaries will likely use Credential Access techniques to acquire credentials to use with RDP. Adversaries may also use RDP in conjunction with the [Accessibility Features](https://attack.mitre.org/techniques/T1546/008) or [Terminal Services DLL](https://attack.mitre.org/techniques/T1505/005) for Persistence.(Citation: Alperovitch Malware)",
+    "technique_references": [
+      {
+        "source_name": "TechNet Remote Desktop Services",
+        "url": "https://technet.microsoft.com/en-us/windowsserver/ee236407.aspx",
+        "description": "Microsoft. (n.d.). Remote Desktop Services. Retrieved June 1, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Alperovitch Malware",
+        "url": "http://blog.crowdstrike.com/adversary-tricks-crowdstrike-treats/",
+        "description": "Alperovitch, D. (2014, October 31). Malware-Free Intrusions. Retrieved November 4, 2014.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "remotedesktopusers|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--4f9ca633-15c5-463c-9724-bdcd54fde541",
+    "platform": "windows",
+    "tid": "T1021.002",
+    "technique": "SMB/Windows Admin Shares",
+    "tactic": "lateral-movement",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use [Valid Accounts](https://attack.mitre.org/techniques/T1078) to interact with a remote network share using Server Message Block (SMB). The adversary may then perform actions as the logged-on user.\n\nSMB is a file, printer, and serial port sharing protocol for Windows machines on the same network or domain. Adversaries may use SMB to interact with file shares, allowing them to move laterally throughout a network. Linux and macOS implementations of SMB typically use Samba.\n\nWindows systems have hidden network shares that are accessible only to administrators and provide the ability for remote file copy and other administrative functions. Example network shares include `C$`, `ADMIN$`, and `IPC$`. Adversaries may use this technique in conjunction with administrator-level [Valid Accounts](https://attack.mitre.org/techniques/T1078) to remotely access a networked system over SMB,(Citation: Wikipedia Server Message Block) to interact with systems using remote procedure calls (RPCs),(Citation: TechNet RPC) transfer files, and run transferred binaries through remote Execution. Example execution techniques that rely on authenticated sessions over SMB/RPC are [Scheduled Task/Job](https://attack.mitre.org/techniques/T1053), [Service Execution](https://attack.mitre.org/techniques/T1569/002), and [Windows Management Instrumentation](https://attack.mitre.org/techniques/T1047). Adversaries can also use NTLM hashes to access administrator shares on systems with [Pass the Hash](https://attack.mitre.org/techniques/T1550/002) and certain configuration and patch levels.(Citation: Microsoft Admin Shares)",
+    "technique_references": [
+      {
+        "source_name": "Medium Detecting WMI Persistence",
+        "url": "https://medium.com/threatpunter/detecting-removing-wmi-persistence-60ccbb7dff96",
+        "description": "French, D. (2018, October 9). Detecting & Removing an Attacker’s WMI Persistence. Retrieved October 11, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet RPC",
+        "url": "https://technet.microsoft.com/en-us/library/cc787851.aspx",
+        "description": "Microsoft. (2003, March 28). What Is RPC?. Retrieved June 12, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Admin Shares",
+        "url": "http://support.microsoft.com/kb/314984",
+        "description": "Microsoft. (n.d.). How to create and delete hidden or administrative shares on client computers. Retrieved November 20, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Windows Event Forwarding Payne",
+        "url": "https://docs.microsoft.com/en-us/archive/blogs/jepayne/monitoring-what-matters-windows-event-forwarding-for-everyone-even-if-you-already-have-a-siem",
+        "description": "Payne, J. (2015, November 23). Monitoring what matters - Windows Event Forwarding for everyone (even if you already have a SIEM.). Retrieved February 1, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Lateral Movement Payne",
+        "url": "https://docs.microsoft.com/en-us/archive/blogs/jepayne/tracking-lateral-movement-part-one-special-groups-and-specific-service-accounts",
+        "description": "Payne, J. (2015, November 26). Tracking Lateral Movement Part One - Special Groups and Specific Service Accounts. Retrieved February 1, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia Server Message Block",
+        "url": "https://en.wikipedia.org/wiki/Server_Message_Block",
+        "description": "Wikipedia. (2017, December 16). Server Message Block. Retrieved December 21, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--2db31dcd-54da-405d-acef-b9129b816ed6",
+    "platform": "linux|macos",
+    "tid": "T1021.004",
+    "technique": "SSH",
+    "tactic": "lateral-movement",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use [Valid Accounts](https://attack.mitre.org/techniques/T1078) to log into remote machines using Secure Shell (SSH). The adversary may then perform actions as the logged-on user.\n\nSSH is a protocol that allows authorized users to open remote shells on other computers. Many Linux and macOS versions come with SSH installed by default, although typically disabled until the user enables it. The SSH server can be configured to use standard password authentication or public-private keypairs in lieu of or in addition to a password. In this authentication scenario, the user’s public key must be in a special file on the computer running the server that lists which keypairs are allowed to login as that user.",
+    "technique_references": [
+      {
+        "source_name": "Apple Unified Log Analysis Remote Login and Screen Sharing",
+        "url": "https://sarah-edwards-xzkc.squarespace.com/blog/2020/4/30/analysis-of-apple-unified-logs-quarantine-edition-entry-6-working-from-home-remote-logins",
+        "description": "Sarah Edwards. (2020, April 30). Analysis of Apple Unified Logs: Quarantine Edition [Entry 6] – Working From Home? Remote Logins. Retrieved August 19, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--01327cde-66c4-4123-bf34-5f258d59457b",
+    "platform": "linux|macos|windows",
+    "tid": "T1021.005",
+    "technique": "VNC",
+    "tactic": "lateral-movement",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use [Valid Accounts](https://attack.mitre.org/techniques/T1078) to remotely control machines using Virtual Network Computing (VNC).  VNC is a platform-independent desktop sharing system that uses the RFB (“remote framebuffer”) protocol to enable users to remotely control another computer’s display by relaying the screen, mouse, and keyboard inputs over the network.(Citation: The Remote Framebuffer Protocol)\n\nVNC differs from [Remote Desktop Protocol](https://attack.mitre.org/techniques/T1021/001) as VNC is screen-sharing software rather than resource-sharing software. By default, VNC uses the system's authentication, but it can be configured to use credentials specific to VNC.(Citation: MacOS VNC software for Remote Desktop)(Citation: VNC Authentication)\n\nAdversaries may abuse VNC to perform malicious actions as the logged-on user such as opening documents, downloading files, and running arbitrary commands. An adversary could use VNC to remotely control and monitor a system to collect data and information to pivot to other systems within the network. Specific VNC libraries/implementations have also been susceptible to brute force attacks and memory usage exploitation.(Citation: Hijacking VNC)(Citation: macOS root VNC login without authentication)(Citation: VNC Vulnerabilities)(Citation: Offensive Security VNC Authentication Check)(Citation: Attacking VNC Servers PentestLab)(Citation: Havana authentication bug)",
+    "technique_references": [
+      {
+        "source_name": "The Remote Framebuffer Protocol",
+        "url": "https://datatracker.ietf.org/doc/html/rfc6143#section-7.2.2",
+        "description": "T. Richardson, J. Levine, RealVNC Ltd.. (2011, March). The Remote Framebuffer Protocol. Retrieved September 20, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MacOS VNC software for Remote Desktop",
+        "url": "https://support.apple.com/guide/remote-desktop/set-up-a-computer-running-vnc-software-apdbed09830/mac",
+        "description": "Apple Support. (n.d.). Set up a computer running VNC software for Remote Desktop. Retrieved August 18, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "VNC Authentication",
+        "url": "https://help.realvnc.com/hc/en-us/articles/360002250097-Setting-up-System-Authentication",
+        "description": "Tegan. (2019, August 15). Setting up System Authentication. Retrieved September 20, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Hijacking VNC",
+        "url": "https://int0x33.medium.com/day-70-hijacking-vnc-enum-brute-access-and-crack-d3d18a4601cc",
+        "description": "Z3RO. (2019, March 10). Day 70: Hijacking VNC (Enum, Brute, Access and Crack). Retrieved September 20, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "macOS root VNC login without authentication",
+        "url": "https://www.tenable.com/blog/detecting-macos-high-sierra-root-account-without-authentication",
+        "description": "Nick Miles. (2017, November 30). Detecting macOS High Sierra root account without authentication. Retrieved September 20, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "VNC Vulnerabilities",
+        "url": "https://www.bleepingcomputer.com/news/security/dozens-of-vnc-vulnerabilities-found-in-linux-windows-solutions/",
+        "description": "Sergiu Gatlan. (2019, November 22). Dozens of VNC Vulnerabilities Found in Linux, Windows Solutions. Retrieved September 20, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Offensive Security VNC Authentication Check",
+        "url": "https://www.offensive-security.com/metasploit-unleashed/vnc-authentication/",
+        "description": "Offensive Security. (n.d.). VNC Authentication. Retrieved October 6, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Attacking VNC Servers PentestLab",
+        "url": "https://pentestlab.blog/2012/10/30/attacking-vnc-servers/",
+        "description": "Administrator, Penetration Testing Lab. (2012, October 30). Attacking VNC Servers. Retrieved October 6, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Havana authentication bug",
+        "url": "http://lists.openstack.org/pipermail/openstack/2013-December/004138.html",
+        "description": "Jay Pipes. (2013, December 23). Security Breach! Tenant A is seeing the VNC Consoles of Tenant B!. Retrieved October 6, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Apple Unified Log Analysis Remote Login and Screen Sharing",
+        "url": "https://sarah-edwards-xzkc.squarespace.com/blog/2020/4/30/analysis-of-apple-unified-logs-quarantine-edition-entry-6-working-from-home-remote-logins",
+        "description": "Sarah Edwards. (2020, April 30). Analysis of Apple Unified Logs: Quarantine Edition [Entry 6] – Working From Home? Remote Logins. Retrieved August 19, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Gnome Remote Desktop grd-settings",
+        "url": "https://gitlab.gnome.org/GNOME/gnome-remote-desktop/-/blob/9aa9181e/src/grd-settings.c#L207",
+        "description": "Pascal Nowack. (n.d.). Retrieved September 21, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Gnome Remote Desktop gschema",
+        "url": "https://gitlab.gnome.org/GNOME/gnome-remote-desktop/-/blob/9aa9181e/src/org.gnome.desktop.remote-desktop.gschema.xml.in",
+        "description": "Pascal Nowack. (n.d.). Retrieved September 21, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--60d0c01d-e2bf-49dd-a453-f8a9c9fa6f65",
+    "platform": "windows",
+    "tid": "T1021.006",
+    "technique": "Windows Remote Management",
+    "tactic": "lateral-movement",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use [Valid Accounts](https://attack.mitre.org/techniques/T1078) to interact with remote systems using Windows Remote Management (WinRM). The adversary may then perform actions as the logged-on user.\n\nWinRM is the name of both a Windows service and a protocol that allows a user to interact with a remote system (e.g., run an executable, modify the Registry, modify services).(Citation: Microsoft WinRM) It may be called with the `winrm` command or by any number of programs such as PowerShell.(Citation: Jacobsen 2014) WinRM  can be used as a method of remotely interacting with [Windows Management Instrumentation](https://attack.mitre.org/techniques/T1047).(Citation: MSDN WMI)",
+    "technique_references": [
+      {
+        "source_name": "Microsoft WinRM",
+        "url": "http://msdn.microsoft.com/en-us/library/aa384426",
+        "description": "Microsoft. (n.d.). Windows Remote Management. Retrieved November 12, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Jacobsen 2014",
+        "url": "https://www.slideshare.net/kieranjacobsen/lateral-movement-with-power-shell-2",
+        "description": "Jacobsen, K. (2014, May 16). Lateral Movement with PowerShell&#91;slides&#93;. Retrieved November 12, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MSDN WMI",
+        "url": "https://msdn.microsoft.com/en-us/library/aa394582.aspx",
+        "description": "Microsoft. (n.d.). Windows Management Instrumentation. Retrieved April 27, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Medium Detecting Lateral Movement",
+        "url": "https://medium.com/threatpunter/detecting-lateral-movement-using-sysmon-and-splunk-318d3be141bc",
+        "description": "French, D. (2018, September 30). Detecting Lateral Movement Using Sysmon and Splunk. Retrieved October 11, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--8861073d-d1b8-4941-82ce-dce621d398f0",
+    "platform": "office-365|azure-ad|saas|iaas|google-workspace",
+    "tid": "T1021.007",
+    "technique": "Cloud Services",
+    "tactic": "lateral-movement",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may log into accessible cloud services within a compromised environment using [Valid Accounts](https://attack.mitre.org/techniques/T1078) that are synchronized with or federated to on-premises user identities. The adversary may then perform management actions or access cloud-hosted resources as the logged-on user. \n\nMany enterprises federate centrally managed user identities to cloud services, allowing users to login with their domain credentials in order to access the cloud control plane. Similarly, adversaries may connect to available cloud services through the web console or through the cloud command line interface (CLI) (e.g., [Cloud API](https://attack.mitre.org/techniques/T1059/009)), using commands such as <code>Connect-AZAccount</code> for Azure PowerShell, <code>Connect-MgGraph</code> for Microsoft Graph PowerShell, and <code>gcloud auth login</code> for the Google Cloud CLI.\n\nIn some cases, adversaries may be able to authenticate to these services via [Application Access Token](https://attack.mitre.org/techniques/T1550/001) instead of a username and password. ",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--6151cbea-819b-455a-9fa6-99a1cc58797d",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers",
+    "tid": "T1078.001",
+    "technique": "Default Accounts",
+    "tactic": "defense-evasion",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a default account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Default accounts are those that are built-into an OS, such as the Guest or Administrator accounts on Windows systems. Default accounts also include default factory/provider set accounts on other types of systems, software, or devices, including the root user account in AWS and the default service account in Kubernetes.(Citation: Microsoft Local Accounts Feb 2019)(Citation: AWS Root User)(Citation: Threat Matrix for Kubernetes)\n\nDefault accounts are not limited to client machines, rather also include accounts that are preset for equipment such as network devices and computer applications whether they are internal, open source, or commercial. Appliances that come preset with a username and password combination pose a serious threat to organizations that do not change it post installation, as they are easy targets for an adversary. Similarly, adversaries may also utilize publicly disclosed or stolen [Private Keys](https://attack.mitre.org/techniques/T1552/004) or credential materials to legitimately connect to remote environments via [Remote Services](https://attack.mitre.org/techniques/T1021).(Citation: Metasploit SSH Module)",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Local Accounts Feb 2019",
+        "url": "https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/local-accounts",
+        "description": "Microsoft. (2018, December 9). Local Accounts. Retrieved February 11, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AWS Root User",
+        "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html",
+        "description": "Amazon. (n.d.). AWS Account Root User. Retrieved April 5, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Threat Matrix for Kubernetes",
+        "url": "https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/",
+        "description": "Weizman, Y. (2020, April 2). Threat Matrix for Kubernetes. Retrieved March 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Metasploit SSH Module",
+        "url": "https://github.com/rapid7/metasploit-framework/tree/master/modules/exploits/linux/ssh",
+        "description": "undefined. (n.d.). Retrieved April 12, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--6151cbea-819b-455a-9fa6-99a1cc58797d",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers",
+    "tid": "T1078.001",
+    "technique": "Default Accounts",
+    "tactic": "persistence",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a default account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Default accounts are those that are built-into an OS, such as the Guest or Administrator accounts on Windows systems. Default accounts also include default factory/provider set accounts on other types of systems, software, or devices, including the root user account in AWS and the default service account in Kubernetes.(Citation: Microsoft Local Accounts Feb 2019)(Citation: AWS Root User)(Citation: Threat Matrix for Kubernetes)\n\nDefault accounts are not limited to client machines, rather also include accounts that are preset for equipment such as network devices and computer applications whether they are internal, open source, or commercial. Appliances that come preset with a username and password combination pose a serious threat to organizations that do not change it post installation, as they are easy targets for an adversary. Similarly, adversaries may also utilize publicly disclosed or stolen [Private Keys](https://attack.mitre.org/techniques/T1552/004) or credential materials to legitimately connect to remote environments via [Remote Services](https://attack.mitre.org/techniques/T1021).(Citation: Metasploit SSH Module)",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Local Accounts Feb 2019",
+        "url": "https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/local-accounts",
+        "description": "Microsoft. (2018, December 9). Local Accounts. Retrieved February 11, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AWS Root User",
+        "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html",
+        "description": "Amazon. (n.d.). AWS Account Root User. Retrieved April 5, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Threat Matrix for Kubernetes",
+        "url": "https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/",
+        "description": "Weizman, Y. (2020, April 2). Threat Matrix for Kubernetes. Retrieved March 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Metasploit SSH Module",
+        "url": "https://github.com/rapid7/metasploit-framework/tree/master/modules/exploits/linux/ssh",
+        "description": "undefined. (n.d.). Retrieved April 12, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--6151cbea-819b-455a-9fa6-99a1cc58797d",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers",
+    "tid": "T1078.001",
+    "technique": "Default Accounts",
+    "tactic": "privilege-escalation",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a default account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Default accounts are those that are built-into an OS, such as the Guest or Administrator accounts on Windows systems. Default accounts also include default factory/provider set accounts on other types of systems, software, or devices, including the root user account in AWS and the default service account in Kubernetes.(Citation: Microsoft Local Accounts Feb 2019)(Citation: AWS Root User)(Citation: Threat Matrix for Kubernetes)\n\nDefault accounts are not limited to client machines, rather also include accounts that are preset for equipment such as network devices and computer applications whether they are internal, open source, or commercial. Appliances that come preset with a username and password combination pose a serious threat to organizations that do not change it post installation, as they are easy targets for an adversary. Similarly, adversaries may also utilize publicly disclosed or stolen [Private Keys](https://attack.mitre.org/techniques/T1552/004) or credential materials to legitimately connect to remote environments via [Remote Services](https://attack.mitre.org/techniques/T1021).(Citation: Metasploit SSH Module)",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Local Accounts Feb 2019",
+        "url": "https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/local-accounts",
+        "description": "Microsoft. (2018, December 9). Local Accounts. Retrieved February 11, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AWS Root User",
+        "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html",
+        "description": "Amazon. (n.d.). AWS Account Root User. Retrieved April 5, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Threat Matrix for Kubernetes",
+        "url": "https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/",
+        "description": "Weizman, Y. (2020, April 2). Threat Matrix for Kubernetes. Retrieved March 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Metasploit SSH Module",
+        "url": "https://github.com/rapid7/metasploit-framework/tree/master/modules/exploits/linux/ssh",
+        "description": "undefined. (n.d.). Retrieved April 12, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--6151cbea-819b-455a-9fa6-99a1cc58797d",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers",
+    "tid": "T1078.001",
+    "technique": "Default Accounts",
+    "tactic": "initial-access",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a default account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Default accounts are those that are built-into an OS, such as the Guest or Administrator accounts on Windows systems. Default accounts also include default factory/provider set accounts on other types of systems, software, or devices, including the root user account in AWS and the default service account in Kubernetes.(Citation: Microsoft Local Accounts Feb 2019)(Citation: AWS Root User)(Citation: Threat Matrix for Kubernetes)\n\nDefault accounts are not limited to client machines, rather also include accounts that are preset for equipment such as network devices and computer applications whether they are internal, open source, or commercial. Appliances that come preset with a username and password combination pose a serious threat to organizations that do not change it post installation, as they are easy targets for an adversary. Similarly, adversaries may also utilize publicly disclosed or stolen [Private Keys](https://attack.mitre.org/techniques/T1552/004) or credential materials to legitimately connect to remote environments via [Remote Services](https://attack.mitre.org/techniques/T1021).(Citation: Metasploit SSH Module)",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Local Accounts Feb 2019",
+        "url": "https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/local-accounts",
+        "description": "Microsoft. (2018, December 9). Local Accounts. Retrieved February 11, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AWS Root User",
+        "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html",
+        "description": "Amazon. (n.d.). AWS Account Root User. Retrieved April 5, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Threat Matrix for Kubernetes",
+        "url": "https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/",
+        "description": "Weizman, Y. (2020, April 2). Threat Matrix for Kubernetes. Retrieved March 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Metasploit SSH Module",
+        "url": "https://github.com/rapid7/metasploit-framework/tree/master/modules/exploits/linux/ssh",
+        "description": "undefined. (n.d.). Retrieved April 12, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--c3d4bdd9-2cfe-4a80-9d0c-07a29ecdce8f",
+    "platform": "linux|macos|windows",
+    "tid": "T1078.002",
+    "technique": "Domain Accounts",
+    "tactic": "defense-evasion",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a domain account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion.(Citation: TechNet Credential Theft) Domain accounts are those managed by Active Directory Domain Services where access and permissions are configured across systems and services that are part of that domain. Domain accounts can cover users, administrators, and services.(Citation: Microsoft AD Accounts)\n\nAdversaries may compromise domain accounts, some with a high level of privileges, through various means such as [OS Credential Dumping](https://attack.mitre.org/techniques/T1003) or password reuse, allowing access to privileged resources of the domain.",
+    "technique_references": [
+      {
+        "source_name": "TechNet Credential Theft",
+        "url": "https://technet.microsoft.com/en-us/library/dn535501.aspx",
+        "description": "Microsoft. (2016, April 15). Attractive Accounts for Credential Theft. Retrieved June 3, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft AD Accounts",
+        "url": "https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-accounts",
+        "description": "Microsoft. (2019, August 23). Active Directory Accounts. Retrieved March 13, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Ubuntu SSSD Docs",
+        "url": "https://ubuntu.com/server/docs/service-sssd",
+        "description": "Ubuntu. (n.d.). SSSD. Retrieved September 23, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--c3d4bdd9-2cfe-4a80-9d0c-07a29ecdce8f",
+    "platform": "linux|macos|windows",
+    "tid": "T1078.002",
+    "technique": "Domain Accounts",
+    "tactic": "persistence",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a domain account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion.(Citation: TechNet Credential Theft) Domain accounts are those managed by Active Directory Domain Services where access and permissions are configured across systems and services that are part of that domain. Domain accounts can cover users, administrators, and services.(Citation: Microsoft AD Accounts)\n\nAdversaries may compromise domain accounts, some with a high level of privileges, through various means such as [OS Credential Dumping](https://attack.mitre.org/techniques/T1003) or password reuse, allowing access to privileged resources of the domain.",
+    "technique_references": [
+      {
+        "source_name": "TechNet Credential Theft",
+        "url": "https://technet.microsoft.com/en-us/library/dn535501.aspx",
+        "description": "Microsoft. (2016, April 15). Attractive Accounts for Credential Theft. Retrieved June 3, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft AD Accounts",
+        "url": "https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-accounts",
+        "description": "Microsoft. (2019, August 23). Active Directory Accounts. Retrieved March 13, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Ubuntu SSSD Docs",
+        "url": "https://ubuntu.com/server/docs/service-sssd",
+        "description": "Ubuntu. (n.d.). SSSD. Retrieved September 23, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--c3d4bdd9-2cfe-4a80-9d0c-07a29ecdce8f",
+    "platform": "linux|macos|windows",
+    "tid": "T1078.002",
+    "technique": "Domain Accounts",
+    "tactic": "privilege-escalation",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a domain account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion.(Citation: TechNet Credential Theft) Domain accounts are those managed by Active Directory Domain Services where access and permissions are configured across systems and services that are part of that domain. Domain accounts can cover users, administrators, and services.(Citation: Microsoft AD Accounts)\n\nAdversaries may compromise domain accounts, some with a high level of privileges, through various means such as [OS Credential Dumping](https://attack.mitre.org/techniques/T1003) or password reuse, allowing access to privileged resources of the domain.",
+    "technique_references": [
+      {
+        "source_name": "TechNet Credential Theft",
+        "url": "https://technet.microsoft.com/en-us/library/dn535501.aspx",
+        "description": "Microsoft. (2016, April 15). Attractive Accounts for Credential Theft. Retrieved June 3, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft AD Accounts",
+        "url": "https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-accounts",
+        "description": "Microsoft. (2019, August 23). Active Directory Accounts. Retrieved March 13, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Ubuntu SSSD Docs",
+        "url": "https://ubuntu.com/server/docs/service-sssd",
+        "description": "Ubuntu. (n.d.). SSSD. Retrieved September 23, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--c3d4bdd9-2cfe-4a80-9d0c-07a29ecdce8f",
+    "platform": "linux|macos|windows",
+    "tid": "T1078.002",
+    "technique": "Domain Accounts",
+    "tactic": "initial-access",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a domain account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion.(Citation: TechNet Credential Theft) Domain accounts are those managed by Active Directory Domain Services where access and permissions are configured across systems and services that are part of that domain. Domain accounts can cover users, administrators, and services.(Citation: Microsoft AD Accounts)\n\nAdversaries may compromise domain accounts, some with a high level of privileges, through various means such as [OS Credential Dumping](https://attack.mitre.org/techniques/T1003) or password reuse, allowing access to privileged resources of the domain.",
+    "technique_references": [
+      {
+        "source_name": "TechNet Credential Theft",
+        "url": "https://technet.microsoft.com/en-us/library/dn535501.aspx",
+        "description": "Microsoft. (2016, April 15). Attractive Accounts for Credential Theft. Retrieved June 3, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft AD Accounts",
+        "url": "https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-accounts",
+        "description": "Microsoft. (2019, August 23). Active Directory Accounts. Retrieved March 13, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Ubuntu SSSD Docs",
+        "url": "https://ubuntu.com/server/docs/service-sssd",
+        "description": "Ubuntu. (n.d.). SSSD. Retrieved September 23, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--fdc47f44-dd32-4b99-af5f-209f556f63c2",
+    "platform": "linux|macos|windows|containers",
+    "tid": "T1078.003",
+    "technique": "Local Accounts",
+    "tactic": "defense-evasion",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a local account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Local accounts are those configured by an organization for use by users, remote support, services, or for administration on a single system or service.\n\nLocal Accounts may also be abused to elevate privileges and harvest credentials through [OS Credential Dumping](https://attack.mitre.org/techniques/T1003). Password reuse may allow the abuse of local accounts across a set of machines on a network for the purposes of Privilege Escalation and Lateral Movement. ",
+    "technique_references": [],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--fdc47f44-dd32-4b99-af5f-209f556f63c2",
+    "platform": "linux|macos|windows|containers",
+    "tid": "T1078.003",
+    "technique": "Local Accounts",
+    "tactic": "persistence",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a local account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Local accounts are those configured by an organization for use by users, remote support, services, or for administration on a single system or service.\n\nLocal Accounts may also be abused to elevate privileges and harvest credentials through [OS Credential Dumping](https://attack.mitre.org/techniques/T1003). Password reuse may allow the abuse of local accounts across a set of machines on a network for the purposes of Privilege Escalation and Lateral Movement. ",
+    "technique_references": [],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--fdc47f44-dd32-4b99-af5f-209f556f63c2",
+    "platform": "linux|macos|windows|containers",
+    "tid": "T1078.003",
+    "technique": "Local Accounts",
+    "tactic": "privilege-escalation",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a local account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Local accounts are those configured by an organization for use by users, remote support, services, or for administration on a single system or service.\n\nLocal Accounts may also be abused to elevate privileges and harvest credentials through [OS Credential Dumping](https://attack.mitre.org/techniques/T1003). Password reuse may allow the abuse of local accounts across a set of machines on a network for the purposes of Privilege Escalation and Lateral Movement. ",
+    "technique_references": [],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--fdc47f44-dd32-4b99-af5f-209f556f63c2",
+    "platform": "linux|macos|windows|containers",
+    "tid": "T1078.003",
+    "technique": "Local Accounts",
+    "tactic": "initial-access",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a local account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Local accounts are those configured by an organization for use by users, remote support, services, or for administration on a single system or service.\n\nLocal Accounts may also be abused to elevate privileges and harvest credentials through [OS Credential Dumping](https://attack.mitre.org/techniques/T1003). Password reuse may allow the abuse of local accounts across a set of machines on a network for the purposes of Privilege Escalation and Lateral Movement. ",
+    "technique_references": [],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f232fa7a-025c-4d43-abc7-318e81a73d65",
+    "platform": "azure-ad|office-365|saas|iaas|google-workspace",
+    "tid": "T1078.004",
+    "technique": "Cloud Accounts",
+    "tactic": "defense-evasion",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a cloud account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Cloud accounts are those created and configured by an organization for use by users, remote support, services, or for administration of resources within a cloud service provider or SaaS application. In some cases, cloud accounts may be federated with traditional identity management systems, such as Windows Active Directory.(Citation: AWS Identity Federation)(Citation: Google Federating GC)(Citation: Microsoft Deploying AD Federation)\n\nCompromised credentials for cloud accounts can be used to harvest sensitive data from online storage accounts and databases. Access to cloud accounts can also be abused to gain Initial Access to a network by abusing a [Trusted Relationship](https://attack.mitre.org/techniques/T1199). Similar to [Domain Accounts](https://attack.mitre.org/techniques/T1078/002), compromise of federated cloud accounts may allow adversaries to more easily move laterally within an environment.\n\nOnce a cloud account is compromised, an adversary may perform [Account Manipulation](https://attack.mitre.org/techniques/T1098) - for example, by adding [Additional Cloud Roles](https://attack.mitre.org/techniques/T1098/003) - to maintain persistence and potentially escalate their privileges.",
+    "technique_references": [
+      {
+        "source_name": "AWS Identity Federation",
+        "url": "https://aws.amazon.com/identity/federation/",
+        "description": "Amazon. (n.d.). Identity Federation in AWS. Retrieved March 13, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Google Federating GC",
+        "url": "https://cloud.google.com/solutions/federating-gcp-with-active-directory-introduction",
+        "description": "Google. (n.d.). Federating Google Cloud with Active Directory. Retrieved March 13, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Deploying AD Federation",
+        "url": "https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/how-to-connect-fed-azure-adfs",
+        "description": "Microsoft. (n.d.). Deploying Active Directory Federation Services in Azure. Retrieved March 13, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f232fa7a-025c-4d43-abc7-318e81a73d65",
+    "platform": "azure-ad|office-365|saas|iaas|google-workspace",
+    "tid": "T1078.004",
+    "technique": "Cloud Accounts",
+    "tactic": "persistence",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a cloud account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Cloud accounts are those created and configured by an organization for use by users, remote support, services, or for administration of resources within a cloud service provider or SaaS application. In some cases, cloud accounts may be federated with traditional identity management systems, such as Windows Active Directory.(Citation: AWS Identity Federation)(Citation: Google Federating GC)(Citation: Microsoft Deploying AD Federation)\n\nCompromised credentials for cloud accounts can be used to harvest sensitive data from online storage accounts and databases. Access to cloud accounts can also be abused to gain Initial Access to a network by abusing a [Trusted Relationship](https://attack.mitre.org/techniques/T1199). Similar to [Domain Accounts](https://attack.mitre.org/techniques/T1078/002), compromise of federated cloud accounts may allow adversaries to more easily move laterally within an environment.\n\nOnce a cloud account is compromised, an adversary may perform [Account Manipulation](https://attack.mitre.org/techniques/T1098) - for example, by adding [Additional Cloud Roles](https://attack.mitre.org/techniques/T1098/003) - to maintain persistence and potentially escalate their privileges.",
+    "technique_references": [
+      {
+        "source_name": "AWS Identity Federation",
+        "url": "https://aws.amazon.com/identity/federation/",
+        "description": "Amazon. (n.d.). Identity Federation in AWS. Retrieved March 13, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Google Federating GC",
+        "url": "https://cloud.google.com/solutions/federating-gcp-with-active-directory-introduction",
+        "description": "Google. (n.d.). Federating Google Cloud with Active Directory. Retrieved March 13, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Deploying AD Federation",
+        "url": "https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/how-to-connect-fed-azure-adfs",
+        "description": "Microsoft. (n.d.). Deploying Active Directory Federation Services in Azure. Retrieved March 13, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f232fa7a-025c-4d43-abc7-318e81a73d65",
+    "platform": "azure-ad|office-365|saas|iaas|google-workspace",
+    "tid": "T1078.004",
+    "technique": "Cloud Accounts",
+    "tactic": "privilege-escalation",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a cloud account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Cloud accounts are those created and configured by an organization for use by users, remote support, services, or for administration of resources within a cloud service provider or SaaS application. In some cases, cloud accounts may be federated with traditional identity management systems, such as Windows Active Directory.(Citation: AWS Identity Federation)(Citation: Google Federating GC)(Citation: Microsoft Deploying AD Federation)\n\nCompromised credentials for cloud accounts can be used to harvest sensitive data from online storage accounts and databases. Access to cloud accounts can also be abused to gain Initial Access to a network by abusing a [Trusted Relationship](https://attack.mitre.org/techniques/T1199). Similar to [Domain Accounts](https://attack.mitre.org/techniques/T1078/002), compromise of federated cloud accounts may allow adversaries to more easily move laterally within an environment.\n\nOnce a cloud account is compromised, an adversary may perform [Account Manipulation](https://attack.mitre.org/techniques/T1098) - for example, by adding [Additional Cloud Roles](https://attack.mitre.org/techniques/T1098/003) - to maintain persistence and potentially escalate their privileges.",
+    "technique_references": [
+      {
+        "source_name": "AWS Identity Federation",
+        "url": "https://aws.amazon.com/identity/federation/",
+        "description": "Amazon. (n.d.). Identity Federation in AWS. Retrieved March 13, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Google Federating GC",
+        "url": "https://cloud.google.com/solutions/federating-gcp-with-active-directory-introduction",
+        "description": "Google. (n.d.). Federating Google Cloud with Active Directory. Retrieved March 13, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Deploying AD Federation",
+        "url": "https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/how-to-connect-fed-azure-adfs",
+        "description": "Microsoft. (n.d.). Deploying Active Directory Federation Services in Azure. Retrieved March 13, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f232fa7a-025c-4d43-abc7-318e81a73d65",
+    "platform": "azure-ad|office-365|saas|iaas|google-workspace",
+    "tid": "T1078.004",
+    "technique": "Cloud Accounts",
+    "tactic": "initial-access",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a cloud account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Cloud accounts are those created and configured by an organization for use by users, remote support, services, or for administration of resources within a cloud service provider or SaaS application. In some cases, cloud accounts may be federated with traditional identity management systems, such as Windows Active Directory.(Citation: AWS Identity Federation)(Citation: Google Federating GC)(Citation: Microsoft Deploying AD Federation)\n\nCompromised credentials for cloud accounts can be used to harvest sensitive data from online storage accounts and databases. Access to cloud accounts can also be abused to gain Initial Access to a network by abusing a [Trusted Relationship](https://attack.mitre.org/techniques/T1199). Similar to [Domain Accounts](https://attack.mitre.org/techniques/T1078/002), compromise of federated cloud accounts may allow adversaries to more easily move laterally within an environment.\n\nOnce a cloud account is compromised, an adversary may perform [Account Manipulation](https://attack.mitre.org/techniques/T1098) - for example, by adding [Additional Cloud Roles](https://attack.mitre.org/techniques/T1098/003) - to maintain persistence and potentially escalate their privileges.",
+    "technique_references": [
+      {
+        "source_name": "AWS Identity Federation",
+        "url": "https://aws.amazon.com/identity/federation/",
+        "description": "Amazon. (n.d.). Identity Federation in AWS. Retrieved March 13, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Google Federating GC",
+        "url": "https://cloud.google.com/solutions/federating-gcp-with-active-directory-introduction",
+        "description": "Google. (n.d.). Federating Google Cloud with Active Directory. Retrieved March 13, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Deploying AD Federation",
+        "url": "https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/how-to-connect-fed-azure-adfs",
+        "description": "Microsoft. (n.d.). Deploying Active Directory Federation Services in Azure. Retrieved March 13, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b4694861-542c-48ea-9eb1-10d356e7140a",
+    "platform": "office-365|windows|google-workspace",
+    "tid": "T1114.002",
+    "technique": "Remote Email Collection",
+    "tactic": "collection",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may target an Exchange server, Office 365, or Google Workspace to collect sensitive information. Adversaries may leverage a user's credentials and interact directly with the Exchange server to acquire information from within a network. Adversaries may also access externally facing Exchange services, Office 365, or Google Workspace to access email using credentials or access tokens. Tools such as [MailSniper](https://attack.mitre.org/software/S0413) can be used to automate searches for specific keywords.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--7ad38ef1-381a-406d-872a-38b136eb5ecc",
+    "platform": "saas",
+    "tid": "T1213.001",
+    "technique": "Confluence",
+    "tactic": "collection",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "\nAdversaries may leverage Confluence repositories to mine valuable information. Often found in development environments alongside Atlassian JIRA, Confluence is generally used to store development-related documentation, however, in general may contain more diverse categories of useful information, such as:\n\n* Policies, procedures, and standards\n* Physical / logical network diagrams\n* System architecture diagrams\n* Technical system documentation\n* Testing / development credentials\n* Work / project schedules\n* Source code snippets\n* Links to network shares and other internal resources\n",
+    "technique_references": [
+      {
+        "source_name": "Atlassian Confluence Logging",
+        "url": "https://confluence.atlassian.com/confkb/how-to-enable-user-access-logging-182943.html",
+        "description": "Atlassian. (2018, January 9). How to Enable User Access Logging. Retrieved April 4, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--0c4b4fda-9062-47da-98b9-ceae2dcf052a",
+    "platform": "windows|office-365",
+    "tid": "T1213.002",
+    "technique": "Sharepoint",
+    "tactic": "collection",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may leverage the SharePoint repository as a source to mine valuable information. SharePoint will often contain useful information for an adversary to learn about the structure and functionality of the internal network and systems. For example, the following is a list of example information that may hold potential value to an adversary and may also be found on SharePoint:\n\n* Policies, procedures, and standards\n* Physical / logical network diagrams\n* System architecture diagrams\n* Technical system documentation\n* Testing / development credentials\n* Work / project schedules\n* Source code snippets\n* Links to network shares and other internal resources\n",
+    "technique_references": [
+      {
+        "source_name": "Microsoft SharePoint Logging",
+        "url": "https://support.office.com/en-us/article/configure-audit-settings-for-a-site-collection-a9920c97-38c0-44f2-8bcb-4cf1e2ae22d2",
+        "description": "Microsoft. (2017, July 19). Configure audit settings for a site collection. Retrieved April 4, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--cff94884-3b1c-4987-a70b-6d5643c621c3",
+    "platform": "saas",
+    "tid": "T1213.003",
+    "technique": "Code Repositories",
+    "tactic": "collection",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may leverage code repositories to collect valuable information. Code repositories are tools/services that store source code and automate software builds. They may be hosted internally or privately on third party sites such as Github, GitLab, SourceForge, and BitBucket. Users typically interact with code repositories through a web application or command-line utilities such as git.\n\nOnce adversaries gain access to a victim network or a private code repository, they may collect sensitive information such as proprietary source code or credentials contained within software's source code.  Having access to software's source code may allow adversaries to develop [Exploits](https://attack.mitre.org/techniques/T1587/004), while credentials may provide access to additional resources using [Valid Accounts](https://attack.mitre.org/techniques/T1078).(Citation: Wired Uber Breach)(Citation: Krebs Adobe)\n\n**Note:** This is distinct from [Code Repositories](https://attack.mitre.org/techniques/T1593/003), which focuses on conducting [Reconnaissance](https://attack.mitre.org/tactics/TA0043) via public code repositories.",
+    "technique_references": [
+      {
+        "source_name": "Wired Uber Breach",
+        "url": "https://www.wired.com/story/uber-paid-off-hackers-to-hide-a-57-million-user-data-breach/",
+        "description": "Andy Greenberg. (2017, January 21). Hack Brief: Uber Paid Off Hackers to Hide a 57-Million User Data Breach. Retrieved May 14, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Krebs Adobe",
+        "url": "https://krebsonsecurity.com/2013/10/adobe-to-announce-source-code-customer-data-breach/",
+        "description": "Brian Krebs. (2013, October 3). Adobe To Announce Source Code, Customer Data Breach. Retrieved May 17, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--e624264c-033a-424d-9fd7-fc9c3bbdb03e",
+    "platform": "windows",
+    "tid": "T1550.002",
+    "technique": "Pass the Hash",
+    "tactic": "defense-evasion",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may “pass the hash” using stolen password hashes to move laterally within an environment, bypassing normal system access controls. Pass the hash (PtH) is a method of authenticating as a user without having access to the user's cleartext password. This method bypasses standard authentication steps that require a cleartext password, moving directly into the portion of the authentication that uses the password hash.\n\nWhen performing PtH, valid password hashes for the account being used are captured using a [Credential Access](https://attack.mitre.org/tactics/TA0006) technique. Captured hashes are used with PtH to authenticate as that user. Once authenticated, PtH may be used to perform actions on local or remote systems.\n\nAdversaries may also use stolen password hashes to \"overpass the hash.\" Similar to PtH, this involves using a password hash to authenticate as a user but also uses the password hash to create a valid Kerberos ticket. This ticket can then be used to perform [Pass the Ticket](https://attack.mitre.org/techniques/T1550/003) attacks.(Citation: Stealthbits Overpass-the-Hash)",
+    "technique_references": [
+      {
+        "source_name": "Stealthbits Overpass-the-Hash",
+        "url": "https://stealthbits.com/blog/how-to-detect-overpass-the-hash-attacks/",
+        "description": "Warren, J. (2019, February 26). How to Detect Overpass-the-Hash Attacks. Retrieved February 4, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--e624264c-033a-424d-9fd7-fc9c3bbdb03e",
+    "platform": "windows",
+    "tid": "T1550.002",
+    "technique": "Pass the Hash",
+    "tactic": "lateral-movement",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may “pass the hash” using stolen password hashes to move laterally within an environment, bypassing normal system access controls. Pass the hash (PtH) is a method of authenticating as a user without having access to the user's cleartext password. This method bypasses standard authentication steps that require a cleartext password, moving directly into the portion of the authentication that uses the password hash.\n\nWhen performing PtH, valid password hashes for the account being used are captured using a [Credential Access](https://attack.mitre.org/tactics/TA0006) technique. Captured hashes are used with PtH to authenticate as that user. Once authenticated, PtH may be used to perform actions on local or remote systems.\n\nAdversaries may also use stolen password hashes to \"overpass the hash.\" Similar to PtH, this involves using a password hash to authenticate as a user but also uses the password hash to create a valid Kerberos ticket. This ticket can then be used to perform [Pass the Ticket](https://attack.mitre.org/techniques/T1550/003) attacks.(Citation: Stealthbits Overpass-the-Hash)",
+    "technique_references": [
+      {
+        "source_name": "Stealthbits Overpass-the-Hash",
+        "url": "https://stealthbits.com/blog/how-to-detect-overpass-the-hash-attacks/",
+        "description": "Warren, J. (2019, February 26). How to Detect Overpass-the-Hash Attacks. Retrieved February 4, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--7b211ac6-c815-4189-93a9-ab415deca926",
+    "platform": "windows",
+    "tid": "T1550.003",
+    "technique": "Pass the Ticket",
+    "tactic": "defense-evasion",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may “pass the ticket” using stolen Kerberos tickets to move laterally within an environment, bypassing normal system access controls. Pass the ticket (PtT) is a method of authenticating to a system using Kerberos tickets without having access to an account's password. Kerberos authentication can be used as the first step to lateral movement to a remote system.\n\nWhen preforming PtT, valid Kerberos tickets for [Valid Accounts](https://attack.mitre.org/techniques/T1078) are captured by [OS Credential Dumping](https://attack.mitre.org/techniques/T1003). A user's service tickets or ticket granting ticket (TGT) may be obtained, depending on the level of access. A service ticket allows for access to a particular resource, whereas a TGT can be used to request service tickets from the Ticket Granting Service (TGS) to access any resource the user has privileges to access.(Citation: ADSecurity AD Kerberos Attacks)(Citation: GentilKiwi Pass the Ticket)\n\nA [Silver Ticket](https://attack.mitre.org/techniques/T1558/002) can be obtained for services that use Kerberos as an authentication mechanism and are used to generate tickets to access that particular resource and the system that hosts the resource (e.g., SharePoint).(Citation: ADSecurity AD Kerberos Attacks)\n\nA [Golden Ticket](https://attack.mitre.org/techniques/T1558/001) can be obtained for the domain using the Key Distribution Service account KRBTGT account NTLM hash, which enables generation of TGTs for any account in Active Directory.(Citation: Campbell 2014)\n\nAdversaries may also create a valid Kerberos ticket using other user information, such as stolen password hashes or AES keys. For example, \"overpassing the hash\" involves using a NTLM password hash to authenticate as a user (i.e. [Pass the Hash](https://attack.mitre.org/techniques/T1550/002)) while also using the password hash to create a valid Kerberos ticket.(Citation: Stealthbits Overpass-the-Hash)",
+    "technique_references": [
+      {
+        "source_name": "ADSecurity AD Kerberos Attacks",
+        "url": "https://adsecurity.org/?p=556",
+        "description": "Metcalf, S. (2014, November 22). Mimikatz and Active Directory Kerberos Attacks. Retrieved June 2, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GentilKiwi Pass the Ticket",
+        "url": "http://blog.gentilkiwi.com/securite/mimikatz/pass-the-ticket-kerberos",
+        "description": "Deply, B. (2014, January 13). Pass the ticket. Retrieved June 2, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Campbell 2014",
+        "url": "http://defcon.org/images/defcon-22/dc-22-presentations/Campbell/DEFCON-22-Christopher-Campbell-The-Secret-Life-of-Krbtgt.pdf",
+        "description": "Campbell, C. (2014). The Secret Life of Krbtgt. Retrieved December 4, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Stealthbits Overpass-the-Hash",
+        "url": "https://stealthbits.com/blog/how-to-detect-overpass-the-hash-attacks/",
+        "description": "Warren, J. (2019, February 26). How to Detect Overpass-the-Hash Attacks. Retrieved February 4, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CERT-EU Golden Ticket Protection",
+        "url": "https://cert.europa.eu/static/WhitePapers/UPDATED%20-%20CERT-EU_Security_Whitepaper_2014-007_Kerberos_Golden_Ticket_Protection_v1_4.pdf",
+        "description": "Abolins, D., Boldea, C., Socha, K., Soria-Machado, M. (2016, April 26). Kerberos Golden Ticket Protection. Retrieved July 13, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--7b211ac6-c815-4189-93a9-ab415deca926",
+    "platform": "windows",
+    "tid": "T1550.003",
+    "technique": "Pass the Ticket",
+    "tactic": "lateral-movement",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may “pass the ticket” using stolen Kerberos tickets to move laterally within an environment, bypassing normal system access controls. Pass the ticket (PtT) is a method of authenticating to a system using Kerberos tickets without having access to an account's password. Kerberos authentication can be used as the first step to lateral movement to a remote system.\n\nWhen preforming PtT, valid Kerberos tickets for [Valid Accounts](https://attack.mitre.org/techniques/T1078) are captured by [OS Credential Dumping](https://attack.mitre.org/techniques/T1003). A user's service tickets or ticket granting ticket (TGT) may be obtained, depending on the level of access. A service ticket allows for access to a particular resource, whereas a TGT can be used to request service tickets from the Ticket Granting Service (TGS) to access any resource the user has privileges to access.(Citation: ADSecurity AD Kerberos Attacks)(Citation: GentilKiwi Pass the Ticket)\n\nA [Silver Ticket](https://attack.mitre.org/techniques/T1558/002) can be obtained for services that use Kerberos as an authentication mechanism and are used to generate tickets to access that particular resource and the system that hosts the resource (e.g., SharePoint).(Citation: ADSecurity AD Kerberos Attacks)\n\nA [Golden Ticket](https://attack.mitre.org/techniques/T1558/001) can be obtained for the domain using the Key Distribution Service account KRBTGT account NTLM hash, which enables generation of TGTs for any account in Active Directory.(Citation: Campbell 2014)\n\nAdversaries may also create a valid Kerberos ticket using other user information, such as stolen password hashes or AES keys. For example, \"overpassing the hash\" involves using a NTLM password hash to authenticate as a user (i.e. [Pass the Hash](https://attack.mitre.org/techniques/T1550/002)) while also using the password hash to create a valid Kerberos ticket.(Citation: Stealthbits Overpass-the-Hash)",
+    "technique_references": [
+      {
+        "source_name": "ADSecurity AD Kerberos Attacks",
+        "url": "https://adsecurity.org/?p=556",
+        "description": "Metcalf, S. (2014, November 22). Mimikatz and Active Directory Kerberos Attacks. Retrieved June 2, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GentilKiwi Pass the Ticket",
+        "url": "http://blog.gentilkiwi.com/securite/mimikatz/pass-the-ticket-kerberos",
+        "description": "Deply, B. (2014, January 13). Pass the ticket. Retrieved June 2, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Campbell 2014",
+        "url": "http://defcon.org/images/defcon-22/dc-22-presentations/Campbell/DEFCON-22-Christopher-Campbell-The-Secret-Life-of-Krbtgt.pdf",
+        "description": "Campbell, C. (2014). The Secret Life of Krbtgt. Retrieved December 4, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Stealthbits Overpass-the-Hash",
+        "url": "https://stealthbits.com/blog/how-to-detect-overpass-the-hash-attacks/",
+        "description": "Warren, J. (2019, February 26). How to Detect Overpass-the-Hash Attacks. Retrieved February 4, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CERT-EU Golden Ticket Protection",
+        "url": "https://cert.europa.eu/static/WhitePapers/UPDATED%20-%20CERT-EU_Security_Whitepaper_2014-007_Kerberos_Golden_Ticket_Protection_v1_4.pdf",
+        "description": "Abolins, D., Boldea, C., Socha, K., Soria-Machado, M. (2016, April 26). Kerberos Golden Ticket Protection. Retrieved July 13, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d4b96d2c-1032-4b22-9235-2b5b649d0605",
+    "platform": "windows",
+    "tid": "T1556.001",
+    "technique": "Domain Controller Authentication",
+    "tactic": "credential-access",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may patch the authentication process on a domain controller to bypass the typical authentication mechanisms and enable access to accounts. \n\nMalware may be used to inject false credentials into the authentication process on a domain controller with the intent of creating a backdoor used to access any user’s account and/or credentials (ex: [Skeleton Key](https://attack.mitre.org/software/S0007)). Skeleton key works through a patch on an enterprise domain controller authentication process (LSASS) with credentials that adversaries may use to bypass the standard authentication system. Once patched, an adversary can use the injected password to successfully authenticate as any domain user account (until the the skeleton key is erased from memory by a reboot of the domain controller). Authenticated access may enable unfettered access to hosts and/or resources within single-factor authentication environments.(Citation: Dell Skeleton)",
+    "technique_references": [
+      {
+        "source_name": "Dell Skeleton",
+        "url": "https://www.secureworks.com/research/skeleton-key-malware-analysis",
+        "description": "Dell SecureWorks. (2015, January 12). Skeleton Key Malware Analysis. Retrieved April 8, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d4b96d2c-1032-4b22-9235-2b5b649d0605",
+    "platform": "windows",
+    "tid": "T1556.001",
+    "technique": "Domain Controller Authentication",
+    "tactic": "defense-evasion",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may patch the authentication process on a domain controller to bypass the typical authentication mechanisms and enable access to accounts. \n\nMalware may be used to inject false credentials into the authentication process on a domain controller with the intent of creating a backdoor used to access any user’s account and/or credentials (ex: [Skeleton Key](https://attack.mitre.org/software/S0007)). Skeleton key works through a patch on an enterprise domain controller authentication process (LSASS) with credentials that adversaries may use to bypass the standard authentication system. Once patched, an adversary can use the injected password to successfully authenticate as any domain user account (until the the skeleton key is erased from memory by a reboot of the domain controller). Authenticated access may enable unfettered access to hosts and/or resources within single-factor authentication environments.(Citation: Dell Skeleton)",
+    "technique_references": [
+      {
+        "source_name": "Dell Skeleton",
+        "url": "https://www.secureworks.com/research/skeleton-key-malware-analysis",
+        "description": "Dell SecureWorks. (2015, January 12). Skeleton Key Malware Analysis. Retrieved April 8, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d4b96d2c-1032-4b22-9235-2b5b649d0605",
+    "platform": "windows",
+    "tid": "T1556.001",
+    "technique": "Domain Controller Authentication",
+    "tactic": "persistence",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may patch the authentication process on a domain controller to bypass the typical authentication mechanisms and enable access to accounts. \n\nMalware may be used to inject false credentials into the authentication process on a domain controller with the intent of creating a backdoor used to access any user’s account and/or credentials (ex: [Skeleton Key](https://attack.mitre.org/software/S0007)). Skeleton key works through a patch on an enterprise domain controller authentication process (LSASS) with credentials that adversaries may use to bypass the standard authentication system. Once patched, an adversary can use the injected password to successfully authenticate as any domain user account (until the the skeleton key is erased from memory by a reboot of the domain controller). Authenticated access may enable unfettered access to hosts and/or resources within single-factor authentication environments.(Citation: Dell Skeleton)",
+    "technique_references": [
+      {
+        "source_name": "Dell Skeleton",
+        "url": "https://www.secureworks.com/research/skeleton-key-malware-analysis",
+        "description": "Dell SecureWorks. (2015, January 12). Skeleton Key Malware Analysis. Retrieved April 8, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--06c00069-771a-4d57-8ef5-d3718c1a8771",
+    "platform": "linux|macos",
+    "tid": "T1556.003",
+    "technique": "Pluggable Authentication Modules",
+    "tactic": "credential-access",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify pluggable authentication modules (PAM) to access user credentials or enable otherwise unwarranted access to accounts. PAM is a modular system of configuration files, libraries, and executable files which guide authentication for many services. The most common authentication module is <code>pam_unix.so</code>, which retrieves, sets, and verifies account authentication information in <code>/etc/passwd</code> and <code>/etc/shadow</code>.(Citation: Apple PAM)(Citation: Man Pam_Unix)(Citation: Red Hat PAM)\n\nAdversaries may modify components of the PAM system to create backdoors. PAM components, such as <code>pam_unix.so</code>, can be patched to accept arbitrary adversary supplied values as legitimate credentials.(Citation: PAM Backdoor)\n\nMalicious modifications to the PAM system may also be abused to steal credentials. Adversaries may infect PAM resources with code to harvest user credentials, since the values exchanged with PAM components may be plain-text since PAM does not store passwords.(Citation: PAM Creds)(Citation: Apple PAM)",
+    "technique_references": [
+      {
+        "source_name": "Apple PAM",
+        "url": "https://opensource.apple.com/source/dovecot/dovecot-239/dovecot/doc/wiki/PasswordDatabase.PAM.txt",
+        "description": "Apple. (2011, May 11). PAM - Pluggable Authentication Modules. Retrieved June 25, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Man Pam_Unix",
+        "url": "https://linux.die.net/man/8/pam_unix",
+        "description": "die.net. (n.d.). pam_unix(8) - Linux man page. Retrieved June 25, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Red Hat PAM",
+        "url": "https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/managing_smart_cards/pluggable_authentication_modules",
+        "description": "Red Hat. (n.d.). CHAPTER 2. USING PLUGGABLE AUTHENTICATION MODULES (PAM). Retrieved June 25, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "PAM Backdoor",
+        "url": "https://github.com/zephrax/linux-pam-backdoor",
+        "description": "zephrax. (2018, August 3). linux-pam-backdoor. Retrieved June 25, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "PAM Creds",
+        "url": "https://x-c3ll.github.io/posts/PAM-backdoor-DNS/",
+        "description": "Fernández, J. M. (2018, June 27). Exfiltrating credentials via PAM backdoors & DNS requests. Retrieved June 26, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "root",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--06c00069-771a-4d57-8ef5-d3718c1a8771",
+    "platform": "linux|macos",
+    "tid": "T1556.003",
+    "technique": "Pluggable Authentication Modules",
+    "tactic": "defense-evasion",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify pluggable authentication modules (PAM) to access user credentials or enable otherwise unwarranted access to accounts. PAM is a modular system of configuration files, libraries, and executable files which guide authentication for many services. The most common authentication module is <code>pam_unix.so</code>, which retrieves, sets, and verifies account authentication information in <code>/etc/passwd</code> and <code>/etc/shadow</code>.(Citation: Apple PAM)(Citation: Man Pam_Unix)(Citation: Red Hat PAM)\n\nAdversaries may modify components of the PAM system to create backdoors. PAM components, such as <code>pam_unix.so</code>, can be patched to accept arbitrary adversary supplied values as legitimate credentials.(Citation: PAM Backdoor)\n\nMalicious modifications to the PAM system may also be abused to steal credentials. Adversaries may infect PAM resources with code to harvest user credentials, since the values exchanged with PAM components may be plain-text since PAM does not store passwords.(Citation: PAM Creds)(Citation: Apple PAM)",
+    "technique_references": [
+      {
+        "source_name": "Apple PAM",
+        "url": "https://opensource.apple.com/source/dovecot/dovecot-239/dovecot/doc/wiki/PasswordDatabase.PAM.txt",
+        "description": "Apple. (2011, May 11). PAM - Pluggable Authentication Modules. Retrieved June 25, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Man Pam_Unix",
+        "url": "https://linux.die.net/man/8/pam_unix",
+        "description": "die.net. (n.d.). pam_unix(8) - Linux man page. Retrieved June 25, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Red Hat PAM",
+        "url": "https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/managing_smart_cards/pluggable_authentication_modules",
+        "description": "Red Hat. (n.d.). CHAPTER 2. USING PLUGGABLE AUTHENTICATION MODULES (PAM). Retrieved June 25, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "PAM Backdoor",
+        "url": "https://github.com/zephrax/linux-pam-backdoor",
+        "description": "zephrax. (2018, August 3). linux-pam-backdoor. Retrieved June 25, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "PAM Creds",
+        "url": "https://x-c3ll.github.io/posts/PAM-backdoor-DNS/",
+        "description": "Fernández, J. M. (2018, June 27). Exfiltrating credentials via PAM backdoors & DNS requests. Retrieved June 26, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "root",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--06c00069-771a-4d57-8ef5-d3718c1a8771",
+    "platform": "linux|macos",
+    "tid": "T1556.003",
+    "technique": "Pluggable Authentication Modules",
+    "tactic": "persistence",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify pluggable authentication modules (PAM) to access user credentials or enable otherwise unwarranted access to accounts. PAM is a modular system of configuration files, libraries, and executable files which guide authentication for many services. The most common authentication module is <code>pam_unix.so</code>, which retrieves, sets, and verifies account authentication information in <code>/etc/passwd</code> and <code>/etc/shadow</code>.(Citation: Apple PAM)(Citation: Man Pam_Unix)(Citation: Red Hat PAM)\n\nAdversaries may modify components of the PAM system to create backdoors. PAM components, such as <code>pam_unix.so</code>, can be patched to accept arbitrary adversary supplied values as legitimate credentials.(Citation: PAM Backdoor)\n\nMalicious modifications to the PAM system may also be abused to steal credentials. Adversaries may infect PAM resources with code to harvest user credentials, since the values exchanged with PAM components may be plain-text since PAM does not store passwords.(Citation: PAM Creds)(Citation: Apple PAM)",
+    "technique_references": [
+      {
+        "source_name": "Apple PAM",
+        "url": "https://opensource.apple.com/source/dovecot/dovecot-239/dovecot/doc/wiki/PasswordDatabase.PAM.txt",
+        "description": "Apple. (2011, May 11). PAM - Pluggable Authentication Modules. Retrieved June 25, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Man Pam_Unix",
+        "url": "https://linux.die.net/man/8/pam_unix",
+        "description": "die.net. (n.d.). pam_unix(8) - Linux man page. Retrieved June 25, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Red Hat PAM",
+        "url": "https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/managing_smart_cards/pluggable_authentication_modules",
+        "description": "Red Hat. (n.d.). CHAPTER 2. USING PLUGGABLE AUTHENTICATION MODULES (PAM). Retrieved June 25, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "PAM Backdoor",
+        "url": "https://github.com/zephrax/linux-pam-backdoor",
+        "description": "zephrax. (2018, August 3). linux-pam-backdoor. Retrieved June 25, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "PAM Creds",
+        "url": "https://x-c3ll.github.io/posts/PAM-backdoor-DNS/",
+        "description": "Fernández, J. M. (2018, June 27). Exfiltrating credentials via PAM backdoors & DNS requests. Retrieved June 26, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "root",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b4409cd8-0da9-46e1-a401-a241afd4d1cc",
+    "platform": "windows|azure-ad|office-365|saas|iaas|google-workspace|linux|macos",
+    "tid": "T1556.006",
+    "technique": "Multi-Factor Authentication",
+    "tactic": "credential-access",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may disable or modify multi-factor authentication (MFA) mechanisms to enable persistent access to compromised accounts.\n\nOnce adversaries have gained access to a network by either compromising an account lacking MFA or by employing an MFA bypass method such as [Multi-Factor Authentication Request Generation](https://attack.mitre.org/techniques/T1621), adversaries may leverage their access to modify or completely disable MFA defenses. This can be accomplished by abusing legitimate features, such as excluding users from Azure AD Conditional Access Policies, registering a new yet vulnerable/adversary-controlled MFA method, or by manually patching MFA programs and configuration files to bypass expected functionality.(Citation: Mandiant APT42)(Citation: Azure AD Conditional Access Exclusions)\n\nFor example, modifying the Windows hosts file (`C:\\windows\\system32\\drivers\\etc\\hosts`) to redirect MFA calls to localhost instead of an MFA server may cause the MFA process to fail. If a \"fail open\" policy is in place, any otherwise successful authentication attempt may be granted access without enforcing MFA. (Citation: Russians Exploit Default MFA Protocol - CISA March 2022) \n\nDepending on the scope, goals, and privileges of the adversary, MFA defenses may be disabled for individual accounts or for all accounts tied to a larger group, such as all domain accounts in a victim's network environment.(Citation: Russians Exploit Default MFA Protocol - CISA March 2022) ",
+    "technique_references": [
+      {
+        "source_name": "Russians Exploit Default MFA Protocol - CISA March 2022",
+        "url": "https://www.cisa.gov/uscert/ncas/alerts/aa22-074a",
+        "description": "Cyber Security Infrastructure Agency. (2022, March 15). Russian State-Sponsored Cyber Actors Gain Network Access by Exploiting Default Multifactor Authentication Protocols and “PrintNightmare” Vulnerability. Retrieved May 31, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant APT42",
+        "url": "https://www.mandiant.com/media/17826",
+        "description": "Manidant. (n.d.). APT42: Crooked Charms, Cons and Compromise. Retrieved September 16, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Azure AD Conditional Access Exclusions",
+        "url": "https://docs.microsoft.com/en-us/azure/active-directory/governance/conditional-access-exclusion",
+        "description": "Microsoft. (2022, August 26). Use Azure AD access reviews to manage users excluded from Conditional Access policies. Retrieved August 30, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b4409cd8-0da9-46e1-a401-a241afd4d1cc",
+    "platform": "windows|azure-ad|office-365|saas|iaas|google-workspace|linux|macos",
+    "tid": "T1556.006",
+    "technique": "Multi-Factor Authentication",
+    "tactic": "defense-evasion",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may disable or modify multi-factor authentication (MFA) mechanisms to enable persistent access to compromised accounts.\n\nOnce adversaries have gained access to a network by either compromising an account lacking MFA or by employing an MFA bypass method such as [Multi-Factor Authentication Request Generation](https://attack.mitre.org/techniques/T1621), adversaries may leverage their access to modify or completely disable MFA defenses. This can be accomplished by abusing legitimate features, such as excluding users from Azure AD Conditional Access Policies, registering a new yet vulnerable/adversary-controlled MFA method, or by manually patching MFA programs and configuration files to bypass expected functionality.(Citation: Mandiant APT42)(Citation: Azure AD Conditional Access Exclusions)\n\nFor example, modifying the Windows hosts file (`C:\\windows\\system32\\drivers\\etc\\hosts`) to redirect MFA calls to localhost instead of an MFA server may cause the MFA process to fail. If a \"fail open\" policy is in place, any otherwise successful authentication attempt may be granted access without enforcing MFA. (Citation: Russians Exploit Default MFA Protocol - CISA March 2022) \n\nDepending on the scope, goals, and privileges of the adversary, MFA defenses may be disabled for individual accounts or for all accounts tied to a larger group, such as all domain accounts in a victim's network environment.(Citation: Russians Exploit Default MFA Protocol - CISA March 2022) ",
+    "technique_references": [
+      {
+        "source_name": "Russians Exploit Default MFA Protocol - CISA March 2022",
+        "url": "https://www.cisa.gov/uscert/ncas/alerts/aa22-074a",
+        "description": "Cyber Security Infrastructure Agency. (2022, March 15). Russian State-Sponsored Cyber Actors Gain Network Access by Exploiting Default Multifactor Authentication Protocols and “PrintNightmare” Vulnerability. Retrieved May 31, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant APT42",
+        "url": "https://www.mandiant.com/media/17826",
+        "description": "Manidant. (n.d.). APT42: Crooked Charms, Cons and Compromise. Retrieved September 16, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Azure AD Conditional Access Exclusions",
+        "url": "https://docs.microsoft.com/en-us/azure/active-directory/governance/conditional-access-exclusion",
+        "description": "Microsoft. (2022, August 26). Use Azure AD access reviews to manage users excluded from Conditional Access policies. Retrieved August 30, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b4409cd8-0da9-46e1-a401-a241afd4d1cc",
+    "platform": "windows|azure-ad|office-365|saas|iaas|google-workspace|linux|macos",
+    "tid": "T1556.006",
+    "technique": "Multi-Factor Authentication",
+    "tactic": "persistence",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may disable or modify multi-factor authentication (MFA) mechanisms to enable persistent access to compromised accounts.\n\nOnce adversaries have gained access to a network by either compromising an account lacking MFA or by employing an MFA bypass method such as [Multi-Factor Authentication Request Generation](https://attack.mitre.org/techniques/T1621), adversaries may leverage their access to modify or completely disable MFA defenses. This can be accomplished by abusing legitimate features, such as excluding users from Azure AD Conditional Access Policies, registering a new yet vulnerable/adversary-controlled MFA method, or by manually patching MFA programs and configuration files to bypass expected functionality.(Citation: Mandiant APT42)(Citation: Azure AD Conditional Access Exclusions)\n\nFor example, modifying the Windows hosts file (`C:\\windows\\system32\\drivers\\etc\\hosts`) to redirect MFA calls to localhost instead of an MFA server may cause the MFA process to fail. If a \"fail open\" policy is in place, any otherwise successful authentication attempt may be granted access without enforcing MFA. (Citation: Russians Exploit Default MFA Protocol - CISA March 2022) \n\nDepending on the scope, goals, and privileges of the adversary, MFA defenses may be disabled for individual accounts or for all accounts tied to a larger group, such as all domain accounts in a victim's network environment.(Citation: Russians Exploit Default MFA Protocol - CISA March 2022) ",
+    "technique_references": [
+      {
+        "source_name": "Russians Exploit Default MFA Protocol - CISA March 2022",
+        "url": "https://www.cisa.gov/uscert/ncas/alerts/aa22-074a",
+        "description": "Cyber Security Infrastructure Agency. (2022, March 15). Russian State-Sponsored Cyber Actors Gain Network Access by Exploiting Default Multifactor Authentication Protocols and “PrintNightmare” Vulnerability. Retrieved May 31, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant APT42",
+        "url": "https://www.mandiant.com/media/17826",
+        "description": "Manidant. (n.d.). APT42: Crooked Charms, Cons and Compromise. Retrieved September 16, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Azure AD Conditional Access Exclusions",
+        "url": "https://docs.microsoft.com/en-us/azure/active-directory/governance/conditional-access-exclusion",
+        "description": "Microsoft. (2022, August 26). Use Azure AD access reviews to manage users excluded from Conditional Access policies. Retrieved August 30, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--54ca26f3-c172-4231-93e5-ccebcac2161f",
+    "platform": "windows|azure-ad|saas|google-workspace|office-365|iaas",
+    "tid": "T1556.007",
+    "technique": "Hybrid Identity",
+    "tactic": "credential-access",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may patch, modify, or otherwise backdoor cloud authentication processes that are tied to on-premises user identities in order to bypass typical authentication mechanisms, access credentials, and enable persistent access to accounts.  \n\nMany organizations maintain hybrid user and device identities that are shared between on-premises and cloud-based environments. These can be maintained in a number of ways. For example, Azure AD includes three options for synchronizing identities between Active Directory and Azure AD(Citation: Azure AD Hybrid Identity):\n\n* Password Hash Synchronization (PHS), in which a privileged on-premises account synchronizes user password hashes between Active Directory and Azure AD, allowing authentication to Azure AD to take place entirely in the cloud \n* Pass Through Authentication (PTA), in which Azure AD authentication attempts are forwarded to an on-premises PTA agent, which validates the credentials against Active Directory \n* Active Directory Federation Services (AD FS), in which a trust relationship is established between Active Directory and Azure AD \n\nAD FS can also be used with other SaaS and cloud platforms such as AWS and GCP, which will hand off the authentication process to AD FS and receive a token containing the hybrid users’ identity and privileges. \n\nBy modifying authentication processes tied to hybrid identities, an adversary may be able to establish persistent privileged access to cloud resources. For example, adversaries who compromise an on-premises server running a PTA agent may inject a malicious DLL into the `AzureADConnectAuthenticationAgentService` process that authorizes all attempts to authenticate to Azure AD, as well as records user credentials.(Citation: Azure AD Connect for Read Teamers)(Citation: AADInternals Azure AD On-Prem to Cloud) In environments using AD FS, an adversary may edit the `Microsoft.IdentityServer.Servicehost` configuration file to load a malicious DLL that generates authentication tokens for any user with any set of claims, thereby bypassing multi-factor authentication and defined AD FS policies.(Citation: MagicWeb)\n\nIn some cases, adversaries may be able to modify the hybrid identity authentication process from the cloud. For example, adversaries who compromise a Global Administrator account in an Azure AD tenant may be able to register a new PTA agent via the web console, similarly allowing them to harvest credentials and log into the Azure AD environment as any user.(Citation: Mandiant Azure AD Backdoors)",
+    "technique_references": [
+      {
+        "source_name": "Azure AD Connect for Read Teamers",
+        "url": "https://blog.xpnsec.com/azuread-connect-for-redteam/",
+        "description": "Adam Chester. (2019, February 18). Azure AD Connect for Red Teamers. Retrieved September 28, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AADInternals Azure AD On-Prem to Cloud",
+        "url": "https://o365blog.com/post/on-prem_admin/",
+        "description": "Dr. Nestori Syynimaa. (2020, July 13). Unnoticed sidekick: Getting access to cloud as an on-prem admin. Retrieved September 28, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MagicWeb",
+        "url": "https://www.microsoft.com/security/blog/2022/08/24/magicweb-nobeliums-post-compromise-trick-to-authenticate-as-anyone/",
+        "description": "Microsoft Threat Intelligence Center, Microsoft Detection and Response Team, Microsoft 365 Defender Research Team . (2022, August 24). MagicWeb: NOBELIUM’s post-compromise trick to authenticate as anyone. Retrieved September 28, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Azure AD Hybrid Identity",
+        "url": "https://learn.microsoft.com/en-us/azure/active-directory/hybrid/choose-ad-authn",
+        "description": "Microsoft. (2022, August 26). Choose the right authentication method for your Azure Active Directory hybrid identity solution. Retrieved September 28, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant Azure AD Backdoors",
+        "url": "https://www.mandiant.com/resources/detecting-microsoft-365-azure-active-directory-backdoors",
+        "description": "Mike Burns. (2020, September 30). Detecting Microsoft 365 and Azure Active Directory Backdoors. Retrieved September 28, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--54ca26f3-c172-4231-93e5-ccebcac2161f",
+    "platform": "windows|azure-ad|saas|google-workspace|office-365|iaas",
+    "tid": "T1556.007",
+    "technique": "Hybrid Identity",
+    "tactic": "defense-evasion",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may patch, modify, or otherwise backdoor cloud authentication processes that are tied to on-premises user identities in order to bypass typical authentication mechanisms, access credentials, and enable persistent access to accounts.  \n\nMany organizations maintain hybrid user and device identities that are shared between on-premises and cloud-based environments. These can be maintained in a number of ways. For example, Azure AD includes three options for synchronizing identities between Active Directory and Azure AD(Citation: Azure AD Hybrid Identity):\n\n* Password Hash Synchronization (PHS), in which a privileged on-premises account synchronizes user password hashes between Active Directory and Azure AD, allowing authentication to Azure AD to take place entirely in the cloud \n* Pass Through Authentication (PTA), in which Azure AD authentication attempts are forwarded to an on-premises PTA agent, which validates the credentials against Active Directory \n* Active Directory Federation Services (AD FS), in which a trust relationship is established between Active Directory and Azure AD \n\nAD FS can also be used with other SaaS and cloud platforms such as AWS and GCP, which will hand off the authentication process to AD FS and receive a token containing the hybrid users’ identity and privileges. \n\nBy modifying authentication processes tied to hybrid identities, an adversary may be able to establish persistent privileged access to cloud resources. For example, adversaries who compromise an on-premises server running a PTA agent may inject a malicious DLL into the `AzureADConnectAuthenticationAgentService` process that authorizes all attempts to authenticate to Azure AD, as well as records user credentials.(Citation: Azure AD Connect for Read Teamers)(Citation: AADInternals Azure AD On-Prem to Cloud) In environments using AD FS, an adversary may edit the `Microsoft.IdentityServer.Servicehost` configuration file to load a malicious DLL that generates authentication tokens for any user with any set of claims, thereby bypassing multi-factor authentication and defined AD FS policies.(Citation: MagicWeb)\n\nIn some cases, adversaries may be able to modify the hybrid identity authentication process from the cloud. For example, adversaries who compromise a Global Administrator account in an Azure AD tenant may be able to register a new PTA agent via the web console, similarly allowing them to harvest credentials and log into the Azure AD environment as any user.(Citation: Mandiant Azure AD Backdoors)",
+    "technique_references": [
+      {
+        "source_name": "Azure AD Connect for Read Teamers",
+        "url": "https://blog.xpnsec.com/azuread-connect-for-redteam/",
+        "description": "Adam Chester. (2019, February 18). Azure AD Connect for Red Teamers. Retrieved September 28, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AADInternals Azure AD On-Prem to Cloud",
+        "url": "https://o365blog.com/post/on-prem_admin/",
+        "description": "Dr. Nestori Syynimaa. (2020, July 13). Unnoticed sidekick: Getting access to cloud as an on-prem admin. Retrieved September 28, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MagicWeb",
+        "url": "https://www.microsoft.com/security/blog/2022/08/24/magicweb-nobeliums-post-compromise-trick-to-authenticate-as-anyone/",
+        "description": "Microsoft Threat Intelligence Center, Microsoft Detection and Response Team, Microsoft 365 Defender Research Team . (2022, August 24). MagicWeb: NOBELIUM’s post-compromise trick to authenticate as anyone. Retrieved September 28, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Azure AD Hybrid Identity",
+        "url": "https://learn.microsoft.com/en-us/azure/active-directory/hybrid/choose-ad-authn",
+        "description": "Microsoft. (2022, August 26). Choose the right authentication method for your Azure Active Directory hybrid identity solution. Retrieved September 28, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant Azure AD Backdoors",
+        "url": "https://www.mandiant.com/resources/detecting-microsoft-365-azure-active-directory-backdoors",
+        "description": "Mike Burns. (2020, September 30). Detecting Microsoft 365 and Azure Active Directory Backdoors. Retrieved September 28, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--54ca26f3-c172-4231-93e5-ccebcac2161f",
+    "platform": "windows|azure-ad|saas|google-workspace|office-365|iaas",
+    "tid": "T1556.007",
+    "technique": "Hybrid Identity",
+    "tactic": "persistence",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may patch, modify, or otherwise backdoor cloud authentication processes that are tied to on-premises user identities in order to bypass typical authentication mechanisms, access credentials, and enable persistent access to accounts.  \n\nMany organizations maintain hybrid user and device identities that are shared between on-premises and cloud-based environments. These can be maintained in a number of ways. For example, Azure AD includes three options for synchronizing identities between Active Directory and Azure AD(Citation: Azure AD Hybrid Identity):\n\n* Password Hash Synchronization (PHS), in which a privileged on-premises account synchronizes user password hashes between Active Directory and Azure AD, allowing authentication to Azure AD to take place entirely in the cloud \n* Pass Through Authentication (PTA), in which Azure AD authentication attempts are forwarded to an on-premises PTA agent, which validates the credentials against Active Directory \n* Active Directory Federation Services (AD FS), in which a trust relationship is established between Active Directory and Azure AD \n\nAD FS can also be used with other SaaS and cloud platforms such as AWS and GCP, which will hand off the authentication process to AD FS and receive a token containing the hybrid users’ identity and privileges. \n\nBy modifying authentication processes tied to hybrid identities, an adversary may be able to establish persistent privileged access to cloud resources. For example, adversaries who compromise an on-premises server running a PTA agent may inject a malicious DLL into the `AzureADConnectAuthenticationAgentService` process that authorizes all attempts to authenticate to Azure AD, as well as records user credentials.(Citation: Azure AD Connect for Read Teamers)(Citation: AADInternals Azure AD On-Prem to Cloud) In environments using AD FS, an adversary may edit the `Microsoft.IdentityServer.Servicehost` configuration file to load a malicious DLL that generates authentication tokens for any user with any set of claims, thereby bypassing multi-factor authentication and defined AD FS policies.(Citation: MagicWeb)\n\nIn some cases, adversaries may be able to modify the hybrid identity authentication process from the cloud. For example, adversaries who compromise a Global Administrator account in an Azure AD tenant may be able to register a new PTA agent via the web console, similarly allowing them to harvest credentials and log into the Azure AD environment as any user.(Citation: Mandiant Azure AD Backdoors)",
+    "technique_references": [
+      {
+        "source_name": "Azure AD Connect for Read Teamers",
+        "url": "https://blog.xpnsec.com/azuread-connect-for-redteam/",
+        "description": "Adam Chester. (2019, February 18). Azure AD Connect for Red Teamers. Retrieved September 28, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AADInternals Azure AD On-Prem to Cloud",
+        "url": "https://o365blog.com/post/on-prem_admin/",
+        "description": "Dr. Nestori Syynimaa. (2020, July 13). Unnoticed sidekick: Getting access to cloud as an on-prem admin. Retrieved September 28, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MagicWeb",
+        "url": "https://www.microsoft.com/security/blog/2022/08/24/magicweb-nobeliums-post-compromise-trick-to-authenticate-as-anyone/",
+        "description": "Microsoft Threat Intelligence Center, Microsoft Detection and Response Team, Microsoft 365 Defender Research Team . (2022, August 24). MagicWeb: NOBELIUM’s post-compromise trick to authenticate as anyone. Retrieved September 28, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Azure AD Hybrid Identity",
+        "url": "https://learn.microsoft.com/en-us/azure/active-directory/hybrid/choose-ad-authn",
+        "description": "Microsoft. (2022, August 26). Choose the right authentication method for your Azure Active Directory hybrid identity solution. Retrieved September 28, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant Azure AD Backdoors",
+        "url": "https://www.mandiant.com/resources/detecting-microsoft-365-azure-active-directory-backdoors",
+        "description": "Mike Burns. (2020, September 30). Detecting Microsoft 365 and Azure Active Directory Backdoors. Retrieved September 28, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--4d2a5b3e-340d-4600-9123-309dd63c9bf8",
+    "platform": "linux|macos",
+    "tid": "T1563.001",
+    "technique": "SSH Hijacking",
+    "tactic": "lateral-movement",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may hijack a legitimate user's SSH session to move laterally within an environment. Secure Shell (SSH) is a standard means of remote access on Linux and macOS systems. It allows a user to connect to another system via an encrypted tunnel, commonly authenticating through a password, certificate or the use of an asymmetric encryption key pair.\n\nIn order to move laterally from a compromised host, adversaries may take advantage of trust relationships established with other systems via public key authentication in active SSH sessions by hijacking an existing connection to another system. This may occur through compromising the SSH agent itself or by having access to the agent's socket. If an adversary is able to obtain root access, then hijacking SSH sessions is likely trivial.(Citation: Slideshare Abusing SSH)(Citation: SSHjack Blackhat)(Citation: Clockwork SSH Agent Hijacking)(Citation: Breach Post-mortem SSH Hijack)\n\n[SSH Hijacking](https://attack.mitre.org/techniques/T1563/001) differs from use of [SSH](https://attack.mitre.org/techniques/T1021/004) because it hijacks an existing SSH session rather than creating a new session using [Valid Accounts](https://attack.mitre.org/techniques/T1078).",
+    "technique_references": [
+      {
+        "source_name": "Slideshare Abusing SSH",
+        "url": "https://www.slideshare.net/morisson/mistrusting-and-abusing-ssh-13526219",
+        "description": "Duarte, H., Morrison, B. (2012). (Mis)trusting and (ab)using ssh. Retrieved January 8, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SSHjack Blackhat",
+        "url": "https://www.blackhat.com/presentations/bh-usa-05/bh-us-05-boileau.pdf",
+        "description": "Adam Boileau. (2005, August 5). Trust Transience:  Post Intrusion SSH Hijacking. Retrieved December 19, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Clockwork SSH Agent Hijacking",
+        "url": "https://www.clockwork.com/news/2012/09/28/602/ssh_agent_hijacking",
+        "description": "Beuchler, B. (2012, September 28). SSH Agent Hijacking. Retrieved December 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Breach Post-mortem SSH Hijack",
+        "url": "https://matrix.org/blog/2019/05/08/post-mortem-and-remediations-for-apr-11-security-incident",
+        "description": "Hodgson, M. (2019, May 8). Post-mortem and remediations for Apr 11 security incident. Retrieved February 17, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "root",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--e0033c16-a07e-48aa-8204-7c3ca669998c",
+    "platform": "windows",
+    "tid": "T1563.002",
+    "technique": "RDP Hijacking",
+    "tactic": "lateral-movement",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may hijack a legitimate user’s remote desktop session to move laterally within an environment. Remote desktop is a common feature in operating systems. It allows a user to log into an interactive session with a system desktop graphical user interface on a remote system. Microsoft refers to its implementation of the Remote Desktop Protocol (RDP) as Remote Desktop Services (RDS).(Citation: TechNet Remote Desktop Services)\n\nAdversaries may perform RDP session hijacking which involves stealing a legitimate user's remote session. Typically, a user is notified when someone else is trying to steal their session. With System permissions and using Terminal Services Console, `c:\\windows\\system32\\tscon.exe [session number to be stolen]`, an adversary can hijack a session without the need for credentials or prompts to the user.(Citation: RDP Hijacking Korznikov) This can be done remotely or locally and with active or disconnected sessions.(Citation: RDP Hijacking Medium) It can also lead to [Remote System Discovery](https://attack.mitre.org/techniques/T1018) and Privilege Escalation by stealing a Domain Admin or higher privileged account session. All of this can be done by using native Windows commands, but it has also been added as a feature in red teaming tools.(Citation: Kali Redsnarf)",
+    "technique_references": [
+      {
+        "source_name": "TechNet Remote Desktop Services",
+        "url": "https://technet.microsoft.com/en-us/windowsserver/ee236407.aspx",
+        "description": "Microsoft. (n.d.). Remote Desktop Services. Retrieved June 1, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "RDP Hijacking Korznikov",
+        "url": "http://www.korznikov.com/2017/03/0-day-or-feature-privilege-escalation.html",
+        "description": "Korznikov, A. (2017, March 17). Passwordless RDP Session Hijacking Feature All Windows versions. Retrieved December 11, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "RDP Hijacking Medium",
+        "url": "https://medium.com/@networksecurity/rdp-hijacking-how-to-hijack-rds-and-remoteapp-sessions-transparently-to-move-through-an-da2a1e73a5f6",
+        "description": "Beaumont, K. (2017, March 19). RDP hijacking — how to hijack RDS and RemoteApp sessions transparently to move through an organisation. Retrieved December 11, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kali Redsnarf",
+        "url": "https://github.com/nccgroup/redsnarf",
+        "description": "NCC Group PLC. (2016, November 1). Kali Redsnarf. Retrieved December 11, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "system",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--861b8fd2-57f3-4ee1-ab5d-c19c3b8c7a4a",
+    "platform": "linux|macos|windows|saas|iaas",
+    "tid": "T1606.001",
+    "technique": "Web Cookies",
+    "tactic": "credential-access",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may forge web cookies that can be used to gain access to web applications or Internet services. Web applications and services (hosted in cloud SaaS environments or on-premise servers) often use session cookies to authenticate and authorize user access.\n\nAdversaries may generate these cookies in order to gain access to web resources. This differs from [Steal Web Session Cookie](https://attack.mitre.org/techniques/T1539) and other similar behaviors in that the cookies are new and forged by the adversary, rather than stolen or intercepted from legitimate users. Most common web applications have standardized and documented cookie values that can be generated using provided tools or interfaces.(Citation: Pass The Cookie) The generation of web cookies often requires secret values, such as passwords, [Private Keys](https://attack.mitre.org/techniques/T1552/004), or other cryptographic seed values.\n\nOnce forged, adversaries may use these web cookies to access resources ([Web Session Cookie](https://attack.mitre.org/techniques/T1550/004)), which may bypass multi-factor and other authentication protection mechanisms.(Citation: Volexity SolarWinds)(Citation: Pass The Cookie)(Citation: Unit 42 Mac Crypto Cookies January 2019)",
+    "technique_references": [
+      {
+        "source_name": "Pass The Cookie",
+        "url": "https://wunderwuzzi23.github.io/blog/passthecookie.html",
+        "description": "Rehberger, J. (2018, December). Pivot to the Cloud using Pass the Cookie. Retrieved April 5, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Volexity SolarWinds",
+        "url": "https://www.volexity.com/blog/2020/12/14/dark-halo-leverages-solarwinds-compromise-to-breach-organizations/",
+        "description": "Cash, D. et al. (2020, December 14). Dark Halo Leverages SolarWinds Compromise to Breach Organizations. Retrieved December 29, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Unit 42 Mac Crypto Cookies January 2019",
+        "url": "https://unit42.paloaltonetworks.com/mac-malware-steals-cryptocurrency-exchanges-cookies/",
+        "description": "Chen, Y., Hu, W., Xu, Z., et. al. (2019, January 31). Mac Malware Steals Cryptocurrency Exchanges’ Cookies. Retrieved October 14, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--1f9c2bae-b441-4f66-a8af-b65946ee72f2",
+    "platform": "azure-ad|saas|windows|office-365|google-workspace|iaas",
+    "tid": "T1606.002",
+    "technique": "SAML Tokens",
+    "tactic": "credential-access",
+    "datasources": "logon-session-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "An adversary may forge SAML tokens with any permissions claims and lifetimes if they possess a valid SAML token-signing certificate.(Citation: Microsoft SolarWinds Steps) The default lifetime of a SAML token is one hour, but the validity period can be specified in the <code>NotOnOrAfter</code> value of the <code>conditions ...</code> element in a token. This value can be changed using the <code>AccessTokenLifetime</code> in a <code>LifetimeTokenPolicy</code>.(Citation: Microsoft SAML Token Lifetimes) Forged SAML tokens enable adversaries to authenticate across services that use SAML 2.0 as an SSO (single sign-on) mechanism.(Citation: Cyberark Golden SAML)\n\nAn adversary may utilize [Private Keys](https://attack.mitre.org/techniques/T1552/004) to compromise an organization's token-signing certificate to create forged SAML tokens. If the adversary has sufficient permissions to establish a new federation trust with their own Active Directory Federation Services (AD FS) server, they may instead generate their own trusted token-signing certificate.(Citation: Microsoft SolarWinds Customer Guidance) This differs from [Steal Application Access Token](https://attack.mitre.org/techniques/T1528) and other similar behaviors in that the tokens are new and forged by the adversary, rather than stolen or intercepted from legitimate users.\n\nAn adversary may gain administrative Azure AD privileges if a SAML token is forged which claims to represent a highly privileged account. This may lead to [Use Alternate Authentication Material](https://attack.mitre.org/techniques/T1550), which may bypass multi-factor and other authentication protection mechanisms.(Citation: Microsoft SolarWinds Customer Guidance)",
+    "technique_references": [
+      {
+        "source_name": "Microsoft SolarWinds Steps",
+        "url": "https://blogs.microsoft.com/on-the-issues/2020/12/13/customers-protect-nation-state-cyberattacks/",
+        "description": "Lambert, J. (2020, December 13). Important steps for customers to protect themselves from recent nation-state cyberattacks. Retrieved December 17, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft SAML Token Lifetimes",
+        "url": "https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-configurable-token-lifetimes",
+        "description": "Microsoft. (2020, December 14). Configurable token lifetimes in Microsoft Identity Platform. Retrieved December 22, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cyberark Golden SAML",
+        "url": "https://www.cyberark.com/resources/threat-research-blog/golden-saml-newly-discovered-attack-technique-forges-authentication-to-cloud-apps",
+        "description": "Reiner, S. (2017, November 21). Golden SAML: Newly Discovered Attack Technique Forges Authentication to Cloud Apps. Retrieved December 17, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft SolarWinds Customer Guidance",
+        "url": "https://msrc-blog.microsoft.com/2020/12/13/customer-guidance-on-recent-nation-state-cyber-attacks/",
+        "description": "MSRC. (2020, December 13). Customer Guidance on Recent Nation-State Cyber Attacks. Retrieved December 17, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sygnia Golden SAML",
+        "url": "https://www.sygnia.co/golden-saml-advisory",
+        "description": "Sygnia. (2020, December). Detection and Hunting of Golden SAML Attack. Retrieved January 6, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

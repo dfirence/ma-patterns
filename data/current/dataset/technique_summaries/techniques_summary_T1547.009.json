@@ -1,0 +1,72 @@
+[
+  {
+    "id": "attack-pattern--4ab929c6-ee2d-4fb5-aab4-b14be2ed7179",
+    "platform": "windows",
+    "tid": "T1547.009",
+    "technique": "Shortcut Modification",
+    "tactic": "persistence",
+    "datasources": "file-creation|file-modification|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may create or modify shortcuts that can execute a program during system boot or user login. Shortcuts or symbolic links are used to reference other files or programs that will be opened or executed when the shortcut is clicked or executed by a system startup process.\n\nAdversaries may abuse shortcuts in the startup folder to execute their tools and achieve persistence.(Citation: Shortcut for Persistence ) Although often used as payloads in an infection chain (e.g. [Spearphishing Attachment](https://attack.mitre.org/techniques/T1566/001)), adversaries may also create a new shortcut as a means of indirection, while also abusing [Masquerading](https://attack.mitre.org/techniques/T1036) to make the malicious shortcut appear as a legitimate program. Adversaries can also edit the target path or entirely replace an existing shortcut so their malware will be executed instead of the intended legitimate program.\n\nShortcuts can also be abused to establish persistence by implementing other methods. For example, LNK browser extensions may be modified (e.g. [Browser Extensions](https://attack.mitre.org/techniques/T1176)) to persistently launch malware.",
+    "technique_references": [
+      {
+        "source_name": "Shortcut for Persistence ",
+        "url": "https://www.elastic.co/guide/en/security/7.17/shortcut-file-written-or-modified-for-persistence.html#shortcut-file-written-or-modified-for-persistence",
+        "description": "Elastic. (n.d.). Shortcut File Written or Modified for Persistence. Retrieved June 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "BSidesSLC 2020 - LNK Elastic",
+        "url": "https://www.youtube.com/watch?v=nJ0UsyiUEqQ",
+        "description": "French, D., Filar, B.. (2020, March 21). A Chain Is No Stronger Than Its Weakest LNK. Retrieved November 30, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--4ab929c6-ee2d-4fb5-aab4-b14be2ed7179",
+    "platform": "windows",
+    "tid": "T1547.009",
+    "technique": "Shortcut Modification",
+    "tactic": "privilege-escalation",
+    "datasources": "file-creation|file-modification|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may create or modify shortcuts that can execute a program during system boot or user login. Shortcuts or symbolic links are used to reference other files or programs that will be opened or executed when the shortcut is clicked or executed by a system startup process.\n\nAdversaries may abuse shortcuts in the startup folder to execute their tools and achieve persistence.(Citation: Shortcut for Persistence ) Although often used as payloads in an infection chain (e.g. [Spearphishing Attachment](https://attack.mitre.org/techniques/T1566/001)), adversaries may also create a new shortcut as a means of indirection, while also abusing [Masquerading](https://attack.mitre.org/techniques/T1036) to make the malicious shortcut appear as a legitimate program. Adversaries can also edit the target path or entirely replace an existing shortcut so their malware will be executed instead of the intended legitimate program.\n\nShortcuts can also be abused to establish persistence by implementing other methods. For example, LNK browser extensions may be modified (e.g. [Browser Extensions](https://attack.mitre.org/techniques/T1176)) to persistently launch malware.",
+    "technique_references": [
+      {
+        "source_name": "Shortcut for Persistence ",
+        "url": "https://www.elastic.co/guide/en/security/7.17/shortcut-file-written-or-modified-for-persistence.html#shortcut-file-written-or-modified-for-persistence",
+        "description": "Elastic. (n.d.). Shortcut File Written or Modified for Persistence. Retrieved June 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "BSidesSLC 2020 - LNK Elastic",
+        "url": "https://www.youtube.com/watch?v=nJ0UsyiUEqQ",
+        "description": "French, D., Filar, B.. (2020, March 21). A Chain Is No Stronger Than Its Weakest LNK. Retrieved November 30, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

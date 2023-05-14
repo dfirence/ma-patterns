@@ -1,0 +1,120 @@
+[
+  {
+    "id": "attack-pattern--dfefe2ed-4389-4318-8762-f0272b350a1b",
+    "platform": "linux",
+    "tid": "T1543.002",
+    "technique": "Systemd Service",
+    "tactic": "persistence",
+    "datasources": "command-execution|file-creation|file-modification|process-creation|service-creation|service-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may create or modify systemd services to repeatedly execute malicious payloads as part of persistence. Systemd is a system and service manager commonly used for managing background daemon processes (also known as services) and other system resources.(Citation: Linux man-pages: systemd January 2014) Systemd is the default initialization (init) system on many Linux distributions replacing legacy init systems, including SysVinit and Upstart, while remaining backwards compatible.  \n\nSystemd utilizes unit configuration files with the `.service` file extension to encode information about a service's process. By default, system level unit files are stored in the `/systemd/system` directory of the root owned directories (`/`). User level unit files are stored in the `/systemd/user` directories of the user owned directories (`$HOME`). (Citation: lambert systemd 2022) \n\nService unit files use the following directives to execute system commands:(Citation: freedesktop systemd.service)  \n\n* `ExecStart`, `ExecStartPre`, and `ExecStartPost` directives cover execution of commands when a service is started manually by `systemctl`, or on system start if the service is set to automatically start.\n* `ExecReload` directive covers when a service restarts. \n* `ExecStop`, `ExecStopPre`, and `ExecStopPost` directives cover when a service is stopped.  \n\nAdversaries may abuse systemd functionality to establish persistent access to victim systems by creating and/or modifying service unit files systemd uses upon reboot or starting a service.(Citation: Anomali Rocke March 2019) Adversaries may also place symbolic links in these directories, enabling systemd to find these payloads regardless of where they reside on the filesystem.\n\nThe `.service` file’s `User` directive can be used to run service as a specific user, which could result in privilege escalation based on specific user/group permissions.(Citation: Rapid7 Service Persistence 22JUNE2016) ",
+    "technique_references": [
+      {
+        "source_name": "Anomali Rocke March 2019",
+        "url": "https://www.anomali.com/blog/rocke-evolves-its-arsenal-with-a-new-malware-family-written-in-golang",
+        "description": "Anomali Labs. (2019, March 15). Rocke Evolves Its Arsenal With a New Malware Family Written in Golang. Retrieved April 24, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "freedesktop systemd.service",
+        "url": "https://www.freedesktop.org/software/systemd/man/systemd.service.html",
+        "description": "Free Desktop. (n.d.). systemd.service — Service unit configuration. Retrieved March 20, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Linux man-pages: systemd January 2014",
+        "url": "http://man7.org/linux/man-pages/man1/systemd.1.html",
+        "description": "Linux man-pages. (2014, January). systemd(1) - Linux manual page. Retrieved April 23, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Berba hunting linux systemd",
+        "url": "https://pberba.github.io/security/2022/01/30/linux-threat-hunting-for-persistence-systemd-timers-cron/",
+        "description": "Pepe Berba. (2022, January 30). Hunting for Persistence in Linux (Part 3): Systemd, Timers, and Cron. Retrieved March 20, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Rapid7 Service Persistence 22JUNE2016",
+        "url": "https://www.rapid7.com/db/modules/exploit/linux/local/service_persistence",
+        "description": "Rapid7. (2016, June 22). Service Persistence. Retrieved April 23, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "lambert systemd 2022",
+        "url": "https://redcanary.com/blog/attck-t1501-understanding-systemd-service-persistence/",
+        "description": "Tony Lambert. (2022, November 13). ATT&CK T1501: Understanding systemd service persistence. Retrieved March 20, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|root",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--dfefe2ed-4389-4318-8762-f0272b350a1b",
+    "platform": "linux",
+    "tid": "T1543.002",
+    "technique": "Systemd Service",
+    "tactic": "privilege-escalation",
+    "datasources": "command-execution|file-creation|file-modification|process-creation|service-creation|service-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may create or modify systemd services to repeatedly execute malicious payloads as part of persistence. Systemd is a system and service manager commonly used for managing background daemon processes (also known as services) and other system resources.(Citation: Linux man-pages: systemd January 2014) Systemd is the default initialization (init) system on many Linux distributions replacing legacy init systems, including SysVinit and Upstart, while remaining backwards compatible.  \n\nSystemd utilizes unit configuration files with the `.service` file extension to encode information about a service's process. By default, system level unit files are stored in the `/systemd/system` directory of the root owned directories (`/`). User level unit files are stored in the `/systemd/user` directories of the user owned directories (`$HOME`). (Citation: lambert systemd 2022) \n\nService unit files use the following directives to execute system commands:(Citation: freedesktop systemd.service)  \n\n* `ExecStart`, `ExecStartPre`, and `ExecStartPost` directives cover execution of commands when a service is started manually by `systemctl`, or on system start if the service is set to automatically start.\n* `ExecReload` directive covers when a service restarts. \n* `ExecStop`, `ExecStopPre`, and `ExecStopPost` directives cover when a service is stopped.  \n\nAdversaries may abuse systemd functionality to establish persistent access to victim systems by creating and/or modifying service unit files systemd uses upon reboot or starting a service.(Citation: Anomali Rocke March 2019) Adversaries may also place symbolic links in these directories, enabling systemd to find these payloads regardless of where they reside on the filesystem.\n\nThe `.service` file’s `User` directive can be used to run service as a specific user, which could result in privilege escalation based on specific user/group permissions.(Citation: Rapid7 Service Persistence 22JUNE2016) ",
+    "technique_references": [
+      {
+        "source_name": "Anomali Rocke March 2019",
+        "url": "https://www.anomali.com/blog/rocke-evolves-its-arsenal-with-a-new-malware-family-written-in-golang",
+        "description": "Anomali Labs. (2019, March 15). Rocke Evolves Its Arsenal With a New Malware Family Written in Golang. Retrieved April 24, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "freedesktop systemd.service",
+        "url": "https://www.freedesktop.org/software/systemd/man/systemd.service.html",
+        "description": "Free Desktop. (n.d.). systemd.service — Service unit configuration. Retrieved March 20, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Linux man-pages: systemd January 2014",
+        "url": "http://man7.org/linux/man-pages/man1/systemd.1.html",
+        "description": "Linux man-pages. (2014, January). systemd(1) - Linux manual page. Retrieved April 23, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Berba hunting linux systemd",
+        "url": "https://pberba.github.io/security/2022/01/30/linux-threat-hunting-for-persistence-systemd-timers-cron/",
+        "description": "Pepe Berba. (2022, January 30). Hunting for Persistence in Linux (Part 3): Systemd, Timers, and Cron. Retrieved March 20, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Rapid7 Service Persistence 22JUNE2016",
+        "url": "https://www.rapid7.com/db/modules/exploit/linux/local/service_persistence",
+        "description": "Rapid7. (2016, June 22). Service Persistence. Retrieved April 23, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "lambert systemd 2022",
+        "url": "https://redcanary.com/blog/attck-t1501-understanding-systemd-service-persistence/",
+        "description": "Tony Lambert. (2022, November 13). ATT&CK T1501: Understanding systemd service persistence. Retrieved March 20, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|root",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

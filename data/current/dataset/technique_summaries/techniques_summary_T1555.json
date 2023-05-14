@@ -1,0 +1,30 @@
+[
+  {
+    "id": "attack-pattern--3fc9b85a-2862-4363-a64d-d692e3ffbee0",
+    "platform": "linux|macos|windows",
+    "tid": "T1555",
+    "technique": "Credentials from Password Stores",
+    "tactic": "credential-access",
+    "datasources": "command-execution|file-access|os-api-execution|process-access|process-creation",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1555.001",
+      "T1555.002",
+      "T1555.003",
+      "T1555.004",
+      "T1555.005"
+    ],
+    "count_subtechniques": 5,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may search for common password storage locations to obtain user credentials. Passwords are stored in several places on a system, depending on the operating system or application holding the credentials. There are also specific applications that store passwords to make it easier for users manage and maintain. Once credentials are obtained, they can be used to perform lateral movement and access restricted information.",
+    "technique_references": [],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

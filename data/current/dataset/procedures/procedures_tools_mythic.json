@@ -1,0 +1,51 @@
+[
+  [
+    "mythic",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[Mythic] supports HTTP-based C2 profiles."
+  ],
+  [
+    "mythic",
+    "T1071.002",
+    "File Transfer Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.002::[Mythic] supports SMB-based peer-to-peer C2 profiles."
+  ],
+  [
+    "mythic",
+    "T1071.004",
+    "DNS",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.004::[Mythic] supports DNS-based C2 profiles."
+  ],
+  [
+    "mythic",
+    "T1090.001",
+    "Internal Proxy",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1090.001::[Mythic] can leverage a peer-to-peer C2 profile between agents."
+  ],
+  [
+    "mythic",
+    "T1090.002",
+    "External Proxy",
+    "network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1090.002::[Mythic] can leverage a modified SOCKS5 proxy to tunnel egress C2 traffic."
+  ],
+  [
+    "mythic",
+    "T1090.004",
+    "Domain Fronting",
+    "network-traffic-content",
+    "T1090.004::[Mythic] supports domain fronting via custom request headers."
+  ],
+  [
+    "mythic",
+    "T1573.002",
+    "Asymmetric Cryptography",
+    "network-traffic-content",
+    "T1573.002::[Mythic] supports SSL encrypted C2."
+  ]
+]

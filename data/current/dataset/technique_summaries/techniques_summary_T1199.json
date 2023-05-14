@@ -1,0 +1,37 @@
+[
+  {
+    "id": "attack-pattern--9fa07bef-9c81-421e-a8e5-ad4366c5a925",
+    "platform": "windows|saas|iaas|linux|macos|office-365",
+    "tid": "T1199",
+    "technique": "Trusted Relationship",
+    "tactic": "initial-access",
+    "datasources": "application-log-content|logon-session-creation|logon-session-metadata|network-traffic-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may breach or otherwise leverage organizations who have access to intended victims. Access through trusted third party relationship abuses an existing connection that may not be protected or receives less scrutiny than standard mechanisms of gaining access to a network.\n\nOrganizations often grant elevated access to second or third-party external providers in order to allow them to manage internal systems as well as cloud-based environments. Some examples of these relationships include IT services contractors, managed security providers, infrastructure contractors (e.g. HVAC, elevators, physical security). The third-party provider's access may be intended to be limited to the infrastructure being maintained, but may exist on the same network as the rest of the enterprise. As such, [Valid Accounts](https://attack.mitre.org/techniques/T1078) used by the other party for access to internal network systems may be compromised and used.(Citation: CISA IT Service Providers)\n\nIn Office 365 environments, organizations may grant Microsoft partners or resellers delegated administrator permissions. By compromising a partner or reseller account, an adversary may be able to leverage existing delegated administrator relationships or send new delegated administrator offers to clients in order to gain administrative control over the victim tenant.(Citation: Office 365 Delegated Administration)",
+    "technique_references": [
+      {
+        "source_name": "CISA IT Service Providers",
+        "url": "https://us-cert.cisa.gov/APTs-Targeting-IT-Service-Provider-Customers",
+        "description": "CISA. (n.d.). APTs Targeting IT Service Provider Customers. Retrieved November 16, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Office 365 Delegated Administration",
+        "url": "https://support.microsoft.com/en-us/topic/partners-offer-delegated-administration-26530dc0-ebba-415b-86b1-b55bc06b073e?ui=en-us&rs=en-us&ad=us",
+        "description": "Microsoft. (n.d.). Partners: Offer delegated administration. Retrieved May 27, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

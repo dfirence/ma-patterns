@@ -1,9 +1,0 @@
-{
-  "adversaries": [],
-  "malware": [],
-  "tools": [],
-  "T1020.001:Traffic Duplication": [
-    "network-connection-creation",
-    "network-traffic-flow"
-  ]
-}

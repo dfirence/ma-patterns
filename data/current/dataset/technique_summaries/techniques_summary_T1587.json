@@ -1,0 +1,60 @@
+[
+  {
+    "id": "attack-pattern--edadea33-549c-4ed1-9783-8f5a5853cbdf",
+    "platform": "pre",
+    "tid": "T1587",
+    "technique": "Develop Capabilities",
+    "tactic": "resource-development",
+    "datasources": "malware-content|malware-metadata|response-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1587.001",
+      "T1587.002",
+      "T1587.003",
+      "T1587.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may build capabilities that can be used during targeting. Rather than purchasing, freely downloading, or stealing capabilities, adversaries may develop their own capabilities in-house. This is the process of identifying development requirements and building solutions such as malware, exploits, and self-signed certificates. Adversaries may develop capabilities to support their operations throughout numerous phases of the adversary lifecycle.(Citation: Mandiant APT1)(Citation: Kaspersky Sofacy)(Citation: Bitdefender StrongPity June 2020)(Citation: Talos Promethium June 2020)\n\nAs with legitimate development efforts, different skill sets may be required for developing capabilities. The skills needed may be located in-house, or may need to be contracted out. Use of a contractor may be considered an extension of that adversary's development capabilities, provided the adversary plays a role in shaping requirements and maintains a degree of exclusivity to the capability.",
+    "technique_references": [
+      {
+        "source_name": "Mandiant APT1",
+        "url": "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/mandiant-apt1-report.pdf",
+        "description": "Mandiant. (n.d.). APT1 Exposing One of China’s Cyber Espionage Units. Retrieved July 18, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kaspersky Sofacy",
+        "url": "https://securelist.com/sofacy-apt-hits-high-profile-targets-with-updated-toolset/72924/",
+        "description": "Kaspersky Lab's Global Research and Analysis Team. (2015, December 4). Sofacy APT hits high profile targets with updated toolset. Retrieved December 10, 2015.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Bitdefender StrongPity June 2020",
+        "url": "https://www.bitdefender.com/files/News/CaseStudies/study/353/Bitdefender-Whitepaper-StrongPity-APT.pdf",
+        "description": "Tudorica, R. et al. (2020, June 30). StrongPity APT - Revealing Trojanized Tools, Working Hours and Infrastructure. Retrieved July 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Talos Promethium June 2020",
+        "url": "https://blog.talosintelligence.com/2020/06/promethium-extends-with-strongpity3.html",
+        "description": "Mercer, W. et al. (2020, June 29). PROMETHIUM extends global reach with StrongPity3 APT. Retrieved July 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Splunk Kovar Certificates 2017",
+        "url": "https://www.splunk.com/en_us/blog/security/tall-tales-of-hunting-with-tls-ssl-certificates.html",
+        "description": "Kovar, R. (2017, December 11). Tall Tales of Hunting with TLS/SSL Certificates. Retrieved October 16, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

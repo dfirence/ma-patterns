@@ -1,0 +1,188 @@
+[
+  {
+    "id": "attack-pattern--f4c1826f-a322-41cd-9557-562100848c84",
+    "platform": "windows|linux|macos|network|azure-ad|google-workspace|iaas|office-365|saas",
+    "tid": "T1556",
+    "technique": "Modify Authentication Process",
+    "tactic": "credential-access",
+    "datasources": "active-directory-object-modification|application-log-content|file-creation|file-modification|logon-session-creation|module-load|os-api-execution|process-access|user-account-authentication|user-account-modification|windows-registry-key-creation|windows-registry-key-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1556.001",
+      "T1556.002",
+      "T1556.003",
+      "T1556.004",
+      "T1556.005",
+      "T1556.006",
+      "T1556.007",
+      "T1556.008"
+    ],
+    "count_subtechniques": 8,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify authentication mechanisms and processes to access user credentials or enable otherwise unwarranted access to accounts. The authentication process is handled by mechanisms, such as the Local Security Authentication Server (LSASS) process and the Security Accounts Manager (SAM) on Windows, pluggable authentication modules (PAM) on Unix-based systems, and authorization plugins on MacOS systems, responsible for gathering, storing, and validating credentials. By modifying an authentication process, an adversary may be able to authenticate to a service or system without using [Valid Accounts](https://attack.mitre.org/techniques/T1078).\n\nAdversaries may maliciously modify a part of this process to either reveal credentials or bypass authentication mechanisms. Compromised credentials or access may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access and remote desktop.",
+    "technique_references": [
+      {
+        "source_name": "Clymb3r Function Hook Passwords Sept 2013",
+        "url": "https://clymb3r.wordpress.com/2013/09/15/intercepting-password-changes-with-function-hooking/",
+        "description": "Bialek, J. (2013, September 15). Intercepting Password Changes With Function Hooking. Retrieved November 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Xorrior Authorization Plugins",
+        "url": "https://xorrior.com/persistent-credential-theft/",
+        "description": "Chris Ross. (2018, October 17). Persistent Credential Theft with Authorization Plugins. Retrieved April 22, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Dell Skeleton",
+        "url": "https://www.secureworks.com/research/skeleton-key-malware-analysis",
+        "description": "Dell SecureWorks. (2015, January 12). Skeleton Key Malware Analysis. Retrieved April 8, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "dump_pwd_dcsync",
+        "url": "https://adsecurity.org/?p=2053",
+        "description": "Metcalf, S. (2015, November 22). Dump Clear-Text Passwords for All Admins in the Domain Using Mimikatz DCSync. Retrieved November 15, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f4c1826f-a322-41cd-9557-562100848c84",
+    "platform": "windows|linux|macos|network|azure-ad|google-workspace|iaas|office-365|saas",
+    "tid": "T1556",
+    "technique": "Modify Authentication Process",
+    "tactic": "defense-evasion",
+    "datasources": "active-directory-object-modification|application-log-content|file-creation|file-modification|logon-session-creation|module-load|os-api-execution|process-access|user-account-authentication|user-account-modification|windows-registry-key-creation|windows-registry-key-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1556.001",
+      "T1556.002",
+      "T1556.003",
+      "T1556.004",
+      "T1556.005",
+      "T1556.006",
+      "T1556.007",
+      "T1556.008"
+    ],
+    "count_subtechniques": 8,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify authentication mechanisms and processes to access user credentials or enable otherwise unwarranted access to accounts. The authentication process is handled by mechanisms, such as the Local Security Authentication Server (LSASS) process and the Security Accounts Manager (SAM) on Windows, pluggable authentication modules (PAM) on Unix-based systems, and authorization plugins on MacOS systems, responsible for gathering, storing, and validating credentials. By modifying an authentication process, an adversary may be able to authenticate to a service or system without using [Valid Accounts](https://attack.mitre.org/techniques/T1078).\n\nAdversaries may maliciously modify a part of this process to either reveal credentials or bypass authentication mechanisms. Compromised credentials or access may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access and remote desktop.",
+    "technique_references": [
+      {
+        "source_name": "Clymb3r Function Hook Passwords Sept 2013",
+        "url": "https://clymb3r.wordpress.com/2013/09/15/intercepting-password-changes-with-function-hooking/",
+        "description": "Bialek, J. (2013, September 15). Intercepting Password Changes With Function Hooking. Retrieved November 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Xorrior Authorization Plugins",
+        "url": "https://xorrior.com/persistent-credential-theft/",
+        "description": "Chris Ross. (2018, October 17). Persistent Credential Theft with Authorization Plugins. Retrieved April 22, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Dell Skeleton",
+        "url": "https://www.secureworks.com/research/skeleton-key-malware-analysis",
+        "description": "Dell SecureWorks. (2015, January 12). Skeleton Key Malware Analysis. Retrieved April 8, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "dump_pwd_dcsync",
+        "url": "https://adsecurity.org/?p=2053",
+        "description": "Metcalf, S. (2015, November 22). Dump Clear-Text Passwords for All Admins in the Domain Using Mimikatz DCSync. Retrieved November 15, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f4c1826f-a322-41cd-9557-562100848c84",
+    "platform": "windows|linux|macos|network|azure-ad|google-workspace|iaas|office-365|saas",
+    "tid": "T1556",
+    "technique": "Modify Authentication Process",
+    "tactic": "persistence",
+    "datasources": "active-directory-object-modification|application-log-content|file-creation|file-modification|logon-session-creation|module-load|os-api-execution|process-access|user-account-authentication|user-account-modification|windows-registry-key-creation|windows-registry-key-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1556.001",
+      "T1556.002",
+      "T1556.003",
+      "T1556.004",
+      "T1556.005",
+      "T1556.006",
+      "T1556.007",
+      "T1556.008"
+    ],
+    "count_subtechniques": 8,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify authentication mechanisms and processes to access user credentials or enable otherwise unwarranted access to accounts. The authentication process is handled by mechanisms, such as the Local Security Authentication Server (LSASS) process and the Security Accounts Manager (SAM) on Windows, pluggable authentication modules (PAM) on Unix-based systems, and authorization plugins on MacOS systems, responsible for gathering, storing, and validating credentials. By modifying an authentication process, an adversary may be able to authenticate to a service or system without using [Valid Accounts](https://attack.mitre.org/techniques/T1078).\n\nAdversaries may maliciously modify a part of this process to either reveal credentials or bypass authentication mechanisms. Compromised credentials or access may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access and remote desktop.",
+    "technique_references": [
+      {
+        "source_name": "Clymb3r Function Hook Passwords Sept 2013",
+        "url": "https://clymb3r.wordpress.com/2013/09/15/intercepting-password-changes-with-function-hooking/",
+        "description": "Bialek, J. (2013, September 15). Intercepting Password Changes With Function Hooking. Retrieved November 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Xorrior Authorization Plugins",
+        "url": "https://xorrior.com/persistent-credential-theft/",
+        "description": "Chris Ross. (2018, October 17). Persistent Credential Theft with Authorization Plugins. Retrieved April 22, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Dell Skeleton",
+        "url": "https://www.secureworks.com/research/skeleton-key-malware-analysis",
+        "description": "Dell SecureWorks. (2015, January 12). Skeleton Key Malware Analysis. Retrieved April 8, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "dump_pwd_dcsync",
+        "url": "https://adsecurity.org/?p=2053",
+        "description": "Metcalf, S. (2015, November 22). Dump Clear-Text Passwords for All Admins in the Domain Using Mimikatz DCSync. Retrieved November 15, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

@@ -1,0 +1,86 @@
+[
+  [
+    "quasarrat",
+    "T1021.001",
+    "Remote Desktop Protocol",
+    "logon-session-creation|network-connection-creation|network-traffic-flow|process-creation",
+    "T1021.001::[QuasarRAT] has a module for performing remote desktop access."
+  ],
+  [
+    "quasarrat",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[QuasarRAT] contains a .NET wrapper DLL for creating and managing scheduled tasks for maintaining persistence upon reboot."
+  ],
+  [
+    "quasarrat",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[QuasarRAT] has a built-in keylogger."
+  ],
+  [
+    "quasarrat",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[QuasarRAT] can launch a remote shell to execute commands on the victim’s machine."
+  ],
+  [
+    "quasarrat",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::If the [QuasarRAT] client process does not have administrator privileges it will add a registry key to `HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run` for persistence."
+  ],
+  [
+    "quasarrat",
+    "T1548.002",
+    "Bypass User Account Control",
+    "command-execution|process-creation|process-metadata|windows-registry-key-modification",
+    "T1548.002::[QuasarRAT] can generate a UAC pop-up Window to prompt the target user to run a command as the administrator."
+  ],
+  [
+    "quasarrat",
+    "T1552.001",
+    "Credentials In Files",
+    "command-execution|file-access",
+    "T1552.001::[QuasarRAT] can obtain passwords from FTP clients."
+  ],
+  [
+    "quasarrat",
+    "T1553.002",
+    "Code Signing",
+    "file-metadata",
+    "T1553.002::A [QuasarRAT] .dll file is digitally signed by a certificate from AirVPN."
+  ],
+  [
+    "quasarrat",
+    "T1555.003",
+    "Credentials from Web Browsers",
+    "command-execution|file-access|os-api-execution|process-access",
+    "T1555.003::[QuasarRAT] can obtain passwords from common web browsers."
+  ],
+  [
+    "quasarrat",
+    "T1564.001",
+    "Hidden Files and Directories",
+    "command-execution|file-creation|file-metadata|process-creation",
+    "T1564.001::[QuasarRAT] has the ability to set file attributes to \"hidden\" to hide files from the compromised user's view in Windows File Explorer."
+  ],
+  [
+    "quasarrat",
+    "T1564.003",
+    "Hidden Window",
+    "command-execution|file-modification|process-creation|script-execution",
+    "T1564.003::[QuasarRAT] can hide process windows and make web requests invisible to the compromised user. Requests marked as invisible have been sent with user-agent string `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A` though [QuasarRAT] can only be run on Windows systems."
+  ],
+  [
+    "quasarrat",
+    "T1573.001",
+    "Symmetric Cryptography",
+    "network-traffic-content",
+    "T1573.001::[QuasarRAT] uses AES with a hardcoded pre-shared key to encrypt network communication."
+  ]
+]

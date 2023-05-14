@@ -1,0 +1,60 @@
+[
+  {
+    "id": "attack-pattern--c63a348e-ffc2-486a-b9d9-d7f11ec54d99",
+    "platform": "windows",
+    "tid": "T1037.003",
+    "technique": "Network Logon Script",
+    "tactic": "persistence",
+    "datasources": "active-directory-object-modification|command-execution|file-creation|file-modification|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use network logon scripts automatically executed at logon initialization to establish persistence. Network logon scripts can be assigned using Active Directory or Group Policy Objects.(Citation: Petri Logon Script AD) These logon scripts run with the privileges of the user they are assigned to. Depending on the systems within the network, initializing one of these scripts could apply to more than one or potentially all systems.  \n \nAdversaries may use these scripts to maintain persistence on a network. Depending on the access configuration of the logon scripts, either local credentials or an administrator account may be necessary.",
+    "technique_references": [
+      {
+        "source_name": "Petri Logon Script AD",
+        "url": "https://www.petri.com/setting-up-logon-script-through-active-directory-users-computers-windows-server-2008",
+        "description": "Daniel Petri. (2009, January 8). Setting up a Logon Script through Active Directory Users and Computers in Windows Server 2008. Retrieved November 15, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--c63a348e-ffc2-486a-b9d9-d7f11ec54d99",
+    "platform": "windows",
+    "tid": "T1037.003",
+    "technique": "Network Logon Script",
+    "tactic": "privilege-escalation",
+    "datasources": "active-directory-object-modification|command-execution|file-creation|file-modification|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use network logon scripts automatically executed at logon initialization to establish persistence. Network logon scripts can be assigned using Active Directory or Group Policy Objects.(Citation: Petri Logon Script AD) These logon scripts run with the privileges of the user they are assigned to. Depending on the systems within the network, initializing one of these scripts could apply to more than one or potentially all systems.  \n \nAdversaries may use these scripts to maintain persistence on a network. Depending on the access configuration of the logon scripts, either local credentials or an administrator account may be necessary.",
+    "technique_references": [
+      {
+        "source_name": "Petri Logon Script AD",
+        "url": "https://www.petri.com/setting-up-logon-script-through-active-directory-users-computers-windows-server-2008",
+        "description": "Daniel Petri. (2009, January 8). Setting up a Logon Script through Active Directory Users and Computers in Windows Server 2008. Retrieved November 15, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  [
+    "gold-southfield",
+    "T1027.010",
+    "Command Obfuscation",
+    "command-execution|file-metadata|script-execution",
+    "T1027.010::[GOLD SOUTHFIELD] has executed base64 encoded PowerShell scripts on compromised hosts."
+  ],
+  [
+    "gold-southfield",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[GOLD SOUTHFIELD] has staged and executed PowerShell scripts on compromised hosts."
+  ],
+  [
+    "gold-southfield",
+    "T1195.002",
+    "Compromise Software Supply Chain",
+    "file-metadata",
+    "T1195.002::[GOLD SOUTHFIELD] has distributed ransomware by backdooring software installers via a strategic web compromise of the site hosting Italian WinRAR."
+  ]
+]

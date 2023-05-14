@@ -1,0 +1,26 @@
+[
+  {
+    "id": "attack-pattern--51ea26b1-ff1e-4faa-b1a0-1114cd298c87",
+    "platform": "linux|macos|windows",
+    "tid": "T1011",
+    "technique": "Exfiltration Over Other Network Medium",
+    "tactic": "exfiltration",
+    "datasources": "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1011.001"
+    ],
+    "count_subtechniques": 1,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to exfiltrate data over a different network medium than the command and control channel. If the command and control network is a wired Internet connection, the exfiltration may occur, for example, over a WiFi connection, modem, cellular data connection, Bluetooth, or another radio frequency (RF) channel.\n\nAdversaries may choose to do this if they have sufficient access or proximity, and the connection might not be secured or defended as well as the primary Internet-connected channel because it is not routed through the same enterprise network.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

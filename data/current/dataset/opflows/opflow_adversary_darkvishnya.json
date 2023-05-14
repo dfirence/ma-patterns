@@ -1,0 +1,593 @@
+[
+  {
+    "id": "attack-pattern--4f9ca633-15c5-463c-9724-bdcd54fde541",
+    "platform": "windows",
+    "tid": "T1021.002",
+    "technique": "SMB/Windows Admin Shares",
+    "tactic": "lateral-movement",
+    "datasources": "command-execution|logon-session-creation|network-connection-creation|network-share-access|network-traffic-flow",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "darkvishnya",
+    "correlation_malware": "none",
+    "correlation_tool": "psexec",
+    "correlation_gid": "G0105",
+    "technique_description": "Adversaries may use [Valid Accounts](https://attack.mitre.org/techniques/T1078) to interact with a remote network share using Server Message Block (SMB). The adversary may then perform actions as the logged-on user.\n\nSMB is a file, printer, and serial port sharing protocol for Windows machines on the same network or domain. Adversaries may use SMB to interact with file shares, allowing them to move laterally throughout a network. Linux and macOS implementations of SMB typically use Samba.\n\nWindows systems have hidden network shares that are accessible only to administrators and provide the ability for remote file copy and other administrative functions. Example network shares include `C$`, `ADMIN$`, and `IPC$`. Adversaries may use this technique in conjunction with administrator-level [Valid Accounts](https://attack.mitre.org/techniques/T1078) to remotely access a networked system over SMB,(Citation: Wikipedia Server Message Block) to interact with systems using remote procedure calls (RPCs),(Citation: TechNet RPC) transfer files, and run transferred binaries through remote Execution. Example execution techniques that rely on authenticated sessions over SMB/RPC are [Scheduled Task/Job](https://attack.mitre.org/techniques/T1053), [Service Execution](https://attack.mitre.org/techniques/T1569/002), and [Windows Management Instrumentation](https://attack.mitre.org/techniques/T1047). Adversaries can also use NTLM hashes to access administrator shares on systems with [Pass the Hash](https://attack.mitre.org/techniques/T1550/002) and certain configuration and patch levels.(Citation: Microsoft Admin Shares)",
+    "technique_references": [
+      {
+        "source_name": "Medium Detecting WMI Persistence",
+        "url": "https://medium.com/threatpunter/detecting-removing-wmi-persistence-60ccbb7dff96",
+        "description": "French, D. (2018, October 9). Detecting & Removing an Attacker’s WMI Persistence. Retrieved October 11, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet RPC",
+        "url": "https://technet.microsoft.com/en-us/library/cc787851.aspx",
+        "description": "Microsoft. (2003, March 28). What Is RPC?. Retrieved June 12, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Admin Shares",
+        "url": "http://support.microsoft.com/kb/314984",
+        "description": "Microsoft. (n.d.). How to create and delete hidden or administrative shares on client computers. Retrieved November 20, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Windows Event Forwarding Payne",
+        "url": "https://docs.microsoft.com/en-us/archive/blogs/jepayne/monitoring-what-matters-windows-event-forwarding-for-everyone-even-if-you-already-have-a-siem",
+        "description": "Payne, J. (2015, November 23). Monitoring what matters - Windows Event Forwarding for everyone (even if you already have a SIEM.). Retrieved February 1, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Lateral Movement Payne",
+        "url": "https://docs.microsoft.com/en-us/archive/blogs/jepayne/tracking-lateral-movement-part-one-special-groups-and-specific-service-accounts",
+        "description": "Payne, J. (2015, November 26). Tracking Lateral Movement Part One - Special Groups and Specific Service Accounts. Retrieved February 1, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia Server Message Block",
+        "url": "https://en.wikipedia.org/wiki/Server_Message_Block",
+        "description": "Wikipedia. (2017, December 16). Server Message Block. Retrieved December 21, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--3257eb21-f9a7-4430-8de1-d8b6e288f529",
+    "platform": "linux|macos|windows|network|iaas",
+    "tid": "T1040",
+    "technique": "Network Sniffing",
+    "tactic": "credential-access",
+    "datasources": "command-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "darkvishnya",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "G0105",
+    "technique_description": "Adversaries may sniff network traffic to capture information about an environment, including authentication material passed over the network. Network sniffing refers to using the network interface on a system to monitor or capture information sent over a wired or wireless connection. An adversary may place a network interface into promiscuous mode to passively access data in transit over the network, or use span ports to capture a larger amount of data.\n\nData captured via this technique may include user credentials, especially those sent over an insecure, unencrypted protocol. Techniques for name service resolution poisoning, such as [LLMNR/NBT-NS Poisoning and SMB Relay](https://attack.mitre.org/techniques/T1557/001), can also be used to capture credentials to websites, proxies, and internal systems by redirecting traffic to an adversary.\n\nNetwork sniffing may also reveal configuration details, such as running services, version numbers, and other network characteristics (e.g. IP addresses, hostnames, VLAN IDs) necessary for subsequent Lateral Movement and/or Defense Evasion activities.\n\nIn cloud-based environments, adversaries may still be able to use traffic mirroring services to sniff network traffic from virtual machines. For example, AWS Traffic Mirroring, GCP Packet Mirroring, and Azure vTap allow users to define specified instances to collect traffic from and specified targets to send collected traffic to.(Citation: AWS Traffic Mirroring)(Citation: GCP Packet Mirroring)(Citation: Azure Virtual Network TAP) Often, much of this traffic will be in cleartext due to the use of TLS termination at the load balancer level to reduce the strain of encrypting and decrypting traffic.(Citation: Rhino Security Labs AWS VPC Traffic Mirroring)(Citation: SpecterOps AWS Traffic Mirroring) The adversary can then use exfiltration techniques such as Transfer Data to Cloud Account in order to access the sniffed traffic.(Citation: Rhino Security Labs AWS VPC Traffic Mirroring)\n\nOn network devices, adversaries may perform network captures using [Network Device CLI](https://attack.mitre.org/techniques/T1059/008) commands such as `monitor capture`.(Citation: US-CERT-TA18-106A)(Citation: capture_embedded_packet_on_software)",
+    "technique_references": [
+      {
+        "source_name": "AWS Traffic Mirroring",
+        "url": "https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-how-it-works.html",
+        "description": "Amazon Web Services. (n.d.). How Traffic Mirroring works. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "capture_embedded_packet_on_software",
+        "url": "https://www.cisco.com/c/en/us/support/docs/ios-nx-os-software/ios-embedded-packet-capture/116045-productconfig-epc-00.html",
+        "description": "Cisco. (2022, August 17). Configure and Capture Embedded Packet on Software. Retrieved July 13, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GCP Packet Mirroring",
+        "url": "https://cloud.google.com/vpc/docs/packet-mirroring",
+        "description": "Google Cloud. (n.d.). Packet Mirroring overview. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SpecterOps AWS Traffic Mirroring",
+        "url": "https://posts.specterops.io/through-the-looking-glass-part-1-f539ae308512",
+        "description": "Luke Paine. (2020, March 11). Through the Looking Glass — Part 1. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Azure Virtual Network TAP",
+        "url": "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-tap-overview",
+        "description": "Microsoft. (2022, February 9). Virtual network TAP. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Rhino Security Labs AWS VPC Traffic Mirroring",
+        "url": "https://rhinosecuritylabs.com/aws/abusing-vpc-traffic-mirroring-in-aws/",
+        "description": "Spencer Gietzen. (2019, September 17). Abusing VPC Traffic Mirroring in AWS. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT-TA18-106A",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA18-106A",
+        "description": "US-CERT. (2018, April 20). Alert (TA18-106A) Russian State-Sponsored Cyber Actors Targeting Network Infrastructure Devices. Retrieved October 19, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--3257eb21-f9a7-4430-8de1-d8b6e288f529",
+    "platform": "linux|macos|windows|network|iaas",
+    "tid": "T1040",
+    "technique": "Network Sniffing",
+    "tactic": "discovery",
+    "datasources": "command-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "darkvishnya",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "G0105",
+    "technique_description": "Adversaries may sniff network traffic to capture information about an environment, including authentication material passed over the network. Network sniffing refers to using the network interface on a system to monitor or capture information sent over a wired or wireless connection. An adversary may place a network interface into promiscuous mode to passively access data in transit over the network, or use span ports to capture a larger amount of data.\n\nData captured via this technique may include user credentials, especially those sent over an insecure, unencrypted protocol. Techniques for name service resolution poisoning, such as [LLMNR/NBT-NS Poisoning and SMB Relay](https://attack.mitre.org/techniques/T1557/001), can also be used to capture credentials to websites, proxies, and internal systems by redirecting traffic to an adversary.\n\nNetwork sniffing may also reveal configuration details, such as running services, version numbers, and other network characteristics (e.g. IP addresses, hostnames, VLAN IDs) necessary for subsequent Lateral Movement and/or Defense Evasion activities.\n\nIn cloud-based environments, adversaries may still be able to use traffic mirroring services to sniff network traffic from virtual machines. For example, AWS Traffic Mirroring, GCP Packet Mirroring, and Azure vTap allow users to define specified instances to collect traffic from and specified targets to send collected traffic to.(Citation: AWS Traffic Mirroring)(Citation: GCP Packet Mirroring)(Citation: Azure Virtual Network TAP) Often, much of this traffic will be in cleartext due to the use of TLS termination at the load balancer level to reduce the strain of encrypting and decrypting traffic.(Citation: Rhino Security Labs AWS VPC Traffic Mirroring)(Citation: SpecterOps AWS Traffic Mirroring) The adversary can then use exfiltration techniques such as Transfer Data to Cloud Account in order to access the sniffed traffic.(Citation: Rhino Security Labs AWS VPC Traffic Mirroring)\n\nOn network devices, adversaries may perform network captures using [Network Device CLI](https://attack.mitre.org/techniques/T1059/008) commands such as `monitor capture`.(Citation: US-CERT-TA18-106A)(Citation: capture_embedded_packet_on_software)",
+    "technique_references": [
+      {
+        "source_name": "AWS Traffic Mirroring",
+        "url": "https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-how-it-works.html",
+        "description": "Amazon Web Services. (n.d.). How Traffic Mirroring works. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "capture_embedded_packet_on_software",
+        "url": "https://www.cisco.com/c/en/us/support/docs/ios-nx-os-software/ios-embedded-packet-capture/116045-productconfig-epc-00.html",
+        "description": "Cisco. (2022, August 17). Configure and Capture Embedded Packet on Software. Retrieved July 13, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GCP Packet Mirroring",
+        "url": "https://cloud.google.com/vpc/docs/packet-mirroring",
+        "description": "Google Cloud. (n.d.). Packet Mirroring overview. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SpecterOps AWS Traffic Mirroring",
+        "url": "https://posts.specterops.io/through-the-looking-glass-part-1-f539ae308512",
+        "description": "Luke Paine. (2020, March 11). Through the Looking Glass — Part 1. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Azure Virtual Network TAP",
+        "url": "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-tap-overview",
+        "description": "Microsoft. (2022, February 9). Virtual network TAP. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Rhino Security Labs AWS VPC Traffic Mirroring",
+        "url": "https://rhinosecuritylabs.com/aws/abusing-vpc-traffic-mirroring-in-aws/",
+        "description": "Spencer Gietzen. (2019, September 17). Abusing VPC Traffic Mirroring in AWS. Retrieved March 17, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT-TA18-106A",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA18-106A",
+        "description": "US-CERT. (2018, April 20). Alert (TA18-106A) Russian State-Sponsored Cyber Actors Targeting Network Infrastructure Devices. Retrieved October 19, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--e3a12395-188d-4051-9a16-ea8e14d07b88",
+    "platform": "windows|iaas|linux|macos|containers|network",
+    "tid": "T1046",
+    "technique": "Network Service Discovery",
+    "tactic": "discovery",
+    "datasources": "cloud-service-enumeration|command-execution|network-traffic-flow",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "darkvishnya",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "G0105",
+    "technique_description": "Adversaries may attempt to get a listing of services running on remote hosts and local network infrastructure devices, including those that may be vulnerable to remote software exploitation. Common methods to acquire this information include port and/or vulnerability scans using tools that are brought onto a system.(Citation: CISA AR21-126A FIVEHANDS May 2021)   \n\nWithin cloud environments, adversaries may attempt to discover services running on other cloud hosts. Additionally, if the cloud environment is connected to a on-premises environment, adversaries may be able to identify services running on non-cloud systems as well.\n\nWithin macOS environments, adversaries may use the native Bonjour application to discover services running on other macOS hosts within a network. The Bonjour mDNSResponder daemon automatically registers and advertises a host’s registered services on the network. For example, adversaries can use a mDNS query (such as <code>dns-sd -B _ssh._tcp .</code>) to find other systems broadcasting the ssh service.(Citation: apple doco bonjour description)(Citation: macOS APT Activity Bradley)",
+    "technique_references": [
+      {
+        "source_name": "apple doco bonjour description",
+        "url": "https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/NetServices/Introduction.html",
+        "description": "Apple Inc. (2013, April 23). Bonjour Overview. Retrieved October 11, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CISA AR21-126A FIVEHANDS May 2021",
+        "url": "https://us-cert.cisa.gov/ncas/analysis-reports/ar21-126a",
+        "description": "CISA. (2021, May 6). Analysis Report (AR21-126A) FiveHands Ransomware. Retrieved June 7, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "macOS APT Activity Bradley",
+        "url": "https://themittenmac.com/what-does-apt-activity-look-like-on-macos/",
+        "description": "Jaron Bradley. (2021, November 14). What does APT Activity Look Like on macOS?. Retrieved January 19, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--970a3432-3237-47ad-bcca-7d8cbb217736",
+    "platform": "windows",
+    "tid": "T1059.001",
+    "technique": "PowerShell",
+    "tactic": "execution",
+    "datasources": "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "darkvishnya",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "G0105",
+    "technique_description": "Adversaries may abuse PowerShell commands and scripts for execution. PowerShell is a powerful interactive command-line interface and scripting environment included in the Windows operating system.(Citation: TechNet PowerShell) Adversaries can use PowerShell to perform a number of actions, including discovery of information and execution of code. Examples include the <code>Start-Process</code> cmdlet which can be used to run an executable and the <code>Invoke-Command</code> cmdlet which runs a command locally or on a remote computer (though administrator permissions are required to use PowerShell to connect to remote systems).\n\nPowerShell may also be used to download and run executables from the Internet, which can be executed from disk or in memory without touching disk.\n\nA number of PowerShell-based offensive testing tools are available, including [Empire](https://attack.mitre.org/software/S0363),  [PowerSploit](https://attack.mitre.org/software/S0194), [PoshC2](https://attack.mitre.org/software/S0378), and PSAttack.(Citation: Github PSAttack)\n\nPowerShell commands/scripts can also be executed without directly invoking the <code>powershell.exe</code> binary through interfaces to PowerShell's underlying <code>System.Management.Automation</code> assembly DLL exposed through the .NET framework and Windows Common Language Interface (CLI).(Citation: Sixdub PowerPick Jan 2016)(Citation: SilentBreak Offensive PS Dec 2015)(Citation: Microsoft PSfromCsharp APR 2014)",
+    "technique_references": [
+      {
+        "source_name": "Microsoft PSfromCsharp APR 2014",
+        "url": "https://blogs.msdn.microsoft.com/kebab/2014/04/28/executing-powershell-scripts-from-c/",
+        "description": "Babinec, K. (2014, April 28). Executing PowerShell scripts from C#. Retrieved April 22, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SilentBreak Offensive PS Dec 2015",
+        "url": "https://web.archive.org/web/20190508170150/https://silentbreaksecurity.com/powershell-jobs-without-powershell-exe/",
+        "description": "Christensen, L.. (2015, December 28). The Evolution of Offensive PowerShell Invocation. Retrieved December 8, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye PowerShell Logging 2016",
+        "url": "https://www.fireeye.com/blog/threat-research/2016/02/greater_visibilityt.html",
+        "description": "Dunwoody, M. (2016, February 11). GREATER VISIBILITY THROUGH POWERSHELL LOGGING. Retrieved February 16, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Github PSAttack",
+        "url": "https://github.com/jaredhaight/PSAttack",
+        "description": "Haight, J. (2016, April 21). PS>Attack. Retrieved June 1, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "inv_ps_attacks",
+        "url": "https://powershellmagazine.com/2014/07/16/investigating-powershell-attacks/",
+        "description": "Hastings, M. (2014, July 16). Investigating PowerShell Attacks. Retrieved December 1, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Malware Archaeology PowerShell Cheat Sheet",
+        "url": "http://www.malwarearchaeology.com/s/Windows-PowerShell-Logging-Cheat-Sheet-ver-June-2016-v2.pdf",
+        "description": "Malware Archaeology. (2016, June). WINDOWS POWERSHELL LOGGING CHEAT SHEET - Win 7/Win 2008 or later. Retrieved June 24, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet PowerShell",
+        "url": "https://technet.microsoft.com/en-us/scriptcenter/dd742419.aspx",
+        "description": "Microsoft. (n.d.). Windows PowerShell Scripting. Retrieved April 28, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sixdub PowerPick Jan 2016",
+        "url": "https://web.archive.org/web/20160327101330/http://www.sixdub.net/?p=367",
+        "description": "Warner, J.. (2015, January 6). Inexorable PowerShell – A Red Teamer’s Tale of Overcoming Simple AppLocker Policies. Retrieved December 8, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--a93494bb-4b80-4ea1-8695-3236a49916fd",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "tid": "T1110",
+    "technique": "Brute Force",
+    "tactic": "credential-access",
+    "datasources": "application-log-content|command-execution|user-account-authentication",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1110.001",
+      "T1110.002",
+      "T1110.003",
+      "T1110.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "darkvishnya",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "G0105",
+    "technique_description": "Adversaries may use brute force techniques to gain access to accounts when passwords are unknown or when password hashes are obtained. Without knowledge of the password for an account or set of accounts, an adversary may systematically guess the password using a repetitive or iterative mechanism. Brute forcing passwords can take place via interaction with a service that will check the validity of those credentials or offline against previously acquired credential data, such as password hashes.\n\nBrute forcing credentials may take place at various points during a breach. For example, adversaries may attempt to brute force access to [Valid Accounts](https://attack.mitre.org/techniques/T1078) within a victim environment leveraging knowledge gathered from other post-compromise behaviors such as [OS Credential Dumping](https://attack.mitre.org/techniques/T1003), [Account Discovery](https://attack.mitre.org/techniques/T1087), or [Password Policy Discovery](https://attack.mitre.org/techniques/T1201). Adversaries may also combine brute forcing activity with behaviors such as [External Remote Services](https://attack.mitre.org/techniques/T1133) as part of Initial Access.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--3489cfc5-640f-4bb3-a103-9137b97de79f",
+    "platform": "macos|windows|linux",
+    "tid": "T1135",
+    "technique": "Network Share Discovery",
+    "tactic": "discovery",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "darkvishnya",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "G0105",
+    "technique_description": "Adversaries may look for folders and drives shared on remote systems as a means of identifying sources of information to gather as a precursor for Collection and to identify potential systems of interest for Lateral Movement. Networks often contain shared network drives and folders that enable users to access file directories on various systems across a network. \n\nFile sharing over a Windows network occurs over the SMB protocol. (Citation: Wikipedia Shared Resource) (Citation: TechNet Shared Folder) [Net](https://attack.mitre.org/software/S0039) can be used to query a remote system for available shared drives using the <code>net view \\\\\\\\remotesystem</code> command. It can also be used to query shared drives on the local system using <code>net share</code>. For macOS, the <code>sharing -l</code> command lists all shared points used for smb services.",
+    "technique_references": [
+      {
+        "source_name": "Wikipedia Shared Resource",
+        "url": "https://en.wikipedia.org/wiki/Shared_resource",
+        "description": "Wikipedia. (2017, April 15). Shared resource. Retrieved June 30, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Shared Folder",
+        "url": "https://technet.microsoft.com/library/cc770880.aspx",
+        "description": "Microsoft. (n.d.). Share a Folder or Drive. Retrieved June 30, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--7610cada-1499-41a4-b3dd-46467b68d177",
+    "platform": "windows|macos|linux",
+    "tid": "T1136.002",
+    "technique": "Domain Account",
+    "tactic": "persistence",
+    "datasources": "command-execution|process-creation|user-account-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "darkvishnya",
+    "correlation_malware": "none",
+    "correlation_tool": "psexec",
+    "correlation_gid": "G0105",
+    "technique_description": "Adversaries may create a domain account to maintain access to victim systems. Domain accounts are those managed by Active Directory Domain Services where access and permissions are configured across systems and services that are part of that domain. Domain accounts can cover user, administrator, and service accounts. With a sufficient level of access, the <code>net user /add /domain</code> command can be used to create a domain account.\n\nSuch accounts may be used to establish secondary credentialed access that do not require persistent remote access tools to be deployed on the system.",
+    "technique_references": [
+      {
+        "source_name": "Microsoft User Creation Event",
+        "url": "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4720",
+        "description": "Lich, B., Miroshnikov, A. (2017, April 5). 4720(S): A user account was created. Retrieved June 30, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d40239b3-05ff-46d8-9bdd-b46d13463ef9",
+    "platform": "windows|linux|macos",
+    "tid": "T1200",
+    "technique": "Hardware Additions",
+    "tactic": "initial-access",
+    "datasources": "application-log-content|drive-creation|network-traffic-flow",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "darkvishnya",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "G0105",
+    "technique_description": "Adversaries may introduce computer accessories, networking hardware, or other computing devices into a system or network that can be used as a vector to gain access. Rather than just connecting and distributing payloads via removable storage (i.e. [Replication Through Removable Media](https://attack.mitre.org/techniques/T1091)), more robust hardware additions can be used to introduce new functionalities and/or features into a system that can then be abused.\n\nWhile public references of usage by threat actors are scarce, many red teams/penetration testers leverage hardware additions for initial access. Commercial and open source products can be leveraged with capabilities such as passive network tapping, network traffic modification (i.e. [Adversary-in-the-Middle](https://attack.mitre.org/techniques/T1557)), keystroke injection, kernel memory reading via DMA, addition of new wireless access to an existing network, and others.(Citation: Ossmann Star Feb 2011)(Citation: Aleks Weapons Nov 2015)(Citation: Frisk DMA August 2016)(Citation: McMillan Pwn March 2012)",
+    "technique_references": [
+      {
+        "source_name": "Ossmann Star Feb 2011",
+        "url": "https://ossmann.blogspot.com/2011/02/throwing-star-lan-tap.html",
+        "description": "Michael Ossmann. (2011, February 17). Throwing Star LAN Tap. Retrieved March 30, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Aleks Weapons Nov 2015",
+        "url": "https://www.youtube.com/watch?v=lDvf4ScWbcQ",
+        "description": "Nick Aleks. (2015, November 7). Weapons of a Pentester - Understanding the virtual & physical tools used by white/black hat hackers. Retrieved March 30, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "McMillan Pwn March 2012",
+        "url": "https://arstechnica.com/information-technology/2012/03/the-pwn-plug-is-a-little-white-box-that-can-hack-your-network/",
+        "description": "Robert McMillan. (2012, March 3). The Pwn Plug is a little white box that can hack your network. Retrieved March 30, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Frisk DMA August 2016",
+        "url": "https://www.youtube.com/watch?v=fXthwl6ShOg",
+        "description": "Ulf Frisk. (2016, August 5). Direct Memory Attack the Kernel. Retrieved March 30, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--4061e78c-1284-44b4-9116-73e4ac3912f7",
+    "platform": "linux|windows|macos",
+    "tid": "T1219",
+    "technique": "Remote Access Software",
+    "tactic": "command-and-control",
+    "datasources": "network-connection-creation|network-traffic-content|network-traffic-flow|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "darkvishnya",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "G0105",
+    "technique_description": "An adversary may use legitimate desktop support and remote access software, such as Team Viewer, AnyDesk, Go2Assist, LogMein, AmmyyAdmin, etc, to establish an interactive command and control channel to target systems within networks. These services are commonly used as legitimate technical support software, and may be allowed by application control within a target environment. Remote access tools like VNC, Ammyy, and Teamviewer are used frequently when compared with other legitimate software commonly used by adversaries.(Citation: Symantec Living off the Land)\n\nRemote access tools may be installed and used post-compromise as alternate communications channel for redundant access or as a way to establish an interactive remote desktop session with the target system. They may also be used as a component of malware to establish a reverse connection or back-connect to a service or adversary controlled system. Installation of many remote access tools may also include persistence (ex: the tool's installation routine creates a [Windows Service](https://attack.mitre.org/techniques/T1543/003)).\n\nAdmin tools such as TeamViewer have been used by several groups targeting institutions in countries of interest to the Russian state and criminal campaigns.(Citation: CrowdStrike 2015 Global Threat Report)(Citation: CrySyS Blog TeamSpy)",
+    "technique_references": [
+      {
+        "source_name": "CrowdStrike 2015 Global Threat Report",
+        "url": "https://go.crowdstrike.com/rs/281-OBQ-266/images/15GlobalThreatReport.pdf",
+        "description": "CrowdStrike Intelligence. (2016). 2015 Global Threat Report. Retrieved April 11, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CrySyS Blog TeamSpy",
+        "url": "https://blog.crysys.hu/2013/03/teamspy/",
+        "description": "CrySyS Lab. (2013, March 20). TeamSpy – Obshie manevri. Ispolzovat’ tolko s razreshenija S-a. Retrieved April 11, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Symantec Living off the Land",
+        "url": "https://www.symantec.com/content/dam/symantec/docs/security-center/white-papers/istr-living-off-the-land-and-fileless-attack-techniques-en.pdf",
+        "description": "Wueest, C., Anand, H. (2017, July). Living off the land and fileless attack techniques. Retrieved April 10, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--bf90d72c-c00b-45e3-b3aa-68560560d4c5",
+    "platform": "linux|macos|windows",
+    "tid": "T1570",
+    "technique": "Lateral Tool Transfer",
+    "tactic": "lateral-movement",
+    "datasources": "command-execution|file-creation|file-metadata|named-pipe-metadata|network-share-access|network-traffic-content|network-traffic-flow|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "darkvishnya",
+    "correlation_malware": "none",
+    "correlation_tool": "psexec",
+    "correlation_gid": "G0105",
+    "technique_description": "Adversaries may transfer tools or other files between systems in a compromised environment. Once brought into the victim environment (i.e. [Ingress Tool Transfer](https://attack.mitre.org/techniques/T1105)) files may then be copied from one system to another to stage adversary tools or other files over the course of an operation. Adversaries may copy files between internal victim systems to support lateral movement using inherent file sharing protocols such as file sharing over [SMB/Windows Admin Shares](https://attack.mitre.org/techniques/T1021/002) to connected network shares or with authenticated connections via [Remote Desktop Protocol](https://attack.mitre.org/techniques/T1021/001).(Citation: Unit42 LockerGoga 2019)\n\nFiles can also be transferred using native or otherwise present tools on the victim system, such as scp, rsync, curl, sftp, and [ftp](https://attack.mitre.org/software/S0095).",
+    "technique_references": [
+      {
+        "source_name": "Unit42 LockerGoga 2019",
+        "url": "https://unit42.paloaltonetworks.com/born-this-way-origins-of-lockergoga/",
+        "description": "Harbison, M. (2019, March 26). Born This Way? Origins of LockerGoga. Retrieved April 16, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b18eae87-b469-4e14-b454-b171b416bc18",
+    "platform": "linux|macos|windows",
+    "tid": "T1571",
+    "technique": "Non-Standard Port",
+    "tactic": "command-and-control",
+    "datasources": "network-traffic-content|network-traffic-flow",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "darkvishnya",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "G0105",
+    "technique_description": "Adversaries may communicate using a protocol and port pairing that are typically not associated. For example, HTTPS over port 8088(Citation: Symantec Elfin Mar 2019) or port 587(Citation: Fortinet Agent Tesla April 2018) as opposed to the traditional port 443. Adversaries may make changes to the standard port used by a protocol to bypass filtering or muddle analysis/parsing of network data.\n\nAdversaries may also make changes to victim systems to abuse non-standard ports. For example, Registry keys and other configuration settings can be used to modify protocol and port pairings.(Citation: change_rdp_port_conti)",
+    "technique_references": [
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Symantec Elfin Mar 2019",
+        "url": "https://www.symantec.com/blogs/threat-intelligence/elfin-apt33-espionage",
+        "description": "Security Response attack Investigation Team. (2019, March 27). Elfin: Relentless Espionage Group Targets Multiple Organizations in Saudi Arabia and U.S.. Retrieved April 10, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "change_rdp_port_conti",
+        "url": "https://twitter.com/TheDFIRReport/status/1498657772254240768",
+        "description": "The DFIR Report. (2022, March 1). \"Change RDP port\" #ContiLeaks. Retrieved March 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Fortinet Agent Tesla April 2018",
+        "url": "https://www.fortinet.com/blog/threat-research/analysis-of-new-agent-tesla-spyware-variant.html",
+        "description": "Zhang, X. (2018, April 05). Analysis of New Agent Tesla Spyware Variant. Retrieved November 5, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--a2fdce72-04b2-409a-ac10-cc1695f4fce0",
+    "platform": "pre",
+    "tid": "T1588.002",
+    "technique": "Tool",
+    "tactic": "resource-development",
+    "datasources": "malware-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "darkvishnya",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "G0105",
+    "technique_description": "Adversaries may buy, steal, or download software tools that can be used during targeting. Tools can be open or closed source, free or commercial. A tool can be used for malicious purposes by an adversary, but (unlike malware) were not intended to be used for those purposes (ex: [PsExec](https://attack.mitre.org/software/S0029)). Tool acquisition can involve the procurement of commercial software licenses, including for red teaming tools such as [Cobalt Strike](https://attack.mitre.org/software/S0154). Commercial software may be obtained through purchase, stealing licenses (or licensed copies of the software), or cracking trial versions.(Citation: Recorded Future Beacon 2019)\n\nAdversaries may obtain tools to support their operations, including to support execution of post-compromise behaviors. In addition to freely downloading or purchasing software, adversaries may steal software and/or software licenses from third-party entities (including other adversaries).",
+    "technique_references": [
+      {
+        "source_name": "Recorded Future Beacon 2019",
+        "url": "https://www.recordedfuture.com/identifying-cobalt-strike-servers/",
+        "description": "Recorded Future. (2019, June 20). Out of the Blue: How Recorded Future Identified Rogue Cobalt Strike Servers. Retrieved October 16, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Analyzing CS Dec 2020",
+        "url": "https://www.randhome.io/blog/2020/12/20/analyzing-cobalt-strike-for-fun-and-profit/",
+        "description": "Maynier, E. (2020, December 20). Analyzing Cobalt Strike for Fun and Profit. Retrieved October 12, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

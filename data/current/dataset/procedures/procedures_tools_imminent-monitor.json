@@ -1,0 +1,44 @@
+[
+  [
+    "imminent-monitor",
+    "T1021.001",
+    "Remote Desktop Protocol",
+    "logon-session-creation|network-connection-creation|network-traffic-flow|process-creation",
+    "T1021.001::[Imminent Monitor] has a module for performing remote desktop access."
+  ],
+  [
+    "imminent-monitor",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[Imminent Monitor] has a keylogging module."
+  ],
+  [
+    "imminent-monitor",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[Imminent Monitor] has deleted files related to its dynamic debugger feature."
+  ],
+  [
+    "imminent-monitor",
+    "T1555.003",
+    "Credentials from Web Browsers",
+    "command-execution|file-access|os-api-execution|process-access",
+    "T1555.003::[Imminent Monitor] has a PasswordRecoveryPacket module for recovering browser passwords."
+  ],
+  [
+    "imminent-monitor",
+    "T1562.001",
+    "Disable or Modify Tools",
+    "command-execution|driver-load|host-status|process-termination|service-metadata|windows-registry-key-deletion|windows-registry-key-modification",
+    "T1562.001::[Imminent Monitor] has a feature to disable Windows Task Manager."
+  ],
+  [
+    "imminent-monitor",
+    "T1564.001",
+    "Hidden Files and Directories",
+    "command-execution|file-creation|file-metadata|process-creation",
+    "T1564.001::[Imminent Monitor] has a dynamic debugging feature to set the file attribute to hidden."
+  ]
+]

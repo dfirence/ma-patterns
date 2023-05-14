@@ -1,0 +1,75 @@
+[
+  {
+    "id": "intrusion-set--64b52e7d-b2c4-4a02-9372-08a463f5dc11",
+    "name": "aquatic-panda",
+    "aliases": "aquatic-panda",
+    "group_id": "G0143",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 2,
+        "items": [
+          "cobalt-strike",
+          "njrat"
+        ]
+      },
+      "tools": {
+        "count": 0,
+        "items": []
+      },
+      "techniques": {
+        "count": 15,
+        "items": [
+          "T1003.001",
+          "T1007",
+          "T1027.010",
+          "T1059.001",
+          "T1059.003",
+          "T1070.004",
+          "T1082",
+          "T1105",
+          "T1518.001",
+          "T1560.001",
+          "T1562.001",
+          "T1574.001",
+          "T1588.001",
+          "T1588.002",
+          "T1595.002"
+        ]
+      },
+      "tactics": {
+        "count": 10,
+        "items": [
+          "collection",
+          "command-and-control",
+          "credential-access",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "persistence",
+          "privilege-escalation",
+          "reconnaissance",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1003.001::[Aquatic Panda] has attempted to harvest credentials through LSASS memory dumping.",
+        "T1007::[Aquatic Panda] has attempted to discover services for third party EDR products.",
+        "T1027.010::[Aquatic Panda] has encoded PowerShell commands in Base64.",
+        "T1059.001::[Aquatic Panda] has downloaded additional scripts and executed Base64 encoded commands in PowerShell.",
+        "T1059.003::[Aquatic Panda] has attempted and failed to run Bash commands on a Windows host by passing them to cmd /C.",
+        "T1070.004::[Aquatic Panda] has deleted malicious executables from compromised machines.",
+        "T1082::[Aquatic Panda] has used native OS commands to understand privilege levels and system details.",
+        "T1105::[Aquatic Panda] has downloaded additional malware onto compromised hosts.",
+        "T1518.001::[Aquatic Panda] has attempted to discover third party endpoint detection and response (EDR) tools on compromised systems.",
+        "T1560.001::[Aquatic Panda] has used WinRAR to compress memory dumps prior to exfiltration.",
+        "T1562.001::[Aquatic Panda] has attempted to stop endpoint detection and response (EDR) tools on compromised systems.",
+        "T1574.001::[Aquatic Panda] has used DLL search-order hijacking to load `exe`, `dll`, and `dat` files into memory.",
+        "T1588.001::[Aquatic Panda] has acquired and used [njRAT] in its operations.",
+        "T1588.002::[Aquatic Panda] has acquired and used [Cobalt Strike] in its operations.",
+        "T1595.002::[Aquatic Panda] has used publicly accessible DNS logging services to identify servers vulnerable to Log4j (CVE 2021-44228)."
+      ]
+    },
+    "description": "[Aquatic Panda](https://attack.mitre.org/groups/G0143) is a suspected China-based threat group with a dual mission of intelligence collection and industrial espionage. Active since at least May 2020, [Aquatic Panda](https://attack.mitre.org/groups/G0143) has primarily targeted entities in the telecommunications, technology, and government sectors.(Citation: CrowdStrike AQUATIC PANDA December 2021)"
+  }
+]

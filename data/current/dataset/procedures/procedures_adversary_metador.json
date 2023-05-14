@@ -1,0 +1,44 @@
+[
+  [
+    "metador",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[Metador] has used the Windows command line to execute commands."
+  ],
+  [
+    "metador",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[Metador] has quickly deleted `cbd.exe` from a compromised host following the successful deployment of their malware."
+  ],
+  [
+    "metador",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[Metador] has used HTTP for C2."
+  ],
+  [
+    "metador",
+    "T1546.003",
+    "Windows Management Instrumentation Event Subscription",
+    "command-execution|process-creation|wmi-creation",
+    "T1546.003::[Metador] has established persistence through the use of a WMI event subscription combined with unusual living-off-the-land binaries such as `cdb.exe`."
+  ],
+  [
+    "metador",
+    "T1588.001",
+    "Malware",
+    "malware-content|malware-metadata",
+    "T1588.001::[Metador] has used unique malware in their operations, including [metaMain] and [Mafalda]."
+  ],
+  [
+    "metador",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[Metador] has used Microsoft's Console Debugger in some of their operations."
+  ]
+]

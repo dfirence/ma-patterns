@@ -1,9 +1,0 @@
-{
-  "tools": [],
-  "malware": [],
-  "T1599:Network Boundary Bridging": [
-    "network-traffic-content",
-    "network-traffic-flow"
-  ],
-  "adversaries": []
-}

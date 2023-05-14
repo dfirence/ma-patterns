@@ -1,0 +1,190 @@
+[
+  {
+    "id": "attack-pattern--6151cbea-819b-455a-9fa6-99a1cc58797d",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers",
+    "tid": "T1078.001",
+    "technique": "Default Accounts",
+    "tactic": "defense-evasion",
+    "datasources": "logon-session-creation|user-account-authentication",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a default account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Default accounts are those that are built-into an OS, such as the Guest or Administrator accounts on Windows systems. Default accounts also include default factory/provider set accounts on other types of systems, software, or devices, including the root user account in AWS and the default service account in Kubernetes.(Citation: Microsoft Local Accounts Feb 2019)(Citation: AWS Root User)(Citation: Threat Matrix for Kubernetes)\n\nDefault accounts are not limited to client machines, rather also include accounts that are preset for equipment such as network devices and computer applications whether they are internal, open source, or commercial. Appliances that come preset with a username and password combination pose a serious threat to organizations that do not change it post installation, as they are easy targets for an adversary. Similarly, adversaries may also utilize publicly disclosed or stolen [Private Keys](https://attack.mitre.org/techniques/T1552/004) or credential materials to legitimately connect to remote environments via [Remote Services](https://attack.mitre.org/techniques/T1021).(Citation: Metasploit SSH Module)",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Local Accounts Feb 2019",
+        "url": "https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/local-accounts",
+        "description": "Microsoft. (2018, December 9). Local Accounts. Retrieved February 11, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AWS Root User",
+        "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html",
+        "description": "Amazon. (n.d.). AWS Account Root User. Retrieved April 5, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Threat Matrix for Kubernetes",
+        "url": "https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/",
+        "description": "Weizman, Y. (2020, April 2). Threat Matrix for Kubernetes. Retrieved March 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Metasploit SSH Module",
+        "url": "https://github.com/rapid7/metasploit-framework/tree/master/modules/exploits/linux/ssh",
+        "description": "undefined. (n.d.). Retrieved April 12, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--6151cbea-819b-455a-9fa6-99a1cc58797d",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers",
+    "tid": "T1078.001",
+    "technique": "Default Accounts",
+    "tactic": "initial-access",
+    "datasources": "logon-session-creation|user-account-authentication",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a default account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Default accounts are those that are built-into an OS, such as the Guest or Administrator accounts on Windows systems. Default accounts also include default factory/provider set accounts on other types of systems, software, or devices, including the root user account in AWS and the default service account in Kubernetes.(Citation: Microsoft Local Accounts Feb 2019)(Citation: AWS Root User)(Citation: Threat Matrix for Kubernetes)\n\nDefault accounts are not limited to client machines, rather also include accounts that are preset for equipment such as network devices and computer applications whether they are internal, open source, or commercial. Appliances that come preset with a username and password combination pose a serious threat to organizations that do not change it post installation, as they are easy targets for an adversary. Similarly, adversaries may also utilize publicly disclosed or stolen [Private Keys](https://attack.mitre.org/techniques/T1552/004) or credential materials to legitimately connect to remote environments via [Remote Services](https://attack.mitre.org/techniques/T1021).(Citation: Metasploit SSH Module)",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Local Accounts Feb 2019",
+        "url": "https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/local-accounts",
+        "description": "Microsoft. (2018, December 9). Local Accounts. Retrieved February 11, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AWS Root User",
+        "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html",
+        "description": "Amazon. (n.d.). AWS Account Root User. Retrieved April 5, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Threat Matrix for Kubernetes",
+        "url": "https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/",
+        "description": "Weizman, Y. (2020, April 2). Threat Matrix for Kubernetes. Retrieved March 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Metasploit SSH Module",
+        "url": "https://github.com/rapid7/metasploit-framework/tree/master/modules/exploits/linux/ssh",
+        "description": "undefined. (n.d.). Retrieved April 12, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--6151cbea-819b-455a-9fa6-99a1cc58797d",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers",
+    "tid": "T1078.001",
+    "technique": "Default Accounts",
+    "tactic": "persistence",
+    "datasources": "logon-session-creation|user-account-authentication",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a default account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Default accounts are those that are built-into an OS, such as the Guest or Administrator accounts on Windows systems. Default accounts also include default factory/provider set accounts on other types of systems, software, or devices, including the root user account in AWS and the default service account in Kubernetes.(Citation: Microsoft Local Accounts Feb 2019)(Citation: AWS Root User)(Citation: Threat Matrix for Kubernetes)\n\nDefault accounts are not limited to client machines, rather also include accounts that are preset for equipment such as network devices and computer applications whether they are internal, open source, or commercial. Appliances that come preset with a username and password combination pose a serious threat to organizations that do not change it post installation, as they are easy targets for an adversary. Similarly, adversaries may also utilize publicly disclosed or stolen [Private Keys](https://attack.mitre.org/techniques/T1552/004) or credential materials to legitimately connect to remote environments via [Remote Services](https://attack.mitre.org/techniques/T1021).(Citation: Metasploit SSH Module)",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Local Accounts Feb 2019",
+        "url": "https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/local-accounts",
+        "description": "Microsoft. (2018, December 9). Local Accounts. Retrieved February 11, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AWS Root User",
+        "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html",
+        "description": "Amazon. (n.d.). AWS Account Root User. Retrieved April 5, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Threat Matrix for Kubernetes",
+        "url": "https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/",
+        "description": "Weizman, Y. (2020, April 2). Threat Matrix for Kubernetes. Retrieved March 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Metasploit SSH Module",
+        "url": "https://github.com/rapid7/metasploit-framework/tree/master/modules/exploits/linux/ssh",
+        "description": "undefined. (n.d.). Retrieved April 12, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--6151cbea-819b-455a-9fa6-99a1cc58797d",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers",
+    "tid": "T1078.001",
+    "technique": "Default Accounts",
+    "tactic": "privilege-escalation",
+    "datasources": "logon-session-creation|user-account-authentication",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may obtain and abuse credentials of a default account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Default accounts are those that are built-into an OS, such as the Guest or Administrator accounts on Windows systems. Default accounts also include default factory/provider set accounts on other types of systems, software, or devices, including the root user account in AWS and the default service account in Kubernetes.(Citation: Microsoft Local Accounts Feb 2019)(Citation: AWS Root User)(Citation: Threat Matrix for Kubernetes)\n\nDefault accounts are not limited to client machines, rather also include accounts that are preset for equipment such as network devices and computer applications whether they are internal, open source, or commercial. Appliances that come preset with a username and password combination pose a serious threat to organizations that do not change it post installation, as they are easy targets for an adversary. Similarly, adversaries may also utilize publicly disclosed or stolen [Private Keys](https://attack.mitre.org/techniques/T1552/004) or credential materials to legitimately connect to remote environments via [Remote Services](https://attack.mitre.org/techniques/T1021).(Citation: Metasploit SSH Module)",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Local Accounts Feb 2019",
+        "url": "https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/local-accounts",
+        "description": "Microsoft. (2018, December 9). Local Accounts. Retrieved February 11, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AWS Root User",
+        "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html",
+        "description": "Amazon. (n.d.). AWS Account Root User. Retrieved April 5, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Threat Matrix for Kubernetes",
+        "url": "https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/",
+        "description": "Weizman, Y. (2020, April 2). Threat Matrix for Kubernetes. Retrieved March 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Metasploit SSH Module",
+        "url": "https://github.com/rapid7/metasploit-framework/tree/master/modules/exploits/linux/ssh",
+        "description": "undefined. (n.d.). Retrieved April 12, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

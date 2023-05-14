@@ -1,0 +1,51 @@
+[
+  [
+    "impacket",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::SecretsDump and [Mimikatz] modules within [Impacket] can perform credential dumping to obtain account and password information."
+  ],
+  [
+    "impacket",
+    "T1003.002",
+    "Security Account Manager",
+    "command-execution|file-access|windows-registry-key-access",
+    "T1003.002::SecretsDump and [Mimikatz] modules within [Impacket] can perform credential dumping to obtain account and password information."
+  ],
+  [
+    "impacket",
+    "T1003.003",
+    "NTDS",
+    "command-execution|file-access",
+    "T1003.003::SecretsDump and [Mimikatz] modules within [Impacket] can perform credential dumping to obtain account and password information from NTDS.dit."
+  ],
+  [
+    "impacket",
+    "T1003.004",
+    "LSA Secrets",
+    "command-execution|windows-registry-key-access",
+    "T1003.004::SecretsDump and [Mimikatz] modules within [Impacket] can perform credential dumping to obtain account and password information."
+  ],
+  [
+    "impacket",
+    "T1557.001",
+    "LLMNR/NBT-NS Poisoning and SMB Relay",
+    "network-traffic-content|network-traffic-flow|service-creation|windows-registry-key-modification",
+    "T1557.001::[Impacket] modules like ntlmrelayx and smbrelayx can be used in conjunction with [Network Sniffing] and [LLMNR/NBT-NS Poisoning and SMB Relay] to gather NetNTLM credentials for [Brute Force] or relay attacks that can gain code execution."
+  ],
+  [
+    "impacket",
+    "T1558.003",
+    "Kerberoasting",
+    "active-directory-credential-request",
+    "T1558.003::[Impacket] modules like GetUserSPNs can be used to get Service Principal Names (SPNs) for user accounts. The output is formatted to be compatible with cracking tools like John the Ripper and Hashcat."
+  ],
+  [
+    "impacket",
+    "T1569.002",
+    "Service Execution",
+    "command-execution|process-creation|service-creation|windows-registry-key-modification",
+    "T1569.002::[Impacket] contains various modules emulating other service execution tools such as [PsExec]."
+  ]
+]

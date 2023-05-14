@@ -1,0 +1,16 @@
+[
+  [
+    "rawdisk",
+    "T1561.001",
+    "Disk Content Wipe",
+    "command-execution|drive-access|drive-modification|driver-load|process-creation",
+    "T1561.001::[RawDisk] has been used to directly access the hard disk to help overwrite arbitrarily sized portions of disk content."
+  ],
+  [
+    "rawdisk",
+    "T1561.002",
+    "Disk Structure Wipe",
+    "command-execution|drive-access|drive-modification|driver-load|process-creation",
+    "T1561.002::[RawDisk] was used in [Shamoon] to help overwrite components of disk structure like the MBR and disk partitions."
+  ]
+]

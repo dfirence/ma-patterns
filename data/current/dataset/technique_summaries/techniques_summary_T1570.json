@@ -1,0 +1,31 @@
+[
+  {
+    "id": "attack-pattern--bf90d72c-c00b-45e3-b3aa-68560560d4c5",
+    "platform": "linux|macos|windows",
+    "tid": "T1570",
+    "technique": "Lateral Tool Transfer",
+    "tactic": "lateral-movement",
+    "datasources": "command-execution|file-creation|file-metadata|named-pipe-metadata|network-share-access|network-traffic-content|network-traffic-flow|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may transfer tools or other files between systems in a compromised environment. Once brought into the victim environment (i.e. [Ingress Tool Transfer](https://attack.mitre.org/techniques/T1105)) files may then be copied from one system to another to stage adversary tools or other files over the course of an operation. Adversaries may copy files between internal victim systems to support lateral movement using inherent file sharing protocols such as file sharing over [SMB/Windows Admin Shares](https://attack.mitre.org/techniques/T1021/002) to connected network shares or with authenticated connections via [Remote Desktop Protocol](https://attack.mitre.org/techniques/T1021/001).(Citation: Unit42 LockerGoga 2019)\n\nFiles can also be transferred using native or otherwise present tools on the victim system, such as scp, rsync, curl, sftp, and [ftp](https://attack.mitre.org/software/S0095).",
+    "technique_references": [
+      {
+        "source_name": "Unit42 LockerGoga 2019",
+        "url": "https://unit42.paloaltonetworks.com/born-this-way-origins-of-lockergoga/",
+        "description": "Harbison, M. (2019, March 26). Born This Way? Origins of LockerGoga. Retrieved April 16, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

@@ -1,0 +1,61 @@
+[
+  {
+    "id": "attack-pattern--31a0a2ac-c67c-4a7e-b9ed-6a96477d4e8e",
+    "platform": "macos",
+    "tid": "T1553.001",
+    "technique": "Gatekeeper Bypass",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|file-metadata|file-modification|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify file attributes and subvert Gatekeeper functionality to evade user prompts and execute untrusted programs. Gatekeeper is a set of technologies that act as layer of Apple’s security model to ensure only trusted applications are executed on a host. Gatekeeper was built on top of File Quarantine in Snow Leopard (10.6, 2009) and has grown to include Code Signing, security policy compliance, Notarization, and more. Gatekeeper also treats applications running for the first time differently than reopened applications.(Citation: TheEclecticLightCompany Quarantine and the flag)(Citation: TheEclecticLightCompany apple notarization )\n\nBased on an opt-in system, when files are downloaded an extended attribute (xattr) called `com.apple.quarantine` (also known as a quarantine flag) can be set on the file by the application performing the download. Launch Services opens the application in a suspended state. For first run applications with the quarantine flag set, Gatekeeper executes the following functions:\n\n1. Checks extended attribute – Gatekeeper checks for the quarantine flag, then provides an alert prompt to the user to allow or deny execution.(Citation: OceanLotus for OS X)(Citation: 20 macOS Common Tools and Techniques)\n\n2. Checks System Policies - Gatekeeper checks the system security policy, allowing execution of apps downloaded from either just the App Store or the App Store and identified developers.\n\n3. Code Signing – Gatekeeper checks for a valid code signature from an Apple Developer ID.\n\n4. Notarization - Using the `api.apple-cloudkit.com` API, Gatekeeper reaches out to Apple servers to verify or pull down the notarization ticket and ensure the ticket is not revoked. Users can override notarization, which will result in a prompt of executing an “unauthorized app” and the security policy will be modified.\n\nAdversaries can subvert one or multiple security controls within Gatekeeper checks through logic errors (e.g. [Exploitation for Defense Evasion](https://attack.mitre.org/techniques/T1211)), unchecked file types, and external libraries. For example, prior to macOS 13 Ventura, code signing and notarization checks were only conducted on first launch, allowing adversaries to write malicious executables to previously opened applications in order to bypass Gatekeeper security checks.(Citation: theevilbit gatekeeper bypass 2021)(Citation: Application Bundle Manipulation Brandon Dalton)\n\nApplications and files loaded onto the system from a USB flash drive, optical disk, external hard drive, from a drive shared over the local network, or using the curl command may not set the quarantine flag. Additionally, it is possible to avoid setting the quarantine flag using [Drive-by Compromise](https://attack.mitre.org/techniques/T1189).",
+    "technique_references": [
+      {
+        "source_name": "Application Bundle Manipulation Brandon Dalton",
+        "url": "https://redcanary.com/blog/mac-application-bundles/",
+        "description": "Brandon Dalton. (2022, August 9). A bundle of nerves: Tweaking macOS security controls to thwart application bundle manipulation. Retrieved September 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "theevilbit gatekeeper bypass 2021",
+        "url": "https://theevilbit.github.io/posts/gatekeeper_not_a_bypass/",
+        "description": "Csaba Fitzl. (2021, June 29). GateKeeper - Not a Bypass (Again). Retrieved September 22, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "OceanLotus for OS X",
+        "url": "https://www.alienvault.com/blogs/labs-research/oceanlotus-for-os-x-an-application-bundle-pretending-to-be-an-adobe-flash-update",
+        "description": "Eddie Lee. (2016, February 17). OceanLotus for OS X - an Application Bundle Pretending to be an Adobe Flash Update. Retrieved July 5, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TheEclecticLightCompany Quarantine and the flag",
+        "url": "https://eclecticlight.co/2020/10/29/quarantine-and-the-quarantine-flag/",
+        "description": "hoakley. (2020, October 29). Quarantine and the quarantine flag. Retrieved September 13, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TheEclecticLightCompany apple notarization ",
+        "url": "https://eclecticlight.co/2020/08/28/how-notarization-works/",
+        "description": "How Notarization Works. (2020, August 28). How notarization works. Retrieved September 13, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "20 macOS Common Tools and Techniques",
+        "url": "https://labs.sentinelone.com/20-common-tools-techniques-used-by-macos-threat-actors-malware/",
+        "description": "Phil Stokes. (2021, February 16). 20 Common Tools & Techniques Used by macOS Threat Actors & Malware. Retrieved August 23, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

@@ -1,0 +1,852 @@
+[
+  {
+    "id": "attack-pattern--7bdca9d5-d500-4d7d-8c52-5fd47baf4c0c",
+    "platform": "windows|linux|macos",
+    "tid": "T1036.004",
+    "technique": "Masquerade Task or Service",
+    "tactic": "defense-evasion",
+    "datasources": "service-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to manipulate the name of a task or service to make it appear legitimate or benign. Tasks/services executed by the Task Scheduler or systemd will typically be given a name and/or description.(Citation: TechNet Schtasks)(Citation: Systemd Service Units) Windows services will have a service name as well as a display name. Many benign tasks and services exist that have commonly associated names. Adversaries may give tasks or services names that are similar or identical to those of legitimate ones.\n\nTasks or services contain other fields, such as a description, that adversaries may attempt to make appear legitimate.(Citation: Palo Alto Shamoon Nov 2016)(Citation: Fysbis Dr Web Analysis)",
+    "technique_references": [
+      {
+        "source_name": "TechNet Schtasks",
+        "url": "https://technet.microsoft.com/en-us/library/bb490996.aspx",
+        "description": "Microsoft. (n.d.). Schtasks. Retrieved April 28, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Systemd Service Units",
+        "url": "https://www.freedesktop.org/software/systemd/man/systemd.service.html",
+        "description": "Freedesktop.org. (n.d.). systemd.service — Service unit configuration. Retrieved March 16, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Palo Alto Shamoon Nov 2016",
+        "url": "http://researchcenter.paloaltonetworks.com/2016/11/unit42-shamoon-2-return-disttrack-wiper/",
+        "description": "Falcone, R.. (2016, November 30). Shamoon 2: Return of the Disttrack Wiper. Retrieved January 11, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Fysbis Dr Web Analysis",
+        "url": "https://vms.drweb.com/virus/?i=4276269",
+        "description": "Doctor Web. (2014, November 21). Linux.BackDoor.Fysbis.1. Retrieved December 7, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator|system",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d10cbd34-42e3-45c0-84d2-535a09849584",
+    "platform": "macos",
+    "tid": "T1543.001",
+    "technique": "Launch Agent",
+    "tactic": "persistence",
+    "datasources": "service-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may create or modify launch agents to repeatedly execute malicious payloads as part of persistence. When a user logs in, a per-user launchd process is started which loads the parameters for each launch-on-demand user agent from the property list (.plist) file found in <code>/System/Library/LaunchAgents</code>, <code>/Library/LaunchAgents</code>, and <code>~/Library/LaunchAgents</code>.(Citation: AppleDocs Launch Agent Daemons)(Citation: OSX Keydnap malware) (Citation: Antiquated Mac Malware) Property list files use the <code>Label</code>, <code>ProgramArguments </code>, and <code>RunAtLoad</code> keys to identify the Launch Agent's name, executable location, and execution time.(Citation: OSX.Dok Malware) Launch Agents are often installed to perform updates to programs, launch user specified programs at login, or to conduct other developer tasks.\n\n Launch Agents can also be executed using the [Launchctl](https://attack.mitre.org/techniques/T1569/001) command.\n \nAdversaries may install a new Launch Agent that executes at login by placing a .plist file into the appropriate folders with the <code>RunAtLoad</code> or <code>KeepAlive</code> keys set to <code>true</code>.(Citation: Sofacy Komplex Trojan)(Citation: Methods of Mac Malware Persistence) The Launch Agent name may be disguised by using a name from the related operating system or benign software. Launch Agents are created with user level privileges and execute with user level permissions.(Citation: OSX Malware Detection)(Citation: OceanLotus for OS X) ",
+    "technique_references": [
+      {
+        "source_name": "AppleDocs Launch Agent Daemons",
+        "url": "https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html",
+        "description": "Apple. (n.d.). Creating Launch Daemons and Agents. Retrieved July 10, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sofacy Komplex Trojan",
+        "url": "https://researchcenter.paloaltonetworks.com/2016/09/unit42-sofacys-komplex-os-x-trojan/",
+        "description": "Dani Creus, Tyler Halfpop, Robert Falcone. (2016, September 26). Sofacy's 'Komplex' OS X Trojan. Retrieved July 8, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "OceanLotus for OS X",
+        "url": "https://www.alienvault.com/blogs/labs-research/oceanlotus-for-os-x-an-application-bundle-pretending-to-be-an-adobe-flash-update",
+        "description": "Eddie Lee. (2016, February 17). OceanLotus for OS X - an Application Bundle Pretending to be an Adobe Flash Update. Retrieved July 5, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "OSX Keydnap malware",
+        "url": "https://www.welivesecurity.com/2016/07/06/new-osxkeydnap-malware-hungry-credentials/",
+        "description": "Marc-Etienne M.Leveille. (2016, July 6). New OSX/Keydnap malware is hungry for credentials. Retrieved July 3, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Methods of Mac Malware Persistence",
+        "url": "https://www.virusbulletin.com/uploads/pdf/conference/vb2014/VB2014-Wardle.pdf",
+        "description": "Patrick Wardle. (2014, September). Methods of Malware Persistence on Mac OS X. Retrieved July 5, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "OSX Malware Detection",
+        "url": "https://www.synack.com/wp-content/uploads/2016/03/RSA_OSX_Malware.pdf",
+        "description": "Patrick Wardle. (2016, February 29). Let's Play Doctor: Practical OS X Malware Detection & Analysis. Retrieved July 10, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Antiquated Mac Malware",
+        "url": "https://blog.malwarebytes.com/threat-analysis/2017/01/new-mac-backdoor-using-antiquated-code/",
+        "description": "Thomas Reed. (2017, January 18). New Mac backdoor using antiquated code. Retrieved July 5, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "OSX.Dok Malware",
+        "url": "https://blog.malwarebytes.com/threat-analysis/2017/04/new-osx-dok-malware-intercepts-web-traffic/",
+        "description": "Thomas Reed. (2017, July 7). New OSX.Dok malware intercepts web traffic. Retrieved July 10, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d10cbd34-42e3-45c0-84d2-535a09849584",
+    "platform": "macos",
+    "tid": "T1543.001",
+    "technique": "Launch Agent",
+    "tactic": "privilege-escalation",
+    "datasources": "service-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may create or modify launch agents to repeatedly execute malicious payloads as part of persistence. When a user logs in, a per-user launchd process is started which loads the parameters for each launch-on-demand user agent from the property list (.plist) file found in <code>/System/Library/LaunchAgents</code>, <code>/Library/LaunchAgents</code>, and <code>~/Library/LaunchAgents</code>.(Citation: AppleDocs Launch Agent Daemons)(Citation: OSX Keydnap malware) (Citation: Antiquated Mac Malware) Property list files use the <code>Label</code>, <code>ProgramArguments </code>, and <code>RunAtLoad</code> keys to identify the Launch Agent's name, executable location, and execution time.(Citation: OSX.Dok Malware) Launch Agents are often installed to perform updates to programs, launch user specified programs at login, or to conduct other developer tasks.\n\n Launch Agents can also be executed using the [Launchctl](https://attack.mitre.org/techniques/T1569/001) command.\n \nAdversaries may install a new Launch Agent that executes at login by placing a .plist file into the appropriate folders with the <code>RunAtLoad</code> or <code>KeepAlive</code> keys set to <code>true</code>.(Citation: Sofacy Komplex Trojan)(Citation: Methods of Mac Malware Persistence) The Launch Agent name may be disguised by using a name from the related operating system or benign software. Launch Agents are created with user level privileges and execute with user level permissions.(Citation: OSX Malware Detection)(Citation: OceanLotus for OS X) ",
+    "technique_references": [
+      {
+        "source_name": "AppleDocs Launch Agent Daemons",
+        "url": "https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html",
+        "description": "Apple. (n.d.). Creating Launch Daemons and Agents. Retrieved July 10, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sofacy Komplex Trojan",
+        "url": "https://researchcenter.paloaltonetworks.com/2016/09/unit42-sofacys-komplex-os-x-trojan/",
+        "description": "Dani Creus, Tyler Halfpop, Robert Falcone. (2016, September 26). Sofacy's 'Komplex' OS X Trojan. Retrieved July 8, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "OceanLotus for OS X",
+        "url": "https://www.alienvault.com/blogs/labs-research/oceanlotus-for-os-x-an-application-bundle-pretending-to-be-an-adobe-flash-update",
+        "description": "Eddie Lee. (2016, February 17). OceanLotus for OS X - an Application Bundle Pretending to be an Adobe Flash Update. Retrieved July 5, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "OSX Keydnap malware",
+        "url": "https://www.welivesecurity.com/2016/07/06/new-osxkeydnap-malware-hungry-credentials/",
+        "description": "Marc-Etienne M.Leveille. (2016, July 6). New OSX/Keydnap malware is hungry for credentials. Retrieved July 3, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Methods of Mac Malware Persistence",
+        "url": "https://www.virusbulletin.com/uploads/pdf/conference/vb2014/VB2014-Wardle.pdf",
+        "description": "Patrick Wardle. (2014, September). Methods of Malware Persistence on Mac OS X. Retrieved July 5, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "OSX Malware Detection",
+        "url": "https://www.synack.com/wp-content/uploads/2016/03/RSA_OSX_Malware.pdf",
+        "description": "Patrick Wardle. (2016, February 29). Let's Play Doctor: Practical OS X Malware Detection & Analysis. Retrieved July 10, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Antiquated Mac Malware",
+        "url": "https://blog.malwarebytes.com/threat-analysis/2017/01/new-mac-backdoor-using-antiquated-code/",
+        "description": "Thomas Reed. (2017, January 18). New Mac backdoor using antiquated code. Retrieved July 5, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "OSX.Dok Malware",
+        "url": "https://blog.malwarebytes.com/threat-analysis/2017/04/new-osx-dok-malware-intercepts-web-traffic/",
+        "description": "Thomas Reed. (2017, July 7). New OSX.Dok malware intercepts web traffic. Retrieved July 10, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--dfefe2ed-4389-4318-8762-f0272b350a1b",
+    "platform": "linux",
+    "tid": "T1543.002",
+    "technique": "Systemd Service",
+    "tactic": "persistence",
+    "datasources": "service-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may create or modify systemd services to repeatedly execute malicious payloads as part of persistence. Systemd is a system and service manager commonly used for managing background daemon processes (also known as services) and other system resources.(Citation: Linux man-pages: systemd January 2014) Systemd is the default initialization (init) system on many Linux distributions replacing legacy init systems, including SysVinit and Upstart, while remaining backwards compatible.  \n\nSystemd utilizes unit configuration files with the `.service` file extension to encode information about a service's process. By default, system level unit files are stored in the `/systemd/system` directory of the root owned directories (`/`). User level unit files are stored in the `/systemd/user` directories of the user owned directories (`$HOME`). (Citation: lambert systemd 2022) \n\nService unit files use the following directives to execute system commands:(Citation: freedesktop systemd.service)  \n\n* `ExecStart`, `ExecStartPre`, and `ExecStartPost` directives cover execution of commands when a service is started manually by `systemctl`, or on system start if the service is set to automatically start.\n* `ExecReload` directive covers when a service restarts. \n* `ExecStop`, `ExecStopPre`, and `ExecStopPost` directives cover when a service is stopped.  \n\nAdversaries may abuse systemd functionality to establish persistent access to victim systems by creating and/or modifying service unit files systemd uses upon reboot or starting a service.(Citation: Anomali Rocke March 2019) Adversaries may also place symbolic links in these directories, enabling systemd to find these payloads regardless of where they reside on the filesystem.\n\nThe `.service` file’s `User` directive can be used to run service as a specific user, which could result in privilege escalation based on specific user/group permissions.(Citation: Rapid7 Service Persistence 22JUNE2016) ",
+    "technique_references": [
+      {
+        "source_name": "Anomali Rocke March 2019",
+        "url": "https://www.anomali.com/blog/rocke-evolves-its-arsenal-with-a-new-malware-family-written-in-golang",
+        "description": "Anomali Labs. (2019, March 15). Rocke Evolves Its Arsenal With a New Malware Family Written in Golang. Retrieved April 24, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "freedesktop systemd.service",
+        "url": "https://www.freedesktop.org/software/systemd/man/systemd.service.html",
+        "description": "Free Desktop. (n.d.). systemd.service — Service unit configuration. Retrieved March 20, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Linux man-pages: systemd January 2014",
+        "url": "http://man7.org/linux/man-pages/man1/systemd.1.html",
+        "description": "Linux man-pages. (2014, January). systemd(1) - Linux manual page. Retrieved April 23, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Berba hunting linux systemd",
+        "url": "https://pberba.github.io/security/2022/01/30/linux-threat-hunting-for-persistence-systemd-timers-cron/",
+        "description": "Pepe Berba. (2022, January 30). Hunting for Persistence in Linux (Part 3): Systemd, Timers, and Cron. Retrieved March 20, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Rapid7 Service Persistence 22JUNE2016",
+        "url": "https://www.rapid7.com/db/modules/exploit/linux/local/service_persistence",
+        "description": "Rapid7. (2016, June 22). Service Persistence. Retrieved April 23, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "lambert systemd 2022",
+        "url": "https://redcanary.com/blog/attck-t1501-understanding-systemd-service-persistence/",
+        "description": "Tony Lambert. (2022, November 13). ATT&CK T1501: Understanding systemd service persistence. Retrieved March 20, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|root",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--dfefe2ed-4389-4318-8762-f0272b350a1b",
+    "platform": "linux",
+    "tid": "T1543.002",
+    "technique": "Systemd Service",
+    "tactic": "privilege-escalation",
+    "datasources": "service-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may create or modify systemd services to repeatedly execute malicious payloads as part of persistence. Systemd is a system and service manager commonly used for managing background daemon processes (also known as services) and other system resources.(Citation: Linux man-pages: systemd January 2014) Systemd is the default initialization (init) system on many Linux distributions replacing legacy init systems, including SysVinit and Upstart, while remaining backwards compatible.  \n\nSystemd utilizes unit configuration files with the `.service` file extension to encode information about a service's process. By default, system level unit files are stored in the `/systemd/system` directory of the root owned directories (`/`). User level unit files are stored in the `/systemd/user` directories of the user owned directories (`$HOME`). (Citation: lambert systemd 2022) \n\nService unit files use the following directives to execute system commands:(Citation: freedesktop systemd.service)  \n\n* `ExecStart`, `ExecStartPre`, and `ExecStartPost` directives cover execution of commands when a service is started manually by `systemctl`, or on system start if the service is set to automatically start.\n* `ExecReload` directive covers when a service restarts. \n* `ExecStop`, `ExecStopPre`, and `ExecStopPost` directives cover when a service is stopped.  \n\nAdversaries may abuse systemd functionality to establish persistent access to victim systems by creating and/or modifying service unit files systemd uses upon reboot or starting a service.(Citation: Anomali Rocke March 2019) Adversaries may also place symbolic links in these directories, enabling systemd to find these payloads regardless of where they reside on the filesystem.\n\nThe `.service` file’s `User` directive can be used to run service as a specific user, which could result in privilege escalation based on specific user/group permissions.(Citation: Rapid7 Service Persistence 22JUNE2016) ",
+    "technique_references": [
+      {
+        "source_name": "Anomali Rocke March 2019",
+        "url": "https://www.anomali.com/blog/rocke-evolves-its-arsenal-with-a-new-malware-family-written-in-golang",
+        "description": "Anomali Labs. (2019, March 15). Rocke Evolves Its Arsenal With a New Malware Family Written in Golang. Retrieved April 24, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "freedesktop systemd.service",
+        "url": "https://www.freedesktop.org/software/systemd/man/systemd.service.html",
+        "description": "Free Desktop. (n.d.). systemd.service — Service unit configuration. Retrieved March 20, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Linux man-pages: systemd January 2014",
+        "url": "http://man7.org/linux/man-pages/man1/systemd.1.html",
+        "description": "Linux man-pages. (2014, January). systemd(1) - Linux manual page. Retrieved April 23, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Berba hunting linux systemd",
+        "url": "https://pberba.github.io/security/2022/01/30/linux-threat-hunting-for-persistence-systemd-timers-cron/",
+        "description": "Pepe Berba. (2022, January 30). Hunting for Persistence in Linux (Part 3): Systemd, Timers, and Cron. Retrieved March 20, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Rapid7 Service Persistence 22JUNE2016",
+        "url": "https://www.rapid7.com/db/modules/exploit/linux/local/service_persistence",
+        "description": "Rapid7. (2016, June 22). Service Persistence. Retrieved April 23, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "lambert systemd 2022",
+        "url": "https://redcanary.com/blog/attck-t1501-understanding-systemd-service-persistence/",
+        "description": "Tony Lambert. (2022, November 13). ATT&CK T1501: Understanding systemd service persistence. Retrieved March 20, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|root",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--2959d63f-73fd-46a1-abd2-109d7dcede32",
+    "platform": "windows",
+    "tid": "T1543.003",
+    "technique": "Windows Service",
+    "tactic": "persistence",
+    "datasources": "service-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may create or modify Windows services to repeatedly execute malicious payloads as part of persistence. When Windows boots up, it starts programs or applications called services that perform background system functions.(Citation: TechNet Services) Windows service configuration information, including the file path to the service's executable or recovery programs/commands, is stored in the Windows Registry.\n\nAdversaries may install a new service or modify an existing service to execute at startup in order to persist on a system. Service configurations can be set or modified using system utilities (such as sc.exe), by directly modifying the Registry, or by interacting directly with the Windows API. \n\nAdversaries may also use services to install and execute malicious drivers. For example, after dropping a driver file (ex: `.sys`) to disk, the payload can be loaded and registered via [Native API](https://attack.mitre.org/techniques/T1106) functions such as `CreateServiceW()` (or manually via functions such as `ZwLoadDriver()` and `ZwSetValueKey()`), by creating the required service Registry values (i.e. [Modify Registry](https://attack.mitre.org/techniques/T1112)), or by using command-line utilities such as `PnPUtil.exe`.(Citation: Symantec W.32 Stuxnet Dossier)(Citation: Crowdstrike DriveSlayer February 2022)(Citation: Unit42 AcidBox June 2020) Adversaries may leverage these drivers as [Rootkit](https://attack.mitre.org/techniques/T1014)s to hide the presence of malicious activity on a system. Adversaries may also load a signed yet vulnerable driver onto a compromised machine (known as \"Bring Your Own Vulnerable Driver\" (BYOVD)) as part of [Exploitation for Privilege Escalation](https://attack.mitre.org/techniques/T1068).(Citation: ESET InvisiMole June 2020)(Citation: Unit42 AcidBox June 2020)\n\nServices may be created with administrator privileges but are executed under SYSTEM privileges, so an adversary may also use a service to escalate privileges. Adversaries may also directly start services through [Service Execution](https://attack.mitre.org/techniques/T1569/002). To make detection analysis more challenging, malicious services may also incorporate [Masquerade Task or Service](https://attack.mitre.org/techniques/T1036/004) (ex: using a service and/or payload name related to a legitimate OS or benign software component).",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Windows Event Forwarding FEB 2018",
+        "url": "https://docs.microsoft.com/windows/security/threat-protection/use-windows-event-forwarding-to-assist-in-intrusion-detection",
+        "description": "Hardy, T. & Hall, J. (2018, February 15). Use Windows Event Forwarding to help with intrusion detection. Retrieved August 7, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ESET InvisiMole June 2020",
+        "url": "https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf",
+        "description": "Hromcova, Z. and Cherpanov, A. (2020, June). INVISIMOLE: THE HIDDEN PART OF THE STORY. Retrieved July 16, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Services",
+        "url": "https://technet.microsoft.com/en-us/library/cc772408.aspx",
+        "description": "Microsoft. (n.d.). Services. Retrieved June 7, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft 4697 APR 2017",
+        "url": "https://docs.microsoft.com/windows/security/threat-protection/auditing/event-4697",
+        "description": "Miroshnikov, A. & Hall, J. (2017, April 18). 4697(S): A service was installed in the system. Retrieved August 7, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Symantec W.32 Stuxnet Dossier",
+        "url": "https://www.wired.com/images_blogs/threatlevel/2010/11/w32_stuxnet_dossier.pdf",
+        "description": "Nicolas Falliere, Liam O. Murchu, Eric Chien. (2011, February). W32.Stuxnet Dossier. Retrieved December 7, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Unit42 AcidBox June 2020",
+        "url": "https://unit42.paloaltonetworks.com/acidbox-rare-malware/",
+        "description": "Reichel, D. and Idrizovic, E. (2020, June 17). AcidBox: Rare Malware Repurposing Turla Group Exploit Targeted Russian Organizations. Retrieved March 16, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Autoruns",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb963902",
+        "description": "Russinovich, M. (2016, January 4). Autoruns for Windows v13.51. Retrieved June 6, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Crowdstrike DriveSlayer February 2022",
+        "url": "https://www.crowdstrike.com/blog/how-crowdstrike-falcon-protects-against-wiper-malware-used-in-ukraine-attacks/",
+        "description": "Thomas, W. et al. (2022, February 25). CrowdStrike Falcon Protects from New Wiper Malware Used in Ukraine Cyberattacks. Retrieved March 25, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "administrator|system",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--2959d63f-73fd-46a1-abd2-109d7dcede32",
+    "platform": "windows",
+    "tid": "T1543.003",
+    "technique": "Windows Service",
+    "tactic": "privilege-escalation",
+    "datasources": "service-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may create or modify Windows services to repeatedly execute malicious payloads as part of persistence. When Windows boots up, it starts programs or applications called services that perform background system functions.(Citation: TechNet Services) Windows service configuration information, including the file path to the service's executable or recovery programs/commands, is stored in the Windows Registry.\n\nAdversaries may install a new service or modify an existing service to execute at startup in order to persist on a system. Service configurations can be set or modified using system utilities (such as sc.exe), by directly modifying the Registry, or by interacting directly with the Windows API. \n\nAdversaries may also use services to install and execute malicious drivers. For example, after dropping a driver file (ex: `.sys`) to disk, the payload can be loaded and registered via [Native API](https://attack.mitre.org/techniques/T1106) functions such as `CreateServiceW()` (or manually via functions such as `ZwLoadDriver()` and `ZwSetValueKey()`), by creating the required service Registry values (i.e. [Modify Registry](https://attack.mitre.org/techniques/T1112)), or by using command-line utilities such as `PnPUtil.exe`.(Citation: Symantec W.32 Stuxnet Dossier)(Citation: Crowdstrike DriveSlayer February 2022)(Citation: Unit42 AcidBox June 2020) Adversaries may leverage these drivers as [Rootkit](https://attack.mitre.org/techniques/T1014)s to hide the presence of malicious activity on a system. Adversaries may also load a signed yet vulnerable driver onto a compromised machine (known as \"Bring Your Own Vulnerable Driver\" (BYOVD)) as part of [Exploitation for Privilege Escalation](https://attack.mitre.org/techniques/T1068).(Citation: ESET InvisiMole June 2020)(Citation: Unit42 AcidBox June 2020)\n\nServices may be created with administrator privileges but are executed under SYSTEM privileges, so an adversary may also use a service to escalate privileges. Adversaries may also directly start services through [Service Execution](https://attack.mitre.org/techniques/T1569/002). To make detection analysis more challenging, malicious services may also incorporate [Masquerade Task or Service](https://attack.mitre.org/techniques/T1036/004) (ex: using a service and/or payload name related to a legitimate OS or benign software component).",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Windows Event Forwarding FEB 2018",
+        "url": "https://docs.microsoft.com/windows/security/threat-protection/use-windows-event-forwarding-to-assist-in-intrusion-detection",
+        "description": "Hardy, T. & Hall, J. (2018, February 15). Use Windows Event Forwarding to help with intrusion detection. Retrieved August 7, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ESET InvisiMole June 2020",
+        "url": "https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf",
+        "description": "Hromcova, Z. and Cherpanov, A. (2020, June). INVISIMOLE: THE HIDDEN PART OF THE STORY. Retrieved July 16, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Services",
+        "url": "https://technet.microsoft.com/en-us/library/cc772408.aspx",
+        "description": "Microsoft. (n.d.). Services. Retrieved June 7, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft 4697 APR 2017",
+        "url": "https://docs.microsoft.com/windows/security/threat-protection/auditing/event-4697",
+        "description": "Miroshnikov, A. & Hall, J. (2017, April 18). 4697(S): A service was installed in the system. Retrieved August 7, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Symantec W.32 Stuxnet Dossier",
+        "url": "https://www.wired.com/images_blogs/threatlevel/2010/11/w32_stuxnet_dossier.pdf",
+        "description": "Nicolas Falliere, Liam O. Murchu, Eric Chien. (2011, February). W32.Stuxnet Dossier. Retrieved December 7, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Unit42 AcidBox June 2020",
+        "url": "https://unit42.paloaltonetworks.com/acidbox-rare-malware/",
+        "description": "Reichel, D. and Idrizovic, E. (2020, June 17). AcidBox: Rare Malware Repurposing Turla Group Exploit Targeted Russian Organizations. Retrieved March 16, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Autoruns",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb963902",
+        "description": "Russinovich, M. (2016, January 4). Autoruns for Windows v13.51. Retrieved June 6, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Crowdstrike DriveSlayer February 2022",
+        "url": "https://www.crowdstrike.com/blog/how-crowdstrike-falcon-protects-against-wiper-malware-used-in-ukraine-attacks/",
+        "description": "Thomas, W. et al. (2022, February 25). CrowdStrike Falcon Protects from New Wiper Malware Used in Ukraine Cyberattacks. Retrieved March 25, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "administrator|system",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--573ad264-1371-4ae0-8482-d2673b719dba",
+    "platform": "macos",
+    "tid": "T1543.004",
+    "technique": "Launch Daemon",
+    "tactic": "persistence",
+    "datasources": "service-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may create or modify Launch Daemons to execute malicious payloads as part of persistence. Launch Daemons are plist files used to interact with Launchd, the service management framework used by macOS. Launch Daemons require elevated privileges to install, are executed for every user on a system prior to login, and run in the background without the need for user interaction. During the macOS initialization startup, the launchd process loads the parameters for launch-on-demand system-level daemons from plist files found in <code>/System/Library/LaunchDaemons/</code> and <code>/Library/LaunchDaemons/</code>. Required Launch Daemons parameters include a <code>Label</code> to identify the task, <code>Program</code> to provide a path to the executable, and <code>RunAtLoad</code> to specify when the task is run. Launch Daemons are often used to provide access to shared resources, updates to software, or conduct automation tasks.(Citation: AppleDocs Launch Agent Daemons)(Citation: Methods of Mac Malware Persistence)(Citation: launchd Keywords for plists)\n\nAdversaries may install a Launch Daemon configured to execute at startup by using the <code>RunAtLoad</code> parameter set to <code>true</code> and the <code>Program</code> parameter set to the malicious executable path. The daemon name may be disguised by using a name from a related operating system or benign software (i.e. [Masquerading](https://attack.mitre.org/techniques/T1036)). When the Launch Daemon is executed, the program inherits administrative permissions.(Citation: WireLurker)(Citation: OSX Malware Detection)\n\nAdditionally, system configuration changes (such as the installation of third party package managing software) may cause folders such as <code>usr/local/bin</code> to become globally writeable. So, it is possible for poor configurations to allow an adversary to modify executables referenced by current Launch Daemon's plist files.(Citation: LaunchDaemon Hijacking)(Citation: sentinelone macos persist Jun 2019)",
+    "technique_references": [
+      {
+        "source_name": "AppleDocs Launch Agent Daemons",
+        "url": "https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html",
+        "description": "Apple. (n.d.). Creating Launch Daemons and Agents. Retrieved July 10, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Methods of Mac Malware Persistence",
+        "url": "https://www.virusbulletin.com/uploads/pdf/conference/vb2014/VB2014-Wardle.pdf",
+        "description": "Patrick Wardle. (2014, September). Methods of Malware Persistence on Mac OS X. Retrieved July 5, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "launchd Keywords for plists",
+        "url": "https://www.real-world-systems.com/docs/launchdPlist.1.html",
+        "description": "Dennis German. (2020, November 20). launchd Keywords for plists. Retrieved October 7, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "WireLurker",
+        "url": "https://www.paloaltonetworks.com/content/dam/pan/en_US/assets/pdf/reports/Unit_42/unit42-wirelurker.pdf",
+        "description": "Claud Xiao. (n.d.). WireLurker: A New Era in iOS and OS X Malware. Retrieved July 10, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "OSX Malware Detection",
+        "url": "https://www.synack.com/wp-content/uploads/2016/03/RSA_OSX_Malware.pdf",
+        "description": "Patrick Wardle. (2016, February 29). Let's Play Doctor: Practical OS X Malware Detection & Analysis. Retrieved July 10, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "LaunchDaemon Hijacking",
+        "url": "https://bradleyjkemp.dev/post/launchdaemon-hijacking/",
+        "description": "Bradley Kemp. (2021, May 10). LaunchDaemon Hijacking: privilege escalation and persistence via insecure folder permissions. Retrieved July 26, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "sentinelone macos persist Jun 2019",
+        "url": "https://www.sentinelone.com/blog/how-malware-persists-on-macos/",
+        "description": "Stokes, Phil. (2019, June 17). HOW MALWARE PERSISTS ON MACOS. Retrieved September 10, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "root|administrator",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--573ad264-1371-4ae0-8482-d2673b719dba",
+    "platform": "macos",
+    "tid": "T1543.004",
+    "technique": "Launch Daemon",
+    "tactic": "privilege-escalation",
+    "datasources": "service-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may create or modify Launch Daemons to execute malicious payloads as part of persistence. Launch Daemons are plist files used to interact with Launchd, the service management framework used by macOS. Launch Daemons require elevated privileges to install, are executed for every user on a system prior to login, and run in the background without the need for user interaction. During the macOS initialization startup, the launchd process loads the parameters for launch-on-demand system-level daemons from plist files found in <code>/System/Library/LaunchDaemons/</code> and <code>/Library/LaunchDaemons/</code>. Required Launch Daemons parameters include a <code>Label</code> to identify the task, <code>Program</code> to provide a path to the executable, and <code>RunAtLoad</code> to specify when the task is run. Launch Daemons are often used to provide access to shared resources, updates to software, or conduct automation tasks.(Citation: AppleDocs Launch Agent Daemons)(Citation: Methods of Mac Malware Persistence)(Citation: launchd Keywords for plists)\n\nAdversaries may install a Launch Daemon configured to execute at startup by using the <code>RunAtLoad</code> parameter set to <code>true</code> and the <code>Program</code> parameter set to the malicious executable path. The daemon name may be disguised by using a name from a related operating system or benign software (i.e. [Masquerading](https://attack.mitre.org/techniques/T1036)). When the Launch Daemon is executed, the program inherits administrative permissions.(Citation: WireLurker)(Citation: OSX Malware Detection)\n\nAdditionally, system configuration changes (such as the installation of third party package managing software) may cause folders such as <code>usr/local/bin</code> to become globally writeable. So, it is possible for poor configurations to allow an adversary to modify executables referenced by current Launch Daemon's plist files.(Citation: LaunchDaemon Hijacking)(Citation: sentinelone macos persist Jun 2019)",
+    "technique_references": [
+      {
+        "source_name": "AppleDocs Launch Agent Daemons",
+        "url": "https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html",
+        "description": "Apple. (n.d.). Creating Launch Daemons and Agents. Retrieved July 10, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Methods of Mac Malware Persistence",
+        "url": "https://www.virusbulletin.com/uploads/pdf/conference/vb2014/VB2014-Wardle.pdf",
+        "description": "Patrick Wardle. (2014, September). Methods of Malware Persistence on Mac OS X. Retrieved July 5, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "launchd Keywords for plists",
+        "url": "https://www.real-world-systems.com/docs/launchdPlist.1.html",
+        "description": "Dennis German. (2020, November 20). launchd Keywords for plists. Retrieved October 7, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "WireLurker",
+        "url": "https://www.paloaltonetworks.com/content/dam/pan/en_US/assets/pdf/reports/Unit_42/unit42-wirelurker.pdf",
+        "description": "Claud Xiao. (n.d.). WireLurker: A New Era in iOS and OS X Malware. Retrieved July 10, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "OSX Malware Detection",
+        "url": "https://www.synack.com/wp-content/uploads/2016/03/RSA_OSX_Malware.pdf",
+        "description": "Patrick Wardle. (2016, February 29). Let's Play Doctor: Practical OS X Malware Detection & Analysis. Retrieved July 10, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "LaunchDaemon Hijacking",
+        "url": "https://bradleyjkemp.dev/post/launchdaemon-hijacking/",
+        "description": "Bradley Kemp. (2021, May 10). LaunchDaemon Hijacking: privilege escalation and persistence via insecure folder permissions. Retrieved July 26, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "sentinelone macos persist Jun 2019",
+        "url": "https://www.sentinelone.com/blog/how-malware-persists-on-macos/",
+        "description": "Stokes, Phil. (2019, June 17). HOW MALWARE PERSISTS ON MACOS. Retrieved September 10, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "root|administrator",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--650c784b-7504-4df7-ab2c-4ea882384d1e",
+    "platform": "windows",
+    "tid": "T1557.001",
+    "technique": "LLMNR/NBT-NS Poisoning and SMB Relay",
+    "tactic": "credential-access",
+    "datasources": "service-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "By responding to LLMNR/NBT-NS network traffic, adversaries may spoof an authoritative source for name resolution to force communication with an adversary controlled system. This activity may be used to collect or relay authentication materials. \n\nLink-Local Multicast Name Resolution (LLMNR) and NetBIOS Name Service (NBT-NS) are Microsoft Windows components that serve as alternate methods of host identification. LLMNR is based upon the Domain Name System (DNS) format and allows hosts on the same local link to perform name resolution for other hosts. NBT-NS identifies systems on a local network by their NetBIOS name. (Citation: Wikipedia LLMNR)(Citation: TechNet NetBIOS)\n\nAdversaries can spoof an authoritative source for name resolution on a victim network by responding to LLMNR (UDP 5355)/NBT-NS (UDP 137) traffic as if they know the identity of the requested host, effectively poisoning the service so that the victims will communicate with the adversary controlled system. If the requested host belongs to a resource that requires identification/authentication, the username and NTLMv2 hash will then be sent to the adversary controlled system. The adversary can then collect the hash information sent over the wire through tools that monitor the ports for traffic or through [Network Sniffing](https://attack.mitre.org/techniques/T1040) and crack the hashes offline through [Brute Force](https://attack.mitre.org/techniques/T1110) to obtain the plaintext passwords.\n\nIn some cases where an adversary has access to a system that is in the authentication path between systems or when automated scans that use credentials attempt to authenticate to an adversary controlled system, the NTLMv1/v2 hashes can be intercepted and relayed to access and execute code against a target system. The relay step can happen in conjunction with poisoning but may also be independent of it.(Citation: byt3bl33d3r NTLM Relaying)(Citation: Secure Ideas SMB Relay) Additionally, adversaries may encapsulate the NTLMv1/v2 hashes into various protocols, such as LDAP, SMB, MSSQL and HTTP, to expand and use multiple services with the valid NTLM response. \n\nSeveral tools may be used to poison name services within local networks such as NBNSpoof, Metasploit, and [Responder](https://attack.mitre.org/software/S0174).(Citation: GitHub NBNSpoof)(Citation: Rapid7 LLMNR Spoofer)(Citation: GitHub Responder)",
+    "technique_references": [
+      {
+        "source_name": "Rapid7 LLMNR Spoofer",
+        "url": "https://www.rapid7.com/db/modules/auxiliary/spoof/llmnr/llmnr_response",
+        "description": "Francois, R. (n.d.). LLMNR Spoofer. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub Responder",
+        "url": "https://github.com/SpiderLabs/Responder",
+        "description": "Gaffie, L. (2016, August 25). Responder. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Secure Ideas SMB Relay",
+        "url": "https://blog.secureideas.com/2018/04/ever-run-a-relay-why-smb-relays-should-be-on-your-mind.html",
+        "description": "Kuehn, E. (2018, April 11). Ever Run a Relay? Why SMB Relays Should Be On Your Mind. Retrieved February 7, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet NetBIOS",
+        "url": "https://technet.microsoft.com/library/cc958811.aspx",
+        "description": "Microsoft. (n.d.). NetBIOS Name Resolution. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub NBNSpoof",
+        "url": "https://github.com/nomex/nbnspoof",
+        "description": "Nomex. (2014, February 7). NBNSpoof. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub Conveigh",
+        "url": "https://github.com/Kevin-Robertson/Conveigh",
+        "description": "Robertson, K. (2016, August 28). Conveigh. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "byt3bl33d3r NTLM Relaying",
+        "url": "https://byt3bl33d3r.github.io/practical-guide-to-ntlm-relaying-in-2017-aka-getting-a-foothold-in-under-5-minutes.html",
+        "description": "Salvati, M. (2017, June 2). Practical guide to NTLM Relaying in 2017 (A.K.A getting a foothold in under 5 minutes). Retrieved February 7, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sternsecurity LLMNR-NBTNS",
+        "url": "https://www.sternsecurity.com/blog/local-network-attacks-llmnr-and-nbt-ns-poisoning",
+        "description": "Sternstein, J. (2013, November). Local Network Attacks: LLMNR and NBT-NS Poisoning. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia LLMNR",
+        "url": "https://en.wikipedia.org/wiki/Link-Local_Multicast_Name_Resolution",
+        "description": "Wikipedia. (2016, July 7). Link-Local Multicast Name Resolution. Retrieved November 17, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--650c784b-7504-4df7-ab2c-4ea882384d1e",
+    "platform": "windows",
+    "tid": "T1557.001",
+    "technique": "LLMNR/NBT-NS Poisoning and SMB Relay",
+    "tactic": "collection",
+    "datasources": "service-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "By responding to LLMNR/NBT-NS network traffic, adversaries may spoof an authoritative source for name resolution to force communication with an adversary controlled system. This activity may be used to collect or relay authentication materials. \n\nLink-Local Multicast Name Resolution (LLMNR) and NetBIOS Name Service (NBT-NS) are Microsoft Windows components that serve as alternate methods of host identification. LLMNR is based upon the Domain Name System (DNS) format and allows hosts on the same local link to perform name resolution for other hosts. NBT-NS identifies systems on a local network by their NetBIOS name. (Citation: Wikipedia LLMNR)(Citation: TechNet NetBIOS)\n\nAdversaries can spoof an authoritative source for name resolution on a victim network by responding to LLMNR (UDP 5355)/NBT-NS (UDP 137) traffic as if they know the identity of the requested host, effectively poisoning the service so that the victims will communicate with the adversary controlled system. If the requested host belongs to a resource that requires identification/authentication, the username and NTLMv2 hash will then be sent to the adversary controlled system. The adversary can then collect the hash information sent over the wire through tools that monitor the ports for traffic or through [Network Sniffing](https://attack.mitre.org/techniques/T1040) and crack the hashes offline through [Brute Force](https://attack.mitre.org/techniques/T1110) to obtain the plaintext passwords.\n\nIn some cases where an adversary has access to a system that is in the authentication path between systems or when automated scans that use credentials attempt to authenticate to an adversary controlled system, the NTLMv1/v2 hashes can be intercepted and relayed to access and execute code against a target system. The relay step can happen in conjunction with poisoning but may also be independent of it.(Citation: byt3bl33d3r NTLM Relaying)(Citation: Secure Ideas SMB Relay) Additionally, adversaries may encapsulate the NTLMv1/v2 hashes into various protocols, such as LDAP, SMB, MSSQL and HTTP, to expand and use multiple services with the valid NTLM response. \n\nSeveral tools may be used to poison name services within local networks such as NBNSpoof, Metasploit, and [Responder](https://attack.mitre.org/software/S0174).(Citation: GitHub NBNSpoof)(Citation: Rapid7 LLMNR Spoofer)(Citation: GitHub Responder)",
+    "technique_references": [
+      {
+        "source_name": "Rapid7 LLMNR Spoofer",
+        "url": "https://www.rapid7.com/db/modules/auxiliary/spoof/llmnr/llmnr_response",
+        "description": "Francois, R. (n.d.). LLMNR Spoofer. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub Responder",
+        "url": "https://github.com/SpiderLabs/Responder",
+        "description": "Gaffie, L. (2016, August 25). Responder. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Secure Ideas SMB Relay",
+        "url": "https://blog.secureideas.com/2018/04/ever-run-a-relay-why-smb-relays-should-be-on-your-mind.html",
+        "description": "Kuehn, E. (2018, April 11). Ever Run a Relay? Why SMB Relays Should Be On Your Mind. Retrieved February 7, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet NetBIOS",
+        "url": "https://technet.microsoft.com/library/cc958811.aspx",
+        "description": "Microsoft. (n.d.). NetBIOS Name Resolution. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub NBNSpoof",
+        "url": "https://github.com/nomex/nbnspoof",
+        "description": "Nomex. (2014, February 7). NBNSpoof. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub Conveigh",
+        "url": "https://github.com/Kevin-Robertson/Conveigh",
+        "description": "Robertson, K. (2016, August 28). Conveigh. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "byt3bl33d3r NTLM Relaying",
+        "url": "https://byt3bl33d3r.github.io/practical-guide-to-ntlm-relaying-in-2017-aka-getting-a-foothold-in-under-5-minutes.html",
+        "description": "Salvati, M. (2017, June 2). Practical guide to NTLM Relaying in 2017 (A.K.A getting a foothold in under 5 minutes). Retrieved February 7, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sternsecurity LLMNR-NBTNS",
+        "url": "https://www.sternsecurity.com/blog/local-network-attacks-llmnr-and-nbt-ns-poisoning",
+        "description": "Sternstein, J. (2013, November). Local Network Attacks: LLMNR and NBT-NS Poisoning. Retrieved November 17, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia LLMNR",
+        "url": "https://en.wikipedia.org/wiki/Link-Local_Multicast_Name_Resolution",
+        "description": "Wikipedia. (2016, July 7). Link-Local Multicast Name Resolution. Retrieved November 17, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b5327dd1-6bf9-4785-a199-25bcbd1f4a9d",
+    "platform": "linux|macos|windows",
+    "tid": "T1564.006",
+    "technique": "Run Virtual Instance",
+    "tactic": "defense-evasion",
+    "datasources": "service-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may carry out malicious operations using a virtual instance to avoid detection. A wide variety of virtualization technologies exist that allow for the emulation of a computer or computing environment. By running malicious code inside of a virtual instance, adversaries can hide artifacts associated with their behavior from security tools that are unable to monitor activity inside the virtual instance. Additionally, depending on the virtual networking implementation (ex: bridged adapter), network traffic generated by the virtual instance can be difficult to trace back to the compromised host as the IP address and hostname might not match known values.(Citation: SingHealth Breach Jan 2019)\n\nAdversaries may utilize native support for virtualization (ex: Hyper-V) or drop the necessary files to run a virtual instance (ex: VirtualBox binaries). After running a virtual instance, adversaries may create a shared folder between the guest and host with permissions that enable the virtual instance to interact with the host file system.(Citation: Sophos Ragnar May 2020)",
+    "technique_references": [
+      {
+        "source_name": "SingHealth Breach Jan 2019",
+        "url": "https://www.mci.gov.sg/-/media/mcicorp/doc/report-of-the-coi-into-the-cyber-attack-on-singhealth-10-jan-2019.ashx",
+        "description": "Committee of Inquiry into the Cyber Attack on SingHealth. (2019, January 10). Public Report of the Committee of Inquiry into the Cyber Attack on Singapore Health Services Private Limited's Patient Database. Retrieved June 29, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sophos Ragnar May 2020",
+        "url": "https://news.sophos.com/en-us/2020/05/21/ragnar-locker-ransomware-deploys-virtual-machine-to-dodge-security/",
+        "description": "SophosLabs. (2020, May 21). Ragnar Locker ransomware deploys virtual machine to dodge security. Retrieved June 29, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Shadowbunny VM Defense Evasion",
+        "url": "https://embracethered.com/blog/posts/2020/shadowbunny-virtual-machine-red-teaming-technique/",
+        "description": "Johann Rehberger. (2020, September 23). Beware of the Shadowbunny - Using virtual machines to persist and evade detections. Retrieved September 22, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--810aa4ad-61c9-49cb-993f-daa06199421d",
+    "platform": "macos",
+    "tid": "T1569.001",
+    "technique": "Launchctl",
+    "tactic": "execution",
+    "datasources": "service-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse launchctl to execute commands or programs. Launchctl interfaces with launchd, the service management framework for macOS. Launchctl supports taking subcommands on the command-line, interactively, or even redirected from standard input.(Citation: Launchctl Man)\n\nAdversaries use launchctl to execute commands and programs as [Launch Agent](https://attack.mitre.org/techniques/T1543/001)s or [Launch Daemon](https://attack.mitre.org/techniques/T1543/004)s. Common subcommands include: <code>launchctl load</code>,<code>launchctl unload</code>, and <code>launchctl start</code>. Adversaries can use scripts or manually run the commands <code>launchctl load -w \"%s/Library/LaunchAgents/%s\"</code> or <code>/bin/launchctl load</code> to execute [Launch Agent](https://attack.mitre.org/techniques/T1543/001)s or [Launch Daemon](https://attack.mitre.org/techniques/T1543/004)s.(Citation: Sofacy Komplex Trojan)(Citation: 20 macOS Common Tools and Techniques)\n",
+    "technique_references": [
+      {
+        "source_name": "Launchctl Man",
+        "url": "https://ss64.com/osx/launchctl.html",
+        "description": "SS64. (n.d.). launchctl. Retrieved March 28, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sofacy Komplex Trojan",
+        "url": "https://researchcenter.paloaltonetworks.com/2016/09/unit42-sofacys-komplex-os-x-trojan/",
+        "description": "Dani Creus, Tyler Halfpop, Robert Falcone. (2016, September 26). Sofacy's 'Komplex' OS X Trojan. Retrieved July 8, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "20 macOS Common Tools and Techniques",
+        "url": "https://labs.sentinelone.com/20-common-tools-techniques-used-by-macos-threat-actors-malware/",
+        "description": "Phil Stokes. (2021, February 16). 20 Common Tools & Techniques Used by macOS Threat Actors & Malware. Retrieved August 23, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|root",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f1951e8a-500e-4a26-8803-76d95c4554b4",
+    "platform": "windows",
+    "tid": "T1569.002",
+    "technique": "Service Execution",
+    "tactic": "execution",
+    "datasources": "service-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse the Windows service control manager to execute malicious commands or payloads. The Windows service control manager (<code>services.exe</code>) is an interface to manage and manipulate services.(Citation: Microsoft Service Control Manager) The service control manager is accessible to users via GUI components as well as system utilities such as <code>sc.exe</code> and [Net](https://attack.mitre.org/software/S0039).\n\n[PsExec](https://attack.mitre.org/software/S0029) can also be used to execute commands or payloads via a temporary Windows service created through the service control manager API.(Citation: Russinovich Sysinternals) Tools such as [PsExec](https://attack.mitre.org/software/S0029) and <code>sc.exe</code> can accept remote servers as arguments and may be used to conduct remote execution.\n\nAdversaries may leverage these mechanisms to execute malicious content. This can be done by either executing a new or modified service. This technique is the execution used in conjunction with [Windows Service](https://attack.mitre.org/techniques/T1543/003) during service persistence or privilege escalation.",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Service Control Manager",
+        "url": "https://docs.microsoft.com/windows/win32/services/service-control-manager",
+        "description": "Microsoft. (2018, May 31). Service Control Manager. Retrieved March 28, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Russinovich Sysinternals",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb897553.aspx",
+        "description": "Russinovich, M. (2014, May 2). Windows Sysinternals PsExec v2.11. Retrieved May 13, 2015.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|system",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

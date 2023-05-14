@@ -1,0 +1,152 @@
+[
+  {
+    "id": "attack-pattern--1ecb2399-e8ba-4f6b-8ba7-5c27d49405cf",
+    "platform": "linux|macos|windows",
+    "tid": "T1547",
+    "technique": "Boot or Logon Autostart Execution",
+    "tactic": "persistence",
+    "datasources": "command-execution|driver-load|file-creation|file-modification|kernel-module-load|module-load|os-api-execution|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1547.001",
+      "T1547.002",
+      "T1547.003",
+      "T1547.004",
+      "T1547.005",
+      "T1547.006",
+      "T1547.007",
+      "T1547.008",
+      "T1547.009",
+      "T1547.010",
+      "T1547.011",
+      "T1547.012",
+      "T1547.013",
+      "T1547.014",
+      "T1547.015"
+    ],
+    "count_subtechniques": 15,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. Operating systems may have mechanisms for automatically running a program on system boot or account logon.(Citation: Microsoft Run Key)(Citation: MSDN Authentication Packages)(Citation: Microsoft TimeProvider)(Citation: Cylance Reg Persistence Sept 2013)(Citation: Linux Kernel Programming) These mechanisms may include automatically executing programs that are placed in specially designated directories or are referenced by repositories that store configuration information, such as the Windows Registry. An adversary may achieve the same goal by modifying or extending features of the kernel.\n\nSince some boot or logon autostart programs run with higher privileges, an adversary may leverage these to elevate privileges.",
+    "technique_references": [
+      {
+        "source_name": "Cylance Reg Persistence Sept 2013",
+        "url": "https://blog.cylance.com/windows-registry-persistence-part-2-the-run-keys-and-search-order",
+        "description": "Langendorf, S. (2013, September 24). Windows Registry Persistence, Part 2: The Run Keys and Search-Order. Retrieved April 11, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MSDN Authentication Packages",
+        "url": "https://msdn.microsoft.com/library/windows/desktop/aa374733.aspx",
+        "description": "Microsoft. (n.d.). Authentication Packages. Retrieved March 1, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Run Key",
+        "url": "http://msdn.microsoft.com/en-us/library/aa376977",
+        "description": "Microsoft. (n.d.). Run and RunOnce Registry Keys. Retrieved November 12, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft TimeProvider",
+        "url": "https://msdn.microsoft.com/library/windows/desktop/ms725475.aspx",
+        "description": "Microsoft. (n.d.). Time Provider. Retrieved March 26, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Linux Kernel Programming",
+        "url": "https://www.tldp.org/LDP/lkmpg/2.4/lkmpg.pdf",
+        "description": "Pomerantz, O., Salzman, P.. (2003, April 4). The Linux Kernel Module Programming Guide. Retrieved April 6, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Autoruns",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb963902",
+        "description": "Russinovich, M. (2016, January 4). Autoruns for Windows v13.51. Retrieved June 6, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator|root",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--1ecb2399-e8ba-4f6b-8ba7-5c27d49405cf",
+    "platform": "linux|macos|windows",
+    "tid": "T1547",
+    "technique": "Boot or Logon Autostart Execution",
+    "tactic": "privilege-escalation",
+    "datasources": "command-execution|driver-load|file-creation|file-modification|kernel-module-load|module-load|os-api-execution|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1547.001",
+      "T1547.002",
+      "T1547.003",
+      "T1547.004",
+      "T1547.005",
+      "T1547.006",
+      "T1547.007",
+      "T1547.008",
+      "T1547.009",
+      "T1547.010",
+      "T1547.011",
+      "T1547.012",
+      "T1547.013",
+      "T1547.014",
+      "T1547.015"
+    ],
+    "count_subtechniques": 15,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. Operating systems may have mechanisms for automatically running a program on system boot or account logon.(Citation: Microsoft Run Key)(Citation: MSDN Authentication Packages)(Citation: Microsoft TimeProvider)(Citation: Cylance Reg Persistence Sept 2013)(Citation: Linux Kernel Programming) These mechanisms may include automatically executing programs that are placed in specially designated directories or are referenced by repositories that store configuration information, such as the Windows Registry. An adversary may achieve the same goal by modifying or extending features of the kernel.\n\nSince some boot or logon autostart programs run with higher privileges, an adversary may leverage these to elevate privileges.",
+    "technique_references": [
+      {
+        "source_name": "Cylance Reg Persistence Sept 2013",
+        "url": "https://blog.cylance.com/windows-registry-persistence-part-2-the-run-keys-and-search-order",
+        "description": "Langendorf, S. (2013, September 24). Windows Registry Persistence, Part 2: The Run Keys and Search-Order. Retrieved April 11, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MSDN Authentication Packages",
+        "url": "https://msdn.microsoft.com/library/windows/desktop/aa374733.aspx",
+        "description": "Microsoft. (n.d.). Authentication Packages. Retrieved March 1, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Run Key",
+        "url": "http://msdn.microsoft.com/en-us/library/aa376977",
+        "description": "Microsoft. (n.d.). Run and RunOnce Registry Keys. Retrieved November 12, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft TimeProvider",
+        "url": "https://msdn.microsoft.com/library/windows/desktop/ms725475.aspx",
+        "description": "Microsoft. (n.d.). Time Provider. Retrieved March 26, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Linux Kernel Programming",
+        "url": "https://www.tldp.org/LDP/lkmpg/2.4/lkmpg.pdf",
+        "description": "Pomerantz, O., Salzman, P.. (2003, April 4). The Linux Kernel Module Programming Guide. Retrieved April 6, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Autoruns",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb963902",
+        "description": "Russinovich, M. (2016, January 4). Autoruns for Windows v13.51. Retrieved June 6, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator|root",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

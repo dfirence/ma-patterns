@@ -1,0 +1,46 @@
+[
+  {
+    "id": "attack-pattern--b8902400-e6c5-4ba2-95aa-2d35b442b118",
+    "platform": "linux|macos|windows",
+    "tid": "T1573",
+    "technique": "Encrypted Channel",
+    "tactic": "command-and-control",
+    "datasources": "network-traffic-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1573.001",
+      "T1573.002"
+    ],
+    "count_subtechniques": 2,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may employ a known encryption algorithm to conceal command and control traffic rather than relying on any inherent protections provided by a communication protocol. Despite the use of a secure algorithm, these implementations may be vulnerable to reverse engineering if secret keys are encoded and/or generated within malware samples/configuration files.",
+    "technique_references": [
+      {
+        "source_name": "SANS Decrypting SSL",
+        "url": "http://www.sans.org/reading-room/whitepapers/analyst/finding-hidden-threats-decrypting-ssl-34840",
+        "description": "Butler, M. (2013, November). Finding Hidden Threats by Decrypting SSL. Retrieved April 5, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SEI SSL Inspection Risks",
+        "url": "https://insights.sei.cmu.edu/cert/2015/03/the-risks-of-ssl-inspection.html",
+        "description": "Dormann, W. (2015, March 13). The Risks of SSL Inspection. Retrieved April 5, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

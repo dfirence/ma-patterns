@@ -1,0 +1,53 @@
+[
+  {
+    "id": "attack-pattern--7385dfaf-6886-4229-9ecd-6fd678040830",
+    "platform": "linux|macos|windows|network|office-365|azure-ad|iaas|google-workspace",
+    "tid": "T1059",
+    "technique": "Command and Scripting Interpreter",
+    "tactic": "execution",
+    "datasources": "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1059.001",
+      "T1059.002",
+      "T1059.003",
+      "T1059.004",
+      "T1059.005",
+      "T1059.006",
+      "T1059.007",
+      "T1059.008",
+      "T1059.009"
+    ],
+    "count_subtechniques": 9,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse command and script interpreters to execute commands, scripts, or binaries. These interfaces and languages provide ways of interacting with computer systems and are a common feature across many different platforms. Most systems come with some built-in command-line interface and scripting capabilities, for example, macOS and Linux distributions include some flavor of [Unix Shell](https://attack.mitre.org/techniques/T1059/004) while Windows installations include the [Windows Command Shell](https://attack.mitre.org/techniques/T1059/003) and [PowerShell](https://attack.mitre.org/techniques/T1059/001).\n\nThere are also cross-platform interpreters such as [Python](https://attack.mitre.org/techniques/T1059/006), as well as those commonly associated with client applications such as [JavaScript](https://attack.mitre.org/techniques/T1059/007) and [Visual Basic](https://attack.mitre.org/techniques/T1059/005).\n\nAdversaries may abuse these technologies in various ways as a means of executing arbitrary commands. Commands and scripts can be embedded in [Initial Access](https://attack.mitre.org/tactics/TA0001) payloads delivered to victims as lure documents or as secondary payloads downloaded from an existing C2. Adversaries may also execute commands through interactive terminals/shells, as well as utilize various [Remote Services](https://attack.mitre.org/techniques/T1021) in order to achieve remote Execution.(Citation: Powershell Remote Commands)(Citation: Cisco IOS Software Integrity Assurance - Command History)(Citation: Remote Shell Execution in Python)",
+    "technique_references": [
+      {
+        "source_name": "Remote Shell Execution in Python",
+        "url": "https://www.thepythoncode.com/article/executing-bash-commands-remotely-in-python",
+        "description": "Abdou Rockikz. (2020, July). How to Execute Shell Commands in a Remote Machine in Python. Retrieved July 26, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco IOS Software Integrity Assurance - Command History",
+        "url": "https://tools.cisco.com/security/center/resources/integrity_assurance.html#23",
+        "description": "Cisco. (n.d.). Cisco IOS Software Integrity Assurance - Command History. Retrieved October 21, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Powershell Remote Commands",
+        "url": "https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/running-remote-commands?view=powershell-7.1",
+        "description": "Microsoft. (2020, August 21). Running Remote Commands. Retrieved July 26, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

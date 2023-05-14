@@ -1,0 +1,9 @@
+[
+  [
+    "lslsass",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[Lslsass] can dump active logon session password hashes from the lsass process."
+  ]
+]

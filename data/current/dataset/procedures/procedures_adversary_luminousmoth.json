@@ -1,0 +1,128 @@
+[
+  [
+    "luminousmoth",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[LuminousMoth] has disguised their exfiltration malware as `ZoomVideoApp.exe`."
+  ],
+  [
+    "luminousmoth",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[LuminousMoth] has created scheduled tasks to establish persistence for their tools."
+  ],
+  [
+    "luminousmoth",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[LuminousMoth] has used HTTP for C2."
+  ],
+  [
+    "luminousmoth",
+    "T1204.001",
+    "Malicious Link",
+    "file-creation|network-connection-creation|network-traffic-content",
+    "T1204.001::[LuminousMoth] has lured victims into clicking malicious Dropbox download links delivered through spearphishing."
+  ],
+  [
+    "luminousmoth",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[LuminousMoth] has used malicious DLLs that setup persistence in the Registry Key `HKCU\\Software\\Microsoft\\Windows\\Current Version\\Run`."
+  ],
+  [
+    "luminousmoth",
+    "T1553.002",
+    "Code Signing",
+    "file-metadata",
+    "T1553.002::[LuminousMoth] has signed their malware with a valid digital signature."
+  ],
+  [
+    "luminousmoth",
+    "T1557.002",
+    "ARP Cache Poisoning",
+    "network-traffic-content|network-traffic-flow",
+    "T1557.002::[LuminousMoth] has used ARP spoofing to redirect a compromised machine to an actor-controlled website."
+  ],
+  [
+    "luminousmoth",
+    "T1564.001",
+    "Hidden Files and Directories",
+    "command-execution|file-creation|file-metadata|process-creation",
+    "T1564.001::[LuminousMoth] has used malware to store malicious binaries in hidden directories on victim's USB drives."
+  ],
+  [
+    "luminousmoth",
+    "T1566.002",
+    "Spearphishing Link",
+    "application-log-content|network-traffic-content|network-traffic-flow",
+    "T1566.002::[LuminousMoth] has sent spearphishing emails containing a malicious Dropbox download link."
+  ],
+  [
+    "luminousmoth",
+    "T1567.002",
+    "Exfiltration to Cloud Storage",
+    "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1567.002::[LuminousMoth] has exfiltrated data to Google Drive."
+  ],
+  [
+    "luminousmoth",
+    "T1574.002",
+    "DLL Side-Loading",
+    "file-creation|file-modification|module-load|process-creation",
+    "T1574.002::[LuminousMoth] has used legitimate executables such as `winword.exe` and `igfxem.exe` to side-load their malware."
+  ],
+  [
+    "luminousmoth",
+    "T1587.001",
+    "Malware",
+    "malware-content|malware-metadata",
+    "T1587.001::[LuminousMoth] has used unique malware for information theft and exfiltration."
+  ],
+  [
+    "luminousmoth",
+    "T1588.001",
+    "Malware",
+    "malware-content|malware-metadata",
+    "T1588.001::[LuminousMoth] has obtained and used malware such as [Cobalt Strike]."
+  ],
+  [
+    "luminousmoth",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[LuminousMoth] has obtained an ARP spoofing tool from GitHub."
+  ],
+  [
+    "luminousmoth",
+    "T1588.004",
+    "Digital Certificates",
+    "certificate-registration|response-content",
+    "T1588.004::[LuminousMoth] has used a valid digital certificate for some of their malware."
+  ],
+  [
+    "luminousmoth",
+    "T1608.001",
+    "Upload Malware",
+    "response-content",
+    "T1608.001::[LuminousMoth] has hosted malicious payloads on Dropbox."
+  ],
+  [
+    "luminousmoth",
+    "T1608.004",
+    "Drive-by Target",
+    "response-content",
+    "T1608.004::[LuminousMoth] has redirected compromised machines to an actor-controlled webpage through HTML injection."
+  ],
+  [
+    "luminousmoth",
+    "T1608.005",
+    "Link Target",
+    "response-content",
+    "T1608.005::[LuminousMoth] has created a link to a Dropbox file that has been used in their spear-phishing operations."
+  ]
+]

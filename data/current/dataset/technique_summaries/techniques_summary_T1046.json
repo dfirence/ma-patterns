@@ -1,0 +1,43 @@
+[
+  {
+    "id": "attack-pattern--e3a12395-188d-4051-9a16-ea8e14d07b88",
+    "platform": "windows|iaas|linux|macos|containers|network",
+    "tid": "T1046",
+    "technique": "Network Service Discovery",
+    "tactic": "discovery",
+    "datasources": "cloud-service-enumeration|command-execution|network-traffic-flow",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to get a listing of services running on remote hosts and local network infrastructure devices, including those that may be vulnerable to remote software exploitation. Common methods to acquire this information include port and/or vulnerability scans using tools that are brought onto a system.(Citation: CISA AR21-126A FIVEHANDS May 2021)   \n\nWithin cloud environments, adversaries may attempt to discover services running on other cloud hosts. Additionally, if the cloud environment is connected to a on-premises environment, adversaries may be able to identify services running on non-cloud systems as well.\n\nWithin macOS environments, adversaries may use the native Bonjour application to discover services running on other macOS hosts within a network. The Bonjour mDNSResponder daemon automatically registers and advertises a host’s registered services on the network. For example, adversaries can use a mDNS query (such as <code>dns-sd -B _ssh._tcp .</code>) to find other systems broadcasting the ssh service.(Citation: apple doco bonjour description)(Citation: macOS APT Activity Bradley)",
+    "technique_references": [
+      {
+        "source_name": "apple doco bonjour description",
+        "url": "https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/NetServices/Introduction.html",
+        "description": "Apple Inc. (2013, April 23). Bonjour Overview. Retrieved October 11, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CISA AR21-126A FIVEHANDS May 2021",
+        "url": "https://us-cert.cisa.gov/ncas/analysis-reports/ar21-126a",
+        "description": "CISA. (2021, May 6). Analysis Report (AR21-126A) FiveHands Ransomware. Retrieved June 7, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "macOS APT Activity Bradley",
+        "url": "https://themittenmac.com/what-does-apt-activity-look-like-on-macos/",
+        "description": "Jaron Bradley. (2021, November 14). What does APT Activity Look Like on macOS?. Retrieved January 19, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

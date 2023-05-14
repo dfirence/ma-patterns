@@ -1,0 +1,55 @@
+[
+  {
+    "id": "attack-pattern--69f897fd-12a9-4c89-ad6a-46d2f3c38262",
+    "platform": "pre",
+    "tid": "T1589.002",
+    "technique": "Email Addresses",
+    "tactic": "reconnaissance",
+    "datasources": "network-traffic-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may gather email addresses that can be used during targeting. Even if internal instances exist, organizations may have public-facing email infrastructure and addresses for employees.\n\nAdversaries may easily gather email addresses, since they may be readily available and exposed via online or other accessible data sets (ex: [Social Media](https://attack.mitre.org/techniques/T1593/001) or [Search Victim-Owned Websites](https://attack.mitre.org/techniques/T1594)).(Citation: HackersArise Email)(Citation: CNET Leaks) Email addresses could also be enumerated via more active means (i.e. [Active Scanning](https://attack.mitre.org/techniques/T1595)), such as probing and analyzing responses from authentication services that may reveal valid usernames in a system.(Citation: GrimBlog UsernameEnum) For example, adversaries may be able to enumerate email addresses in Office 365 environments by querying a variety of publicly available API endpoints, such as autodiscover and GetCredentialType.(Citation: GitHub Office 365 User Enumeration)(Citation: Azure Active Directory Reconnaisance)\n\nGathering this information may reveal opportunities for other forms of reconnaissance (ex: [Search Open Websites/Domains](https://attack.mitre.org/techniques/T1593) or [Phishing for Information](https://attack.mitre.org/techniques/T1598)), establishing operational resources (ex: [Email Accounts](https://attack.mitre.org/techniques/T1586/002)), and/or initial access (ex: [Phishing](https://attack.mitre.org/techniques/T1566) or [Brute Force](https://attack.mitre.org/techniques/T1110) via [External Remote Services](https://attack.mitre.org/techniques/T1133)).",
+    "technique_references": [
+      {
+        "source_name": "Azure Active Directory Reconnaisance",
+        "url": "https://o365blog.com/post/just-looking/",
+        "description": "Dr. Nestori Syynimaa. (2020, June 13). Just looking: Azure Active Directory reconnaissance as an outsider. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub Office 365 User Enumeration",
+        "url": "https://github.com/gremwell/o365enum",
+        "description": "gremwell. (2020, March 24). Office 365 User Enumeration. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GrimBlog UsernameEnum",
+        "url": "https://grimhacker.com/2017/07/24/office365-activesync-username-enumeration/",
+        "description": "GrimHacker. (2017, July 24). Office365 ActiveSync Username Enumeration. Retrieved December 9, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "HackersArise Email",
+        "url": "https://www.hackers-arise.com/email-scraping-and-maltego",
+        "description": "Hackers Arise. (n.d.). Email Scraping and Maltego. Retrieved October 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CNET Leaks",
+        "url": "https://www.cnet.com/news/massive-breach-leaks-773-million-emails-21-million-passwords/",
+        "description": "Ng, A. (2019, January 17). Massive breach leaks 773 million email addresses, 21 million passwords. Retrieved October 20, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

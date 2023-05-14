@@ -1,0 +1,326 @@
+[
+  {
+    "id": "attack-pattern--35dd844a-b219-4e2b-a6bb-efa9a75995a9",
+    "platform": "windows|linux|macos|containers",
+    "tid": "T1053",
+    "technique": "Scheduled Task/Job",
+    "tactic": "execution",
+    "datasources": "container-creation",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1053.001",
+      "T1053.002",
+      "T1053.003",
+      "T1053.005",
+      "T1053.006",
+      "T1053.007"
+    ],
+    "count_subtechniques": 6,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse task scheduling functionality to facilitate initial or recurring execution of malicious code. Utilities exist within all major operating systems to schedule programs or scripts to be executed at a specified date and time. A task can also be scheduled on a remote system, provided the proper authentication is met (ex: RPC and file and printer sharing in Windows environments). Scheduling a task on a remote system typically may require being a member of an admin or otherwise privileged group on the remote system.(Citation: TechNet Task Scheduler Security)\n\nAdversaries may use task scheduling to execute programs at system startup or on a scheduled basis for persistence. These mechanisms can also be abused to run a process under the context of a specified account (such as one with elevated permissions/privileges). Similar to [System Binary Proxy Execution](https://attack.mitre.org/techniques/T1218), adversaries have also abused task scheduling to potentially mask one-time execution under a trusted system process.(Citation: ProofPoint Serpent)",
+    "technique_references": [
+      {
+        "source_name": "ProofPoint Serpent",
+        "url": "https://www.proofpoint.com/us/blog/threat-insight/serpent-no-swiping-new-backdoor-targets-french-entities-unique-attack-chain",
+        "description": "Campbell, B. et al. (2022, March 21). Serpent, No Swiping! New Backdoor Targets French Entities with Unique Attack Chain. Retrieved April 11, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Task Scheduler Security",
+        "url": "https://technet.microsoft.com/en-us/library/cc785125.aspx",
+        "description": "Microsoft. (2005, January 21). Task Scheduler and security. Retrieved June 8, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|system|user",
+    "technique_effective_permissions": "system|administrator|user",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--35dd844a-b219-4e2b-a6bb-efa9a75995a9",
+    "platform": "windows|linux|macos|containers",
+    "tid": "T1053",
+    "technique": "Scheduled Task/Job",
+    "tactic": "persistence",
+    "datasources": "container-creation",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1053.001",
+      "T1053.002",
+      "T1053.003",
+      "T1053.005",
+      "T1053.006",
+      "T1053.007"
+    ],
+    "count_subtechniques": 6,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse task scheduling functionality to facilitate initial or recurring execution of malicious code. Utilities exist within all major operating systems to schedule programs or scripts to be executed at a specified date and time. A task can also be scheduled on a remote system, provided the proper authentication is met (ex: RPC and file and printer sharing in Windows environments). Scheduling a task on a remote system typically may require being a member of an admin or otherwise privileged group on the remote system.(Citation: TechNet Task Scheduler Security)\n\nAdversaries may use task scheduling to execute programs at system startup or on a scheduled basis for persistence. These mechanisms can also be abused to run a process under the context of a specified account (such as one with elevated permissions/privileges). Similar to [System Binary Proxy Execution](https://attack.mitre.org/techniques/T1218), adversaries have also abused task scheduling to potentially mask one-time execution under a trusted system process.(Citation: ProofPoint Serpent)",
+    "technique_references": [
+      {
+        "source_name": "ProofPoint Serpent",
+        "url": "https://www.proofpoint.com/us/blog/threat-insight/serpent-no-swiping-new-backdoor-targets-french-entities-unique-attack-chain",
+        "description": "Campbell, B. et al. (2022, March 21). Serpent, No Swiping! New Backdoor Targets French Entities with Unique Attack Chain. Retrieved April 11, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Task Scheduler Security",
+        "url": "https://technet.microsoft.com/en-us/library/cc785125.aspx",
+        "description": "Microsoft. (2005, January 21). Task Scheduler and security. Retrieved June 8, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|system|user",
+    "technique_effective_permissions": "system|administrator|user",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--35dd844a-b219-4e2b-a6bb-efa9a75995a9",
+    "platform": "windows|linux|macos|containers",
+    "tid": "T1053",
+    "technique": "Scheduled Task/Job",
+    "tactic": "privilege-escalation",
+    "datasources": "container-creation",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1053.001",
+      "T1053.002",
+      "T1053.003",
+      "T1053.005",
+      "T1053.006",
+      "T1053.007"
+    ],
+    "count_subtechniques": 6,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse task scheduling functionality to facilitate initial or recurring execution of malicious code. Utilities exist within all major operating systems to schedule programs or scripts to be executed at a specified date and time. A task can also be scheduled on a remote system, provided the proper authentication is met (ex: RPC and file and printer sharing in Windows environments). Scheduling a task on a remote system typically may require being a member of an admin or otherwise privileged group on the remote system.(Citation: TechNet Task Scheduler Security)\n\nAdversaries may use task scheduling to execute programs at system startup or on a scheduled basis for persistence. These mechanisms can also be abused to run a process under the context of a specified account (such as one with elevated permissions/privileges). Similar to [System Binary Proxy Execution](https://attack.mitre.org/techniques/T1218), adversaries have also abused task scheduling to potentially mask one-time execution under a trusted system process.(Citation: ProofPoint Serpent)",
+    "technique_references": [
+      {
+        "source_name": "ProofPoint Serpent",
+        "url": "https://www.proofpoint.com/us/blog/threat-insight/serpent-no-swiping-new-backdoor-targets-french-entities-unique-attack-chain",
+        "description": "Campbell, B. et al. (2022, March 21). Serpent, No Swiping! New Backdoor Targets French Entities with Unique Attack Chain. Retrieved April 11, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Task Scheduler Security",
+        "url": "https://technet.microsoft.com/en-us/library/cc785125.aspx",
+        "description": "Microsoft. (2005, January 21). Task Scheduler and security. Retrieved June 8, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|system|user",
+    "technique_effective_permissions": "system|administrator|user",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--8c32eb4d-805f-4fc5-bf60-c4d476c131b5",
+    "platform": "linux|windows|macos|iaas|containers",
+    "tid": "T1204",
+    "technique": "User Execution",
+    "tactic": "execution",
+    "datasources": "container-creation",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1204.001",
+      "T1204.002",
+      "T1204.003"
+    ],
+    "count_subtechniques": 3,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "An adversary may rely upon specific actions by a user in order to gain execution. Users may be subjected to social engineering to get them to execute malicious code by, for example, opening a malicious document file or link. These user actions will typically be observed as follow-on behavior from forms of [Phishing](https://attack.mitre.org/techniques/T1566).\n\nWhile [User Execution](https://attack.mitre.org/techniques/T1204) frequently occurs shortly after Initial Access it may occur at other phases of an intrusion, such as when an adversary places a file in a shared directory or on a user's desktop hoping that a user will click on it. This activity may also be seen shortly after [Internal Spearphishing](https://attack.mitre.org/techniques/T1534).\n\nAdversaries may also deceive users into performing actions such as enabling [Remote Access Software](https://attack.mitre.org/techniques/T1219), allowing direct control of the system to the adversary, or downloading and executing malware for [User Execution](https://attack.mitre.org/techniques/T1204). For example, tech support scams can be facilitated through [Phishing](https://attack.mitre.org/techniques/T1566), vishing, or various forms of user interaction. Adversaries can use a combination of these methods, such as spoofing and promoting toll-free numbers or call centers that are used to direct victims to malicious websites, to deliver and execute payloads containing malware or [Remote Access Software](https://attack.mitre.org/techniques/T1219).(Citation: Telephone Attack Delivery)",
+    "technique_references": [
+      {
+        "source_name": "Telephone Attack Delivery",
+        "url": "https://www.proofpoint.com/us/blog/threat-insight/caught-beneath-landline-411-telephone-oriented-attack-delivery",
+        "description": "Selena Larson, Sam Scholten, Timothy Kromphardt. (2021, November 4). Caught Beneath the Landline: A 411 on Telephone Oriented Attack Delivery. Retrieved January 5, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--56e0d8b8-3e25-49dd-9050-3aa252f5aa92",
+    "platform": "containers",
+    "tid": "T1610",
+    "technique": "Deploy Container",
+    "tactic": "defense-evasion",
+    "datasources": "container-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may deploy a container into an environment to facilitate execution or evade defenses. In some cases, adversaries may deploy a new container to execute processes associated with a particular image or deployment, such as processes that execute or download malware. In others, an adversary may deploy a new container configured without network rules, user limitations, etc. to bypass existing defenses within the environment.\n\nContainers can be deployed by various means, such as via Docker's <code>create</code> and <code>start</code> APIs or via a web application such as the Kubernetes dashboard or Kubeflow.(Citation: Docker Containers API)(Citation: Kubernetes Dashboard)(Citation: Kubeflow Pipelines) Adversaries may deploy containers based on retrieved or built malicious images or from benign images that download and execute malicious payloads at runtime.(Citation: Aqua Build Images on Hosts)",
+    "technique_references": [
+      {
+        "source_name": "Aqua Build Images on Hosts",
+        "url": "https://blog.aquasec.com/malicious-container-image-docker-container-host",
+        "description": "Assaf Morag. (2020, July 15). Threat Alert: Attackers Building Malicious Images on Your Hosts. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Docker Containers API",
+        "url": "https://docs.docker.com/engine/api/v1.41/#tag/Container",
+        "description": "Docker. (n.d.). Docker Engine API v1.41 Reference - Container. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubeflow Pipelines",
+        "url": "https://www.kubeflow.org/docs/components/pipelines/overview/pipelines-overview/",
+        "description": "The Kubeflow Authors. (n.d.). Overview of Kubeflow Pipelines. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubernetes Dashboard",
+        "url": "https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/",
+        "description": "The Kubernetes Authors. (n.d.). Kubernetes Web UI (Dashboard). Retrieved March 29, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--56e0d8b8-3e25-49dd-9050-3aa252f5aa92",
+    "platform": "containers",
+    "tid": "T1610",
+    "technique": "Deploy Container",
+    "tactic": "execution",
+    "datasources": "container-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may deploy a container into an environment to facilitate execution or evade defenses. In some cases, adversaries may deploy a new container to execute processes associated with a particular image or deployment, such as processes that execute or download malware. In others, an adversary may deploy a new container configured without network rules, user limitations, etc. to bypass existing defenses within the environment.\n\nContainers can be deployed by various means, such as via Docker's <code>create</code> and <code>start</code> APIs or via a web application such as the Kubernetes dashboard or Kubeflow.(Citation: Docker Containers API)(Citation: Kubernetes Dashboard)(Citation: Kubeflow Pipelines) Adversaries may deploy containers based on retrieved or built malicious images or from benign images that download and execute malicious payloads at runtime.(Citation: Aqua Build Images on Hosts)",
+    "technique_references": [
+      {
+        "source_name": "Aqua Build Images on Hosts",
+        "url": "https://blog.aquasec.com/malicious-container-image-docker-container-host",
+        "description": "Assaf Morag. (2020, July 15). Threat Alert: Attackers Building Malicious Images on Your Hosts. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Docker Containers API",
+        "url": "https://docs.docker.com/engine/api/v1.41/#tag/Container",
+        "description": "Docker. (n.d.). Docker Engine API v1.41 Reference - Container. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubeflow Pipelines",
+        "url": "https://www.kubeflow.org/docs/components/pipelines/overview/pipelines-overview/",
+        "description": "The Kubeflow Authors. (n.d.). Overview of Kubeflow Pipelines. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubernetes Dashboard",
+        "url": "https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/",
+        "description": "The Kubernetes Authors. (n.d.). Kubernetes Web UI (Dashboard). Retrieved March 29, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--4a5b7ade-8bb5-4853-84ed-23f262002665",
+    "platform": "windows|linux|containers",
+    "tid": "T1611",
+    "technique": "Escape to Host",
+    "tactic": "privilege-escalation",
+    "datasources": "container-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may break out of a container to gain access to the underlying host. This can allow an adversary access to other containerized resources from the host level or to the host itself. In principle, containerized resources should provide a clear separation of application functionality and be isolated from the host environment.(Citation: Docker Overview)\n\nThere are multiple ways an adversary may escape to a host environment. Examples include creating a container configured to mount the host’s filesystem using the bind parameter, which allows the adversary to drop payloads and execute control utilities such as cron on the host; utilizing a privileged container to run commands or load a malicious kernel module on the underlying host; or abusing system calls such as `unshare` and `keyctl` to escalate privileges and steal secrets.(Citation: Docker Bind Mounts)(Citation: Trend Micro Privileged Container)(Citation: Intezer Doki July 20)(Citation: Container Escape)(Citation: Crowdstrike Kubernetes Container Escape)(Citation: Keyctl-unmask)\n\nAdditionally, an adversary may be able to exploit a compromised container with a mounted container management socket, such as `docker.sock`, to break out of the container via a [Container Administration Command](https://attack.mitre.org/techniques/T1609).(Citation: Container Escape) Adversaries may also escape via [Exploitation for Privilege Escalation](https://attack.mitre.org/techniques/T1068), such as exploiting vulnerabilities in global symbolic links in order to access the root directory of a host machine.(Citation: Windows Server Containers Are Open)\n\nGaining access to the host may provide the adversary with the opportunity to achieve follow-on objectives, such as establishing persistence, moving laterally within the environment, or setting up a command and control channel on the host.",
+    "technique_references": [
+      {
+        "source_name": "Container Escape",
+        "url": "https://0xn3va.gitbook.io/cheat-sheets/container/escaping",
+        "description": "0xn3va. (n.d.). Escaping. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Windows Server Containers Are Open",
+        "url": "https://unit42.paloaltonetworks.com/windows-server-containers-vulnerabilities/",
+        "description": "Daniel Prizmant. (2020, July 15). Windows Server Containers Are Open, and Here's How You Can Break Out. Retrieved October 1, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Docker Overview",
+        "url": "https://docs.docker.com/get-started/overview/",
+        "description": "Docker. (n.d.). Docker Overview. Retrieved March 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Docker Bind Mounts",
+        "url": "https://docs.docker.com/storage/bind-mounts/",
+        "description": "Docker. (n.d.). Use Bind Mounts. Retrieved March 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Trend Micro Privileged Container",
+        "url": "https://www.trendmicro.com/en_us/research/19/l/why-running-a-privileged-container-in-docker-is-a-bad-idea.html",
+        "description": "Fiser, D., Oliveira, A.. (2019, December 20). Why a Privileged Container in Docker is a Bad Idea. Retrieved March 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Intezer Doki July 20",
+        "url": "https://www.intezer.com/blog/cloud-security/watch-your-containers-doki-infecting-docker-servers-in-the-cloud/",
+        "description": "Fishbein, N., Kajiloti, M.. (2020, July 28). Watch Your Containers: Doki Infecting Docker Servers in the Cloud. Retrieved March 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Crowdstrike Kubernetes Container Escape",
+        "url": "https://www.crowdstrike.com/blog/cve-2022-0185-kubernetes-container-escape-using-linux-kernel-exploit/",
+        "description": "Manoj Ahuje. (2022, January 31). CVE-2022-0185: Kubernetes Container Escape Using Linux Kernel Exploit. Retrieved July 6, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Keyctl-unmask",
+        "url": "https://www.antitree.com/2020/07/keyctl-unmask-going-florida-on-the-state-of-containerizing-linux-keyrings/",
+        "description": "Mark Manning. (2020, July 23). Keyctl-unmask: \"Going Florida\" on The State Of Containerizing Linux Keyrings. Retrieved July 6, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user|root",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

@@ -1,9 +1,0 @@
-{
-  "T1602.002:Network Device Configuration Dump": [
-    "network-connection-creation",
-    "network-traffic-content"
-  ],
-  "malware": [],
-  "tools": [],
-  "adversaries": []
-}

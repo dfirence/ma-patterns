@@ -1,0 +1,72 @@
+[
+  {
+    "id": "attack-pattern--ce4b7013-640e-48a9-b501-d0025a95f4bf",
+    "platform": "windows",
+    "tid": "T1546.002",
+    "technique": "Screensaver",
+    "tactic": "persistence",
+    "datasources": "command-execution|file-creation|file-modification|process-creation|windows-registry-key-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may establish persistence by executing malicious content triggered by user inactivity. Screensavers are programs that execute after a configurable time of user inactivity and consist of Portable Executable (PE) files with a .scr file extension.(Citation: Wikipedia Screensaver) The Windows screensaver application scrnsave.scr is located in <code>C:\\Windows\\System32\\</code>, and <code>C:\\Windows\\sysWOW64\\</code>  on 64-bit Windows systems, along with screensavers included with base Windows installations.\n\nThe following screensaver settings are stored in the Registry (<code>HKCU\\Control Panel\\Desktop\\</code>) and could be manipulated to achieve persistence:\n\n* <code>SCRNSAVE.exe</code> - set to malicious PE path\n* <code>ScreenSaveActive</code> - set to '1' to enable the screensaver\n* <code>ScreenSaverIsSecure</code> - set to '0' to not require a password to unlock\n* <code>ScreenSaveTimeout</code> - sets user inactivity timeout before screensaver is executed\n\nAdversaries can use screensaver settings to maintain persistence by setting the screensaver to run malware after a certain timeframe of user inactivity.(Citation: ESET Gazer Aug 2017)",
+    "technique_references": [
+      {
+        "source_name": "ESET Gazer Aug 2017",
+        "url": "https://www.welivesecurity.com/wp-content/uploads/2017/08/eset-gazer.pdf",
+        "description": "ESET. (2017, August). Gazing at Gazer: Turla’s new second stage backdoor. Retrieved September 14, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia Screensaver",
+        "url": "https://en.wikipedia.org/wiki/Screensaver",
+        "description": "Wikipedia. (2017, November 22). Screensaver. Retrieved December 5, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--ce4b7013-640e-48a9-b501-d0025a95f4bf",
+    "platform": "windows",
+    "tid": "T1546.002",
+    "technique": "Screensaver",
+    "tactic": "privilege-escalation",
+    "datasources": "command-execution|file-creation|file-modification|process-creation|windows-registry-key-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may establish persistence by executing malicious content triggered by user inactivity. Screensavers are programs that execute after a configurable time of user inactivity and consist of Portable Executable (PE) files with a .scr file extension.(Citation: Wikipedia Screensaver) The Windows screensaver application scrnsave.scr is located in <code>C:\\Windows\\System32\\</code>, and <code>C:\\Windows\\sysWOW64\\</code>  on 64-bit Windows systems, along with screensavers included with base Windows installations.\n\nThe following screensaver settings are stored in the Registry (<code>HKCU\\Control Panel\\Desktop\\</code>) and could be manipulated to achieve persistence:\n\n* <code>SCRNSAVE.exe</code> - set to malicious PE path\n* <code>ScreenSaveActive</code> - set to '1' to enable the screensaver\n* <code>ScreenSaverIsSecure</code> - set to '0' to not require a password to unlock\n* <code>ScreenSaveTimeout</code> - sets user inactivity timeout before screensaver is executed\n\nAdversaries can use screensaver settings to maintain persistence by setting the screensaver to run malware after a certain timeframe of user inactivity.(Citation: ESET Gazer Aug 2017)",
+    "technique_references": [
+      {
+        "source_name": "ESET Gazer Aug 2017",
+        "url": "https://www.welivesecurity.com/wp-content/uploads/2017/08/eset-gazer.pdf",
+        "description": "ESET. (2017, August). Gazing at Gazer: Turla’s new second stage backdoor. Retrieved September 14, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia Screensaver",
+        "url": "https://en.wikipedia.org/wiki/Screensaver",
+        "description": "Wikipedia. (2017, November 22). Screensaver. Retrieved December 5, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

@@ -1,0 +1,64 @@
+[
+  {
+    "id": "attack-pattern--0458aab9-ad42-4eac-9e22-706a95bafee2",
+    "platform": "pre",
+    "tid": "T1583",
+    "technique": "Acquire Infrastructure",
+    "tactic": "resource-development",
+    "datasources": "active-dns|domain-registration|passive-dns|response-content|response-metadata",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1583.001",
+      "T1583.002",
+      "T1583.003",
+      "T1583.004",
+      "T1583.005",
+      "T1583.006",
+      "T1583.007",
+      "T1583.008"
+    ],
+    "count_subtechniques": 8,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may buy, lease, or rent infrastructure that can be used during targeting. A wide variety of infrastructure exists for hosting and orchestrating adversary operations. Infrastructure solutions include physical or cloud servers, domains, and third-party web services.(Citation: TrendmicroHideoutsLease) Additionally, botnets are available for rent or purchase.\n\nUse of these infrastructure solutions allows adversaries to stage, launch, and execute operations. Solutions may help adversary operations blend in with traffic that is seen as normal, such as contacting third-party web services or acquiring infrastructure to support [Proxy](https://attack.mitre.org/techniques/T1090).(Citation: amnesty_nso_pegasus) Depending on the implementation, adversaries may use infrastructure that makes it difficult to physically tie back to them as well as utilize infrastructure that can be rapidly provisioned, modified, and shut down.",
+    "technique_references": [
+      {
+        "source_name": "amnesty_nso_pegasus",
+        "url": "https://www.amnesty.org/en/latest/research/2021/07/forensic-methodology-report-how-to-catch-nso-groups-pegasus/",
+        "description": "Amnesty International Security Lab. (2021, July 18). Forensic Methodology Report: How to catch NSO Group’s Pegasus. Retrieved February 22, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Koczwara Beacon Hunting Sep 2021",
+        "url": "https://michaelkoczwara.medium.com/cobalt-strike-c2-hunting-with-shodan-c448d501a6e2",
+        "description": "Koczwara, M. (2021, September 7). Hunting Cobalt Strike C2 with Shodan. Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TrendmicroHideoutsLease",
+        "url": "https://documents.trendmicro.com/assets/wp/wp-criminal-hideouts-for-lease.pdf",
+        "description": "Max Goncharov. (2015, July 15). Criminal Hideouts for Lease: Bulletproof Hosting Services. Retrieved March 6, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant SCANdalous Jul 2020",
+        "url": "https://www.mandiant.com/resources/scandalous-external-detection-using-network-scan-data-and-automation",
+        "description": "Stephens, A. (2020, July 13). SCANdalous! (External Detection Using Network Scan Data and Automation). Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ThreatConnect Infrastructure Dec 2020",
+        "url": "https://threatconnect.com/blog/infrastructure-research-hunting/",
+        "description": "ThreatConnect. (2020, December 15). Infrastructure Research and Hunting: Boiling the Domain Ocean. Retrieved October 12, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

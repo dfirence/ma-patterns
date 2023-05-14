@@ -1,0 +1,30 @@
+[
+  [
+    "rclone",
+    "T1048.002",
+    "Exfiltration Over Asymmetric Encrypted Non-C2 Protocol",
+    "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1048.002::[Rclone] can exfiltrate data over SFTP or HTTPS via WebDAV."
+  ],
+  [
+    "rclone",
+    "T1048.003",
+    "Exfiltration Over Unencrypted Non-C2 Protocol",
+    "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1048.003::[Rclone] can exfiltrate data over FTP or HTTP, including HTTP via WebDAV."
+  ],
+  [
+    "rclone",
+    "T1560.001",
+    "Archive via Utility",
+    "command-execution|file-creation|process-creation",
+    "T1560.001::[Rclone] can compress files using `gzip` prior to exfiltration."
+  ],
+  [
+    "rclone",
+    "T1567.002",
+    "Exfiltration to Cloud Storage",
+    "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1567.002::[Rclone] can exfiltrate data to cloud storage services such as Dropbox, Google Drive, Amazon S3, and MEGA."
+  ]
+]

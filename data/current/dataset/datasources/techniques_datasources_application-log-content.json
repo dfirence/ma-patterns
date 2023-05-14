@@ -1,0 +1,2048 @@
+[
+  {
+    "id": "attack-pattern--a19e86f8-1c0a-4fea-8407-23b73d615776",
+    "platform": "linux|macos|windows|office-365|saas|iaas|google-workspace|network",
+    "tid": "T1048",
+    "technique": "Exfiltration Over Alternative Protocol",
+    "tactic": "exfiltration",
+    "datasources": "application-log-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1048.001",
+      "T1048.002",
+      "T1048.003"
+    ],
+    "count_subtechniques": 3,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may steal data by exfiltrating it over a different protocol than that of the existing command and control channel. The data may also be sent to an alternate network location from the main command and control server.  \n\nAlternate protocols include FTP, SMTP, HTTP/S, DNS, SMB, or any other network protocol not being used as the main command and control channel. Adversaries may also opt to encrypt and/or obfuscate these alternate channels. \n\n[Exfiltration Over Alternative Protocol](https://attack.mitre.org/techniques/T1048) can be done using various common operating system utilities such as [Net](https://attack.mitre.org/software/S0039)/SMB or FTP.(Citation: Palo Alto OilRig Oct 2016) On macOS and Linux <code>curl</code> may be used to invoke protocols such as HTTP/S or FTP/S to exfiltrate data from a system.(Citation: 20 macOS Common Tools and Techniques)\n\nMany IaaS and SaaS platforms (such as Microsoft Exchange, Microsoft SharePoint, GitHub, and AWS S3) support the direct download of files, emails, source code, and other sensitive information via the web console or [Cloud API](https://attack.mitre.org/techniques/T1059/009).",
+    "technique_references": [
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Palo Alto OilRig Oct 2016",
+        "url": "http://researchcenter.paloaltonetworks.com/2016/10/unit42-oilrig-malware-campaign-updates-toolset-and-expands-targets/",
+        "description": "Grunzweig, J. and Falcone, R.. (2016, October 4). OilRig Malware Campaign Updates Toolset and Expands Targets. Retrieved May 3, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "20 macOS Common Tools and Techniques",
+        "url": "https://labs.sentinelone.com/20-common-tools-techniques-used-by-macos-threat-actors-malware/",
+        "description": "Phil Stokes. (2021, February 16). 20 Common Tools & Techniques Used by macOS Threat Actors & Malware. Retrieved August 23, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--15dbf668-795c-41e6-8219-f0447c0e64ce",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers",
+    "tid": "T1069",
+    "technique": "Permission Groups Discovery",
+    "tactic": "discovery",
+    "datasources": "application-log-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1069.001",
+      "T1069.002",
+      "T1069.003"
+    ],
+    "count_subtechniques": 3,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to discover group and permission settings. This information can help adversaries determine which user accounts and groups are available, the membership of users in particular groups, and which users and groups have elevated permissions.\n\nAdversaries may attempt to discover group permission settings in many different ways. This data may provide the adversary with information about the compromised environment that can be used in follow-on activity and targeting.(Citation: CrowdStrike BloodHound April 2018)",
+    "technique_references": [
+      {
+        "source_name": "K8s Authorization Overview",
+        "url": "https://kubernetes.io/docs/reference/access-authn-authz/authorization/",
+        "description": "Kubernetes. (n.d.). Authorization Overview. Retrieved June 24, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CrowdStrike BloodHound April 2018",
+        "url": "https://www.crowdstrike.com/blog/hidden-administrative-accounts-bloodhound-to-the-rescue/",
+        "description": "Red Team Labs. (2018, April 24). Hidden Administrative Accounts: BloodHound to the Rescue. Retrieved October 28, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--799ace7f-e227-4411-baa0-8868704f2a69",
+    "platform": "linux|macos|windows|containers|network|office-365|google-workspace",
+    "tid": "T1070",
+    "technique": "Indicator Removal",
+    "tactic": "defense-evasion",
+    "datasources": "application-log-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1070.001",
+      "T1070.002",
+      "T1070.003",
+      "T1070.004",
+      "T1070.005",
+      "T1070.006",
+      "T1070.007",
+      "T1070.008",
+      "T1070.009"
+    ],
+    "count_subtechniques": 9,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may delete or modify artifacts generated within systems to remove evidence of their presence or hinder defenses. Various artifacts may be created by an adversary or something that can be attributed to an adversary’s actions. Typically these artifacts are used as defensive indicators related to monitored events, such as strings from downloaded files, logs that are generated from user actions, and other data analyzed by defenders. Location, format, and type of artifact (such as command or login history) are often specific to each platform.\n\nRemoval of these indicators may interfere with event collection, reporting, or other processes used to detect intrusion activity. This may compromise the integrity of security solutions by causing notable events to go unreported. This activity may also impede forensic analysis and incident response, due to lack of sufficient data to determine what occurred.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--92a78814-b191-47ca-909c-1ccfe3777414",
+    "platform": "linux|macos|windows",
+    "tid": "T1072",
+    "technique": "Software Deployment Tools",
+    "tactic": "execution",
+    "datasources": "application-log-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may gain access to and use third-party software suites installed within an enterprise network, such as administration, monitoring, and deployment systems, to move laterally through the network. Third-party applications and software deployment systems may be in use in the network environment for administration purposes (e.g., SCCM, HBSS, Altiris, etc.).\n\nAccess to a third-party network-wide or enterprise-wide software system may enable an adversary to have remote code execution on all systems that are connected to such a system. The access may be used to laterally move to other systems, gather information, or cause a specific effect, such as wiping the hard drives on all endpoints.\n\nThe permissions required for this action vary by system configuration; local credentials may be sufficient with direct access to the third-party system, or specific domain credentials may be required. However, the system may require an administrative account to log in or to perform it's intended purpose.",
+    "technique_references": [],
+    "technique_required_permissions": "user|administrator|system",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--92a78814-b191-47ca-909c-1ccfe3777414",
+    "platform": "linux|macos|windows",
+    "tid": "T1072",
+    "technique": "Software Deployment Tools",
+    "tactic": "lateral-movement",
+    "datasources": "application-log-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may gain access to and use third-party software suites installed within an enterprise network, such as administration, monitoring, and deployment systems, to move laterally through the network. Third-party applications and software deployment systems may be in use in the network environment for administration purposes (e.g., SCCM, HBSS, Altiris, etc.).\n\nAccess to a third-party network-wide or enterprise-wide software system may enable an adversary to have remote code execution on all systems that are connected to such a system. The access may be used to laterally move to other systems, gather information, or cause a specific effect, such as wiping the hard drives on all endpoints.\n\nThe permissions required for this action vary by system configuration; local credentials may be sufficient with direct access to the third-party system, or specific domain credentials may be required. However, the system may require an administrative account to log in or to perform it's intended purpose.",
+    "technique_references": [],
+    "technique_required_permissions": "user|administrator|system",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--a93494bb-4b80-4ea1-8695-3236a49916fd",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "tid": "T1110",
+    "technique": "Brute Force",
+    "tactic": "credential-access",
+    "datasources": "application-log-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1110.001",
+      "T1110.002",
+      "T1110.003",
+      "T1110.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use brute force techniques to gain access to accounts when passwords are unknown or when password hashes are obtained. Without knowledge of the password for an account or set of accounts, an adversary may systematically guess the password using a repetitive or iterative mechanism. Brute forcing passwords can take place via interaction with a service that will check the validity of those credentials or offline against previously acquired credential data, such as password hashes.\n\nBrute forcing credentials may take place at various points during a breach. For example, adversaries may attempt to brute force access to [Valid Accounts](https://attack.mitre.org/techniques/T1078) within a victim environment leveraging knowledge gathered from other post-compromise behaviors such as [OS Credential Dumping](https://attack.mitre.org/techniques/T1003), [Account Discovery](https://attack.mitre.org/techniques/T1087), or [Password Policy Discovery](https://attack.mitre.org/techniques/T1201). Adversaries may also combine brute forcing activity with behaviors such as [External Remote Services](https://attack.mitre.org/techniques/T1133) as part of Initial Access.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--1608f3e1-598a-42f4-a01a-2e252e81728f",
+    "platform": "windows|office-365|google-workspace|macos|linux",
+    "tid": "T1114",
+    "technique": "Email Collection",
+    "tactic": "collection",
+    "datasources": "application-log-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1114.001",
+      "T1114.002",
+      "T1114.003"
+    ],
+    "count_subtechniques": 3,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may target user email to collect sensitive information. Emails may contain sensitive data, including trade secrets or personal information, that can prove valuable to adversaries. Adversaries can collect or forward email from mail servers or clients. ",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Tim McMichael Exchange Mail Forwarding 2",
+        "url": "https://blogs.technet.microsoft.com/timmcmic/2015/06/08/exchange-and-office-365-mail-forwarding-2/",
+        "description": "McMichael, T.. (2015, June 8). Exchange and Office 365 Mail Forwarding. Retrieved October 8, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--10d51417-ee35-4589-b1ff-b6df1c334e8d",
+    "platform": "windows|linux|containers|macos",
+    "tid": "T1133",
+    "technique": "External Remote Services",
+    "tactic": "persistence",
+    "datasources": "application-log-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may leverage external-facing remote services to initially access and/or persist within a network. Remote services such as VPNs, Citrix, and other access mechanisms allow users to connect to internal enterprise network resources from external locations. There are often remote service gateways that manage connections and credential authentication for these services. Services such as [Windows Remote Management](https://attack.mitre.org/techniques/T1021/006) and [VNC](https://attack.mitre.org/techniques/T1021/005) can also be used externally.(Citation: MacOS VNC software for Remote Desktop)\n\nAccess to [Valid Accounts](https://attack.mitre.org/techniques/T1078) to use the service is often a requirement, which could be obtained through credential pharming or by obtaining the credentials from users after compromising the enterprise network.(Citation: Volexity Virtual Private Keylogging) Access to remote services may be used as a redundant or persistent access mechanism during an operation.\n\nAccess may also be gained through an exposed service that doesn’t require authentication. In containerized environments, this may include an exposed Docker API, Kubernetes API server, kubelet, or web application such as the Kubernetes dashboard.(Citation: Trend Micro Exposed Docker Server)(Citation: Unit 42 Hildegard Malware)",
+    "technique_references": [
+      {
+        "source_name": "Volexity Virtual Private Keylogging",
+        "url": "https://www.volexity.com/blog/2015/10/07/virtual-private-keylogging-cisco-web-vpns-leveraged-for-access-and-persistence/",
+        "description": "Adair, S. (2015, October 7). Virtual Private Keylogging: Cisco Web VPNs Leveraged for Access and Persistence. Retrieved March 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MacOS VNC software for Remote Desktop",
+        "url": "https://support.apple.com/guide/remote-desktop/set-up-a-computer-running-vnc-software-apdbed09830/mac",
+        "description": "Apple Support. (n.d.). Set up a computer running VNC software for Remote Desktop. Retrieved August 18, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Unit 42 Hildegard Malware",
+        "url": "https://unit42.paloaltonetworks.com/hildegard-malware-teamtnt/",
+        "description": "Chen, J. et al. (2021, February 3). Hildegard: New TeamTNT Cryptojacking Malware Targeting Kubernetes. Retrieved April 5, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Trend Micro Exposed Docker Server",
+        "url": "https://www.trendmicro.com/en_us/research/20/f/xorddos-kaiji-botnet-malware-variants-target-exposed-docker-servers.html",
+        "description": "Remillano II, A., et al. (2020, June 20). XORDDoS, Kaiji Variants Target Exposed Docker Servers. Retrieved April 5, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--10d51417-ee35-4589-b1ff-b6df1c334e8d",
+    "platform": "windows|linux|containers|macos",
+    "tid": "T1133",
+    "technique": "External Remote Services",
+    "tactic": "initial-access",
+    "datasources": "application-log-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may leverage external-facing remote services to initially access and/or persist within a network. Remote services such as VPNs, Citrix, and other access mechanisms allow users to connect to internal enterprise network resources from external locations. There are often remote service gateways that manage connections and credential authentication for these services. Services such as [Windows Remote Management](https://attack.mitre.org/techniques/T1021/006) and [VNC](https://attack.mitre.org/techniques/T1021/005) can also be used externally.(Citation: MacOS VNC software for Remote Desktop)\n\nAccess to [Valid Accounts](https://attack.mitre.org/techniques/T1078) to use the service is often a requirement, which could be obtained through credential pharming or by obtaining the credentials from users after compromising the enterprise network.(Citation: Volexity Virtual Private Keylogging) Access to remote services may be used as a redundant or persistent access mechanism during an operation.\n\nAccess may also be gained through an exposed service that doesn’t require authentication. In containerized environments, this may include an exposed Docker API, Kubernetes API server, kubelet, or web application such as the Kubernetes dashboard.(Citation: Trend Micro Exposed Docker Server)(Citation: Unit 42 Hildegard Malware)",
+    "technique_references": [
+      {
+        "source_name": "Volexity Virtual Private Keylogging",
+        "url": "https://www.volexity.com/blog/2015/10/07/virtual-private-keylogging-cisco-web-vpns-leveraged-for-access-and-persistence/",
+        "description": "Adair, S. (2015, October 7). Virtual Private Keylogging: Cisco Web VPNs Leveraged for Access and Persistence. Retrieved March 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MacOS VNC software for Remote Desktop",
+        "url": "https://support.apple.com/guide/remote-desktop/set-up-a-computer-running-vnc-software-apdbed09830/mac",
+        "description": "Apple Support. (n.d.). Set up a computer running VNC software for Remote Desktop. Retrieved August 18, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Unit 42 Hildegard Malware",
+        "url": "https://unit42.paloaltonetworks.com/hildegard-malware-teamtnt/",
+        "description": "Chen, J. et al. (2021, February 3). Hildegard: New TeamTNT Cryptojacking Malware Targeting Kubernetes. Retrieved April 5, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Trend Micro Exposed Docker Server",
+        "url": "https://www.trendmicro.com/en_us/research/20/f/xorddos-kaiji-botnet-malware-variants-target-exposed-docker-servers.html",
+        "description": "Remillano II, A., et al. (2020, June 20). XORDDoS, Kaiji Variants Target Exposed Docker Servers. Retrieved April 5, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--2c4d4e92-0ccf-4a97-b54c-86d662988a53",
+    "platform": "windows|office-365",
+    "tid": "T1137",
+    "technique": "Office Application Startup",
+    "tactic": "persistence",
+    "datasources": "application-log-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1137.001",
+      "T1137.002",
+      "T1137.003",
+      "T1137.004",
+      "T1137.005",
+      "T1137.006"
+    ],
+    "count_subtechniques": 6,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may leverage Microsoft Office-based applications for persistence between startups. Microsoft Office is a fairly common application suite on Windows-based operating systems within an enterprise network. There are multiple mechanisms that can be used with Office for persistence when an Office-based application is started; this can include the use of Office Template Macros and add-ins.\n\nA variety of features have been discovered in Outlook that can be abused to obtain persistence, such as Outlook rules, forms, and Home Page.(Citation: SensePost Ruler GitHub) These persistence mechanisms can work within Outlook or be used through Office 365.(Citation: TechNet O365 Outlook Rules)",
+    "technique_references": [
+      {
+        "source_name": "SensePost Ruler GitHub",
+        "url": "https://github.com/sensepost/ruler",
+        "description": "SensePost. (2016, August 18). Ruler: A tool to abuse Exchange services. Retrieved February 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet O365 Outlook Rules",
+        "url": "https://blogs.technet.microsoft.com/office365security/defending-against-rules-and-forms-injection/",
+        "description": "Koeller, B.. (2018, February 21). Defending Against Rules and Forms Injection. Retrieved November 5, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CrowdStrike Outlook Forms",
+        "url": "https://malware.news/t/using-outlook-forms-for-lateral-movement-and-persistence/13746",
+        "description": "Parisi, T., et al. (2017, July). Using Outlook Forms for Lateral Movement and Persistence. Retrieved February 5, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Outlook Today Home Page",
+        "url": "https://medium.com/@bwtech789/outlook-today-homepage-persistence-33ea9b505943",
+        "description": "Soutcast. (2018, September 14). Outlook Today Homepage Persistence. Retrieved February 5, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Detect Outlook Forms",
+        "url": "https://docs.microsoft.com/en-us/office365/securitycompliance/detect-and-remediate-outlook-rules-forms-attack",
+        "description": "Fox, C., Vangel, D. (2018, April 22). Detect and Remediate Outlook Rules and Custom Forms Injections Attacks in Office 365. Retrieved February 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SensePost NotRuler",
+        "url": "https://github.com/sensepost/notruler",
+        "description": "SensePost. (2017, September 21). NotRuler - The opposite of Ruler, provides blue teams with the ability to detect Ruler usage against Exchange. Retrieved February 4, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d742a578-d70e-4d0e-96a6-02a9c30204e6",
+    "platform": "windows|linux|macos|saas",
+    "tid": "T1189",
+    "technique": "Drive-by Compromise",
+    "tactic": "initial-access",
+    "datasources": "application-log-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may gain access to a system through a user visiting a website over the normal course of browsing. With this technique, the user's web browser is typically targeted for exploitation, but adversaries may also use compromised websites for non-exploitation behavior such as acquiring [Application Access Token](https://attack.mitre.org/techniques/T1550/001).\n\nMultiple ways of delivering exploit code to a browser exist (i.e., [Drive-by Target](https://attack.mitre.org/techniques/T1608/004)), including:\n\n* A legitimate website is compromised where adversaries have injected some form of malicious code such as JavaScript, iFrames, and cross-site scripting\n* Script files served to a legitimate website from a publicly writeable cloud storage bucket are modified by an adversary\n* Malicious ads are paid for and served through legitimate ad providers (i.e., [Malvertising](https://attack.mitre.org/techniques/T1583/008))\n* Built-in web application interfaces are leveraged for the insertion of any other kind of object that can be used to display web content or contain a script that executes on the visiting client (e.g. forum posts, comments, and other user controllable web content).\n\nOften the website used by an adversary is one visited by a specific community, such as government, a particular industry, or region, where the goal is to compromise a specific user or set of users based on a shared interest. This kind of targeted campaign is often referred to a strategic web compromise or watering hole attack. There are several known examples of this occurring.(Citation: Shadowserver Strategic Web Compromise)\n\nTypical drive-by compromise process:\n\n1. A user visits a website that is used to host the adversary controlled content.\n2. Scripts automatically execute, typically searching versions of the browser and plugins for a potentially vulnerable version. \n    * The user may be required to assist in this process by enabling scripting or active website components and ignoring warning dialog boxes.\n3. Upon finding a vulnerable version, exploit code is delivered to the browser.\n4. If exploitation is successful, then it will give the adversary code execution on the user's system unless other protections are in place.\n    * In some cases a second visit to the website after the initial scan is required before exploit code is delivered.\n\nUnlike [Exploit Public-Facing Application](https://attack.mitre.org/techniques/T1190), the focus of this technique is to exploit software on a client endpoint upon visiting a website. This will commonly give an adversary access to systems on the internal network instead of external systems that may be in a DMZ.\n\nAdversaries may also use compromised websites to deliver a user to a malicious application designed to [Steal Application Access Token](https://attack.mitre.org/techniques/T1528)s, like OAuth tokens, to gain access to protected applications and information. These malicious applications have been delivered through popups on legitimate websites.(Citation: Volexity OceanLotus Nov 2017)",
+    "technique_references": [
+      {
+        "source_name": "Shadowserver Strategic Web Compromise",
+        "url": "http://blog.shadowserver.org/2012/05/15/cyber-espionage-strategic-web-compromises-trusted-websites-serving-dangerous-results/",
+        "description": "Adair, S., Moran, N. (2012, May 15). Cyber Espionage & Strategic Web Compromises – Trusted Websites Serving Dangerous Results. Retrieved March 13, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Volexity OceanLotus Nov 2017",
+        "url": "https://www.volexity.com/blog/2017/11/06/oceanlotus-blossoms-mass-digital-surveillance-and-exploitation-of-asean-nations-the-media-human-rights-and-civil-society/",
+        "description": "Lassalle, D., et al. (2017, November 6). OceanLotus Blossoms: Mass Digital Surveillance and Attacks Targeting ASEAN, Asian Nations, the Media, Human Rights Groups, and Civil Society. Retrieved November 6, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--3f886f2a-874f-4333-b794-aa6075009b1c",
+    "platform": "windows|iaas|network|linux|macos|containers",
+    "tid": "T1190",
+    "technique": "Exploit Public-Facing Application",
+    "tactic": "initial-access",
+    "datasources": "application-log-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to exploit a weakness in an Internet-facing host or system to initially access a network. The weakness in the system can be a software bug, a temporary glitch, or a misconfiguration.\n\nExploited applications are often websites/web servers, but can also include databases (like SQL), standard services (like SMB or SSH), network device administration and management protocols (like SNMP and Smart Install), and any other system with Internet accessible open sockets.(Citation: NVD CVE-2016-6662)(Citation: CIS Multiple SMB Vulnerabilities)(Citation: US-CERT TA18-106A Network Infrastructure Devices 2018)(Citation: Cisco Blog Legacy Device Attacks)(Citation: NVD CVE-2014-7169) Depending on the flaw being exploited this may also involve [Exploitation for Defense Evasion](https://attack.mitre.org/techniques/T1211). \n\nIf an application is hosted on cloud-based infrastructure and/or is containerized, then exploiting it may lead to compromise of the underlying instance or container. This can allow an adversary a path to access the cloud or container APIs, exploit container host access via [Escape to Host](https://attack.mitre.org/techniques/T1611), or take advantage of weak identity and access management policies.\n\nAdversaries may also exploit edge network infrastructure and related appliances, specifically targeting devices that do not support robust host-based defenses.(Citation: Mandiant Fortinet Zero Day)(Citation: Wired Russia Cyberwar)\n\nFor websites and databases, the OWASP top 10 and CWE top 25 highlight the most common web-based vulnerabilities.(Citation: OWASP Top 10)(Citation: CWE top 25)",
+    "technique_references": [
+      {
+        "source_name": "CWE top 25",
+        "url": "https://cwe.mitre.org/top25/index.html",
+        "description": "Christey, S., Brown, M., Kirby, D., Martin, B., Paller, A.. (2011, September 13). 2011 CWE/SANS Top 25 Most Dangerous Software Errors. Retrieved April 10, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CIS Multiple SMB Vulnerabilities",
+        "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-microsoft-windows-smb-server-could-allow-for-remote-code-execution/",
+        "description": "CIS. (2017, May 15). Multiple Vulnerabilities in Microsoft Windows SMB Server Could Allow for Remote Code Execution. Retrieved April 3, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wired Russia Cyberwar",
+        "url": "https://www.wired.com/story/russia-ukraine-cyberattacks-mandiant/",
+        "description": "Greenberg, A. (2022, November 10). Russia’s New Cyberwarfare in Ukraine Is Fast, Dirty, and Relentless. Retrieved March 22, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant Fortinet Zero Day",
+        "url": "https://www.mandiant.com/resources/blog/fortinet-malware-ecosystem",
+        "description": "Marvi, A. et al.. (2023, March 16). Fortinet Zero-Day and Custom Malware Used by Suspected Chinese Actor in Espionage Operation. Retrieved March 22, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NVD CVE-2016-6662",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-6662",
+        "description": "National Vulnerability Database. (2017, February 2). CVE-2016-6662 Detail. Retrieved April 3, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NVD CVE-2014-7169",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2014-7169",
+        "description": "National Vulnerability Database. (2017, September 24). CVE-2014-7169 Detail. Retrieved April 3, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cisco Blog Legacy Device Attacks",
+        "url": "https://community.cisco.com/t5/security-blogs/attackers-continue-to-target-legacy-devices/ba-p/4169954",
+        "description": "Omar Santos. (2020, October 19). Attackers Continue to Target Legacy Devices. Retrieved October 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "OWASP Top 10",
+        "url": "https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project",
+        "description": "OWASP. (2018, February 23). OWASP Top Ten Project. Retrieved April 3, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT TA18-106A Network Infrastructure Devices 2018",
+        "url": "https://us-cert.cisa.gov/ncas/alerts/TA18-106A",
+        "description": "US-CERT. (2018, April 20). Russian State-Sponsored Cyber Actors Targeting Network Infrastructure Devices. Retrieved October 19, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--9fa07bef-9c81-421e-a8e5-ad4366c5a925",
+    "platform": "windows|saas|iaas|linux|macos|office-365",
+    "tid": "T1199",
+    "technique": "Trusted Relationship",
+    "tactic": "initial-access",
+    "datasources": "application-log-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may breach or otherwise leverage organizations who have access to intended victims. Access through trusted third party relationship abuses an existing connection that may not be protected or receives less scrutiny than standard mechanisms of gaining access to a network.\n\nOrganizations often grant elevated access to second or third-party external providers in order to allow them to manage internal systems as well as cloud-based environments. Some examples of these relationships include IT services contractors, managed security providers, infrastructure contractors (e.g. HVAC, elevators, physical security). The third-party provider's access may be intended to be limited to the infrastructure being maintained, but may exist on the same network as the rest of the enterprise. As such, [Valid Accounts](https://attack.mitre.org/techniques/T1078) used by the other party for access to internal network systems may be compromised and used.(Citation: CISA IT Service Providers)\n\nIn Office 365 environments, organizations may grant Microsoft partners or resellers delegated administrator permissions. By compromising a partner or reseller account, an adversary may be able to leverage existing delegated administrator relationships or send new delegated administrator offers to clients in order to gain administrative control over the victim tenant.(Citation: Office 365 Delegated Administration)",
+    "technique_references": [
+      {
+        "source_name": "CISA IT Service Providers",
+        "url": "https://us-cert.cisa.gov/APTs-Targeting-IT-Service-Provider-Customers",
+        "description": "CISA. (n.d.). APTs Targeting IT Service Provider Customers. Retrieved November 16, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Office 365 Delegated Administration",
+        "url": "https://support.microsoft.com/en-us/topic/partners-offer-delegated-administration-26530dc0-ebba-415b-86b1-b55bc06b073e?ui=en-us&rs=en-us&ad=us",
+        "description": "Microsoft. (n.d.). Partners: Offer delegated administration. Retrieved May 27, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d40239b3-05ff-46d8-9bdd-b46d13463ef9",
+    "platform": "windows|linux|macos",
+    "tid": "T1200",
+    "technique": "Hardware Additions",
+    "tactic": "initial-access",
+    "datasources": "application-log-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may introduce computer accessories, networking hardware, or other computing devices into a system or network that can be used as a vector to gain access. Rather than just connecting and distributing payloads via removable storage (i.e. [Replication Through Removable Media](https://attack.mitre.org/techniques/T1091)), more robust hardware additions can be used to introduce new functionalities and/or features into a system that can then be abused.\n\nWhile public references of usage by threat actors are scarce, many red teams/penetration testers leverage hardware additions for initial access. Commercial and open source products can be leveraged with capabilities such as passive network tapping, network traffic modification (i.e. [Adversary-in-the-Middle](https://attack.mitre.org/techniques/T1557)), keystroke injection, kernel memory reading via DMA, addition of new wireless access to an existing network, and others.(Citation: Ossmann Star Feb 2011)(Citation: Aleks Weapons Nov 2015)(Citation: Frisk DMA August 2016)(Citation: McMillan Pwn March 2012)",
+    "technique_references": [
+      {
+        "source_name": "Ossmann Star Feb 2011",
+        "url": "https://ossmann.blogspot.com/2011/02/throwing-star-lan-tap.html",
+        "description": "Michael Ossmann. (2011, February 17). Throwing Star LAN Tap. Retrieved March 30, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Aleks Weapons Nov 2015",
+        "url": "https://www.youtube.com/watch?v=lDvf4ScWbcQ",
+        "description": "Nick Aleks. (2015, November 7). Weapons of a Pentester - Understanding the virtual & physical tools used by white/black hat hackers. Retrieved March 30, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "McMillan Pwn March 2012",
+        "url": "https://arstechnica.com/information-technology/2012/03/the-pwn-plug-is-a-little-white-box-that-can-hack-your-network/",
+        "description": "Robert McMillan. (2012, March 3). The Pwn Plug is a little white box that can hack your network. Retrieved March 30, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Frisk DMA August 2016",
+        "url": "https://www.youtube.com/watch?v=fXthwl6ShOg",
+        "description": "Ulf Frisk. (2016, August 5). Direct Memory Attack the Kernel. Retrieved March 30, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--be2dcee9-a7a7-4e38-afd6-21b31ecc3d63",
+    "platform": "linux|windows|macos",
+    "tid": "T1203",
+    "technique": "Exploitation for Client Execution",
+    "tactic": "execution",
+    "datasources": "application-log-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may exploit software vulnerabilities in client applications to execute code. Vulnerabilities can exist in software due to unsecure coding practices that can lead to unanticipated behavior. Adversaries can take advantage of certain vulnerabilities through targeted exploitation for the purpose of arbitrary code execution. Oftentimes the most valuable exploits to an offensive toolkit are those that can be used to obtain code execution on a remote system because they can be used to gain access to that system. Users will expect to see files related to the applications they commonly used to do work, so they are a useful target for exploit research and development because of their high utility.\n\nSeveral types exist:\n\n### Browser-based Exploitation\n\nWeb browsers are a common target through [Drive-by Compromise](https://attack.mitre.org/techniques/T1189) and [Spearphishing Link](https://attack.mitre.org/techniques/T1566/002). Endpoint systems may be compromised through normal web browsing or from certain users being targeted by links in spearphishing emails to adversary controlled sites used to exploit the web browser. These often do not require an action by the user for the exploit to be executed.\n\n### Office Applications\n\nCommon office and productivity applications such as Microsoft Office are also targeted through [Phishing](https://attack.mitre.org/techniques/T1566). Malicious files will be transmitted directly as attachments or through links to download them. These require the user to open the document or file for the exploit to run.\n\n### Common Third-party Applications\n\nOther applications that are commonly seen or are part of the software deployed in a target network may also be used for exploitation. Applications such as Adobe Reader and Flash, which are common in enterprise environments, have been routinely targeted by adversaries attempting to gain access to systems. Depending on the software and nature of the vulnerability, some may be exploited in the browser or require the user to open a file. For instance, some Flash exploits have been delivered as objects within Microsoft Office documents.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--8c32eb4d-805f-4fc5-bf60-c4d476c131b5",
+    "platform": "linux|windows|macos|iaas|containers",
+    "tid": "T1204",
+    "technique": "User Execution",
+    "tactic": "execution",
+    "datasources": "application-log-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1204.001",
+      "T1204.002",
+      "T1204.003"
+    ],
+    "count_subtechniques": 3,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "An adversary may rely upon specific actions by a user in order to gain execution. Users may be subjected to social engineering to get them to execute malicious code by, for example, opening a malicious document file or link. These user actions will typically be observed as follow-on behavior from forms of [Phishing](https://attack.mitre.org/techniques/T1566).\n\nWhile [User Execution](https://attack.mitre.org/techniques/T1204) frequently occurs shortly after Initial Access it may occur at other phases of an intrusion, such as when an adversary places a file in a shared directory or on a user's desktop hoping that a user will click on it. This activity may also be seen shortly after [Internal Spearphishing](https://attack.mitre.org/techniques/T1534).\n\nAdversaries may also deceive users into performing actions such as enabling [Remote Access Software](https://attack.mitre.org/techniques/T1219), allowing direct control of the system to the adversary, or downloading and executing malware for [User Execution](https://attack.mitre.org/techniques/T1204). For example, tech support scams can be facilitated through [Phishing](https://attack.mitre.org/techniques/T1566), vishing, or various forms of user interaction. Adversaries can use a combination of these methods, such as spoofing and promoting toll-free numbers or call centers that are used to direct victims to malicious websites, to deliver and execute payloads containing malware or [Remote Access Software](https://attack.mitre.org/techniques/T1219).(Citation: Telephone Attack Delivery)",
+    "technique_references": [
+      {
+        "source_name": "Telephone Attack Delivery",
+        "url": "https://www.proofpoint.com/us/blog/threat-insight/caught-beneath-landline-411-telephone-oriented-attack-delivery",
+        "description": "Selena Larson, Sam Scholten, Timothy Kromphardt. (2021, November 4). Caught Beneath the Landline: A 411 on Telephone Oriented Attack Delivery. Retrieved January 5, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--9db0cf3a-a3c9-4012-8268-123b9db6fd82",
+    "platform": "linux|windows|macos",
+    "tid": "T1210",
+    "technique": "Exploitation of Remote Services",
+    "tactic": "lateral-movement",
+    "datasources": "application-log-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may exploit remote services to gain unauthorized access to internal systems once inside of a network. Exploitation of a software vulnerability occurs when an adversary takes advantage of a programming error in a program, service, or within the operating system software or kernel itself to execute adversary-controlled code. A common goal for post-compromise exploitation of remote services is for lateral movement to enable access to a remote system.\n\nAn adversary may need to determine if the remote system is in a vulnerable state, which may be done through [Network Service Discovery](https://attack.mitre.org/techniques/T1046) or other Discovery methods looking for common, vulnerable software that may be deployed in the network, the lack of certain patches that may indicate vulnerabilities,  or security software that may be used to detect or contain remote exploitation. Servers are likely a high value target for lateral movement exploitation, but endpoint systems may also be at risk if they provide an advantage or access to additional resources.\n\nThere are several well-known vulnerabilities that exist in common services such as SMB (Citation: CIS Multiple SMB Vulnerabilities) and RDP (Citation: NVD CVE-2017-0176) as well as applications that may be used within internal networks such as MySQL (Citation: NVD CVE-2016-6662) and web server services.(Citation: NVD CVE-2014-7169)\n\nDepending on the permissions level of the vulnerable remote service an adversary may achieve [Exploitation for Privilege Escalation](https://attack.mitre.org/techniques/T1068) as a result of lateral movement exploitation as well.",
+    "technique_references": [
+      {
+        "source_name": "CIS Multiple SMB Vulnerabilities",
+        "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-microsoft-windows-smb-server-could-allow-for-remote-code-execution/",
+        "description": "CIS. (2017, May 15). Multiple Vulnerabilities in Microsoft Windows SMB Server Could Allow for Remote Code Execution. Retrieved April 3, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NVD CVE-2017-0176",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-0176",
+        "description": "National Vulnerability Database. (2017, June 22). CVE-2017-0176 Detail. Retrieved April 3, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NVD CVE-2016-6662",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-6662",
+        "description": "National Vulnerability Database. (2017, February 2). CVE-2016-6662 Detail. Retrieved April 3, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NVD CVE-2014-7169",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2014-7169",
+        "description": "National Vulnerability Database. (2017, September 24). CVE-2014-7169 Detail. Retrieved April 3, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--fe926152-f431-4baf-956c-4ad3cb0bf23b",
+    "platform": "linux|windows|macos",
+    "tid": "T1211",
+    "technique": "Exploitation for Defense Evasion",
+    "tactic": "defense-evasion",
+    "datasources": "application-log-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may exploit a system or application vulnerability to bypass security features. Exploitation of a software vulnerability occurs when an adversary takes advantage of a programming error in a program, service, or within the operating system software or kernel itself to execute adversary-controlled code. Vulnerabilities may exist in defensive security software that can be used to disable or circumvent them.\n\nAdversaries may have prior knowledge through reconnaissance that security software exists within an environment or they may perform checks during or shortly after the system is compromised for [Security Software Discovery](https://attack.mitre.org/techniques/T1518/001). The security software will likely be targeted directly for exploitation. There are examples of antivirus software being targeted by persistent threat groups to avoid detection.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--9c306d8d-cde7-4b4c-b6e8-d0bb16caca36",
+    "platform": "linux|windows|macos",
+    "tid": "T1212",
+    "technique": "Exploitation for Credential Access",
+    "tactic": "credential-access",
+    "datasources": "application-log-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may exploit software vulnerabilities in an attempt to collect credentials. Exploitation of a software vulnerability occurs when an adversary takes advantage of a programming error in a program, service, or within the operating system software or kernel itself to execute adversary-controlled code. Credentialing and authentication mechanisms may be targeted for exploitation by adversaries as a means to gain access to useful credentials or circumvent the process to gain access to systems. One example of this is MS14-068, which targets Kerberos and can be used to forge Kerberos tickets using domain user permissions.(Citation: Technet MS14-068)(Citation: ADSecurity Detecting Forged Tickets) Exploitation for credential access may also result in Privilege Escalation depending on the process targeted or credentials obtained.",
+    "technique_references": [
+      {
+        "source_name": "ADSecurity Detecting Forged Tickets",
+        "url": "https://adsecurity.org/?p=1515",
+        "description": "Metcalf, S. (2015, May 03). Detecting Forged Kerberos Ticket (Golden Ticket & Silver Ticket) Use in Active Directory. Retrieved December 23, 2015.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Technet MS14-068",
+        "url": "https://technet.microsoft.com/en-us/library/security/ms14-068.aspx",
+        "description": "Microsoft. (2014, November 18). Vulnerability in Kerberos Could Allow Elevation of Privilege (3011780). Retrieved December 23, 2015.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d28ef391-8ed4-45dc-bc4a-2f43abf54416",
+    "platform": "linux|windows|macos|saas|office-365|google-workspace|iaas",
+    "tid": "T1213",
+    "technique": "Data from Information Repositories",
+    "tactic": "collection",
+    "datasources": "application-log-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1213.001",
+      "T1213.002",
+      "T1213.003"
+    ],
+    "count_subtechniques": 3,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may leverage information repositories to mine valuable information. Information repositories are tools that allow for storage of information, typically to facilitate collaboration or information sharing between users, and can store a wide variety of data that may aid adversaries in further objectives, or direct access to the target information. Adversaries may also abuse external sharing features to share sensitive documents with recipients outside of the organization. \n\nThe following is a brief list of example information that may hold potential value to an adversary and may also be found on an information repository:\n\n* Policies, procedures, and standards\n* Physical / logical network diagrams\n* System architecture diagrams\n* Technical system documentation\n* Testing / development credentials\n* Work / project schedules\n* Source code snippets\n* Links to network shares and other internal resources\n\nInformation stored in a repository may vary based on the specific instance or environment. Specific common information repositories include web-based platforms such as [Sharepoint](https://attack.mitre.org/techniques/T1213/002) and [Confluence](https://attack.mitre.org/techniques/T1213/001), specific services such as Code Repositories, IaaS databases, enterprise databases, and other storage infrastructure such as SQL Server.",
+    "technique_references": [
+      {
+        "source_name": "Atlassian Confluence Logging",
+        "url": "https://confluence.atlassian.com/confkb/how-to-enable-user-access-logging-182943.html",
+        "description": "Atlassian. (2018, January 9). How to Enable User Access Logging. Retrieved April 4, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft SharePoint Logging",
+        "url": "https://support.office.com/en-us/article/configure-audit-settings-for-a-site-collection-a9920c97-38c0-44f2-8bcb-4cf1e2ae22d2",
+        "description": "Microsoft. (2017, July 19). Configure audit settings for a site collection. Retrieved April 4, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sharepoint Sharing Events",
+        "url": "https://docs.microsoft.com/en-us/microsoft-365/compliance/use-sharing-auditing?view=o365-worldwide#sharepoint-sharing-events",
+        "description": "Microsoft. (n.d.). Sharepoint Sharing Events. Retrieved October 8, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--5909f20f-3c39-4795-be06-ef1ea40d350b",
+    "platform": "windows|iaas|linux|macos",
+    "tid": "T1491",
+    "technique": "Defacement",
+    "tactic": "impact",
+    "datasources": "application-log-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1491.001",
+      "T1491.002"
+    ],
+    "count_subtechniques": 2,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify visual content available internally or externally to an enterprise network, thus affecting the integrity of the original content. Reasons for [Defacement](https://attack.mitre.org/techniques/T1491) include delivering messaging, intimidation, or claiming (possibly false) credit for an intrusion. Disturbing or offensive images may be used as a part of [Defacement](https://attack.mitre.org/techniques/T1491) in order to cause user discomfort, or to pressure compliance with accompanying messages. \n",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--c675646d-e204-4aa8-978d-e3d6d65885c4",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers",
+    "tid": "T1499",
+    "technique": "Endpoint Denial of Service",
+    "tactic": "impact",
+    "datasources": "application-log-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1499.001",
+      "T1499.002",
+      "T1499.003",
+      "T1499.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may perform Endpoint Denial of Service (DoS) attacks to degrade or block the availability of services to users. Endpoint DoS can be performed by exhausting the system resources those services are hosted on or exploiting the system to cause a persistent crash condition. Example services include websites, email services, DNS, and web-based applications. Adversaries have been observed conducting DoS attacks for political purposes(Citation: FireEye OpPoisonedHandover February 2016) and to support other malicious activities, including distraction(Citation: FSISAC FraudNetDoS September 2012), hacktivism, and extortion.(Citation: Symantec DDoS October 2014)\n\nAn Endpoint DoS denies the availability of a service without saturating the network used to provide access to the service. Adversaries can target various layers of the application stack that is hosted on the system used to provide the service. These layers include the Operating Systems (OS), server applications such as web servers, DNS servers, databases, and the (typically web-based) applications that sit on top of them. Attacking each layer requires different techniques that take advantage of bottlenecks that are unique to the respective components. A DoS attack may be generated by a single system or multiple systems spread across the internet, which is commonly referred to as a distributed DoS (DDoS).\n\nTo perform DoS attacks against endpoint resources, several aspects apply to multiple methods, including IP address spoofing and botnets.\n\nAdversaries may use the original IP address of an attacking system, or spoof the source IP address to make the attack traffic more difficult to trace back to the attacking system or to enable reflection. This can increase the difficulty defenders have in defending against the attack by reducing or eliminating the effectiveness of filtering by the source address on network defense devices.\n\nBotnets are commonly used to conduct DDoS attacks against networks and services. Large botnets can generate a significant amount of traffic from systems spread across the global internet. Adversaries may have the resources to build out and control their own botnet infrastructure or may rent time on an existing botnet to conduct an attack. In some of the worst cases for DDoS, so many systems are used to generate requests that each one only needs to send out a small amount of traffic to produce enough volume to exhaust the target's resources. In such circumstances, distinguishing DDoS traffic from legitimate clients becomes exceedingly difficult. Botnets have been used in some of the most high-profile DDoS attacks, such as the 2012 series of incidents that targeted major US banks.(Citation: USNYAG IranianBotnet March 2016)\n\nIn cases where traffic manipulation is used, there may be points in the global network (such as high traffic gateway routers) where packets can be altered and cause legitimate clients to execute code that directs network packets toward a target in high volume. This type of capability was previously used for the purposes of web censorship where client HTTP traffic was modified to include a reference to JavaScript that generated the DDoS code to overwhelm target web servers.(Citation: ArsTechnica Great Firewall of China)\n\nFor attacks attempting to saturate the providing network, see [Network Denial of Service](https://attack.mitre.org/techniques/T1498).\n",
+    "technique_references": [
+      {
+        "source_name": "Cisco DoSdetectNetflow",
+        "url": "https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/netflow/configuration/15-mt/nf-15-mt-book/nf-detct-analy-thrts.pdf",
+        "description": "Cisco. (n.d.). Detecting and Analyzing Network Threats With NetFlow. Retrieved April 25, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FSISAC FraudNetDoS September 2012",
+        "url": "https://www.ic3.gov/media/2012/FraudAlertFinancialInstitutionEmployeeCredentialsTargeted.pdf",
+        "description": "FS-ISAC. (2012, September 17). Fraud Alert – Cyber Criminals Targeting Financial Institution Employee Credentials to Conduct Wire Transfer Fraud. Retrieved April 18, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ArsTechnica Great Firewall of China",
+        "url": "https://arstechnica.com/information-technology/2015/03/massive-denial-of-service-attack-on-github-tied-to-chinese-government/",
+        "description": "Goodin, D.. (2015, March 31). Massive denial-of-service attack on GitHub tied to Chinese government. Retrieved April 19, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye OpPoisonedHandover February 2016",
+        "url": "https://www.fireeye.com/blog/threat-research/2014/11/operation-poisoned-handover-unveiling-ties-between-apt-activity-in-hong-kongs-pro-democracy-movement.html",
+        "description": "Ned Moran, Mike Scott, Mike Oppenheim of FireEye. (2014, November 3). Operation Poisoned Handover: Unveiling Ties Between APT Activity in Hong Kong’s Pro-Democracy Movement. Retrieved April 18, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "USNYAG IranianBotnet March 2016",
+        "url": "https://www.justice.gov/opa/pr/seven-iranians-working-islamic-revolutionary-guard-corps-affiliated-entities-charged",
+        "description": "Preet Bharara, US Attorney. (2016, March 24). Retrieved April 23, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Symantec DDoS October 2014",
+        "url": "https://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/the-continued-rise-of-ddos-attacks.pdf",
+        "description": "Wueest, C.. (2014, October 21). The continued rise of DDoS attacks. Retrieved April 24, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d456de47-a16f-4e46-8980-e67478a12dcb",
+    "platform": "windows|linux|macos|network",
+    "tid": "T1505",
+    "technique": "Server Software Component",
+    "tactic": "persistence",
+    "datasources": "application-log-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1505.001",
+      "T1505.002",
+      "T1505.003",
+      "T1505.004",
+      "T1505.005"
+    ],
+    "count_subtechniques": 5,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse legitimate extensible development features of servers to establish persistent access to systems. Enterprise server applications may include features that allow developers to write and install software or scripts to extend the functionality of the main application. Adversaries may install malicious components to extend and abuse server applications.(Citation: volexity_0day_sophos_FW)",
+    "technique_references": [
+      {
+        "source_name": "volexity_0day_sophos_FW",
+        "url": "https://www.volexity.com/blog/2022/06/15/driftingcloud-zero-day-sophos-firewall-exploitation-and-an-insidious-breach/",
+        "description": "Adair, S., Lancaster, T., Volexity Threat Research. (2022, June 15). DriftingCloud: Zero-Day Sophos Firewall Exploitation and an Insidious Breach. Retrieved July 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT Alert TA15-314A Web Shells",
+        "url": "https://www.us-cert.gov/ncas/alerts/TA15-314A",
+        "description": "US-CERT. (2015, November 13). Compromised Web Servers and Web Shells - Threat Awareness and Guidance. Retrieved June 8, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--9e7452df-5144-4b6e-b04a-b66dd4016747",
+    "platform": "windows|macos|linux|office-365|saas|google-workspace",
+    "tid": "T1534",
+    "technique": "Internal Spearphishing",
+    "tactic": "lateral-movement",
+    "datasources": "application-log-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use internal spearphishing to gain access to additional information or exploit other users within the same organization after they already have access to accounts or systems within the environment. Internal spearphishing is multi-staged campaign where an email account is owned either by controlling the user's device with previously installed malware or by compromising the account credentials of the user. Adversaries attempt to take advantage of a trusted internal account to increase the likelihood of tricking the target into falling for the phish attempt.(Citation: Trend Micro When Phishing Starts from the Inside 2017)\n\nAdversaries may leverage [Spearphishing Attachment](https://attack.mitre.org/techniques/T1566/001) or [Spearphishing Link](https://attack.mitre.org/techniques/T1566/002) as part of internal spearphishing to deliver a payload or redirect to an external site to capture credentials through [Input Capture](https://attack.mitre.org/techniques/T1056) on sites that mimic email login interfaces.\n\nThere have been notable incidents where internal spearphishing has been used. The Eye Pyramid campaign used phishing emails with malicious attachments for lateral movement between victims, compromising nearly 18,000 email accounts in the process.(Citation: Trend Micro When Phishing Starts from the Inside 2017) The Syrian Electronic Army (SEA) compromised email accounts at the Financial Times (FT) to steal additional account credentials. Once FT learned of the campaign and began warning employees of the threat, the SEA sent phishing emails mimicking the Financial Times IT department and were able to compromise even more users.(Citation: THE FINANCIAL TIMES LTD 2019.)",
+    "technique_references": [
+      {
+        "source_name": "Trend Micro When Phishing Starts from the Inside 2017",
+        "url": "https://blog.trendmicro.com/phishing-starts-inside/",
+        "description": "Chris Taylor. (2017, October 5). When Phishing Starts from the Inside. Retrieved October 8, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "THE FINANCIAL TIMES LTD 2019.",
+        "url": "https://labs.ft.com/2013/05/a-sobering-day/?mhq5j=e6",
+        "description": "THE FINANCIAL TIMES. (2019, September 2). A sobering day. Retrieved October 8, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--51a14c76-dd3b-440b-9c20-2bf91d25a814",
+    "platform": "windows|office-365|saas|google-workspace|iaas|containers",
+    "tid": "T1550",
+    "technique": "Use Alternate Authentication Material",
+    "tactic": "defense-evasion",
+    "datasources": "application-log-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1550.001",
+      "T1550.002",
+      "T1550.003",
+      "T1550.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use alternate authentication material, such as password hashes, Kerberos tickets, and application access tokens, in order to move laterally within an environment and bypass normal system access controls. \n\nAuthentication processes generally require a valid identity (e.g., username) along with one or more authentication factors (e.g., password, pin, physical smart card, token generator, etc.). Alternate authentication material is legitimately generated by systems after a user or application successfully authenticates by providing a valid identity and the required authentication factor(s). Alternate authentication material may also be generated during the identity creation process.(Citation: NIST Authentication)(Citation: NIST MFA)\n\nCaching alternate authentication material allows the system to verify an identity has successfully authenticated without asking the user to reenter authentication factor(s). Because the alternate authentication must be maintained by the system—either in memory or on disk—it may be at risk of being stolen through [Credential Access](https://attack.mitre.org/tactics/TA0006) techniques. By stealing alternate authentication material, adversaries are able to bypass system access controls and authenticate to systems without knowing the plaintext password or any additional authentication factors.\n",
+    "technique_references": [
+      {
+        "source_name": "NIST Authentication",
+        "url": "https://csrc.nist.gov/glossary/term/authentication",
+        "description": "NIST. (n.d.). Authentication. Retrieved January 30, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NIST MFA",
+        "url": "https://csrc.nist.gov/glossary/term/Multi_Factor-Authentication",
+        "description": "NIST. (n.d.). Multi-Factor Authentication (MFA). Retrieved January 30, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--51a14c76-dd3b-440b-9c20-2bf91d25a814",
+    "platform": "windows|office-365|saas|google-workspace|iaas|containers",
+    "tid": "T1550",
+    "technique": "Use Alternate Authentication Material",
+    "tactic": "lateral-movement",
+    "datasources": "application-log-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1550.001",
+      "T1550.002",
+      "T1550.003",
+      "T1550.004"
+    ],
+    "count_subtechniques": 4,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use alternate authentication material, such as password hashes, Kerberos tickets, and application access tokens, in order to move laterally within an environment and bypass normal system access controls. \n\nAuthentication processes generally require a valid identity (e.g., username) along with one or more authentication factors (e.g., password, pin, physical smart card, token generator, etc.). Alternate authentication material is legitimately generated by systems after a user or application successfully authenticates by providing a valid identity and the required authentication factor(s). Alternate authentication material may also be generated during the identity creation process.(Citation: NIST Authentication)(Citation: NIST MFA)\n\nCaching alternate authentication material allows the system to verify an identity has successfully authenticated without asking the user to reenter authentication factor(s). Because the alternate authentication must be maintained by the system—either in memory or on disk—it may be at risk of being stolen through [Credential Access](https://attack.mitre.org/tactics/TA0006) techniques. By stealing alternate authentication material, adversaries are able to bypass system access controls and authenticate to systems without knowing the plaintext password or any additional authentication factors.\n",
+    "technique_references": [
+      {
+        "source_name": "NIST Authentication",
+        "url": "https://csrc.nist.gov/glossary/term/authentication",
+        "description": "NIST. (n.d.). Authentication. Retrieved January 30, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NIST MFA",
+        "url": "https://csrc.nist.gov/glossary/term/Multi_Factor-Authentication",
+        "description": "NIST. (n.d.). Multi-Factor Authentication (MFA). Retrieved January 30, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--435dfb86-2697-4867-85b5-2fef496c0517",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "tid": "T1552",
+    "technique": "Unsecured Credentials",
+    "tactic": "credential-access",
+    "datasources": "application-log-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1552.001",
+      "T1552.002",
+      "T1552.003",
+      "T1552.004",
+      "T1552.005",
+      "T1552.006",
+      "T1552.007",
+      "T1552.008"
+    ],
+    "count_subtechniques": 8,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may search compromised systems to find and obtain insecurely stored credentials. These credentials can be stored and/or misplaced in many locations on a system, including plaintext files (e.g. [Bash History](https://attack.mitre.org/techniques/T1552/003)), operating system or application-specific repositories (e.g. [Credentials in Registry](https://attack.mitre.org/techniques/T1552/002)), or other specialized files/artifacts (e.g. [Private Keys](https://attack.mitre.org/techniques/T1552/004)).",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f4c1826f-a322-41cd-9557-562100848c84",
+    "platform": "windows|linux|macos|network|azure-ad|google-workspace|iaas|office-365|saas",
+    "tid": "T1556",
+    "technique": "Modify Authentication Process",
+    "tactic": "credential-access",
+    "datasources": "application-log-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1556.001",
+      "T1556.002",
+      "T1556.003",
+      "T1556.004",
+      "T1556.005",
+      "T1556.006",
+      "T1556.007",
+      "T1556.008"
+    ],
+    "count_subtechniques": 8,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify authentication mechanisms and processes to access user credentials or enable otherwise unwarranted access to accounts. The authentication process is handled by mechanisms, such as the Local Security Authentication Server (LSASS) process and the Security Accounts Manager (SAM) on Windows, pluggable authentication modules (PAM) on Unix-based systems, and authorization plugins on MacOS systems, responsible for gathering, storing, and validating credentials. By modifying an authentication process, an adversary may be able to authenticate to a service or system without using [Valid Accounts](https://attack.mitre.org/techniques/T1078).\n\nAdversaries may maliciously modify a part of this process to either reveal credentials or bypass authentication mechanisms. Compromised credentials or access may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access and remote desktop.",
+    "technique_references": [
+      {
+        "source_name": "Clymb3r Function Hook Passwords Sept 2013",
+        "url": "https://clymb3r.wordpress.com/2013/09/15/intercepting-password-changes-with-function-hooking/",
+        "description": "Bialek, J. (2013, September 15). Intercepting Password Changes With Function Hooking. Retrieved November 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Xorrior Authorization Plugins",
+        "url": "https://xorrior.com/persistent-credential-theft/",
+        "description": "Chris Ross. (2018, October 17). Persistent Credential Theft with Authorization Plugins. Retrieved April 22, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Dell Skeleton",
+        "url": "https://www.secureworks.com/research/skeleton-key-malware-analysis",
+        "description": "Dell SecureWorks. (2015, January 12). Skeleton Key Malware Analysis. Retrieved April 8, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "dump_pwd_dcsync",
+        "url": "https://adsecurity.org/?p=2053",
+        "description": "Metcalf, S. (2015, November 22). Dump Clear-Text Passwords for All Admins in the Domain Using Mimikatz DCSync. Retrieved November 15, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f4c1826f-a322-41cd-9557-562100848c84",
+    "platform": "windows|linux|macos|network|azure-ad|google-workspace|iaas|office-365|saas",
+    "tid": "T1556",
+    "technique": "Modify Authentication Process",
+    "tactic": "defense-evasion",
+    "datasources": "application-log-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1556.001",
+      "T1556.002",
+      "T1556.003",
+      "T1556.004",
+      "T1556.005",
+      "T1556.006",
+      "T1556.007",
+      "T1556.008"
+    ],
+    "count_subtechniques": 8,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify authentication mechanisms and processes to access user credentials or enable otherwise unwarranted access to accounts. The authentication process is handled by mechanisms, such as the Local Security Authentication Server (LSASS) process and the Security Accounts Manager (SAM) on Windows, pluggable authentication modules (PAM) on Unix-based systems, and authorization plugins on MacOS systems, responsible for gathering, storing, and validating credentials. By modifying an authentication process, an adversary may be able to authenticate to a service or system without using [Valid Accounts](https://attack.mitre.org/techniques/T1078).\n\nAdversaries may maliciously modify a part of this process to either reveal credentials or bypass authentication mechanisms. Compromised credentials or access may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access and remote desktop.",
+    "technique_references": [
+      {
+        "source_name": "Clymb3r Function Hook Passwords Sept 2013",
+        "url": "https://clymb3r.wordpress.com/2013/09/15/intercepting-password-changes-with-function-hooking/",
+        "description": "Bialek, J. (2013, September 15). Intercepting Password Changes With Function Hooking. Retrieved November 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Xorrior Authorization Plugins",
+        "url": "https://xorrior.com/persistent-credential-theft/",
+        "description": "Chris Ross. (2018, October 17). Persistent Credential Theft with Authorization Plugins. Retrieved April 22, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Dell Skeleton",
+        "url": "https://www.secureworks.com/research/skeleton-key-malware-analysis",
+        "description": "Dell SecureWorks. (2015, January 12). Skeleton Key Malware Analysis. Retrieved April 8, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "dump_pwd_dcsync",
+        "url": "https://adsecurity.org/?p=2053",
+        "description": "Metcalf, S. (2015, November 22). Dump Clear-Text Passwords for All Admins in the Domain Using Mimikatz DCSync. Retrieved November 15, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f4c1826f-a322-41cd-9557-562100848c84",
+    "platform": "windows|linux|macos|network|azure-ad|google-workspace|iaas|office-365|saas",
+    "tid": "T1556",
+    "technique": "Modify Authentication Process",
+    "tactic": "persistence",
+    "datasources": "application-log-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1556.001",
+      "T1556.002",
+      "T1556.003",
+      "T1556.004",
+      "T1556.005",
+      "T1556.006",
+      "T1556.007",
+      "T1556.008"
+    ],
+    "count_subtechniques": 8,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify authentication mechanisms and processes to access user credentials or enable otherwise unwarranted access to accounts. The authentication process is handled by mechanisms, such as the Local Security Authentication Server (LSASS) process and the Security Accounts Manager (SAM) on Windows, pluggable authentication modules (PAM) on Unix-based systems, and authorization plugins on MacOS systems, responsible for gathering, storing, and validating credentials. By modifying an authentication process, an adversary may be able to authenticate to a service or system without using [Valid Accounts](https://attack.mitre.org/techniques/T1078).\n\nAdversaries may maliciously modify a part of this process to either reveal credentials or bypass authentication mechanisms. Compromised credentials or access may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access and remote desktop.",
+    "technique_references": [
+      {
+        "source_name": "Clymb3r Function Hook Passwords Sept 2013",
+        "url": "https://clymb3r.wordpress.com/2013/09/15/intercepting-password-changes-with-function-hooking/",
+        "description": "Bialek, J. (2013, September 15). Intercepting Password Changes With Function Hooking. Retrieved November 21, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Xorrior Authorization Plugins",
+        "url": "https://xorrior.com/persistent-credential-theft/",
+        "description": "Chris Ross. (2018, October 17). Persistent Credential Theft with Authorization Plugins. Retrieved April 22, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Dell Skeleton",
+        "url": "https://www.secureworks.com/research/skeleton-key-malware-analysis",
+        "description": "Dell SecureWorks. (2015, January 12). Skeleton Key Malware Analysis. Retrieved April 8, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "dump_pwd_dcsync",
+        "url": "https://adsecurity.org/?p=2053",
+        "description": "Metcalf, S. (2015, November 22). Dump Clear-Text Passwords for All Admins in the Domain Using Mimikatz DCSync. Retrieved November 15, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Audit Policy",
+        "url": "https://technet.microsoft.com/en-us/library/dn487457.aspx",
+        "description": "Microsoft. (2016, April 15). Audit Policy Recommendations. Retrieved June 3, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--035bb001-ab69-4a0b-9f6c-2de8b09e1b9d",
+    "platform": "windows|macos|linux|network",
+    "tid": "T1557",
+    "technique": "Adversary-in-the-Middle",
+    "tactic": "credential-access",
+    "datasources": "application-log-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1557.001",
+      "T1557.002",
+      "T1557.003"
+    ],
+    "count_subtechniques": 3,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to position themselves between two or more networked devices using an adversary-in-the-middle (AiTM) technique to support follow-on behaviors such as [Network Sniffing](https://attack.mitre.org/techniques/T1040) or [Transmitted Data Manipulation](https://attack.mitre.org/techniques/T1565/002). By abusing features of common networking protocols that can determine the flow of network traffic (e.g. ARP, DNS, LLMNR, etc.), adversaries may force a device to communicate through an adversary controlled system so they can collect information or perform additional actions.(Citation: Rapid7 MiTM Basics)\n\nFor example, adversaries may manipulate victim DNS settings to enable other malicious activities such as preventing/redirecting users from accessing legitimate sites and/or pushing additional malware.(Citation: ttint_rat)(Citation: dns_changer_trojans)(Citation: ad_blocker_with_miner) Adversaries may also manipulate DNS and leverage their position in order to intercept user credentials and session cookies.(Citation: volexity_0day_sophos_FW) [Downgrade Attack](https://attack.mitre.org/techniques/T1562/010)s can also be used to establish an AiTM position, such as by negotiating a less secure, deprecated, or weaker version of communication protocol (SSL/TLS) or encryption algorithm.(Citation: mitm_tls_downgrade_att)(Citation: taxonomy_downgrade_att_tls)(Citation: tlseminar_downgrade_att)\n\nAdversaries may also leverage the AiTM position to attempt to monitor and/or modify traffic, such as in [Transmitted Data Manipulation](https://attack.mitre.org/techniques/T1565/002). Adversaries can setup a position similar to AiTM to prevent traffic from flowing to the appropriate destination, potentially to [Impair Defenses](https://attack.mitre.org/techniques/T1562) and/or in support of a [Network Denial of Service](https://attack.mitre.org/techniques/T1498).",
+    "technique_references": [
+      {
+        "source_name": "dns_changer_trojans",
+        "url": "https://www.trendmicro.com/vinfo/us/threat-encyclopedia/web-attack/125/how-dns-changer-trojans-direct-users-to-threats",
+        "description": "Abendan, O. (2012, June 14). How DNS Changer Trojans Direct Users to Threats. Retrieved October 28, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "volexity_0day_sophos_FW",
+        "url": "https://www.volexity.com/blog/2022/06/15/driftingcloud-zero-day-sophos-firewall-exploitation-and-an-insidious-breach/",
+        "description": "Adair, S., Lancaster, T., Volexity Threat Research. (2022, June 15). DriftingCloud: Zero-Day Sophos Firewall Exploitation and an Insidious Breach. Retrieved July 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "taxonomy_downgrade_att_tls",
+        "url": "https://arxiv.org/abs/1809.05681",
+        "description": "Alashwali, E. S., Rasmussen, K. (2019, January 26). What's in a Downgrade? A Taxonomy of Downgrade Attacks in the TLS Protocol and Application Protocols Using TLS. Retrieved December 7, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ad_blocker_with_miner",
+        "url": "https://securelist.com/ad-blocker-with-miner-included/101105/",
+        "description": "Kuzmenko, A.. (2021, March 10). Ad blocker with miner included. Retrieved October 28, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "mitm_tls_downgrade_att",
+        "url": "https://www.praetorian.com/blog/man-in-the-middle-tls-ssl-protocol-downgrade-attack/",
+        "description": "praetorian Editorial Team. (2014, August 19). Man-in-the-Middle TLS Protocol Downgrade Attack. Retrieved December 8, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Rapid7 MiTM Basics",
+        "url": "https://www.rapid7.com/fundamentals/man-in-the-middle-attacks/",
+        "description": "Rapid7. (n.d.). Man-in-the-Middle (MITM) Attacks. Retrieved March 2, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "tlseminar_downgrade_att",
+        "url": "https://tlseminar.github.io/downgrade-attacks/",
+        "description": "Team Cinnamon. (2017, February 3). Downgrade Attacks. Retrieved December 9, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ttint_rat",
+        "url": "https://blog.netlab.360.com/ttint-an-iot-remote-control-trojan-spread-through-2-0-day-vulnerabilities/",
+        "description": "Tu, L. Ma, Y. Ye, G. (2020, October 1). Ttint: An IoT Remote Access Trojan spread through 2 0-day vulnerabilities. Retrieved October 28, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--035bb001-ab69-4a0b-9f6c-2de8b09e1b9d",
+    "platform": "windows|macos|linux|network",
+    "tid": "T1557",
+    "technique": "Adversary-in-the-Middle",
+    "tactic": "collection",
+    "datasources": "application-log-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1557.001",
+      "T1557.002",
+      "T1557.003"
+    ],
+    "count_subtechniques": 3,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to position themselves between two or more networked devices using an adversary-in-the-middle (AiTM) technique to support follow-on behaviors such as [Network Sniffing](https://attack.mitre.org/techniques/T1040) or [Transmitted Data Manipulation](https://attack.mitre.org/techniques/T1565/002). By abusing features of common networking protocols that can determine the flow of network traffic (e.g. ARP, DNS, LLMNR, etc.), adversaries may force a device to communicate through an adversary controlled system so they can collect information or perform additional actions.(Citation: Rapid7 MiTM Basics)\n\nFor example, adversaries may manipulate victim DNS settings to enable other malicious activities such as preventing/redirecting users from accessing legitimate sites and/or pushing additional malware.(Citation: ttint_rat)(Citation: dns_changer_trojans)(Citation: ad_blocker_with_miner) Adversaries may also manipulate DNS and leverage their position in order to intercept user credentials and session cookies.(Citation: volexity_0day_sophos_FW) [Downgrade Attack](https://attack.mitre.org/techniques/T1562/010)s can also be used to establish an AiTM position, such as by negotiating a less secure, deprecated, or weaker version of communication protocol (SSL/TLS) or encryption algorithm.(Citation: mitm_tls_downgrade_att)(Citation: taxonomy_downgrade_att_tls)(Citation: tlseminar_downgrade_att)\n\nAdversaries may also leverage the AiTM position to attempt to monitor and/or modify traffic, such as in [Transmitted Data Manipulation](https://attack.mitre.org/techniques/T1565/002). Adversaries can setup a position similar to AiTM to prevent traffic from flowing to the appropriate destination, potentially to [Impair Defenses](https://attack.mitre.org/techniques/T1562) and/or in support of a [Network Denial of Service](https://attack.mitre.org/techniques/T1498).",
+    "technique_references": [
+      {
+        "source_name": "dns_changer_trojans",
+        "url": "https://www.trendmicro.com/vinfo/us/threat-encyclopedia/web-attack/125/how-dns-changer-trojans-direct-users-to-threats",
+        "description": "Abendan, O. (2012, June 14). How DNS Changer Trojans Direct Users to Threats. Retrieved October 28, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "volexity_0day_sophos_FW",
+        "url": "https://www.volexity.com/blog/2022/06/15/driftingcloud-zero-day-sophos-firewall-exploitation-and-an-insidious-breach/",
+        "description": "Adair, S., Lancaster, T., Volexity Threat Research. (2022, June 15). DriftingCloud: Zero-Day Sophos Firewall Exploitation and an Insidious Breach. Retrieved July 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "taxonomy_downgrade_att_tls",
+        "url": "https://arxiv.org/abs/1809.05681",
+        "description": "Alashwali, E. S., Rasmussen, K. (2019, January 26). What's in a Downgrade? A Taxonomy of Downgrade Attacks in the TLS Protocol and Application Protocols Using TLS. Retrieved December 7, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ad_blocker_with_miner",
+        "url": "https://securelist.com/ad-blocker-with-miner-included/101105/",
+        "description": "Kuzmenko, A.. (2021, March 10). Ad blocker with miner included. Retrieved October 28, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "mitm_tls_downgrade_att",
+        "url": "https://www.praetorian.com/blog/man-in-the-middle-tls-ssl-protocol-downgrade-attack/",
+        "description": "praetorian Editorial Team. (2014, August 19). Man-in-the-Middle TLS Protocol Downgrade Attack. Retrieved December 8, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Rapid7 MiTM Basics",
+        "url": "https://www.rapid7.com/fundamentals/man-in-the-middle-attacks/",
+        "description": "Rapid7. (n.d.). Man-in-the-Middle (MITM) Attacks. Retrieved March 2, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "tlseminar_downgrade_att",
+        "url": "https://tlseminar.github.io/downgrade-attacks/",
+        "description": "Team Cinnamon. (2017, February 3). Downgrade Attacks. Retrieved December 9, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ttint_rat",
+        "url": "https://blog.netlab.360.com/ttint-an-iot-remote-control-trojan-spread-through-2-0-day-vulnerabilities/",
+        "description": "Tu, L. Ma, Y. Ye, G. (2020, October 1). Ttint: An IoT Remote Access Trojan spread through 2 0-day vulnerabilities. Retrieved October 28, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--22905430-4901-4c2a-84f6-98243cb173f8",
+    "platform": "linux|macos|windows|office-365",
+    "tid": "T1564",
+    "technique": "Hide Artifacts",
+    "tactic": "defense-evasion",
+    "datasources": "application-log-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1564.001",
+      "T1564.002",
+      "T1564.003",
+      "T1564.004",
+      "T1564.005",
+      "T1564.006",
+      "T1564.007",
+      "T1564.008",
+      "T1564.009",
+      "T1564.010"
+    ],
+    "count_subtechniques": 10,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to hide artifacts associated with their behaviors to evade detection. Operating systems may have features to hide various artifacts, such as important system files and administrative task execution, to avoid disrupting user work environments and prevent users from changing files or features on the system. Adversaries may abuse these features to hide artifacts such as files, directories, user accounts, or other system activity to evade detection.(Citation: Sofacy Komplex Trojan)(Citation: Cybereason OSX Pirrit)(Citation: MalwareBytes ADS July 2015)\n\nAdversaries may also attempt to hide artifacts associated with malicious behavior by creating computing regions that are isolated from common security instrumentation, such as through the use of virtualization technology.(Citation: Sophos Ragnar May 2020)",
+    "technique_references": [
+      {
+        "source_name": "Sofacy Komplex Trojan",
+        "url": "https://researchcenter.paloaltonetworks.com/2016/09/unit42-sofacys-komplex-os-x-trojan/",
+        "description": "Dani Creus, Tyler Halfpop, Robert Falcone. (2016, September 26). Sofacy's 'Komplex' OS X Trojan. Retrieved July 8, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cybereason OSX Pirrit",
+        "url": "https://cdn2.hubspot.net/hubfs/3354902/Content%20PDFs/Cybereason-Lab-Analysis-OSX-Pirrit-4-6-16.pdf",
+        "description": "Amit Serper. (2016). Cybereason Lab Analysis OSX.Pirrit. Retrieved December 10, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MalwareBytes ADS July 2015",
+        "url": "https://blog.malwarebytes.com/101/2015/07/introduction-to-alternate-data-streams/",
+        "description": "Arntz, P. (2015, July 22). Introduction to Alternate Data Streams. Retrieved March 21, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sophos Ragnar May 2020",
+        "url": "https://news.sophos.com/en-us/2020/05/21/ragnar-locker-ransomware-deploys-virtual-machine-to-dodge-security/",
+        "description": "SophosLabs. (2020, May 21). Ragnar Locker ransomware deploys virtual machine to dodge security. Retrieved June 29, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--a62a8db3-f23a-4d8f-afd6-9dbc77e7813b",
+    "platform": "linux|macos|windows|saas|office-365|google-workspace",
+    "tid": "T1566",
+    "technique": "Phishing",
+    "tactic": "initial-access",
+    "datasources": "application-log-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1566.001",
+      "T1566.002",
+      "T1566.003"
+    ],
+    "count_subtechniques": 3,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may send phishing messages to gain access to victim systems. All forms of phishing are electronically delivered social engineering. Phishing can be targeted, known as spearphishing. In spearphishing, a specific individual, company, or industry will be targeted by the adversary. More generally, adversaries can conduct non-targeted phishing, such as in mass malware spam campaigns.\n\nAdversaries may send victims emails containing malicious attachments or links, typically to execute malicious code on victim systems. Phishing may also be conducted via third-party services, like social media platforms. Phishing may also involve social engineering techniques, such as posing as a trusted source, as well as evasive techniques such as removing or manipulating emails or metadata/headers from compromised accounts being abused to send messages (e.g., [Email Hiding Rules](https://attack.mitre.org/techniques/T1564/008)).(Citation: Microsoft OAuth Spam 2022)(Citation: Palo Alto Unit 42 VBA Infostealer 2014) Another way to accomplish this is by forging or spoofing(Citation: Proofpoint-spoof) the identity of the sender which can be used to fool both the human recipient as well as automated security tools.(Citation: cyberproof-double-bounce) \n\nVictims may also receive phishing messages that instruct them to call a phone number where they are directed to visit a malicious URL, download malware,(Citation: sygnia Luna Month)(Citation: CISA Remote Monitoring and Management Software) or install adversary-accessible remote management tools onto their computer (i.e., [User Execution](https://attack.mitre.org/techniques/T1204)).(Citation: Unit42 Luna Moth)",
+    "technique_references": [
+      {
+        "source_name": "ACSC Email Spoofing",
+        "url": "https://www.cyber.gov.au/sites/default/files/2019-03/spoof_email_sender_policy_framework.pdf",
+        "description": "Australian Cyber Security Centre. (2012, December). Mitigating Spoofed Emails Using Sender Policy Framework. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CISA Remote Monitoring and Management Software",
+        "url": "https://www.cisa.gov/uscert/ncas/alerts/aa23-025a",
+        "description": "CISA. (n.d.). Protecting Against Malicious Use of Remote Monitoring and Management Software. Retrieved February 2, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "cyberproof-double-bounce",
+        "url": "https://blog.cyberproof.com/blog/double-bounced-attacks-with-email-spoofing-2022-trends",
+        "description": "Itkin, Liora. (2022, September 1). Double-bounced attacks with email spoofing . Retrieved February 24, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Unit42 Luna Moth",
+        "url": "https://unit42.paloaltonetworks.com/luna-moth-callback-phishing/",
+        "description": "Kristopher Russo. (n.d.). Luna Moth Callback Phishing Campaign. Retrieved February 2, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Anti Spoofing",
+        "url": "https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-spoofing-protection?view=o365-worldwide",
+        "description": "Microsoft. (2020, October 13). Anti-spoofing protection in EOP. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft OAuth Spam 2022",
+        "url": "https://www.microsoft.com/en-us/security/blog/2022/09/22/malicious-oauth-applications-used-to-compromise-email-servers-and-spread-spam/",
+        "description": "Microsoft. (2023, September 22). Malicious OAuth applications abuse cloud email services to spread spam. Retrieved March 13, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "sygnia Luna Month",
+        "url": "https://blog.sygnia.co/luna-moth-false-subscription-scams",
+        "description": "Oren Biderman, Tomer Lahiyani, Noam Lifshitz, Ori Porag. (n.d.). LUNA MOTH: THE THREAT ACTORS BEHIND RECENT FALSE SUBSCRIPTION SCAMS. Retrieved February 2, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Proofpoint-spoof",
+        "url": "https://www.proofpoint.com/us/threat-reference/email-spoofing",
+        "description": "Proofpoint. (n.d.). What Is Email Spoofing?. Retrieved February 24, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Palo Alto Unit 42 VBA Infostealer 2014",
+        "url": "https://unit42.paloaltonetworks.com/examining-vba-initiated-infostealer-campaign/",
+        "description": "Vicky Ray and Rob Downs. (2014, October 29). Examining a VBA-Initiated Infostealer Campaign. Retrieved March 13, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--16cdd21f-da65-4e4f-bc04-dd7d198c7b26",
+    "platform": "pre",
+    "tid": "T1594",
+    "technique": "Search Victim-Owned Websites",
+    "tactic": "reconnaissance",
+    "datasources": "application-log-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may search websites owned by the victim for information that can be used during targeting. Victim-owned websites may contain a variety of details, including names of departments/divisions, physical locations, and data about key employees such as names, roles, and contact info (ex: [Email Addresses](https://attack.mitre.org/techniques/T1589/002)). These sites may also have details highlighting business operations and relationships.(Citation: Comparitech Leak)\n\nAdversaries may search victim-owned websites to gather actionable information. Information from these sources may reveal opportunities for other forms of reconnaissance (ex: [Phishing for Information](https://attack.mitre.org/techniques/T1598) or [Search Open Technical Databases](https://attack.mitre.org/techniques/T1596)), establishing operational resources (ex: [Establish Accounts](https://attack.mitre.org/techniques/T1585) or [Compromise Accounts](https://attack.mitre.org/techniques/T1586)), and/or initial access (ex: [Trusted Relationship](https://attack.mitre.org/techniques/T1199) or [Phishing](https://attack.mitre.org/techniques/T1566)).",
+    "technique_references": [
+      {
+        "source_name": "Comparitech Leak",
+        "url": "https://www.comparitech.com/blog/vpn-privacy/350-million-customer-records-exposed-online/",
+        "description": "Bischoff, P. (2020, October 15). Broadvoice database of more than 350 million customer records exposed online. Retrieved October 20, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--cca0ccb6-a068-4574-a722-b1556f86833a",
+    "platform": "pre",
+    "tid": "T1598",
+    "technique": "Phishing for Information",
+    "tactic": "reconnaissance",
+    "datasources": "application-log-content",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1598.001",
+      "T1598.002",
+      "T1598.003"
+    ],
+    "count_subtechniques": 3,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may send phishing messages to elicit sensitive information that can be used during targeting. Phishing for information is an attempt to trick targets into divulging information, frequently credentials or other actionable information. Phishing for information is different from [Phishing](https://attack.mitre.org/techniques/T1566) in that the objective is gathering data from the victim rather than executing malicious code.\n\nAll forms of phishing are electronically delivered social engineering. Phishing can be targeted, known as spearphishing. In spearphishing, a specific individual, company, or industry will be targeted by the adversary. More generally, adversaries can conduct non-targeted phishing, such as in mass credential harvesting campaigns.\n\nAdversaries may also try to obtain information directly through the exchange of emails, instant messages, or other electronic conversation means.(Citation: ThreatPost Social Media Phishing)(Citation: TrendMictro Phishing)(Citation: PCMag FakeLogin)(Citation: Sophos Attachment)(Citation: GitHub Phishery) Victims may also receive phishing messages that direct them to call a phone number where the adversary attempts to collect confidential information.(Citation: Avertium callback phishing)\n\nPhishing for information frequently involves social engineering techniques, such as posing as a source with a reason to collect information (ex: [Establish Accounts](https://attack.mitre.org/techniques/T1585) or [Compromise Accounts](https://attack.mitre.org/techniques/T1586)) and/or sending multiple, seemingly urgent messages. Another way to accomplish this is by forging or spoofing(Citation: Proofpoint-spoof) the identity of the sender which can be used to fool both the human recipient as well as automated security tools.(Citation: cyberproof-double-bounce) \n\nPhishing for information may also involve evasive techniques, such as removing or manipulating emails or metadata/headers from compromised accounts being abused to send messages (e.g., [Email Hiding Rules](https://attack.mitre.org/techniques/T1564/008)).(Citation: Microsoft OAuth Spam 2022)(Citation: Palo Alto Unit 42 VBA Infostealer 2014)",
+    "technique_references": [
+      {
+        "source_name": "ACSC Email Spoofing",
+        "url": "https://www.cyber.gov.au/sites/default/files/2019-03/spoof_email_sender_policy_framework.pdf",
+        "description": "Australian Cyber Security Centre. (2012, December). Mitigating Spoofed Emails Using Sender Policy Framework. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Avertium callback phishing",
+        "url": "https://www.avertium.com/resources/threat-reports/everything-you-need-to-know-about-callback-phishing",
+        "description": "Avertium. (n.d.). EVERYTHING YOU NEED TO KNOW ABOUT CALLBACK PHISHING. Retrieved February 2, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TrendMictro Phishing",
+        "url": "https://www.trendmicro.com/en_us/research/20/i/tricky-forms-of-phishing.html",
+        "description": "Babon, P. (2020, September 3). Tricky 'Forms' of Phishing. Retrieved October 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sophos Attachment",
+        "url": "https://nakedsecurity.sophos.com/2020/10/02/serious-security-phishing-without-links-when-phishers-bring-along-their-own-web-pages/",
+        "description": "Ducklin, P. (2020, October 2). Serious Security: Phishing without links – when phishers bring along their own web pages. Retrieved October 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "cyberproof-double-bounce",
+        "url": "https://blog.cyberproof.com/blog/double-bounced-attacks-with-email-spoofing-2022-trends",
+        "description": "Itkin, Liora. (2022, September 1). Double-bounced attacks with email spoofing . Retrieved February 24, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "PCMag FakeLogin",
+        "url": "https://www.pcmag.com/news/hackers-try-to-phish-united-nations-staffers-with-fake-login-pages",
+        "description": "Kan, M. (2019, October 24). Hackers Try to Phish United Nations Staffers With Fake Login Pages. Retrieved October 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Anti Spoofing",
+        "url": "https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-spoofing-protection?view=o365-worldwide",
+        "description": "Microsoft. (2020, October 13). Anti-spoofing protection in EOP. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft OAuth Spam 2022",
+        "url": "https://www.microsoft.com/en-us/security/blog/2022/09/22/malicious-oauth-applications-used-to-compromise-email-servers-and-spread-spam/",
+        "description": "Microsoft. (2023, September 22). Malicious OAuth applications abuse cloud email services to spread spam. Retrieved March 13, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ThreatPost Social Media Phishing",
+        "url": "https://threatpost.com/facebook-launching-pad-phishing-attacks/160351/",
+        "description": "O'Donnell, L. (2020, October 20). Facebook: A Top Launching Pad For Phishing Attacks. Retrieved October 20, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Proofpoint-spoof",
+        "url": "https://www.proofpoint.com/us/threat-reference/email-spoofing",
+        "description": "Proofpoint. (n.d.). What Is Email Spoofing?. Retrieved February 24, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub Phishery",
+        "url": "https://github.com/ryhanson/phishery",
+        "description": "Ryan Hanson. (2016, September 24). phishery. Retrieved October 23, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Palo Alto Unit 42 VBA Infostealer 2014",
+        "url": "https://unit42.paloaltonetworks.com/examining-vba-initiated-infostealer-campaign/",
+        "description": "Vicky Ray and Rob Downs. (2014, October 29). Examining a VBA-Initiated Infostealer Campaign. Retrieved March 13, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--56e0d8b8-3e25-49dd-9050-3aa252f5aa92",
+    "platform": "containers",
+    "tid": "T1610",
+    "technique": "Deploy Container",
+    "tactic": "defense-evasion",
+    "datasources": "application-log-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may deploy a container into an environment to facilitate execution or evade defenses. In some cases, adversaries may deploy a new container to execute processes associated with a particular image or deployment, such as processes that execute or download malware. In others, an adversary may deploy a new container configured without network rules, user limitations, etc. to bypass existing defenses within the environment.\n\nContainers can be deployed by various means, such as via Docker's <code>create</code> and <code>start</code> APIs or via a web application such as the Kubernetes dashboard or Kubeflow.(Citation: Docker Containers API)(Citation: Kubernetes Dashboard)(Citation: Kubeflow Pipelines) Adversaries may deploy containers based on retrieved or built malicious images or from benign images that download and execute malicious payloads at runtime.(Citation: Aqua Build Images on Hosts)",
+    "technique_references": [
+      {
+        "source_name": "Aqua Build Images on Hosts",
+        "url": "https://blog.aquasec.com/malicious-container-image-docker-container-host",
+        "description": "Assaf Morag. (2020, July 15). Threat Alert: Attackers Building Malicious Images on Your Hosts. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Docker Containers API",
+        "url": "https://docs.docker.com/engine/api/v1.41/#tag/Container",
+        "description": "Docker. (n.d.). Docker Engine API v1.41 Reference - Container. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubeflow Pipelines",
+        "url": "https://www.kubeflow.org/docs/components/pipelines/overview/pipelines-overview/",
+        "description": "The Kubeflow Authors. (n.d.). Overview of Kubeflow Pipelines. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubernetes Dashboard",
+        "url": "https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/",
+        "description": "The Kubernetes Authors. (n.d.). Kubernetes Web UI (Dashboard). Retrieved March 29, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--56e0d8b8-3e25-49dd-9050-3aa252f5aa92",
+    "platform": "containers",
+    "tid": "T1610",
+    "technique": "Deploy Container",
+    "tactic": "execution",
+    "datasources": "application-log-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may deploy a container into an environment to facilitate execution or evade defenses. In some cases, adversaries may deploy a new container to execute processes associated with a particular image or deployment, such as processes that execute or download malware. In others, an adversary may deploy a new container configured without network rules, user limitations, etc. to bypass existing defenses within the environment.\n\nContainers can be deployed by various means, such as via Docker's <code>create</code> and <code>start</code> APIs or via a web application such as the Kubernetes dashboard or Kubeflow.(Citation: Docker Containers API)(Citation: Kubernetes Dashboard)(Citation: Kubeflow Pipelines) Adversaries may deploy containers based on retrieved or built malicious images or from benign images that download and execute malicious payloads at runtime.(Citation: Aqua Build Images on Hosts)",
+    "technique_references": [
+      {
+        "source_name": "Aqua Build Images on Hosts",
+        "url": "https://blog.aquasec.com/malicious-container-image-docker-container-host",
+        "description": "Assaf Morag. (2020, July 15). Threat Alert: Attackers Building Malicious Images on Your Hosts. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Docker Containers API",
+        "url": "https://docs.docker.com/engine/api/v1.41/#tag/Container",
+        "description": "Docker. (n.d.). Docker Engine API v1.41 Reference - Container. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubeflow Pipelines",
+        "url": "https://www.kubeflow.org/docs/components/pipelines/overview/pipelines-overview/",
+        "description": "The Kubeflow Authors. (n.d.). Overview of Kubeflow Pipelines. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubernetes Dashboard",
+        "url": "https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/",
+        "description": "The Kubernetes Authors. (n.d.). Kubernetes Web UI (Dashboard). Retrieved March 29, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--954a1639-f2d6-407d-aef3-4917622ca493",
+    "platform": "windows|office-365|linux|macos|iaas|saas|azure-ad|google-workspace",
+    "tid": "T1621",
+    "technique": "Multi-Factor Authentication Request Generation",
+    "tactic": "credential-access",
+    "datasources": "application-log-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to bypass multi-factor authentication (MFA) mechanisms and gain access to accounts by generating MFA requests sent to users.\n\nAdversaries in possession of credentials to [Valid Accounts](https://attack.mitre.org/techniques/T1078) may be unable to complete the login process if they lack access to the 2FA or MFA mechanisms required as an additional credential and security control. To circumvent this, adversaries may abuse the automatic generation of push notifications to MFA services such as Duo Push, Microsoft Authenticator, Okta, or similar services to have the user grant access to their account.\n\nIn some cases, adversaries may continuously repeat login attempts in order to bombard users with MFA push notifications, SMS messages, and phone calls, potentially resulting in the user finally accepting the authentication request in response to “MFA fatigue.”(Citation: Russian 2FA Push Annoyance - Cimpanu)(Citation: MFA Fatigue Attacks - PortSwigger)(Citation: Suspected Russian Activity Targeting Government and Business Entities Around the Globe)",
+    "technique_references": [
+      {
+        "source_name": "Russian 2FA Push Annoyance - Cimpanu",
+        "url": "https://therecord.media/russian-hackers-bypass-2fa-by-annoying-victims-with-repeated-push-notifications/",
+        "description": "Catalin Cimpanu. (2021, December 9). Russian hackers bypass 2FA by annoying victims with repeated push notifications. Retrieved March 31, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MFA Fatigue Attacks - PortSwigger",
+        "url": "https://portswigger.net/daily-swig/mfa-fatigue-attacks-users-tricked-into-allowing-device-access-due-to-overload-of-push-notifications",
+        "description": "Jessica Haworth. (2022, February 16). MFA fatigue attacks: Users tricked into allowing device access due to overload of push notifications. Retrieved March 31, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Suspected Russian Activity Targeting Government and Business Entities Around the Globe",
+        "url": "https://www.mandiant.com/resources/russian-targeting-gov-business",
+        "description": "Luke Jenkins, Sarah Hawley, Parnian Najafi, Doug Bienstock. (2021, December 6). Suspected Russian Activity Targeting Government and Business Entities Around the Globe. Retrieved April 15, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--e4dc8c01-417f-458d-9ee0-bb0617c1b391",
+    "platform": "windows|linux|macos",
+    "tid": "T1622",
+    "technique": "Debugger Evasion",
+    "tactic": "defense-evasion",
+    "datasources": "application-log-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may employ various means to detect and avoid debuggers. Debuggers are typically used by defenders to trace and/or analyze the execution of potential malware payloads.(Citation: ProcessHacker Github)\n\nDebugger evasion may include changing behaviors based on the results of the checks for the presence of artifacts indicative of a debugged environment. Similar to [Virtualization/Sandbox Evasion](https://attack.mitre.org/techniques/T1497), if the adversary detects a debugger, they may alter their malware to disengage from the victim or conceal the core functions of the implant. They may also search for debugger artifacts before dropping secondary or additional payloads.\n\nSpecific checks will vary based on the target and/or adversary, but may involve [Native API](https://attack.mitre.org/techniques/T1106) function calls such as <code>IsDebuggerPresent()</code> and <code> NtQueryInformationProcess()</code>, or manually checking the <code>BeingDebugged</code> flag of the Process Environment Block (PEB). Other checks for debugging artifacts may also seek to enumerate hardware breakpoints, interrupt assembly opcodes, time checks, or measurements if exceptions are raised in the current process (assuming a present debugger would “swallow” or handle the potential error).(Citation: hasherezade debug)(Citation: AlKhaser Debug)(Citation: vxunderground debug)\n\nAdversaries may use the information learned from these debugger checks during automated discovery to shape follow-on behaviors. Debuggers can also be evaded by detaching the process or flooding debug logs with meaningless data via messages produced by looping [Native API](https://attack.mitre.org/techniques/T1106) function calls such as <code>OutputDebugStringW()</code>.(Citation: wardle evilquest partii)(Citation: Checkpoint Dridex Jan 2021)",
+    "technique_references": [
+      {
+        "source_name": "Checkpoint Dridex Jan 2021",
+        "url": "https://research.checkpoint.com/2021/stopping-serial-killer-catching-the-next-strike/",
+        "description": "Check Point Research. (2021, January 4). Stopping Serial Killer: Catching the Next Strike. Retrieved September 7, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "hasherezade debug",
+        "url": "https://github.com/hasherezade/malware_training_vol1/blob/main/slides/module3/Module3_2_fingerprinting.pdf",
+        "description": "hasherezade. (2021, June 30). Module 3 - Understanding and countering malware's evasion and self-defence. Retrieved April 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AlKhaser Debug",
+        "url": "https://github.com/LordNoteworthy/al-khaser/tree/master/al-khaser/AntiDebug",
+        "description": "Noteworthy. (2019, January 6). Al-Khaser. Retrieved April 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "wardle evilquest partii",
+        "url": "https://objective-see.com/blog/blog_0x60.html",
+        "description": "Patrick Wardle. (2020, July 3). OSX.EvilQuest Uncovered part ii: insidious capabilities. Retrieved March 21, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ProcessHacker Github",
+        "url": "https://github.com/processhacker/processhacker",
+        "description": "ProcessHacker. (2009, October 27). Process Hacker. Retrieved April 11, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "vxunderground debug",
+        "url": "https://github.com/vxunderground/VX-API/tree/main/Anti%20Debug",
+        "description": "vxunderground. (2021, June 30). VX-API. Retrieved April 1, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--e4dc8c01-417f-458d-9ee0-bb0617c1b391",
+    "platform": "windows|linux|macos",
+    "tid": "T1622",
+    "technique": "Debugger Evasion",
+    "tactic": "discovery",
+    "datasources": "application-log-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may employ various means to detect and avoid debuggers. Debuggers are typically used by defenders to trace and/or analyze the execution of potential malware payloads.(Citation: ProcessHacker Github)\n\nDebugger evasion may include changing behaviors based on the results of the checks for the presence of artifacts indicative of a debugged environment. Similar to [Virtualization/Sandbox Evasion](https://attack.mitre.org/techniques/T1497), if the adversary detects a debugger, they may alter their malware to disengage from the victim or conceal the core functions of the implant. They may also search for debugger artifacts before dropping secondary or additional payloads.\n\nSpecific checks will vary based on the target and/or adversary, but may involve [Native API](https://attack.mitre.org/techniques/T1106) function calls such as <code>IsDebuggerPresent()</code> and <code> NtQueryInformationProcess()</code>, or manually checking the <code>BeingDebugged</code> flag of the Process Environment Block (PEB). Other checks for debugging artifacts may also seek to enumerate hardware breakpoints, interrupt assembly opcodes, time checks, or measurements if exceptions are raised in the current process (assuming a present debugger would “swallow” or handle the potential error).(Citation: hasherezade debug)(Citation: AlKhaser Debug)(Citation: vxunderground debug)\n\nAdversaries may use the information learned from these debugger checks during automated discovery to shape follow-on behaviors. Debuggers can also be evaded by detaching the process or flooding debug logs with meaningless data via messages produced by looping [Native API](https://attack.mitre.org/techniques/T1106) function calls such as <code>OutputDebugStringW()</code>.(Citation: wardle evilquest partii)(Citation: Checkpoint Dridex Jan 2021)",
+    "technique_references": [
+      {
+        "source_name": "Checkpoint Dridex Jan 2021",
+        "url": "https://research.checkpoint.com/2021/stopping-serial-killer-catching-the-next-strike/",
+        "description": "Check Point Research. (2021, January 4). Stopping Serial Killer: Catching the Next Strike. Retrieved September 7, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "hasherezade debug",
+        "url": "https://github.com/hasherezade/malware_training_vol1/blob/main/slides/module3/Module3_2_fingerprinting.pdf",
+        "description": "hasherezade. (2021, June 30). Module 3 - Understanding and countering malware's evasion and self-defence. Retrieved April 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AlKhaser Debug",
+        "url": "https://github.com/LordNoteworthy/al-khaser/tree/master/al-khaser/AntiDebug",
+        "description": "Noteworthy. (2019, January 6). Al-Khaser. Retrieved April 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "wardle evilquest partii",
+        "url": "https://objective-see.com/blog/blog_0x60.html",
+        "description": "Patrick Wardle. (2020, July 3). OSX.EvilQuest Uncovered part ii: insidious capabilities. Retrieved March 21, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ProcessHacker Github",
+        "url": "https://github.com/processhacker/processhacker",
+        "description": "ProcessHacker. (2009, October 27). Process Hacker. Retrieved April 11, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "vxunderground debug",
+        "url": "https://github.com/vxunderground/VX-API/tree/main/Anti%20Debug",
+        "description": "vxunderground. (2021, June 30). VX-API. Retrieved April 1, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--e848506b-8484-4410-8017-3d235a52f5b3",
+    "platform": "saas|iaas|office-365",
+    "tid": "T1648",
+    "technique": "Serverless Execution",
+    "tactic": "execution",
+    "datasources": "application-log-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse serverless computing, integration, and automation services to execute arbitrary code in cloud environments. Many cloud providers offer a variety of serverless resources, including compute engines, application integration services, and web servers. \n\nAdversaries may abuse these resources in various ways as a means of executing arbitrary commands. For example, adversaries may use serverless functions to execute malicious code, such as crypto-mining malware (i.e. [Resource Hijacking](https://attack.mitre.org/techniques/T1496)).(Citation: Cado Security Denonia) Adversaries may also create functions that enable further compromise of the cloud environment. For example, an adversary may use the `IAM:PassRole` permission in AWS or the `iam.serviceAccounts.actAs` permission in Google Cloud to add [Additional Cloud Roles](https://attack.mitre.org/techniques/T1098/003) to a serverless cloud function, which may then be able to perform actions the original user cannot.(Citation: Rhino Security Labs AWS Privilege Escalation)(Citation: Rhingo Security Labs GCP Privilege Escalation)\n\nServerless functions can also be invoked in response to cloud events (i.e. [Event Triggered Execution](https://attack.mitre.org/techniques/T1546)), potentially enabling persistent execution over time. For example, in AWS environments, an adversary may create a Lambda function that automatically adds [Additional Cloud Credentials](https://attack.mitre.org/techniques/T1098/001) to a user and a corresponding CloudWatch events rule that invokes that function whenever a new user is created.(Citation: Backdooring an AWS account) Similarly, an adversary may create a Power Automate workflow in Office 365 environments that forwards all emails a user receives or creates anonymous sharing links whenever a user is granted access to a document in SharePoint.(Citation: Varonis Power Automate Data Exfiltration)(Citation: Microsoft DART Case Report 001)",
+    "technique_references": [
+      {
+        "source_name": "Microsoft DART Case Report 001",
+        "url": "https://www.microsoft.com/security/blog/2020/03/09/real-life-cybercrime-stories-dart-microsoft-detection-and-response-team",
+        "description": "Berk Veral. (2020, March 9). Real-life cybercrime stories from DART, the Microsoft Detection and Response Team. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Backdooring an AWS account",
+        "url": "https://medium.com/daniel-grzelak/backdooring-an-aws-account-da007d36f8f9",
+        "description": "Daniel Grzelak. (2016, July 9). Backdooring an AWS account. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Varonis Power Automate Data Exfiltration",
+        "url": "https://www.varonis.com/blog/power-automate-data-exfiltration",
+        "description": "Eric Saraga. (2022, February 2). Using Power Automate for Covert Data Exfiltration in Microsoft 365. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cado Security Denonia",
+        "url": "https://www.cadosecurity.com/cado-discovers-denonia-the-first-malware-specifically-targeting-lambda/",
+        "description": "Matt Muir. (2022, April 6). Cado Discovers Denonia: The First Malware Specifically Targeting Lambda. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Rhino Security Labs AWS Privilege Escalation",
+        "url": "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/",
+        "description": "Rhino Security Labs. (n.d.). AWS IAM Privilege Escalation – Methods and Mitigation. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Rhingo Security Labs GCP Privilege Escalation",
+        "url": "https://rhinosecuritylabs.com/gcp/privilege-escalation-google-cloud-platform-part-1/",
+        "description": "Spencer Gietzen. (n.d.). Privilege Escalation in Google Cloud Platform – Part 1 (IAM). Retrieved May 27, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--7de1f7ac-5d0c-4c9c-8873-627202205331",
+    "platform": "windows|linux|macos|azure-ad",
+    "tid": "T1649",
+    "technique": "Steal or Forge Authentication Certificates",
+    "tactic": "credential-access",
+    "datasources": "application-log-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may steal or forge certificates used for authentication to access remote systems or resources. Digital certificates are often used to sign and encrypt messages and/or files. Certificates are also used as authentication material. For example, Azure AD device certificates and Active Directory Certificate Services (AD CS) certificates bind to an identity and can be used as credentials for domain accounts.(Citation: O365 Blog Azure AD Device IDs)(Citation: Microsoft AD CS Overview)\n\nAuthentication certificates can be both stolen and forged. For example, AD CS certificates can be stolen from encrypted storage (in the Registry or files)(Citation: APT29 Deep Look at Credential Roaming), misplaced certificate files (i.e. [Unsecured Credentials](https://attack.mitre.org/techniques/T1552)), or directly from the Windows certificate store via various crypto APIs.(Citation: SpecterOps Certified Pre Owned)(Citation: GitHub CertStealer)(Citation: GitHub GhostPack Certificates) With appropriate enrollment rights, users and/or machines within a domain can also request and/or manually renew certificates from enterprise certificate authorities (CA). This enrollment process defines various settings and permissions associated with the certificate. Of note, the certificate’s extended key usage (EKU) values define signing, encryption, and authentication use cases, while the certificate’s subject alternative name (SAN) values define the certificate owner’s alternate names.(Citation: Medium Certified Pre Owned)\n\nAbusing certificates for authentication credentials may enable other behaviors such as [Lateral Movement](https://attack.mitre.org/tactics/TA0008). Certificate-related misconfigurations may also enable opportunities for [Privilege Escalation](https://attack.mitre.org/tactics/TA0004), by way of allowing users to impersonate or assume privileged accounts or permissions via the identities (SANs) associated with a certificate. These abuses may also enable [Persistence](https://attack.mitre.org/tactics/TA0003) via stealing or forging certificates that can be used as [Valid Accounts](https://attack.mitre.org/techniques/T1078) for the duration of the certificate's validity, despite user password resets. Authentication certificates can also be stolen and forged for machine accounts.\n\nAdversaries who have access to root (or subordinate) CA certificate private keys (or mechanisms protecting/managing these keys) may also establish [Persistence](https://attack.mitre.org/tactics/TA0003) by forging arbitrary authentication certificates for the victim domain (known as “golden” certificates).(Citation: Medium Certified Pre Owned) Adversaries may also target certificates and related services in order to access other forms of credentials, such as [Golden Ticket](https://attack.mitre.org/techniques/T1558/001) ticket-granting tickets (TGT) or NTLM plaintext.(Citation: Medium Certified Pre Owned)",
+    "technique_references": [
+      {
+        "source_name": "GitHub GhostPack Certificates",
+        "url": "https://github.com/GhostPack/SharpDPAPI#certificates",
+        "description": "HarmJ0y. (2018, August 22). SharpDPAPI - Certificates. Retrieved August 2, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft AD CS Overview",
+        "url": "https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11)",
+        "description": "Microsoft. (2016, August 31). Active Directory Certificate Services Overview. Retrieved August 2, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Medium Certified Pre Owned",
+        "url": "https://posts.specterops.io/certified-pre-owned-d95910965cd2",
+        "description": "Schroeder, W. (2021, June 17). Certified Pre-Owned. Retrieved August 2, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SpecterOps Certified Pre Owned",
+        "url": "https://web.archive.org/web/20220818094600/https://specterops.io/assets/resources/Certified_Pre-Owned.pdf",
+        "description": "Schroeder, W. & Christensen, L. (2021, June 22). Certified Pre-Owned - Abusing Active Directory Certificate Services. Retrieved August 2, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "O365 Blog Azure AD Device IDs",
+        "url": "https://o365blog.com/post/deviceidentity/",
+        "description": "Syynimaa, N. (2022, February 15). Stealing and faking Azure AD device identities. Retrieved August 3, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub CertStealer",
+        "url": "https://github.com/TheWover/CertStealer",
+        "description": "TheWover. (2021, April 21). CertStealer. Retrieved August 2, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "APT29 Deep Look at Credential Roaming",
+        "url": "https://www.mandiant.com/resources/blog/apt29-windows-credential-roaming",
+        "description": "Thibault Van Geluwe De Berlaere. (2022, November 8). They See Me Roaming: Following APT29 by Taking a Deeper Look at Windows Credential Roaming. Retrieved November 9, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

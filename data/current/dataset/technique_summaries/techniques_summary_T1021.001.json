@@ -1,0 +1,37 @@
+[
+  {
+    "id": "attack-pattern--eb062747-2193-45de-8fa2-e62549c37ddf",
+    "platform": "windows",
+    "tid": "T1021.001",
+    "technique": "Remote Desktop Protocol",
+    "tactic": "lateral-movement",
+    "datasources": "logon-session-creation|network-connection-creation|network-traffic-flow|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use [Valid Accounts](https://attack.mitre.org/techniques/T1078) to log into a computer using the Remote Desktop Protocol (RDP). The adversary may then perform actions as the logged-on user.\n\nRemote desktop is a common feature in operating systems. It allows a user to log into an interactive session with a system desktop graphical user interface on a remote system. Microsoft refers to its implementation of the Remote Desktop Protocol (RDP) as Remote Desktop Services (RDS).(Citation: TechNet Remote Desktop Services) \n\nAdversaries may connect to a remote system over RDP/RDS to expand access if the service is enabled and allows access to accounts with known credentials. Adversaries will likely use Credential Access techniques to acquire credentials to use with RDP. Adversaries may also use RDP in conjunction with the [Accessibility Features](https://attack.mitre.org/techniques/T1546/008) or [Terminal Services DLL](https://attack.mitre.org/techniques/T1505/005) for Persistence.(Citation: Alperovitch Malware)",
+    "technique_references": [
+      {
+        "source_name": "TechNet Remote Desktop Services",
+        "url": "https://technet.microsoft.com/en-us/windowsserver/ee236407.aspx",
+        "description": "Microsoft. (n.d.). Remote Desktop Services. Retrieved June 1, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Alperovitch Malware",
+        "url": "http://blog.crowdstrike.com/adversary-tricks-crowdstrike-treats/",
+        "description": "Alperovitch, D. (2014, October 31). Malware-Free Intrusions. Retrieved November 4, 2014.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "remotedesktopusers|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

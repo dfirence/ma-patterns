@@ -1,0 +1,51 @@
+[
+  [
+    "mcmd",
+    "T1036.005",
+    "Match Legitimate Name or Location",
+    "file-metadata|image-metadata|process-metadata",
+    "T1036.005::[MCMD] has been named Readme.txt to appear legitimate."
+  ],
+  [
+    "mcmd",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[MCMD] can use scheduled tasks for persistence."
+  ],
+  [
+    "mcmd",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[MCMD] can launch a console process (cmd.exe) with redirected standard input and output."
+  ],
+  [
+    "mcmd",
+    "T1070.009",
+    "Clear Persistence",
+    "command-execution|file-deletion|file-modification|process-creation|scheduled-job-modification|user-account-deletion|windows-registry-key-deletion|windows-registry-key-modification",
+    "T1070.009::[MCMD] has the ability to remove set Registry Keys, including those used for persistence."
+  ],
+  [
+    "mcmd",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[MCMD] can use HTTPS in communication with C2 web servers."
+  ],
+  [
+    "mcmd",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[MCMD] can use Registry Run Keys for persistence."
+  ],
+  [
+    "mcmd",
+    "T1564.003",
+    "Hidden Window",
+    "command-execution|file-modification|process-creation|script-execution",
+    "T1564.003::[MCMD] can modify processes to prevent them from being visible on the desktop."
+  ]
+]

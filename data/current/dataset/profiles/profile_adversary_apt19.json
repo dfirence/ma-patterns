@@ -1,0 +1,86 @@
+[
+  {
+    "id": "intrusion-set--fe8796a4-2a02-41a0-9d27-7aa1e995feb6",
+    "name": "apt19",
+    "aliases": "apt19|codoso|c0d0so0|codoso-team|sunshop-group",
+    "group_id": "G0073",
+    "is_revoked": false,
+    "profile": {
+      "malware": {
+        "count": 1,
+        "items": [
+          "cobalt-strike"
+        ]
+      },
+      "tools": {
+        "count": 1,
+        "items": [
+          "empire"
+        ]
+      },
+      "techniques": {
+        "count": 21,
+        "items": [
+          "T1016",
+          "T1027",
+          "T1027.010",
+          "T1033",
+          "T1059",
+          "T1059.001",
+          "T1071.001",
+          "T1082",
+          "T1112",
+          "T1132.001",
+          "T1140",
+          "T1189",
+          "T1204.002",
+          "T1218.010",
+          "T1218.011",
+          "T1543.003",
+          "T1547.001",
+          "T1564.003",
+          "T1566.001",
+          "T1574.002",
+          "T1588.002"
+        ]
+      },
+      "tactics": {
+        "count": 8,
+        "items": [
+          "command-and-control",
+          "defense-evasion",
+          "discovery",
+          "execution",
+          "initial-access",
+          "persistence",
+          "privilege-escalation",
+          "resource-development"
+        ]
+      },
+      "procedures": [
+        "T1016::[APT19] used an HTTP malware variant and a Port 22 malware variant to collect the MAC address and IP address from the victim’s machine.",
+        "T1027.010::[APT19] used Base64 to obfuscate executed commands.",
+        "T1027::[APT19] used Base64 to obfuscate payloads.",
+        "T1033::[APT19] used an HTTP malware variant and a Port 22 malware variant to collect the victim’s username.",
+        "T1059.001::[APT19] used PowerShell commands to execute payloads.",
+        "T1059::[APT19] downloaded and launched code within a SCT file.",
+        "T1071.001::[APT19] used HTTP for C2 communications. [APT19] also used an HTTP malware variant to communicate over HTTP for C2.",
+        "T1082::[APT19] collected system architecture information. [APT19] used an HTTP malware variant and a Port 22 malware variant to gather the hostname and CPU information from the victim’s machine.",
+        "T1112::[APT19] uses a Port 22 malware variant to modify several Registry keys.",
+        "T1132.001::An [APT19] HTTP malware variant used Base64 to encode communications to the C2 server.",
+        "T1140::An [APT19] HTTP malware variant decrypts strings using single-byte XOR keys.",
+        "T1189::[APT19] performed a watering hole attack on forbes.com in 2014 to compromise targets.",
+        "T1204.002::[APT19] attempted to get users to launch malicious attachments delivered via spearphishing emails.",
+        "T1218.010::[APT19] used Regsvr32 to bypass application control techniques.",
+        "T1218.011::[APT19] configured its payload to inject into the rundll32.exe.",
+        "T1543.003::An [APT19] Port 22 malware variant registers itself as a service.",
+        "T1547.001::An [APT19] HTTP malware variant establishes persistence by setting the Registry key HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows Debug Tools-%LOCALAPPDATA%\\.",
+        "T1564.003::[APT19] used -W Hidden to conceal [PowerShell] windows by setting the WindowStyle parameter to hidden.",
+        "T1566.001::[APT19] sent spearphishing emails with malicious attachments in RTF and XLSM formats to deliver initial exploits.",
+        "T1574.002::[APT19] launched an HTTP malware variant and a Port 22 malware variant using a legitimate executable that loaded the malicious DLL.",
+        "T1588.002::[APT19] has obtained and used publicly-available tools like [Empire]."
+      ]
+    },
+    "description": "[APT19](https://attack.mitre.org/groups/G0073) is a Chinese-based threat group that has targeted a variety of industries, including defense, finance, energy, pharmaceutical, telecommunications, high tech, education, manufacturing, and legal services. In 2017, a phishing campaign was used to target seven law and investment firms. (Citation: FireEye APT19) Some analysts track [APT19](https://attack.mitre.org/groups/G0073) and [Deep Panda](https://attack.mitre.org/groups/G0009) as the same group, but it is unclear from open source information if the groups are the same. (Citation: ICIT China's Espionage Jul 2016) (Citation: FireEye APT Groups) (Citation: Unit 42 C0d0so0 Jan 2016)"
+  }
+]

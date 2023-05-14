@@ -1,9 +1,0 @@
-{
-  "adversaries": [],
-  "malware": [],
-  "tools": [],
-  "T1535:Unused/Unsupported Cloud Regions": [
-    "instance-creation",
-    "instance-metadata"
-  ]
-}

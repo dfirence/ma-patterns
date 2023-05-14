@@ -1,8 +1,0 @@
-{
-  "malware": [],
-  "tools": [],
-  "adversaries": [],
-  "T1592:Gather Victim Host Information": [
-    "response-content"
-  ]
-}

@@ -1,0 +1,86 @@
+[
+  [
+    "leafminer",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[Leafminer] used several tools for retrieving login and password information, including LaZagne and Mimikatz."
+  ],
+  [
+    "leafminer",
+    "T1003.004",
+    "LSA Secrets",
+    "command-execution|windows-registry-key-access",
+    "T1003.004::[Leafminer] used several tools for retrieving login and password information, including LaZagne."
+  ],
+  [
+    "leafminer",
+    "T1003.005",
+    "Cached Domain Credentials",
+    "command-execution",
+    "T1003.005::[Leafminer] used several tools for retrieving login and password information, including LaZagne."
+  ],
+  [
+    "leafminer",
+    "T1027.010",
+    "Command Obfuscation",
+    "command-execution|file-metadata|script-execution",
+    "T1027.010::[Leafminer] obfuscated scripts that were used on victim machines."
+  ],
+  [
+    "leafminer",
+    "T1055.013",
+    "Process Doppelgänging",
+    "file-metadata|os-api-execution",
+    "T1055.013::[Leafminer] has used [Process Doppelgänging] to evade security software while deploying tools on compromised systems."
+  ],
+  [
+    "leafminer",
+    "T1059.007",
+    "JavaScript",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.007::[Leafminer] infected victims using JavaScript code."
+  ],
+  [
+    "leafminer",
+    "T1110.003",
+    "Password Spraying",
+    "application-log-content|user-account-authentication",
+    "T1110.003::[Leafminer] used a tool called Total SMB BruteForcer to perform internal password spraying."
+  ],
+  [
+    "leafminer",
+    "T1114.002",
+    "Remote Email Collection",
+    "command-execution|logon-session-creation|network-connection-creation",
+    "T1114.002::[Leafminer] used a tool called MailSniper to search through the Exchange server mailboxes for keywords."
+  ],
+  [
+    "leafminer",
+    "T1136.001",
+    "Local Account",
+    "command-execution|process-creation|user-account-creation",
+    "T1136.001::[Leafminer] used a tool called Imecab to set up a persistent remote access account on the victim machine."
+  ],
+  [
+    "leafminer",
+    "T1552.001",
+    "Credentials In Files",
+    "command-execution|file-access",
+    "T1552.001::[Leafminer] used several tools for retrieving login and password information, including LaZagne."
+  ],
+  [
+    "leafminer",
+    "T1555.003",
+    "Credentials from Web Browsers",
+    "command-execution|file-access|os-api-execution|process-access",
+    "T1555.003::[Leafminer] used several tools for retrieving login and password information, including LaZagne."
+  ],
+  [
+    "leafminer",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[Leafminer] has obtained and used tools such as [LaZagne], [Mimikatz], [PsExec], and [MailSniper]."
+  ]
+]

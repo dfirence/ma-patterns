@@ -1,0 +1,307 @@
+[
+  {
+    "id": "attack-pattern--0a3ead4e-6d47-4ccb-854c-a6a4f9d96b22",
+    "platform": "windows|linux|macos",
+    "tid": "T1003",
+    "technique": "OS Credential Dumping",
+    "tactic": "credential-access",
+    "datasources": "windows-registry-key-access",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1003.001",
+      "T1003.002",
+      "T1003.003",
+      "T1003.004",
+      "T1003.005",
+      "T1003.006",
+      "T1003.007",
+      "T1003.008"
+    ],
+    "count_subtechniques": 8,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to dump credentials to obtain account login and credential material, normally in the form of a hash or a clear text password, from the operating system and software. Credentials can then be used to perform [Lateral Movement](https://attack.mitre.org/tactics/TA0008) and access restricted information.\n\nSeveral of the tools mentioned in associated sub-techniques may be used by both adversaries and professional security testers. Additional custom tools likely exist as well.\n",
+    "technique_references": [
+      {
+        "source_name": "Medium Detecting Attempts to Steal Passwords from Memory",
+        "url": "https://medium.com/threatpunter/detecting-attempts-to-steal-passwords-from-memory-558f16dce4ea",
+        "description": "French, D. (2018, October 2). Detecting Attempts to Steal Passwords from Memory. Retrieved October 11, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Powersploit",
+        "url": "https://github.com/mattifestation/PowerSploit",
+        "description": "PowerSploit. (n.d.). Retrieved December 4, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft DRSR Dec 2017",
+        "url": "https://msdn.microsoft.com/library/cc228086.aspx",
+        "description": "Microsoft. (2017, December 1). MS-DRSR Directory Replication Service (DRS) Remote Protocol. Retrieved December 4, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft GetNCCChanges",
+        "url": "https://msdn.microsoft.com/library/dd207691.aspx",
+        "description": "Microsoft. (n.d.). IDL_DRSGetNCChanges (Opnum 3). Retrieved December 4, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Samba DRSUAPI",
+        "url": "https://wiki.samba.org/index.php/DRSUAPI",
+        "description": "SambaWiki. (n.d.). DRSUAPI. Retrieved December 4, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Harmj0y DCSync Sept 2015",
+        "url": "http://www.harmj0y.net/blog/redteaming/mimikatz-and-dcsync-and-extrasids-oh-my/",
+        "description": "Schroeder, W. (2015, September 22). Mimikatz and DCSync and ExtraSids, Oh My. Retrieved December 4, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft NRPC Dec 2017",
+        "url": "https://msdn.microsoft.com/library/cc237008.aspx",
+        "description": "Microsoft. (2017, December 1). MS-NRPC - Netlogon Remote Protocol. Retrieved December 6, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft SAMR",
+        "url": "https://msdn.microsoft.com/library/cc245496.aspx",
+        "description": "Microsoft. (n.d.). MS-SAMR Security Account Manager (SAM) Remote Protocol (Client-to-Server) - Transport. Retrieved December 4, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AdSecurity DCSync Sept 2015",
+        "url": "https://adsecurity.org/?p=1729",
+        "description": "Metcalf, S. (2015, September 25). Mimikatz DCSync Usage, Exploitation, and Detection. Retrieved December 4, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|system|root",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--c32f7008-9fea-41f7-8366-5eb9b74bd896",
+    "platform": "windows",
+    "tid": "T1012",
+    "technique": "Query Registry",
+    "tactic": "discovery",
+    "datasources": "windows-registry-key-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may interact with the Windows Registry to gather information about the system, configuration, and installed software.\n\nThe Registry contains a significant amount of information about the operating system, configuration, software, and security.(Citation: Wikipedia Windows Registry) Information can easily be queried using the [Reg](https://attack.mitre.org/software/S0075) utility, though other means to access the Registry exist. Some of the information may help adversaries to further their operation within a network. Adversaries may use the information from [Query Registry](https://attack.mitre.org/techniques/T1012) during automated discovery to shape follow-on behaviors, including whether or not the adversary fully infects the target and/or attempts specific actions.",
+    "technique_references": [
+      {
+        "source_name": "Wikipedia Windows Registry",
+        "url": "https://en.wikipedia.org/wiki/Windows_Registry",
+        "description": "Wikipedia. (n.d.). Windows Registry. Retrieved February 2, 2015.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--03d7999c-1f4c-42cc-8373-e7690d318104",
+    "platform": "linux|macos|windows|network",
+    "tid": "T1033",
+    "technique": "System Owner/User Discovery",
+    "tactic": "discovery",
+    "datasources": "windows-registry-key-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to identify the primary user, currently logged in user, set of users that commonly uses a system, or whether a user is actively using the system. They may do this, for example, by retrieving account usernames or by using [OS Credential Dumping](https://attack.mitre.org/techniques/T1003). The information may be collected in a number of different ways using other Discovery techniques, because user and username details are prevalent throughout a system and include running process ownership, file/directory ownership, session information, and system logs. Adversaries may use the information from [System Owner/User Discovery](https://attack.mitre.org/techniques/T1033) during automated discovery to shape follow-on behaviors, including whether or not the adversary fully infects the target and/or attempts specific actions.\n\nVarious utilities and commands may acquire this information, including <code>whoami</code>. In macOS and Linux, the currently logged in user can be identified with <code>w</code> and <code>who</code>. On macOS the <code>dscl . list /Users | grep -v '_'</code> command can also be used to enumerate user accounts. Environment variables, such as <code>%USERNAME%</code> and <code>$USER</code>, may also be used to access this information.\n\nOn network devices, [Network Device CLI](https://attack.mitre.org/techniques/T1059/008) commands such as `show users` and `show ssh` can be used to display users currently logged into the device.(Citation: show_ssh_users_cmd_cisco)(Citation: US-CERT TA18-106A Network Infrastructure Devices 2018)",
+    "technique_references": [
+      {
+        "source_name": "show_ssh_users_cmd_cisco",
+        "url": "https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/s1/sec-s1-cr-book/sec-cr-s5.html",
+        "description": "Cisco. (2023, March 7). Cisco IOS Security Command Reference: Commands S to Z . Retrieved July 13, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT TA18-106A Network Infrastructure Devices 2018",
+        "url": "https://us-cert.cisa.gov/ncas/alerts/TA18-106A",
+        "description": "US-CERT. (2018, April 20). Russian State-Sponsored Cyber Actors Targeting Network Infrastructure Devices. Retrieved October 19, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--435dfb86-2697-4867-85b5-2fef496c0517",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace|containers|network",
+    "tid": "T1552",
+    "technique": "Unsecured Credentials",
+    "tactic": "credential-access",
+    "datasources": "windows-registry-key-access",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1552.001",
+      "T1552.002",
+      "T1552.003",
+      "T1552.004",
+      "T1552.005",
+      "T1552.006",
+      "T1552.007",
+      "T1552.008"
+    ],
+    "count_subtechniques": 8,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may search compromised systems to find and obtain insecurely stored credentials. These credentials can be stored and/or misplaced in many locations on a system, including plaintext files (e.g. [Bash History](https://attack.mitre.org/techniques/T1552/003)), operating system or application-specific repositories (e.g. [Credentials in Registry](https://attack.mitre.org/techniques/T1552/002)), or other specialized files/artifacts (e.g. [Private Keys](https://attack.mitre.org/techniques/T1552/004)).",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--7de1f7ac-5d0c-4c9c-8873-627202205331",
+    "platform": "windows|linux|macos|azure-ad",
+    "tid": "T1649",
+    "technique": "Steal or Forge Authentication Certificates",
+    "tactic": "credential-access",
+    "datasources": "windows-registry-key-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may steal or forge certificates used for authentication to access remote systems or resources. Digital certificates are often used to sign and encrypt messages and/or files. Certificates are also used as authentication material. For example, Azure AD device certificates and Active Directory Certificate Services (AD CS) certificates bind to an identity and can be used as credentials for domain accounts.(Citation: O365 Blog Azure AD Device IDs)(Citation: Microsoft AD CS Overview)\n\nAuthentication certificates can be both stolen and forged. For example, AD CS certificates can be stolen from encrypted storage (in the Registry or files)(Citation: APT29 Deep Look at Credential Roaming), misplaced certificate files (i.e. [Unsecured Credentials](https://attack.mitre.org/techniques/T1552)), or directly from the Windows certificate store via various crypto APIs.(Citation: SpecterOps Certified Pre Owned)(Citation: GitHub CertStealer)(Citation: GitHub GhostPack Certificates) With appropriate enrollment rights, users and/or machines within a domain can also request and/or manually renew certificates from enterprise certificate authorities (CA). This enrollment process defines various settings and permissions associated with the certificate. Of note, the certificate’s extended key usage (EKU) values define signing, encryption, and authentication use cases, while the certificate’s subject alternative name (SAN) values define the certificate owner’s alternate names.(Citation: Medium Certified Pre Owned)\n\nAbusing certificates for authentication credentials may enable other behaviors such as [Lateral Movement](https://attack.mitre.org/tactics/TA0008). Certificate-related misconfigurations may also enable opportunities for [Privilege Escalation](https://attack.mitre.org/tactics/TA0004), by way of allowing users to impersonate or assume privileged accounts or permissions via the identities (SANs) associated with a certificate. These abuses may also enable [Persistence](https://attack.mitre.org/tactics/TA0003) via stealing or forging certificates that can be used as [Valid Accounts](https://attack.mitre.org/techniques/T1078) for the duration of the certificate's validity, despite user password resets. Authentication certificates can also be stolen and forged for machine accounts.\n\nAdversaries who have access to root (or subordinate) CA certificate private keys (or mechanisms protecting/managing these keys) may also establish [Persistence](https://attack.mitre.org/tactics/TA0003) by forging arbitrary authentication certificates for the victim domain (known as “golden” certificates).(Citation: Medium Certified Pre Owned) Adversaries may also target certificates and related services in order to access other forms of credentials, such as [Golden Ticket](https://attack.mitre.org/techniques/T1558/001) ticket-granting tickets (TGT) or NTLM plaintext.(Citation: Medium Certified Pre Owned)",
+    "technique_references": [
+      {
+        "source_name": "GitHub GhostPack Certificates",
+        "url": "https://github.com/GhostPack/SharpDPAPI#certificates",
+        "description": "HarmJ0y. (2018, August 22). SharpDPAPI - Certificates. Retrieved August 2, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft AD CS Overview",
+        "url": "https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11)",
+        "description": "Microsoft. (2016, August 31). Active Directory Certificate Services Overview. Retrieved August 2, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Medium Certified Pre Owned",
+        "url": "https://posts.specterops.io/certified-pre-owned-d95910965cd2",
+        "description": "Schroeder, W. (2021, June 17). Certified Pre-Owned. Retrieved August 2, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SpecterOps Certified Pre Owned",
+        "url": "https://web.archive.org/web/20220818094600/https://specterops.io/assets/resources/Certified_Pre-Owned.pdf",
+        "description": "Schroeder, W. & Christensen, L. (2021, June 22). Certified Pre-Owned - Abusing Active Directory Certificate Services. Retrieved August 2, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "O365 Blog Azure AD Device IDs",
+        "url": "https://o365blog.com/post/deviceidentity/",
+        "description": "Syynimaa, N. (2022, February 15). Stealing and faking Azure AD device identities. Retrieved August 3, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub CertStealer",
+        "url": "https://github.com/TheWover/CertStealer",
+        "description": "TheWover. (2021, April 21). CertStealer. Retrieved August 2, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "APT29 Deep Look at Credential Roaming",
+        "url": "https://www.mandiant.com/resources/blog/apt29-windows-credential-roaming",
+        "description": "Thibault Van Geluwe De Berlaere. (2022, November 8). They See Me Roaming: Following APT29 by Taking a Deeper Look at Windows Credential Roaming. Retrieved November 9, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--215d9700-5881-48b8-8265-6449dbb7195d",
+    "platform": "linux|macos|windows",
+    "tid": "T1652",
+    "technique": "Device Driver Discovery",
+    "tactic": "discovery",
+    "datasources": "windows-registry-key-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to enumerate local device drivers on a victim host. Information about device drivers may highlight various insights that shape follow-on behaviors, such as the function/purpose of the host, present security tools (i.e. [Security Software Discovery](https://attack.mitre.org/techniques/T1518/001)) or other defenses (e.g., [Virtualization/Sandbox Evasion](https://attack.mitre.org/techniques/T1497)), as well as potential exploitable vulnerabilities (e.g., [Exploitation for Privilege Escalation](https://attack.mitre.org/techniques/T1068)).\n\nMany OS utilities may provide information about local device drivers, such as `driverquery.exe` and the `EnumDeviceDrivers()` API function on Windows.(Citation: Microsoft Driverquery)(Citation: Microsoft EnumDeviceDrivers) Information about device drivers (as well as associated services, i.e., [System Service Discovery](https://attack.mitre.org/techniques/T1007)) may also be available in the Registry.(Citation: Microsoft Registry Drivers)\n\nOn Linux/macOS, device drivers (in the form of kernel modules) may be visible within `/dev` or using utilities such as `lsmod` and `modinfo`.(Citation: Linux Kernel Programming)(Citation: lsmod man)(Citation: modinfo man)",
+    "technique_references": [
+      {
+        "source_name": "lsmod man",
+        "url": "https://man7.org/linux/man-pages/man8/lsmod.8.html",
+        "description": "Kerrisk, M. (2022, December 18). lsmod(8) — Linux manual page. Retrieved March 28, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Registry Drivers",
+        "url": "https://learn.microsoft.com/windows-hardware/drivers/install/overview-of-registry-trees-and-keys",
+        "description": "Microsoft. (2021, December 14). Registry Trees for Devices and Drivers. Retrieved March 28, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft EnumDeviceDrivers",
+        "url": "https://learn.microsoft.com/windows/win32/api/psapi/nf-psapi-enumdevicedrivers",
+        "description": "Microsoft. (2021, October 12). EnumDeviceDrivers function (psapi.h). Retrieved March 28, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Driverquery",
+        "url": "https://learn.microsoft.com/windows-server/administration/windows-commands/driverquery",
+        "description": "Microsoft. (n.d.). driverquery. Retrieved March 28, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Linux Kernel Programming",
+        "url": "https://www.tldp.org/LDP/lkmpg/2.4/lkmpg.pdf",
+        "description": "Pomerantz, O., Salzman, P.. (2003, April 4). The Linux Kernel Module Programming Guide. Retrieved April 6, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "modinfo man",
+        "url": "https://linux.die.net/man/8/modinfo",
+        "description": "Russell, R. (n.d.). modinfo(8) - Linux man page. Retrieved March 28, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

@@ -1,0 +1,83 @@
+[
+  {
+    "id": "attack-pattern--a62a8db3-f23a-4d8f-afd6-9dbc77e7813b",
+    "platform": "linux|macos|windows|saas|office-365|google-workspace",
+    "tid": "T1566",
+    "technique": "Phishing",
+    "tactic": "initial-access",
+    "datasources": "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1566.001",
+      "T1566.002",
+      "T1566.003"
+    ],
+    "count_subtechniques": 3,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may send phishing messages to gain access to victim systems. All forms of phishing are electronically delivered social engineering. Phishing can be targeted, known as spearphishing. In spearphishing, a specific individual, company, or industry will be targeted by the adversary. More generally, adversaries can conduct non-targeted phishing, such as in mass malware spam campaigns.\n\nAdversaries may send victims emails containing malicious attachments or links, typically to execute malicious code on victim systems. Phishing may also be conducted via third-party services, like social media platforms. Phishing may also involve social engineering techniques, such as posing as a trusted source, as well as evasive techniques such as removing or manipulating emails or metadata/headers from compromised accounts being abused to send messages (e.g., [Email Hiding Rules](https://attack.mitre.org/techniques/T1564/008)).(Citation: Microsoft OAuth Spam 2022)(Citation: Palo Alto Unit 42 VBA Infostealer 2014) Another way to accomplish this is by forging or spoofing(Citation: Proofpoint-spoof) the identity of the sender which can be used to fool both the human recipient as well as automated security tools.(Citation: cyberproof-double-bounce) \n\nVictims may also receive phishing messages that instruct them to call a phone number where they are directed to visit a malicious URL, download malware,(Citation: sygnia Luna Month)(Citation: CISA Remote Monitoring and Management Software) or install adversary-accessible remote management tools onto their computer (i.e., [User Execution](https://attack.mitre.org/techniques/T1204)).(Citation: Unit42 Luna Moth)",
+    "technique_references": [
+      {
+        "source_name": "ACSC Email Spoofing",
+        "url": "https://www.cyber.gov.au/sites/default/files/2019-03/spoof_email_sender_policy_framework.pdf",
+        "description": "Australian Cyber Security Centre. (2012, December). Mitigating Spoofed Emails Using Sender Policy Framework. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CISA Remote Monitoring and Management Software",
+        "url": "https://www.cisa.gov/uscert/ncas/alerts/aa23-025a",
+        "description": "CISA. (n.d.). Protecting Against Malicious Use of Remote Monitoring and Management Software. Retrieved February 2, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "cyberproof-double-bounce",
+        "url": "https://blog.cyberproof.com/blog/double-bounced-attacks-with-email-spoofing-2022-trends",
+        "description": "Itkin, Liora. (2022, September 1). Double-bounced attacks with email spoofing . Retrieved February 24, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Unit42 Luna Moth",
+        "url": "https://unit42.paloaltonetworks.com/luna-moth-callback-phishing/",
+        "description": "Kristopher Russo. (n.d.). Luna Moth Callback Phishing Campaign. Retrieved February 2, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Anti Spoofing",
+        "url": "https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-spoofing-protection?view=o365-worldwide",
+        "description": "Microsoft. (2020, October 13). Anti-spoofing protection in EOP. Retrieved October 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft OAuth Spam 2022",
+        "url": "https://www.microsoft.com/en-us/security/blog/2022/09/22/malicious-oauth-applications-used-to-compromise-email-servers-and-spread-spam/",
+        "description": "Microsoft. (2023, September 22). Malicious OAuth applications abuse cloud email services to spread spam. Retrieved March 13, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "sygnia Luna Month",
+        "url": "https://blog.sygnia.co/luna-moth-false-subscription-scams",
+        "description": "Oren Biderman, Tomer Lahiyani, Noam Lifshitz, Ori Porag. (n.d.). LUNA MOTH: THE THREAT ACTORS BEHIND RECENT FALSE SUBSCRIPTION SCAMS. Retrieved February 2, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Proofpoint-spoof",
+        "url": "https://www.proofpoint.com/us/threat-reference/email-spoofing",
+        "description": "Proofpoint. (n.d.). What Is Email Spoofing?. Retrieved February 24, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Palo Alto Unit 42 VBA Infostealer 2014",
+        "url": "https://unit42.paloaltonetworks.com/examining-vba-initiated-infostealer-campaign/",
+        "description": "Vicky Ray and Rob Downs. (2014, October 29). Examining a VBA-Initiated Infostealer Campaign. Retrieved March 13, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

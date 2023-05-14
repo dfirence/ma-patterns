@@ -1,0 +1,125 @@
+[
+  {
+    "id": "attack-pattern--b4409cd8-0da9-46e1-a401-a241afd4d1cc",
+    "platform": "windows|azure-ad|office-365|saas|iaas|google-workspace|linux|macos",
+    "tid": "T1556.006",
+    "technique": "Multi-Factor Authentication",
+    "tactic": "credential-access",
+    "datasources": "active-directory-object-modification|logon-session-creation|user-account-authentication|user-account-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may disable or modify multi-factor authentication (MFA) mechanisms to enable persistent access to compromised accounts.\n\nOnce adversaries have gained access to a network by either compromising an account lacking MFA or by employing an MFA bypass method such as [Multi-Factor Authentication Request Generation](https://attack.mitre.org/techniques/T1621), adversaries may leverage their access to modify or completely disable MFA defenses. This can be accomplished by abusing legitimate features, such as excluding users from Azure AD Conditional Access Policies, registering a new yet vulnerable/adversary-controlled MFA method, or by manually patching MFA programs and configuration files to bypass expected functionality.(Citation: Mandiant APT42)(Citation: Azure AD Conditional Access Exclusions)\n\nFor example, modifying the Windows hosts file (`C:\\windows\\system32\\drivers\\etc\\hosts`) to redirect MFA calls to localhost instead of an MFA server may cause the MFA process to fail. If a \"fail open\" policy is in place, any otherwise successful authentication attempt may be granted access without enforcing MFA. (Citation: Russians Exploit Default MFA Protocol - CISA March 2022) \n\nDepending on the scope, goals, and privileges of the adversary, MFA defenses may be disabled for individual accounts or for all accounts tied to a larger group, such as all domain accounts in a victim's network environment.(Citation: Russians Exploit Default MFA Protocol - CISA March 2022) ",
+    "technique_references": [
+      {
+        "source_name": "Russians Exploit Default MFA Protocol - CISA March 2022",
+        "url": "https://www.cisa.gov/uscert/ncas/alerts/aa22-074a",
+        "description": "Cyber Security Infrastructure Agency. (2022, March 15). Russian State-Sponsored Cyber Actors Gain Network Access by Exploiting Default Multifactor Authentication Protocols and “PrintNightmare” Vulnerability. Retrieved May 31, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant APT42",
+        "url": "https://www.mandiant.com/media/17826",
+        "description": "Manidant. (n.d.). APT42: Crooked Charms, Cons and Compromise. Retrieved September 16, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Azure AD Conditional Access Exclusions",
+        "url": "https://docs.microsoft.com/en-us/azure/active-directory/governance/conditional-access-exclusion",
+        "description": "Microsoft. (2022, August 26). Use Azure AD access reviews to manage users excluded from Conditional Access policies. Retrieved August 30, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b4409cd8-0da9-46e1-a401-a241afd4d1cc",
+    "platform": "windows|azure-ad|office-365|saas|iaas|google-workspace|linux|macos",
+    "tid": "T1556.006",
+    "technique": "Multi-Factor Authentication",
+    "tactic": "defense-evasion",
+    "datasources": "active-directory-object-modification|logon-session-creation|user-account-authentication|user-account-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may disable or modify multi-factor authentication (MFA) mechanisms to enable persistent access to compromised accounts.\n\nOnce adversaries have gained access to a network by either compromising an account lacking MFA or by employing an MFA bypass method such as [Multi-Factor Authentication Request Generation](https://attack.mitre.org/techniques/T1621), adversaries may leverage their access to modify or completely disable MFA defenses. This can be accomplished by abusing legitimate features, such as excluding users from Azure AD Conditional Access Policies, registering a new yet vulnerable/adversary-controlled MFA method, or by manually patching MFA programs and configuration files to bypass expected functionality.(Citation: Mandiant APT42)(Citation: Azure AD Conditional Access Exclusions)\n\nFor example, modifying the Windows hosts file (`C:\\windows\\system32\\drivers\\etc\\hosts`) to redirect MFA calls to localhost instead of an MFA server may cause the MFA process to fail. If a \"fail open\" policy is in place, any otherwise successful authentication attempt may be granted access without enforcing MFA. (Citation: Russians Exploit Default MFA Protocol - CISA March 2022) \n\nDepending on the scope, goals, and privileges of the adversary, MFA defenses may be disabled for individual accounts or for all accounts tied to a larger group, such as all domain accounts in a victim's network environment.(Citation: Russians Exploit Default MFA Protocol - CISA March 2022) ",
+    "technique_references": [
+      {
+        "source_name": "Russians Exploit Default MFA Protocol - CISA March 2022",
+        "url": "https://www.cisa.gov/uscert/ncas/alerts/aa22-074a",
+        "description": "Cyber Security Infrastructure Agency. (2022, March 15). Russian State-Sponsored Cyber Actors Gain Network Access by Exploiting Default Multifactor Authentication Protocols and “PrintNightmare” Vulnerability. Retrieved May 31, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant APT42",
+        "url": "https://www.mandiant.com/media/17826",
+        "description": "Manidant. (n.d.). APT42: Crooked Charms, Cons and Compromise. Retrieved September 16, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Azure AD Conditional Access Exclusions",
+        "url": "https://docs.microsoft.com/en-us/azure/active-directory/governance/conditional-access-exclusion",
+        "description": "Microsoft. (2022, August 26). Use Azure AD access reviews to manage users excluded from Conditional Access policies. Retrieved August 30, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b4409cd8-0da9-46e1-a401-a241afd4d1cc",
+    "platform": "windows|azure-ad|office-365|saas|iaas|google-workspace|linux|macos",
+    "tid": "T1556.006",
+    "technique": "Multi-Factor Authentication",
+    "tactic": "persistence",
+    "datasources": "active-directory-object-modification|logon-session-creation|user-account-authentication|user-account-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may disable or modify multi-factor authentication (MFA) mechanisms to enable persistent access to compromised accounts.\n\nOnce adversaries have gained access to a network by either compromising an account lacking MFA or by employing an MFA bypass method such as [Multi-Factor Authentication Request Generation](https://attack.mitre.org/techniques/T1621), adversaries may leverage their access to modify or completely disable MFA defenses. This can be accomplished by abusing legitimate features, such as excluding users from Azure AD Conditional Access Policies, registering a new yet vulnerable/adversary-controlled MFA method, or by manually patching MFA programs and configuration files to bypass expected functionality.(Citation: Mandiant APT42)(Citation: Azure AD Conditional Access Exclusions)\n\nFor example, modifying the Windows hosts file (`C:\\windows\\system32\\drivers\\etc\\hosts`) to redirect MFA calls to localhost instead of an MFA server may cause the MFA process to fail. If a \"fail open\" policy is in place, any otherwise successful authentication attempt may be granted access without enforcing MFA. (Citation: Russians Exploit Default MFA Protocol - CISA March 2022) \n\nDepending on the scope, goals, and privileges of the adversary, MFA defenses may be disabled for individual accounts or for all accounts tied to a larger group, such as all domain accounts in a victim's network environment.(Citation: Russians Exploit Default MFA Protocol - CISA March 2022) ",
+    "technique_references": [
+      {
+        "source_name": "Russians Exploit Default MFA Protocol - CISA March 2022",
+        "url": "https://www.cisa.gov/uscert/ncas/alerts/aa22-074a",
+        "description": "Cyber Security Infrastructure Agency. (2022, March 15). Russian State-Sponsored Cyber Actors Gain Network Access by Exploiting Default Multifactor Authentication Protocols and “PrintNightmare” Vulnerability. Retrieved May 31, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant APT42",
+        "url": "https://www.mandiant.com/media/17826",
+        "description": "Manidant. (n.d.). APT42: Crooked Charms, Cons and Compromise. Retrieved September 16, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Azure AD Conditional Access Exclusions",
+        "url": "https://docs.microsoft.com/en-us/azure/active-directory/governance/conditional-access-exclusion",
+        "description": "Microsoft. (2022, August 26). Use Azure AD access reviews to manage users excluded from Conditional Access policies. Retrieved August 30, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

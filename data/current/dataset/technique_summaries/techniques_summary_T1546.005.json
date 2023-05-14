@@ -1,0 +1,72 @@
+[
+  {
+    "id": "attack-pattern--63220765-d418-44de-8fae-694b3912317d",
+    "platform": "macos|linux",
+    "tid": "T1546.005",
+    "technique": "Trap",
+    "tactic": "persistence",
+    "datasources": "command-execution|file-creation|file-modification|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may establish persistence by executing malicious content triggered by an interrupt signal. The <code>trap</code> command allows programs and shells to specify commands that will be executed upon receiving interrupt signals. A common situation is a script allowing for graceful termination and handling of common keyboard interrupts like <code>ctrl+c</code> and <code>ctrl+d</code>.\n\nAdversaries can use this to register code to be executed when the shell encounters specific interrupts as a persistence mechanism. Trap commands are of the following format <code>trap 'command list' signals</code> where \"command list\" will be executed when \"signals\" are received.(Citation: Trap Manual)(Citation: Cyberciti Trap Statements)",
+    "technique_references": [
+      {
+        "source_name": "Trap Manual",
+        "url": "https://ss64.com/bash/trap.html",
+        "description": "ss64. (n.d.). trap. Retrieved May 21, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cyberciti Trap Statements",
+        "url": "https://bash.cyberciti.biz/guide/Trap_statement",
+        "description": "Cyberciti. (2016, March 29). Trap statement. Retrieved May 21, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--63220765-d418-44de-8fae-694b3912317d",
+    "platform": "macos|linux",
+    "tid": "T1546.005",
+    "technique": "Trap",
+    "tactic": "privilege-escalation",
+    "datasources": "command-execution|file-creation|file-modification|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may establish persistence by executing malicious content triggered by an interrupt signal. The <code>trap</code> command allows programs and shells to specify commands that will be executed upon receiving interrupt signals. A common situation is a script allowing for graceful termination and handling of common keyboard interrupts like <code>ctrl+c</code> and <code>ctrl+d</code>.\n\nAdversaries can use this to register code to be executed when the shell encounters specific interrupts as a persistence mechanism. Trap commands are of the following format <code>trap 'command list' signals</code> where \"command list\" will be executed when \"signals\" are received.(Citation: Trap Manual)(Citation: Cyberciti Trap Statements)",
+    "technique_references": [
+      {
+        "source_name": "Trap Manual",
+        "url": "https://ss64.com/bash/trap.html",
+        "description": "ss64. (n.d.). trap. Retrieved May 21, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cyberciti Trap Statements",
+        "url": "https://bash.cyberciti.biz/guide/Trap_statement",
+        "description": "Cyberciti. (2016, March 29). Trap statement. Retrieved May 21, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

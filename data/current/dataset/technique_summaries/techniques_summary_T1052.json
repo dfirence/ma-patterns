@@ -1,0 +1,26 @@
+[
+  {
+    "id": "attack-pattern--e6415f09-df0e-48de-9aba-928c902b7549",
+    "platform": "linux|macos|windows",
+    "tid": "T1052",
+    "technique": "Exfiltration Over Physical Medium",
+    "tactic": "exfiltration",
+    "datasources": "command-execution|drive-creation|file-access|process-creation",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1052.001"
+    ],
+    "count_subtechniques": 1,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to exfiltrate data via a physical medium, such as a removable drive. In certain circumstances, such as an air-gapped network compromise, exfiltration could occur via a physical medium or device introduced by a user. Such media could be an external hard drive, USB drive, cellular phone, MP3 player, or other removable storage and processing device. The physical medium or device could be used as the final exfiltration point or to hop between otherwise disconnected systems.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "attack-pattern--3489cfc5-640f-4bb3-a103-9137b97de79f",
+    "platform": "macos|windows|linux",
+    "tid": "T1135",
+    "technique": "Network Share Discovery",
+    "tactic": "discovery",
+    "datasources": "command-execution|os-api-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may look for folders and drives shared on remote systems as a means of identifying sources of information to gather as a precursor for Collection and to identify potential systems of interest for Lateral Movement. Networks often contain shared network drives and folders that enable users to access file directories on various systems across a network. \n\nFile sharing over a Windows network occurs over the SMB protocol. (Citation: Wikipedia Shared Resource) (Citation: TechNet Shared Folder) [Net](https://attack.mitre.org/software/S0039) can be used to query a remote system for available shared drives using the <code>net view \\\\\\\\remotesystem</code> command. It can also be used to query shared drives on the local system using <code>net share</code>. For macOS, the <code>sharing -l</code> command lists all shared points used for smb services.",
+    "technique_references": [
+      {
+        "source_name": "Wikipedia Shared Resource",
+        "url": "https://en.wikipedia.org/wiki/Shared_resource",
+        "description": "Wikipedia. (2017, April 15). Shared resource. Retrieved June 30, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Shared Folder",
+        "url": "https://technet.microsoft.com/library/cc770880.aspx",
+        "description": "Microsoft. (n.d.). Share a Folder or Drive. Retrieved June 30, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

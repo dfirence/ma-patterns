@@ -1,0 +1,23 @@
+[
+  [
+    "mailsniper",
+    "T1087.003",
+    "Email Account",
+    "command-execution|process-creation",
+    "T1087.003::[MailSniper] can be used to obtain account names from Exchange and Office 365 using the Get-GlobalAddressList cmdlet."
+  ],
+  [
+    "mailsniper",
+    "T1110.003",
+    "Password Spraying",
+    "application-log-content|user-account-authentication",
+    "T1110.003::[MailSniper] can be used for password spraying against Exchange and Office 365."
+  ],
+  [
+    "mailsniper",
+    "T1114.002",
+    "Remote Email Collection",
+    "command-execution|logon-session-creation|network-connection-creation",
+    "T1114.002::[MailSniper] can be used for searching through email in Exchange and Office 365 environments."
+  ]
+]

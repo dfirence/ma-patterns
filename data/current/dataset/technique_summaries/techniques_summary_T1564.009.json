@@ -1,0 +1,55 @@
+[
+  {
+    "id": "attack-pattern--b22e5153-ac28-4cc6-865c-2054e36285cb",
+    "platform": "macos",
+    "tid": "T1564.009",
+    "technique": "Resource Forking",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|file-creation|file-metadata|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse resource forks to hide malicious code or executables to evade detection and bypass security applications. A resource fork provides applications a structured way to store resources such as thumbnail images, menu definitions, icons, dialog boxes, and code.(Citation: macOS Hierarchical File System Overview) Usage of a resource fork is identifiable when displaying a file’s extended attributes, using <code>ls -l@</code> or <code>xattr -l</code> commands. Resource forks have been deprecated and replaced with the application bundle structure. Non-localized resources are placed at the top level directory of an application bundle, while localized resources are placed in the <code>/Resources</code> folder.(Citation: Resource and Data Forks)(Citation: ELC Extended Attributes)\n\nAdversaries can use resource forks to hide malicious data that may otherwise be stored directly in files. Adversaries can execute content with an attached resource fork, at a specified offset, that is moved to an executable location then invoked. Resource fork content may also be obfuscated/encrypted until execution.(Citation: sentinellabs resource named fork 2020)(Citation: tau bundlore erika noerenberg 2020)",
+    "technique_references": [
+      {
+        "source_name": "tau bundlore erika noerenberg 2020",
+        "url": "https://blogs.vmware.com/security/2020/06/tau-threat-analysis-bundlore-macos-mm-install-macos.html",
+        "description": "Erika Noerenberg. (2020, June 29). TAU Threat Analysis: Bundlore (macOS) mm-install-macos. Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Resource and Data Forks",
+        "url": "https://flylib.com/books/en/4.395.1.192/1/",
+        "description": "Flylib. (n.d.). Identifying Resource and Data Forks. Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ELC Extended Attributes",
+        "url": "https://eclecticlight.co/2020/10/24/theres-more-to-files-than-data-extended-attributes/",
+        "description": "Howard Oakley. (2020, October 24). There's more to files than data: Extended Attributes. Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "sentinellabs resource named fork 2020",
+        "url": "https://www.sentinelone.com/labs/resourceful-macos-malware-hides-in-named-fork/",
+        "description": "Phil Stokes. (2020, November 5). Resourceful macOS Malware Hides in Named Fork. Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "macOS Hierarchical File System Overview",
+        "url": "http://tenon.com/products/codebuilder/User_Guide/6_File_Systems.html#anchor520553",
+        "description": "Tenon. (n.d.). Retrieved October 12, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

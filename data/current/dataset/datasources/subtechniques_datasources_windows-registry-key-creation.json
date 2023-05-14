@@ -1,0 +1,1247 @@
+[
+  {
+    "id": "attack-pattern--02c5abff-30bf-4703-ab92-1f6072fae939",
+    "platform": "windows",
+    "tid": "T1027.011",
+    "technique": "Fileless Storage",
+    "tactic": "defense-evasion",
+    "datasources": "windows-registry-key-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may store data in \"fileless\" formats to conceal malicious activity from defenses. Fileless storage can be broadly defined as any format other than a file. Common examples of non-volatile fileless storage include the Windows Registry, event logs, or WMI repository.(Citation: Microsoft Fileless)(Citation: SecureList Fileless)\n\nSimilar to fileless in-memory behaviors such as [Reflective Code Loading](https://attack.mitre.org/techniques/T1620) and [Process Injection](https://attack.mitre.org/techniques/T1055), fileless data storage may remain undetected by anti-virus and other endpoint security tools that can only access specific file formats from disk storage.\n\nAdversaries may use fileless storage to conceal various types of stored data, including payloads/shellcode (potentially being used as part of [Persistence](https://attack.mitre.org/tactics/TA0003)) and collected data not yet exfiltrated from the victim (e.g., [Local Data Staging](https://attack.mitre.org/techniques/T1074/001)). Adversaries also often encrypt, encode, splice, or otherwise obfuscate this fileless data when stored.\n\nSome forms of fileless storage activity may indirectly create artifacts in the file system, but in central and otherwise difficult to inspect formats such as the WMI (e.g., `%SystemRoot%\\System32\\Wbem\\Repository`) or Registry (e.g., `%SystemRoot%\\System32\\Config`) physical files.(Citation: Microsoft Fileless) ",
+    "technique_references": [
+      {
+        "source_name": "SecureList Fileless",
+        "url": "https://securelist.com/a-new-secret-stash-for-fileless-malware/106393/",
+        "description": "Legezo, D. (2022, May 4). A new secret stash for “fileless” malware. Retrieved March 23, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Fileless",
+        "url": "https://learn.microsoft.com/microsoft-365/security/intelligence/fileless-threats",
+        "description": "Microsoft. (2023, February 6). Fileless threats. Retrieved March 23, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--eb125d40-0b2d-41ac-a71a-3229241c2cd3",
+    "platform": "windows",
+    "tid": "T1037.001",
+    "technique": "Logon Script (Windows)",
+    "tactic": "persistence",
+    "datasources": "windows-registry-key-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use Windows logon scripts automatically executed at logon initialization to establish persistence. Windows allows logon scripts to be run whenever a specific user or group of users log into a system.(Citation: TechNet Logon Scripts) This is done via adding a path to a script to the <code>HKCU\\Environment\\UserInitMprLogonScript</code> Registry key.(Citation: Hexacorn Logon Scripts)\n\nAdversaries may use these scripts to maintain persistence on a single system. Depending on the access configuration of the logon scripts, either local credentials or an administrator account may be necessary. ",
+    "technique_references": [
+      {
+        "source_name": "TechNet Logon Scripts",
+        "url": "https://technet.microsoft.com/en-us/library/cc758918(v=ws.10).aspx",
+        "description": "Microsoft. (2005, January 21). Creating logon scripts. Retrieved April 27, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Hexacorn Logon Scripts",
+        "url": "http://www.hexacorn.com/blog/2014/11/14/beyond-good-ol-run-key-part-18/",
+        "description": "Hexacorn. (2014, November 14). Beyond good ol’ Run key, Part 18. Retrieved November 15, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--eb125d40-0b2d-41ac-a71a-3229241c2cd3",
+    "platform": "windows",
+    "tid": "T1037.001",
+    "technique": "Logon Script (Windows)",
+    "tactic": "privilege-escalation",
+    "datasources": "windows-registry-key-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use Windows logon scripts automatically executed at logon initialization to establish persistence. Windows allows logon scripts to be run whenever a specific user or group of users log into a system.(Citation: TechNet Logon Scripts) This is done via adding a path to a script to the <code>HKCU\\Environment\\UserInitMprLogonScript</code> Registry key.(Citation: Hexacorn Logon Scripts)\n\nAdversaries may use these scripts to maintain persistence on a single system. Depending on the access configuration of the logon scripts, either local credentials or an administrator account may be necessary. ",
+    "technique_references": [
+      {
+        "source_name": "TechNet Logon Scripts",
+        "url": "https://technet.microsoft.com/en-us/library/cc758918(v=ws.10).aspx",
+        "description": "Microsoft. (2005, January 21). Creating logon scripts. Retrieved April 27, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Hexacorn Logon Scripts",
+        "url": "http://www.hexacorn.com/blog/2014/11/14/beyond-good-ol-run-key-part-18/",
+        "description": "Hexacorn. (2014, November 14). Beyond good ol’ Run key, Part 18. Retrieved November 15, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+    "platform": "windows",
+    "tid": "T1053.005",
+    "technique": "Scheduled Task",
+    "tactic": "execution",
+    "datasources": "windows-registry-key-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse the Windows Task Scheduler to perform task scheduling for initial or recurring execution of malicious code. There are multiple ways to access the Task Scheduler in Windows. The [schtasks](https://attack.mitre.org/software/S0111) utility can be run directly on the command line, or the Task Scheduler can be opened through the GUI within the Administrator Tools section of the Control Panel. In some cases, adversaries have used a .NET wrapper for the Windows Task Scheduler, and alternatively, adversaries have used the Windows netapi32 library to create a scheduled task.\n\nThe deprecated [at](https://attack.mitre.org/software/S0110) utility could also be abused by adversaries (ex: [At](https://attack.mitre.org/techniques/T1053/002)), though <code>at.exe</code> can not access tasks created with <code>schtasks</code> or the Control Panel.\n\nAn adversary may use Windows Task Scheduler to execute programs at system startup or on a scheduled basis for persistence. The Windows Task Scheduler can also be abused to conduct remote Execution as part of Lateral Movement and/or to run a process under the context of a specified account (such as SYSTEM). Similar to [System Binary Proxy Execution](https://attack.mitre.org/techniques/T1218), adversaries have also abused the Windows Task Scheduler to potentially mask one-time execution under signed/trusted system processes.(Citation: ProofPoint Serpent)\n\nAdversaries may also create \"hidden\" scheduled tasks (i.e. [Hide Artifacts](https://attack.mitre.org/techniques/T1564)) that may not be visible to defender tools and manual queries used to enumerate tasks. Specifically, an adversary may hide a task from `schtasks /query` and the Task Scheduler by deleting the associated Security Descriptor (SD) registry value (where deletion of this value must be completed using SYSTEM permissions).(Citation: SigmaHQ)(Citation: Tarrask scheduled task) Adversaries may also employ alternate methods to hide tasks, such as altering the metadata (e.g., `Index` value) within associated registry keys.(Citation: Defending Against Scheduled Task Attacks in Windows Environments) ",
+    "technique_references": [
+      {
+        "source_name": "SigmaHQ",
+        "url": "https://github.com/SigmaHQ/sigma/blob/master/rules/windows/registry/registry_delete/registry_delete_removal_sd_value_scheduled_task_hide.yml",
+        "description": "BlackB0lt. (2022, April 15). https://github.com/SigmaHQ/sigma/blob/master/rules/windows/registry/registry_delete/registry_delete_removal_sd_value_scheduled_task_hide.yml. Retrieved June 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ProofPoint Serpent",
+        "url": "https://www.proofpoint.com/us/blog/threat-insight/serpent-no-swiping-new-backdoor-targets-french-entities-unique-attack-chain",
+        "description": "Campbell, B. et al. (2022, March 21). Serpent, No Swiping! New Backdoor Targets French Entities with Unique Attack Chain. Retrieved April 11, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Defending Against Scheduled Task Attacks in Windows Environments",
+        "url": "https://blog.qualys.com/vulnerabilities-threat-research/2022/06/20/defending-against-scheduled-task-attacks-in-windows-environments",
+        "description": "Harshal Tupsamudre. (2022, June 20). Defending Against Scheduled Tasks. Retrieved July 5, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Twitter Leoloobeek Scheduled Task",
+        "url": "https://twitter.com/leoloobeek/status/939248813465853953",
+        "description": "Loobeek, L. (2017, December 8). leoloobeek Status. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Tarrask scheduled task",
+        "url": "https://www.microsoft.com/security/blog/2022/04/12/tarrask-malware-uses-scheduled-tasks-for-defense-evasion/",
+        "description": "Microsoft Threat Intelligence Team & Detection and Response Team . (2022, April 12). Tarrask malware uses scheduled tasks for defense evasion. Retrieved June 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Scheduled Task Events Win10",
+        "url": "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/audit-other-object-access-events",
+        "description": "Microsoft. (2017, May 28). Audit Other Object Access Events. Retrieved June 27, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Scheduled Task Events",
+        "url": "https://technet.microsoft.com/library/dd315590.aspx",
+        "description": "Microsoft. (n.d.). General Task Registration. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Autoruns",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb963902",
+        "description": "Russinovich, M. (2016, January 4). Autoruns for Windows v13.51. Retrieved June 6, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Forum Scheduled Task Operational Setting",
+        "url": "https://social.technet.microsoft.com/Forums/en-US/e5bca729-52e7-4fcb-ba12-3225c564674c/scheduled-tasks-history-retention-settings?forum=winserver8gen",
+        "description": "Satyajit321. (2015, November 3). Scheduled Tasks History Retention settings. Retrieved December 12, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+    "platform": "windows",
+    "tid": "T1053.005",
+    "technique": "Scheduled Task",
+    "tactic": "persistence",
+    "datasources": "windows-registry-key-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse the Windows Task Scheduler to perform task scheduling for initial or recurring execution of malicious code. There are multiple ways to access the Task Scheduler in Windows. The [schtasks](https://attack.mitre.org/software/S0111) utility can be run directly on the command line, or the Task Scheduler can be opened through the GUI within the Administrator Tools section of the Control Panel. In some cases, adversaries have used a .NET wrapper for the Windows Task Scheduler, and alternatively, adversaries have used the Windows netapi32 library to create a scheduled task.\n\nThe deprecated [at](https://attack.mitre.org/software/S0110) utility could also be abused by adversaries (ex: [At](https://attack.mitre.org/techniques/T1053/002)), though <code>at.exe</code> can not access tasks created with <code>schtasks</code> or the Control Panel.\n\nAn adversary may use Windows Task Scheduler to execute programs at system startup or on a scheduled basis for persistence. The Windows Task Scheduler can also be abused to conduct remote Execution as part of Lateral Movement and/or to run a process under the context of a specified account (such as SYSTEM). Similar to [System Binary Proxy Execution](https://attack.mitre.org/techniques/T1218), adversaries have also abused the Windows Task Scheduler to potentially mask one-time execution under signed/trusted system processes.(Citation: ProofPoint Serpent)\n\nAdversaries may also create \"hidden\" scheduled tasks (i.e. [Hide Artifacts](https://attack.mitre.org/techniques/T1564)) that may not be visible to defender tools and manual queries used to enumerate tasks. Specifically, an adversary may hide a task from `schtasks /query` and the Task Scheduler by deleting the associated Security Descriptor (SD) registry value (where deletion of this value must be completed using SYSTEM permissions).(Citation: SigmaHQ)(Citation: Tarrask scheduled task) Adversaries may also employ alternate methods to hide tasks, such as altering the metadata (e.g., `Index` value) within associated registry keys.(Citation: Defending Against Scheduled Task Attacks in Windows Environments) ",
+    "technique_references": [
+      {
+        "source_name": "SigmaHQ",
+        "url": "https://github.com/SigmaHQ/sigma/blob/master/rules/windows/registry/registry_delete/registry_delete_removal_sd_value_scheduled_task_hide.yml",
+        "description": "BlackB0lt. (2022, April 15). https://github.com/SigmaHQ/sigma/blob/master/rules/windows/registry/registry_delete/registry_delete_removal_sd_value_scheduled_task_hide.yml. Retrieved June 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ProofPoint Serpent",
+        "url": "https://www.proofpoint.com/us/blog/threat-insight/serpent-no-swiping-new-backdoor-targets-french-entities-unique-attack-chain",
+        "description": "Campbell, B. et al. (2022, March 21). Serpent, No Swiping! New Backdoor Targets French Entities with Unique Attack Chain. Retrieved April 11, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Defending Against Scheduled Task Attacks in Windows Environments",
+        "url": "https://blog.qualys.com/vulnerabilities-threat-research/2022/06/20/defending-against-scheduled-task-attacks-in-windows-environments",
+        "description": "Harshal Tupsamudre. (2022, June 20). Defending Against Scheduled Tasks. Retrieved July 5, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Twitter Leoloobeek Scheduled Task",
+        "url": "https://twitter.com/leoloobeek/status/939248813465853953",
+        "description": "Loobeek, L. (2017, December 8). leoloobeek Status. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Tarrask scheduled task",
+        "url": "https://www.microsoft.com/security/blog/2022/04/12/tarrask-malware-uses-scheduled-tasks-for-defense-evasion/",
+        "description": "Microsoft Threat Intelligence Team & Detection and Response Team . (2022, April 12). Tarrask malware uses scheduled tasks for defense evasion. Retrieved June 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Scheduled Task Events Win10",
+        "url": "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/audit-other-object-access-events",
+        "description": "Microsoft. (2017, May 28). Audit Other Object Access Events. Retrieved June 27, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Scheduled Task Events",
+        "url": "https://technet.microsoft.com/library/dd315590.aspx",
+        "description": "Microsoft. (n.d.). General Task Registration. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Autoruns",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb963902",
+        "description": "Russinovich, M. (2016, January 4). Autoruns for Windows v13.51. Retrieved June 6, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Forum Scheduled Task Operational Setting",
+        "url": "https://social.technet.microsoft.com/Forums/en-US/e5bca729-52e7-4fcb-ba12-3225c564674c/scheduled-tasks-history-retention-settings?forum=winserver8gen",
+        "description": "Satyajit321. (2015, November 3). Scheduled Tasks History Retention settings. Retrieved December 12, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+    "platform": "windows",
+    "tid": "T1053.005",
+    "technique": "Scheduled Task",
+    "tactic": "privilege-escalation",
+    "datasources": "windows-registry-key-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse the Windows Task Scheduler to perform task scheduling for initial or recurring execution of malicious code. There are multiple ways to access the Task Scheduler in Windows. The [schtasks](https://attack.mitre.org/software/S0111) utility can be run directly on the command line, or the Task Scheduler can be opened through the GUI within the Administrator Tools section of the Control Panel. In some cases, adversaries have used a .NET wrapper for the Windows Task Scheduler, and alternatively, adversaries have used the Windows netapi32 library to create a scheduled task.\n\nThe deprecated [at](https://attack.mitre.org/software/S0110) utility could also be abused by adversaries (ex: [At](https://attack.mitre.org/techniques/T1053/002)), though <code>at.exe</code> can not access tasks created with <code>schtasks</code> or the Control Panel.\n\nAn adversary may use Windows Task Scheduler to execute programs at system startup or on a scheduled basis for persistence. The Windows Task Scheduler can also be abused to conduct remote Execution as part of Lateral Movement and/or to run a process under the context of a specified account (such as SYSTEM). Similar to [System Binary Proxy Execution](https://attack.mitre.org/techniques/T1218), adversaries have also abused the Windows Task Scheduler to potentially mask one-time execution under signed/trusted system processes.(Citation: ProofPoint Serpent)\n\nAdversaries may also create \"hidden\" scheduled tasks (i.e. [Hide Artifacts](https://attack.mitre.org/techniques/T1564)) that may not be visible to defender tools and manual queries used to enumerate tasks. Specifically, an adversary may hide a task from `schtasks /query` and the Task Scheduler by deleting the associated Security Descriptor (SD) registry value (where deletion of this value must be completed using SYSTEM permissions).(Citation: SigmaHQ)(Citation: Tarrask scheduled task) Adversaries may also employ alternate methods to hide tasks, such as altering the metadata (e.g., `Index` value) within associated registry keys.(Citation: Defending Against Scheduled Task Attacks in Windows Environments) ",
+    "technique_references": [
+      {
+        "source_name": "SigmaHQ",
+        "url": "https://github.com/SigmaHQ/sigma/blob/master/rules/windows/registry/registry_delete/registry_delete_removal_sd_value_scheduled_task_hide.yml",
+        "description": "BlackB0lt. (2022, April 15). https://github.com/SigmaHQ/sigma/blob/master/rules/windows/registry/registry_delete/registry_delete_removal_sd_value_scheduled_task_hide.yml. Retrieved June 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ProofPoint Serpent",
+        "url": "https://www.proofpoint.com/us/blog/threat-insight/serpent-no-swiping-new-backdoor-targets-french-entities-unique-attack-chain",
+        "description": "Campbell, B. et al. (2022, March 21). Serpent, No Swiping! New Backdoor Targets French Entities with Unique Attack Chain. Retrieved April 11, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Defending Against Scheduled Task Attacks in Windows Environments",
+        "url": "https://blog.qualys.com/vulnerabilities-threat-research/2022/06/20/defending-against-scheduled-task-attacks-in-windows-environments",
+        "description": "Harshal Tupsamudre. (2022, June 20). Defending Against Scheduled Tasks. Retrieved July 5, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Twitter Leoloobeek Scheduled Task",
+        "url": "https://twitter.com/leoloobeek/status/939248813465853953",
+        "description": "Loobeek, L. (2017, December 8). leoloobeek Status. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Tarrask scheduled task",
+        "url": "https://www.microsoft.com/security/blog/2022/04/12/tarrask-malware-uses-scheduled-tasks-for-defense-evasion/",
+        "description": "Microsoft Threat Intelligence Team & Detection and Response Team . (2022, April 12). Tarrask malware uses scheduled tasks for defense evasion. Retrieved June 1, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Scheduled Task Events Win10",
+        "url": "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/audit-other-object-access-events",
+        "description": "Microsoft. (2017, May 28). Audit Other Object Access Events. Retrieved June 27, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Scheduled Task Events",
+        "url": "https://technet.microsoft.com/library/dd315590.aspx",
+        "description": "Microsoft. (n.d.). General Task Registration. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Autoruns",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb963902",
+        "description": "Russinovich, M. (2016, January 4). Autoruns for Windows v13.51. Retrieved June 6, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Forum Scheduled Task Operational Setting",
+        "url": "https://social.technet.microsoft.com/Forums/en-US/e5bca729-52e7-4fcb-ba12-3225c564674c/scheduled-tasks-history-retention-settings?forum=winserver8gen",
+        "description": "Satyajit321. (2015, November 3). Scheduled Tasks History Retention settings. Retrieved December 12, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--79a47ad0-fc3b-4821-9f01-a026b1ddba21",
+    "platform": "windows|office-365",
+    "tid": "T1137.001",
+    "technique": "Office Template Macros",
+    "tactic": "persistence",
+    "datasources": "windows-registry-key-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse Microsoft Office templates to obtain persistence on a compromised system. Microsoft Office contains templates that are part of common Office applications and are used to customize styles. The base templates within the application are used each time an application starts. (Citation: Microsoft Change Normal Template)\n\nOffice Visual Basic for Applications (VBA) macros (Citation: MSDN VBA in Office) can be inserted into the base template and used to execute code when the respective Office application starts in order to obtain persistence. Examples for both Word and Excel have been discovered and published. By default, Word has a Normal.dotm template created that can be modified to include a malicious macro. Excel does not have a template file created by default, but one can be added that will automatically be loaded.(Citation: enigma0x3 normal.dotm)(Citation: Hexacorn Office Template Macros) Shared templates may also be stored and pulled from remote locations.(Citation: GlobalDotName Jun 2019) \n\nWord Normal.dotm location:<br>\n<code>C:\\Users\\&lt;username&gt;\\AppData\\Roaming\\Microsoft\\Templates\\Normal.dotm</code>\n\nExcel Personal.xlsb location:<br>\n<code>C:\\Users\\&lt;username&gt;\\AppData\\Roaming\\Microsoft\\Excel\\XLSTART\\PERSONAL.XLSB</code>\n\nAdversaries may also change the location of the base template to point to their own by hijacking the application's search order, e.g. Word 2016 will first look for Normal.dotm under <code>C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\</code>, or by modifying the GlobalDotName registry key. By modifying the GlobalDotName registry key an adversary can specify an arbitrary location, file name, and file extension to use for the template that will be loaded on application startup. To abuse GlobalDotName, adversaries may first need to register the template as a trusted document or place it in a trusted location.(Citation: GlobalDotName Jun 2019) \n\nAn adversary may need to enable macros to execute unrestricted depending on the system or enterprise security policy on use of macros.",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Change Normal Template",
+        "url": "https://support.office.com/article/Change-the-Normal-template-Normal-dotm-06de294b-d216-47f6-ab77-ccb5166f98ea",
+        "description": "Microsoft. (n.d.). Change the Normal template (Normal.dotm). Retrieved July 3, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MSDN VBA in Office",
+        "url": "https://msdn.microsoft.com/en-us/vba/office-shared-vba/articles/getting-started-with-vba-in-office",
+        "description": "Austin, J. (2017, June 6). Getting Started with VBA in Office. Retrieved July 3, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "enigma0x3 normal.dotm",
+        "url": "https://enigma0x3.net/2014/01/23/maintaining-access-with-normal-dotm/comment-page-1/",
+        "description": "Nelson, M. (2014, January 23). Maintaining Access with normal.dotm. Retrieved July 3, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Hexacorn Office Template Macros",
+        "url": "http://www.hexacorn.com/blog/2017/04/19/beyond-good-ol-run-key-part-62/",
+        "description": "Hexacorn. (2017, April 17). Beyond good ol’ Run key, Part 62. Retrieved July 3, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GlobalDotName Jun 2019",
+        "url": "https://www.221bluestreet.com/post/office-templates-and-globaldotname-a-stealthy-office-persistence-technique",
+        "description": "Shukrun, S. (2019, June 2). Office Templates and GlobalDotName - A Stealthy Office Persistence Technique. Retrieved August 26, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CrowdStrike Outlook Forms",
+        "url": "https://malware.news/t/using-outlook-forms-for-lateral-movement-and-persistence/13746",
+        "description": "Parisi, T., et al. (2017, July). Using Outlook Forms for Lateral Movement and Persistence. Retrieved February 5, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Outlook Today Home Page",
+        "url": "https://medium.com/@bwtech789/outlook-today-homepage-persistence-33ea9b505943",
+        "description": "Soutcast. (2018, September 14). Outlook Today Homepage Persistence. Retrieved February 5, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--ed7efd4d-ce28-4a19-a8e6-c58011eb2c7a",
+    "platform": "windows|office-365",
+    "tid": "T1137.002",
+    "technique": "Office Test",
+    "tactic": "persistence",
+    "datasources": "windows-registry-key-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse the Microsoft Office \"Office Test\" Registry key to obtain persistence on a compromised system. An Office Test Registry location exists that allows a user to specify an arbitrary DLL that will be executed every time an Office application is started. This Registry key is thought to be used by Microsoft to load DLLs for testing and debugging purposes while developing Office applications. This Registry key is not created by default during an Office installation.(Citation: Hexacorn Office Test)(Citation: Palo Alto Office Test Sofacy)\n\nThere exist user and global Registry keys for the Office Test feature:\n\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Office test\\Special\\Perf</code>\n* <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Office test\\Special\\Perf</code>\n\nAdversaries may add this Registry key and specify a malicious DLL that will be executed whenever an Office application, such as Word or Excel, is started.",
+    "technique_references": [
+      {
+        "source_name": "Hexacorn Office Test",
+        "url": "http://www.hexacorn.com/blog/2014/04/16/beyond-good-ol-run-key-part-10/",
+        "description": "Hexacorn. (2014, April 16). Beyond good ol’ Run key, Part 10. Retrieved July 3, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Palo Alto Office Test Sofacy",
+        "url": "https://researchcenter.paloaltonetworks.com/2016/07/unit42-technical-walkthrough-office-test-persistence-method-used-in-recent-sofacy-attacks/",
+        "description": "Falcone, R. (2016, July 20). Technical Walkthrough: Office Test Persistence Method Used In Recent Sofacy Attacks. Retrieved July 3, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--34f1d81d-fe88-4f97-bd3b-a3164536255d",
+    "platform": "windows|office-365",
+    "tid": "T1137.006",
+    "technique": "Add-ins",
+    "tactic": "persistence",
+    "datasources": "windows-registry-key-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse Microsoft Office add-ins to obtain persistence on a compromised system. Office add-ins can be used to add functionality to Office programs. (Citation: Microsoft Office Add-ins) There are different types of add-ins that can be used by the various Office products; including Word/Excel add-in Libraries (WLL/XLL), VBA add-ins, Office Component Object Model (COM) add-ins, automation add-ins, VBA Editor (VBE), Visual Studio Tools for Office (VSTO) add-ins, and Outlook add-ins. (Citation: MRWLabs Office Persistence Add-ins)(Citation: FireEye Mail CDS 2018)\n\nAdd-ins can be used to obtain persistence because they can be set to execute code when an Office application starts. ",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Office Add-ins",
+        "url": "https://support.office.com/article/Add-or-remove-add-ins-0af570c4-5cf3-4fa9-9b88-403625a0b460",
+        "description": "Microsoft. (n.d.). Add or remove add-ins. Retrieved July 3, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MRWLabs Office Persistence Add-ins",
+        "url": "https://labs.mwrinfosecurity.com/blog/add-in-opportunities-for-office-persistence/",
+        "description": "Knowles, W. (2017, April 21). Add-In Opportunities for Office Persistence. Retrieved July 3, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye Mail CDS 2018",
+        "url": "https://summit.fireeye.com/content/dam/fireeye-www/summit/cds-2018/presentations/cds18-technical-s03-youve-got-mail.pdf",
+        "description": "Caban, D. and Hirani, M. (2018, October 3). You’ve Got Mail! Enterprise Email Compromise. Retrieved April 22, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GlobalDotName Jun 2019",
+        "url": "https://www.221bluestreet.com/post/office-templates-and-globaldotname-a-stealthy-office-persistence-technique",
+        "description": "Shukrun, S. (2019, June 2). Office Templates and GlobalDotName - A Stealthy Office Persistence Technique. Retrieved August 26, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--2959d63f-73fd-46a1-abd2-109d7dcede32",
+    "platform": "windows",
+    "tid": "T1543.003",
+    "technique": "Windows Service",
+    "tactic": "persistence",
+    "datasources": "windows-registry-key-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may create or modify Windows services to repeatedly execute malicious payloads as part of persistence. When Windows boots up, it starts programs or applications called services that perform background system functions.(Citation: TechNet Services) Windows service configuration information, including the file path to the service's executable or recovery programs/commands, is stored in the Windows Registry.\n\nAdversaries may install a new service or modify an existing service to execute at startup in order to persist on a system. Service configurations can be set or modified using system utilities (such as sc.exe), by directly modifying the Registry, or by interacting directly with the Windows API. \n\nAdversaries may also use services to install and execute malicious drivers. For example, after dropping a driver file (ex: `.sys`) to disk, the payload can be loaded and registered via [Native API](https://attack.mitre.org/techniques/T1106) functions such as `CreateServiceW()` (or manually via functions such as `ZwLoadDriver()` and `ZwSetValueKey()`), by creating the required service Registry values (i.e. [Modify Registry](https://attack.mitre.org/techniques/T1112)), or by using command-line utilities such as `PnPUtil.exe`.(Citation: Symantec W.32 Stuxnet Dossier)(Citation: Crowdstrike DriveSlayer February 2022)(Citation: Unit42 AcidBox June 2020) Adversaries may leverage these drivers as [Rootkit](https://attack.mitre.org/techniques/T1014)s to hide the presence of malicious activity on a system. Adversaries may also load a signed yet vulnerable driver onto a compromised machine (known as \"Bring Your Own Vulnerable Driver\" (BYOVD)) as part of [Exploitation for Privilege Escalation](https://attack.mitre.org/techniques/T1068).(Citation: ESET InvisiMole June 2020)(Citation: Unit42 AcidBox June 2020)\n\nServices may be created with administrator privileges but are executed under SYSTEM privileges, so an adversary may also use a service to escalate privileges. Adversaries may also directly start services through [Service Execution](https://attack.mitre.org/techniques/T1569/002). To make detection analysis more challenging, malicious services may also incorporate [Masquerade Task or Service](https://attack.mitre.org/techniques/T1036/004) (ex: using a service and/or payload name related to a legitimate OS or benign software component).",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Windows Event Forwarding FEB 2018",
+        "url": "https://docs.microsoft.com/windows/security/threat-protection/use-windows-event-forwarding-to-assist-in-intrusion-detection",
+        "description": "Hardy, T. & Hall, J. (2018, February 15). Use Windows Event Forwarding to help with intrusion detection. Retrieved August 7, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ESET InvisiMole June 2020",
+        "url": "https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf",
+        "description": "Hromcova, Z. and Cherpanov, A. (2020, June). INVISIMOLE: THE HIDDEN PART OF THE STORY. Retrieved July 16, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Services",
+        "url": "https://technet.microsoft.com/en-us/library/cc772408.aspx",
+        "description": "Microsoft. (n.d.). Services. Retrieved June 7, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft 4697 APR 2017",
+        "url": "https://docs.microsoft.com/windows/security/threat-protection/auditing/event-4697",
+        "description": "Miroshnikov, A. & Hall, J. (2017, April 18). 4697(S): A service was installed in the system. Retrieved August 7, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Symantec W.32 Stuxnet Dossier",
+        "url": "https://www.wired.com/images_blogs/threatlevel/2010/11/w32_stuxnet_dossier.pdf",
+        "description": "Nicolas Falliere, Liam O. Murchu, Eric Chien. (2011, February). W32.Stuxnet Dossier. Retrieved December 7, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Unit42 AcidBox June 2020",
+        "url": "https://unit42.paloaltonetworks.com/acidbox-rare-malware/",
+        "description": "Reichel, D. and Idrizovic, E. (2020, June 17). AcidBox: Rare Malware Repurposing Turla Group Exploit Targeted Russian Organizations. Retrieved March 16, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Autoruns",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb963902",
+        "description": "Russinovich, M. (2016, January 4). Autoruns for Windows v13.51. Retrieved June 6, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Crowdstrike DriveSlayer February 2022",
+        "url": "https://www.crowdstrike.com/blog/how-crowdstrike-falcon-protects-against-wiper-malware-used-in-ukraine-attacks/",
+        "description": "Thomas, W. et al. (2022, February 25). CrowdStrike Falcon Protects from New Wiper Malware Used in Ukraine Cyberattacks. Retrieved March 25, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "administrator|system",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--2959d63f-73fd-46a1-abd2-109d7dcede32",
+    "platform": "windows",
+    "tid": "T1543.003",
+    "technique": "Windows Service",
+    "tactic": "privilege-escalation",
+    "datasources": "windows-registry-key-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may create or modify Windows services to repeatedly execute malicious payloads as part of persistence. When Windows boots up, it starts programs or applications called services that perform background system functions.(Citation: TechNet Services) Windows service configuration information, including the file path to the service's executable or recovery programs/commands, is stored in the Windows Registry.\n\nAdversaries may install a new service or modify an existing service to execute at startup in order to persist on a system. Service configurations can be set or modified using system utilities (such as sc.exe), by directly modifying the Registry, or by interacting directly with the Windows API. \n\nAdversaries may also use services to install and execute malicious drivers. For example, after dropping a driver file (ex: `.sys`) to disk, the payload can be loaded and registered via [Native API](https://attack.mitre.org/techniques/T1106) functions such as `CreateServiceW()` (or manually via functions such as `ZwLoadDriver()` and `ZwSetValueKey()`), by creating the required service Registry values (i.e. [Modify Registry](https://attack.mitre.org/techniques/T1112)), or by using command-line utilities such as `PnPUtil.exe`.(Citation: Symantec W.32 Stuxnet Dossier)(Citation: Crowdstrike DriveSlayer February 2022)(Citation: Unit42 AcidBox June 2020) Adversaries may leverage these drivers as [Rootkit](https://attack.mitre.org/techniques/T1014)s to hide the presence of malicious activity on a system. Adversaries may also load a signed yet vulnerable driver onto a compromised machine (known as \"Bring Your Own Vulnerable Driver\" (BYOVD)) as part of [Exploitation for Privilege Escalation](https://attack.mitre.org/techniques/T1068).(Citation: ESET InvisiMole June 2020)(Citation: Unit42 AcidBox June 2020)\n\nServices may be created with administrator privileges but are executed under SYSTEM privileges, so an adversary may also use a service to escalate privileges. Adversaries may also directly start services through [Service Execution](https://attack.mitre.org/techniques/T1569/002). To make detection analysis more challenging, malicious services may also incorporate [Masquerade Task or Service](https://attack.mitre.org/techniques/T1036/004) (ex: using a service and/or payload name related to a legitimate OS or benign software component).",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Windows Event Forwarding FEB 2018",
+        "url": "https://docs.microsoft.com/windows/security/threat-protection/use-windows-event-forwarding-to-assist-in-intrusion-detection",
+        "description": "Hardy, T. & Hall, J. (2018, February 15). Use Windows Event Forwarding to help with intrusion detection. Retrieved August 7, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ESET InvisiMole June 2020",
+        "url": "https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf",
+        "description": "Hromcova, Z. and Cherpanov, A. (2020, June). INVISIMOLE: THE HIDDEN PART OF THE STORY. Retrieved July 16, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Services",
+        "url": "https://technet.microsoft.com/en-us/library/cc772408.aspx",
+        "description": "Microsoft. (n.d.). Services. Retrieved June 7, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft 4697 APR 2017",
+        "url": "https://docs.microsoft.com/windows/security/threat-protection/auditing/event-4697",
+        "description": "Miroshnikov, A. & Hall, J. (2017, April 18). 4697(S): A service was installed in the system. Retrieved August 7, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Symantec W.32 Stuxnet Dossier",
+        "url": "https://www.wired.com/images_blogs/threatlevel/2010/11/w32_stuxnet_dossier.pdf",
+        "description": "Nicolas Falliere, Liam O. Murchu, Eric Chien. (2011, February). W32.Stuxnet Dossier. Retrieved December 7, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Unit42 AcidBox June 2020",
+        "url": "https://unit42.paloaltonetworks.com/acidbox-rare-malware/",
+        "description": "Reichel, D. and Idrizovic, E. (2020, June 17). AcidBox: Rare Malware Repurposing Turla Group Exploit Targeted Russian Organizations. Retrieved March 16, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Autoruns",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb963902",
+        "description": "Russinovich, M. (2016, January 4). Autoruns for Windows v13.51. Retrieved June 6, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Crowdstrike DriveSlayer February 2022",
+        "url": "https://www.crowdstrike.com/blog/how-crowdstrike-falcon-protects-against-wiper-malware-used-in-ukraine-attacks/",
+        "description": "Thomas, W. et al. (2022, February 25). CrowdStrike Falcon Protects from New Wiper Malware Used in Ukraine Cyberattacks. Retrieved March 25, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "administrator|system",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--9efb1ea7-c37b-4595-9640-b7680cd84279",
+    "platform": "windows",
+    "tid": "T1547.001",
+    "technique": "Registry Run Keys / Startup Folder",
+    "tactic": "persistence",
+    "datasources": "windows-registry-key-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may achieve persistence by adding a program to a startup folder or referencing it with a Registry run key. Adding an entry to the \"run keys\" in the Registry or startup folder will cause the program referenced to be executed when a user logs in.(Citation: Microsoft Run Key) These programs will be executed under the context of the user and will have the account's associated permissions level.\n\nPlacing a program within a startup folder will also cause that program to execute when a user logs in. There is a startup folder location for individual user accounts as well as a system-wide startup folder that will be checked regardless of which user account logs in. The startup folder path for the current user is <code>C:\\Users\\\\[Username]\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup</code>. The startup folder path for all users is <code>C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp</code>.\n\nThe following run keys are created by default on Windows systems:\n\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run</code>\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce</code>\n* <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run</code>\n* <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce</code>\n\nRun keys may exist under multiple hives.(Citation: Microsoft Wow6432Node 2018)(Citation: Malwarebytes Wow6432Node 2016) The <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnceEx</code> is also available but is not created by default on Windows Vista and newer. Registry run key entries can reference programs directly or list them as a dependency.(Citation: Microsoft Run Key) For example, it is possible to load a DLL at logon using a \"Depend\" key with RunOnceEx: <code>reg add HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunOnceEx\\0001\\Depend /v 1 /d \"C:\\temp\\evil[.]dll\"</code> (Citation: Oddvar Moe RunOnceEx Mar 2018)\n\nThe following Registry keys can be used to set startup folder items for persistence:\n\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders</code>\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders</code>\n* <code>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders</code>\n* <code>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders</code>\n\nThe following Registry keys can control automatic startup of services during boot:\n\n* <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunServicesOnce</code>\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\RunServicesOnce</code>\n* <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunServices</code>\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\RunServices</code>\n\nUsing policy settings to specify startup programs creates corresponding values in either of two Registry keys:\n\n* <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\Run</code>\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\Run</code>\n\nThe Winlogon key controls actions that occur when a user logs on to a computer running Windows 7. Most of these actions are under the control of the operating system, but you can also add custom actions here. The <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Userinit</code> and <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Shell</code> subkeys can automatically launch programs.\n\nPrograms listed in the load value of the registry key <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows</code> run when any user logs on.\n\nBy default, the multistring <code>BootExecute</code> value of the registry key <code>HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Session Manager</code> is set to <code>autocheck autochk *</code>. This value causes Windows, at startup, to check the file-system integrity of the hard disks if the system has been shut down abnormally. Adversaries can add other programs or processes to this registry value which will automatically launch at boot.\n\nAdversaries can use these configuration locations to execute malware, such as remote access tools, to maintain persistence through system reboots. Adversaries may also use [Masquerading](https://attack.mitre.org/techniques/T1036) to make the Registry entries look as if they are associated with legitimate programs.",
+    "technique_references": [
+      {
+        "source_name": "Malwarebytes Wow6432Node 2016",
+        "url": "https://blog.malwarebytes.com/cybercrime/2013/10/hiding-in-plain-sight/",
+        "description": "Arntz, P. (2016, March 30). Hiding in Plain Sight. Retrieved August 3, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Wow6432Node 2018",
+        "url": "https://docs.microsoft.com/en-us/windows/win32/sysinfo/32-bit-and-64-bit-application-data-in-the-registry",
+        "description": "Microsoft. (2018, May 31). 32-bit and 64-bit Application Data in the Registry. Retrieved August 3, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Run Key",
+        "url": "http://msdn.microsoft.com/en-us/library/aa376977",
+        "description": "Microsoft. (n.d.). Run and RunOnce Registry Keys. Retrieved November 12, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Oddvar Moe RunOnceEx Mar 2018",
+        "url": "https://oddvar.moe/2018/03/21/persistence-using-runonceex-hidden-from-autoruns-exe/",
+        "description": "Moe, O. (2018, March 21). Persistence using RunOnceEx - Hidden from Autoruns.exe. Retrieved June 29, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Autoruns",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb963902",
+        "description": "Russinovich, M. (2016, January 4). Autoruns for Windows v13.51. Retrieved June 6, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--9efb1ea7-c37b-4595-9640-b7680cd84279",
+    "platform": "windows",
+    "tid": "T1547.001",
+    "technique": "Registry Run Keys / Startup Folder",
+    "tactic": "privilege-escalation",
+    "datasources": "windows-registry-key-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may achieve persistence by adding a program to a startup folder or referencing it with a Registry run key. Adding an entry to the \"run keys\" in the Registry or startup folder will cause the program referenced to be executed when a user logs in.(Citation: Microsoft Run Key) These programs will be executed under the context of the user and will have the account's associated permissions level.\n\nPlacing a program within a startup folder will also cause that program to execute when a user logs in. There is a startup folder location for individual user accounts as well as a system-wide startup folder that will be checked regardless of which user account logs in. The startup folder path for the current user is <code>C:\\Users\\\\[Username]\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup</code>. The startup folder path for all users is <code>C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp</code>.\n\nThe following run keys are created by default on Windows systems:\n\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run</code>\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce</code>\n* <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run</code>\n* <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce</code>\n\nRun keys may exist under multiple hives.(Citation: Microsoft Wow6432Node 2018)(Citation: Malwarebytes Wow6432Node 2016) The <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnceEx</code> is also available but is not created by default on Windows Vista and newer. Registry run key entries can reference programs directly or list them as a dependency.(Citation: Microsoft Run Key) For example, it is possible to load a DLL at logon using a \"Depend\" key with RunOnceEx: <code>reg add HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunOnceEx\\0001\\Depend /v 1 /d \"C:\\temp\\evil[.]dll\"</code> (Citation: Oddvar Moe RunOnceEx Mar 2018)\n\nThe following Registry keys can be used to set startup folder items for persistence:\n\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders</code>\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders</code>\n* <code>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders</code>\n* <code>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders</code>\n\nThe following Registry keys can control automatic startup of services during boot:\n\n* <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunServicesOnce</code>\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\RunServicesOnce</code>\n* <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunServices</code>\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\RunServices</code>\n\nUsing policy settings to specify startup programs creates corresponding values in either of two Registry keys:\n\n* <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\Run</code>\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\Run</code>\n\nThe Winlogon key controls actions that occur when a user logs on to a computer running Windows 7. Most of these actions are under the control of the operating system, but you can also add custom actions here. The <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Userinit</code> and <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Shell</code> subkeys can automatically launch programs.\n\nPrograms listed in the load value of the registry key <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows</code> run when any user logs on.\n\nBy default, the multistring <code>BootExecute</code> value of the registry key <code>HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Session Manager</code> is set to <code>autocheck autochk *</code>. This value causes Windows, at startup, to check the file-system integrity of the hard disks if the system has been shut down abnormally. Adversaries can add other programs or processes to this registry value which will automatically launch at boot.\n\nAdversaries can use these configuration locations to execute malware, such as remote access tools, to maintain persistence through system reboots. Adversaries may also use [Masquerading](https://attack.mitre.org/techniques/T1036) to make the Registry entries look as if they are associated with legitimate programs.",
+    "technique_references": [
+      {
+        "source_name": "Malwarebytes Wow6432Node 2016",
+        "url": "https://blog.malwarebytes.com/cybercrime/2013/10/hiding-in-plain-sight/",
+        "description": "Arntz, P. (2016, March 30). Hiding in Plain Sight. Retrieved August 3, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Wow6432Node 2018",
+        "url": "https://docs.microsoft.com/en-us/windows/win32/sysinfo/32-bit-and-64-bit-application-data-in-the-registry",
+        "description": "Microsoft. (2018, May 31). 32-bit and 64-bit Application Data in the Registry. Retrieved August 3, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Run Key",
+        "url": "http://msdn.microsoft.com/en-us/library/aa376977",
+        "description": "Microsoft. (n.d.). Run and RunOnce Registry Keys. Retrieved November 12, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Oddvar Moe RunOnceEx Mar 2018",
+        "url": "https://oddvar.moe/2018/03/21/persistence-using-runonceex-hidden-from-autoruns-exe/",
+        "description": "Moe, O. (2018, March 21). Persistence using RunOnceEx - Hidden from Autoruns.exe. Retrieved June 29, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Autoruns",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb963902",
+        "description": "Russinovich, M. (2016, January 4). Autoruns for Windows v13.51. Retrieved June 6, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--22522668-ddf6-470b-a027-9d6866679f67",
+    "platform": "windows",
+    "tid": "T1547.014",
+    "technique": "Active Setup",
+    "tactic": "persistence",
+    "datasources": "windows-registry-key-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may achieve persistence by adding a Registry key to the Active Setup of the local machine. Active Setup is a Windows mechanism that is used to execute programs when a user logs in. The value stored in the Registry key will be executed after a user logs into the computer.(Citation: Klein Active Setup 2010) These programs will be executed under the context of the user and will have the account's associated permissions level.\n\nAdversaries may abuse Active Setup by creating a key under <code> HKLM\\SOFTWARE\\Microsoft\\Active Setup\\Installed Components\\</code> and setting a malicious value for <code>StubPath</code>. This value will serve as the program that will be executed when a user logs into the computer.(Citation: Mandiant Glyer APT 2010)(Citation: Citizenlab Packrat 2015)(Citation: FireEye CFR Watering Hole 2012)(Citation: SECURELIST Bright Star 2015)(Citation: paloalto Tropic Trooper 2016)\n\nAdversaries can abuse these components to execute malware, such as remote access tools, to maintain persistence through system reboots. Adversaries may also use [Masquerading](https://attack.mitre.org/techniques/T1036) to make the Registry entries look as if they are associated with legitimate programs.",
+    "technique_references": [
+      {
+        "source_name": "SECURELIST Bright Star 2015",
+        "url": "https://securelist.com/whos-really-spreading-through-the-bright-star/68978/",
+        "description": "Baumgartner, K., Guerrero-Saade, J. (2015, March 4). Who’s Really Spreading through the Bright Star?. Retrieved December 18, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant Glyer APT 2010",
+        "url": "https://digital-forensics.sans.org/summit-archives/2010/35-glyer-apt-persistence-mechanisms.pdf",
+        "description": "Glyer, C. (2010). Examples of Recent APT Persistence Mechanism. Retrieved December 18, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye CFR Watering Hole 2012",
+        "url": "https://www.fireeye.com/blog/threat-research/2012/12/council-foreign-relations-water-hole-attack-details.html",
+        "description": "Kindlund, D. (2012, December 30). CFR Watering Hole Attack Details. Retrieved December 18, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Klein Active Setup 2010",
+        "url": "https://helgeklein.com/blog/2010/04/active-setup-explained/",
+        "description": "Klein, H. (2010, April 22). Active Setup Explained. Retrieved December 18, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "paloalto Tropic Trooper 2016",
+        "url": "https://unit42.paloaltonetworks.com/unit42-tropic-trooper-targets-taiwanese-government-and-fossil-fuel-provider-with-poison-ivy/",
+        "description": "Ray, V., et al. (2016, November 22). Tropic Trooper Targets Taiwanese Government and Fossil Fuel Provider With Poison Ivy. Retrieved December 18, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Autoruns",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb963902",
+        "description": "Russinovich, M. (2016, January 4). Autoruns for Windows v13.51. Retrieved June 6, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Citizenlab Packrat 2015",
+        "url": "https://citizenlab.ca/2015/12/packrat-report/",
+        "description": "Scott-Railton, J., et al. (2015, December 8). Packrat. Retrieved December 18, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--22522668-ddf6-470b-a027-9d6866679f67",
+    "platform": "windows",
+    "tid": "T1547.014",
+    "technique": "Active Setup",
+    "tactic": "privilege-escalation",
+    "datasources": "windows-registry-key-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may achieve persistence by adding a Registry key to the Active Setup of the local machine. Active Setup is a Windows mechanism that is used to execute programs when a user logs in. The value stored in the Registry key will be executed after a user logs into the computer.(Citation: Klein Active Setup 2010) These programs will be executed under the context of the user and will have the account's associated permissions level.\n\nAdversaries may abuse Active Setup by creating a key under <code> HKLM\\SOFTWARE\\Microsoft\\Active Setup\\Installed Components\\</code> and setting a malicious value for <code>StubPath</code>. This value will serve as the program that will be executed when a user logs into the computer.(Citation: Mandiant Glyer APT 2010)(Citation: Citizenlab Packrat 2015)(Citation: FireEye CFR Watering Hole 2012)(Citation: SECURELIST Bright Star 2015)(Citation: paloalto Tropic Trooper 2016)\n\nAdversaries can abuse these components to execute malware, such as remote access tools, to maintain persistence through system reboots. Adversaries may also use [Masquerading](https://attack.mitre.org/techniques/T1036) to make the Registry entries look as if they are associated with legitimate programs.",
+    "technique_references": [
+      {
+        "source_name": "SECURELIST Bright Star 2015",
+        "url": "https://securelist.com/whos-really-spreading-through-the-bright-star/68978/",
+        "description": "Baumgartner, K., Guerrero-Saade, J. (2015, March 4). Who’s Really Spreading through the Bright Star?. Retrieved December 18, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant Glyer APT 2010",
+        "url": "https://digital-forensics.sans.org/summit-archives/2010/35-glyer-apt-persistence-mechanisms.pdf",
+        "description": "Glyer, C. (2010). Examples of Recent APT Persistence Mechanism. Retrieved December 18, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye CFR Watering Hole 2012",
+        "url": "https://www.fireeye.com/blog/threat-research/2012/12/council-foreign-relations-water-hole-attack-details.html",
+        "description": "Kindlund, D. (2012, December 30). CFR Watering Hole Attack Details. Retrieved December 18, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Klein Active Setup 2010",
+        "url": "https://helgeklein.com/blog/2010/04/active-setup-explained/",
+        "description": "Klein, H. (2010, April 22). Active Setup Explained. Retrieved December 18, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "paloalto Tropic Trooper 2016",
+        "url": "https://unit42.paloaltonetworks.com/unit42-tropic-trooper-targets-taiwanese-government-and-fossil-fuel-provider-with-poison-ivy/",
+        "description": "Ray, V., et al. (2016, November 22). Tropic Trooper Targets Taiwanese Government and Fossil Fuel Provider With Poison Ivy. Retrieved December 18, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Autoruns",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb963902",
+        "description": "Russinovich, M. (2016, January 4). Autoruns for Windows v13.51. Retrieved June 6, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Citizenlab Packrat 2015",
+        "url": "https://citizenlab.ca/2015/12/packrat-report/",
+        "description": "Scott-Railton, J., et al. (2015, December 8). Packrat. Retrieved December 18, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--c615231b-f253-4f58-9d47-d5b4cbdb6839",
+    "platform": "linux|macos|windows",
+    "tid": "T1553.004",
+    "technique": "Install Root Certificate",
+    "tactic": "defense-evasion",
+    "datasources": "windows-registry-key-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may install a root certificate on a compromised system to avoid warnings when connecting to adversary controlled web servers. Root certificates are used in public key cryptography to identify a root certificate authority (CA). When a root certificate is installed, the system or application will trust certificates in the root's chain of trust that have been signed by the root certificate.(Citation: Wikipedia Root Certificate) Certificates are commonly used for establishing secure TLS/SSL communications within a web browser. When a user attempts to browse a website that presents a certificate that is not trusted an error message will be displayed to warn the user of the security risk. Depending on the security settings, the browser may not allow the user to establish a connection to the website.\n\nInstallation of a root certificate on a compromised system would give an adversary a way to degrade the security of that system. Adversaries have used this technique to avoid security warnings prompting users when compromised systems connect over HTTPS to adversary controlled web servers that spoof legitimate websites in order to collect login credentials.(Citation: Operation Emmental)\n\nAtypical root certificates have also been pre-installed on systems by the manufacturer or in the software supply chain and were used in conjunction with malware/adware to provide [Adversary-in-the-Middle](https://attack.mitre.org/techniques/T1557) capability for intercepting information transmitted over secure TLS/SSL communications.(Citation: Kaspersky Superfish)\n\nRoot certificates (and their associated chains) can also be cloned and reinstalled. Cloned certificate chains will carry many of the same metadata characteristics of the source and can be used to sign malicious code that may then bypass signature validation tools (ex: Sysinternals, antivirus, etc.) used to block execution and/or uncover artifacts of Persistence.(Citation: SpectorOps Code Signing Dec 2017)\n\nIn macOS, the Ay MaMi malware uses <code>/usr/bin/security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain /path/to/malicious/cert</code> to install a malicious certificate as a trusted root certificate into the system keychain.(Citation: objective-see ay mami 2018)",
+    "technique_references": [
+      {
+        "source_name": "Wikipedia Root Certificate",
+        "url": "https://en.wikipedia.org/wiki/Root_certificate",
+        "description": "Wikipedia. (2016, December 6). Root certificate. Retrieved February 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Operation Emmental",
+        "url": "http://www.trendmicro.com/cloud-content/us/pdfs/security-intelligence/white-papers/wp-finding-holes-operation-emmental.pdf",
+        "description": "Sancho, D., Hacquebord, F., Link, R. (2014, July 22). Finding Holes Operation Emmental. Retrieved February 9, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kaspersky Superfish",
+        "url": "https://www.kaspersky.com/blog/lenovo-pc-with-adware-superfish-preinstalled/7712/",
+        "description": "Onuma. (2015, February 24). Superfish: Adware Preinstalled on Lenovo Laptops. Retrieved February 20, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SpectorOps Code Signing Dec 2017",
+        "url": "https://posts.specterops.io/code-signing-certificate-cloning-attacks-and-defenses-6f98657fc6ec",
+        "description": "Graeber, M. (2017, December 22). Code Signing Certificate Cloning Attacks and Defenses. Retrieved April 3, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "objective-see ay mami 2018",
+        "url": "https://objective-see.com/blog/blog_0x26.html",
+        "description": "Patrick Wardle. (2018, January 11). Ay MaMi. Retrieved March 19, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Sigcheck May 2017",
+        "url": "https://docs.microsoft.com/sysinternals/downloads/sigcheck",
+        "description": "Russinovich, M. et al.. (2017, May 22). Sigcheck. Retrieved April 3, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Tripwire AppUNBlocker",
+        "url": "https://www.tripwire.com/state-of-security/off-topic/appunblocker-bypassing-applocker/",
+        "description": "Smith, T. (2016, October 27). AppUNBlocker: Bypassing AppLocker. Retrieved December 19, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--90c4a591-d02d-490b-92aa-619d9701ac04",
+    "platform": "windows",
+    "tid": "T1556.008",
+    "technique": "Network Provider DLL",
+    "tactic": "credential-access",
+    "datasources": "windows-registry-key-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may register malicious network provider dynamic link libraries (DLLs) to capture cleartext user credentials during the authentication process. Network provider DLLs allow Windows to interface with specific network protocols and can also support add-on credential management functions.(Citation: Network Provider API) During the logon process, Winlogon (the interactive logon module) sends credentials to the local `mpnotify.exe` process via RPC. The `mpnotify.exe` process then shares the credentials in cleartext with registered credential managers when notifying that a logon event is happening.(Citation: NPPSPY - Huntress)(Citation: NPPSPY Video)(Citation: NPLogonNotify) \n\nAdversaries can configure a malicious network provider DLL to receive credentials from `mpnotify.exe`.(Citation: NPPSPY) Once installed as a credential manager (via the Registry), a malicious DLL can receive and save credentials each time a user logs onto a Windows workstation or domain via the `NPLogonNotify()` function.(Citation: NPLogonNotify)\n\nAdversaries may target planting malicious network provider DLLs on systems known to have increased logon activity and/or administrator logon activity, such as servers and domain controllers.(Citation: NPPSPY - Huntress)",
+    "technique_references": [
+      {
+        "source_name": "NPPSPY - Huntress",
+        "url": "https://www.huntress.com/blog/cleartext-shenanigans-gifting-user-passwords-to-adversaries-with-nppspy",
+        "description": " Dray Agha. (2022, August 16). Cleartext Shenanigans: Gifting User Passwords to Adversaries With NPPSPY. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NPPSPY Video",
+        "url": "https://www.youtube.com/watch?v=ggY3srD9dYs",
+        "description": "Grzegorz Tworek. (2021, December 14). How winlogon.exe shares the cleartext password with custom DLLs. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NPPSPY",
+        "url": "https://github.com/gtworek/PSBits/tree/master/PasswordStealing/NPPSpy",
+        "description": "Grzegorz Tworek. (2021, December 15). NPPSpy. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Network Provider API",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/secauthn/network-provider-api",
+        "description": "Microsoft. (2021, January 7). Network Provider API. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NPLogonNotify",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/api/npapi/nf-npapi-nplogonnotify",
+        "description": "Microsoft. (2021, October 21). NPLogonNotify function (npapi.h). Retrieved March 30, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--90c4a591-d02d-490b-92aa-619d9701ac04",
+    "platform": "windows",
+    "tid": "T1556.008",
+    "technique": "Network Provider DLL",
+    "tactic": "defense-evasion",
+    "datasources": "windows-registry-key-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may register malicious network provider dynamic link libraries (DLLs) to capture cleartext user credentials during the authentication process. Network provider DLLs allow Windows to interface with specific network protocols and can also support add-on credential management functions.(Citation: Network Provider API) During the logon process, Winlogon (the interactive logon module) sends credentials to the local `mpnotify.exe` process via RPC. The `mpnotify.exe` process then shares the credentials in cleartext with registered credential managers when notifying that a logon event is happening.(Citation: NPPSPY - Huntress)(Citation: NPPSPY Video)(Citation: NPLogonNotify) \n\nAdversaries can configure a malicious network provider DLL to receive credentials from `mpnotify.exe`.(Citation: NPPSPY) Once installed as a credential manager (via the Registry), a malicious DLL can receive and save credentials each time a user logs onto a Windows workstation or domain via the `NPLogonNotify()` function.(Citation: NPLogonNotify)\n\nAdversaries may target planting malicious network provider DLLs on systems known to have increased logon activity and/or administrator logon activity, such as servers and domain controllers.(Citation: NPPSPY - Huntress)",
+    "technique_references": [
+      {
+        "source_name": "NPPSPY - Huntress",
+        "url": "https://www.huntress.com/blog/cleartext-shenanigans-gifting-user-passwords-to-adversaries-with-nppspy",
+        "description": " Dray Agha. (2022, August 16). Cleartext Shenanigans: Gifting User Passwords to Adversaries With NPPSPY. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NPPSPY Video",
+        "url": "https://www.youtube.com/watch?v=ggY3srD9dYs",
+        "description": "Grzegorz Tworek. (2021, December 14). How winlogon.exe shares the cleartext password with custom DLLs. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NPPSPY",
+        "url": "https://github.com/gtworek/PSBits/tree/master/PasswordStealing/NPPSpy",
+        "description": "Grzegorz Tworek. (2021, December 15). NPPSpy. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Network Provider API",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/secauthn/network-provider-api",
+        "description": "Microsoft. (2021, January 7). Network Provider API. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NPLogonNotify",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/api/npapi/nf-npapi-nplogonnotify",
+        "description": "Microsoft. (2021, October 21). NPLogonNotify function (npapi.h). Retrieved March 30, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--90c4a591-d02d-490b-92aa-619d9701ac04",
+    "platform": "windows",
+    "tid": "T1556.008",
+    "technique": "Network Provider DLL",
+    "tactic": "persistence",
+    "datasources": "windows-registry-key-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may register malicious network provider dynamic link libraries (DLLs) to capture cleartext user credentials during the authentication process. Network provider DLLs allow Windows to interface with specific network protocols and can also support add-on credential management functions.(Citation: Network Provider API) During the logon process, Winlogon (the interactive logon module) sends credentials to the local `mpnotify.exe` process via RPC. The `mpnotify.exe` process then shares the credentials in cleartext with registered credential managers when notifying that a logon event is happening.(Citation: NPPSPY - Huntress)(Citation: NPPSPY Video)(Citation: NPLogonNotify) \n\nAdversaries can configure a malicious network provider DLL to receive credentials from `mpnotify.exe`.(Citation: NPPSPY) Once installed as a credential manager (via the Registry), a malicious DLL can receive and save credentials each time a user logs onto a Windows workstation or domain via the `NPLogonNotify()` function.(Citation: NPLogonNotify)\n\nAdversaries may target planting malicious network provider DLLs on systems known to have increased logon activity and/or administrator logon activity, such as servers and domain controllers.(Citation: NPPSPY - Huntress)",
+    "technique_references": [
+      {
+        "source_name": "NPPSPY - Huntress",
+        "url": "https://www.huntress.com/blog/cleartext-shenanigans-gifting-user-passwords-to-adversaries-with-nppspy",
+        "description": " Dray Agha. (2022, August 16). Cleartext Shenanigans: Gifting User Passwords to Adversaries With NPPSPY. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NPPSPY Video",
+        "url": "https://www.youtube.com/watch?v=ggY3srD9dYs",
+        "description": "Grzegorz Tworek. (2021, December 14). How winlogon.exe shares the cleartext password with custom DLLs. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NPPSPY",
+        "url": "https://github.com/gtworek/PSBits/tree/master/PasswordStealing/NPPSpy",
+        "description": "Grzegorz Tworek. (2021, December 15). NPPSpy. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Network Provider API",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/secauthn/network-provider-api",
+        "description": "Microsoft. (2021, January 7). Network Provider API. Retrieved March 30, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NPLogonNotify",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/api/npapi/nf-npapi-nplogonnotify",
+        "description": "Microsoft. (2021, October 21). NPLogonNotify function (npapi.h). Retrieved March 30, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--4eb28bed-d11a-4641-9863-c2ac017d910a",
+    "platform": "windows",
+    "tid": "T1562.002",
+    "technique": "Disable Windows Event Logging",
+    "tactic": "defense-evasion",
+    "datasources": "windows-registry-key-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may disable Windows event logging to limit data that can be leveraged for detections and audits. Windows event logs record user and system activity such as login attempts, process creation, and much more.(Citation: Windows Log Events) This data is used by security tools and analysts to generate detections.\n\nThe EventLog service maintains event logs from various system components and applications.(Citation: EventLog_Core_Technologies) By default, the service automatically starts when a system powers on. An audit policy, maintained by the Local Security Policy (secpol.msc), defines which system events the EventLog service logs. Security audit policy settings can be changed by running secpol.msc, then navigating to <code>Security Settings\\Local Policies\\Audit Policy</code> for basic audit policy settings or <code>Security Settings\\Advanced Audit Policy Configuration</code> for advanced audit policy settings.(Citation: Audit_Policy_Microsoft)(Citation: Advanced_sec_audit_policy_settings) <code>auditpol.exe</code> may also be used to set audit policies.(Citation: auditpol)\n\nAdversaries may target system-wide logging or just that of a particular application. For example, the Windows EventLog service may be disabled using the <code>Set-Service -Name EventLog -Status Stopped</code> or <code>sc config eventlog start=disabled</code> commands (followed by manually stopping the service using <code>Stop-Service  -Name EventLog</code>).(Citation: Disable_Win_Event_Logging)(Citation: disable_win_evt_logging) Additionally, the service may be disabled by modifying the “Start” value in <code>HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\EventLog</code> then restarting the system for the change to take effect.(Citation: disable_win_evt_logging)\n\nThere are several ways to disable the EventLog service via registry key modification. First, without Administrator privileges, adversaries may modify the \"Start\" value in the key <code>HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\WMI\\Autologger\\EventLog-Security</code>, then reboot the system to disable the Security EventLog.(Citation: winser19_file_overwrite_bug_twitter) Second, with Administrator privilege, adversaries may modify the same values in <code>HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\WMI\\Autologger\\EventLog-System</code> and <code>HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\WMI\\Autologger\\EventLog-Application</code> to disable the entire EventLog.(Citation: disable_win_evt_logging)\n\nAdditionally, adversaries may use <code>auditpol</code> and its sub-commands in a command prompt to disable auditing or clear the audit policy. To enable or disable a specified setting or audit category, adversaries may use the <code>/success</code> or <code>/failure</code> parameters. For example, <code>auditpol /set /category:”Account Logon” /success:disable /failure:disable</code> turns off auditing for the Account Logon category.(Citation: auditpol.exe_STRONTIC)(Citation: T1562.002_redcanaryco) To clear the audit policy, adversaries may run the following lines: <code>auditpol /clear /y</code> or <code>auditpol /remove /allusers</code>.(Citation: T1562.002_redcanaryco)\n\nBy disabling Windows event logging, adversaries can operate while leaving less evidence of a compromise behind.",
+    "technique_references": [
+      {
+        "source_name": "Disable_Win_Event_Logging",
+        "url": "https://dmcxblue.gitbook.io/red-team-notes-2-0/red-team-techniques/defense-evasion/t1562-impair-defenses/disable-windows-event-logging",
+        "description": " dmcxblue. (n.d.). Disable Windows Event Logging. Retrieved September 10, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "def_ev_win_event_logging",
+        "url": "https://www.hackingarticles.in/defense-evasion-windows-event-logging-t1562-002/",
+        "description": "Chandel, R. (2021, April 22). Defense Evasion: Windows Event Logging (T1562.002). Retrieved September 14, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "EventLog_Core_Technologies",
+        "url": "https://www.coretechnologies.com/blog/windows-services/eventlog/",
+        "description": "Core Technologies. (2021, May 24). Essential Windows Services: EventLog / Windows Event Log. Retrieved September 14, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Audit_Policy_Microsoft",
+        "url": "https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/audit-policy",
+        "description": "Daniel Simpson. (2017, April 19). Audit Policy. Retrieved September 13, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Windows Log Events",
+        "url": "https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/",
+        "description": "Franklin Smith. (n.d.). Windows Security Log Events. Retrieved February 21, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "disable_win_evt_logging",
+        "url": "https://ptylu.github.io/content/report/report.html?report=25",
+        "description": "Heiligenstein, L. (n.d.). REP-25: Disable Windows Event Logging. Retrieved April 7, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "auditpol",
+        "url": "https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/auditpol",
+        "description": "Jason Gerend, et al. (2017, October 16). auditpol. Retrieved September 1, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "winser19_file_overwrite_bug_twitter",
+        "url": "https://web.archive.org/web/20211107115646/https://twitter.com/klinix5/status/1457316029114327040",
+        "description": "Naceri, A. (2021, November 7). Windows Server 2019 file overwrite bug. Retrieved April 7, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "T1562.002_redcanaryco",
+        "url": "https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1562.002/T1562.002.md",
+        "description": "redcanaryco. (2021, September 3). T1562.002 - Disable Windows Event Logging. Retrieved September 13, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Advanced_sec_audit_policy_settings",
+        "url": "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/advanced-security-audit-policy-settings",
+        "description": "Simpson, D. et al. (2017, April 19). Advanced security audit policy settings. Retrieved September 14, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "auditpol.exe_STRONTIC",
+        "url": "https://strontic.github.io/xcyclopedia/library/auditpol.exe-214E0EA1F7F7C27C82D23F183F9D23F1.html",
+        "description": "STRONTIC. (n.d.). auditpol.exe. Retrieved September 9, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "evt_log_tampering",
+        "url": "https://svch0st.medium.com/event-log-tampering-part-1-disrupting-the-eventlog-service-8d4b7d67335c",
+        "description": "svch0st. (2020, September 30). Event Log Tampering Part 1: Disrupting the EventLog Service. Retrieved September 14, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--28170e17-8384-415c-8486-2e6b294cb803",
+    "platform": "windows",
+    "tid": "T1562.009",
+    "technique": "Safe Mode Boot",
+    "tactic": "defense-evasion",
+    "datasources": "windows-registry-key-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse Windows safe mode to disable endpoint defenses. Safe mode starts up the Windows operating system with a limited set of drivers and services. Third-party security software such as endpoint detection and response (EDR) tools may not start after booting Windows in safe mode. There are two versions of safe mode: Safe Mode and Safe Mode with Networking. It is possible to start additional services after a safe mode boot.(Citation: Microsoft Safe Mode)(Citation: Sophos Snatch Ransomware 2019)\n\nAdversaries may abuse safe mode to disable endpoint defenses that may not start with a limited boot. Hosts can be forced into safe mode after the next reboot via modifications to Boot Configuration Data (BCD) stores, which are files that manage boot application settings.(Citation: Microsoft bcdedit 2021)\n\nAdversaries may also add their malicious applications to the list of minimal services that start in safe mode by modifying relevant Registry values (i.e. [Modify Registry](https://attack.mitre.org/techniques/T1112)). Malicious [Component Object Model](https://attack.mitre.org/techniques/T1559/001) (COM) objects may also be registered and loaded in safe mode.(Citation: Sophos Snatch Ransomware 2019)(Citation: CyberArk Labs Safe Mode 2016)(Citation: Cybereason Nocturnus MedusaLocker 2020)(Citation: BleepingComputer REvil 2021)",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Safe Mode",
+        "url": "https://support.microsoft.com/en-us/windows/start-your-pc-in-safe-mode-in-windows-10-92c27cff-db89-8644-1ce4-b3e5e56fe234",
+        "description": "Microsoft. (n.d.). Start your PC in safe mode in Windows 10. Retrieved June 23, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sophos Snatch Ransomware 2019",
+        "url": "https://news.sophos.com/en-us/2019/12/09/snatch-ransomware-reboots-pcs-into-safe-mode-to-bypass-protection/",
+        "description": "Sophos. (2019, December 9). Snatch ransomware reboots PCs into Safe Mode to bypass protection. Retrieved June 23, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft bcdedit 2021",
+        "url": "https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/bcdedit",
+        "description": "Microsoft. (2021, May 27). bcdedit. Retrieved June 23, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "CyberArk Labs Safe Mode 2016",
+        "url": "https://www.cyberark.com/resources/blog/cyberark-labs-from-safe-mode-to-domain-compromise",
+        "description": "Naim, D.. (2016, September 15). CyberArk Labs: From Safe Mode to Domain Compromise. Retrieved June 23, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cybereason Nocturnus MedusaLocker 2020",
+        "url": "https://www.cybereason.com/blog/medusalocker-ransomware",
+        "description": "Cybereason Nocturnus. (2020, November 19). Cybereason vs. MedusaLocker Ransomware. Retrieved June 23, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "BleepingComputer REvil 2021",
+        "url": "https://www.bleepingcomputer.com/news/security/revil-ransomware-has-a-new-windows-safe-mode-encryption-mode/",
+        "description": "Abrams, L. (2021, March 19). REvil ransomware has a new ‘Windows Safe Mode’ encryption mode. Retrieved June 23, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Bootcfg",
+        "url": "https://docs.microsoft.com/windows-server/administration/windows-commands/bootcfg",
+        "description": "Gerend, J. et al. (2017, October 16). bootcfg. Retrieved August 30, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

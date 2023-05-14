@@ -1,0 +1,49 @@
+[
+  {
+    "id": "attack-pattern--1b20efbf-8063-4fc3-a07d-b575318a301b",
+    "platform": "windows",
+    "tid": "T1615",
+    "technique": "Group Policy Discovery",
+    "tactic": "discovery",
+    "datasources": "active-directory-object-access|command-execution|network-traffic-content|process-creation|script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may gather information on Group Policy settings to identify paths for privilege escalation, security measures applied within a domain, and to discover patterns in domain objects that can be manipulated or used to blend in the environment. Group Policy allows for centralized management of user and computer settings in Active Directory (AD). Group policy objects (GPOs) are containers for group policy settings made up of files stored within a predictable network path `\\<DOMAIN>\\SYSVOL\\<DOMAIN>\\Policies\\`.(Citation: TechNet Group Policy Basics)(Citation: ADSecurity GPO Persistence 2016)\n\nAdversaries may use commands such as <code>gpresult</code> or various publicly available PowerShell functions, such as <code>Get-DomainGPO</code> and <code>Get-DomainGPOLocalGroup</code>, to gather information on Group Policy settings.(Citation: Microsoft gpresult)(Citation: Github PowerShell Empire) Adversaries may use this information to shape follow-on behaviors, including determining potential attack paths within the target network as well as opportunities to manipulate Group Policy settings (i.e. [Domain Policy Modification](https://attack.mitre.org/techniques/T1484)) for their benefit.",
+    "technique_references": [
+      {
+        "source_name": "ADSecurity GPO Persistence 2016",
+        "url": "https://adsecurity.org/?p=2716",
+        "description": "Metcalf, S. (2016, March 14). Sneaky Active Directory Persistence #17: Group Policy. Retrieved March 5, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft gpresult",
+        "url": "https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/gpresult",
+        "description": "Microsoft. (2017, October 16). gpresult. Retrieved August 6, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Github PowerShell Empire",
+        "url": "https://github.com/PowerShellEmpire/Empire",
+        "description": "Schroeder, W., Warner, J., Nelson, M. (n.d.). Github PowerShellEmpire. Retrieved April 28, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Group Policy Basics",
+        "url": "https://blogs.technet.microsoft.com/musings_of_a_technical_tam/2012/02/13/group-policy-basics-part-1-understanding-the-structure-of-a-group-policy-object/",
+        "description": "srachui. (2012, February 13). Group Policy Basics – Part 1: Understanding the Structure of a Group Policy Object. Retrieved March 5, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

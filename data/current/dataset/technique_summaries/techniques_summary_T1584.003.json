@@ -1,0 +1,49 @@
+[
+  {
+    "id": "attack-pattern--39cc9f64-cf74-4a48-a4d8-fe98c54a02e0",
+    "platform": "pre",
+    "tid": "T1584.003",
+    "technique": "Virtual Private Server",
+    "tactic": "resource-development",
+    "datasources": "response-content|response-metadata",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may compromise third-party Virtual Private Servers (VPSs) that can be used during targeting. There exist a variety of cloud service providers that will sell virtual machines/containers as a service. Adversaries may compromise VPSs purchased by third-party entities. By compromising a VPS to use as infrastructure, adversaries can make it difficult to physically tie back operations to themselves.(Citation: NSA NCSC Turla OilRig)\n\nCompromising a VPS for use in later stages of the adversary lifecycle, such as Command and Control, can allow adversaries to benefit from the ubiquity and trust associated with higher reputation cloud service providers as well as that added by the compromised third-party.",
+    "technique_references": [
+      {
+        "source_name": "NSA NCSC Turla OilRig",
+        "url": "https://media.defense.gov/2019/Oct/18/2002197242/-1/-1/0/NSA_CSA_Turla_20191021%20ver%204%20-%20nsa.gov.pdf",
+        "description": "NSA/NCSC. (2019, October 21). Cybersecurity Advisory: Turla Group Exploits Iranian APT To Expand Coverage Of Victims. Retrieved October 16, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ThreatConnect Infrastructure Dec 2020",
+        "url": "https://threatconnect.com/blog/infrastructure-research-hunting/",
+        "description": "ThreatConnect. (2020, December 15). Infrastructure Research and Hunting: Boiling the Domain Ocean. Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Mandiant SCANdalous Jul 2020",
+        "url": "https://www.mandiant.com/resources/scandalous-external-detection-using-network-scan-data-and-automation",
+        "description": "Stephens, A. (2020, July 13). SCANdalous! (External Detection Using Network Scan Data and Automation). Retrieved October 12, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Koczwara Beacon Hunting Sep 2021",
+        "url": "https://michaelkoczwara.medium.com/cobalt-strike-c2-hunting-with-shodan-c448d501a6e2",
+        "description": "Koczwara, M. (2021, September 7). Hunting Cobalt Strike C2 with Shodan. Retrieved October 12, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

@@ -1,8 +1,0 @@
-{
-  "tools": [],
-  "adversaries": [],
-  "malware": [],
-  "T1592.001:Hardware": [
-    "response-content"
-  ]
-}

@@ -1,0 +1,16 @@
+[
+  [
+    "gsecdump",
+    "T1003.002",
+    "Security Account Manager",
+    "command-execution|file-access|windows-registry-key-access",
+    "T1003.002::[gsecdump] can dump Windows password hashes from the SAM."
+  ],
+  [
+    "gsecdump",
+    "T1003.004",
+    "LSA Secrets",
+    "command-execution|windows-registry-key-access",
+    "T1003.004::[gsecdump] can dump LSA secrets."
+  ]
+]

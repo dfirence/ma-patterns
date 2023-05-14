@@ -1,0 +1,47 @@
+[
+  {
+    "id": "tool--f59508a6-3615-47c3-b493-6676e1a39a87",
+    "name": "adfind",
+    "aliases": "none",
+    "platforms": "windows",
+    "tool_id": "S0552",
+    "is_revoked": false,
+    "profile": {
+      "tactics": {
+        "count": 1,
+        "items": [
+          "discovery"
+        ]
+      },
+      "techniques": {
+        "count": 5,
+        "items": [
+          "T1016",
+          "T1018",
+          "T1069.002",
+          "T1087.002",
+          "T1482"
+        ]
+      },
+      "adversaries": {
+        "count": 6,
+        "items": [
+          "apt29",
+          "fin6",
+          "fin7",
+          "menupass",
+          "ta505",
+          "wizard-spider"
+        ]
+      },
+      "procedures": [
+        "T1016::[AdFind] can extract subnet information from Active Directory.",
+        "T1018::[AdFind] has the ability to query Active Directory for computers.",
+        "T1069.002::[AdFind] can enumerate domain groups.",
+        "T1087.002::[AdFind] can enumerate domain users.",
+        "T1482::[AdFind] can gather information about organizational units (OUs) and domain trusts from Active Directory."
+      ]
+    },
+    "description": "[AdFind](https://attack.mitre.org/software/S0552) is a free command-line query tool that can be used for gathering information from Active Directory.(Citation: Red Canary Hospital Thwarted Ryuk October 2020)(Citation: FireEye FIN6 Apr 2019)(Citation: FireEye Ryuk and Trickbot January 2019)"
+  }
+]

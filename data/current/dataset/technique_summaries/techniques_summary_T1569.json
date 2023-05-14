@@ -1,0 +1,27 @@
+[
+  {
+    "id": "attack-pattern--d157f9d2-d09a-4efa-bb2a-64963f94e253",
+    "platform": "windows|macos|linux",
+    "tid": "T1569",
+    "technique": "System Services",
+    "tactic": "execution",
+    "datasources": "command-execution|file-modification|process-creation|service-creation|windows-registry-key-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1569.001",
+      "T1569.002"
+    ],
+    "count_subtechniques": 2,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse system services or daemons to execute commands or programs. Adversaries can execute malicious content by interacting with or creating services either locally or remotely. Many services are set to run at boot, which can aid in achieving persistence ([Create or Modify System Process](https://attack.mitre.org/techniques/T1543)), but adversaries can also abuse services for one-time or temporary execution.",
+    "technique_references": [],
+    "technique_required_permissions": "user|administrator|system|root",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

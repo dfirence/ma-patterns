@@ -1,0 +1,49 @@
+[
+  {
+    "id": "attack-pattern--4bc31b94-045b-4752-8920-aebaebdb6470",
+    "platform": "windows|office-365|google-workspace",
+    "tid": "T1087.003",
+    "technique": "Email Account",
+    "tactic": "discovery",
+    "datasources": "command-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to get a listing of email addresses and accounts. Adversaries may try to dump Exchange address lists such as global address lists (GALs).(Citation: Microsoft Exchange Address Lists)\n\nIn on-premises Exchange and Exchange Online, the<code>Get-GlobalAddressList</code> PowerShell cmdlet can be used to obtain email addresses and accounts from a domain using an authenticated session.(Citation: Microsoft getglobaladdresslist)(Citation: Black Hills Attacking Exchange MailSniper, 2016)\n\nIn Google Workspace, the GAL is shared with Microsoft Outlook users through the Google Workspace Sync for Microsoft Outlook (GWSMO) service. Additionally, the Google Workspace Directory allows for users to get a listing of other users within the organization.(Citation: Google Workspace Global Access List)",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Exchange Address Lists",
+        "url": "https://docs.microsoft.com/en-us/exchange/email-addresses-and-address-books/address-lists/address-lists?view=exchserver-2019",
+        "description": "Microsoft. (2020, February 7). Address lists in Exchange Server. Retrieved March 26, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft getglobaladdresslist",
+        "url": "https://docs.microsoft.com/en-us/powershell/module/exchange/email-addresses-and-address-books/get-globaladdresslist",
+        "description": "Microsoft. (n.d.). Get-GlobalAddressList. Retrieved October 6, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Black Hills Attacking Exchange MailSniper, 2016",
+        "url": "https://www.blackhillsinfosec.com/attacking-exchange-with-mailsniper/",
+        "description": "Bullock, B.. (2016, October 3). Attacking Exchange with MailSniper. Retrieved October 6, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Google Workspace Global Access List",
+        "url": "https://support.google.com/a/answer/166870?hl=en",
+        "description": "Google. (n.d.). Retrieved March 16, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

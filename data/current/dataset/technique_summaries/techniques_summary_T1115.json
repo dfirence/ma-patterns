@@ -1,0 +1,55 @@
+[
+  {
+    "id": "attack-pattern--30973a08-aed9-4edf-8604-9084ce1b5c4f",
+    "platform": "linux|windows|macos",
+    "tid": "T1115",
+    "technique": "Clipboard Data",
+    "tactic": "collection",
+    "datasources": "command-execution|os-api-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may collect data stored in the clipboard from users copying information within or between applications. \n\nFor example, on Windows adversaries can access clipboard data by using <code>clip.exe</code> or <code>Get-Clipboard</code>.(Citation: MSDN Clipboard)(Citation: clip_win_server)(Citation: CISA_AA21_200B) Additionally, adversaries may monitor then replace users’ clipboard with their data (e.g., [Transmitted Data Manipulation](https://attack.mitre.org/techniques/T1565/002)).(Citation: mining_ruby_reversinglabs)\n\nmacOS and Linux also have commands, such as <code>pbpaste</code>, to grab clipboard contents.(Citation: Operating with EmPyre)",
+    "technique_references": [
+      {
+        "source_name": "CISA_AA21_200B",
+        "url": "https://www.cisa.gov/uscert/ncas/alerts/aa21-200b",
+        "description": "CISA. (2021, August 20). Alert (AA21-200B) Chinese State-Sponsored Cyber Operations: Observed TTPs. Retrieved June 21, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "mining_ruby_reversinglabs",
+        "url": "https://blog.reversinglabs.com/blog/mining-for-malicious-ruby-gems",
+        "description": "Maljic, T. (2020, April 16). Mining for malicious Ruby gems. Retrieved October 15, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "clip_win_server",
+        "url": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/clip",
+        "description": "Microsoft, JasonGerend, et al. (2023, February 3). clip. Retrieved June 21, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MSDN Clipboard",
+        "url": "https://msdn.microsoft.com/en-us/library/ms649012",
+        "description": "Microsoft. (n.d.). About the Clipboard. Retrieved March 29, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Operating with EmPyre",
+        "url": "https://medium.com/rvrsh3ll/operating-with-empyre-ea764eda3363",
+        "description": "rvrsh3ll. (2016, May 18). Operating with EmPyre. Retrieved July 12, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

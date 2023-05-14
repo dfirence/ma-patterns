@@ -1,0 +1,9 @@
+[
+  [
+    "responder",
+    "T1557.001",
+    "LLMNR/NBT-NS Poisoning and SMB Relay",
+    "network-traffic-content|network-traffic-flow|service-creation|windows-registry-key-modification",
+    "T1557.001::[Responder] is used to poison name services to gather hashes and credentials from systems within a local network."
+  ]
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "id": "attack-pattern--ac9e6b22-11bf-45d7-9181-c1cb08360931",
+    "platform": "linux|macos|windows",
+    "tid": "T1565",
+    "technique": "Data Manipulation",
+    "tactic": "impact",
+    "datasources": "file-creation|file-deletion|file-metadata|file-modification|network-traffic-content|network-traffic-flow|os-api-execution",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1565.001",
+      "T1565.002",
+      "T1565.003"
+    ],
+    "count_subtechniques": 3,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may insert, delete, or manipulate data in order to influence external outcomes or hide activity, thus threatening the integrity of the data. By manipulating data, adversaries may attempt to affect a business process, organizational understanding, or decision making.\n\nThe type of modification and the impact it will have depends on the target application and process as well as the goals and objectives of the adversary. For complex systems, an adversary would likely need special expertise and possibly access to specialized software related to the system that would typically be gained through a prolonged information gathering campaign in order to have the desired impact.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

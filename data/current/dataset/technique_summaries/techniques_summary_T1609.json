@@ -1,0 +1,61 @@
+[
+  {
+    "id": "attack-pattern--7b50a1d3-4ca7-45d1-989d-a6503f04bfe1",
+    "platform": "containers",
+    "tid": "T1609",
+    "technique": "Container Administration Command",
+    "tactic": "execution",
+    "datasources": "command-execution|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse a container administration service to execute commands within a container. A container administration service such as the Docker daemon, the Kubernetes API server, or the kubelet may allow remote management of containers within an environment.(Citation: Docker Daemon CLI)(Citation: Kubernetes API)(Citation: Kubernetes Kubelet)\n\nIn Docker, adversaries may specify an entrypoint during container deployment that executes a script or command, or they may use a command such as <code>docker exec</code> to execute a command within a running container.(Citation: Docker Entrypoint)(Citation: Docker Exec) In Kubernetes, if an adversary has sufficient permissions, they may gain remote execution in a container in the cluster via interaction with the Kubernetes API server, the kubelet, or by running a command such as <code>kubectl exec</code>.(Citation: Kubectl Exec Get Shell)",
+    "technique_references": [
+      {
+        "source_name": "Docker Exec",
+        "url": "https://docs.docker.com/engine/reference/commandline/exec/",
+        "description": "Docker. (n.d.). Docker Exec. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Docker Entrypoint",
+        "url": "https://docs.docker.com/engine/reference/run/#entrypoint-default-command-to-execute-at-runtime",
+        "description": "Docker. (n.d.). Docker run reference. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Docker Daemon CLI",
+        "url": "https://docs.docker.com/engine/reference/commandline/dockerd/",
+        "description": "Docker. (n.d.). DockerD CLI. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubectl Exec Get Shell",
+        "url": "https://kubernetes.io/docs/tasks/debug-application-cluster/get-shell-running-container/",
+        "description": "The Kubernetes Authors. (n.d.). Get a Shell to a Running Container. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubernetes Kubelet",
+        "url": "https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/",
+        "description": "The Kubernetes Authors. (n.d.). Kubelet. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kubernetes API",
+        "url": "https://kubernetes.io/docs/concepts/overview/kubernetes-api/",
+        "description": "The Kubernetes Authors. (n.d.). The Kubernetes API. Retrieved March 29, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

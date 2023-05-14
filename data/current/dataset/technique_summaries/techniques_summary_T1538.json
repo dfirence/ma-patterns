@@ -1,0 +1,37 @@
+[
+  {
+    "id": "attack-pattern--e49920b0-6c54-40c1-9571-73723653205f",
+    "platform": "azure-ad|office-365|iaas|google-workspace",
+    "tid": "T1538",
+    "technique": "Cloud Service Dashboard",
+    "tactic": "discovery",
+    "datasources": "logon-session-creation|user-account-authentication",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "An adversary may use a cloud service dashboard GUI with stolen credentials to gain useful information from an operational cloud environment, such as specific services, resources, and features. For example, the GCP Command Center can be used to view all assets, findings of potential security risks, and to run additional queries, such as finding public IP addresses and open ports.(Citation: Google Command Center Dashboard)\n\nDepending on the configuration of the environment, an adversary may be able to enumerate more information via the graphical dashboard than an API. This allows the adversary to gain information without making any API requests.",
+    "technique_references": [
+      {
+        "source_name": "Google Command Center Dashboard",
+        "url": "https://cloud.google.com/security-command-center/docs/quickstart-scc-dashboard",
+        "description": "Google. (2019, October 3). Quickstart: Using the dashboard. Retrieved October 8, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AWS Console Sign-in Events",
+        "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-aws-console-sign-in-events.html",
+        "description": "Amazon. (n.d.). AWS Console Sign-in Events. Retrieved October 23, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

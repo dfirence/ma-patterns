@@ -1,0 +1,84 @@
+[
+  {
+    "id": "attack-pattern--b8cfed42-6a8a-4989-ad72-541af74475ec",
+    "platform": "windows",
+    "tid": "T1547.002",
+    "technique": "Authentication Package",
+    "tactic": "persistence",
+    "datasources": "command-execution|module-load|windows-registry-key-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse authentication packages to execute DLLs when the system boots. Windows authentication package DLLs are loaded by the Local Security Authority (LSA) process at system start. They provide support for multiple logon processes and multiple security protocols to the operating system.(Citation: MSDN Authentication Packages)\n\nAdversaries can use the autostart mechanism provided by LSA authentication packages for persistence by placing a reference to a binary in the Windows Registry location <code>HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\</code> with the key value of <code>\"Authentication Packages\"=&lt;target binary&gt;</code>. The binary will then be executed by the system when the authentication packages are loaded.",
+    "technique_references": [
+      {
+        "source_name": "Graeber 2014",
+        "url": "http://docplayer.net/20839173-Analysis-of-malicious-security-support-provider-dlls.html",
+        "description": "Graeber, M. (2014, October). Analysis of Malicious Security Support Provider DLLs. Retrieved March 1, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Configure LSA",
+        "url": "https://technet.microsoft.com/en-us/library/dn408187.aspx",
+        "description": "Microsoft. (2013, July 31). Configuring Additional LSA Protection. Retrieved June 24, 2015.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MSDN Authentication Packages",
+        "url": "https://msdn.microsoft.com/library/windows/desktop/aa374733.aspx",
+        "description": "Microsoft. (n.d.). Authentication Packages. Retrieved March 1, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b8cfed42-6a8a-4989-ad72-541af74475ec",
+    "platform": "windows",
+    "tid": "T1547.002",
+    "technique": "Authentication Package",
+    "tactic": "privilege-escalation",
+    "datasources": "command-execution|module-load|windows-registry-key-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse authentication packages to execute DLLs when the system boots. Windows authentication package DLLs are loaded by the Local Security Authority (LSA) process at system start. They provide support for multiple logon processes and multiple security protocols to the operating system.(Citation: MSDN Authentication Packages)\n\nAdversaries can use the autostart mechanism provided by LSA authentication packages for persistence by placing a reference to a binary in the Windows Registry location <code>HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\</code> with the key value of <code>\"Authentication Packages\"=&lt;target binary&gt;</code>. The binary will then be executed by the system when the authentication packages are loaded.",
+    "technique_references": [
+      {
+        "source_name": "Graeber 2014",
+        "url": "http://docplayer.net/20839173-Analysis-of-malicious-security-support-provider-dlls.html",
+        "description": "Graeber, M. (2014, October). Analysis of Malicious Security Support Provider DLLs. Retrieved March 1, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Configure LSA",
+        "url": "https://technet.microsoft.com/en-us/library/dn408187.aspx",
+        "description": "Microsoft. (2013, July 31). Configuring Additional LSA Protection. Retrieved June 24, 2015.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MSDN Authentication Packages",
+        "url": "https://msdn.microsoft.com/library/windows/desktop/aa374733.aspx",
+        "description": "Microsoft. (n.d.). Authentication Packages. Retrieved March 1, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

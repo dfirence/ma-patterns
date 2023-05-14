@@ -1,0 +1,9 @@
+[
+  [
+    "winexe",
+    "T1569.002",
+    "Service Execution",
+    "command-execution|process-creation|service-creation|windows-registry-key-modification",
+    "T1569.002::[Winexe] installs a service on the remote system, executes the command, then uninstalls the service."
+  ]
+]

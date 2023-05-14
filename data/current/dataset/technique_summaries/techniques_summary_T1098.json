@@ -1,0 +1,55 @@
+[
+  {
+    "id": "attack-pattern--a10641f4-87b4-45a3-a906-92a149cb2c27",
+    "platform": "windows|azure-ad|office-365|iaas|linux|macos|google-workspace|saas|network",
+    "tid": "T1098",
+    "technique": "Account Manipulation",
+    "tactic": "persistence",
+    "datasources": "active-directory-object-modification|command-execution|file-modification|group-modification|process-creation|user-account-modification",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1098.001",
+      "T1098.002",
+      "T1098.003",
+      "T1098.004",
+      "T1098.005"
+    ],
+    "count_subtechniques": 5,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may manipulate accounts to maintain access to victim systems. Account manipulation may consist of any action that preserves adversary access to a compromised account, such as modifying credentials or permission groups. These actions could also include account activity designed to subvert security policies, such as performing iterative password updates to bypass password duration policies and preserve the life of compromised credentials. \n\nIn order to create or manipulate accounts, the adversary must already have sufficient permissions on systems or the domain. However, account manipulation may also lead to privilege escalation where modifications grant access to additional roles, permissions, or higher-privileged [Valid Accounts](https://attack.mitre.org/techniques/T1078).",
+    "technique_references": [
+      {
+        "source_name": "Microsoft Security Event 4670",
+        "url": "https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4670",
+        "description": "Franklin Smith, R. (n.d.). Windows Security Log Event ID 4670. Retrieved November 4, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft User Modified Event",
+        "url": "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4738",
+        "description": "Lich, B., Miroshnikov, A. (2017, April 5). 4738(S): A user account was changed. Retrieved June 30, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "InsiderThreat ChangeNTLM July 2017",
+        "url": "https://blog.stealthbits.com/manipulating-user-passwords-with-mimikatz-SetNTLM-ChangeNTLM",
+        "description": "Warren, J. (2017, July 11). Manipulating User Passwords with Mimikatz. Retrieved December 4, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub Mimikatz Issue 92 June 2017",
+        "url": "https://github.com/gentilkiwi/mimikatz/issues/92",
+        "description": "Warren, J. (2017, June 22). lsadump::changentlm and lsadump::setntlm work, but generate Windows events #92. Retrieved December 4, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

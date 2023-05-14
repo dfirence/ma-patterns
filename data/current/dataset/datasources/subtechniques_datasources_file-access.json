@@ -1,0 +1,857 @@
+[
+  {
+    "id": "attack-pattern--1644e709-12d2-41e5-a60f-3470991f5011",
+    "platform": "windows",
+    "tid": "T1003.002",
+    "technique": "Security Account Manager",
+    "tactic": "credential-access",
+    "datasources": "file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to extract credential material from the Security Account Manager (SAM) database either through in-memory techniques or through the Windows Registry where the SAM database is stored. The SAM is a database file that contains local accounts for the host, typically those found with the <code>net user</code> command. Enumerating the SAM database requires SYSTEM level access.\n\nA number of tools can be used to retrieve the SAM file through in-memory techniques:\n\n* pwdumpx.exe\n* [gsecdump](https://attack.mitre.org/software/S0008)\n* [Mimikatz](https://attack.mitre.org/software/S0002)\n* secretsdump.py\n\nAlternatively, the SAM can be extracted from the Registry with Reg:\n\n* <code>reg save HKLM\\sam sam</code>\n* <code>reg save HKLM\\system system</code>\n\nCreddump7 can then be used to process the SAM database locally to retrieve hashes.(Citation: GitHub Creddump7)\n\nNotes: \n\n* RID 500 account is the local, built-in administrator.\n* RID 501 is the guest account.\n* User accounts start with a RID of 1,000+.\n",
+    "technique_references": [
+      {
+        "source_name": "GitHub Creddump7",
+        "url": "https://github.com/Neohapsis/creddump7",
+        "description": "Flathers, R. (2018, February 19). creddump7. Retrieved April 11, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--edf91964-b26e-4b4a-9600-ccacd7d7df24",
+    "platform": "windows",
+    "tid": "T1003.003",
+    "technique": "NTDS",
+    "tactic": "credential-access",
+    "datasources": "file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to access or create a copy of the Active Directory domain database in order to steal credential information, as well as obtain other information about domain members such as devices, users, and access rights. By default, the NTDS file (NTDS.dit) is located in <code>%SystemRoot%\\NTDS\\Ntds.dit</code> of a domain controller.(Citation: Wikipedia Active Directory)\n\nIn addition to looking for NTDS files on active Domain Controllers, adversaries may search for backups that contain the same or similar information.(Citation: Metcalf 2015)\n\nThe following tools and techniques can be used to enumerate the NTDS file and the contents of the entire Active Directory hashes.\n\n* Volume Shadow Copy\n* secretsdump.py\n* Using the in-built Windows tool, ntdsutil.exe\n* Invoke-NinjaCopy\n",
+    "technique_references": [
+      {
+        "source_name": "Wikipedia Active Directory",
+        "url": "https://en.wikipedia.org/wiki/Active_Directory",
+        "description": "Wikipedia. (2018, March 10). Active Directory. Retrieved April 11, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Metcalf 2015",
+        "url": "http://adsecurity.org/?p=1275",
+        "description": "Metcalf, S. (2015, January 19). Attackers Can Now Use Mimikatz to Implant Skeleton Key on Domain Controllers & BackDoor Your Active Directory Forest. Retrieved February 3, 2015.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--3120b9fa-23b8-4500-ae73-09494f607b7d",
+    "platform": "linux",
+    "tid": "T1003.007",
+    "technique": "Proc Filesystem",
+    "tactic": "credential-access",
+    "datasources": "file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may gather credentials from the proc filesystem or `/proc`. The proc filesystem is a pseudo-filesystem used as an interface to kernel data structures for Linux based systems managing virtual memory. For each process, the `/proc/<PID>/maps` file shows how memory is mapped within the process’s virtual address space. And `/proc/<PID>/mem`, exposed for debugging purposes, provides access to the process’s virtual address space.(Citation: Picus Labs Proc cump 2022)(Citation: baeldung Linux proc map 2022)\n\nWhen executing with root privileges, adversaries can search these memory locations for all processes on a system that contain patterns that are indicative of credentials, such as looking for fixed strings in memory structures or cached hashes. When running without privileged access, processes can still view their own virtual memory locations. Some services or programs may save credentials in clear text inside the process’s memory.(Citation: MimiPenguin GitHub May 2017)(Citation: Polop Linux PrivEsc Gitbook)\n\nIf running as or with the permissions of a web browser, a process can search the `/maps` & `/mem` locations for common website credential patterns (that can also be used to find adjacent memory within the same structure) in which hashes or cleartext credentials may be located.",
+    "technique_references": [
+      {
+        "source_name": "baeldung Linux proc map 2022",
+        "url": "https://www.baeldung.com/linux/proc-id-maps",
+        "description": "baeldung. (2022, April 8). Understanding the Linux /proc/id/maps File. Retrieved March 31, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Polop Linux PrivEsc Gitbook",
+        "url": "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#proc-usdpid-maps-and-proc-usdpid-mem",
+        "description": "Carlos Polop. (2023, March 5). Linux Privilege Escalation. Retrieved March 31, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "MimiPenguin GitHub May 2017",
+        "url": "https://github.com/huntergregal/mimipenguin",
+        "description": "Gregal, H. (2017, May 12). MimiPenguin. Retrieved December 5, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Picus Labs Proc cump 2022",
+        "url": "https://www.picussecurity.com/resource/the-mitre-attck-t1003-os-credential-dumping-technique-and-its-adversary-use",
+        "description": "Huseyin Can YUCEEL & Picus Labs. (2022, March 22). Retrieved March 31, 2023.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d0b4fcdb-d67d-4ed2-99ce-788b12f8c0f4",
+    "platform": "linux",
+    "tid": "T1003.008",
+    "technique": "/etc/passwd and /etc/shadow",
+    "tactic": "credential-access",
+    "datasources": "file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to dump the contents of <code>/etc/passwd</code> and <code>/etc/shadow</code> to enable offline password cracking. Most modern Linux operating systems use a combination of <code>/etc/passwd</code> and <code>/etc/shadow</code> to store user account information including password hashes in <code>/etc/shadow</code>. By default, <code>/etc/shadow</code> is only readable by the root user.(Citation: Linux Password and Shadow File Formats)\n\nThe Linux utility, unshadow, can be used to combine the two files in a format suited for password cracking utilities such as John the Ripper:(Citation: nixCraft - John the Ripper) <code># /usr/bin/unshadow /etc/passwd /etc/shadow > /tmp/crack.password.db</code>\n",
+    "technique_references": [
+      {
+        "source_name": "Linux Password and Shadow File Formats",
+        "url": "https://www.tldp.org/LDP/lame/LAME/linux-admin-made-easy/shadow-file-formats.html",
+        "description": "The Linux Documentation Project. (n.d.). Linux Password and Shadow File Formats. Retrieved February 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "nixCraft - John the Ripper",
+        "url": "https://www.cyberciti.biz/faq/unix-linux-password-cracking-john-the-ripper/",
+        "description": "Vivek Gite. (2014, September 17). Linux Password Cracking: Explain unshadow and john Commands (John the Ripper Tool). Retrieved February 19, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "root",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--613d08bc-e8f4-4791-80b0-c8b974340dfd",
+    "platform": "linux|macos|windows",
+    "tid": "T1011.001",
+    "technique": "Exfiltration Over Bluetooth",
+    "tactic": "exfiltration",
+    "datasources": "file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to exfiltrate data over Bluetooth rather than the command and control channel. If the command and control network is a wired Internet connection, an adversary may opt to exfiltrate data using a Bluetooth communication channel.\n\nAdversaries may choose to do this if they have sufficient access and proximity. Bluetooth connections might not be secured or defended as well as the primary Internet-connected channel because it is not routed through the same enterprise network.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--79a4052e-1a89-4b09-aea6-51f1d11fe19c",
+    "platform": "linux|macos|windows",
+    "tid": "T1048.001",
+    "technique": "Exfiltration Over Symmetric Encrypted Non-C2 Protocol",
+    "tactic": "exfiltration",
+    "datasources": "file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may steal data by exfiltrating it over a symmetrically encrypted network protocol other than that of the existing command and control channel. The data may also be sent to an alternate network location from the main command and control server. \n\nSymmetric encryption algorithms are those that use shared or the same keys/secrets on each end of the channel. This requires an exchange or pre-arranged agreement/possession of the value used to encrypt and decrypt data. \n\nNetwork protocols that use asymmetric encryption often utilize symmetric encryption once keys are exchanged, but adversaries may opt to manually share keys and implement symmetric cryptographic algorithms (ex: RC4, AES) vice using mechanisms that are baked into a protocol. This may result in multiple layers of encryption (in protocols that are natively encrypted such as HTTPS) or encryption in protocols that not typically encrypted (such as HTTP or FTP). ",
+    "technique_references": [
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--8e350c1d-ac79-4b5c-bd4e-7476d7e84ec5",
+    "platform": "linux|macos|windows",
+    "tid": "T1048.002",
+    "technique": "Exfiltration Over Asymmetric Encrypted Non-C2 Protocol",
+    "tactic": "exfiltration",
+    "datasources": "file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may steal data by exfiltrating it over an asymmetrically encrypted network protocol other than that of the existing command and control channel. The data may also be sent to an alternate network location from the main command and control server. \n\nAsymmetric encryption algorithms are those that use different keys on each end of the channel. Also known as public-key cryptography, this requires pairs of cryptographic keys that can encrypt/decrypt data from the corresponding key. Each end of the communication channels requires a private key (only in the procession of that entity) and the public key of the other entity. The public keys of each entity are exchanged before encrypted communications begin. \n\nNetwork protocols that use asymmetric encryption (such as HTTPS/TLS/SSL) often utilize symmetric encryption once keys are exchanged. Adversaries may opt to use these encrypted mechanisms that are baked into a protocol. ",
+    "technique_references": [
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--fb8d023d-45be-47e9-bc51-f56bcae6435b",
+    "platform": "linux|macos|windows|network",
+    "tid": "T1048.003",
+    "technique": "Exfiltration Over Unencrypted Non-C2 Protocol",
+    "tactic": "exfiltration",
+    "datasources": "file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may steal data by exfiltrating it over an un-encrypted network protocol other than that of the existing command and control channel. The data may also be sent to an alternate network location from the main command and control server.(Citation: copy_cmd_cisco)\n\nAdversaries may opt to obfuscate this data, without the use of encryption, within network protocols that are natively unencrypted (such as HTTP, FTP, or DNS). This may include custom or publicly available encoding/compression algorithms (such as base64) as well as embedding data within protocol headers and fields. ",
+    "technique_references": [
+      {
+        "source_name": "copy_cmd_cisco",
+        "url": "https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/fundamentals/command/cf_command_ref/C_commands.html#wp1068167689",
+        "description": "Cisco. (2022, August 16). copy - Cisco IOS Configuration Fundamentals Command Reference . Retrieved July 13, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "University of Birmingham C2",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--a3e1e6c5-9c74-4fc0-a16c-a9d228c17829",
+    "platform": "linux|macos|windows",
+    "tid": "T1052.001",
+    "technique": "Exfiltration over USB",
+    "tactic": "exfiltration",
+    "datasources": "file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to exfiltrate data over a USB connected physical device. In certain circumstances, such as an air-gapped network compromise, exfiltration could occur via a USB device introduced by a user. The USB device could be used as the final exfiltration point or to hop between otherwise disconnected systems.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--1c34f7aa-9341-4a48-bfab-af22e51aca6c",
+    "platform": "linux|macos|windows",
+    "tid": "T1074.001",
+    "technique": "Local Data Staging",
+    "tactic": "collection",
+    "datasources": "file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may stage collected data in a central location or directory on the local system prior to Exfiltration. Data may be kept in separate files or combined into one file through techniques such as [Archive Collected Data](https://attack.mitre.org/techniques/T1560). Interactive command shells may be used, and common functionality within [cmd](https://attack.mitre.org/software/S0106) and bash may be used to copy data into a staging location.\n\nAdversaries may also stage collected data in various available formats/locations of a system, including local storage databases/repositories or the Windows Registry.(Citation: Prevailion DarkWatchman 2021)",
+    "technique_references": [
+      {
+        "source_name": "Prevailion DarkWatchman 2021",
+        "url": "https://www.prevailion.com/darkwatchman-new-fileless-techniques/",
+        "description": "Smith, S., Stafford, M. (2021, December 14). DarkWatchman: A new evolution in fileless techniques. Retrieved January 10, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--359b00ad-9425-420b-bba5-6de8d600cbc0",
+    "platform": "windows|iaas|linux|macos",
+    "tid": "T1074.002",
+    "technique": "Remote Data Staging",
+    "tactic": "collection",
+    "datasources": "file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may stage data collected from multiple systems in a central location or directory on one system prior to Exfiltration. Data may be kept in separate files or combined into one file through techniques such as [Archive Collected Data](https://attack.mitre.org/techniques/T1560). Interactive command shells may be used, and common functionality within [cmd](https://attack.mitre.org/software/S0106) and bash may be used to copy data into a staging location.\n\nIn cloud environments, adversaries may stage data within a particular instance or virtual machine before exfiltration. An adversary may [Create Cloud Instance](https://attack.mitre.org/techniques/T1578/002) and stage data in that instance.(Citation: Mandiant M-Trends 2020)\n\nBy staging data on one system prior to Exfiltration, adversaries can minimize the number of connections made to their C2 server and better evade detection.",
+    "technique_references": [
+      {
+        "source_name": "Mandiant M-Trends 2020",
+        "url": "https://content.fireeye.com/m-trends/rpt-m-trends-2020",
+        "description": "Mandiant. (2020, February). M-Trends 2020. Retrieved April 24, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--25659dd6-ea12-45c4-97e6-381e3e4b593e",
+    "platform": "linux|macos|windows",
+    "tid": "T1087.001",
+    "technique": "Local Account",
+    "tactic": "discovery",
+    "datasources": "file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to get a listing of local system accounts. This information can help adversaries determine which local accounts exist on a system to aid in follow-on behavior.\n\nCommands such as <code>net user</code> and <code>net localgroup</code> of the [Net](https://attack.mitre.org/software/S0039) utility and <code>id</code> and <code>groups</code>on macOS and Linux can list local users and groups. On Linux, local users can also be enumerated through the use of the <code>/etc/passwd</code> file. On macOS the <code>dscl . list /Users</code> command can be used to enumerate local accounts.",
+    "technique_references": [
+      {
+        "source_name": "Elastic - Koadiac Detection with EQL",
+        "url": "https://www.elastic.co/blog/embracing-offensive-tooling-building-detections-against-koadic-using-eql",
+        "description": "Stepanic, D.. (2020, January 13). Embracing offensive tooling: Building detections against Koadic using EQL. Retrieved November 30, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--1e9eb839-294b-48cc-b0d3-c45555a2a004",
+    "platform": "windows",
+    "tid": "T1114.001",
+    "technique": "Local Email Collection",
+    "tactic": "collection",
+    "datasources": "file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may target user email on local systems to collect sensitive information. Files containing email data can be acquired from a user’s local system, such as Outlook storage or cache files.\n\nOutlook stores data locally in offline data files with an extension of .ost. Outlook 2010 and later supports .ost file sizes up to 50GB, while earlier versions of Outlook support up to 20GB.(Citation: Outlook File Sizes) IMAP accounts in Outlook 2013 (and earlier) and POP accounts use Outlook Data Files (.pst) as opposed to .ost, whereas IMAP accounts in Outlook 2016 (and later) use .ost files. Both types of Outlook data files are typically stored in `C:\\Users\\<username>\\Documents\\Outlook Files` or `C:\\Users\\<username>\\AppData\\Local\\Microsoft\\Outlook`.(Citation: Microsoft Outlook Files)",
+    "technique_references": [
+      {
+        "source_name": "Outlook File Sizes",
+        "url": "https://practical365.com/clients/office-365-proplus/outlook-cached-mode-ost-file-sizes/",
+        "description": "N. O'Bryan. (2018, May 30). Managing Outlook Cached Mode and OST File Sizes. Retrieved February 19, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Outlook Files",
+        "url": "https://support.office.com/en-us/article/introduction-to-outlook-data-files-pst-and-ost-222eaf92-a995-45d9-bde2-f331f60e2790",
+        "description": "Microsoft. (n.d.). Introduction to Outlook Data Files (.pst and .ost). Retrieved February 19, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--837f9164-50af-4ac0-8219-379d8a74cefc",
+    "platform": "windows|iaas|linux|macos|containers",
+    "tid": "T1552.001",
+    "technique": "Credentials In Files",
+    "tactic": "credential-access",
+    "datasources": "file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may search local file systems and remote file shares for files containing insecurely stored credentials. These can be files created by users to store their own credentials, shared credential stores for a group of individuals, configuration files containing passwords for a system or service, or source code/binary files containing embedded passwords.\n\nIt is possible to extract passwords from backups or saved virtual machines through [OS Credential Dumping](https://attack.mitre.org/techniques/T1003). (Citation: CG 2014) Passwords may also be obtained from Group Policy Preferences stored on the Windows Domain Controller. (Citation: SRD GPP)\n\nIn cloud and/or containerized environments, authenticated user and service account credentials are often stored in local configuration and credential files.(Citation: Unit 42 Hildegard Malware) They may also be found as parameters to deployment commands in container logs.(Citation: Unit 42 Unsecured Docker Daemons) In some cases, these files can be copied and reused on another machine or the contents can be read and then used to authenticate without needing to copy any files.(Citation: Specter Ops - Cloud Credential Storage)",
+    "technique_references": [
+      {
+        "source_name": "CG 2014",
+        "url": "http://carnal0wnage.attackresearch.com/2014/05/mimikatz-against-virtual-machine-memory.html",
+        "description": "CG. (2014, May 20). Mimikatz Against Virtual Machine Memory Part 1. Retrieved November 12, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "SRD GPP",
+        "url": "http://blogs.technet.com/b/srd/archive/2014/05/13/ms14-025-an-update-for-group-policy-preferences.aspx",
+        "description": "Security Research and Defense. (2014, May 13). MS14-025: An Update for Group Policy Preferences. Retrieved January 28, 2015.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Unit 42 Hildegard Malware",
+        "url": "https://unit42.paloaltonetworks.com/hildegard-malware-teamtnt/",
+        "description": "Chen, J. et al. (2021, February 3). Hildegard: New TeamTNT Cryptojacking Malware Targeting Kubernetes. Retrieved April 5, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Unit 42 Unsecured Docker Daemons",
+        "url": "https://unit42.paloaltonetworks.com/attackers-tactics-and-techniques-in-unsecured-docker-daemons-revealed/",
+        "description": "Chen, J.. (2020, January 29). Attacker's Tactics and Techniques in Unsecured Docker Daemons Revealed. Retrieved March 31, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Specter Ops - Cloud Credential Storage",
+        "url": "https://posts.specterops.io/head-in-the-clouds-bd038bb69e48",
+        "description": "Maddalena, C.. (2018, September 12). Head in the Clouds. Retrieved October 4, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|system|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--8187bd2a-866f-4457-9009-86b0ddedffa3",
+    "platform": "linux|macos",
+    "tid": "T1552.003",
+    "technique": "Bash History",
+    "tactic": "credential-access",
+    "datasources": "file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may search the bash command history on compromised systems for insecurely stored credentials. Bash keeps track of the commands users type on the command-line with the \"history\" utility. Once a user logs out, the history is flushed to the user’s <code>.bash_history</code> file. For each user, this file resides at the same location: <code>~/.bash_history</code>. Typically, this file keeps track of the user’s last 500 commands. Users often type usernames and passwords on the command-line as parameters to programs, which then get saved to this file when they log out. Adversaries can abuse this by looking through the file for potential credentials. (Citation: External to DA, the OS X Way)",
+    "technique_references": [
+      {
+        "source_name": "External to DA, the OS X Way",
+        "url": "http://www.slideshare.net/StephanBorosh/external-to-da-the-os-x-way",
+        "description": "Alex Rymdeko-Harvey, Steve Borosh. (2016, May 14). External to DA, the OS X Way. Retrieved July 3, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--60b508a1-6a5e-46b1-821a-9f7b78752abf",
+    "platform": "linux|macos|windows|network",
+    "tid": "T1552.004",
+    "technique": "Private Keys",
+    "tactic": "credential-access",
+    "datasources": "file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may search for private key certificate files on compromised systems for insecurely stored credentials. Private cryptographic keys and certificates are used for authentication, encryption/decryption, and digital signatures.(Citation: Wikipedia Public Key Crypto) Common key and certificate file extensions include: .key, .pgp, .gpg, .ppk., .p12, .pem, .pfx, .cer, .p7b, .asc. \n\nAdversaries may also look in common key directories, such as <code>~/.ssh</code> for SSH keys on * nix-based systems or <code>C:&#92;Users&#92;(username)&#92;.ssh&#92;</code> on Windows. Adversary tools may also search compromised systems for file extensions relating to cryptographic keys and certificates.(Citation: Kaspersky Careto)(Citation: Palo Alto Prince of Persia)\n\nWhen a device is registered to Azure AD, a device key and a transport key are generated and used to verify the device’s identity.(Citation: Microsoft Primary Refresh Token) An adversary with access to the device may be able to export the keys in order to impersonate the device.(Citation: AADInternals Azure AD Device Identities)\n\nOn network devices, private keys may be exported via [Network Device CLI](https://attack.mitre.org/techniques/T1059/008) commands such as `crypto pki export`.(Citation: cisco_deploy_rsa_keys) \n\nSome private keys require a password or passphrase for operation, so an adversary may also use [Input Capture](https://attack.mitre.org/techniques/T1056) for keylogging or attempt to [Brute Force](https://attack.mitre.org/techniques/T1110) the passphrase off-line. These private keys can be used to authenticate to [Remote Services](https://attack.mitre.org/techniques/T1021) like SSH or for use in decrypting other collected files such as email.",
+    "technique_references": [
+      {
+        "source_name": "Palo Alto Prince of Persia",
+        "url": "https://researchcenter.paloaltonetworks.com/2016/06/unit42-prince-of-persia-game-over/",
+        "description": "Bar, T., Conant, S., Efraim, L. (2016, June 28). Prince of Persia – Game Over. Retrieved July 5, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "cisco_deploy_rsa_keys",
+        "url": "https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_conn_pki/configuration/xe-17/sec-pki-xe-17-book/sec-deploy-rsa-pki.html#GUID-1CB802D8-9DE3-447F-BECE-CF22F5E11436",
+        "description": "Cisco. (2023, February 17). Chapter: Deploying RSA Keys Within a PKI . Retrieved March 27, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AADInternals Azure AD Device Identities",
+        "url": "https://aadinternals.com/post/deviceidentity/",
+        "description": "Dr. Nestori Syynimaa. (2022, February 15). Stealing and faking Azure AD device identities. Retrieved February 21, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Kaspersky Careto",
+        "url": "https://kasperskycontenthub.com/wp-content/uploads/sites/43/vlpdfs/unveilingthemask_v1.0.pdf",
+        "description": "Kaspersky Labs. (2014, February 11). Unveiling “Careto” - The Masked APT. Retrieved July 5, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Primary Refresh Token",
+        "url": "https://learn.microsoft.com/en-us/azure/active-directory/devices/concept-primary-refresh-token",
+        "description": "Microsoft. (2022, September 9). What is a Primary Refresh Token?. Retrieved February 21, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia Public Key Crypto",
+        "url": "https://en.wikipedia.org/wiki/Public-key_cryptography",
+        "description": "Wikipedia. (2017, June 29). Public-key cryptography. Retrieved July 5, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--8d7bd4f5-3a89-4453-9c82-2c8894d5655e",
+    "platform": "windows",
+    "tid": "T1552.006",
+    "technique": "Group Policy Preferences",
+    "tactic": "credential-access",
+    "datasources": "file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to find unsecured credentials in Group Policy Preferences (GPP). GPP are tools that allow administrators to create domain policies with embedded credentials. These policies allow administrators to set local accounts.(Citation: Microsoft GPP 2016)\n\nThese group policies are stored in SYSVOL on a domain controller. This means that any domain user can view the SYSVOL share and decrypt the password (using the AES key that has been made public).(Citation: Microsoft GPP Key)\n\nThe following tools and scripts can be used to gather and decrypt the password file from Group Policy Preference XML files:\n\n* Metasploit’s post exploitation module: <code>post/windows/gather/credentials/gpp</code>\n* Get-GPPPassword(Citation: Obscuresecurity Get-GPPPassword)\n* gpprefdecrypt.py\n\nOn the SYSVOL share, adversaries may use the following command to enumerate potential GPP XML files: <code>dir /s * .xml</code>\n",
+    "technique_references": [
+      {
+        "source_name": "Microsoft GPP 2016",
+        "url": "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn581922(v%3Dws.11)",
+        "description": "Microsoft. (2016, August 31). Group Policy Preferences. Retrieved March 9, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft GPP Key",
+        "url": "https://msdn.microsoft.com/library/cc422924.aspx",
+        "description": "Microsoft. (n.d.). 2.2.1.1.4 Password Encryption. Retrieved April 11, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Obscuresecurity Get-GPPPassword",
+        "url": "https://obscuresecurity.blogspot.co.uk/2012/05/gpp-password-retrieval-with-powershell.html",
+        "description": "Campbell, C. (2012, May 24). GPP Password Retrieval with PowerShell. Retrieved April 11, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "ADSecurity Finding Passwords in SYSVOL",
+        "url": "https://adsecurity.org/?p=2288",
+        "description": "Sean Metcalf. (2015, December 28). Finding Passwords in SYSVOL & Exploiting Group Policy Preferences. Retrieved February 17, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--1eaebf46-e361-4437-bc23-d5d65a3b92e3",
+    "platform": "macos",
+    "tid": "T1555.001",
+    "technique": "Keychain",
+    "tactic": "credential-access",
+    "datasources": "file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may acquire credentials from Keychain. Keychain (or Keychain Services) is the macOS credential management system that stores account names, passwords, private keys, certificates, sensitive application data, payment data, and secure notes. There are three types of Keychains: Login Keychain, System Keychain, and Local Items (iCloud) Keychain. The default Keychain is the Login Keychain, which stores user passwords and information. The System Keychain stores items accessed by the operating system, such as items shared among users on a host. The Local Items (iCloud) Keychain is used for items synced with Apple’s iCloud service. \n\nKeychains can be viewed and edited through the Keychain Access application or using the command-line utility <code>security</code>. Keychain files are located in <code>~/Library/Keychains/</code>, <code>/Library/Keychains/</code>, and <code>/Network/Library/Keychains/</code>.(Citation: Keychain Services Apple)(Citation: Keychain Decryption Passware)(Citation: OSX Keychain Schaumann)\n\nAdversaries may gather user credentials from Keychain storage/memory. For example, the command <code>security dump-keychain –d</code> will dump all Login Keychain credentials from <code>~/Library/Keychains/login.keychain-db</code>. Adversaries may also directly read Login Keychain credentials from the <code>~/Library/Keychains/login.keychain</code> file. Both methods require a password, where the default password for the Login Keychain is the current user’s password to login to the macOS host.(Citation: External to DA, the OS X Way)(Citation: Empire Keychain Decrypt)  ",
+    "technique_references": [
+      {
+        "source_name": "External to DA, the OS X Way",
+        "url": "http://www.slideshare.net/StephanBorosh/external-to-da-the-os-x-way",
+        "description": "Alex Rymdeko-Harvey, Steve Borosh. (2016, May 14). External to DA, the OS X Way. Retrieved July 3, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Keychain Services Apple",
+        "url": "https://developer.apple.com/documentation/security/keychain_services",
+        "description": "Apple. (n.d.). Keychain Services. Retrieved April 11, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Empire Keychain Decrypt",
+        "url": "https://github.com/EmpireProject/Empire/blob/08cbd274bef78243d7a8ed6443b8364acd1fc48b/lib/modules/python/collection/osx/keychaindump_decrypt.py",
+        "description": "Empire. (2018, March 8). Empire keychaindump_decrypt Module. Retrieved April 14, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "OSX Keychain Schaumann",
+        "url": "https://www.netmeister.org/blog/keychain-passwords.html",
+        "description": "Jan Schaumann. (2015, November 5). Using the OS X Keychain to store and retrieve passwords. Retrieved March 31, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Keychain Decryption Passware",
+        "url": "https://support.passware.com/hc/en-us/articles/4573379868567-A-Deep-Dive-into-Apple-Keychain-Decryption",
+        "description": "Yana Gourenko. (n.d.). A Deep Dive into Apple Keychain Decryption. Retrieved April 13, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--58a3e6aa-4453-4cc8-a51f-4befe80b31a8",
+    "platform": "linux|macos|windows",
+    "tid": "T1555.003",
+    "technique": "Credentials from Web Browsers",
+    "tactic": "credential-access",
+    "datasources": "file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may acquire credentials from web browsers by reading files specific to the target browser.(Citation: Talos Olympic Destroyer 2018) Web browsers commonly save credentials such as website usernames and passwords so that they do not need to be entered manually in the future. Web browsers typically store the credentials in an encrypted format within a credential store; however, methods exist to extract plaintext credentials from web browsers.\n\nFor example, on Windows systems, encrypted credentials may be obtained from Google Chrome by reading a database file, <code>AppData\\Local\\Google\\Chrome\\User Data\\Default\\Login Data</code> and executing a SQL query: <code>SELECT action_url, username_value, password_value FROM logins;</code>. The plaintext password can then be obtained by passing the encrypted credentials to the Windows API function <code>CryptUnprotectData</code>, which uses the victim’s cached logon credentials as the decryption key.(Citation: Microsoft CryptUnprotectData April 2018)\n \nAdversaries have executed similar procedures for common web browsers such as FireFox, Safari, Edge, etc.(Citation: Proofpoint Vega Credential Stealer May 2018)(Citation: FireEye HawkEye Malware July 2017) Windows stores Internet Explorer and Microsoft Edge credentials in Credential Lockers managed by the [Windows Credential Manager](https://attack.mitre.org/techniques/T1555/004).\n\nAdversaries may also acquire credentials by searching web browser process memory for patterns that commonly match credentials.(Citation: GitHub Mimikittenz July 2016)\n\nAfter acquiring credentials from web browsers, adversaries may attempt to recycle the credentials across different systems and/or accounts in order to expand access. This can result in significantly furthering an adversary's objective in cases where credentials gained from web browsers overlap with privileged accounts (e.g. domain administrator).",
+    "technique_references": [
+      {
+        "source_name": "Talos Olympic Destroyer 2018",
+        "url": "https://blog.talosintelligence.com/2018/02/olympic-destroyer.html",
+        "description": "Mercer, W. and Rascagneres, P. (2018, February 12). Olympic Destroyer Takes Aim At Winter Olympics. Retrieved March 14, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft CryptUnprotectData April 2018",
+        "url": "https://docs.microsoft.com/en-us/windows/desktop/api/dpapi/nf-dpapi-cryptunprotectdata",
+        "description": "Microsoft. (2018, April 12). CryptUnprotectData function. Retrieved June 18, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Proofpoint Vega Credential Stealer May 2018",
+        "url": "https://www.proofpoint.com/us/threat-insight/post/new-vega-stealer-shines-brightly-targeted-campaign",
+        "description": "Proofpoint. (2018, May 10). New Vega Stealer shines brightly in targeted campaign . Retrieved June 18, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye HawkEye Malware July 2017",
+        "url": "https://www.fireeye.com/blog/threat-research/2017/07/hawkeye-malware-distributed-in-phishing-campaign.html",
+        "description": "Swapnil Patil, Yogesh Londhe. (2017, July 25). HawkEye Credential Theft Malware Distributed in Recent Phishing Campaign. Retrieved June 18, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GitHub Mimikittenz July 2016",
+        "url": "https://github.com/putterpanda/mimikittenz",
+        "description": "Jamieson O'Reilly (putterpanda). (2016, July 4). mimikittenz. Retrieved June 20, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--d336b553-5da9-46ca-98a8-0b23f49fb447",
+    "platform": "windows",
+    "tid": "T1555.004",
+    "technique": "Windows Credential Manager",
+    "tactic": "credential-access",
+    "datasources": "file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may acquire credentials from the Windows Credential Manager. The Credential Manager stores credentials for signing into websites, applications, and/or devices that request authentication through NTLM or Kerberos in Credential Lockers (previously known as Windows Vaults).(Citation: Microsoft Credential Manager store)(Citation: Microsoft Credential Locker)\n\nThe Windows Credential Manager separates website credentials from application or network credentials in two lockers. As part of [Credentials from Web Browsers](https://attack.mitre.org/techniques/T1555/003), Internet Explorer and Microsoft Edge website credentials are managed by the Credential Manager and are stored in the Web Credentials locker. Application and network credentials are stored in the Windows Credentials locker.\n\nCredential Lockers store credentials in encrypted `.vcrd` files, located under `%Systemdrive%\\Users\\\\[Username]\\AppData\\Local\\Microsoft\\\\[Vault/Credentials]\\`. The encryption key can be found in a file named <code>Policy.vpol</code>, typically located in the same folder as the credentials.(Citation: passcape Windows Vault)(Citation: Malwarebytes The Windows Vault)\n\nAdversaries may list credentials managed by the Windows Credential Manager through several mechanisms. <code>vaultcmd.exe</code> is a native Windows executable that can be used to enumerate credentials stored in the Credential Locker through a command-line interface. Adversaries may also gather credentials by directly reading files located inside of the Credential Lockers. Windows APIs, such as <code>CredEnumerateA</code>, may also be absued to list credentials managed by the Credential Manager.(Citation: Microsoft CredEnumerate)(Citation: Delpy Mimikatz Crendential Manager)\n\nAdversaries may also obtain credentials from credential backups. Credential backups and restorations may be performed by running <code>rundll32.exe keymgr.dll KRShowKeyMgr</code> then selecting the “Back up...” button on the “Stored User Names and Passwords” GUI.\n\nPassword recovery tools may also obtain plain text passwords from the Credential Manager.(Citation: Malwarebytes The Windows Vault)",
+    "technique_references": [
+      {
+        "source_name": "Malwarebytes The Windows Vault",
+        "url": "https://blog.malwarebytes.com/101/2016/01/the-windows-vaults/",
+        "description": "Arntz, P. (2016, March 30). The Windows Vault . Retrieved November 23, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Delpy Mimikatz Crendential Manager",
+        "url": "https://github.com/gentilkiwi/mimikatz/wiki/howto-~-credential-manager-saved-credentials",
+        "description": "Delpy, B. (2017, December 12). howto ~ credential manager saved credentials. Retrieved November 23, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Credential Locker",
+        "url": "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-8.1-and-8/jj554668(v=ws.11)?redirectedfrom=MSDN",
+        "description": "Microsoft. (2013, October 23). Credential Locker Overview. Retrieved November 24, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Credential Manager store",
+        "url": "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh994565(v=ws.11)#credential-manager-store",
+        "description": "Microsoft. (2016, August 31). Cached and Stored Credentials Technical Overview. Retrieved November 24, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft CredEnumerate",
+        "url": "https://docs.microsoft.com/en-us/windows/win32/api/wincred/nf-wincred-credenumeratea",
+        "description": "Microsoft. (2018, December 5). CredEnumarateA function (wincred.h). Retrieved November 24, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "passcape Windows Vault",
+        "url": "https://www.passcape.com/windows_password_recovery_vault_explorer",
+        "description": "Passcape. (n.d.). Windows Password Recovery - Vault Explorer and Decoder. Retrieved November 24, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--315f51f0-6b03-4c1e-bfb2-84740afb8e21",
+    "platform": "linux|macos|windows",
+    "tid": "T1555.005",
+    "technique": "Password Managers",
+    "tactic": "credential-access",
+    "datasources": "file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may acquire user credentials from third-party password managers.(Citation: ise Password Manager February 2019) Password managers are applications designed to store user credentials, normally in an encrypted database. Credentials are typically accessible after a user provides a master password that unlocks the database. After the database is unlocked, these credentials may be copied to memory. These databases can be stored as files on disk.(Citation: ise Password Manager February 2019)\n\nAdversaries may acquire user credentials from password managers by extracting the master password and/or plain-text credentials from memory.(Citation: FoxIT Wocao December 2019)(Citation: Github KeeThief) Adversaries may extract credentials from memory via [Exploitation for Credential Access](https://attack.mitre.org/techniques/T1212).(Citation: NVD CVE-2019-3610)\n Adversaries may also try brute forcing via [Password Guessing](https://attack.mitre.org/techniques/T1110/001) to obtain the master password of a password manager.(Citation: Cyberreason Anchor December 2019)",
+    "technique_references": [
+      {
+        "source_name": "ise Password Manager February 2019",
+        "url": "https://www.ise.io/casestudies/password-manager-hacking/",
+        "description": "ise. (2019, February 19). Password Managers: Under the Hood of Secrets Management. Retrieved January 22, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FoxIT Wocao December 2019",
+        "url": "https://www.fox-it.com/media/kadlze5c/201912_report_operation_wocao.pdf",
+        "description": "Dantzig, M. v., Schamper, E. (2019, December 19). Operation Wocao: Shining a light on one of China’s hidden hacking groups. Retrieved October 8, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Github KeeThief",
+        "url": "https://github.com/GhostPack/KeeThief",
+        "description": "Lee, C., Schoreder, W. (n.d.). KeeThief. Retrieved February 8, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NVD CVE-2019-3610",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-3610",
+        "description": "National Vulnerability Database. (2019, October 9). CVE-2019-3610 Detail. Retrieved April 14, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Cyberreason Anchor December 2019",
+        "url": "https://www.cybereason.com/blog/dropping-anchor-from-a-trickbot-infection-to-the-discovery-of-the-anchor-malware",
+        "description": "Dahan, A. et al. (2019, December 11). DROPPING ANCHOR: FROM A TRICKBOT INFECTION TO THE DISCOVERY OF THE ANCHOR MALWARE. Retrieved September 10, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--86a96bf6-cf8b-411c-aaeb-8959944d64f7",
+    "platform": "linux|macos|windows",
+    "tid": "T1567.001",
+    "technique": "Exfiltration to Code Repository",
+    "tactic": "exfiltration",
+    "datasources": "file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may exfiltrate data to a code repository rather than over their primary command and control channel. Code repositories are often accessible via an API (ex: https://api.github.com). Access to these APIs are often over HTTPS, which gives the adversary an additional level of protection.\n\nExfiltration to a code repository can also provide a significant amount of cover to the adversary if it is a popular service already used by hosts within the network. ",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--bf1b6176-597c-4600-bfcd-ac989670f96b",
+    "platform": "linux|macos|windows",
+    "tid": "T1567.002",
+    "technique": "Exfiltration to Cloud Storage",
+    "tactic": "exfiltration",
+    "datasources": "file-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may exfiltrate data to a cloud storage service rather than over their primary command and control channel. Cloud storage services allow for the storage, edit, and retrieval of data from a remote cloud storage server over the Internet.\n\nExamples of cloud storage services include Dropbox and Google Docs. Exfiltration to these cloud storage services can provide a significant amount of cover to the adversary if hosts within the network are already communicating with the service. ",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

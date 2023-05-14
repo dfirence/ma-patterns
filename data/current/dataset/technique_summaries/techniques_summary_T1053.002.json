@@ -1,0 +1,215 @@
+[
+  {
+    "id": "attack-pattern--f3d95a1f-bba2-44ce-9af7-37866cd63fd0",
+    "platform": "windows|linux|macos",
+    "tid": "T1053.002",
+    "technique": "At",
+    "tactic": "execution",
+    "datasources": "command-execution|file-modification|process-creation|scheduled-job-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse the [at](https://attack.mitre.org/software/S0110) utility to perform task scheduling for initial or recurring execution of malicious code. The [at](https://attack.mitre.org/software/S0110) utility exists as an executable within Windows, Linux, and macOS for scheduling tasks at a specified time and date. Although deprecated in favor of [Scheduled Task](https://attack.mitre.org/techniques/T1053/005)'s [schtasks](https://attack.mitre.org/software/S0111) in Windows environments, using [at](https://attack.mitre.org/software/S0110) requires that the Task Scheduler service be running, and the user to be logged on as a member of the local Administrators group.\n\nOn Linux and macOS, [at](https://attack.mitre.org/software/S0110) may be invoked by the superuser as well as any users added to the <code>at.allow</code> file. If the <code>at.allow</code> file does not exist, the <code>at.deny</code> file is checked. Every username not listed in <code>at.deny</code> is allowed to invoke [at](https://attack.mitre.org/software/S0110). If the <code>at.deny</code> exists and is empty, global use of [at](https://attack.mitre.org/software/S0110) is permitted. If neither file exists (which is often the baseline) only the superuser is allowed to use [at](https://attack.mitre.org/software/S0110).(Citation: Linux at)\n\nAdversaries may use [at](https://attack.mitre.org/software/S0110) to execute programs at system startup or on a scheduled basis for [Persistence](https://attack.mitre.org/tactics/TA0003). [at](https://attack.mitre.org/software/S0110) can also be abused to conduct remote [Execution](https://attack.mitre.org/tactics/TA0002) as part of [Lateral Movement](https://attack.mitre.org/tactics/TA0008) and/or to run a process under the context of a specified account (such as SYSTEM).\n\nIn Linux environments, adversaries may also abuse [at](https://attack.mitre.org/software/S0110) to break out of restricted environments by using a task to spawn an interactive system shell or to run system commands. Similarly, [at](https://attack.mitre.org/software/S0110) may also be used for [Privilege Escalation](https://attack.mitre.org/tactics/TA0004) if the binary is allowed to run as superuser via <code>sudo</code>.(Citation: GTFObins at)",
+    "technique_references": [
+      {
+        "source_name": "rowland linux at 2019",
+        "url": "https://www.linkedin.com/pulse/getting-attacker-ip-address-from-malicious-linux-job-craig-rowland/",
+        "description": "Craig Rowland. (2019, July 25). Getting an Attacker IP Address from a Malicious Linux At Job. Retrieved October 15, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GTFObins at",
+        "url": "https://gtfobins.github.io/gtfobins/at/",
+        "description": "Emilio Pinna, Andrea Cardaci. (n.d.). gtfobins at. Retrieved September 28, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Linux at",
+        "url": "https://man7.org/linux/man-pages/man1/at.1p.html",
+        "description": "IEEE/The Open Group. (2017). at(1p) — Linux manual page. Retrieved February 25, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Twitter Leoloobeek Scheduled Task",
+        "url": "https://twitter.com/leoloobeek/status/939248813465853953",
+        "description": "Loobeek, L. (2017, December 8). leoloobeek Status. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Scheduled Task Events Win10",
+        "url": "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/audit-other-object-access-events",
+        "description": "Microsoft. (2017, May 28). Audit Other Object Access Events. Retrieved June 27, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Scheduled Task Events",
+        "url": "https://technet.microsoft.com/library/dd315590.aspx",
+        "description": "Microsoft. (n.d.). General Task Registration. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Autoruns",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb963902",
+        "description": "Russinovich, M. (2016, January 4). Autoruns for Windows v13.51. Retrieved June 6, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Forum Scheduled Task Operational Setting",
+        "url": "https://social.technet.microsoft.com/Forums/en-US/e5bca729-52e7-4fcb-ba12-3225c564674c/scheduled-tasks-history-retention-settings?forum=winserver8gen",
+        "description": "Satyajit321. (2015, November 3). Scheduled Tasks History Retention settings. Retrieved December 12, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f3d95a1f-bba2-44ce-9af7-37866cd63fd0",
+    "platform": "windows|linux|macos",
+    "tid": "T1053.002",
+    "technique": "At",
+    "tactic": "persistence",
+    "datasources": "command-execution|file-modification|process-creation|scheduled-job-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse the [at](https://attack.mitre.org/software/S0110) utility to perform task scheduling for initial or recurring execution of malicious code. The [at](https://attack.mitre.org/software/S0110) utility exists as an executable within Windows, Linux, and macOS for scheduling tasks at a specified time and date. Although deprecated in favor of [Scheduled Task](https://attack.mitre.org/techniques/T1053/005)'s [schtasks](https://attack.mitre.org/software/S0111) in Windows environments, using [at](https://attack.mitre.org/software/S0110) requires that the Task Scheduler service be running, and the user to be logged on as a member of the local Administrators group.\n\nOn Linux and macOS, [at](https://attack.mitre.org/software/S0110) may be invoked by the superuser as well as any users added to the <code>at.allow</code> file. If the <code>at.allow</code> file does not exist, the <code>at.deny</code> file is checked. Every username not listed in <code>at.deny</code> is allowed to invoke [at](https://attack.mitre.org/software/S0110). If the <code>at.deny</code> exists and is empty, global use of [at](https://attack.mitre.org/software/S0110) is permitted. If neither file exists (which is often the baseline) only the superuser is allowed to use [at](https://attack.mitre.org/software/S0110).(Citation: Linux at)\n\nAdversaries may use [at](https://attack.mitre.org/software/S0110) to execute programs at system startup or on a scheduled basis for [Persistence](https://attack.mitre.org/tactics/TA0003). [at](https://attack.mitre.org/software/S0110) can also be abused to conduct remote [Execution](https://attack.mitre.org/tactics/TA0002) as part of [Lateral Movement](https://attack.mitre.org/tactics/TA0008) and/or to run a process under the context of a specified account (such as SYSTEM).\n\nIn Linux environments, adversaries may also abuse [at](https://attack.mitre.org/software/S0110) to break out of restricted environments by using a task to spawn an interactive system shell or to run system commands. Similarly, [at](https://attack.mitre.org/software/S0110) may also be used for [Privilege Escalation](https://attack.mitre.org/tactics/TA0004) if the binary is allowed to run as superuser via <code>sudo</code>.(Citation: GTFObins at)",
+    "technique_references": [
+      {
+        "source_name": "rowland linux at 2019",
+        "url": "https://www.linkedin.com/pulse/getting-attacker-ip-address-from-malicious-linux-job-craig-rowland/",
+        "description": "Craig Rowland. (2019, July 25). Getting an Attacker IP Address from a Malicious Linux At Job. Retrieved October 15, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GTFObins at",
+        "url": "https://gtfobins.github.io/gtfobins/at/",
+        "description": "Emilio Pinna, Andrea Cardaci. (n.d.). gtfobins at. Retrieved September 28, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Linux at",
+        "url": "https://man7.org/linux/man-pages/man1/at.1p.html",
+        "description": "IEEE/The Open Group. (2017). at(1p) — Linux manual page. Retrieved February 25, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Twitter Leoloobeek Scheduled Task",
+        "url": "https://twitter.com/leoloobeek/status/939248813465853953",
+        "description": "Loobeek, L. (2017, December 8). leoloobeek Status. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Scheduled Task Events Win10",
+        "url": "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/audit-other-object-access-events",
+        "description": "Microsoft. (2017, May 28). Audit Other Object Access Events. Retrieved June 27, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Scheduled Task Events",
+        "url": "https://technet.microsoft.com/library/dd315590.aspx",
+        "description": "Microsoft. (n.d.). General Task Registration. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Autoruns",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb963902",
+        "description": "Russinovich, M. (2016, January 4). Autoruns for Windows v13.51. Retrieved June 6, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Forum Scheduled Task Operational Setting",
+        "url": "https://social.technet.microsoft.com/Forums/en-US/e5bca729-52e7-4fcb-ba12-3225c564674c/scheduled-tasks-history-retention-settings?forum=winserver8gen",
+        "description": "Satyajit321. (2015, November 3). Scheduled Tasks History Retention settings. Retrieved December 12, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--f3d95a1f-bba2-44ce-9af7-37866cd63fd0",
+    "platform": "windows|linux|macos",
+    "tid": "T1053.002",
+    "technique": "At",
+    "tactic": "privilege-escalation",
+    "datasources": "command-execution|file-modification|process-creation|scheduled-job-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse the [at](https://attack.mitre.org/software/S0110) utility to perform task scheduling for initial or recurring execution of malicious code. The [at](https://attack.mitre.org/software/S0110) utility exists as an executable within Windows, Linux, and macOS for scheduling tasks at a specified time and date. Although deprecated in favor of [Scheduled Task](https://attack.mitre.org/techniques/T1053/005)'s [schtasks](https://attack.mitre.org/software/S0111) in Windows environments, using [at](https://attack.mitre.org/software/S0110) requires that the Task Scheduler service be running, and the user to be logged on as a member of the local Administrators group.\n\nOn Linux and macOS, [at](https://attack.mitre.org/software/S0110) may be invoked by the superuser as well as any users added to the <code>at.allow</code> file. If the <code>at.allow</code> file does not exist, the <code>at.deny</code> file is checked. Every username not listed in <code>at.deny</code> is allowed to invoke [at](https://attack.mitre.org/software/S0110). If the <code>at.deny</code> exists and is empty, global use of [at](https://attack.mitre.org/software/S0110) is permitted. If neither file exists (which is often the baseline) only the superuser is allowed to use [at](https://attack.mitre.org/software/S0110).(Citation: Linux at)\n\nAdversaries may use [at](https://attack.mitre.org/software/S0110) to execute programs at system startup or on a scheduled basis for [Persistence](https://attack.mitre.org/tactics/TA0003). [at](https://attack.mitre.org/software/S0110) can also be abused to conduct remote [Execution](https://attack.mitre.org/tactics/TA0002) as part of [Lateral Movement](https://attack.mitre.org/tactics/TA0008) and/or to run a process under the context of a specified account (such as SYSTEM).\n\nIn Linux environments, adversaries may also abuse [at](https://attack.mitre.org/software/S0110) to break out of restricted environments by using a task to spawn an interactive system shell or to run system commands. Similarly, [at](https://attack.mitre.org/software/S0110) may also be used for [Privilege Escalation](https://attack.mitre.org/tactics/TA0004) if the binary is allowed to run as superuser via <code>sudo</code>.(Citation: GTFObins at)",
+    "technique_references": [
+      {
+        "source_name": "rowland linux at 2019",
+        "url": "https://www.linkedin.com/pulse/getting-attacker-ip-address-from-malicious-linux-job-craig-rowland/",
+        "description": "Craig Rowland. (2019, July 25). Getting an Attacker IP Address from a Malicious Linux At Job. Retrieved October 15, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "GTFObins at",
+        "url": "https://gtfobins.github.io/gtfobins/at/",
+        "description": "Emilio Pinna, Andrea Cardaci. (n.d.). gtfobins at. Retrieved September 28, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Linux at",
+        "url": "https://man7.org/linux/man-pages/man1/at.1p.html",
+        "description": "IEEE/The Open Group. (2017). at(1p) — Linux manual page. Retrieved February 25, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Twitter Leoloobeek Scheduled Task",
+        "url": "https://twitter.com/leoloobeek/status/939248813465853953",
+        "description": "Loobeek, L. (2017, December 8). leoloobeek Status. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft Scheduled Task Events Win10",
+        "url": "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/audit-other-object-access-events",
+        "description": "Microsoft. (2017, May 28). Audit Other Object Access Events. Retrieved June 27, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Scheduled Task Events",
+        "url": "https://technet.microsoft.com/library/dd315590.aspx",
+        "description": "Microsoft. (n.d.). General Task Registration. Retrieved December 12, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Autoruns",
+        "url": "https://technet.microsoft.com/en-us/sysinternals/bb963902",
+        "description": "Russinovich, M. (2016, January 4). Autoruns for Windows v13.51. Retrieved June 6, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Forum Scheduled Task Operational Setting",
+        "url": "https://social.technet.microsoft.com/Forums/en-US/e5bca729-52e7-4fcb-ba12-3225c564674c/scheduled-tasks-history-retention-settings?forum=winserver8gen",
+        "description": "Satyajit321. (2015, November 3). Scheduled Tasks History Retention settings. Retrieved December 12, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|user",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

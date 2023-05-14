@@ -1,0 +1,16 @@
+[
+  [
+    "adfind",
+    "T1069.002",
+    "Domain Groups",
+    "command-execution|group-enumeration|os-api-execution|process-creation",
+    "T1069.002::[AdFind] can enumerate domain groups."
+  ],
+  [
+    "adfind",
+    "T1087.002",
+    "Domain Account",
+    "command-execution|group-enumeration|network-traffic-content|os-api-execution|process-creation",
+    "T1087.002::[AdFind] can enumerate domain users."
+  ]
+]

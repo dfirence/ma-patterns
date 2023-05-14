@@ -1,0 +1,31 @@
+[
+  {
+    "id": "attack-pattern--2bee5ffb-7a7a-4119-b1f2-158151b19ac0",
+    "platform": "windows|azure-ad|office-365|saas|iaas|linux|macos|google-workspace",
+    "tid": "T1499.004",
+    "technique": "Application or System Exploitation",
+    "tactic": "impact",
+    "datasources": "application-log-content|host-status|network-traffic-content|network-traffic-flow",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may exploit software vulnerabilities that can cause an application or system to crash and deny availability to users. (Citation: Sucuri BIND9 August 2015) Some systems may automatically restart critical applications and services when crashes occur, but they can likely be re-exploited to cause a persistent denial of service (DoS) condition.\n\nAdversaries may exploit known or zero-day vulnerabilities to crash applications and/or systems, which may also lead to dependent applications and/or systems to be in a DoS condition. Crashed or restarted applications or systems may also have other effects such as [Data Destruction](https://attack.mitre.org/techniques/T1485), [Firmware Corruption](https://attack.mitre.org/techniques/T1495), [Service Stop](https://attack.mitre.org/techniques/T1489) etc. which may further cause a DoS condition and deny availability to critical information, applications and/or systems. ",
+    "technique_references": [
+      {
+        "source_name": "Sucuri BIND9 August 2015",
+        "url": "https://blog.sucuri.net/2015/08/bind9-denial-of-service-exploit-in-the-wild.html",
+        "description": "Cid, D.. (2015, August 2). BIND9 – Denial of Service Exploit in the Wild. Retrieved April 26, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

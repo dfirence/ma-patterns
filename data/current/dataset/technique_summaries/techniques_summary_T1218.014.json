@@ -1,0 +1,73 @@
+[
+  {
+    "id": "attack-pattern--ffbcfdb0-de22-4106-9ed3-fc23c8a01407",
+    "platform": "windows",
+    "tid": "T1218.014",
+    "technique": "MMC",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|file-creation|process-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse mmc.exe to proxy execution of malicious .msc files. Microsoft Management Console (MMC) is a binary that may be signed by Microsoft and is used in several ways in either its GUI or in a command prompt.(Citation: win_mmc)(Citation: what_is_mmc) MMC can be used to create, open, and save custom consoles that contain administrative tools created by Microsoft, called snap-ins. These snap-ins may be used to manage Windows systems locally or remotely. MMC can also be used to open Microsoft created .msc files to manage system configuration.(Citation: win_msc_files_overview)\n\nFor example, <code>mmc C:\\Users\\foo\\admintools.msc /a</code> will open a custom, saved console msc file in author mode.(Citation: win_mmc) Another common example is <code>mmc gpedit.msc</code>, which will open the Group Policy Editor application window. \n\nAdversaries may use MMC commands to perform malicious tasks. For example, <code>mmc wbadmin.msc delete catalog -quiet</code> deletes the backup catalog on the system (i.e. [Inhibit System Recovery](https://attack.mitre.org/techniques/T1490)) without prompts to the user (Note: <code>wbadmin.msc</code> may only be present by default on Windows Server operating systems).(Citation: win_wbadmin_delete_catalog)(Citation: phobos_virustotal)\n\nAdversaries may also abuse MMC to execute malicious .msc files. For example, adversaries may first create a malicious registry Class Identifier (CLSID) subkey, which uniquely identifies a [Component Object Model](https://attack.mitre.org/techniques/T1559/001) class object.(Citation: win_clsid_key) Then, adversaries may create custom consoles with the “Link to Web Address” snap-in that is linked to the malicious CLSID subkey.(Citation: mmc_vulns) Once the .msc file is saved, adversaries may invoke the malicious CLSID payload with the following command: <code>mmc.exe -Embedding C:\\path\\to\\test.msc</code>.(Citation: abusing_com_reg)",
+    "technique_references": [
+      {
+        "source_name": "abusing_com_reg",
+        "url": "https://bohops.com/2018/08/18/abusing-the-com-registry-structure-part-2-loading-techniques-for-evasion-and-persistence/",
+        "description": "bohops. (2018, August 18). ABUSING THE COM REGISTRY STRUCTURE (PART 2): HIJACKING & LOADING TECHNIQUES. Retrieved September 20, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "mmc_vulns",
+        "url": "https://research.checkpoint.com/2019/microsoft-management-console-mmc-vulnerabilities/",
+        "description": "Boxiner, A., Vaknin, E. (2019, June 11). Microsoft Management Console (MMC) Vulnerabilities. Retrieved September 24, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "win_msc_files_overview",
+        "url": "https://www.ghacks.net/2017/06/10/windows-msc-files-overview/",
+        "description": "Brinkmann, M.. (2017, June 10). Windows .msc files overview. Retrieved September 20, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "win_mmc",
+        "url": "https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/mmc",
+        "description": "Microsoft. (2017, October 16). mmc. Retrieved September 20, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "win_wbadmin_delete_catalog",
+        "url": "https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/wbadmin-delete-catalog",
+        "description": "Microsoft. (2017, October 16). wbadmin delete catalog. Retrieved September 20, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "win_clsid_key",
+        "url": "https://docs.microsoft.com/en-us/windows/win32/com/clsid-key-hklm",
+        "description": "Microsoft. (2018, May 31). CLSID Key. Retrieved September 24, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "what_is_mmc",
+        "url": "https://docs.microsoft.com/en-us/troubleshoot/windows-server/system-management-components/what-is-microsoft-management-console",
+        "description": "Microsoft. (2020, September 27). What is Microsoft Management Console?. Retrieved October 5, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "phobos_virustotal",
+        "url": "https://www.virustotal.com/gui/file/0b4c743246478a6a8c9fa3ff8e04f297507c2f0ea5d61a1284fe65387d172f81/detection",
+        "description": "Phobos Ransomware. (2020, December 30). Phobos Ransomware, Fast.exe. Retrieved September 20, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  [
+    "esentutl",
+    "T1003.003",
+    "NTDS",
+    "command-execution|file-access",
+    "T1003.003::[esentutl] can use Volume Shadow Copy to copy locked files such as ntds.dit."
+  ],
+  [
+    "esentutl",
+    "T1564.004",
+    "NTFS File Attributes",
+    "command-execution|file-metadata|file-modification|os-api-execution",
+    "T1564.004::[esentutl] can be used to read and write alternate data streams."
+  ]
+]

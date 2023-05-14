@@ -1,0 +1,30 @@
+[
+  [
+    "ruler",
+    "T1087.003",
+    "Email Account",
+    "command-execution|process-creation",
+    "T1087.003::[Ruler] can be used to enumerate Exchange users and dump the GAL."
+  ],
+  [
+    "ruler",
+    "T1137.003",
+    "Outlook Forms",
+    "application-log-content|command-execution|process-creation",
+    "T1137.003::[Ruler] can be used to automate the abuse of Outlook Forms to establish persistence."
+  ],
+  [
+    "ruler",
+    "T1137.004",
+    "Outlook Home Page",
+    "application-log-content|command-execution|process-creation",
+    "T1137.004::[Ruler] can be used to automate the abuse of Outlook Home Pages to establish persistence."
+  ],
+  [
+    "ruler",
+    "T1137.005",
+    "Outlook Rules",
+    "application-log-content|command-execution|process-creation",
+    "T1137.005::[Ruler] can be used to automate the abuse of Outlook Rules to establish persistence."
+  ]
+]

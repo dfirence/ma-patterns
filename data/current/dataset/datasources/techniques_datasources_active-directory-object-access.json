@@ -1,0 +1,170 @@
+[
+  {
+    "id": "attack-pattern--0a3ead4e-6d47-4ccb-854c-a6a4f9d96b22",
+    "platform": "windows|linux|macos",
+    "tid": "T1003",
+    "technique": "OS Credential Dumping",
+    "tactic": "credential-access",
+    "datasources": "active-directory-object-access",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1003.001",
+      "T1003.002",
+      "T1003.003",
+      "T1003.004",
+      "T1003.005",
+      "T1003.006",
+      "T1003.007",
+      "T1003.008"
+    ],
+    "count_subtechniques": 8,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to dump credentials to obtain account login and credential material, normally in the form of a hash or a clear text password, from the operating system and software. Credentials can then be used to perform [Lateral Movement](https://attack.mitre.org/tactics/TA0008) and access restricted information.\n\nSeveral of the tools mentioned in associated sub-techniques may be used by both adversaries and professional security testers. Additional custom tools likely exist as well.\n",
+    "technique_references": [
+      {
+        "source_name": "Medium Detecting Attempts to Steal Passwords from Memory",
+        "url": "https://medium.com/threatpunter/detecting-attempts-to-steal-passwords-from-memory-558f16dce4ea",
+        "description": "French, D. (2018, October 2). Detecting Attempts to Steal Passwords from Memory. Retrieved October 11, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Powersploit",
+        "url": "https://github.com/mattifestation/PowerSploit",
+        "description": "PowerSploit. (n.d.). Retrieved December 4, 2014.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft DRSR Dec 2017",
+        "url": "https://msdn.microsoft.com/library/cc228086.aspx",
+        "description": "Microsoft. (2017, December 1). MS-DRSR Directory Replication Service (DRS) Remote Protocol. Retrieved December 4, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft GetNCCChanges",
+        "url": "https://msdn.microsoft.com/library/dd207691.aspx",
+        "description": "Microsoft. (n.d.). IDL_DRSGetNCChanges (Opnum 3). Retrieved December 4, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Samba DRSUAPI",
+        "url": "https://wiki.samba.org/index.php/DRSUAPI",
+        "description": "SambaWiki. (n.d.). DRSUAPI. Retrieved December 4, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Harmj0y DCSync Sept 2015",
+        "url": "http://www.harmj0y.net/blog/redteaming/mimikatz-and-dcsync-and-extrasids-oh-my/",
+        "description": "Schroeder, W. (2015, September 22). Mimikatz and DCSync and ExtraSids, Oh My. Retrieved December 4, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft NRPC Dec 2017",
+        "url": "https://msdn.microsoft.com/library/cc237008.aspx",
+        "description": "Microsoft. (2017, December 1). MS-NRPC - Netlogon Remote Protocol. Retrieved December 6, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft SAMR",
+        "url": "https://msdn.microsoft.com/library/cc245496.aspx",
+        "description": "Microsoft. (n.d.). MS-SAMR Security Account Manager (SAM) Remote Protocol (Client-to-Server) - Transport. Retrieved December 4, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "AdSecurity DCSync Sept 2015",
+        "url": "https://adsecurity.org/?p=1729",
+        "description": "Metcalf, S. (2015, September 25). Mimikatz DCSync Usage, Exploitation, and Detection. Retrieved December 4, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "administrator|system|root",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--03d7999c-1f4c-42cc-8373-e7690d318104",
+    "platform": "linux|macos|windows|network",
+    "tid": "T1033",
+    "technique": "System Owner/User Discovery",
+    "tactic": "discovery",
+    "datasources": "active-directory-object-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may attempt to identify the primary user, currently logged in user, set of users that commonly uses a system, or whether a user is actively using the system. They may do this, for example, by retrieving account usernames or by using [OS Credential Dumping](https://attack.mitre.org/techniques/T1003). The information may be collected in a number of different ways using other Discovery techniques, because user and username details are prevalent throughout a system and include running process ownership, file/directory ownership, session information, and system logs. Adversaries may use the information from [System Owner/User Discovery](https://attack.mitre.org/techniques/T1033) during automated discovery to shape follow-on behaviors, including whether or not the adversary fully infects the target and/or attempts specific actions.\n\nVarious utilities and commands may acquire this information, including <code>whoami</code>. In macOS and Linux, the currently logged in user can be identified with <code>w</code> and <code>who</code>. On macOS the <code>dscl . list /Users | grep -v '_'</code> command can also be used to enumerate user accounts. Environment variables, such as <code>%USERNAME%</code> and <code>$USER</code>, may also be used to access this information.\n\nOn network devices, [Network Device CLI](https://attack.mitre.org/techniques/T1059/008) commands such as `show users` and `show ssh` can be used to display users currently logged into the device.(Citation: show_ssh_users_cmd_cisco)(Citation: US-CERT TA18-106A Network Infrastructure Devices 2018)",
+    "technique_references": [
+      {
+        "source_name": "show_ssh_users_cmd_cisco",
+        "url": "https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/s1/sec-s1-cr-book/sec-cr-s5.html",
+        "description": "Cisco. (2023, March 7). Cisco IOS Security Command Reference: Commands S to Z . Retrieved July 13, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "US-CERT TA18-106A Network Infrastructure Devices 2018",
+        "url": "https://us-cert.cisa.gov/ncas/alerts/TA18-106A",
+        "description": "US-CERT. (2018, April 20). Russian State-Sponsored Cyber Actors Targeting Network Infrastructure Devices. Retrieved October 19, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--1b20efbf-8063-4fc3-a07d-b575318a301b",
+    "platform": "windows",
+    "tid": "T1615",
+    "technique": "Group Policy Discovery",
+    "tactic": "discovery",
+    "datasources": "active-directory-object-access",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may gather information on Group Policy settings to identify paths for privilege escalation, security measures applied within a domain, and to discover patterns in domain objects that can be manipulated or used to blend in the environment. Group Policy allows for centralized management of user and computer settings in Active Directory (AD). Group policy objects (GPOs) are containers for group policy settings made up of files stored within a predictable network path `\\<DOMAIN>\\SYSVOL\\<DOMAIN>\\Policies\\`.(Citation: TechNet Group Policy Basics)(Citation: ADSecurity GPO Persistence 2016)\n\nAdversaries may use commands such as <code>gpresult</code> or various publicly available PowerShell functions, such as <code>Get-DomainGPO</code> and <code>Get-DomainGPOLocalGroup</code>, to gather information on Group Policy settings.(Citation: Microsoft gpresult)(Citation: Github PowerShell Empire) Adversaries may use this information to shape follow-on behaviors, including determining potential attack paths within the target network as well as opportunities to manipulate Group Policy settings (i.e. [Domain Policy Modification](https://attack.mitre.org/techniques/T1484)) for their benefit.",
+    "technique_references": [
+      {
+        "source_name": "ADSecurity GPO Persistence 2016",
+        "url": "https://adsecurity.org/?p=2716",
+        "description": "Metcalf, S. (2016, March 14). Sneaky Active Directory Persistence #17: Group Policy. Retrieved March 5, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft gpresult",
+        "url": "https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/gpresult",
+        "description": "Microsoft. (2017, October 16). gpresult. Retrieved August 6, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Github PowerShell Empire",
+        "url": "https://github.com/PowerShellEmpire/Empire",
+        "description": "Schroeder, W., Warner, J., Nelson, M. (n.d.). Github PowerShellEmpire. Retrieved April 28, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "TechNet Group Policy Basics",
+        "url": "https://blogs.technet.microsoft.com/musings_of_a_technical_tam/2012/02/13/group-policy-basics-part-1-understanding-the-structure-of-a-group-policy-object/",
+        "description": "srachui. (2012, February 13). Group Policy Basics – Part 1: Understanding the Structure of a Group Policy Object. Retrieved March 5, 2019.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

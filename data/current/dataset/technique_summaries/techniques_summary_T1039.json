@@ -1,0 +1,24 @@
+[
+  {
+    "id": "attack-pattern--ae676644-d2d2-41b7-af7e-9bed1b55898c",
+    "platform": "linux|macos|windows",
+    "tid": "T1039",
+    "technique": "Data from Network Shared Drive",
+    "tactic": "collection",
+    "datasources": "command-execution|file-access|network-connection-creation|network-share-access|network-traffic-content",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may search network shares on computers they have compromised to find files of interest. Sensitive data can be collected from remote systems via shared network drives (host shared directory, network file server, etc.) that are accessible from the current system prior to Exfiltration. Interactive command shells may be in use, and common functionality within [cmd](https://attack.mitre.org/software/S0106) may be used to gather information.",
+    "technique_references": [],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "id": "attack-pattern--e01be9c5-e763-4caf-aeb7-000b416aef67",
+    "platform": "windows|azure-ad|office-365|iaas|linux|macos|google-workspace|network",
+    "tid": "T1136",
+    "technique": "Create Account",
+    "tactic": "persistence",
+    "datasources": "command-execution|process-creation|user-account-creation",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1136.001",
+      "T1136.002",
+      "T1136.003"
+    ],
+    "count_subtechniques": 3,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may create an account to maintain access to victim systems. With a sufficient level of access, creating such accounts may be used to establish secondary credentialed access that do not require persistent remote access tools to be deployed on the system.\n\nAccounts may be created on the local system or within a domain or cloud tenant. In cloud environments, adversaries may create accounts that only have access to specific services, which can reduce the chance of detection.",
+    "technique_references": [
+      {
+        "source_name": "Microsoft User Creation Event",
+        "url": "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4720",
+        "description": "Lich, B., Miroshnikov, A. (2017, April 5). 4720(S): A user account was created. Retrieved June 30, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

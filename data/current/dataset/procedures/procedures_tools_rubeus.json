@@ -1,0 +1,30 @@
+[
+  [
+    "rubeus",
+    "T1558.001",
+    "Golden Ticket",
+    "active-directory-credential-request|logon-session-metadata",
+    "T1558.001::[Rubeus] can forge a ticket-granting ticket."
+  ],
+  [
+    "rubeus",
+    "T1558.002",
+    "Silver Ticket",
+    "logon-session-metadata",
+    "T1558.002::[Rubeus] can create silver tickets."
+  ],
+  [
+    "rubeus",
+    "T1558.003",
+    "Kerberoasting",
+    "active-directory-credential-request",
+    "T1558.003::[Rubeus] can use the `KerberosRequestorSecurityToken.GetRequest` method to request kerberoastable service tickets."
+  ],
+  [
+    "rubeus",
+    "T1558.004",
+    "AS-REP Roasting",
+    "active-directory-credential-request",
+    "T1558.004::[Rubeus] can reveal the credentials of accounts that have Kerberos pre-authentication disabled through AS-REP roasting."
+  ]
+]

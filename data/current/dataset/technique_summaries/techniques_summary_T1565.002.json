@@ -1,0 +1,37 @@
+[
+  {
+    "id": "attack-pattern--d0613359-5781-4fd2-b5be-c269270be1f6",
+    "platform": "linux|macos|windows",
+    "tid": "T1565.002",
+    "technique": "Transmitted Data Manipulation",
+    "tactic": "impact",
+    "datasources": "network-traffic-content|network-traffic-flow|os-api-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may alter data en route to storage or other systems in order to manipulate external outcomes or hide activity, thus threatening the integrity of the data.(Citation: FireEye APT38 Oct 2018)(Citation: DOJ Lazarus Sony 2018) By manipulating transmitted data, adversaries may attempt to affect a business process, organizational understanding, and decision making.\n\nManipulation may be possible over a network connection or between system processes where there is an opportunity deploy a tool that will intercept and change information. The type of modification and the impact it will have depends on the target transmission mechanism as well as the goals and objectives of the adversary. For complex systems, an adversary would likely need special expertise and possibly access to specialized software related to the system that would typically be gained through a prolonged information gathering campaign in order to have the desired impact.",
+    "technique_references": [
+      {
+        "source_name": "DOJ Lazarus Sony 2018",
+        "url": "https://www.justice.gov/opa/press-release/file/1092091/download",
+        "description": "Department of Justice. (2018, September 6). Criminal Complaint - United States of America v. PARK JIN HYOK. Retrieved March 29, 2019.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "FireEye APT38 Oct 2018",
+        "url": "https://content.fireeye.com/apt/rpt-apt38",
+        "description": "FireEye. (2018, October 03). APT38: Un-usual Suspects. Retrieved November 6, 2018.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

@@ -1,0 +1,191 @@
+[
+  [
+    "silenttrinity",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[SILENTTRINITY] can create a memory dump of LSASS via the `MiniDumpWriteDump Win32` API call."
+  ],
+  [
+    "silenttrinity",
+    "T1021.003",
+    "Distributed Component Object Model",
+    "module-load|network-connection-creation|process-creation",
+    "T1021.003::[SILENTTRINITY] can use `System` namespace methods to execute lateral movement using DCOM."
+  ],
+  [
+    "silenttrinity",
+    "T1021.006",
+    "Windows Remote Management",
+    "command-execution|logon-session-creation|network-connection-creation|process-creation|service-metadata",
+    "T1021.006::[SILENTTRINITY] tracks `TrustedHosts` and can move laterally to these targets via WinRM."
+  ],
+  [
+    "silenttrinity",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[SILENTTRINITY] has a keylogging capability."
+  ],
+  [
+    "silenttrinity",
+    "T1056.002",
+    "GUI Input Capture",
+    "command-execution|process-creation|script-execution",
+    "T1056.002::[SILENTTRINITY]'s `credphisher.py` module can prompt a current user for their credentials."
+  ],
+  [
+    "silenttrinity",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[SILENTTRINITY] can use PowerShell to execute commands."
+  ],
+  [
+    "silenttrinity",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[SILENTTRINITY] can use `cmd.exe` to enable lateral movement using DCOM."
+  ],
+  [
+    "silenttrinity",
+    "T1059.006",
+    "Python",
+    "command-execution|process-creation",
+    "T1059.006::[SILENTTRINITY] is written in Python and can use multiple Python scripts for execution on targeted systems."
+  ],
+  [
+    "silenttrinity",
+    "T1069.001",
+    "Local Groups",
+    "command-execution|group-enumeration|os-api-execution|process-creation",
+    "T1069.001::[SILENTTRINITY] can obtain a list of local groups and members."
+  ],
+  [
+    "silenttrinity",
+    "T1069.002",
+    "Domain Groups",
+    "command-execution|group-enumeration|os-api-execution|process-creation",
+    "T1069.002::[SILENTTRINITY] can use `System.DirectoryServices` namespace to retrieve domain group information."
+  ],
+  [
+    "silenttrinity",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[SILENTTRINITY] can remove files from the compromised host."
+  ],
+  [
+    "silenttrinity",
+    "T1087.002",
+    "Domain Account",
+    "command-execution|group-enumeration|network-traffic-content|os-api-execution|process-creation",
+    "T1087.002::[SILENTTRINITY] can use `System.Security.AccessControl` namespaces to retrieve domain user information."
+  ],
+  [
+    "silenttrinity",
+    "T1134.001",
+    "Token Impersonation/Theft",
+    "command-execution|os-api-execution",
+    "T1134.001::[SILENTTRINITY] can find a process owned by a specific user and impersonate the associated token."
+  ],
+  [
+    "silenttrinity",
+    "T1518.001",
+    "Security Software Discovery",
+    "command-execution|firewall-enumeration|firewall-metadata|os-api-execution|process-creation",
+    "T1518.001::[SILENTTRINITY] can determine if an anti-virus product is installed through the resolution of the service's virtual SID."
+  ],
+  [
+    "silenttrinity",
+    "T1543.003",
+    "Windows Service",
+    "command-execution|driver-load|os-api-execution|process-creation|service-creation|service-modification|windows-registry-key-creation|windows-registry-key-modification",
+    "T1543.003::[SILENTTRINITY] can establish persistence by creating a new service."
+  ],
+  [
+    "silenttrinity",
+    "T1546.001",
+    "Change Default File Association",
+    "command-execution|process-creation|windows-registry-key-modification",
+    "T1546.001::[SILENTTRINITY] can conduct an image hijack of an `.msc` file extension as part of its UAC bypass process."
+  ],
+  [
+    "silenttrinity",
+    "T1546.003",
+    "Windows Management Instrumentation Event Subscription",
+    "command-execution|process-creation|wmi-creation",
+    "T1546.003::[SILENTTRINITY] can create a WMI Event to execute a payload for persistence."
+  ],
+  [
+    "silenttrinity",
+    "T1546.015",
+    "Component Object Model Hijacking",
+    "command-execution|module-load|process-creation|windows-registry-key-modification",
+    "T1546.015::[SILENTTRINITY] can add a CLSID key for payload execution through `Registry.CurrentUser.CreateSubKey(\"Software\\\\Classes\\\\CLSID\\\\{\" + clsid + \"}\\\\InProcServer32\")`."
+  ],
+  [
+    "silenttrinity",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[SILENTTRINITY] can establish a LNK file in the startup folder for persistence."
+  ],
+  [
+    "silenttrinity",
+    "T1548.002",
+    "Bypass User Account Control",
+    "command-execution|process-creation|process-metadata|windows-registry-key-modification",
+    "T1548.002::[SILENTTRINITY] contains a number of modules that can bypass UAC, including through Window's Device Manager, Manage Optional Features, and an image hijack on the `.msc` file extension."
+  ],
+  [
+    "silenttrinity",
+    "T1552.006",
+    "Group Policy Preferences",
+    "command-execution|file-access",
+    "T1552.006::[SILENTTRINITY] has a module that can extract cached GPP passwords."
+  ],
+  [
+    "silenttrinity",
+    "T1555.003",
+    "Credentials from Web Browsers",
+    "command-execution|file-access|os-api-execution|process-access",
+    "T1555.003::[SILENTTRINITY] can collect clear text web credentials for Internet Explorer/Edge."
+  ],
+  [
+    "silenttrinity",
+    "T1555.004",
+    "Windows Credential Manager",
+    "command-execution|file-access|os-api-execution|process-creation",
+    "T1555.004::[SILENTTRINITY] can gather Windows Vault credentials."
+  ],
+  [
+    "silenttrinity",
+    "T1558.003",
+    "Kerberoasting",
+    "active-directory-credential-request",
+    "T1558.003::[SILENTTRINITY] contains a module to conduct Kerberoasting."
+  ],
+  [
+    "silenttrinity",
+    "T1562.001",
+    "Disable or Modify Tools",
+    "command-execution|driver-load|host-status|process-termination|service-metadata|windows-registry-key-deletion|windows-registry-key-modification",
+    "T1562.001::[SILENTTRINITY]'s `amsiPatch.py` module can disable Antimalware Scan Interface (AMSI) functions."
+  ],
+  [
+    "silenttrinity",
+    "T1562.003",
+    "Impair Command History Logging",
+    "command-execution|host-status",
+    "T1562.003::[SILENTTRINITY] can bypass ScriptBlock logging to execute unmanaged PowerShell code from memory."
+  ],
+  [
+    "silenttrinity",
+    "T1564.003",
+    "Hidden Window",
+    "command-execution|file-modification|process-creation|script-execution",
+    "T1564.003::[SILENTTRINITY] has the ability to set its window state to hidden."
+  ]
+]

@@ -1,0 +1,154 @@
+[
+  {
+    "id": "attack-pattern--b6301b64-ef57-4cce-bb0b-77026f14a8db",
+    "platform": "linux|macos|windows|saas|iaas|office-365",
+    "tid": "T1546",
+    "technique": "Event Triggered Execution",
+    "tactic": "persistence",
+    "datasources": "cloud-service-modification|command-execution|file-creation|file-metadata|file-modification|module-load|process-creation|windows-registry-key-modification|wmi-creation",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1546.001",
+      "T1546.002",
+      "T1546.003",
+      "T1546.004",
+      "T1546.005",
+      "T1546.006",
+      "T1546.007",
+      "T1546.008",
+      "T1546.009",
+      "T1546.010",
+      "T1546.011",
+      "T1546.012",
+      "T1546.013",
+      "T1546.014",
+      "T1546.015",
+      "T1546.016"
+    ],
+    "count_subtechniques": 16,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may establish persistence and/or elevate privileges using system mechanisms that trigger execution based on specific events. Various operating systems have means to monitor and subscribe to events such as logons or other user activity such as running specific applications/binaries. Cloud environments may also support various functions and services that monitor and can be invoked in response to specific cloud events.(Citation: Backdooring an AWS account)(Citation: Varonis Power Automate Data Exfiltration)(Citation: Microsoft DART Case Report 001)\n\nAdversaries may abuse these mechanisms as a means of maintaining persistent access to a victim via repeatedly executing malicious code. After gaining access to a victim system, adversaries may create/modify event triggers to point to malicious content that will be executed whenever the event trigger is invoked.(Citation: FireEye WMI 2015)(Citation: Malware Persistence on OS X)(Citation: amnesia malware)\n\nSince the execution can be proxied by an account with higher permissions, such as SYSTEM or service accounts, an adversary may be able to abuse these triggered execution mechanisms to escalate their privileges. ",
+    "technique_references": [
+      {
+        "source_name": "FireEye WMI 2015",
+        "url": "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/wp-windows-management-instrumentation.pdf",
+        "description": "Ballenthin, W., et al. (2015). Windows Management Instrumentation (WMI) Offense, Defense, and Forensics. Retrieved March 30, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft DART Case Report 001",
+        "url": "https://www.microsoft.com/security/blog/2020/03/09/real-life-cybercrime-stories-dart-microsoft-detection-and-response-team",
+        "description": "Berk Veral. (2020, March 9). Real-life cybercrime stories from DART, the Microsoft Detection and Response Team. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "amnesia malware",
+        "url": "https://researchcenter.paloaltonetworks.com/2017/04/unit42-new-iotlinux-malware-targets-dvrs-forms-botnet/",
+        "description": "Claud Xiao, Cong Zheng, Yanhui Jia. (2017, April 6). New IoT/Linux Malware Targets DVRs, Forms Botnet. Retrieved February 19, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Backdooring an AWS account",
+        "url": "https://medium.com/daniel-grzelak/backdooring-an-aws-account-da007d36f8f9",
+        "description": "Daniel Grzelak. (2016, July 9). Backdooring an AWS account. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Varonis Power Automate Data Exfiltration",
+        "url": "https://www.varonis.com/blog/power-automate-data-exfiltration",
+        "description": "Eric Saraga. (2022, February 2). Using Power Automate for Covert Data Exfiltration in Microsoft 365. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Malware Persistence on OS X",
+        "url": "https://www.virusbulletin.com/uploads/pdf/conference/vb2014/VB2014-Wardle.pdf",
+        "description": "Patrick Wardle. (2015). Malware Persistence on OS X Yosemite. Retrieved July 10, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  },
+  {
+    "id": "attack-pattern--b6301b64-ef57-4cce-bb0b-77026f14a8db",
+    "platform": "linux|macos|windows|saas|iaas|office-365",
+    "tid": "T1546",
+    "technique": "Event Triggered Execution",
+    "tactic": "privilege-escalation",
+    "datasources": "cloud-service-modification|command-execution|file-creation|file-metadata|file-modification|module-load|process-creation|windows-registry-key-modification|wmi-creation",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1546.001",
+      "T1546.002",
+      "T1546.003",
+      "T1546.004",
+      "T1546.005",
+      "T1546.006",
+      "T1546.007",
+      "T1546.008",
+      "T1546.009",
+      "T1546.010",
+      "T1546.011",
+      "T1546.012",
+      "T1546.013",
+      "T1546.014",
+      "T1546.015",
+      "T1546.016"
+    ],
+    "count_subtechniques": 16,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may establish persistence and/or elevate privileges using system mechanisms that trigger execution based on specific events. Various operating systems have means to monitor and subscribe to events such as logons or other user activity such as running specific applications/binaries. Cloud environments may also support various functions and services that monitor and can be invoked in response to specific cloud events.(Citation: Backdooring an AWS account)(Citation: Varonis Power Automate Data Exfiltration)(Citation: Microsoft DART Case Report 001)\n\nAdversaries may abuse these mechanisms as a means of maintaining persistent access to a victim via repeatedly executing malicious code. After gaining access to a victim system, adversaries may create/modify event triggers to point to malicious content that will be executed whenever the event trigger is invoked.(Citation: FireEye WMI 2015)(Citation: Malware Persistence on OS X)(Citation: amnesia malware)\n\nSince the execution can be proxied by an account with higher permissions, such as SYSTEM or service accounts, an adversary may be able to abuse these triggered execution mechanisms to escalate their privileges. ",
+    "technique_references": [
+      {
+        "source_name": "FireEye WMI 2015",
+        "url": "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/wp-windows-management-instrumentation.pdf",
+        "description": "Ballenthin, W., et al. (2015). Windows Management Instrumentation (WMI) Offense, Defense, and Forensics. Retrieved March 30, 2016.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft DART Case Report 001",
+        "url": "https://www.microsoft.com/security/blog/2020/03/09/real-life-cybercrime-stories-dart-microsoft-detection-and-response-team",
+        "description": "Berk Veral. (2020, March 9). Real-life cybercrime stories from DART, the Microsoft Detection and Response Team. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "amnesia malware",
+        "url": "https://researchcenter.paloaltonetworks.com/2017/04/unit42-new-iotlinux-malware-targets-dvrs-forms-botnet/",
+        "description": "Claud Xiao, Cong Zheng, Yanhui Jia. (2017, April 6). New IoT/Linux Malware Targets DVRs, Forms Botnet. Retrieved February 19, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Backdooring an AWS account",
+        "url": "https://medium.com/daniel-grzelak/backdooring-an-aws-account-da007d36f8f9",
+        "description": "Daniel Grzelak. (2016, July 9). Backdooring an AWS account. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Varonis Power Automate Data Exfiltration",
+        "url": "https://www.varonis.com/blog/power-automate-data-exfiltration",
+        "description": "Eric Saraga. (2022, February 2). Using Power Automate for Covert Data Exfiltration in Microsoft 365. Retrieved May 27, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Malware Persistence on OS X",
+        "url": "https://www.virusbulletin.com/uploads/pdf/conference/vb2014/VB2014-Wardle.pdf",
+        "description": "Patrick Wardle. (2015). Malware Persistence on OS X Yosemite. Retrieved July 10, 2017.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

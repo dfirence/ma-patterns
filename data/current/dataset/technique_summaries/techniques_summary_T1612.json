@@ -1,0 +1,43 @@
+[
+  {
+    "id": "attack-pattern--800f9819-7007-4540-a520-40e655876800",
+    "platform": "containers",
+    "tid": "T1612",
+    "technique": "Build Image on Host",
+    "tactic": "defense-evasion",
+    "datasources": "image-creation|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may build a container image directly on a host to bypass defenses that monitor for the retrieval of malicious images from a public registry. A remote <code>build</code> request may be sent to the Docker API that includes a Dockerfile that pulls a vanilla base image, such as alpine, from a public or local registry and then builds a custom image upon it.(Citation: Docker Build Image)\n\nAn adversary may take advantage of that <code>build</code> API to build a custom image on the host that includes malware downloaded from their C2 server, and then they may utilize [Deploy Container](https://attack.mitre.org/techniques/T1610) using that custom image.(Citation: Aqua Build Images on Hosts)(Citation: Aqua Security Cloud Native Threat Report June 2021) If the base image is pulled from a public registry, defenses will likely not detect the image as malicious since it’s a vanilla image. If the base image already resides in a local registry, the pull may be considered even less suspicious since the image is already in the environment. ",
+    "technique_references": [
+      {
+        "source_name": "Aqua Build Images on Hosts",
+        "url": "https://blog.aquasec.com/malicious-container-image-docker-container-host",
+        "description": "Assaf Morag. (2020, July 15). Threat Alert: Attackers Building Malicious Images on Your Hosts. Retrieved March 29, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Docker Build Image",
+        "url": "https://docs.docker.com/engine/api/v1.41/#operation/ImageBuild",
+        "description": "Docker. ( null). Docker Engine API v1.41 Reference - Build an Image. Retrieved March 30, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Aqua Security Cloud Native Threat Report June 2021",
+        "url": "https://info.aquasec.com/hubfs/Threat%20reports/AquaSecurity_Cloud_Native_Threat_Report_2021.pdf?utm_campaign=WP%20-%20Jun2021%20Nautilus%202021%20Threat%20Research%20Report&utm_medium=email&_hsmi=132931006&_hsenc=p2ANqtz-_8oopT5Uhqab8B7kE0l3iFo1koirxtyfTehxF7N-EdGYrwk30gfiwp5SiNlW3G0TNKZxUcDkYOtwQ9S6nNVNyEO-Dgrw&utm_content=132931006&utm_source=hs_automation",
+        "description": "Team Nautilus. (2021, June). Attacks in the Wild on the Container Supply Chain and Infrastructure. Retrieved August 26, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

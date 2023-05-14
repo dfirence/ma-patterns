@@ -1,0 +1,43 @@
+[
+  {
+    "id": "attack-pattern--d2c4e5ea-dbdf-4113-805a-b1e2a337fb33",
+    "platform": "linux|macos|windows",
+    "tid": "T1070.009",
+    "technique": "Clear Persistence",
+    "tactic": "defense-evasion",
+    "datasources": "command-execution|file-deletion|file-modification|process-creation|scheduled-job-modification|user-account-deletion|windows-registry-key-deletion|windows-registry-key-modification",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may clear artifacts associated with previously established persistence on a host system to remove evidence of their activity. This may involve various actions, such as removing services, deleting executables, [Modify Registry](https://attack.mitre.org/techniques/T1112), [Plist File Modification](https://attack.mitre.org/techniques/T1647), or other methods of cleanup to prevent defenders from collecting evidence of their persistent presence.(Citation: Cylance Dust Storm) Adversaries may also delete accounts previously created to maintain persistence (i.e. [Create Account](https://attack.mitre.org/techniques/T1136)).(Citation: Talos - Cisco Attack 2022)\n\nIn some instances, artifacts of persistence may also be removed once an adversary’s persistence is executed in order to prevent errors with the new instance of the malware.(Citation: NCC Group Team9 June 2020)",
+    "technique_references": [
+      {
+        "source_name": "Cylance Dust Storm",
+        "url": "https://s7d2.scene7.com/is/content/cylance/prod/cylance-web/en-us/resources/knowledge-center/resource-library/reports/Op_Dust_Storm_Report.pdf",
+        "description": "Gross, J. (2016, February 23). Operation Dust Storm. Retrieved December 22, 2021.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Talos - Cisco Attack 2022",
+        "url": "https://blog.talosintelligence.com/recent-cyber-attack/",
+        "description": "Nick Biasini. (2022, August 10). Cisco Talos shares insights related to recent cyber attack on Cisco. Retrieved March 9, 2023.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "NCC Group Team9 June 2020",
+        "url": "https://research.nccgroup.com/2020/06/02/in-depth-analysis-of-the-new-team9-malware-family/",
+        "description": "Pantazopoulos, N. (2020, June 2). In-depth analysis of the new Team9 malware family. Retrieved December 1, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

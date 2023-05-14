@@ -1,0 +1,43 @@
+[
+  {
+    "id": "attack-pattern--810aa4ad-61c9-49cb-993f-daa06199421d",
+    "platform": "macos",
+    "tid": "T1569.001",
+    "technique": "Launchctl",
+    "tactic": "execution",
+    "datasources": "command-execution|file-modification|process-creation|service-creation",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse launchctl to execute commands or programs. Launchctl interfaces with launchd, the service management framework for macOS. Launchctl supports taking subcommands on the command-line, interactively, or even redirected from standard input.(Citation: Launchctl Man)\n\nAdversaries use launchctl to execute commands and programs as [Launch Agent](https://attack.mitre.org/techniques/T1543/001)s or [Launch Daemon](https://attack.mitre.org/techniques/T1543/004)s. Common subcommands include: <code>launchctl load</code>,<code>launchctl unload</code>, and <code>launchctl start</code>. Adversaries can use scripts or manually run the commands <code>launchctl load -w \"%s/Library/LaunchAgents/%s\"</code> or <code>/bin/launchctl load</code> to execute [Launch Agent](https://attack.mitre.org/techniques/T1543/001)s or [Launch Daemon](https://attack.mitre.org/techniques/T1543/004)s.(Citation: Sofacy Komplex Trojan)(Citation: 20 macOS Common Tools and Techniques)\n",
+    "technique_references": [
+      {
+        "source_name": "Launchctl Man",
+        "url": "https://ss64.com/osx/launchctl.html",
+        "description": "SS64. (n.d.). launchctl. Retrieved March 28, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Sofacy Komplex Trojan",
+        "url": "https://researchcenter.paloaltonetworks.com/2016/09/unit42-sofacys-komplex-os-x-trojan/",
+        "description": "Dani Creus, Tyler Halfpop, Robert Falcone. (2016, September 26). Sofacy's 'Komplex' OS X Trojan. Retrieved July 8, 2017.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "20 macOS Common Tools and Techniques",
+        "url": "https://labs.sentinelone.com/20-common-tools-techniques-used-by-macos-threat-actors-malware/",
+        "description": "Phil Stokes. (2021, February 16). 20 Common Tools & Techniques Used by macOS Threat Actors & Malware. Retrieved August 23, 2021.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "user|root",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

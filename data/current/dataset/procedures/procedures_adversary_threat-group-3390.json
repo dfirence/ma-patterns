@@ -1,0 +1,247 @@
+[
+  [
+    "threat-group-3390",
+    "T1003.001",
+    "LSASS Memory",
+    "command-execution|os-api-execution|process-access|process-creation",
+    "T1003.001::[Threat Group-3390] actors have used a modified version of [Mimikatz] called Wrapikatz to dump credentials. They have also dumped credentials from domain controllers."
+  ],
+  [
+    "threat-group-3390",
+    "T1003.002",
+    "Security Account Manager",
+    "command-execution|file-access|windows-registry-key-access",
+    "T1003.002::[Threat Group-3390] actors have used [gsecdump] to dump credentials. They have also dumped credentials from domain controllers."
+  ],
+  [
+    "threat-group-3390",
+    "T1003.004",
+    "LSA Secrets",
+    "command-execution|windows-registry-key-access",
+    "T1003.004::[Threat Group-3390] actors have used [gsecdump] to dump credentials. They have also dumped credentials from domain controllers."
+  ],
+  [
+    "threat-group-3390",
+    "T1021.006",
+    "Windows Remote Management",
+    "command-execution|logon-session-creation|network-connection-creation|process-creation|service-metadata",
+    "T1021.006::[Threat Group-3390] has used WinRM to enable remote execution."
+  ],
+  [
+    "threat-group-3390",
+    "T1027.002",
+    "Software Packing",
+    "file-metadata",
+    "T1027.002::[Threat Group-3390] has packed malware and tools, including using VMProtect."
+  ],
+  [
+    "threat-group-3390",
+    "T1053.002",
+    "At",
+    "command-execution|file-modification|process-creation|scheduled-job-creation",
+    "T1053.002::[Threat Group-3390] actors use [at] to schedule tasks to run self-extracting RAR archives, which install [HTTPBrowser] or [PlugX] on other victims on a network."
+  ],
+  [
+    "threat-group-3390",
+    "T1055.012",
+    "Process Hollowing",
+    "os-api-execution|process-access|process-modification",
+    "T1055.012::A [Threat Group-3390] tool can spawn `svchost.exe` and inject the payload into that process."
+  ],
+  [
+    "threat-group-3390",
+    "T1056.001",
+    "Keylogging",
+    "driver-load|os-api-execution|windows-registry-key-modification",
+    "T1056.001::[Threat Group-3390] actors installed a credential logger on Microsoft Exchange servers. [Threat Group-3390] also leveraged the reconnaissance framework, ScanBox, to capture keystrokes."
+  ],
+  [
+    "threat-group-3390",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[Threat Group-3390] has used PowerShell for execution."
+  ],
+  [
+    "threat-group-3390",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[Threat Group-3390] has used command-line interfaces for execution."
+  ],
+  [
+    "threat-group-3390",
+    "T1070.004",
+    "File Deletion",
+    "command-execution|file-deletion",
+    "T1070.004::[Threat Group-3390] has deleted existing logs and exfiltrated file archives from a victim."
+  ],
+  [
+    "threat-group-3390",
+    "T1070.005",
+    "Network Share Connection Removal",
+    "command-execution|network-traffic-content|process-creation|user-account-authentication",
+    "T1070.005::[Threat Group-3390] has detached network shares after exfiltrating files, likely to evade detection."
+  ],
+  [
+    "threat-group-3390",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[Threat Group-3390] malware has used HTTP for C2."
+  ],
+  [
+    "threat-group-3390",
+    "T1074.001",
+    "Local Data Staging",
+    "command-execution|file-access|file-creation|windows-registry-key-modification",
+    "T1074.001::[Threat Group-3390] has locally staged encrypted archives for later exfiltration efforts."
+  ],
+  [
+    "threat-group-3390",
+    "T1074.002",
+    "Remote Data Staging",
+    "command-execution|file-access|file-creation",
+    "T1074.002::[Threat Group-3390] has moved staged encrypted archives to Internet-facing servers that had previously been compromised with [China Chopper] prior to exfiltration."
+  ],
+  [
+    "threat-group-3390",
+    "T1087.001",
+    "Local Account",
+    "command-execution|file-access|group-enumeration|os-api-execution|process-creation",
+    "T1087.001::[Threat Group-3390] has used net user to conduct internal discovery of systems."
+  ],
+  [
+    "threat-group-3390",
+    "T1195.002",
+    "Compromise Software Supply Chain",
+    "file-metadata",
+    "T1195.002::[Threat Group-3390] has compromised the Able Desktop installer to gain access to victim's environments."
+  ],
+  [
+    "threat-group-3390",
+    "T1204.002",
+    "Malicious File",
+    "file-creation|process-creation",
+    "T1204.002::[Threat Group-3390] has lured victims into opening malicious files containing malware."
+  ],
+  [
+    "threat-group-3390",
+    "T1505.003",
+    "Web Shell",
+    "application-log-content|file-creation|file-modification|network-traffic-content|network-traffic-flow|process-creation",
+    "T1505.003::[Threat Group-3390] has used a variety of Web shells."
+  ],
+  [
+    "threat-group-3390",
+    "T1543.003",
+    "Windows Service",
+    "command-execution|driver-load|os-api-execution|process-creation|service-creation|service-modification|windows-registry-key-creation|windows-registry-key-modification",
+    "T1543.003::[Threat Group-3390]'s malware can create a new service, sometimes naming it after the config information, to gain persistence."
+  ],
+  [
+    "threat-group-3390",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[Threat Group-3390]'s malware can add a Registry key to `Software\\Microsoft\\Windows\\CurrentVersion\\Run` for persistence."
+  ],
+  [
+    "threat-group-3390",
+    "T1548.002",
+    "Bypass User Account Control",
+    "command-execution|process-creation|process-metadata|windows-registry-key-modification",
+    "T1548.002::A [Threat Group-3390] tool can use a public UAC bypass method to elevate privileges."
+  ],
+  [
+    "threat-group-3390",
+    "T1555.005",
+    "Password Managers",
+    "command-execution|file-access|os-api-execution|process-access",
+    "T1555.005::[Threat Group-3390] obtained a KeePass database from a compromised host."
+  ],
+  [
+    "threat-group-3390",
+    "T1560.002",
+    "Archive via Library",
+    "file-creation|script-execution",
+    "T1560.002::[Threat Group-3390] has used RAR to compress, encrypt, and password-protect files prior to exfiltration."
+  ],
+  [
+    "threat-group-3390",
+    "T1562.002",
+    "Disable Windows Event Logging",
+    "application-log-content|command-execution|host-status|process-creation|script-execution|windows-registry-key-creation",
+    "T1562.002::[Threat Group-3390] has used appcmd.exe to disable logging on a victim server."
+  ],
+  [
+    "threat-group-3390",
+    "T1566.001",
+    "Spearphishing Attachment",
+    "application-log-content|file-creation|network-traffic-content|network-traffic-flow",
+    "T1566.001::[Threat Group-3390] has used e-mail to deliver malicious attachments to victims."
+  ],
+  [
+    "threat-group-3390",
+    "T1567.002",
+    "Exfiltration to Cloud Storage",
+    "command-execution|file-access|network-connection-creation|network-traffic-content|network-traffic-flow",
+    "T1567.002::[Threat Group-3390] has exfiltrated stolen data to Dropbox."
+  ],
+  [
+    "threat-group-3390",
+    "T1574.001",
+    "DLL Search Order Hijacking",
+    "file-creation|file-modification|module-load",
+    "T1574.001::[Threat Group-3390] has performed DLL search order hijacking to execute their payload."
+  ],
+  [
+    "threat-group-3390",
+    "T1574.002",
+    "DLL Side-Loading",
+    "file-creation|file-modification|module-load|process-creation",
+    "T1574.002::[Threat Group-3390] has used DLL side-loading, including by using legitimate Kaspersky antivirus variants as well as `rc.exe`, a legitimate Microsoft Resource Compiler."
+  ],
+  [
+    "threat-group-3390",
+    "T1583.001",
+    "Domains",
+    "active-dns|domain-registration|passive-dns",
+    "T1583.001::[Threat Group-3390] has registered domains for C2."
+  ],
+  [
+    "threat-group-3390",
+    "T1588.002",
+    "Tool",
+    "malware-metadata",
+    "T1588.002::[Threat Group-3390] has obtained and used tools such as [Impacket], [pwdump], [Mimikatz], [gsecdump], [NBTscan], and [Windows Credential Editor]."
+  ],
+  [
+    "threat-group-3390",
+    "T1588.003",
+    "Code Signing Certificates",
+    "malware-metadata",
+    "T1588.003::[Threat Group-3390] has obtained stolen valid certificates, including from VMProtect and the Chinese instant messaging application Youdu, for their operations."
+  ],
+  [
+    "threat-group-3390",
+    "T1608.001",
+    "Upload Malware",
+    "response-content",
+    "T1608.001::[Threat Group-3390] has hosted malicious payloads on Dropbox."
+  ],
+  [
+    "threat-group-3390",
+    "T1608.002",
+    "Upload Tool",
+    "response-content",
+    "T1608.002::[Threat Group-3390] has staged tools, including [gsecdump] and WCE, on previously compromised websites."
+  ],
+  [
+    "threat-group-3390",
+    "T1608.004",
+    "Drive-by Target",
+    "response-content",
+    "T1608.004::[Threat Group-3390] has embedded malicious code into websites to screen a potential victim's IP address and then exploit their browser if they are of interest."
+  ]
+]

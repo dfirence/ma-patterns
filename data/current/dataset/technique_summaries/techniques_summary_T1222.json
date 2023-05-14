@@ -1,0 +1,76 @@
+[
+  {
+    "id": "attack-pattern--65917ae0-b854-4139-83fe-bf2441cf0196",
+    "platform": "linux|windows|macos",
+    "tid": "T1222",
+    "technique": "File and Directory Permissions Modification",
+    "tactic": "defense-evasion",
+    "datasources": "active-directory-object-modification|command-execution|file-metadata|process-creation",
+    "has_subtechniques": true,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [
+      "T1222.001",
+      "T1222.002"
+    ],
+    "count_subtechniques": 2,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may modify file or directory permissions/attributes to evade access control lists (ACLs) and access protected files.(Citation: Hybrid Analysis Icacls1 June 2018)(Citation: Hybrid Analysis Icacls2 May 2018) File and directory permissions are commonly managed by ACLs configured by the file or directory owner, or users with the appropriate permissions. File and directory ACL implementations vary by platform, but generally explicitly designate which users or groups can perform which actions (read, write, execute, etc.).\n\nModifications may include changing specific access rights, which may require taking ownership of a file or directory and/or elevated permissions depending on the file or directory’s existing permissions. This may enable malicious activity such as modifying, replacing, or deleting specific files or directories. Specific file and directory modifications may be a required step for many techniques, such as establishing Persistence via [Accessibility Features](https://attack.mitre.org/techniques/T1546/008), [Boot or Logon Initialization Scripts](https://attack.mitre.org/techniques/T1037), [Unix Shell Configuration Modification](https://attack.mitre.org/techniques/T1546/004), or tainting/hijacking other instrumental binary/configuration files via [Hijack Execution Flow](https://attack.mitre.org/techniques/T1574).\n\nAdversaries may also change permissions of symbolic links. For example, malware (particularly ransomware) may modify symbolic links and associated settings to enable access to files from local shortcuts with remote paths.(Citation: new_rust_based_ransomware)(Citation: bad_luck_blackcat)(Citation: falconoverwatch_blackcat_attack)(Citation: blackmatter_blackcat)(Citation: fsutil_behavior) ",
+    "technique_references": [
+      {
+        "source_name": "falconoverwatch_blackcat_attack",
+        "url": "https://www.crowdstrike.com/blog/falcon-overwatch-contributes-to-blackcat-protection/",
+        "description": "Falcon OverWatch Team. (2022, March 23). Falcon OverWatch Threat Hunting Contributes to Seamless Protection Against Novel BlackCat Attack. Retrieved May 5, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Hybrid Analysis Icacls1 June 2018",
+        "url": "https://www.hybrid-analysis.com/sample/ef0d2628823e8e0a0de3b08b8eacaf41cf284c086a948bdfd67f4e4373c14e4d?environmentId=100",
+        "description": "Hybrid Analysis. (2018, June 12). c9b65b764985dfd7a11d3faf599c56b8.exe. Retrieved August 19, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Hybrid Analysis Icacls2 May 2018",
+        "url": "https://www.hybrid-analysis.com/sample/22dab012c3e20e3d9291bce14a2bfc448036d3b966c6e78167f4626f5f9e38d6?environmentId=110",
+        "description": "Hybrid Analysis. (2018, May 30). 2a8efbfadd798f6111340f7c1c956bee.dll. Retrieved August 19, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "bad_luck_blackcat",
+        "url": "https://go.kaspersky.com/rs/802-IJN-240/images/TR_BlackCat_Report.pdf",
+        "description": "Kaspersky Global Research & Analysis Team (GReAT). (2022). A Bad Luck BlackCat. Retrieved May 5, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "fsutil_behavior",
+        "url": "https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/fsutil-behavior",
+        "description": "Microsoft. (2021, September 27). fsutil behavior. Retrieved January 14, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "EventTracker File Permissions Feb 2014",
+        "url": "https://www.eventtracker.com/tech-articles/monitoring-file-permission-changes-windows-security-log/",
+        "description": "Netsurion. (2014, February 19). Monitoring File Permission Changes with the Windows Security Log. Retrieved August 19, 2018.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "blackmatter_blackcat",
+        "url": "https://blog.talosintelligence.com/2022/03/from-blackmatter-to-blackcat-analyzing.html",
+        "description": "Pereira, T. Huey, C. (2022, March 17). From BlackMatter to BlackCat: Analyzing two attacks from one affiliate. Retrieved May 5, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "new_rust_based_ransomware",
+        "url": "https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/noberus-blackcat-alphv-rust-ransomware",
+        "description": "Symantec Threat Hunter Team. (2021, December 16). Noberus: Technical Analysis Shows Sophistication of New Rust-based Ransomware. Retrieved January 14, 2022.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

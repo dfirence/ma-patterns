@@ -1,0 +1,61 @@
+[
+  {
+    "id": "attack-pattern--dfd7cc1d-e1d8-4394-a198-97c4cab8aa67",
+    "platform": "windows|macos|linux",
+    "tid": "T1059.005",
+    "technique": "Visual Basic",
+    "tactic": "execution",
+    "datasources": "command-execution|module-load|process-creation|script-execution",
+    "has_subtechniques": false,
+    "is_deprecated": false,
+    "is_revoked": false,
+    "subtechniques": [],
+    "count_subtechniques": 0,
+    "correlation_adversary": "none",
+    "correlation_malware": "none",
+    "correlation_tool": "none",
+    "correlation_gid": "none",
+    "technique_description": "Adversaries may abuse Visual Basic (VB) for execution. VB is a programming language created by Microsoft with interoperability with many Windows technologies such as [Component Object Model](https://attack.mitre.org/techniques/T1559/001) and the [Native API](https://attack.mitre.org/techniques/T1106) through the Windows API. Although tagged as legacy with no planned future evolutions, VB is integrated and supported in the .NET Framework and cross-platform .NET Core.(Citation: VB .NET Mar 2020)(Citation: VB Microsoft)\n\nDerivative languages based on VB have also been created, such as Visual Basic for Applications (VBA) and VBScript. VBA is an event-driven programming language built into Microsoft Office, as well as several third-party applications.(Citation: Microsoft VBA)(Citation: Wikipedia VBA) VBA enables documents to contain macros used to automate the execution of tasks and other functionality on the host. VBScript is a default scripting language on Windows hosts and can also be used in place of [JavaScript](https://attack.mitre.org/techniques/T1059/007) on HTML Application (HTA) webpages served to Internet Explorer (though most modern browsers do not come with VBScript support).(Citation: Microsoft VBScript)\n\nAdversaries may use VB payloads to execute malicious commands. Common malicious usage includes automating execution of behaviors with VBScript or embedding VBA content into [Spearphishing Attachment](https://attack.mitre.org/techniques/T1566/001) payloads (which may also involve [Mark-of-the-Web Bypass](https://attack.mitre.org/techniques/T1553/005) to enable execution).(Citation: Default VBS macros Blocking )",
+    "technique_references": [
+      {
+        "source_name": "VB .NET Mar 2020",
+        "url": "https://devblogs.microsoft.com/vbteam/visual-basic-support-planned-for-net-5-0/",
+        "description": ".NET Team. (2020, March 11). Visual Basic support planned for .NET 5.0. Retrieved June 23, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Default VBS macros Blocking ",
+        "url": "https://techcommunity.microsoft.com/t5/microsoft-365-blog/helping-users-stay-safe-blocking-internet-macros-by-default-in/ba-p/3071805",
+        "description": "Kellie Eickmeyer. (2022, February 7). Helping users stay safe: Blocking internet macros by default in Office. Retrieved February 7, 2022.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft VBScript",
+        "url": "https://docs.microsoft.com/previous-versions//1kw29xwf(v=vs.85)",
+        "description": "Microsoft. (2011, April 19). What Is VBScript?. Retrieved March 28, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Microsoft VBA",
+        "url": "https://docs.microsoft.com/office/vba/api/overview/",
+        "description": "Microsoft. (2019, June 11). Office VBA Reference. Retrieved June 23, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "VB Microsoft",
+        "url": "https://docs.microsoft.com/dotnet/visual-basic/",
+        "description": "Microsoft. (n.d.). Visual Basic documentation. Retrieved June 23, 2020.",
+        "external_id": "none"
+      },
+      {
+        "source_name": "Wikipedia VBA",
+        "url": "https://en.wikipedia.org/wiki/Visual_Basic_for_Applications",
+        "description": "Wikipedia. (n.d.). Visual Basic for Applications. Retrieved August 13, 2020.",
+        "external_id": "none"
+      }
+    ],
+    "technique_required_permissions": "none",
+    "technique_effective_permissions": "none",
+    "search_token": "none"
+  }
+]

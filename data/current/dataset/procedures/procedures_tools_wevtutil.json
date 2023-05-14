@@ -1,0 +1,16 @@
+[
+  [
+    "wevtutil",
+    "T1070.001",
+    "Clear Windows Event Logs",
+    "command-execution|file-deletion|os-api-execution",
+    "T1070.001::[Wevtutil] can be used to clear system and security event logs from the system."
+  ],
+  [
+    "wevtutil",
+    "T1562.002",
+    "Disable Windows Event Logging",
+    "application-log-content|command-execution|host-status|process-creation|script-execution|windows-registry-key-creation",
+    "T1562.002::[Wevtutil] can be used to disable specific event logs on the system."
+  ]
+]

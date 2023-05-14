@@ -1,0 +1,121 @@
+[
+  [
+    "koadic",
+    "T1003.002",
+    "Security Account Manager",
+    "command-execution|file-access|windows-registry-key-access",
+    "T1003.002::[Koadic] can gather hashed passwords by dumping SAM/SECURITY hive."
+  ],
+  [
+    "koadic",
+    "T1003.003",
+    "NTDS",
+    "command-execution|file-access",
+    "T1003.003::[Koadic] can gather hashed passwords by gathering domain controller hashes from NTDS."
+  ],
+  [
+    "koadic",
+    "T1021.001",
+    "Remote Desktop Protocol",
+    "logon-session-creation|network-connection-creation|network-traffic-flow|process-creation",
+    "T1021.001::[Koadic] can enable remote desktop on the victim's machine."
+  ],
+  [
+    "koadic",
+    "T1053.005",
+    "Scheduled Task",
+    "command-execution|file-modification|process-creation|scheduled-job-creation|windows-registry-key-creation",
+    "T1053.005::[Koadic] has used scheduled tasks to add persistence."
+  ],
+  [
+    "koadic",
+    "T1055.001",
+    "Dynamic-link Library Injection",
+    "module-load|os-api-execution|process-access|process-metadata|process-modification",
+    "T1055.001::[Koadic] can perform process injection by using a reflective DLL."
+  ],
+  [
+    "koadic",
+    "T1059.001",
+    "PowerShell",
+    "command-execution|module-load|process-creation|process-metadata|script-execution",
+    "T1059.001::[Koadic] has used PowerShell to establish persistence."
+  ],
+  [
+    "koadic",
+    "T1059.003",
+    "Windows Command Shell",
+    "command-execution|process-creation",
+    "T1059.003::[Koadic] can open an interactive command-shell to perform command line functions on victim machines. [Koadic] performs most of its operations using Windows Script Host (Jscript) and to run arbitrary shellcode."
+  ],
+  [
+    "koadic",
+    "T1059.005",
+    "Visual Basic",
+    "command-execution|module-load|process-creation|script-execution",
+    "T1059.005::[Koadic] performs most of its operations using Windows Script Host (VBScript) and runs arbitrary shellcode ."
+  ],
+  [
+    "koadic",
+    "T1071.001",
+    "Web Protocols",
+    "network-traffic-content|network-traffic-flow",
+    "T1071.001::[Koadic] has used HTTP for C2 communications."
+  ],
+  [
+    "koadic",
+    "T1218.005",
+    "Mshta",
+    "command-execution|file-creation|network-connection-creation|process-creation",
+    "T1218.005::[Koadic] can use mshta to serve additional payloads and to help schedule tasks for persistence."
+  ],
+  [
+    "koadic",
+    "T1218.010",
+    "Regsvr32",
+    "command-execution|module-load|network-connection-creation|process-creation",
+    "T1218.010::[Koadic] can use Regsvr32 to execute additional payloads."
+  ],
+  [
+    "koadic",
+    "T1218.011",
+    "Rundll32",
+    "command-execution|file-metadata|module-load|process-creation",
+    "T1218.011::[Koadic] can use Rundll32 to execute additional payloads."
+  ],
+  [
+    "koadic",
+    "T1547.001",
+    "Registry Run Keys / Startup Folder",
+    "command-execution|file-modification|process-creation|windows-registry-key-creation|windows-registry-key-modification",
+    "T1547.001::[Koadic] has added persistence to the `HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run` Registry key."
+  ],
+  [
+    "koadic",
+    "T1548.002",
+    "Bypass User Account Control",
+    "command-execution|process-creation|process-metadata|windows-registry-key-modification",
+    "T1548.002::[Koadic] has 2 methods for elevating integrity. It can bypass UAC through `eventvwr.exe` and `sdclt.exe`."
+  ],
+  [
+    "koadic",
+    "T1564.003",
+    "Hidden Window",
+    "command-execution|file-modification|process-creation|script-execution",
+    "T1564.003::[Koadic] has used the command Powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden to hide its window."
+  ],
+  [
+    "koadic",
+    "T1569.002",
+    "Service Execution",
+    "command-execution|process-creation|service-creation|windows-registry-key-modification",
+    "T1569.002::[Koadic] can run a command on another machine using [PsExec]."
+  ],
+  [
+    "koadic",
+    "T1573.002",
+    "Asymmetric Cryptography",
+    "network-traffic-content",
+    "T1573.002::[Koadic] can use SSL and TLS for communications."
+  ]
+]

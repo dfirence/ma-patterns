@@ -1,4 +1,21 @@
 #! /bin/bash
+mkdir dataset
+mkdir dataset/datasources
+mkdir dataset/technique_summaries
+mkdir dataset/opflows
+mkdir dataset/profiles
+mkdir dataset/procedures
+cd dataset
+## Generate Stats
+mitre-assistant search -m enterprise -t "stats:adversaries" -e csv -f stats_adversaries.csv
+mitre-assistant search -m enterprise -t "stats:malware" -e csv -f stats_malware.csv
+mitre-assistant search -m enterprise -t "stats:tools" -e csv -f stats_tools.csv
+mitre-assistant search -m enterprise -t "stats:platforms" -e csv -f stats_platforms.csv
+mitre-assistant search -m enterprise -t "stats:tactics" -e csv -f stats_tactics.csv
+mitre-assistant search -m enterprise -t "stats:datasources" -e csv -f stats_datasources.csv
+mitre-assistant search -m enterprise -t "stats:techniques" -e csv -f stats_techniques.csv
+#### Discrete Datasets
+#
 # Datasources
 for x in $(xsv select 2 stats_datasources.csv | grep -v -i "datasource" | sort); do mitre-assistant search -m enterprise -t "$x" -e json > ./datasources/techniques_datasources_$x.json;done
 for x in $(xsv select 2 stats_datasources.csv | grep -v -i "datasource" | sort); do mitre-assistant search -m enterprise -t "$x" -s -e json > ./datasources/subtechniques_datasources_$x.json;done
